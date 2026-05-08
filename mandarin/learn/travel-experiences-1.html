@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Places and Trips | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Travel Experiences</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="travel-experiences.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Places and Trips</h2>
+  <p>Learn key vocabulary for travel, destinations and tourist attractions.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Countries and cities</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>中国</h3><p>zhōng guó</p><span>China</span></div>
+      <div class="vocab-card"><h3>英国</h3><p>yīng guó</p><span>UK</span></div>
+      <div class="vocab-card"><h3>北京</h3><p>běi jīng</p><span>Beijing</span></div>
+      <div class="vocab-card"><h3>上海</h3><p>shàng hǎi</p><span>Shanghai</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">去年我去了中国。</p>
+      <p>Last year I went to China.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我想去北京旅行。</p>
+      <p>I want to travel to Beijing.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Tourist attractions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>景点</h3><p>jǐng diǎn</p><span>tourist attraction</span></div>
+      <div class="vocab-card"><h3>长城</h3><p>cháng chéng</p><span>the Great Wall</span></div>
+      <div class="vocab-card"><h3>博物馆</h3><p>bó wù guǎn</p><span>museum</span></div>
+      <div class="vocab-card"><h3>公园</h3><p>gōng yuán</p><span>park</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我参观了很多著名的景点。</p>
+      <p>I visited many famous attractions.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我去了长城和博物馆。</p>
+      <p>I went to the Great Wall and a museum.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Travel activities</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>旅行</h3><p>lǚ xíng</p><span>to travel</span></div>
+      <div class="vocab-card"><h3>拍照</h3><p>pāi zhào</p><span>to take photos</span></div>
+      <div class="vocab-card"><h3>买东西</h3><p>mǎi dōng xi</p><span>to buy things</span></div>
+      <div class="vocab-card"><h3>吃美食</h3><p>chī měi shí</p><span>to eat delicious food</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢在旅行的时候拍照。</p>
+      <p>I like taking photos when I travel.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我在中国吃了很多美食。</p>
+      <p>I ate lots of delicious food in China.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Travel transport</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>飞机</h3><p>fēi jī</p><span>plane</span></div>
+      <div class="vocab-card"><h3>火车</h3><p>huǒ chē</p><span>train</span></div>
+      <div class="vocab-card"><h3>汽车</h3><p>qì chē</p><span>car</span></div>
+      <div class="vocab-card"><h3>地铁</h3><p>dì tiě</p><span>subway</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我坐飞机去中国。</p>
+      <p>I go to China by plane.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我们坐地铁去市中心。</p>
+      <p>We take the subway to the city centre.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        去年我去了中国。我参观了很多景点，比如长城和博物馆。我喜欢拍照，也喜欢吃美食。我坐飞机去那里。
+      </p>
+      <p>
+        Last year I went to China. I visited many attractions such as the Great Wall and museums. I like taking photos and eating delicious food. I went there by plane.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="travel-experiences.html">← Back to Topic</a>
+      <a href="travel-experiences-2.html">Next Page →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "中国 means?", options: ["China","UK","France"], correct: "China" },
+    { q: "北京 means?", options: ["Beijing","Shanghai","London"], correct: "Beijing" },
+    { q: "英国 means?", options: ["UK","USA","Japan"], correct: "UK" },
+    { q: "上海 means?", options: ["Shanghai","Paris","Rome"], correct: "Shanghai" }
+  ],
+
+  q2: [
+    { q: "景点 means?", options: ["Tourist attraction","Airport","Hotel"], correct: "Tourist attraction" },
+    { q: "长城 means?", options: ["The Great Wall","Museum","River"], correct: "The Great Wall" },
+    { q: "博物馆 means?", options: ["Museum","School","Park"], correct: "Museum" },
+    { q: "公园 means?", options: ["Park","Library","Shop"], correct: "Park" }
+  ],
+
+  q3: [
+    { q: "旅行 means?", options: ["To travel","To eat","To study"], correct: "To travel" },
+    { q: "拍照 means?", options: ["To take photos","To swim","To walk"], correct: "To take photos" },
+    { q: "飞机 means?", options: ["Plane","Train","Car"], correct: "Plane" },
+    { q: "地铁 means?", options: ["Subway","Bus","Taxi"], correct: "Subway" }
+  ]
+};
+
+function showStep(stepNumber){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+stepNumber).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadQuestion(id,set){
+  const q = questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts = shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+function checkAnswer(btn, sel, ans) {
+  const box = btn.closest(".lesson-card");
+  const feedback = box.querySelector(".feedback");
+  const cont = box.querySelector(".continue-btn");
+
+  box.querySelectorAll(".quiz-buttons button").forEach(b => {
+    b.disabled = true;
+
+    if (b.textContent.includes(ans)) {
+      b.classList.add("correct-answer");
+    }
+  });
+
+  if (sel === ans) {
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  cont.disabled = false;
+  cont.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

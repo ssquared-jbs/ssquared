@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meals and Food | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Eating and Drinking</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="eating-drinking.html">← Back to Eating and Drinking</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Meals and Food</h2>
+  <p>Learn common foods, meals and snacks.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Basic foods</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>米饭</h3><p>mǐfàn</p><span>rice</span></div>
+      <div class="vocab-card"><h3>面包</h3><p>miànbāo</p><span>bread</span></div>
+      <div class="vocab-card"><h3>鸡蛋</h3><p>jīdàn</p><span>egg</span></div>
+      <div class="vocab-card"><h3>蔬菜</h3><p>shūcài</p><span>vegetables</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢吃米饭和鸡蛋。</p>
+      <p>I like eating rice and eggs.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Noodles and meats</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>面条</h3><p>miàntiáo</p><span>noodles</span></div>
+      <div class="vocab-card"><h3>肉</h3><p>ròu</p><span>meat</span></div>
+      <div class="vocab-card"><h3>猪肉</h3><p>zhūròu</p><span>pork</span></div>
+      <div class="vocab-card"><h3>牛肉</h3><p>niúròu</p><span>beef</span></div>
+      <div class="vocab-card"><h3>羊肉</h3><p>yángròu</p><span>lamb</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢吃牛肉面。</p>
+      <p>I like eating beef noodles.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Snacks and fast food</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>热狗</h3><p>règǒu</p><span>hot dog</span></div>
+      <div class="vocab-card"><h3>包子</h3><p>bāozi</p><span>steamed bun</span></div>
+      <div class="vocab-card"><h3>点心</h3><p>diǎnxīn</p><span>snack / dim sum</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢吃包子和点心。</p>
+      <p>I like eating buns and snacks.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Sweet foods</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>蛋糕</h3><p>dàngāo</p><span>cake</span></div>
+      <div class="vocab-card"><h3>冰淇淋</h3><p>bīngqílín</p><span>ice cream</span></div>
+      <div class="vocab-card"><h3>饼干</h3><p>bǐnggān</p><span>biscuits</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢吃冰淇淋和蛋糕。</p>
+      <p>I like eating ice cream and cake.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我喜欢吃米饭和面条。我也喜欢吃牛肉、包子和冰淇淋。
+      </p>
+      <p>
+        I like eating rice and noodles. I also like eating beef, buns and ice cream.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="eating-drinking.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "米饭 means?", options: ["Rice", "Bread", "Egg"], correct: "Rice" },
+    { q: "鸡蛋 means?", options: ["Egg", "Vegetable", "Noodles"], correct: "Egg" },
+    { q: "蔬菜 means?", options: ["Vegetables", "Meat", "Cake"], correct: "Vegetables" }
+  ],
+
+  q2: [
+    { q: "牛肉 means?", options: ["Beef", "Pork", "Lamb"], correct: "Beef" },
+    { q: "猪肉 means?", options: ["Pork", "Beef", "Rice"], correct: "Pork" },
+    { q: "面条 means?", options: ["Noodles", "Bread", "Egg"], correct: "Noodles" }
+  ],
+
+  q3: [
+    { q: "蛋糕 means?", options: ["Cake", "Ice cream", "Biscuits"], correct: "Cake" },
+    { q: "冰淇淋 means?", options: ["Ice cream", "Cake", "Snack"], correct: "Ice cream" },
+    { q: "饼干 means?", options: ["Biscuits", "Rice", "Meat"], correct: "Biscuits" }
+  ]
+};
+
+function showStep(stepNumber) {
+  document.querySelectorAll(".step").forEach(s => s.classList.remove("active-step"));
+  document.getElementById("step" + stepNumber).classList.add("active-step");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function getRandomQuestion(set){
+  const list = questions[set];
+  return list[Math.floor(Math.random()*list.length)];
+}
+
+function loadQuestion(id,set){
+  const box = document.getElementById(id);
+  const q = getRandomQuestion(set);
+  const options = shuffle([...q.options]);
+  const letters = ["A","B","C"];
+
+  box.innerHTML = `
+    <p class="question-text">${q.q}</p>
+    <div class="quiz-buttons">
+      ${options.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(btn, selected, correct){
+  const card = btn.closest(".lesson-card");
+  const feedback = card.querySelector(".feedback");
+  const buttons = card.querySelectorAll(".quiz-buttons button");
+  const continueBtn = card.querySelector(".continue-btn");
+
+  buttons.forEach(b=>{
+    b.disabled=true;
+    if(b.textContent.includes(correct)){
+      b.classList.add("correct-answer");
+    }
+  });
+
+  if(selected===correct){
+    feedback.textContent="Correct.";
+    feedback.className="feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent="Not quite.";
+    feedback.className="feedback wrong-feedback";
+  }
+
+  continueBtn.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

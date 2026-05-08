@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medicine and Recovery | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Health and Fitness</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="health-fitness.html">← Back to Health and Fitness</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Medicine and Recovery</h2>
+  <p>Learn how to talk about symptoms, medicine, sick notes, health and recovery.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Symptoms and illness</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>咳嗽</h3><p>ké sou</p><span>to cough</span></div>
+      <div class="vocab-card"><h3>多</h3><p>duō</p><span>many / more</span></div>
+      <div class="vocab-card"><h3>少</h3><p>shǎo</p><span>few / less</span></div>
+      <div class="vocab-card"><h3>怎么了</h3><p>zěn me le</p><span>what happened?</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">你怎么了？我咳嗽了。</p>
+      <p>What happened? I have a cough.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Medicine and treatment</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>打针</h3><p>dǎ zhēn</p><span>injection</span></div>
+      <div class="vocab-card"><h3>吃药</h3><p>chī yào</p><span>take medicine</span></div>
+      <div class="vocab-card"><h3>药</h3><p>yào</p><span>medicine</span></div>
+      <div class="vocab-card"><h3>次</h3><p>cì</p><span>time / occasion</span></div>
+      <div class="vocab-card"><h3>西药</h3><p>xī yào</p><span>Western medicine</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">医生说我要吃药，一天三次。</p>
+      <p>The doctor says I need to take medicine three times a day.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我不喜欢打针。</p>
+      <p>I do not like injections.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Help and recovery</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>帮助</h3><p>bāng zhù</p><span>to help</span></div>
+      <div class="vocab-card"><h3>大夫</h3><p>dài fu</p><span>doctor</span></div>
+      <div class="vocab-card"><h3>原谅</h3><p>yuán liàng</p><span>to forgive</span></div>
+      <div class="vocab-card"><h3>早日康复</h3><p>zǎo rì kāng fù</p><span>get better soon</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">大夫帮助我看病。</p>
+      <p>The doctor helps me with my illness.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">祝你早日康复。</p>
+      <p>I wish you a speedy recovery.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Sick notes and messages</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>收件人</h3><p>shōu jiàn rén</p><span>recipient</span></div>
+      <div class="vocab-card"><h3>发件人</h3><p>fā jiàn rén</p><span>sender</span></div>
+      <div class="vocab-card"><h3>主题</h3><p>zhǔ tí</p><span>subject / topic</span></div>
+      <div class="vocab-card"><h3>病假条</h3><p>bìng jià tiáo</p><span>sick note</span></div>
+      <div class="vocab-card"><h3>请假</h3><p>qǐng jià</p><span>ask for leave</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我生病了，所以要请假。</p>
+      <p>I am ill, so I need to ask for leave.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这个邮件的主题是病假条。</p>
+      <p>The subject of this email is sick note.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>5. Appearance and health words</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>美</h3><p>měi</p><span>beautiful / pretty</span></div>
+      <div class="vocab-card"><h3>难看</h3><p>nán kàn</p><span>not good-looking</span></div>
+      <div class="vocab-card"><h3>胃</h3><p>wèi</p><span>stomach</span></div>
+      <div class="vocab-card"><h3>健康</h3><p>jiàn kāng</p><span>health / healthy</span></div>
+      <div class="vocab-card"><h3>零食</h3><p>líng shí</p><span>snack</span></div>
+      <div class="vocab-card"><h3>丑</h3><p>chǒu</p><span>ugly</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">少吃零食对健康很好。</p>
+      <p>Eating fewer snacks is good for health.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的胃不舒服。</p>
+      <p>My stomach does not feel well.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(8)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card">
+    <h2>6. Hope and frequency</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>希望</h3><p>xī wàng</p><span>to hope</span></div>
+      <div class="vocab-card"><h3>经常</h3><p>jīng cháng</p><span>often</span></div>
+      <div class="vocab-card"><h3>长</h3><p>zhǎng</p><span>to grow</span></div>
+      <div class="vocab-card"><h3>上个星期</h3><p>shàng ge xīng qī</p><span>last week</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我希望你早日康复。</p>
+      <p>I hope you get better soon.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我经常锻炼身体。</p>
+      <p>I often exercise.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(9)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step9">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(10)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step10">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我上个星期生病了，咳嗽得很厉害。大夫说我要吃药，一天三次。我希望早日康复。
+      </p>
+      <p>
+        Last week I was ill and had a bad cough. The doctor said I needed to take medicine three times a day.
+        I hope to get better soon.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="health-fitness.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "咳嗽 means?", options: ["To cough", "To exercise", "To sleep"], correct: "To cough" },
+    { q: "怎么了 means?", options: ["What happened?", "Where are you?", "How old are you?"], correct: "What happened?" },
+    { q: "多 means?", options: ["Many / more", "Few / less", "Medicine"], correct: "Many / more" },
+    { q: "少 means?", options: ["Few / less", "Many / more", "Healthy"], correct: "Few / less" }
+  ],
+
+  q2: [
+    { q: "打针 means?", options: ["Injection", "Take medicine", "Hospital"], correct: "Injection" },
+    { q: "吃药 means?", options: ["Take medicine", "Eat snacks", "Drink tea"], correct: "Take medicine" },
+    { q: "药 means?", options: ["Medicine", "Doctor", "Nurse"], correct: "Medicine" },
+    { q: "西药 means?", options: ["Western medicine", "Chinese food", "Sick note"], correct: "Western medicine" }
+  ],
+
+  q3: [
+    { q: "早日康复 means?", options: ["Get better soon", "Ask for leave", "Make a phone call"], correct: "Get better soon" },
+    { q: "请假 means?", options: ["Ask for leave", "Take medicine", "Exercise"], correct: "Ask for leave" },
+    { q: "健康 means?", options: ["Health / healthy", "Beautiful", "Snack"], correct: "Health / healthy" },
+    { q: "希望 means?", options: ["To hope", "To grow", "To cough"], correct: "To hope" },
+    { q: "经常 means?", options: ["Often", "Never", "Last week"], correct: "Often" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

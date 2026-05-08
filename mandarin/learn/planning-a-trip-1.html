@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Making Travel Plans | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Planning a Trip</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="planning-a-trip.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Making Travel Plans</h2>
+  <p>Learn how to talk about future travel plans, destinations and companions.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Future travel phrases</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>打算</h3><p>dǎ suàn</p><span>to plan to</span></div>
+      <div class="vocab-card"><h3>想</h3><p>xiǎng</p><span>to want to</span></div>
+      <div class="vocab-card"><h3>将来</h3><p>jiāng lái</p><span>in the future</span></div>
+      <div class="vocab-card"><h3>明年</h3><p>míng nián</p><span>next year</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">明年我打算去中国。</p>
+      <p>Next year I plan to go to China.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">将来我想去北京旅行。</p>
+      <p>In the future I want to travel to Beijing.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Talking about destinations</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>目的地</h3><p>mù dì dì</p><span>destination</span></div>
+      <div class="vocab-card"><h3>海边</h3><p>hǎi biān</p><span>seaside</span></div>
+      <div class="vocab-card"><h3>山区</h3><p>shān qū</p><span>mountain area</span></div>
+      <div class="vocab-card"><h3>国外</h3><p>guó wài</p><span>abroad</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的目的地是上海。</p>
+      <p>My destination is Shanghai.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">今年夏天我们想去海边。</p>
+      <p>This summer we want to go to the seaside.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Travelling with people</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>跟</h3><p>gēn</p><span>with</span></div>
+      <div class="vocab-card"><h3>朋友</h3><p>péng you</p><span>friend</span></div>
+      <div class="vocab-card"><h3>家人</h3><p>jiā rén</p><span>family</span></div>
+      <div class="vocab-card"><h3>一个人</h3><p>yí gè rén</p><span>alone</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我打算跟家人一起旅行。</p>
+      <p>I plan to travel with my family.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我不想一个人去国外。</p>
+      <p>I do not want to go abroad alone.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Future intentions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>希望</h3><p>xī wàng</p><span>to hope</span></div>
+      <div class="vocab-card"><h3>准备</h3><p>zhǔn bèi</p><span>to prepare</span></div>
+      <div class="vocab-card"><h3>学习</h3><p>xué xí</p><span>to study</span></div>
+      <div class="vocab-card"><h3>体验</h3><p>tǐ yàn</p><span>to experience</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我希望体验中国文化。</p>
+      <p>I hope to experience Chinese culture.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我准备学习很多新的东西。</p>
+      <p>I am preparing to learn many new things.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        明年我打算跟家人一起去中国旅行。我的目的地是北京。我希望体验中国文化，也想学习很多新的东西。
+      </p>
+      <p>
+        Next year I plan to travel to China with my family. My destination is Beijing. I hope to experience Chinese culture and also learn many new things.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="planning-a-trip.html">← Back to Topic</a>
+      <a href="planning-a-trip-2.html">Next Page →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "打算 means?", options: ["To plan to","To visit","To remember"], correct: "To plan to" },
+    { q: "将来 means?", options: ["In the future","Yesterday","Last year"], correct: "In the future" },
+    { q: "明年 means?", options: ["Next year","Last month","Tomorrow"], correct: "Next year" },
+    { q: "想 means?", options: ["To want to","To forget","To wait"], correct: "To want to" }
+  ],
+
+  q2: [
+    { q: "目的地 means?", options: ["Destination","Station","Passport"], correct: "Destination" },
+    { q: "海边 means?", options: ["Seaside","Mountain","Airport"], correct: "Seaside" },
+    { q: "山区 means?", options: ["Mountain area","Museum","Hotel"], correct: "Mountain area" },
+    { q: "国外 means?", options: ["Abroad","Inside","Nearby"], correct: "Abroad" }
+  ],
+
+  q3: [
+    { q: "跟 means?", options: ["With","Without","After"], correct: "With" },
+    { q: "家人 means?", options: ["Family","Teacher","Tourist"], correct: "Family" },
+    { q: "希望 means?", options: ["To hope","To sell","To arrive"], correct: "To hope" },
+    { q: "准备 means?", options: ["To prepare","To forget","To lose"], correct: "To prepare" },
+    { q: "体验 means?", options: ["To experience","To repair","To borrow"], correct: "To experience" }
+  ]
+};
+
+function showStep(n){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+n).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadQuestion(id,set){
+  const q = questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts = shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(btn, sel, ans) {
+  const box = btn.closest(".lesson-card");
+  const feedback = box.querySelector(".feedback");
+  const cont = box.querySelector(".continue-btn");
+
+  box.querySelectorAll(".quiz-buttons button").forEach(b => {
+    b.disabled = true;
+
+    if (b.textContent.includes(ans)) {
+      b.classList.add("correct-answer");
+    }
+  });
+
+  if (sel === ans) {
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  cont.disabled = false;
+  cont.classList.remove("hidden");
+}
+
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

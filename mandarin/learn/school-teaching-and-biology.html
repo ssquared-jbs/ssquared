@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teaching and Biology | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>School Routine</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="school-routine.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Teaching and Biology</h2>
+  <p>Learn words about teaching, caring, biology and taking school seriously.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Attitude to school</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>认真</h3><p>rèn zhēn</p><span>serious / to take something seriously</span></div>
+      <div class="vocab-card"><h3>关心</h3><p>guān xīn</p><span>to care</span></div>
+      <div class="vocab-card"><h3>主要</h3><p>zhǔ yào</p><span>major / main</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我认真学习，因为老师很关心我们。</p>
+      <p>I study seriously because the teacher cares about us.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Teaching and learning</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>教</h3><p>jiāo</p><span>to teach</span></div>
+      <div class="vocab-card"><h3>孩子</h3><p>hái zi</p><span>child</span></div>
+      <div class="vocab-card"><h3>够</h3><p>gòu</p><span>enough</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">老师教孩子学习汉语。</p>
+      <p>The teacher teaches children to learn Chinese.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我觉得时间不够。</p>
+      <p>I think there is not enough time.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Biology and extra word</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>生物</h3><p>shēng wù</p><span>biology</span></div>
+      <div class="vocab-card"><h3>鸭</h3><p>yā</p><span>duck</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢生物，因为生物很有趣。</p>
+      <p>I like biology because biology is interesting.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我认真学习生物，因为生物很有趣。老师教得很好，也很关心学生。
+      </p>
+      <p>
+        I study biology seriously because biology is interesting. The teacher teaches well and also cares about students.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="school-routine.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "认真 means?", options: ["Serious / take seriously", "Happy", "Expensive"], correct: "Serious / take seriously" },
+    { q: "关心 means?", options: ["To care", "To teach", "To choose"], correct: "To care" },
+    { q: "主要 means?", options: ["Major / main", "Enough", "Difficult"], correct: "Major / main" }
+  ],
+
+  q2: [
+    { q: "教 means?", options: ["To teach", "To learn", "To read"], correct: "To teach" },
+    { q: "孩子 means?", options: ["Child", "Teacher", "Subject"], correct: "Child" },
+    { q: "够 means?", options: ["Enough", "Poor", "Interesting"], correct: "Enough" }
+  ],
+
+  q3: [
+    { q: "生物 means?", options: ["Biology", "Chemistry", "Physics"], correct: "Biology" },
+    { q: "鸭 means?", options: ["Duck", "Dog", "Horse"], correct: "Duck" },
+    { q: "我认真学习 means?", options: ["I study seriously", "I teach children", "I have enough time"], correct: "I study seriously" }
+  ]
+};
+
+function showStep(stepNumber) {
+  document.querySelectorAll(".step").forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

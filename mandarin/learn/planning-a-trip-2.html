@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking and Preparation | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Planning a Trip</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="planning-a-trip.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Booking and Preparation</h2>
+  <p>Learn vocabulary for tickets, hotels, passports, visas and travel preparation.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Booking transport</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>订票</h3><p>dìng piào</p><span>to book tickets</span></div>
+      <div class="vocab-card"><h3>机票</h3><p>jī piào</p><span>plane ticket</span></div>
+      <div class="vocab-card"><h3>火车票</h3><p>huǒ chē piào</p><span>train ticket</span></div>
+      <div class="vocab-card"><h3>出发</h3><p>chū fā</p><span>to depart</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我已经订了机票。</p>
+      <p>I have already booked the plane tickets.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我们明天出发。</p>
+      <p>We are departing tomorrow.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Hotels and rooms</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>宾馆</h3><p>bīn guǎn</p><span>hotel</span></div>
+      <div class="vocab-card"><h3>房间</h3><p>fáng jiān</p><span>room</span></div>
+      <div class="vocab-card"><h3>双人房</h3><p>shuāng rén fáng</p><span>double room</span></div>
+      <div class="vocab-card"><h3>住</h3><p>zhù</p><span>to stay / live</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我们订了一个双人房。</p>
+      <p>We booked a double room.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我想住在市中心的宾馆。</p>
+      <p>I want to stay in a hotel in the city centre.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Travel documents</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>护照</h3><p>hù zhào</p><span>passport</span></div>
+      <div class="vocab-card"><h3>签证</h3><p>qiān zhèng</p><span>visa</span></div>
+      <div class="vocab-card"><h3>身份证</h3><p>shēn fèn zhèng</p><span>ID card</span></div>
+      <div class="vocab-card"><h3>准备好</h3><p>zhǔn bèi hǎo</p><span>to prepare fully</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的护照已经准备好了。</p>
+      <p>My passport is already prepared.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">去中国需要签证。</p>
+      <p>You need a visa to go to China.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Packing and preparation</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>行李</h3><p>xíng li</p><span>luggage</span></div>
+      <div class="vocab-card"><h3>收拾</h3><p>shōu shi</p><span>to pack / tidy</span></div>
+      <div class="vocab-card"><h3>地图</h3><p>dì tú</p><span>map</span></div>
+      <div class="vocab-card"><h3>安排</h3><p>ān pái</p><span>to arrange</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我正在收拾行李。</p>
+      <p>I am packing my luggage.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我已经安排好了旅行。</p>
+      <p>I have already arranged the trip.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我已经订了机票和宾馆。我准备好了护照和签证，现在正在收拾行李。我们明天出发。
+      </p>
+      <p>
+        I have already booked the plane tickets and hotel. I have prepared my passport and visa, and now I am packing my luggage. We are departing tomorrow.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="planning-a-trip-1.html">← Previous Page</a>
+      <a href="planning-a-trip.html">Back to Topic</a>
+      <a href="planning-a-trip-sentence-builder.html">Sentence Builder →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "订票 means?", options: ["To book tickets","To travel","To cancel"], correct: "To book tickets" },
+    { q: "机票 means?", options: ["Plane ticket","Passport","Hotel"], correct: "Plane ticket" },
+    { q: "火车票 means?", options: ["Train ticket","Map","Visa"], correct: "Train ticket" },
+    { q: "出发 means?", options: ["To depart","To arrive","To return"], correct: "To depart" }
+  ],
+
+  q2: [
+    { q: "宾馆 means?", options: ["Hotel","Museum","Airport"], correct: "Hotel" },
+    { q: "房间 means?", options: ["Room","Ticket","Station"], correct: "Room" },
+    { q: "双人房 means?", options: ["Double room","Single room","Classroom"], correct: "Double room" },
+    { q: "住 means?", options: ["To stay / live","To lose","To wait"], correct: "To stay / live" }
+  ],
+
+  q3: [
+    { q: "护照 means?", options: ["Passport","Visa","Map"], correct: "Passport" },
+    { q: "签证 means?", options: ["Visa","Airport","Luggage"], correct: "Visa" },
+    { q: "行李 means?", options: ["Luggage","Culture","Ticket"], correct: "Luggage" },
+    { q: "收拾 means?", options: ["To pack / tidy","To swim","To repair"], correct: "To pack / tidy" },
+    { q: "安排 means?", options: ["To arrange","To discover","To forget"], correct: "To arrange" }
+  ]
+};
+
+function showStep(n){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+n).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadQuestion(id,set){
+  const q = questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts = shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(btn, sel, ans) {
+  const box = btn.closest(".lesson-card");
+  const feedback = box.querySelector(".feedback");
+  const cont = box.querySelector(".continue-btn");
+
+  box.querySelectorAll(".quiz-buttons button").forEach(b => {
+    b.disabled = true;
+
+    if (b.textContent.includes(ans)) {
+      b.classList.add("correct-answer");
+    }
+  });
+
+  if (sel === ans) {
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  cont.disabled = false;
+  cont.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

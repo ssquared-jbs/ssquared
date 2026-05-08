@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Planning a Trip Sentence Builder | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Planning a Trip | Sentence Builder</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="planning-a-trip.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Planning a Trip Sentence Builder</h2>
+  <p>Practise building sentences about future travel plans, bookings and preparation.</p>
+</section>
+
+<section class="lesson-card">
+
+  <h2>Mixed Practice</h2>
+
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+
+</section>
+
+<div class="bottom-buttons">
+  <a href="planning-a-trip-2.html">← Previous Page</a>
+  <a href="planning-a-trip.html">Back to Topic</a>
+  <a href="planning-a-trip-3.html">Next Page →</a>
+</div>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+
+  {t:"mcq", q:"打算 means?", o:["To plan to","To arrive","To forget"], a:"To plan to"},
+  {t:"mcq", q:"目的地 means?", o:["Destination","Airport","Passport"], a:"Destination"},
+  {t:"mcq", q:"机票 means?", o:["Plane ticket","Hotel room","Visa"], a:"Plane ticket"},
+  {t:"mcq", q:"护照 means?", o:["Passport","Luggage","Map"], a:"Passport"},
+
+  {t:"fill", q:"明年我 ____ 去中国。", o:["打算","已经","以前"], a:"打算"},
+  {t:"fill", q:"我的 ____ 是北京。", o:["目的地","老师","行李"], a:"目的地"},
+  {t:"fill", q:"我已经订了 ____。", o:["机票","学校","天气"], a:"机票"},
+  {t:"fill", q:"我正在收拾 ____。", o:["行李","文化","地图"], a:"行李"},
+
+  {t:"type", q:"Type the Chinese for: passport", a:"护照"},
+  {t:"type", q:"Type the Chinese for: hotel", a:"宾馆"},
+  {t:"type", q:"Type the Chinese for: to prepare", a:"准备"},
+  {t:"type", q:"Type the Chinese for: to arrange", a:"安排"},
+
+  {t:"order", q:"Build: Next year I plan to go to China.", w:["明年","我","打算","去","中国"], a:"明年我打算去中国"},
+  {t:"order", q:"Build: My destination is Beijing.", w:["我的目的地","是","北京"], a:"我的目的地是北京"},
+  {t:"order", q:"Build: I have already booked the plane tickets.", w:["我","已经","订了","机票"], a:"我已经订了机票"},
+  {t:"order", q:"Build: I am packing my luggage.", w:["我","正在","收拾","行李"], a:"我正在收拾行李"}
+
+];
+
+function shuffle(array){
+
+  for(let i=array.length-1;i>0;i--){
+
+    let j=Math.floor(Math.random()*(i+1));
+
+    [array[i],array[j]]=[array[j],array[i]];
+  }
+
+  return array;
+}
+
+function safe(text){
+  return String(text).replace(/'/g,"\\'");
+}
+
+function loadQuestions(){
+
+  const area = document.getElementById("questionArea");
+
+  area.innerHTML = "";
+
+  shuffle([...questions]).forEach(function(q,i){
+
+    area.innerHTML += buildQuestion(q,i);
+
+  });
+}
+
+function buildQuestion(q,i){
+
+  if(q.t === "mcq"){
+
+    const options = shuffle([...q.o]);
+
+    const letters = ["A","B","C"];
+
+    return `
+      <div class="fill-question">
+
+        <h3>Question ${i+1}</h3>
+
+        <p>${q.q}</p>
+
+        <div class="quiz-buttons">
+
+          ${options.map(function(option,index){
+
+            return `
+              <button onclick="checkAnswer(this,'${safe(option)}','${safe(q.a)}')">
+                <strong>${letters[index]}.</strong> ${option}
+              </button>
+            `;
+
+          }).join("")}
+
+        </div>
+
+        <p class="feedback"></p>
+
+      </div>
+    `;
+  }
+
+  if(q.t === "fill"){
+
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+
+        <h3>Question ${i+1}</h3>
+
+        <p class="chinese">${q.q}</p>
+
+        <div class="quiz-buttons">
+
+          ${options.map(function(option){
+
+            return `
+              <button onclick="checkAnswer(this,'${safe(option)}','${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+
+          }).join("")}
+
+        </div>
+
+        <p class="feedback"></p>
+
+      </div>
+    `;
+  }
+
+  if(q.t === "type"){
+
+    return `
+      <div class="fill-question">
+
+        <h3>Question ${i+1}</h3>
+
+        <p>${q.q}</p>
+
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+
+        <button class="continue-btn" onclick="checkTypedAnswer(this,'${safe(q.a)}')">
+          Check answer
+        </button>
+
+        <p class="feedback"></p>
+
+      </div>
+    `;
+  }
+
+  if(q.t === "order"){
+
+    const words = shuffle([...q.w]);
+
+    const builderId = "builder" + i;
+
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+
+        <h3>Question ${i+1}</h3>
+
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+
+          ${words.map(function(word){
+
+            return `
+              <button onclick="addWord(this,'${builderId}')">
+                ${word}
+              </button>
+            `;
+
+          }).join("")}
+
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}','${safe(q.a)}')">
+          Check sentence
+        </button>
+
+        <button class="reset-btn" onclick="resetOrder('${builderId}','${bankId}')">
+          Reset
+        </button>
+
+        <p class="feedback" id="${builderId}-feedback"></p>
+
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button,selected,answer){
+
+  const box = button.closest(".fill-question");
+
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn){
+
+    btn.disabled = true;
+
+    if(btn.textContent.includes(answer)){
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if(selected === answer){
+
+    button.classList.add("correct-answer");
+
+    markQuestion(true,feedback);
+
+  } else {
+
+    button.classList.add("wrong-answer");
+
+    markQuestion(false,feedback);
+  }
+}
+
+function checkTypedAnswer(button,answer){
+
+  const box = button.closest(".fill-question");
+
+  const input = box.querySelector(".type-answer");
+
+  const feedback = box.querySelector(".feedback");
+
+  input.disabled = true;
+
+  button.disabled = true;
+
+  markQuestion(input.value.trim() === answer,feedback);
+}
+
+function addWord(button,builderId){
+
+  const builder = document.getElementById(builderId);
+
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+
+  button.style.display = "none";
+}
+
+function checkOrder(builderId,answer){
+
+  const builder = document.getElementById(builderId);
+
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const studentAnswer = Array.from(builder.children)
+    .map(function(word){
+      return word.textContent;
+    })
+    .join("");
+
+  if(studentAnswer === answer){
+
+    builder.classList.add("correct-builder");
+
+    builder.classList.remove("wrong-builder");
+
+    markQuestion(true,feedback);
+
+  } else {
+
+    builder.classList.add("wrong-builder");
+
+    builder.classList.remove("correct-builder");
+
+    markQuestion(false,feedback);
+  }
+}
+
+function resetOrder(builderId,bankId){
+
+  const builder = document.getElementById(builderId);
+
+  const bank = document.getElementById(bankId);
+
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+
+  feedback.textContent = "";
+
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button){
+
+    button.style.display = "inline-block";
+
+  });
+}
+
+function markQuestion(isCorrect,feedback){
+
+  total++;
+
+  if(isCorrect){
+
+    correct++;
+
+    feedback.textContent = "Correct.";
+
+    feedback.className = "feedback correct-feedback";
+
+  } else {
+
+    wrong++;
+
+    feedback.textContent = "Not quite.";
+
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults(){
+
+  document.getElementById("totalQ").textContent = total;
+
+  document.getElementById("correctQ").textContent = correct;
+
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+
+  if(total > 0){
+
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Subjects | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>School Routine</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="school-routine.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>School Subjects</h2>
+  <p>Learn how to talk about different subjects and why you choose them.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Core Subjects</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>科目</h3><p>kē mù</p><span>subject</span></div>
+      <div class="vocab-card"><h3>英语</h3><p>Yīng yǔ</p><span>English</span></div>
+      <div class="vocab-card"><h3>汉语</h3><p>Hàn yǔ</p><span>Chinese</span></div>
+      <div class="vocab-card"><h3>数学</h3><p>shù xué</p><span>mathematics</span></div>
+      <div class="vocab-card"><h3>科学</h3><p>kē xué</p><span>science</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我学习英语、汉语、数学和科学。</p>
+      <p>I study English, Chinese, maths and science.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. More Subjects</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>地理</h3><p>dì lǐ</p><span>geography</span></div>
+      <div class="vocab-card"><h3>历史</h3><p>lì shǐ</p><span>history</span></div>
+      <div class="vocab-card"><h3>体育</h3><p>tǐ yù</p><span>PE</span></div>
+      <div class="vocab-card"><h3>美术</h3><p>měi shù</p><span>art</span></div>
+      <div class="vocab-card"><h3>音乐</h3><p>yīn yuè</p><span>music</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢历史，但是不喜欢地理。</p>
+      <p>I like history, but I do not like geography.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Languages and Choices</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>法语</h3><p>Fǎ yǔ</p><span>French</span></div>
+      <div class="vocab-card"><h3>德语</h3><p>Dé yǔ</p><span>German</span></div>
+      <div class="vocab-card"><h3>日文</h3><p>Rì wén</p><span>Japanese</span></div>
+      <div class="vocab-card"><h3>学习</h3><p>xué xí</p><span>to learn</span></div>
+      <div class="vocab-card"><h3>选择</h3><p>xuǎn zé</p><span>to choose</span></div>
+      <div class="vocab-card"><h3>所以</h3><p>suǒ yǐ</p><span>so / therefore</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我选择学习汉语，所以我每天复习。</p>
+      <p>I choose to learn Chinese, so I revise every day.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我学习很多科目，比如英语、汉语、数学和历史。我选择学习汉语，因为很有意思。
+      </p>
+      <p>
+        I study many subjects, such as English, Chinese, maths and history. I choose to learn Chinese because it is interesting.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="school-routine.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "科目 means?", options: ["Subject", "School", "Teacher"], correct: "Subject" },
+    { q: "英语 means?", options: ["English", "Chinese", "French"], correct: "English" },
+    { q: "汉语 means?", options: ["Chinese", "German", "Japanese"], correct: "Chinese" },
+    { q: "数学 means?", options: ["Mathematics", "Science", "History"], correct: "Mathematics" },
+    { q: "科学 means?", options: ["Science", "Music", "Art"], correct: "Science" }
+  ],
+
+  q2: [
+    { q: "地理 means?", options: ["Geography", "History", "PE"], correct: "Geography" },
+    { q: "历史 means?", options: ["History", "Art", "Music"], correct: "History" },
+    { q: "体育 means?", options: ["PE", "Science", "English"], correct: "PE" },
+    { q: "美术 means?", options: ["Art", "Music", "Maths"], correct: "Art" },
+    { q: "音乐 means?", options: ["Music", "Geography", "Chinese"], correct: "Music" }
+  ],
+
+  q3: [
+    { q: "法语 means?", options: ["French", "German", "Japanese"], correct: "French" },
+    { q: "德语 means?", options: ["German", "French", "Chinese"], correct: "German" },
+    { q: "日文 means?", options: ["Japanese", "English", "Science"], correct: "Japanese" },
+    { q: "学习 means?", options: ["To learn", "To choose", "Therefore"], correct: "To learn" },
+    { q: "选择 means?", options: ["To choose", "To study", "To read"], correct: "To choose" },
+    { q: "所以 means?", options: ["So / therefore", "Because", "But"], correct: "So / therefore" }
+  ]
+};
+
+function showStep(stepNumber) {
+  document.querySelectorAll(".step").forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

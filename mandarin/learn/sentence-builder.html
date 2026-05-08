@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentence Builder | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Cambridge IGCSE Mandarin | Sentence Builder</p>
+</header>
+
+<main>
+
+  <div class="back-button">
+    <a href="everyday-activities.html">← Back to Everyday Activities</a>
+  </div>
+
+  <section class="sentence-hero">
+    <h2>Sentence Builder</h2>
+    <p>Practise building Mandarin sentences using what you have learnt so far.</p>
+  </section>
+
+  <section class="lesson-card">
+    <h2>1. Fill in the missing word</h2>
+
+    <div class="fill-question">
+      <p class="chinese">我 ____ 杰瑞。</p>
+      <button onclick="checkFill(this, false)">是</button>
+      <button onclick="checkFill(this, true)">叫</button>
+      <button onclick="checkFill(this, false)">在</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="fill-question">
+      <p class="chinese">英国 ____ 欧洲。</p>
+      <button onclick="checkFill(this, false)">说</button>
+      <button onclick="checkFill(this, false)">叫</button>
+      <button onclick="checkFill(this, true)">在</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="fill-question">
+      <p class="chinese">____，我叫大卫。</p>
+      <button onclick="checkFill(this, true)">你好</button>
+      <button onclick="checkFill(this, false)">再见</button>
+      <button onclick="checkFill(this, false)">谢谢</button>
+      <p class="feedback"></p>
+    </div>
+  </section>
+
+  <section class="lesson-card">
+    <h2>2. Tap the words in the correct order</h2>
+    <p>Build the sentence: <strong>I am British.</strong></p>
+
+    <div class="word-bank" id="wordBank1">
+      <button onclick="addWord(this, 'builder1')">英国人</button>
+      <button onclick="addWord(this, 'builder1')">我</button>
+      <button onclick="addWord(this, 'builder1')">是</button>
+    </div>
+
+    <div class="sentence-drop" id="builder1"></div>
+
+    <button class="continue-btn" onclick="checkSentence('builder1', '我是英国人')">Check sentence</button>
+    <button class="reset-btn" onclick="resetBuilder('builder1', 'wordBank1')">Reset</button>
+
+    <p class="feedback" id="builder1-feedback"></p>
+  </section>
+
+  <section class="lesson-card">
+    <h2>3. Build a country sentence</h2>
+    <p>Build the sentence: <strong>China is in Asia.</strong></p>
+
+    <div class="word-bank" id="wordBank2">
+      <button onclick="addWord(this, 'builder2')">亚洲</button>
+      <button onclick="addWord(this, 'builder2')">中国</button>
+      <button onclick="addWord(this, 'builder2')">在</button>
+    </div>
+
+    <div class="sentence-drop" id="builder2"></div>
+
+    <button class="continue-btn" onclick="checkSentence('builder2', '中国在亚洲')">Check sentence</button>
+    <button class="reset-btn" onclick="resetBuilder('builder2', 'wordBank2')">Reset</button>
+
+    <p class="feedback" id="builder2-feedback"></p>
+  </section>
+
+  <section class="lesson-card">
+    <h2>4. Translation check</h2>
+    <p class="chinese">我说中文。</p>
+
+    <div class="mcq">
+      <button onclick="checkMCQ(this, false)">I am Chinese.</button>
+      <button onclick="checkMCQ(this, true)">I speak Chinese.</button>
+      <button onclick="checkMCQ(this, false)">I live in China.</button>
+    </div>
+
+    <p class="feedback"></p>
+  </section>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+
+  <div class="bottom-buttons">
+    <a href="everyday-activities.html">← Back to Topic</a>
+    <a href="quizzes.html">Practise Quiz →</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let totalQuestions = 0;
+let correctAnswers = 0;
+let wrongAnswers = 0;
+
+function updateResults() {
+  document.getElementById("totalQ").textContent = totalQuestions;
+  document.getElementById("correctQ").textContent = correctAnswers;
+  document.getElementById("wrongQ").textContent = wrongAnswers;
+
+  let percent = 0;
+
+  if (totalQuestions > 0) {
+    percent = Math.round((correctAnswers / totalQuestions) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkFill(button, correct) {
+  const box = button.parentElement;
+  const buttons = box.querySelectorAll("button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+  });
+
+  totalQuestions++;
+
+  if (correct) {
+    correctAnswers++;
+    button.classList.add("correct-answer");
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrongAnswers++;
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function addWord(button, builderId) {
+  const builder = document.getElementById(builderId);
+
+  const word = document.createElement("span");
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkSentence(builderId, correctSentence) {
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const studentSentence = Array.from(builder.children)
+    .map(function(word) {
+      return word.textContent;
+    })
+    .join("");
+
+  totalQuestions++;
+
+  if (studentSentence === correctSentence) {
+    correctAnswers++;
+    feedback.textContent = "Correct. Your word order is accurate.";
+    feedback.className = "feedback correct-feedback";
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+  } else {
+    wrongAnswers++;
+    feedback.textContent = "Not quite. Check the word order and try again.";
+    feedback.className = "feedback wrong-feedback";
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+  }
+
+  updateResults();
+}
+
+function resetBuilder(builderId, wordBankId) {
+  const builder = document.getElementById(builderId);
+  const wordBank = document.getElementById(wordBankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  const buttons = wordBank.querySelectorAll("button");
+
+  buttons.forEach(function(button) {
+    button.style.display = "inline-block";
+  });
+}
+
+function checkMCQ(button, correct) {
+  const box = button.parentElement;
+  const buttons = box.querySelectorAll("button");
+  const feedback = box.parentElement.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+  });
+
+  totalQuestions++;
+
+  if (correct) {
+    correctAnswers++;
+    button.classList.add("correct-answer");
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrongAnswers++;
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+</script>
+
+</body>
+</html>

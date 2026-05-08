@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transport Opinions | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Transportation</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="transportation.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Transport Opinions</h2>
+  <p>Learn how to describe transport methods and give opinions about travel.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Extra transport methods</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>高铁</h3><p>gāo tiě</p><span>high-speed rail</span></div>
+      <div class="vocab-card"><h3>骑自行车</h3><p>qí zì xíng chē</p><span>to ride a bike</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢坐高铁，因为很快。</p>
+      <p>I like taking high-speed rail because it is fast.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我每天骑自行车去学校。</p>
+      <p>I ride a bike to school every day.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Describing transport</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>形容</h3><p>xíng róng</p><span>to describe</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">请你形容一下你最喜欢的交通工具。</p>
+      <p>Please describe your favourite means of transport.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我觉得高铁又快又方便。</p>
+      <p>I think high-speed rail is both fast and convenient.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我最喜欢坐高铁，因为高铁很快，也很方便。有时候我骑自行车去学校。
+      </p>
+      <p>
+        I like taking high-speed rail the most because it is fast and convenient. Sometimes I ride a bike to school.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="transportation.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "高铁 means?", options: ["High-speed rail", "Taxi", "Cable car"], correct: "High-speed rail" },
+    { q: "骑自行车 means?", options: ["To ride a bike", "To take a taxi", "To drive"], correct: "To ride a bike" }
+  ],
+
+  q2: [
+    { q: "形容 means?", options: ["To describe", "To arrive", "To delay"], correct: "To describe" },
+    { q: "我喜欢坐高铁 means?", options: ["I like taking high-speed rail", "I like taking a taxi", "I like walking"], correct: "I like taking high-speed rail" },
+    { q: "我每天骑自行车去学校 means?", options: ["I ride a bike to school every day", "I take the train every day", "I drive to work every day"], correct: "I ride a bike to school every day" }
+  ]
+};
+
+function showStep(stepNumber) {
+  document.querySelectorAll(".step").forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  if (continueButton) {
+    continueButton.classList.remove("hidden");
+  }
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+</script>
+
+</body>
+</html>

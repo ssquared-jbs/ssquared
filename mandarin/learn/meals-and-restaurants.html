@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meals and Restaurants | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Eating and Drinking</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="eating-drinking.html">← Back to Eating and Drinking</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Meals and Restaurants</h2>
+  <p>Learn how to talk about meals, restaurants, cooking, taste and eating with others.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Eating tools</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>用</h3><p>yòng</p><span>to use</span></div>
+      <div class="vocab-card"><h3>刀</h3><p>dāo</p><span>knife</span></div>
+      <div class="vocab-card"><h3>叉</h3><p>chā</p><span>fork</span></div>
+      <div class="vocab-card"><h3>木头</h3><p>mùtou</p><span>wood</span></div>
+      <div class="vocab-card"><h3>竹子</h3><p>zhúzi</p><span>bamboo</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我用刀和叉吃西餐。</p>
+      <p>I use a knife and fork to eat Western food.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Taste words</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>酸</h3><p>suān</p><span>sour</span></div>
+      <div class="vocab-card"><h3>苦</h3><p>kǔ</p><span>bitter</span></div>
+      <div class="vocab-card"><h3>饱</h3><p>bǎo</p><span>full</span></div>
+      <div class="vocab-card"><h3>酸辣汤</h3><p>suānlà tāng</p><span>hot and sour soup</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">酸辣汤很好喝，但是有点儿酸。</p>
+      <p>Hot and sour soup tastes good, but it is a bit sour.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Meals and cooking</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>餐</h3><p>cān</p><span>meal</span></div>
+      <div class="vocab-card"><h3>一日三餐</h3><p>yí rì sān cān</p><span>three meals a day</span></div>
+      <div class="vocab-card"><h3>做饭</h3><p>zuò fàn</p><span>to cook</span></div>
+      <div class="vocab-card"><h3>鱼</h3><p>yú</p><span>fish</span></div>
+      <div class="vocab-card"><h3>薯条</h3><p>shǔtiáo</p><span>chips / fries</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我爸爸喜欢做饭，也喜欢做鱼。</p>
+      <p>My dad likes cooking and also likes cooking fish.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我一日三餐都吃米饭。</p>
+      <p>I eat rice for all three meals a day.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Restaurants and food types</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>想</h3><p>xiǎng</p><span>want / would like</span></div>
+      <div class="vocab-card"><h3>一块儿</h3><p>yíkuàir</p><span>together</span></div>
+      <div class="vocab-card"><h3>饭馆</h3><p>fànguǎn</p><span>restaurant</span></div>
+      <div class="vocab-card"><h3>中餐</h3><p>zhōngcān</p><span>Chinese food</span></div>
+      <div class="vocab-card"><h3>西餐</h3><p>xīcān</p><span>Western food</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我想和朋友一块儿去饭馆吃中餐。</p>
+      <p>I would like to go to a restaurant with my friend to eat Chinese food.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我想和朋友一块儿去饭馆吃中餐。我喜欢酸辣汤，也喜欢吃鱼和薯条。
+      </p>
+      <p>
+        I would like to go to a restaurant with my friend to eat Chinese food.
+        I like hot and sour soup, and I also like eating fish and chips.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="eating-drinking.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "用 means?", options: ["To use", "To cook", "To want"], correct: "To use" },
+    { q: "刀 means?", options: ["Knife", "Fork", "Wood"], correct: "Knife" },
+    { q: "叉 means?", options: ["Fork", "Knife", "Bamboo"], correct: "Fork" },
+    { q: "竹子 means?", options: ["Bamboo", "Wood", "Fish"], correct: "Bamboo" }
+  ],
+
+  q2: [
+    { q: "酸 means?", options: ["Sour", "Bitter", "Full"], correct: "Sour" },
+    { q: "苦 means?", options: ["Bitter", "Sour", "Sweet"], correct: "Bitter" },
+    { q: "饱 means?", options: ["Full", "Hungry", "Sour"], correct: "Full" },
+    { q: "酸辣汤 means?", options: ["Hot and sour soup", "Fish soup", "Sweet dessert"], correct: "Hot and sour soup" }
+  ],
+
+  q3: [
+    { q: "做饭 means?", options: ["To cook", "To eat", "To drink"], correct: "To cook" },
+    { q: "一日三餐 means?", options: ["Three meals a day", "One meal a day", "Restaurant"], correct: "Three meals a day" },
+    { q: "饭馆 means?", options: ["Restaurant", "Cup", "Menu"], correct: "Restaurant" },
+    { q: "中餐 means?", options: ["Chinese food", "Western food", "Meal"], correct: "Chinese food" },
+    { q: "西餐 means?", options: ["Western food", "Chinese food", "Fish"], correct: "Western food" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

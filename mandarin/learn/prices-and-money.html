@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prices and Money | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Shopping</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="shopping.html">← Back to Shopping</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Prices and Money</h2>
+  <p>Learn how to talk about prices, measurements and shopping quantities.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Calligraphy items</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>毛笔</h3><p>máo bǐ</p><span>calligraphy brush</span></div>
+      <div class="vocab-card"><h3>墨水</h3><p>mò shuǐ</p><span>ink</span></div>
+      <div class="vocab-card"><h3>宣纸</h3><p>xuān zhǐ</p><span>rice paper</span></div>
+      <div class="vocab-card"><h3>砚台</h3><p>yàn tái</p><span>ink stone</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我买毛笔和墨水。</p>
+      <p>I buy a calligraphy brush and ink.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Basic items</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>雨伞</h3><p>yǔ sǎn</p><span>umbrella</span></div>
+      <div class="vocab-card"><h3>铅笔</h3><p>qiān bǐ</p><span>pencil</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我买铅笔和雨伞。</p>
+      <p>I buy pencils and an umbrella.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Prices and quantity</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>便宜</h3><p>pián yi</p><span>cheap</span></div>
+      <div class="vocab-card"><h3>块</h3><p>kuài</p><span>yuan (money)</span></div>
+      <div class="vocab-card"><h3>斤</h3><p>jīn</p><span>500g</span></div>
+      <div class="vocab-card"><h3>公斤</h3><p>gōng jīn</p><span>kilogram</span></div>
+      <div class="vocab-card"><h3>一共</h3><p>yí gòng</p><span>in total</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这个很便宜，只要十块钱。</p>
+      <p>This is very cheap, it only costs 10 yuan.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Locations and distance</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>市中心</h3><p>shì zhōng xīn</p><span>city centre</span></div>
+      <div class="vocab-card"><h3>以外</h3><p>yǐ wài</p><span>outside</span></div>
+      <div class="vocab-card"><h3>公里</h3><p>gōng lǐ</p><span>kilometre</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">商店在市中心以外五公里。</p>
+      <p>The shop is 5 kilometres outside the city centre.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我买铅笔和雨伞。一共二十块钱，很便宜。
+      </p>
+      <p>
+        I buy pencils and an umbrella. In total it is 20 yuan, very cheap.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="shopping.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q:"毛笔 means?", options:["Brush","Pen","Toy"], correct:"Brush" },
+    { q:"墨水 means?", options:["Ink","Water","Milk"], correct:"Ink" },
+    { q:"宣纸 means?", options:["Rice paper","Wall","Book"], correct:"Rice paper" }
+  ],
+
+  q2: [
+    { q:"雨伞 means?", options:["Umbrella","Pencil","Shop"], correct:"Umbrella" },
+    { q:"铅笔 means?", options:["Pencil","Pen","Brush"], correct:"Pencil" }
+  ],
+
+  q3: [
+    { q:"便宜 means?", options:["Cheap","Expensive","Big"], correct:"Cheap" },
+    { q:"块 means?", options:["Money unit","Distance","Weight"], correct:"Money unit" },
+    { q:"一共 means?", options:["In total","Maybe","Outside"], correct:"In total" },
+    { q:"市中心 means?", options:["City centre","Village","School"], correct:"City centre" }
+  ]
+};
+
+function showStep(step){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+step).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function getQ(set){
+  let list = questions[set];
+  return list[Math.floor(Math.random()*list.length)];
+}
+
+function load(id,set){
+  let q = getQ(set);
+  let ops = shuffle([...q.options]);
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${ops.map(o=>`<button onclick="check(this,'${o}','${q.correct}')">${o}</button>`).join("")}
+    </div>`;
+}
+
+function check(btn,a,c){
+  let card = btn.closest(".lesson-card");
+  let fb = card.querySelector(".feedback");
+  let btns = card.querySelectorAll(".quiz-buttons button");
+
+  btns.forEach(b=>{
+    b.disabled=true;
+    if(b.textContent===c){b.classList.add("correct-answer");}
+  });
+
+  if(a===c){
+    fb.textContent="Correct.";
+    fb.className="feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    fb.textContent="Not quite.";
+    fb.className="feedback wrong-feedback";
+  }
+
+  card.querySelector(".continue-btn").classList.remove("hidden");
+}
+
+load("q1","q1");
+load("q2","q2");
+load("q3","q3");
+</script>
+
+</body>
+</html>

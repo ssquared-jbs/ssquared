@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Problems and Impressions | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Travel Experiences</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="travel-experiences.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Problems and Impressions</h2>
+  <p>Learn how to describe travel problems and say what impression a place gave you.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Travel problems</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>迷路</h3><p>mí lù</p><span>to get lost</span></div>
+      <div class="vocab-card"><h3>累</h3><p>lèi</p><span>tired</span></div>
+      <div class="vocab-card"><h3>着急</h3><p>zháo jí</p><span>worried / anxious</span></div>
+      <div class="vocab-card"><h3>问题</h3><p>wèn tí</p><span>problem</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我在北京迷路了。</p>
+      <p>I got lost in Beijing.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">旅行很有意思，但是我很累。</p>
+      <p>The trip was interesting, but I was very tired.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Feelings during a trip</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>开心</h3><p>kāi xīn</p><span>happy</span></div>
+      <div class="vocab-card"><h3>兴奋</h3><p>xīng fèn</p><span>excited</span></div>
+      <div class="vocab-card"><h3>失望</h3><p>shī wàng</p><span>disappointed</span></div>
+      <div class="vocab-card"><h3>难忘</h3><p>nán wàng</p><span>unforgettable</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这次旅行很难忘。</p>
+      <p>This trip was unforgettable.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我很开心，因为我参观了长城。</p>
+      <p>I was very happy because I visited the Great Wall.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Describing impressions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>印象</h3><p>yìn xiàng</p><span>impression</span></div>
+      <div class="vocab-card"><h3>深刻</h3><p>shēn kè</p><span>deep / strong</span></div>
+      <div class="vocab-card"><h3>壮观</h3><p>zhuàng guān</p><span>spectacular</span></div>
+      <div class="vocab-card"><h3>有名</h3><p>yǒu míng</p><span>famous</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">长城给我留下了深刻的印象。</p>
+      <p>The Great Wall left a deep impression on me.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">故宫很有名，也很壮观。</p>
+      <p>The Forbidden City is famous and also spectacular.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Explaining what happened</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>忽然</h3><p>hū rán</p><span>suddenly</span></div>
+      <div class="vocab-card"><h3>发现</h3><p>fā xiàn</p><span>to discover / realise</span></div>
+      <div class="vocab-card"><h3>以为</h3><p>yǐ wéi</p><span>to think mistakenly</span></div>
+      <div class="vocab-card"><h3>最后</h3><p>zuì hòu</p><span>finally</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我忽然发现我迷路了。</p>
+      <p>I suddenly realised I was lost.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">最后，我找到了地铁站。</p>
+      <p>Finally, I found the subway station.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        这次旅行很难忘。长城给我留下了深刻的印象。可是，我在北京迷路了，所以有点儿着急。最后，我找到了地铁站。
+      </p>
+      <p>
+        This trip was unforgettable. The Great Wall left a deep impression on me. However, I got lost in Beijing, so I was a little worried. Finally, I found the subway station.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="travel-experiences-sentence-builder.html">← Sentence Builder</a>
+      <a href="travel-experiences.html">Back to Topic</a>
+      <a href="travel-experiences-4.html">Next Page →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "迷路 means?", options: ["To get lost","To travel","To take photos"], correct: "To get lost" },
+    { q: "累 means?", options: ["Tired","Happy","Famous"], correct: "Tired" },
+    { q: "着急 means?", options: ["Worried / anxious","Beautiful","Convenient"], correct: "Worried / anxious" },
+    { q: "问题 means?", options: ["Problem","Museum","Ticket"], correct: "Problem" }
+  ],
+
+  q2: [
+    { q: "开心 means?", options: ["Happy","Lost","Expensive"], correct: "Happy" },
+    { q: "兴奋 means?", options: ["Excited","Tired","Quiet"], correct: "Excited" },
+    { q: "失望 means?", options: ["Disappointed","Useful","Modern"], correct: "Disappointed" },
+    { q: "难忘 means?", options: ["Unforgettable","Dangerous","Nearby"], correct: "Unforgettable" }
+  ],
+
+  q3: [
+    { q: "印象 means?", options: ["Impression","Route","Weather"], correct: "Impression" },
+    { q: "壮观 means?", options: ["Spectacular","Small","Boring"], correct: "Spectacular" },
+    { q: "有名 means?", options: ["Famous","Lost","Cheap"], correct: "Famous" },
+    { q: "忽然 means?", options: ["Suddenly","Finally","Because"], correct: "Suddenly" },
+    { q: "发现 means?", options: ["To discover / realise","To sell","To queue"], correct: "To discover / realise" }
+  ]
+};
+
+function showStep(n){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+n).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadQuestion(id,set){
+  const q = questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts = shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(btn, sel, ans) {
+  const box = btn.closest(".lesson-card");
+  const feedback = box.querySelector(".feedback");
+  const cont = box.querySelector(".continue-btn");
+
+  box.querySelectorAll(".quiz-buttons button").forEach(b => {
+    b.disabled = true;
+
+    if (b.textContent.includes(ans)) {
+      b.classList.add("correct-answer");
+    }
+  });
+
+  if (sel === ans) {
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  cont.disabled = false;
+  cont.classList.remove("hidden");
+}
+
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

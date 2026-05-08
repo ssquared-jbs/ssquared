@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time Basics | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Everyday Life</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="everyday-life.html">← Back to Everyday Life</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Time and Daily Schedule</h2>
+  <p>Learn how to tell the time and talk about when things happen.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Days and time words</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>星期</h3><p>xīngqī</p><span>week / day of week</span></div>
+      <div class="vocab-card"><h3>时间</h3><p>shíjiān</p><span>time</span></div>
+      <div class="vocab-card"><h3>什么时候</h3><p>shénme shíhou</p><span>when</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">你什么时候学习？</p>
+      <p>When do you study?</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Telling the time</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>点</h3><p>diǎn</p><span>o'clock</span></div>
+      <div class="vocab-card"><h3>分</h3><p>fēn</p><span>minutes</span></div>
+      <div class="vocab-card"><h3>半</h3><p>bàn</p><span>half</span></div>
+      <div class="vocab-card"><h3>刻</h3><p>kè</p><span>quarter</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">现在三点半。</p>
+      <p>It is 3:30 now.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Parts of the day</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>上午</h3><p>shàngwǔ</p><span>morning</span></div>
+      <div class="vocab-card"><h3>下午</h3><p>xiàwǔ</p><span>afternoon</span></div>
+      <div class="vocab-card"><h3>中午</h3><p>zhōngwǔ</p><span>midday</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我下午学习。</p>
+      <p>I study in the afternoon.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Using time in sentences</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>几点</h3><p>jǐ diǎn</p><span>what time</span></div>
+      <div class="vocab-card"><h3>的时候</h3><p>de shíhou</p><span>when (doing something)</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">你几点吃饭？</p>
+      <p>What time do you eat?</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我学习的时候听音乐。</p>
+      <p>I listen to music when I study.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<!-- END -->
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我上午八点学习，下午三点半做作业。
+      </p>
+      <p>
+        I study at 8am and do homework at 3:30pm.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="everyday-life.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "什么时候 means?", options: ["When", "Where", "What"], correct: "When" },
+    { q: "时间 means?", options: ["Time", "Day", "Week"], correct: "Time" },
+    { q: "星期 means?", options: ["Week / day of week", "Minute", "Afternoon"], correct: "Week / day of week" }
+  ],
+
+  q2: [
+    { q: "半 means?", options: ["Half", "Quarter", "Minute"], correct: "Half" },
+    { q: "刻 means?", options: ["Quarter", "Half", "Hour"], correct: "Quarter" },
+    { q: "分 means?", options: ["Minute", "Morning", "Time"], correct: "Minute" }
+  ],
+
+  q3: [
+    { q: "几点 means?", options: ["What time", "Where", "Who"], correct: "What time" },
+    { q: "下午 means?", options: ["Afternoon", "Morning", "Midday"], correct: "Afternoon" },
+    { q: "中午 means?", options: ["Midday", "Afternoon", "Minute"], correct: "Midday" }
+  ]
+};
+
+function showStep(stepNumber) {
+  document.querySelectorAll(".step").forEach(step => step.classList.remove("active-step"));
+  const next = document.getElementById("step" + stepNumber);
+  if (next) {
+    next.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function getRandomQuestion(set) {
+  const list = questions[set];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function loadQuestion(containerId, set) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(set);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map((option, i) => `
+        <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+          <strong>${letters[i]}.</strong> ${option}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selected, correct) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueBtn = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent.includes(correct)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selected === correct) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueBtn.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

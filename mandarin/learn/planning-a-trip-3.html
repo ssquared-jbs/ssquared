@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Details | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Planning a Trip</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="planning-a-trip.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Travel Details</h2>
+  <p>Learn how to describe dates, journey length, routes and important travel arrangements.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Dates and duration</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>日期</h3><p>rì qī</p><span>date</span></div>
+      <div class="vocab-card"><h3>时间</h3><p>shí jiān</p><span>time</span></div>
+      <div class="vocab-card"><h3>三天</h3><p>sān tiān</p><span>three days</span></div>
+      <div class="vocab-card"><h3>一个星期</h3><p>yí gè xīng qī</p><span>one week</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我们打算去中国一个星期。</p>
+      <p>We plan to go to China for one week.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">旅行的日期是七月十号。</p>
+      <p>The date of the trip is the 10th of July.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Routes and places</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>路线</h3><p>lù xiàn</p><span>route</span></div>
+      <div class="vocab-card"><h3>地图</h3><p>dì tú</p><span>map</span></div>
+      <div class="vocab-card"><h3>市中心</h3><p>shì zhōng xīn</p><span>city centre</span></div>
+      <div class="vocab-card"><h3>景点</h3><p>jǐng diǎn</p><span>tourist attraction</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我已经看了地图和路线。</p>
+      <p>I have already looked at the map and route.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我们会去市中心和几个景点。</p>
+      <p>We will go to the city centre and several tourist attractions.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Journey arrangements</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>出发</h3><p>chū fā</p><span>to depart</span></div>
+      <div class="vocab-card"><h3>到达</h3><p>dào dá</p><span>to arrive</span></div>
+      <div class="vocab-card"><h3>机场</h3><p>jī chǎng</p><span>airport</span></div>
+      <div class="vocab-card"><h3>火车站</h3><p>huǒ chē zhàn</p><span>train station</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我们早上八点出发。</p>
+      <p>We depart at 8 o’clock in the morning.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">飞机下午三点到达机场。</p>
+      <p>The plane arrives at the airport at 3 o’clock in the afternoon.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Practical details</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>费用</h3><p>fèi yòng</p><span>cost / expense</span></div>
+      <div class="vocab-card"><h3>预算</h3><p>yù suàn</p><span>budget</span></div>
+      <div class="vocab-card"><h3>保险</h3><p>bǎo xiǎn</p><span>insurance</span></div>
+      <div class="vocab-card"><h3>安全</h3><p>ān quán</p><span>safety / safe</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我们需要计划旅行的费用。</p>
+      <p>We need to plan the cost of the trip.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">旅行的时候，安全很重要。</p>
+      <p>When travelling, safety is very important.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我们打算去中国一个星期。旅行的日期是七月十号。我们已经看了地图和路线，也计划了费用。旅行的时候，安全很重要。
+      </p>
+      <p>
+        We plan to go to China for one week. The date of the trip is the 10th of July. We have already looked at the map and route, and also planned the cost. When travelling, safety is very important.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="planning-a-trip-sentence-builder.html">← Sentence Builder</a>
+      <a href="planning-a-trip.html">Back to Topic</a>
+      <a href="planning-a-trip-4.html">Next Page →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "日期 means?", options: ["Date","Map","Airport"], correct: "Date" },
+    { q: "时间 means?", options: ["Time","Cost","Route"], correct: "Time" },
+    { q: "三天 means?", options: ["Three days","Three weeks","Three months"], correct: "Three days" },
+    { q: "一个星期 means?", options: ["One week","One day","One year"], correct: "One week" }
+  ],
+
+  q2: [
+    { q: "路线 means?", options: ["Route","Passport","Hotel"], correct: "Route" },
+    { q: "地图 means?", options: ["Map","Ticket","Visa"], correct: "Map" },
+    { q: "市中心 means?", options: ["City centre","Seaside","Mountain area"], correct: "City centre" },
+    { q: "景点 means?", options: ["Tourist attraction","Luggage","Insurance"], correct: "Tourist attraction" }
+  ],
+
+  q3: [
+    { q: "出发 means?", options: ["To depart","To arrive","To return"], correct: "To depart" },
+    { q: "到达 means?", options: ["To arrive","To book","To pack"], correct: "To arrive" },
+    { q: "费用 means?", options: ["Cost / expense","Safety","Route"], correct: "Cost / expense" },
+    { q: "预算 means?", options: ["Budget","Passport","Hotel"], correct: "Budget" },
+    { q: "安全 means?", options: ["Safety / safe","Dangerous","Expensive"], correct: "Safety / safe" }
+  ]
+};
+
+function showStep(n){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+n).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadQuestion(id,set){
+  const q = questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts = shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(btn, sel, ans) {
+  const box = btn.closest(".lesson-card");
+  const feedback = box.querySelector(".feedback");
+  const cont = box.querySelector(".continue-btn");
+
+  box.querySelectorAll(".quiz-buttons button").forEach(b => {
+    b.disabled = true;
+
+    if (b.textContent.includes(ans)) {
+      b.classList.add("correct-answer");
+    }
+  });
+
+  if (sel === ans) {
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  cont.disabled = false;
+  cont.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

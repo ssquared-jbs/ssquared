@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Problems Abroad | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Public Services and Customs</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="public-services-customs.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Problems Abroad</h2>
+  <p>Learn how to explain travel problems and ask for help when something goes wrong.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Common problems</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>丢了</h3><p>diū le</p><span>lost</span></div>
+      <div class="vocab-card"><h3>忘记</h3><p>wàng jì</p><span>to forget</span></div>
+      <div class="vocab-card"><h3>麻烦</h3><p>má fan</p><span>trouble / troublesome</span></div>
+      <div class="vocab-card"><h3>问题</h3><p>wèn tí</p><span>problem</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的护照丢了。</p>
+      <p>My passport is lost.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我忘记带签证了。</p>
+      <p>I forgot to bring my visa.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Asking for help</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>求助</h3><p>qiú zhù</p><span>to ask for help</span></div>
+      <div class="vocab-card"><h3>需要帮助</h3><p>xū yào bāng zhù</p><span>to need help</span></div>
+      <div class="vocab-card"><h3>大使馆</h3><p>dà shǐ guǎn</p><span>embassy</span></div>
+      <div class="vocab-card"><h3>警察局</h3><p>jǐng chá jú</p><span>police station</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我需要帮助。</p>
+      <p>I need help.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我去大使馆求助。</p>
+      <p>I went to the embassy to ask for help.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Explaining consequences</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>不能</h3><p>bù néng</p><span>cannot</span></div>
+      <div class="vocab-card"><h3>过海关</h3><p>guò hǎi guān</p><span>to go through customs</span></div>
+      <div class="vocab-card"><h3>迟到</h3><p>chí dào</p><span>to be late</span></div>
+      <div class="vocab-card"><h3>耽误</h3><p>dān wu</p><span>to delay</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">因为我忘记带护照，所以不能过海关。</p>
+      <p>Because I forgot to bring my passport, I cannot go through customs.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这个问题耽误了我的旅行。</p>
+      <p>This problem delayed my trip.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Solving the problem</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>解决</h3><p>jiě jué</p><span>to solve</span></div>
+      <div class="vocab-card"><h3>重新办理</h3><p>chóng xīn bàn lǐ</p><span>to apply again / handle again</span></div>
+      <div class="vocab-card"><h3>联系</h3><p>lián xì</p><span>to contact</span></div>
+      <div class="vocab-card"><h3>工作人员</h3><p>gōng zuò rén yuán</p><span>staff member</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">工作人员帮助我解决了问题。</p>
+      <p>The staff member helped me solve the problem.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我联系了大使馆。</p>
+      <p>I contacted the embassy.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我的护照丢了，所以我不能过海关。我很着急，就去大使馆求助。工作人员帮助我解决了问题。
+      </p>
+      <p>
+        My passport was lost, so I could not go through customs. I was very worried, so I went to the embassy to ask for help. The staff member helped me solve the problem.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="public-services-customs-sentence-builder.html">← Sentence Builder</a>
+      <a href="public-services-customs.html">Back to Topic</a>
+      <a href="public-services-customs-4.html">Next Page →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "丢了 means?", options: ["Lost","Prepared","Booked"], correct: "Lost" },
+    { q: "忘记 means?", options: ["To forget","To arrive","To check"], correct: "To forget" },
+    { q: "麻烦 means?", options: ["Trouble / troublesome","Cheap","Modern"], correct: "Trouble / troublesome" },
+    { q: "问题 means?", options: ["Problem","Passport","Worker"], correct: "Problem" }
+  ],
+
+  q2: [
+    { q: "求助 means?", options: ["To ask for help","To queue","To travel"], correct: "To ask for help" },
+    { q: "大使馆 means?", options: ["Embassy","Hospital","Post office"], correct: "Embassy" },
+    { q: "警察局 means?", options: ["Police station","Airport","Bank"], correct: "Police station" },
+    { q: "需要帮助 means?", options: ["To need help","To buy tickets","To pack luggage"], correct: "To need help" }
+  ],
+
+  q3: [
+    { q: "过海关 means?", options: ["To go through customs","To go to hospital","To book a hotel"], correct: "To go through customs" },
+    { q: "不能 means?", options: ["Cannot","Can","Already"], correct: "Cannot" },
+    { q: "解决 means?", options: ["To solve","To forget","To lose"], correct: "To solve" },
+    { q: "联系 means?", options: ["To contact","To eat","To visit"], correct: "To contact" },
+    { q: "工作人员 means?", options: ["Staff member","Tourist","Friend"], correct: "Staff member" }
+  ]
+};
+
+function showStep(n){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+n).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadQuestion(id,set){
+  const q = questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts = shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(btn, sel, ans) {
+  const box = btn.closest(".lesson-card");
+  const feedback = box.querySelector(".feedback");
+  const cont = box.querySelector(".continue-btn");
+
+  box.querySelectorAll(".quiz-buttons button").forEach(b => {
+    b.disabled = true;
+
+    if (b.textContent.includes(ans)) {
+      b.classList.add("correct-answer");
+    }
+  });
+
+  if (sel === ans) {
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  cont.disabled = false;
+  cont.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

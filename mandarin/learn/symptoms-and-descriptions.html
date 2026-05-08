@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Symptoms and Descriptions | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Health and Fitness</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="health-fitness.html">← Back to Health and Fitness</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Symptoms and Descriptions</h2>
+  <p>Learn how to describe people, illness, phone calls and appointments.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Describing appearance</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>矮</h3><p>ǎi</p><span>short, height</span></div>
+      <div class="vocab-card"><h3>胖</h3><p>pàng</p><span>fat</span></div>
+      <div class="vocab-card"><h3>瘦</h3><p>shòu</p><span>slim</span></div>
+      <div class="vocab-card"><h3>长</h3><p>cháng</p><span>long</span></div>
+      <div class="vocab-card"><h3>短</h3><p>duǎn</p><span>short, length</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的哥哥很高，我的弟弟很矮。</p>
+      <p>My older brother is tall, and my younger brother is short.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Feeling ill</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>生病</h3><p>shēng bìng</p><span>to get sick</span></div>
+      <div class="vocab-card"><h3>舒服</h3><p>shū fu</p><span>comfortable</span></div>
+      <div class="vocab-card"><h3>不舒服</h3><p>bù shū fu</p><span>not well</span></div>
+      <div class="vocab-card"><h3>嗓子</h3><p>sǎng zi</p><span>throat</span></div>
+      <div class="vocab-card"><h3>可以</h3><p>kě yǐ</p><span>can / may</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我生病了，嗓子不舒服。</p>
+      <p>I am ill, and my throat does not feel well.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Phone calls and appointments</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>打电话</h3><p>dǎ diàn huà</p><span>make a phone call</span></div>
+      <div class="vocab-card"><h3>喂</h3><p>wéi</p><span>hello, on the phone</span></div>
+      <div class="vocab-card"><h3>给</h3><p>gěi</p><span>to give</span></div>
+      <div class="vocab-card"><h3>护士</h3><p>hù shi</p><span>nurse</span></div>
+      <div class="vocab-card"><h3>预约</h3><p>yù yuē</p><span>make an appointment / book</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我给医院打电话，想预约看病。</p>
+      <p>I phone the hospital and want to book an appointment to see a doctor.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">喂，请问护士在吗？</p>
+      <p>Hello, is the nurse there?</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我生病了，嗓子不舒服。我给医院打电话，想预约看病。
+      </p>
+      <p>
+        I am ill and my throat does not feel well. I phone the hospital and want to book an appointment.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="health-fitness.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "矮 means?", options: ["Short in height", "Slim", "Long"], correct: "Short in height" },
+    { q: "胖 means?", options: ["Fat", "Short", "Long"], correct: "Fat" },
+    { q: "瘦 means?", options: ["Slim", "Fat", "Tall"], correct: "Slim" },
+    { q: "长 means?", options: ["Long", "Short in length", "Sick"], correct: "Long" }
+  ],
+
+  q2: [
+    { q: "生病 means?", options: ["To get sick", "To exercise", "To call"], correct: "To get sick" },
+    { q: "不舒服 means?", options: ["Not well", "Happy", "Comfortable"], correct: "Not well" },
+    { q: "嗓子 means?", options: ["Throat", "Head", "Foot"], correct: "Throat" },
+    { q: "可以 means?", options: ["Can / may", "Doctor", "Appointment"], correct: "Can / may" }
+  ],
+
+  q3: [
+    { q: "打电话 means?", options: ["Make a phone call", "See a doctor", "Get sick"], correct: "Make a phone call" },
+    { q: "护士 means?", options: ["Nurse", "Doctor", "Dentist"], correct: "Nurse" },
+    { q: "预约 means?", options: ["Make an appointment", "To give", "To be slim"], correct: "Make an appointment" },
+    { q: "喂 is used for...", options: ["Starting a phone call", "Ordering food", "Saying goodbye"], correct: "Starting a phone call" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saving the Planet Final Test | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Saving the Planet | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="saving-the-planet.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Final Test</h2>
+  <p>25 mixed questions and one exam-style writing task.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder light-essay">
+    <p><strong>Write a Mandarin paragraph about saving the planet. Try to include:</strong></p>
+
+    <ul>
+      <li>one environmental problem</li>
+      <li>one solution, like 回收 or 节约用水</li>
+      <li>one daily green habit</li>
+      <li>one opinion about protecting the planet</li>
+      <li>one sentence using 因为……所以……</li>
+      <li>one contrast using 虽然……但是……</li>
+      <li>one strong structure using 不仅……而且……</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+    <button class="continue-btn" onclick="checkEssay()">Check Essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="saving-the-planet-4.html">← Previous Page</a>
+  <a href="saving-the-planet.html">Back to Topic</a>
+  <a href="../learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+  {t:"mcq", q:"污染 means?", o:["Pollution","Forest","Energy"], a:"Pollution"},
+  {t:"mcq", q:"空气污染 means?", o:["Air pollution","Water pollution","Plastic waste"], a:"Air pollution"},
+  {t:"mcq", q:"垃圾 means?", o:["Rubbish / litter","Animal","Climate"], a:"Rubbish / litter"},
+  {t:"mcq", q:"气候变化 means?", o:["Climate change","Forest","Energy"], a:"Climate change"},
+  {t:"mcq", q:"回收 means?", o:["To recycle","To waste","To pollute"], a:"To recycle"},
+  {t:"mcq", q:"节约能源 means?", o:["To save energy","To waste water","To recycle bottles"], a:"To save energy"},
+  {t:"mcq", q:"步行 means?", o:["To walk","To drive","To recycle"], a:"To walk"},
+  {t:"mcq", q:"环保 means?", o:["Environmental protection","Plastic rubbish","Climate change"], a:"Environmental protection"},
+
+  {t:"fill", q:"空气污染越来越 ____。", o:["严重","好吃","热闹"], a:"严重"},
+  {t:"fill", q:"我们应该 ____ 纸和瓶子。", o:["回收","浪费","污染"], a:"回收"},
+  {t:"fill", q:"离开房间的时候，我会 ____。", o:["关灯","开车","下载"], a:"关灯"},
+  {t:"fill", q:"为了保护环境，我常常 ____。", o:["步行","采访","发信息"], a:"步行"},
+  {t:"fill", q:"我们应该少用 ____。", o:["塑料","老师","节日"], a:"塑料"},
+  {t:"fill", q:"虽然环保不容易，____ 非常重要。", o:["但是","因为","所以"], a:"但是"},
+
+  {t:"type", q:"Type the Chinese for: rubbish", a:"垃圾"},
+  {t:"type", q:"Type the Chinese for: plastic", a:"塑料"},
+  {t:"type", q:"Type the Chinese for: energy", a:"能源"},
+  {t:"type", q:"Type the Chinese for: future", a:"未来"},
+  {t:"type", q:"Type the Chinese for: responsibility", a:"责任"},
+
+  {t:"order", q:"Build: Air pollution is serious.", w:["空气污染","很严重"], a:"空气污染很严重"},
+  {t:"order", q:"Build: We should recycle paper and bottles.", w:["我们","应该","回收纸和瓶子"], a:"我们应该回收纸和瓶子"},
+  {t:"order", q:"Build: Protecting the environment is important.", w:["保护环境","很重要"], a:"保护环境很重要"},
+  {t:"order", q:"Build: Everyone has responsibility.", w:["每个人","都有","责任"], a:"每个人都有责任"},
+  {t:"order", q:"Build: Environmental protection is not only helpful, but also important.", w:["环保","不仅有帮助","而且很重要"], a:"环保不仅有帮助而且很重要"},
+  {t:"order", q:"Build: We should take action.", w:["我们","应该","采取行动"], a:"我们应该采取行动"}
+];
+
+function shuffle(array){
+  for(let i=array.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [array[i],array[j]]=[array[j],array[i]];
+  }
+  return array;
+}
+
+function safe(text){
+  return String(text).replace(/'/g,"\\'");
+}
+
+function loadQuestions(){
+  const area = document.getElementById("questionArea");
+  area.innerHTML = "";
+
+  shuffle([...questions]).slice(0,25).forEach(function(q,i){
+    area.innerHTML += buildQuestion(q,i);
+  });
+}
+
+function buildQuestion(q,i){
+  if(q.t === "mcq" || q.t === "fill"){
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option){
+            return `
+              <button onclick="checkAnswer(this,'${safe(option)}','${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if(q.t === "type"){
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this,'${safe(q.a)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if(q.t === "order"){
+    const builderId = "builder" + i;
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${shuffle([...q.w]).map(function(word){
+            return `<button onclick="addWord(this,'${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}','${safe(q.a)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}','${bankId}')">Reset</button>
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button,selected,answer){
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn){
+    btn.disabled = true;
+    if(btn.textContent.includes(answer)){
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if(selected === answer){
+    button.classList.add("correct-answer");
+    markQuestion(true,feedback);
+  } else {
+    button.classList.add("wrong-answer");
+    markQuestion(false,feedback);
+  }
+}
+
+function checkTypedAnswer(button,answer){
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(input.value.trim() === answer,feedback);
+}
+
+function addWord(button,builderId){
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId,answer){
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const studentAnswer = Array.from(builder.children)
+    .map(function(word){
+      return word.textContent;
+    })
+    .join("");
+
+  if(studentAnswer === answer){
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+    markQuestion(true,feedback);
+  } else {
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+    markQuestion(false,feedback);
+  }
+}
+
+function resetOrder(builderId,bankId){
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button){
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect,feedback){
+  total++;
+
+  if(isCorrect){
+    correct++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrong++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults(){
+  document.getElementById("totalQ").textContent = total;
+  document.getElementById("correctQ").textContent = correct;
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+  if(total > 0){
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay(){
+  const text = document.getElementById("essay").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "污染","空气污染","垃圾","塑料","气候变化","地球","森林","动物",
+    "浪费","能源","水","危险","重要","严重","保护环境","未来",
+    "回收","纸","瓶子","减少垃圾","节约能源","节约用水","关灯",
+    "骑自行车","坐公交车","步行","汽车","种树","保护动物","环保",
+    "责任","少用塑料","捡垃圾","回收箱","自带水瓶","重复使用",
+    "鼓励","参加","活动","一起行动","因为","所以","虽然","但是",
+    "不仅","而且"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word){
+    if(text.includes(word)){
+      found++;
+    }
+  });
+
+  if(text.length < 40){
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write more. Aim for at least 5 sentences.</p>";
+  } else if(found >= 9){
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included lots of environmental vocabulary and strong structures.</p>";
+  } else if(found >= 6){
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail about problems, solutions or daily habits.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but add more key environmental vocabulary and stronger structures.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Progress and Exams | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>School Routine</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="school-routine.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Progress and Exams</h2>
+  <p>Learn how to talk about progress, exams, results and school opinions.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Progress and opinions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>进步</h3><p>jìn bù</p><span>to improve</span></div>
+      <div class="vocab-card"><h3>愉快</h3><p>yú kuài</p><span>happy</span></div>
+      <div class="vocab-card"><h3>困难</h3><p>kùn nan</p><span>difficult</span></div>
+      <div class="vocab-card"><h3>差</h3><p>chà</p><span>poor / bad</span></div>
+      <div class="vocab-card"><h3>还可以</h3><p>hái kě yǐ</p><span>not too bad / acceptable</span></div>
+      <div class="vocab-card"><h3>有趣</h3><p>yǒu qù</p><span>interesting</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的汉语有进步，所以我很愉快。</p>
+      <p>My Chinese has improved, so I am very happy.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">物理很困难，但是还可以。</p>
+      <p>Physics is difficult, but it is still acceptable.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Exams and results</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>事情</h3><p>shì qing</p><span>things / matters</span></div>
+      <div class="vocab-card"><h3>点钟</h3><p>diǎn zhōng</p><span>o’clock</span></div>
+      <div class="vocab-card"><h3>假期</h3><p>jià qī</p><span>holiday / vacation</span></div>
+      <div class="vocab-card"><h3>考试</h3><p>kǎo shì</p><span>examination</span></div>
+      <div class="vocab-card"><h3>成绩</h3><p>chéng jì</p><span>result / score</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">八点钟我有考试。</p>
+      <p>At eight o’clock I have an exam.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的成绩不错。</p>
+      <p>My results are not bad.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. School events and language</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>家长会</h3><p>jiā zhǎng huì</p><span>parents’ meeting</span></div>
+      <div class="vocab-card"><h3>语言</h3><p>yǔ yán</p><span>language</span></div>
+      <div class="vocab-card"><h3>贵</h3><p>guì</p><span>expensive</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">明天学校有家长会。</p>
+      <p>Tomorrow the school has a parents’ meeting.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">学习语言很有趣，但是有时候很贵。</p>
+      <p>Learning languages is interesting, but sometimes expensive.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我的汉语有进步，成绩也不错。考试很困难，但是学习语言很有趣。
+      </p>
+      <p>
+        My Chinese has improved, and my results are also not bad. Exams are difficult, but learning languages is interesting.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="school-routine.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "进步 means?", options: ["To improve", "Difficult", "Expensive"], correct: "To improve" },
+    { q: "愉快 means?", options: ["Happy", "Poor / bad", "Interesting"], correct: "Happy" },
+    { q: "困难 means?", options: ["Difficult", "Easy", "Happy"], correct: "Difficult" },
+    { q: "差 means?", options: ["Poor / bad", "Good", "Useful"], correct: "Poor / bad" },
+    { q: "有趣 means?", options: ["Interesting", "Expensive", "Holiday"], correct: "Interesting" }
+  ],
+
+  q2: [
+    { q: "事情 means?", options: ["Things / matters", "Exam", "Score"], correct: "Things / matters" },
+    { q: "点钟 means?", options: ["O’clock", "Holiday", "Language"], correct: "O’clock" },
+    { q: "假期 means?", options: ["Holiday / vacation", "Parents’ meeting", "Exam"], correct: "Holiday / vacation" },
+    { q: "考试 means?", options: ["Examination", "Result", "Language"], correct: "Examination" },
+    { q: "成绩 means?", options: ["Result / score", "Holiday", "Expensive"], correct: "Result / score" }
+  ],
+
+  q3: [
+    { q: "家长会 means?", options: ["Parents’ meeting", "Exam", "Holiday"], correct: "Parents’ meeting" },
+    { q: "语言 means?", options: ["Language", "Result", "Thing"], correct: "Language" },
+    { q: "贵 means?", options: ["Expensive", "Interesting", "Happy"], correct: "Expensive" },
+    { q: "还可以 means?", options: ["Not too bad / acceptable", "Very bad", "Very expensive"], correct: "Not too bad / acceptable" }
+  ]
+};
+
+function showStep(stepNumber) {
+  document.querySelectorAll(".step").forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

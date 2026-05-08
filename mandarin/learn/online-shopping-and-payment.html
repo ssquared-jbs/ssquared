@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Shopping and Payment | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Shopping</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="shopping.html">← Back to Shopping</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Online Shopping and Payment</h2>
+  <p>Learn online shopping, electronics, payment methods, prices and delivery.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Online actions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>电器</h3><p>diàn qì</p><span>electronic devices</span></div>
+      <div class="vocab-card"><h3>点击</h3><p>diǎn jī</p><span>to click</span></div>
+      <div class="vocab-card"><h3>登陆</h3><p>dēng lù</p><span>to log in</span></div>
+      <div class="vocab-card"><h3>注册</h3><p>zhù cè</p><span>to register</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我先注册，然后登陆网站。</p>
+      <p>I first register, then log in to the website.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Electronics and payment</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>照相机</h3><p>zhào xiàng jī</p><span>camera</span></div>
+      <div class="vocab-card"><h3>游戏机</h3><p>yóu xì jī</p><span>game player</span></div>
+      <div class="vocab-card"><h3>方式</h3><p>fāng shì</p><span>way / method</span></div>
+      <div class="vocab-card"><h3>现金</h3><p>xiàn jīn</p><span>cash</span></div>
+      <div class="vocab-card"><h3>信用卡</h3><p>xìn yòng kǎ</p><span>credit card</span></div>
+      <div class="vocab-card"><h3>支票</h3><p>zhī piào</p><span>cheque</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我想买照相机，可以用现金或者信用卡付钱。</p>
+      <p>I want to buy a camera. I can pay with cash or credit card.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Selling and currency</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>卖</h3><p>mài</p><span>to sell</span></div>
+      <div class="vocab-card"><h3>这个月</h3><p>zhè ge yuè</p><span>this month</span></div>
+      <div class="vocab-card"><h3>联系</h3><p>lián xì</p><span>to contact</span></div>
+      <div class="vocab-card"><h3>联系人</h3><p>lián xì rén</p><span>contact person</span></div>
+      <div class="vocab-card"><h3>美金</h3><p>Měi jīn</p><span>US dollar</span></div>
+      <div class="vocab-card"><h3>港币</h3><p>Gǎng bì</p><span>Hong Kong dollar</span></div>
+      <div class="vocab-card"><h3>英镑</h3><p>Yīng bàng</p><span>British pound</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这个月商店卖很多电器。</p>
+      <p>This month the shop sells many electronic devices.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Price and delivery</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>找</h3><p>zhǎo</p><span>to look for</span></div>
+      <div class="vocab-card"><h3>价钱</h3><p>jià qián</p><span>price</span></div>
+      <div class="vocab-card"><h3>送</h3><p>sòng</p><span>to deliver / give as a present</span></div>
+      <div class="vocab-card"><h3>以上</h3><p>yǐ shàng</p><span>above / more than</span></div>
+      <div class="vocab-card"><h3>以下</h3><p>yǐ xià</p><span>below / fewer than</span></div>
+      <div class="vocab-card"><h3>费</h3><p>fèi</p><span>fee / fare</span></div>
+      <div class="vocab-card"><h3>免费</h3><p>miǎn fèi</p><span>free of charge</span></div>
+      <div class="vocab-card"><h3>送货</h3><p>sòng huò</p><span>deliver goods</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">一百块以上免费送货。</p>
+      <p>Delivery is free for orders above 100 yuan.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我在网上找价钱。</p>
+      <p>I look for prices online.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我想在网上买照相机。我先注册，然后登陆网站。一百块以上免费送货。
+      </p>
+      <p>
+        I want to buy a camera online. I first register, then log in to the website. Delivery is free for orders over 100 yuan.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="shopping.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "电器 means?", options: ["Electronic devices", "Cash", "Camera"], correct: "Electronic devices" },
+    { q: "点击 means?", options: ["To click", "To sell", "To deliver"], correct: "To click" },
+    { q: "登陆 means?", options: ["To log in", "To register", "To contact"], correct: "To log in" },
+    { q: "注册 means?", options: ["To register", "To click", "To pay"], correct: "To register" }
+  ],
+
+  q2: [
+    { q: "照相机 means?", options: ["Camera", "Game player", "Credit card"], correct: "Camera" },
+    { q: "游戏机 means?", options: ["Game player", "Camera", "Cheque"], correct: "Game player" },
+    { q: "现金 means?", options: ["Cash", "Credit card", "Price"], correct: "Cash" },
+    { q: "信用卡 means?", options: ["Credit card", "Cheque", "Cash"], correct: "Credit card" }
+  ],
+
+  q3: [
+    { q: "价钱 means?", options: ["Price", "Contact person", "Fee"], correct: "Price" },
+    { q: "免费 means?", options: ["Free of charge", "Expensive", "Below"], correct: "Free of charge" },
+    { q: "送货 means?", options: ["Deliver goods", "Look for", "Sell"], correct: "Deliver goods" },
+    { q: "以上 means?", options: ["Above / more than", "Below / less than", "This month"], correct: "Above / more than" },
+    { q: "以下 means?", options: ["Below / less than", "Above / more than", "Cash"], correct: "Below / less than" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

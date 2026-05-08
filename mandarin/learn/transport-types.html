@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Types of Transport | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Transportation</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="transportation.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Types of Transport</h2>
+  <p>Learn key transport vocabulary and how to say how you travel.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Basic transport words</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>交通</h3><p>jiāo tōng</p><span>traffic / transport</span></div>
+      <div class="vocab-card"><h3>交通工具</h3><p>jiāo tōng gōng jù</p><span>means of transport</span></div>
+      <div class="vocab-card"><h3>摩托车</h3><p>mó tuō chē</p><span>motorbike</span></div>
+      <div class="vocab-card"><h3>电车</h3><p>diàn chē</p><span>tram</span></div>
+      <div class="vocab-card"><h3>缆车</h3><p>lǎn chē</p><span>cable car</span></div>
+      <div class="vocab-card"><h3>人力车</h3><p>rén lì chē</p><span>rickshaw</span></div>
+      <div class="vocab-card"><h3>校车</h3><p>xiào chē</p><span>school bus</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我觉得电车是很好的交通工具。</p>
+      <p>I think trams are a very good means of transport.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. How you travel</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>坐</h3><p>zuò</p><span>to travel by</span></div>
+      <div class="vocab-card"><h3>骑</h3><p>qí</p><span>to ride</span></div>
+      <div class="vocab-card"><h3>还</h3><p>hái</p><span>also / still</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我每天坐校车上学。</p>
+      <p>I go to school by bus every day.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我骑摩托车，也坐电车。</p>
+      <p>I ride a motorbike and also take the tram.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我觉得摩托车很方便。我每天坐校车上学，有时候也坐电车。
+      </p>
+      <p>
+        I think motorbikes are convenient. I go to school by bus every day, and sometimes also take the tram.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="transportation.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "交通 means?", options: ["Traffic / transport", "School", "Journey"], correct: "Traffic / transport" },
+    { q: "摩托车 means?", options: ["Motorbike", "Car", "Train"], correct: "Motorbike" },
+    { q: "电车 means?", options: ["Tram", "Plane", "Boat"], correct: "Tram" },
+    { q: "校车 means?", options: ["School bus", "Taxi", "Bike"], correct: "School bus" }
+  ],
+
+  q2: [
+    { q: "坐 means?", options: ["To travel by", "To run", "To walk"], correct: "To travel by" },
+    { q: "骑 means?", options: ["To ride", "To sit", "To stop"], correct: "To ride" },
+    { q: "还 means?", options: ["Also / still", "Only", "Never"], correct: "Also / still" }
+  ]
+};
+
+function showStep(stepNumber){
+  document.querySelectorAll(".step").forEach(function(step){
+    step.classList.remove("active-step");
+  });
+
+  const next = document.getElementById("step"+stepNumber);
+  if(next){
+    next.classList.add("active-step");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+}
+
+function shuffle(array){
+  for(let i=array.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [array[i],array[j]]=[array[j],array[i]];
+  }
+  return array;
+}
+
+function loadQuestion(id,set){
+  const box=document.getElementById(id);
+  const q=questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts=shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  box.innerHTML=`
+    <p class="question-text">${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>`;
+}
+
+function checkAnswer(button,selected,correct){
+  const card=button.closest(".lesson-card");
+  const buttons=card.querySelectorAll(".quiz-buttons button");
+  const feedback=card.querySelector(".feedback");
+  const next=card.querySelector(".continue-btn");
+
+  buttons.forEach(btn=>{
+    btn.disabled=true;
+    if(btn.textContent.includes(correct)){
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if(selected===correct){
+    feedback.textContent="Correct.";
+    feedback.className="feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent="Not quite.";
+    feedback.className="feedback wrong-feedback";
+  }
+
+  if(next) next.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+</script>
+
+</body>
+</html>

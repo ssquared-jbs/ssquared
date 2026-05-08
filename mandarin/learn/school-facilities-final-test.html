@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Facilities Final Test | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>School Facilities | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="school-facilities.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>School Facilities Final Test</h2>
+  <p>25 mixed questions and one exam-style writing task.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder light-essay">
+    <p><strong>Write a Mandarin paragraph about your school facilities. Try to include:</strong></p>
+    <ul>
+      <li>at least three school places, like 教室, 实验室, 食堂, 体育馆 or 图书馆</li>
+      <li>one sentence using 有 or 没有</li>
+      <li>one opinion, like 我觉得, 我认为 or 我喜欢</li>
+      <li>one reason using 因为</li>
+      <li>one contrast using 虽然……可是…… or 虽然……但是……</li>
+      <li>one stronger structure, like 不仅……而且……</li>
+      <li>one sentence about an open day, visit or school facilities</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+    <button class="continue-btn" onclick="checkEssay()">Check Essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="school-facilities-4.html">← Previous Page</a>
+  <a href="school-facilities.html">Back to Topic</a>
+  <a href="../learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+  {t:"mcq", q:"教室 means?", o:["Classroom","Office","Canteen"], a:"Classroom"},
+  {t:"mcq", q:"实验室 means?", o:["Laboratory","Library","Sports hall"], a:"Laboratory"},
+  {t:"mcq", q:"食堂 means?", o:["Canteen","Playground","Office"], a:"Canteen"},
+  {t:"mcq", q:"体育馆 means?", o:["Sports hall / gym","Tuck shop","Assembly hall"], a:"Sports hall / gym"},
+  {t:"mcq", q:"图书馆 means?", o:["Library","Laboratory","Route"], a:"Library"},
+  {t:"mcq", q:"教学楼 means?", o:["Teaching building","Head teacher","Equipment"], a:"Teaching building"},
+  {t:"mcq", q:"小卖部 means?", o:["Tuck shop","Office","Open day"], a:"Tuck shop"},
+  {t:"mcq", q:"设备 means?", o:["Equipment","Facility","Route"], a:"Equipment"},
+  {t:"mcq", q:"设施 means?", o:["Facilities","Students","Parents"], a:"Facilities"},
+  {t:"mcq", q:"开放日 means?", o:["Open day","Exam day","School trip"], a:"Open day"},
+
+  {t:"fill", q:"我的学校有很多现代化的 ____。", o:["设施","护照","天气"], a:"设施"},
+  {t:"fill", q:"我们在 ____ 做实验。", o:["实验室","食堂","办公室"], a:"实验室"},
+  {t:"fill", q:"学生在 ____ 运动。", o:["操场","图书馆","教室"], a:"操场"},
+  {t:"fill", q:"我喜欢图书馆，因为那里很 ____。", o:["安静","贵","危险"], a:"安静"},
+  {t:"fill", q:"虽然学校不大，可是 ____ 很好。", o:["设备","路线","游客"], a:"设备"},
+  {t:"fill", q:"老师带家长 ____ 教学楼。", o:["参观","打折","申请"], a:"参观"},
+  {t:"fill", q:"校长 ____ 了学校的设施。", o:["介绍","买","游泳"], a:"介绍"},
+
+  {t:"type", q:"Type the Chinese for: classroom", a:"教室"},
+  {t:"type", q:"Type the Chinese for: laboratory", a:"实验室"},
+  {t:"type", q:"Type the Chinese for: canteen", a:"食堂"},
+  {t:"type", q:"Type the Chinese for: equipment", a:"设备"},
+  {t:"type", q:"Type the Chinese for: open day", a:"开放日"},
+
+  {t:"order", q:"Build: My school has a sports hall.", w:["我的学校","有","体育馆"], a:"我的学校有体育馆"},
+  {t:"order", q:"Build: The library is very quiet.", w:["图书馆","很","安静"], a:"图书馆很安静"},
+  {t:"order", q:"Build: I like the canteen.", w:["我","喜欢","食堂"], a:"我喜欢食堂"},
+  {t:"order", q:"Build: The laboratory equipment is very good.", w:["实验室的设备","很","好"], a:"实验室的设备很好"},
+  {t:"order", q:"Build: Although the school is not big, the equipment is good.", w:["虽然学校不大","可是","设备很好"], a:"虽然学校不大可是设备很好"}
+];
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
+  }
+  return array;
+}
+
+function safe(text) {
+  return String(text).replace(/'/g, "\\'");
+}
+
+function loadQuestions() {
+  const area = document.getElementById("questionArea");
+  area.innerHTML = "";
+
+  shuffle([...questions]).slice(0, 25).forEach(function(q, i) {
+    area.innerHTML += buildQuestion(q, i);
+  });
+}
+
+function buildQuestion(q, i) {
+  if (q.t === "mcq" || q.t === "fill") {
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "type") {
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this, '${safe(q.a)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "order") {
+    const builderId = "builder" + i;
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${shuffle([...q.w]).map(function(word) {
+            return `<button onclick="addWord(this, '${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}', '${safe(q.a)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}', '${bankId}')">Reset</button>
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button, selected, answer) {
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+    if (btn.textContent.includes(answer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selected === answer) {
+    button.classList.add("correct-answer");
+    markQuestion(true, feedback);
+  } else {
+    button.classList.add("wrong-answer");
+    markQuestion(false, feedback);
+  }
+}
+
+function checkTypedAnswer(button, answer) {
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(input.value.trim() === answer, feedback);
+}
+
+function addWord(button, builderId) {
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId, answer) {
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const studentAnswer = Array.from(builder.children)
+    .map(function(word) {
+      return word.textContent;
+    })
+    .join("");
+
+  if (studentAnswer === answer) {
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+    markQuestion(true, feedback);
+  } else {
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+    markQuestion(false, feedback);
+  }
+}
+
+function resetOrder(builderId, bankId) {
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button) {
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect, feedback) {
+  total++;
+
+  if (isCorrect) {
+    correct++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrong++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults() {
+  document.getElementById("totalQ").textContent = total;
+  document.getElementById("correctQ").textContent = correct;
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+  if (total > 0) {
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay() {
+  const text = document.getElementById("essay").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "教室", "实验室", "食堂", "体育馆", "图书馆", "教学楼", "设施", "设备",
+    "有", "没有", "喜欢", "觉得", "认为", "因为", "所以", "虽然", "可是",
+    "但是", "不仅", "而且", "开放日", "参观", "介绍", "校长"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word) {
+    if (text.includes(word)) {
+      found++;
+    }
+  });
+
+  if (text.length < 40) {
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write more. Aim for at least 5 sentences.</p>";
+  } else if (found >= 9) {
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included lots of key school facilities vocabulary and stronger structures.</p>";
+  } else if (found >= 6) {
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail, such as an open day sentence or a contrast using 虽然.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but add more topic vocabulary and sentence structures.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

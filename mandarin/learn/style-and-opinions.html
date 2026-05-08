@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Style and Opinions | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Clothes</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="clothes.html">← Back to Clothes</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Style and Opinions</h2>
+  <p>Learn how to describe how clothes look and give opinions.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Describing clothes</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>咖啡色</h3><p>kā fēi sè</p><span>brown</span></div>
+      <div class="vocab-card"><h3>肥</h3><p>féi</p><span>loose / big</span></div>
+      <div class="vocab-card"><h3>什么样的</h3><p>shén me yàng de</p><span>what it looks like</span></div>
+      <div class="vocab-card"><h3>好看</h3><p>hǎo kàn</p><span>good looking</span></div>
+      <div class="vocab-card"><h3>酷</h3><p>kù</p><span>cool</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这件衣服很好看，也很酷。</p>
+      <p>This piece of clothing looks good and is also cool.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Fashion opinions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>老土</h3><p>lǎo tǔ</p><span>old-fashioned</span></div>
+      <div class="vocab-card"><h3>时髦</h3><p>shí máo</p><span>trendy / fashionable</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我觉得这件衣服很时髦。</p>
+      <p>I think this piece of clothing is very fashionable.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">那件衣服有一点老土。</p>
+      <p>That piece of clothing is a bit old-fashioned.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Finish →</button>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我觉得这件衣服很好看，也很时髦，但是有一点肥。
+      </p>
+      <p>
+        I think this piece of clothing looks good and is fashionable, but it is a bit loose.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="clothes.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "咖啡色 means?", options: ["Brown", "Blue", "Black"], correct: "Brown" },
+    { q: "好看 means?", options: ["Good looking", "Ugly", "Old"], correct: "Good looking" },
+    { q: "酷 means?", options: ["Cool", "Warm", "Cold"], correct: "Cool" }
+  ],
+
+  q2: [
+    { q: "时髦 means?", options: ["Trendy / fashionable", "Old", "Cheap"], correct: "Trendy / fashionable" },
+    { q: "老土 means?", options: ["Old-fashioned", "Modern", "Cool"], correct: "Old-fashioned" },
+    { q: "肥 means?", options: ["Loose / big", "Tight", "Small"], correct: "Loose / big" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+</script>
+
+</body>
+</html>

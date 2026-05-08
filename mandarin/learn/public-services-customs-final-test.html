@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Public Services and Customs Final Test | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Public Services and Customs | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="public-services-customs.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Public Services and Customs Final Test</h2>
+  <p>25 mixed questions and one exam-style writing task.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder light-essay">
+    <p><strong>Write a Mandarin paragraph about a public service or customs problem. Try to include:</strong></p>
+    <ul>
+      <li>one public place, like 邮局, 银行, 医院, 警察局 or 大使馆</li>
+      <li>one document word, like 护照, 签证, 身份证 or 文件</li>
+      <li>one customs word, like 海关, 检查, 行李 or 排队</li>
+      <li>one problem, like 丢了, 忘记, 麻烦 or 问题</li>
+      <li>one polite phrase, like 请问, 麻烦你了 or 谢谢你的帮助</li>
+      <li>one reason using 因为</li>
+      <li>one result using 所以</li>
+      <li>one contrast using 虽然……但是……</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+    <button class="continue-btn" onclick="checkEssay()">Check Essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="public-services-customs-4.html">← Previous Page</a>
+  <a href="public-services-customs.html">Back to Topic</a>
+  <a href="../learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+  {t:"mcq", q:"邮局 means?", o:["Post office","Hospital","Airport"], a:"Post office"},
+  {t:"mcq", q:"银行 means?", o:["Bank","Museum","Hotel"], a:"Bank"},
+  {t:"mcq", q:"警察局 means?", o:["Police station","Library","Restaurant"], a:"Police station"},
+  {t:"mcq", q:"大使馆 means?", o:["Embassy","Canteen","School"], a:"Embassy"},
+  {t:"mcq", q:"护照 means?", o:["Passport","Visa","Address"], a:"Passport"},
+  {t:"mcq", q:"签证 means?", o:["Visa","Passport","Luggage"], a:"Visa"},
+  {t:"mcq", q:"海关 means?", o:["Customs","Post office","Bank"], a:"Customs"},
+  {t:"mcq", q:"表格 means?", o:["Form","Medicine","Police station"], a:"Form"},
+
+  {t:"fill", q:"我需要去 ____ 求助。", o:["大使馆","天气","食堂"], a:"大使馆"},
+  {t:"fill", q:"工作人员正在检查 ____。", o:["行李","文化","风景"], a:"行李"},
+  {t:"fill", q:"我需要填写这个 ____。", o:["表格","飞机","水果"], a:"表格"},
+  {t:"fill", q:"我的护照 ____。", o:["丢了","现代化","漂亮"], a:"丢了"},
+  {t:"fill", q:"因为我忘记带护照，所以不能 ____。", o:["过海关","拍照","吃饭"], a:"过海关"},
+  {t:"fill", q:"虽然我很着急，但是工作人员 ____ 了我。", o:["帮助","订票","学习"], a:"帮助"},
+
+  {t:"type", q:"Type the Chinese for: passport", a:"护照"},
+  {t:"type", q:"Type the Chinese for: customs", a:"海关"},
+  {t:"type", q:"Type the Chinese for: to queue", a:"排队"},
+  {t:"type", q:"Type the Chinese for: form", a:"表格"},
+  {t:"type", q:"Type the Chinese for: to forget", a:"忘记"},
+
+  {t:"order", q:"Build: Where is the police station?", w:["警察局","在哪儿"], a:"警察局在哪儿"},
+  {t:"order", q:"Build: I need help.", w:["我","需要帮助"], a:"我需要帮助"},
+  {t:"order", q:"Build: We are queueing at customs.", w:["我们","在","海关","排队"], a:"我们在海关排队"},
+  {t:"order", q:"Build: I forgot my passport.", w:["我","忘记","带","护照","了"], a:"我忘记带护照了"},
+  {t:"order", q:"Build: The staff helped me solve the problem.", w:["工作人员","帮助我","解决了问题"], a:"工作人员帮助我解决了问题"},
+  {t:"order", q:"Build: Although I was worried, the problem was solved.", w:["虽然我很着急","但是","问题解决了"], a:"虽然我很着急但是问题解决了"}
+];
+
+function shuffle(array){
+  for(let i=array.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [array[i],array[j]]=[array[j],array[i]];
+  }
+  return array;
+}
+
+function safe(text){
+  return String(text).replace(/'/g,"\\'");
+}
+
+function loadQuestions(){
+  const area = document.getElementById("questionArea");
+  area.innerHTML = "";
+
+  shuffle([...questions]).slice(0,25).forEach(function(q,i){
+    area.innerHTML += buildQuestion(q,i);
+  });
+}
+
+function buildQuestion(q,i){
+  if(q.t === "mcq" || q.t === "fill"){
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option){
+            return `
+              <button onclick="checkAnswer(this,'${safe(option)}','${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if(q.t === "type"){
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this,'${safe(q.a)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if(q.t === "order"){
+    const builderId = "builder" + i;
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${shuffle([...q.w]).map(function(word){
+            return `<button onclick="addWord(this,'${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}','${safe(q.a)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}','${bankId}')">Reset</button>
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button,selected,answer){
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn){
+    btn.disabled = true;
+    if(btn.textContent.includes(answer)){
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if(selected === answer){
+    button.classList.add("correct-answer");
+    markQuestion(true,feedback);
+  } else {
+    button.classList.add("wrong-answer");
+    markQuestion(false,feedback);
+  }
+}
+
+function checkTypedAnswer(button,answer){
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(input.value.trim() === answer,feedback);
+}
+
+function addWord(button,builderId){
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId,answer){
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const studentAnswer = Array.from(builder.children)
+    .map(function(word){
+      return word.textContent;
+    })
+    .join("");
+
+  if(studentAnswer === answer){
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+    markQuestion(true,feedback);
+  } else {
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+    markQuestion(false,feedback);
+  }
+}
+
+function resetOrder(builderId,bankId){
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button){
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect,feedback){
+  total++;
+
+  if(isCorrect){
+    correct++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrong++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults(){
+  document.getElementById("totalQ").textContent = total;
+  document.getElementById("correctQ").textContent = correct;
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+  if(total > 0){
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay(){
+  const text = document.getElementById("essay").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "邮局","银行","医院","警察局","大使馆","护照","签证","身份证","文件",
+    "海关","检查","行李","排队","表格","填写","地址","丢了","忘记",
+    "麻烦","问题","求助","帮助","工作人员","解决","请问","因为","所以",
+    "虽然","但是","不仅","而且"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word){
+    if(text.includes(word)){
+      found++;
+    }
+  });
+
+  if(text.length < 40){
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write more. Aim for at least 5 sentences.</p>";
+  } else if(found >= 9){
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included lots of public services and customs vocabulary.</p>";
+  } else if(found >= 6){
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail about the problem, help or customs.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but add more key topic vocabulary and sentence structures.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

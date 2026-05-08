@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Places | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>School Facilities</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="school-facilities.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>School Places</h2>
+  <p>Learn how to name important school buildings and describe where students go during the school day.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Main school places</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>教室</h3><p>jiào shì</p><span>classroom</span></div>
+      <div class="vocab-card"><h3>实验室</h3><p>shí yàn shì</p><span>laboratory</span></div>
+      <div class="vocab-card"><h3>食堂</h3><p>shí táng</p><span>canteen</span></div>
+      <div class="vocab-card"><h3>体育馆</h3><p>tǐ yù guǎn</p><span>sports hall / gym</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我们在教室上课。</p>
+      <p>We have lessons in the classroom.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我在实验室做实验。</p>
+      <p>I do experiments in the laboratory.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Outdoor and shared areas</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>操场</h3><p>cāo chǎng</p><span>playground / sports field</span></div>
+      <div class="vocab-card"><h3>图书馆</h3><p>tú shū guǎn</p><span>library</span></div>
+      <div class="vocab-card"><h3>礼堂</h3><p>lǐ táng</p><span>assembly hall</span></div>
+      <div class="vocab-card"><h3>办公室</h3><p>bàn gōng shì</p><span>office</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">学生在操场运动。</p>
+      <p>Students do sport on the playground.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢在图书馆看书。</p>
+      <p>I like reading books in the library.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Useful school building words</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>教学楼</h3><p>jiào xué lóu</p><span>teaching building</span></div>
+      <div class="vocab-card"><h3>小卖部</h3><p>xiǎo mài bù</p><span>tuck shop</span></div>
+      <div class="vocab-card"><h3>设备</h3><p>shè bèi</p><span>equipment</span></div>
+      <div class="vocab-card"><h3>设施</h3><p>shè shī</p><span>facilities</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">教学楼很大，也很现代化。</p>
+      <p>The teaching building is big and also modern.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">体育馆的设备很好。</p>
+      <p>The sports hall equipment is very good.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Saying what your school has</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>有</h3><p>yǒu</p><span>to have / there is</span></div>
+      <div class="vocab-card"><h3>没有</h3><p>méi yǒu</p><span>does not have / there is not</span></div>
+      <div class="vocab-card"><h3>一个</h3><p>yí ge</p><span>one</span></div>
+      <div class="vocab-card"><h3>很多</h3><p>hěn duō</p><span>many / lots of</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的学校有一个食堂。</p>
+      <p>My school has a canteen.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的学校有很多教室。</p>
+      <p>My school has many classrooms.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我的学校有很多教室、一个实验室、一个食堂和一个体育馆。我喜欢图书馆，因为那里很安静。
+      </p>
+      <p>
+        My school has many classrooms, a laboratory, a canteen and a sports hall. I like the library because it is quiet there.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="school-facilities.html">← Back to Topic</a>
+      <a href="school-facilities-2.html">Next Page →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "教室 means?", options: ["Classroom", "Canteen", "Office"], correct: "Classroom" },
+    { q: "实验室 means?", options: ["Laboratory", "Library", "Sports hall"], correct: "Laboratory" },
+    { q: "食堂 means?", options: ["Canteen", "Classroom", "Playground"], correct: "Canteen" },
+    { q: "体育馆 means?", options: ["Sports hall / gym", "Office", "Tuck shop"], correct: "Sports hall / gym" }
+  ],
+
+  q2: [
+    { q: "操场 means?", options: ["Playground / sports field", "Office", "Laboratory"], correct: "Playground / sports field" },
+    { q: "图书馆 means?", options: ["Library", "Canteen", "Teaching building"], correct: "Library" },
+    { q: "礼堂 means?", options: ["Assembly hall", "Classroom", "Station"], correct: "Assembly hall" },
+    { q: "办公室 means?", options: ["Office", "Playground", "Tuck shop"], correct: "Office" }
+  ],
+
+  q3: [
+    { q: "教学楼 means?", options: ["Teaching building", "Sports field", "Library"], correct: "Teaching building" },
+    { q: "小卖部 means?", options: ["Tuck shop", "Laboratory", "Office"], correct: "Tuck shop" },
+    { q: "设备 means?", options: ["Equipment", "Route", "Teacher"], correct: "Equipment" },
+    { q: "有 means?", options: ["To have / there is", "To go", "To study"], correct: "To have / there is" },
+    { q: "没有 means?", options: ["Does not have / there is not", "Very good", "Many"], correct: "Does not have / there is not" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

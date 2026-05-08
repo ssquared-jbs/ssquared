@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>End of Section Practice | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>End of Section Practice | Everyday Activities</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="everyday-activities.html">← Back to Everyday Activities</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>End of Section Sentence Builder</h2>
+  <p>Use all the vocabulary from this section to build stronger Cambridge IGCSE Mandarin sentences.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Quick Sentence Checks</h2>
+  <p>Answer the questions below. Some are short, some are more challenging.</p>
+
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Long Essay Builder</h2>
+  <p>Use the prompts to build a longer answer about yourself.</p>
+
+  <div class="essay-builder">
+    <p><strong>Task:</strong> Write a short introduction in Mandarin. Try to include:</p>
+    <ul>
+      <li>a greeting</li>
+      <li>your name</li>
+      <li>your age</li>
+      <li>where you live</li>
+      <li>your country or city</li>
+      <li>what language you speak</li>
+      <li>something you like</li>
+      <li>one sentence about a classmate</li>
+    </ul>
+
+    <textarea id="essayAnswer" placeholder="Write your Mandarin answer here..."></textarea>
+
+    <button class="continue-btn" onclick="checkEssay()">Check my essay</button>
+
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="everyday-activities.html">← Back to Topic</a>
+  <a href="quizzes.html">Practise Quiz →</a>
+</div>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let totalQuestions = 0;
+let correctAnswers = 0;
+let wrongAnswers = 0;
+
+const questions = [
+  { type: "mcq", q: "What does 我 mean?", options: ["I / me", "You", "He"], correct: "I / me" },
+  { type: "mcq", q: "What does 你 mean?", options: ["You", "We", "They"], correct: "You" },
+  { type: "mcq", q: "What does 同学 mean?", options: ["Classmate", "Student", "Teacher"], correct: "Classmate" },
+  { type: "mcq", q: "What does 介绍 mean?", options: ["To introduce", "To answer", "To ask"], correct: "To introduce" },
+  { type: "mcq", q: "What does 喜欢 mean?", options: ["To like", "To live", "To speak"], correct: "To like" },
+
+  { type: "fill", q: "我 ____ 大卫。", options: ["叫", "在", "说"], correct: "叫" },
+  { type: "fill", q: "我 ____ 中文。", options: ["说", "叫", "住"], correct: "说" },
+  { type: "fill", q: "中国 ____ 亚洲。", options: ["在", "是", "叫"], correct: "在" },
+  { type: "fill", q: "我的同学很 ____。", options: ["忙", "问", "住"], correct: "忙" },
+  { type: "fill", q: "早上好，我介绍一下 ____。", options: ["自己", "地图", "国家"], correct: "自己" },
+
+  { type: "type", q: "Type the Chinese for: hello", correct: "你好" },
+  { type: "type", q: "Type the Chinese for: thank you", correct: "谢谢" },
+  { type: "type", q: "Type the Chinese for: goodbye", correct: "再见" },
+  { type: "type", q: "Type the Chinese for: city", correct: "城市" },
+  { type: "type", q: "Type the Chinese for: student", correct: "学生" },
+
+  { type: "order", q: "Build: I am called David.", words: ["大卫", "我", "叫"], correct: "我叫大卫" },
+  { type: "order", q: "Build: I live in Beijing.", words: ["北京", "我", "住在"], correct: "我住在北京" },
+  { type: "order", q: "Build: China is in Asia.", words: ["亚洲", "在", "中国"], correct: "中国在亚洲" },
+  { type: "order", q: "Build: He is my classmate.", words: ["我的", "他", "同学", "是"], correct: "他是我的同学" },
+  { type: "order", q: "Build: I like Chinese.", words: ["喜欢", "我", "中文"], correct: "我喜欢中文" },
+
+  { type: "mcq", q: "Which sentence means: My classmate is very busy?", options: ["我的同学很忙。", "我的同学很高。", "我的学生很忙。"], correct: "我的同学很忙。" },
+  { type: "mcq", q: "Which word means recording?", options: ["录音", "回答", "句子"], correct: "录音" },
+  { type: "mcq", q: "Which word means sentence?", options: ["句子", "名字", "年龄"], correct: "句子" },
+  { type: "fill", q: "你叫 ____ 名字？", options: ["什么", "谁", "哪里"], correct: "什么" },
+  { type: "fill", q: "很高兴 ____ 你。", options: ["认识", "回答", "年龄"], correct: "认识" },
+
+  { type: "type", q: "Type the Chinese for: Beijing", correct: "北京" },
+  { type: "type", q: "Type the Chinese for: Hong Kong", correct: "香港" },
+  { type: "order", q: "Build: Good morning, I will introduce myself.", words: ["我", "早上好", "介绍一下", "自己"], correct: "早上好我介绍一下自己" },
+  { type: "order", q: "Build: The UK is in Europe.", words: ["欧洲", "英国", "在"], correct: "英国在欧洲" },
+  { type: "mcq", q: "Which sentence is the most complete?", options: ["我叫大卫。", "你好，我叫大卫，我住在上海。", "上海。"], correct: "你好，我叫大卫，我住在上海。" }
+];
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function safe(text) {
+  return text.replace(/'/g, "\\'");
+}
+
+function loadQuestions() {
+  const area = document.getElementById("questionArea");
+  const shuffledQuestions = shuffle([...questions]);
+  area.innerHTML = "";
+
+  shuffledQuestions.forEach(function(question, index) {
+    area.innerHTML += buildQuestion(question, index);
+  });
+}
+
+function buildQuestion(question, index) {
+  if (question.type === "mcq") {
+    const options = shuffle([...question.options]);
+    const letters = ["A", "B", "C"];
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p>${question.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option, i) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(question.correct)}')">
+                <strong>${letters[i]}.</strong> ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (question.type === "fill") {
+    const options = shuffle([...question.options]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p class="chinese">${question.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(question.correct)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (question.type === "type") {
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p>${question.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this, '${safe(question.correct)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (question.type === "order") {
+    const words = shuffle([...question.words]);
+    const builderId = "builder" + index;
+    const bankId = "bank" + index;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p>${question.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${words.map(function(word) {
+            return `<button onclick="addWord(this, '${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}', '${safe(question.correct)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}', '${bankId}')">Reset</button>
+
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button, selected, correct) {
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+    if (btn.textContent.includes(correct)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  markQuestion(selected === correct, feedback, button);
+}
+
+function checkTypedAnswer(button, correct) {
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+
+  const answer = input.value.trim();
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(answer === correct, feedback, button);
+}
+
+function addWord(button, builderId) {
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId, correct) {
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const answer = Array.from(builder.children)
+    .map(function(word) {
+      return word.textContent;
+    })
+    .join("");
+
+  markQuestion(answer === correct, feedback, builder);
+}
+
+function resetOrder(builderId, bankId) {
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button) {
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect, feedback, element) {
+  totalQuestions++;
+
+  if (isCorrect) {
+    correctAnswers++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+    element.classList.add("correct-answer");
+  } else {
+    wrongAnswers++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+    element.classList.add("wrong-answer");
+  }
+
+  updateResults();
+}
+
+function updateResults() {
+  document.getElementById("totalQ").textContent = totalQuestions;
+  document.getElementById("correctQ").textContent = correctAnswers;
+  document.getElementById("wrongQ").textContent = wrongAnswers;
+
+  let percent = 0;
+
+  if (totalQuestions > 0) {
+    percent = Math.round((correctAnswers / totalQuestions) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay() {
+  const answer = document.getElementById("essayAnswer").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = ["你好", "叫", "岁", "住", "说", "喜欢", "同学"];
+  let found = 0;
+
+  targets.forEach(function(word) {
+    if (answer.includes(word)) {
+      found++;
+    }
+  });
+
+  if (answer.length < 20) {
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write a longer answer. Aim for at least 5 short sentences.</p>";
+  } else if (found >= 6) {
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included most key structures from this section.</p>";
+  } else if (found >= 4) {
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try to add more detail using 喜欢, 同学, 住 or 说.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to include more key vocabulary from the section.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sports and Free Time | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Everyday Life</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="everyday-life.html">← Back to Everyday Life</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Sports and Free Time</h2>
+  <p>Learn how to talk about sports, hobbies, school year groups and activities before and after events.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Free time activities</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>看</h3><p>kàn</p><span>to watch / read</span></div>
+      <div class="vocab-card"><h3>书</h3><p>shū</p><span>book</span></div>
+      <div class="vocab-card"><h3>有时候</h3><p>yǒu shíhou</p><span>sometimes</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我有时候看书。</p>
+      <p>Sometimes I read books.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Sports</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>网球</h3><p>wǎngqiú</p><span>tennis</span></div>
+      <div class="vocab-card"><h3>篮球</h3><p>lánqiú</p><span>basketball</span></div>
+      <div class="vocab-card"><h3>乒乓球</h3><p>pīngpāngqiú</p><span>table tennis</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢打篮球。</p>
+      <p>I like playing basketball.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">他有时候打网球。</p>
+      <p>He sometimes plays tennis.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Before and after</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>以前</h3><p>yǐqián</p><span>before</span></div>
+      <div class="vocab-card"><h3>以后</h3><p>yǐhòu</p><span>after</span></div>
+      <div class="vocab-card"><h3>派对</h3><p>pàiduì</p><span>party</span></div>
+      <div class="vocab-card"><h3>快乐</h3><p>kuàilè</p><span>happy</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">派对以后，我很快乐。</p>
+      <p>After the party, I am very happy.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">以前我不喜欢网球。</p>
+      <p>Before, I did not like tennis.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. School and interviews</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>年级</h3><p>niánjí</p><span>year group / grade</span></div>
+      <div class="vocab-card"><h3>中学</h3><p>zhōngxué</p><span>secondary school</span></div>
+      <div class="vocab-card"><h3>采访</h3><p>cǎifǎng</p><span>interview</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我在中学读九年级。</p>
+      <p>I study Year 9 at secondary school.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">老师采访学生。</p>
+      <p>The teacher interviews the student.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我有时候看书，也喜欢打篮球。派对以后，我很快乐。
+      </p>
+      <p>
+        Sometimes I read books, and I also like playing basketball. After the party, I am very happy.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="everyday-life.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "看 means?", options: ["To watch / read", "To sleep", "To go"], correct: "To watch / read" },
+    { q: "书 means?", options: ["Book", "Party", "School"], correct: "Book" },
+    { q: "有时候 means?", options: ["Sometimes", "After", "Before"], correct: "Sometimes" }
+  ],
+
+  q2: [
+    { q: "篮球 means?", options: ["Basketball", "Tennis", "Table tennis"], correct: "Basketball" },
+    { q: "网球 means?", options: ["Tennis", "Basketball", "Badminton"], correct: "Tennis" },
+    { q: "乒乓球 means?", options: ["Table tennis", "Football", "Tennis"], correct: "Table tennis" }
+  ],
+
+  q3: [
+    { q: "以后 means?", options: ["After", "Before", "Sometimes"], correct: "After" },
+    { q: "以前 means?", options: ["Before", "After", "Now"], correct: "Before" },
+    { q: "中学 means?", options: ["Secondary school", "Primary school", "Birthday party"], correct: "Secondary school" },
+    { q: "采访 means?", options: ["Interview", "Performance", "Answer"], correct: "Interview" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

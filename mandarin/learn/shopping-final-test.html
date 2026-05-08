@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Final Test | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Shopping | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="shopping.html">← Back to Shopping</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Shopping Final Test</h2>
+  <p>40 mixed questions: 30 from Shopping, plus 10 from previous topics.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder">
+    <p><strong>Write a Mandarin paragraph about shopping. Try to include:</strong></p>
+    <ul>
+      <li>where you go shopping, 商店, 超市 or 商场</li>
+      <li>two things you buy</li>
+      <li>one price or money phrase</li>
+      <li>one payment method, like 现金 or 信用卡</li>
+      <li>one online shopping phrase, like 点击, 登陆 or 注册</li>
+      <li>one delivery phrase, like 免费送货</li>
+      <li>one opinion, like 便宜 or 很好</li>
+      <li>one reason using 因为</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+    <button class="continue-btn" onclick="checkEssay()">Check Essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="shopping.html">← Back to Topic</a>
+  <a href="learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+  {t:"mcq", q:"东西 means?", o:["Thing / stuff","Shop","Wall"], a:"Thing / stuff"},
+  {t:"mcq", q:"礼物 means?", o:["Gift","Mirror","Toy"], a:"Gift"},
+  {t:"mcq", q:"商店 means?", o:["Shop","School","Hospital"], a:"Shop"},
+  {t:"mcq", q:"超市 means?", o:["Supermarket","Restaurant","Bank"], a:"Supermarket"},
+  {t:"mcq", q:"便宜 means?", o:["Cheap","Expensive","Big"], a:"Cheap"},
+  {t:"mcq", q:"银行 means?", o:["Bank","Shop","Mall"], a:"Bank"},
+  {t:"mcq", q:"顾客 means?", o:["Customer","Teacher","Doctor"], a:"Customer"},
+  {t:"mcq", q:"付钱 means?", o:["To pay","To queue","To register"], a:"To pay"},
+  {t:"mcq", q:"信用卡 means?", o:["Credit card","Cash","Cheque"], a:"Credit card"},
+  {t:"mcq", q:"商场 means?", o:["Shopping centre","Supermarket","Street"], a:"Shopping centre"},
+
+  {t:"fill", q:"我去商店买 ____。", o:["东西","墙","时间"], a:"东西"},
+  {t:"fill", q:"我想买 ____ 和纪念品。", o:["礼物","银行","地址"], a:"礼物"},
+  {t:"fill", q:"超市里有很多 ____。", o:["东西","公里","毛笔"], a:"东西"},
+  {t:"fill", q:"这个很 ____，只要十块钱。", o:["便宜","书包","顾客"], a:"便宜"},
+  {t:"fill", q:"我要去银行 ____。", o:["取钱","注册","排队"], a:"取钱"},
+  {t:"fill", q:"我用信用卡 ____。", o:["付钱","送货","联系"], a:"付钱"},
+  {t:"fill", q:"我先注册，然后 ____ 网站。", o:["登陆","收据","零钱"], a:"登陆"},
+  {t:"fill", q:"一百块以上免费 ____。", o:["送货","取钱","排队"], a:"送货"},
+
+  {t:"type", q:"Type the Chinese for: shop", a:"商店"},
+  {t:"type", q:"Type the Chinese for: supermarket", a:"超市"},
+  {t:"type", q:"Type the Chinese for: gift", a:"礼物"},
+  {t:"type", q:"Type the Chinese for: bank", a:"银行"},
+  {t:"type", q:"Type the Chinese for: customer", a:"顾客"},
+  {t:"type", q:"Type the Chinese for: mobile phone", a:"手机"},
+  {t:"type", q:"Type the Chinese for: receipt", a:"收据"},
+
+  {t:"order", q:"Build: I go to the shop.", w:["我","去","商店"], a:"我去商店"},
+  {t:"order", q:"Build: I buy things.", w:["我","买","东西"], a:"我买东西"},
+  {t:"order", q:"Build: This is cheap.", w:["这个","很","便宜"], a:"这个很便宜"},
+  {t:"order", q:"Build: I use cash to pay.", w:["我","用现金","付钱"], a:"我用现金付钱"},
+  {t:"order", q:"Build: I queue in the shopping centre.", w:["我","在商场","排队"], a:"我在商场排队"},
+
+  {t:"mcq", q:"颜色 means?", o:["Colour","Room","Food"], a:"Colour"},
+  {t:"mcq", q:"房子 means?", o:["House","Fruit","Hospital"], a:"House"},
+  {t:"mcq", q:"医生 means?", o:["Doctor","Teacher","Friend"], a:"Doctor"},
+  {t:"mcq", q:"水果 means?", o:["Fruit","Drink","Meat"], a:"Fruit"},
+  {t:"mcq", q:"爱好 means?", o:["Hobby","Pet","Family"], a:"Hobby"},
+  {t:"fill", q:"我喜欢喝 ____。", o:["水","米饭","面包"], a:"水"},
+  {t:"fill", q:"我早上七点 ____。", o:["起床","搬家","喝茶"], a:"起床"},
+  {t:"type", q:"Type the Chinese for: friend", a:"朋友"},
+  {t:"type", q:"Type the Chinese for: rice", a:"米饭"},
+  {t:"order", q:"Build: I like playing football.", w:["我","喜欢","踢足球"], a:"我喜欢踢足球"}
+];
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function safe(text) {
+  return text.replace(/'/g, "\\'");
+}
+
+function loadQuestions() {
+  const area = document.getElementById("questionArea");
+  area.innerHTML = "";
+
+  shuffle([...questions]).forEach(function(q, i) {
+    area.innerHTML += buildQuestion(q, i);
+  });
+}
+
+function buildQuestion(q, i) {
+  if (q.t === "mcq") {
+    const options = shuffle([...q.o]);
+    const letters = ["A", "B", "C"];
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option, index) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                <strong>${letters[index]}.</strong> ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "fill") {
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p class="chinese">${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "type") {
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this, '${safe(q.a)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "order") {
+    const words = shuffle([...q.w]);
+    const builderId = "builder" + i;
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${words.map(function(word) {
+            return `<button onclick="addWord(this, '${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}', '${safe(q.a)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}', '${bankId}')">Reset</button>
+
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button, selected, correctAnswer) {
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selected === correctAnswer) {
+    button.classList.add("correct-answer");
+    markQuestion(true, feedback);
+  } else {
+    button.classList.add("wrong-answer");
+    markQuestion(false, feedback);
+  }
+}
+
+function checkTypedAnswer(button, correctAnswer) {
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+  const answer = input.value.trim();
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(answer === correctAnswer, feedback);
+}
+
+function addWord(button, builderId) {
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId, correctAnswer) {
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const answer = Array.from(builder.children)
+    .map(function(word) {
+      return word.textContent;
+    })
+    .join("");
+
+  if (answer === correctAnswer) {
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+    markQuestion(true, feedback);
+  } else {
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+    markQuestion(false, feedback);
+  }
+}
+
+function resetOrder(builderId, bankId) {
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button) {
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect, feedback) {
+  total++;
+
+  if (isCorrect) {
+    correct++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrong++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults() {
+  document.getElementById("totalQ").textContent = total;
+  document.getElementById("correctQ").textContent = correct;
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+  if (total > 0) {
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay() {
+  const text = document.getElementById("essay").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "商店", "超市", "商场", "买", "东西", "礼物", "文具", "手机",
+    "便宜", "多少钱", "块", "现金", "信用卡", "付钱", "点击",
+    "登陆", "注册", "免费", "送货", "排队", "收据", "因为"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word) {
+    if (text.includes(word)) {
+      found++;
+    }
+  });
+
+  if (text.length < 40) {
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write a longer answer. Aim for at least 5 sentences.</p>";
+  } else if (found >= 8) {
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included lots of key Shopping vocabulary.</p>";
+  } else if (found >= 5) {
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail about prices, payment or delivery.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but try to include more key shopping vocabulary.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

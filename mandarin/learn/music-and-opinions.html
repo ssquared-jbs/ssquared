@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music and Opinions | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Hobbies</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="hobbies.html">← Back to Hobbies</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Music, Opinions and Events</h2>
+  <p>Learn how to talk about music, hobbies, opinions and events.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Music hobbies</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>吉他</h3><p>jítā</p><span>guitar</span></div>
+      <div class="vocab-card"><h3>钢琴</h3><p>gāngqín</p><span>piano</span></div>
+      <div class="vocab-card"><h3>弹</h3><p>tán</p><span>to play, string/key instrument</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我会弹钢琴。</p>
+      <p>I can play the piano.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Opinions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>觉得</h3><p>juéde</p><span>to think / feel</span></div>
+      <div class="vocab-card"><h3>有意思</h3><p>yǒu yìsi</p><span>interesting</span></div>
+      <div class="vocab-card"><h3>没有意思</h3><p>méiyǒu yìsi</p><span>boring / not interesting</span></div>
+      <div class="vocab-card"><h3>好玩儿</h3><p>hǎowánr</p><span>fun</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我觉得弹吉他很有意思。</p>
+      <p>I think playing guitar is very interesting.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我觉得小说没有意思。</p>
+      <p>I think novels are boring.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. More hobbies</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>小说</h3><p>xiǎoshuō</p><span>novel</span></div>
+      <div class="vocab-card"><h3>桌球</h3><p>zhuōqiú</p><span>pool / billiards</span></div>
+      <div class="vocab-card"><h3>滑板</h3><p>huábǎn</p><span>skateboard</span></div>
+      <div class="vocab-card"><h3>滑旱冰</h3><p>huá hànbīng</p><span>roller skate</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">从小到大，我喜欢滑板。</p>
+      <p>From childhood until now, I have liked skateboarding.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Events and people</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>明星</h3><p>míngxīng</p><span>celebrity / star</span></div>
+      <div class="vocab-card"><h3>展览</h3><p>zhǎnlǎn</p><span>exhibition</span></div>
+      <div class="vocab-card"><h3>运动会</h3><p>yùndònghuì</p><span>sports day / sports meet</span></div>
+      <div class="vocab-card"><h3>从小到大</h3><p>cóng xiǎo dào dà</p><span>from childhood until now</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我想去看展览。</p>
+      <p>I want to go and see an exhibition.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">运动会很好玩儿。</p>
+      <p>Sports day is very fun.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我会弹钢琴，也喜欢弹吉他。我觉得音乐很有意思，运动会也很好玩儿。
+      </p>
+      <p>
+        I can play piano and also like playing guitar. I think music is interesting, and sports day is also fun.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="hobbies.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "吉他 means?", options: ["Guitar", "Piano", "Novel"], correct: "Guitar" },
+    { q: "钢琴 means?", options: ["Piano", "Guitar", "Skateboard"], correct: "Piano" },
+    { q: "弹 is used for...", options: ["Playing guitar or piano", "Playing football", "Going online"], correct: "Playing guitar or piano" }
+  ],
+
+  q2: [
+    { q: "觉得 means?", options: ["To think / feel", "To write", "To watch"], correct: "To think / feel" },
+    { q: "有意思 means?", options: ["Interesting", "Boring", "Difficult"], correct: "Interesting" },
+    { q: "没有意思 means?", options: ["Boring / not interesting", "Fun", "Cute"], correct: "Boring / not interesting" },
+    { q: "好玩儿 means?", options: ["Fun", "Wrong", "Traditional"], correct: "Fun" }
+  ],
+
+  q3: [
+    { q: "小说 means?", options: ["Novel", "Photo", "Concert"], correct: "Novel" },
+    { q: "桌球 means?", options: ["Pool / billiards", "Basketball", "Skiing"], correct: "Pool / billiards" },
+    { q: "展览 means?", options: ["Exhibition", "Competition", "Advertisement"], correct: "Exhibition" },
+    { q: "运动会 means?", options: ["Sports day", "Concert", "Interview"], correct: "Sports day" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

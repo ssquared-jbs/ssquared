@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel and Journeys | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Transportation</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="transportation.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Travel and Journeys</h2>
+  <p>Learn how to talk about journeys, tickets, taxis and travel plans.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Taxi and travel</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>出租车</h3><p>chū zū chē</p><span>taxi</span></div>
+      <div class="vocab-card"><h3>打车</h3><p>dǎ chē</p><span>to take a taxi</span></div>
+      <div class="vocab-card"><h3>开车</h3><p>kāi chē</p><span>to drive</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我今天打车上班。</p>
+      <p>Today I take a taxi to work.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">他开车去学校。</p>
+      <p>He drives to school.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Sequence (first… then…)</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>先……然后……</h3><p>xiān...rán hòu...</p><span>first... then...</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我先坐车，然后走路。</p>
+      <p>I first take transport, then walk.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Train travel</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>火车站</h3><p>huǒ chē zhàn</p><span>train station</span></div>
+      <div class="vocab-card"><h3>售票员</h3><p>shòu piào yuán</p><span>ticket agent</span></div>
+      <div class="vocab-card"><h3>出发</h3><p>chū fā</p><span>to set out</span></div>
+      <div class="vocab-card"><h3>一张票</h3><p>yì zhāng piào</p><span>a ticket</span></div>
+      <div class="vocab-card"><h3>单程票</h3><p>dān chéng piào</p><span>single ticket</span></div>
+      <div class="vocab-card"><h3>来回票</h3><p>lái huí piào</p><span>return ticket</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我要买一张来回票。</p>
+      <p>I want to buy a return ticket.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Travel items</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>行李</h3><p>xíng li</p><span>luggage</span></div>
+      <div class="vocab-card"><h3>软卧</h3><p>ruǎn wò</p><span>soft sleeper</span></div>
+      <div class="vocab-card"><h3>硬卧</h3><p>yìng wò</p><span>hard sleeper</span></div>
+      <div class="vocab-card"><h3>小岛</h3><p>xiǎo dǎo</p><span>island</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我带很多行李去小岛。</p>
+      <p>I bring a lot of luggage to the island.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我先打车去火车站，然后买一张来回票。我带行李去一个小岛旅行。
+      </p>
+      <p>
+        I first take a taxi to the train station, then buy a return ticket. I take luggage to travel to an island.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="transportation.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "出租车 means?", options: ["Taxi", "Train", "Bus"], correct: "Taxi" },
+    { q: "打车 means?", options: ["Take a taxi", "Drive", "Walk"], correct: "Take a taxi" },
+    { q: "开车 means?", options: ["To drive", "To fly", "To run"], correct: "To drive" }
+  ],
+
+  q2: [
+    { q: "先……然后…… means?", options: ["First... then...", "Because... so...", "Although..."], correct: "First... then..." }
+  ],
+
+  q3: [
+    { q: "火车站 means?", options: ["Train station", "Airport", "Bus stop"], correct: "Train station" },
+    { q: "售票员 means?", options: ["Ticket agent", "Driver", "Passenger"], correct: "Ticket agent" },
+    { q: "单程票 means?", options: ["Single ticket", "Return ticket", "Free ticket"], correct: "Single ticket" },
+    { q: "来回票 means?", options: ["Return ticket", "Single ticket", "Bus ticket"], correct: "Return ticket" },
+    { q: "行李 means?", options: ["Luggage", "Ticket", "Seat"], correct: "Luggage" },
+    { q: "小岛 means?", options: ["Island", "Station", "Ticket"], correct: "Island" }
+  ]
+};
+
+function showStep(stepNumber) {
+  document.querySelectorAll(".step").forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  if (continueButton) {
+    continueButton.classList.remove("hidden");
+  }
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

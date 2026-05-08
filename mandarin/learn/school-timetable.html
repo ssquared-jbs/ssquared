@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Timetable | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>School Routine</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="school-routine.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>School Timetable</h2>
+  <p>Learn how to talk about choosing subjects, timetables and lessons.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Choosing and learning</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>学习</h3><p>xué xí</p><span>to learn</span></div>
+      <div class="vocab-card"><h3>选择</h3><p>xuǎn zé</p><span>to choose</span></div>
+      <div class="vocab-card"><h3>所以</h3><p>suǒ yǐ</p><span>so / therefore</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我选择学习汉语，所以我每天复习。</p>
+      <p>I choose to learn Chinese, so I revise every day.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Timetable and lessons</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>课程表</h3><p>kè chéng biǎo</p><span>timetable</span></div>
+      <div class="vocab-card"><h3>节</h3><p>jié</p><span>lesson period</span></div>
+      <div class="vocab-card"><h3>门</h3><p>mén</p><span>measure word for subjects</span></div>
+      <div class="vocab-card"><h3>些</h3><p>xiē</p><span>some / a few</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的课程表很忙。</p>
+      <p>My timetable is very busy.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">今天我有六节课和很多门科目。</p>
+      <p>Today I have six lessons and many subjects.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Drama and jokes</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>演戏</h3><p>yǎn xì</p><span>to act</span></div>
+      <div class="vocab-card"><h3>开玩笑</h3><p>kāi wán xiào</p><span>to make jokes</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢演戏，也喜欢跟朋友开玩笑。</p>
+      <p>I like acting, and I also like joking with friends.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我的课程表很忙。今天我有六节课。我选择学习汉语，所以我得多复习。
+      </p>
+      <p>
+        My timetable is very busy. Today I have six lessons. I choose to study Chinese, so I need to revise a lot.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="school-routine.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "学习 means?", options: ["To learn", "To choose", "To act"], correct: "To learn" },
+    { q: "选择 means?", options: ["To choose", "To joke", "To learn"], correct: "To choose" },
+    { q: "所以 means?", options: ["So / therefore", "Because", "But"], correct: "So / therefore" }
+  ],
+
+  q2: [
+    { q: "课程表 means?", options: ["Timetable", "Subject", "School campus"], correct: "Timetable" },
+    { q: "节 means?", options: ["Lesson period", "Some", "Timetable"], correct: "Lesson period" },
+    { q: "门 means?", options: ["Measure word for subjects", "Door only", "Measure word for people"], correct: "Measure word for subjects" },
+    { q: "些 means?", options: ["Some / a few", "Very many", "None"], correct: "Some / a few" }
+  ],
+
+  q3: [
+    { q: "演戏 means?", options: ["To act", "To study", "To choose"], correct: "To act" },
+    { q: "开玩笑 means?", options: ["To make jokes", "To read", "To revise"], correct: "To make jokes" },
+    { q: "我的课程表很忙 means?", options: ["My timetable is busy", "My subject is easy", "My school is big"], correct: "My timetable is busy" }
+  ]
+};
+
+function showStep(stepNumber) {
+  document.querySelectorAll(".step").forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

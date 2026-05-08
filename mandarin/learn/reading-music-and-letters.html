@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reading, Music and Letters | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Hobbies</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="hobbies.html">← Back to Hobbies</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Reading, Music and Letters</h2>
+  <p>Learn how to talk about reading, music, writing letters and outdoor hobbies.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Reading materials</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>杂志</h3><p>zázhì</p><span>magazine</span></div>
+      <div class="vocab-card"><h3>小人书</h3><p>xiǎorénshū</p><span>comic book</span></div>
+      <div class="vocab-card"><h3>连环画</h3><p>liánhuánhuà</p><span>comic strip / picture story</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢看杂志和小人书。</p>
+      <p>I like reading magazines and comic books.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Letters and pen friends</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>写信</h3><p>xiě xìn</p><span>write a letter</span></div>
+      <div class="vocab-card"><h3>笔友</h3><p>bǐyǒu</p><span>pen friend</span></div>
+      <div class="vocab-card"><h3>亲爱的</h3><p>qīn'ài de</p><span>dear</span></div>
+      <div class="vocab-card"><h3>回信</h3><p>huí xìn</p><span>reply to a letter</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">亲爱的笔友，我喜欢写信。</p>
+      <p>Dear pen friend, I like writing letters.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Music and outdoor hobbies</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>古典音乐</h3><p>gǔdiǎn yīnyuè</p><span>classical music</span></div>
+      <div class="vocab-card"><h3>流行歌曲</h3><p>liúxíng gēqǔ</p><span>pop song</span></div>
+      <div class="vocab-card"><h3>爬山</h3><p>pá shān</p><span>climb mountains / hiking</span></div>
+      <div class="vocab-card"><h3>踢足球</h3><p>tī zúqiú</p><span>play football</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢听流行歌曲。</p>
+      <p>I like listening to pop songs.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">周末我常常爬山，也踢足球。</p>
+      <p>At weekends I often go hiking and also play football.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Polite phrases</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>不客气</h3><p>bú kèqi</p><span>you are welcome</span></div>
+      <div class="vocab-card"><h3>祝</h3><p>zhù</p><span>wish / wish you</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">不客气！祝你快乐。</p>
+      <p>You are welcome! I wish you happiness.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        亲爱的笔友，我喜欢看杂志，也喜欢听流行歌曲。周末我常常爬山和踢足球。
+      </p>
+      <p>
+        Dear pen friend, I like reading magazines and also like listening to pop songs.
+        At weekends I often go hiking and play football.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="hobbies.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "杂志 means?", options: ["Magazine", "Letter", "Song"], correct: "Magazine" },
+    { q: "小人书 means?", options: ["Comic book", "Pen friend", "Magazine"], correct: "Comic book" },
+    { q: "连环画 means?", options: ["Comic strip / picture story", "Classical music", "Football"], correct: "Comic strip / picture story" }
+  ],
+
+  q2: [
+    { q: "写信 means?", options: ["Write a letter", "Reply to a letter", "Listen to music"], correct: "Write a letter" },
+    { q: "笔友 means?", options: ["Pen friend", "Classmate", "Celebrity"], correct: "Pen friend" },
+    { q: "亲爱的 means?", options: ["Dear", "Happy", "Traditional"], correct: "Dear" },
+    { q: "回信 means?", options: ["Reply to a letter", "Write calligraphy", "Watch TV"], correct: "Reply to a letter" }
+  ],
+
+  q3: [
+    { q: "古典音乐 means?", options: ["Classical music", "Pop song", "Concert"], correct: "Classical music" },
+    { q: "流行歌曲 means?", options: ["Pop song", "Classical music", "Advertisement"], correct: "Pop song" },
+    { q: "爬山 means?", options: ["Climb mountains / hiking", "Play football", "Fly a kite"], correct: "Climb mountains / hiking" },
+    { q: "不客气 means?", options: ["You are welcome", "Sorry", "Thank you"], correct: "You are welcome" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

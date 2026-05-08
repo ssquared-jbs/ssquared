@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping for Clothes | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Clothes</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="clothes.html">← Back to Clothes</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Shopping for Clothes</h2>
+  <p>Learn how to buy clothes, ask prices and talk about sizes.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Colours and description</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>金色</h3><p>jīn sè</p><span>gold</span></div>
+      <div class="vocab-card"><h3>灰色</h3><p>huī sè</p><span>grey</span></div>
+      <div class="vocab-card"><h3>身材</h3><p>shēn cái</p><span>body shape</span></div>
+      <div class="vocab-card"><h3>到</h3><p>dào</p><span>to (arrive)</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">她有金色的头发，身材很好。</p>
+      <p>She has blonde hair and a good figure.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Shopping basics</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>服装店</h3><p>fú zhuāng diàn</p><span>clothes shop</span></div>
+      <div class="vocab-card"><h3>买</h3><p>mǎi</p><span>to buy</span></div>
+      <div class="vocab-card"><h3>售货员</h3><p>shòu huò yuán</p><span>shop assistant</span></div>
+      <div class="vocab-card"><h3>试</h3><p>shì</p><span>to try</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我去服装店买衣服。</p>
+      <p>I go to a clothes shop to buy clothes.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Prices and money</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>多少钱</h3><p>duō shǎo qián</p><span>how much</span></div>
+      <div class="vocab-card"><h3>钱</h3><p>qián</p><span>money</span></div>
+      <div class="vocab-card"><h3>找</h3><p>zhǎo</p><span>to give change</span></div>
+      <div class="vocab-card"><h3>打折</h3><p>dǎ zhé</p><span>discount</span></div>
+      <div class="vocab-card"><h3>原价</h3><p>yuán jià</p><span>original price</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这个多少钱？可以打折吗？</p>
+      <p>How much is this? Can you give a discount?</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Polite shopping</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>请问</h3><p>qǐng wèn</p><span>excuse me</span></div>
+      <div class="vocab-card"><h3>号</h3><p>hào</p><span>size</span></div>
+      <div class="vocab-card"><h3>银色</h3><p>yín sè</p><span>silver</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">请问，这个是什么号？</p>
+      <p>Excuse me, what size is this?</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我想试一下银色的。</p>
+      <p>I want to try the silver one.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我去服装店买衣服。请问，这个多少钱？可以打折吗？
+      </p>
+      <p>
+        I go to a clothes shop to buy clothes. Excuse me, how much is this? Can you give a discount?
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="clothes.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q:"金色 means?", options:["Gold","Grey","Silver"], correct:"Gold" },
+    { q:"灰色 means?", options:["Grey","Black","White"], correct:"Grey" },
+    { q:"身材 means?", options:["Body shape","Colour","Price"], correct:"Body shape" }
+  ],
+
+  q2: [
+    { q:"服装店 means?", options:["Clothes shop","Restaurant","School"], correct:"Clothes shop" },
+    { q:"买 means?", options:["To buy","To sell","To try"], correct:"To buy" },
+    { q:"售货员 means?", options:["Shop assistant","Teacher","Friend"], correct:"Shop assistant" }
+  ],
+
+  q3: [
+    { q:"多少钱 means?", options:["How much","How many","Where"], correct:"How much" },
+    { q:"打折 means?", options:["Discount","Price","Money"], correct:"Discount" },
+    { q:"号 means?", options:["Size","Colour","Style"], correct:"Size" },
+    { q:"请问 means?", options:["Excuse me","Hello","Goodbye"], correct:"Excuse me" }
+  ]
+};
+
+function showStep(stepNumber){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+stepNumber).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(array){
+  for(let i=array.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [array[i],array[j]]=[array[j],array[i]];
+  }
+  return array;
+}
+
+function getRandomQuestion(set){
+  const list = questions[set];
+  return list[Math.floor(Math.random()*list.length)];
+}
+
+function loadQuestion(id,set){
+  const box = document.getElementById(id);
+  if(!box) return;
+
+  const q = getRandomQuestion(set);
+  const options = shuffle([...q.options]);
+  const letters = ["A","B","C"];
+
+  box.innerHTML = `
+  <p>${q.q}</p>
+  <div class="quiz-buttons">
+    ${options.map((o,i)=>`
+      <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+        <strong>${letters[i]}.</strong> ${o}
+      </button>
+    `).join("")}
+  </div>`;
+}
+
+function checkAnswer(button,selected,correct){
+  const card = button.closest(".lesson-card");
+  const buttons = card.querySelectorAll(".quiz-buttons button");
+  const feedback = card.querySelector(".feedback");
+  const next = card.querySelector(".continue-btn");
+
+  buttons.forEach(btn=>{
+    btn.disabled=true;
+    if(btn.textContent.includes(correct)){
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if(selected===correct){
+    feedback.textContent="Correct.";
+    feedback.className="feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent="Not quite.";
+    feedback.className="feedback wrong-feedback";
+  }
+
+  next.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

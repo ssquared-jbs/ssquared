@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pets | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Family and Pets</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="family-pets.html">← Back to Family and Pets</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Pets and Animals</h2>
+  <p>Learn how to talk about animals and describe your pets.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Common animals</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>动物</h3><p>dòngwù</p><span>animal</span></div>
+      <div class="vocab-card"><h3>狗</h3><p>gǒu</p><span>dog</span></div>
+      <div class="vocab-card"><h3>猫</h3><p>māo</p><span>cat</span></div>
+      <div class="vocab-card"><h3>鸟</h3><p>niǎo</p><span>bird</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我有一只狗。</p>
+      <p>I have a dog.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. More animals</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>马</h3><p>mǎ</p><span>horse</span></div>
+      <div class="vocab-card"><h3>金鱼</h3><p>jīnyú</p><span>goldfish</span></div>
+      <div class="vocab-card"><h3>兔子</h3><p>tùzi</p><span>rabbit</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我有两只兔子。</p>
+      <p>I have two rabbits.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Describing pets</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>可爱</h3><p>kě’ài</p><span>cute</span></div>
+      <div class="vocab-card"><h3>很多</h3><p>hěn duō</p><span>many / a lot</span></div>
+      <div class="vocab-card"><h3>朋友</h3><p>péngyou</p><span>friend</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的猫很可爱。</p>
+      <p>My cat is very cute.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我有很多动物朋友。</p>
+      <p>I have many animal friends.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<!-- END -->
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我有一只狗和一只猫。它们很可爱。我也有很多动物朋友。
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="family-pets.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "狗 means?", options: ["Dog", "Cat", "Bird"], correct: "Dog" },
+    { q: "猫 means?", options: ["Cat", "Fish", "Rabbit"], correct: "Cat" },
+    { q: "动物 means?", options: ["Animal", "Family", "Friend"], correct: "Animal" }
+  ],
+
+  q2: [
+    { q: "兔子 means?", options: ["Rabbit", "Horse", "Bird"], correct: "Rabbit" },
+    { q: "金鱼 means?", options: ["Goldfish", "Dog", "Cat"], correct: "Goldfish" },
+    { q: "马 means?", options: ["Horse", "Rabbit", "Bird"], correct: "Horse" }
+  ],
+
+  q3: [
+    { q: "可爱 means?", options: ["Cute", "Busy", "Tall"], correct: "Cute" },
+    { q: "很多 means?", options: ["Many", "One", "Small"], correct: "Many" },
+    { q: "朋友 means?", options: ["Friend", "Pet", "Animal"], correct: "Friend" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${question.options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.trim().includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

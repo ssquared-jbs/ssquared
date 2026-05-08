@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Places and Services | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Shopping</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="shopping.html">← Back to Shopping</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Shopping Places and Services</h2>
+  <p>Learn about service counters, receipts, shopping centres and queuing.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Shops and services</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>服务台</h3><p>fú wù tái</p><span>service counter</span></div>
+      <div class="vocab-card"><h3>收据</h3><p>shōu jù</p><span>receipt</span></div>
+      <div class="vocab-card"><h3>牌</h3><p>pái</p><span>brand</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我去服务台拿收据。</p>
+      <p>I go to the service counter to get a receipt.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Money and places</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>零钱</h3><p>líng qián</p><span>change</span></div>
+      <div class="vocab-card"><h3>商场</h3><p>shāng chǎng</p><span>shopping centre / mall</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我在商场买东西，还拿了零钱。</p>
+      <p>I buy things in the shopping centre and receive change.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Queuing and shopping behaviour</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>排队</h3><p>pái duì</p><span>to queue</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">在商场里要排队付钱。</p>
+      <p>In the shopping centre you need to queue to pay.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我在商场买东西。我去服务台拿收据，还排队付钱。
+      </p>
+      <p>
+        I buy things in the shopping centre. I go to the service counter to get a receipt and queue to pay.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="shopping.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "服务台 means?", options: ["Service counter", "Shop", "Bank"], correct: "Service counter" },
+    { q: "收据 means?", options: ["Receipt", "Wallet", "Phone"], correct: "Receipt" },
+    { q: "牌 means?", options: ["Brand", "Price", "Money"], correct: "Brand" }
+  ],
+
+  q2: [
+    { q: "零钱 means?", options: ["Change", "Money", "Price"], correct: "Change" },
+    { q: "商场 means?", options: ["Shopping centre", "Supermarket", "School"], correct: "Shopping centre" }
+  ],
+
+  q3: [
+    { q: "排队 means?", options: ["To queue", "To pay", "To buy"], correct: "To queue" },
+    { q: "在商场里要排队付钱 means?", options: ["You need to queue to pay in the mall", "The shop is closed", "The mall is far"], correct: "You need to queue to pay in the mall" }
+  ]
+};
+
+function showStep(stepNumber){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+stepNumber).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function getQ(set){
+  let list = questions[set];
+  return list[Math.floor(Math.random()*list.length)];
+}
+
+function load(id,set){
+  let q = getQ(set);
+  let ops = shuffle([...q.options]);
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${ops.map(o=>`<button onclick="check(this,'${o}','${q.correct}')">${o}</button>`).join("")}
+    </div>`;
+}
+
+function check(btn,a,c){
+  let card = btn.closest(".lesson-card");
+  let fb = card.querySelector(".feedback");
+  let btns = card.querySelectorAll(".quiz-buttons button");
+
+  btns.forEach(b=>{
+    b.disabled=true;
+    if(b.textContent===c){b.classList.add("correct-answer");}
+  });
+
+  if(a===c){
+    fb.textContent="Correct.";
+    fb.className="feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    fb.textContent="Not quite.";
+    fb.className="feedback wrong-feedback";
+  }
+
+  card.querySelector(".continue-btn").classList.remove("hidden");
+}
+
+load("q1","q1");
+load("q2","q2");
+load("q3","q3");
+</script>
+
+</body>
+</html>

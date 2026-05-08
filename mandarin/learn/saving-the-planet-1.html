@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Environmental Problems | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Saving the Planet</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="saving-the-planet.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Environmental Problems</h2>
+  <p>Learn vocabulary for pollution, rubbish, climate problems and environmental damage.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Pollution</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>污染</h3><p>wū rǎn</p><span>pollution</span></div>
+      <div class="vocab-card"><h3>空气污染</h3><p>kōng qì wū rǎn</p><span>air pollution</span></div>
+      <div class="vocab-card"><h3>垃圾</h3><p>lā jī</p><span>rubbish / litter</span></div>
+      <div class="vocab-card"><h3>塑料</h3><p>sù liào</p><span>plastic</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">空气污染越来越严重。</p>
+      <p>Air pollution is becoming more and more serious.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">很多塑料垃圾进入海洋。</p>
+      <p>A lot of plastic rubbish enters the ocean.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Climate and nature</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>气候变化</h3><p>qì hòu biàn huà</p><span>climate change</span></div>
+      <div class="vocab-card"><h3>地球</h3><p>dì qiú</p><span>Earth / planet</span></div>
+      <div class="vocab-card"><h3>森林</h3><p>sēn lín</p><span>forest</span></div>
+      <div class="vocab-card"><h3>动物</h3><p>dòng wù</p><span>animal</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">气候变化影响很多动物。</p>
+      <p>Climate change affects many animals.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">保护森林很重要。</p>
+      <p>Protecting forests is very important.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Environmental damage</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>浪费</h3><p>làng fèi</p><span>to waste</span></div>
+      <div class="vocab-card"><h3>能源</h3><p>néng yuán</p><span>energy</span></div>
+      <div class="vocab-card"><h3>水</h3><p>shuǐ</p><span>water</span></div>
+      <div class="vocab-card"><h3>危险</h3><p>wēi xiǎn</p><span>dangerous</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">浪费能源对地球不好。</p>
+      <p>Wasting energy is bad for the planet.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">污染对动物很危险。</p>
+      <p>Pollution is dangerous for animals.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Opinions about the environment</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>重要</h3><p>zhòng yào</p><span>important</span></div>
+      <div class="vocab-card"><h3>严重</h3><p>yán zhòng</p><span>serious</span></div>
+      <div class="vocab-card"><h3>保护环境</h3><p>bǎo hù huán jìng</p><span>to protect the environment</span></div>
+      <div class="vocab-card"><h3>未来</h3><p>wèi lái</p><span>future</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我觉得保护环境很重要。</p>
+      <p>I think protecting the environment is very important.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">如果我们不改变，未来会很危险。</p>
+      <p>If we do not change, the future will be very dangerous.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        空气污染越来越严重。很多塑料垃圾进入海洋，也影响动物。我觉得保护环境很重要，因为浪费能源对地球不好。如果我们不改变，未来会很危险。
+      </p>
+      <p>
+        Air pollution is becoming more and more serious. A lot of plastic rubbish enters the ocean and also affects animals. I think protecting the environment is very important because wasting energy is bad for the planet. If we do not change, the future will be very dangerous.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="saving-the-planet.html">← Back to Topic</a>
+      <a href="saving-the-planet-2.html">Next Page →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "污染 means?", options: ["Pollution","Forest","Energy"], correct: "Pollution" },
+    { q: "空气污染 means?", options: ["Air pollution","Water pollution","Plastic waste"], correct: "Air pollution" },
+    { q: "垃圾 means?", options: ["Rubbish / litter","Animal","Climate"], correct: "Rubbish / litter" },
+    { q: "塑料 means?", options: ["Plastic","Paper","Glass"], correct: "Plastic" }
+  ],
+
+  q2: [
+    { q: "气候变化 means?", options: ["Climate change","Global warming","Forest fire"], correct: "Climate change" },
+    { q: "地球 means?", options: ["Earth / planet","Ocean","Country"], correct: "Earth / planet" },
+    { q: "森林 means?", options: ["Forest","Desert","City"], correct: "Forest" },
+    { q: "动物 means?", options: ["Animal","Pollution","Future"], correct: "Animal" }
+  ],
+
+  q3: [
+    { q: "浪费 means?", options: ["To waste","To recycle","To save"], correct: "To waste" },
+    { q: "能源 means?", options: ["Energy","Water","Plastic"], correct: "Energy" },
+    { q: "保护环境 means?", options: ["To protect the environment","To damage the environment","To recycle rubbish"], correct: "To protect the environment" },
+    { q: "未来 means?", options: ["Future","Problem","Habit"], correct: "Future" },
+    { q: "严重 means?", options: ["Serious","Interesting","Easy"], correct: "Serious" }
+  ]
+};
+
+function showStep(n){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+n).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadQuestion(id,set){
+  const q = questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts = shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(btn,sel,ans){
+  const box=btn.closest(".lesson-card");
+  const feedback=box.querySelector(".feedback");
+  const cont=box.querySelector(".continue-btn");
+
+  box.querySelectorAll(".quiz-buttons button").forEach(b=>{
+    b.disabled=true;
+    if(b.textContent.includes(ans)) b.classList.add("correct-answer");
+  });
+
+  if(sel===ans){
+    feedback.textContent="Correct.";
+    feedback.className="feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent="Not quite.";
+    feedback.className="feedback wrong-feedback";
+  }
+
+  cont.disabled = false;
+  cont.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

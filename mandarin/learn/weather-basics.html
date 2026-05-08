@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Basics | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Weather and Climate</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="weather-and-climate.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Weather Basics</h2>
+  <p>Learn key weather vocabulary and how to describe the weather.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Common Weather</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>天气</h3><p>tiān qì</p><span>weather</span></div>
+      <div class="vocab-card"><h3>晴天</h3><p>qíng tiān</p><span>sunny day</span></div>
+      <div class="vocab-card"><h3>阴天</h3><p>yīn tiān</p><span>cloudy</span></div>
+      <div class="vocab-card"><h3>多云</h3><p>duō yún</p><span>partly cloudy</span></div>
+      <div class="vocab-card"><h3>有雾</h3><p>yǒu wù</p><span>foggy</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">今天天气很好，是晴天。</p>
+      <p>The weather today is good, it is sunny.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Rain, wind and snow</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>下雨</h3><p>xià yǔ</p><span>to rain</span></div>
+      <div class="vocab-card"><h3>下雪</h3><p>xià xuě</p><span>to snow</span></div>
+      <div class="vocab-card"><h3>刮风</h3><p>guā fēng</p><span>windy</span></div>
+      <div class="vocab-card"><h3>风</h3><p>fēng</p><span>wind</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">今天下雨，也刮风。</p>
+      <p>Today it is raining and windy.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Temperature</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>热</h3><p>rè</p><span>hot</span></div>
+      <div class="vocab-card"><h3>冷</h3><p>lěng</p><span>cold</span></div>
+      <div class="vocab-card"><h3>气温</h3><p>qì wēn</p><span>temperature</span></div>
+      <div class="vocab-card"><h3>度</h3><p>dù</p><span>degree</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">今天很热，气温三十度。</p>
+      <p>Today is very hot, the temperature is 30 degrees.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Forecast and cities</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>天气预报</h3><p>tiān qì yù bào</p><span>weather forecast</span></div>
+      <div class="vocab-card"><h3>上海</h3><p>Shàng hǎi</p><span>Shanghai</span></div>
+      <div class="vocab-card"><h3>西安</h3><p>Xī ān</p><span>Xi’an</span></div>
+      <div class="vocab-card"><h3>南京</h3><p>Nán jīng</p><span>Nanjing</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">天气预报说明天上海很热。</p>
+      <p>The weather forecast says Shanghai will be hot tomorrow.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        今天天气很好，是晴天，但是有一点风。气温二十五度。
+      </p>
+      <p>
+        Today the weather is good, it is sunny but a little windy. The temperature is 25 degrees.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="weather-and-climate.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "晴天 means?", options: ["Sunny", "Rainy", "Cold"], correct: "Sunny" },
+    { q: "阴天 means?", options: ["Cloudy", "Windy", "Hot"], correct: "Cloudy" },
+    { q: "多云 means?", options: ["Partly cloudy", "Snowing", "Foggy"], correct: "Partly cloudy" },
+    { q: "有雾 means?", options: ["Foggy", "Hot", "Cold"], correct: "Foggy" }
+  ],
+
+  q2: [
+    { q: "下雨 means?", options: ["To rain", "To snow", "Wind"], correct: "To rain" },
+    { q: "下雪 means?", options: ["To snow", "To rain", "Hot"], correct: "To snow" },
+    { q: "刮风 means?", options: ["Windy", "Sunny", "Cold"], correct: "Windy" },
+    { q: "风 means?", options: ["Wind", "Rain", "Snow"], correct: "Wind" }
+  ],
+
+  q3: [
+    { q: "热 means?", options: ["Hot", "Cold", "Windy"], correct: "Hot" },
+    { q: "冷 means?", options: ["Cold", "Hot", "Sunny"], correct: "Cold" },
+    { q: "气温 means?", options: ["Temperature", "Weather", "Forecast"], correct: "Temperature" },
+    { q: "天气预报 means?", options: ["Weather forecast", "Temperature", "City"], correct: "Weather forecast" }
+  ]
+};
+
+function showStep(stepNumber) {
+  document.querySelectorAll(".step").forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  if (continueButton) {
+    continueButton.classList.remove("hidden");
+  }
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

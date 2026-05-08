@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shops and Items | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Shopping</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="shopping.html">← Back to Shopping</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Shops and Items</h2>
+  <p>Learn common items, shops, gifts and stationery.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Things and gifts</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>东西</h3><p>dōng xi</p><span>thing / stuff</span></div>
+      <div class="vocab-card"><h3>纪念品</h3><p>jì niàn pǐn</p><span>souvenir</span></div>
+      <div class="vocab-card"><h3>礼物</h3><p>lǐ wù</p><span>present / gift</span></div>
+      <div class="vocab-card"><h3>日常用品</h3><p>rì cháng yòng pǐn</p><span>daily necessities</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我想买礼物和纪念品。</p>
+      <p>I want to buy gifts and souvenirs.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Useful items</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>钥匙</h3><p>yào shi</p><span>key</span></div>
+      <div class="vocab-card"><h3>镜子</h3><p>jìng zi</p><span>mirror</span></div>
+      <div class="vocab-card"><h3>橡皮</h3><p>xiàng pí</p><span>eraser</span></div>
+      <div class="vocab-card"><h3>牙刷</h3><p>yá shuā</p><span>toothbrush</span></div>
+      <div class="vocab-card"><h3>笔</h3><p>bǐ</p><span>pen</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我买了钥匙、牙刷和笔。</p>
+      <p>I bought a key, toothbrush and pen.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Shops and stationery</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>玩具</h3><p>wán jù</p><span>toy</span></div>
+      <div class="vocab-card"><h3>文具</h3><p>wén jù</p><span>stationery</span></div>
+      <div class="vocab-card"><h3>商店</h3><p>shāng diàn</p><span>shop</span></div>
+      <div class="vocab-card"><h3>本子</h3><p>běn zi</p><span>notebook / workbook</span></div>
+      <div class="vocab-card"><h3>超市</h3><p>chāo shì</p><span>supermarket</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我在商店买文具和本子。</p>
+      <p>I buy stationery and notebooks in the shop.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">超市里有很多东西。</p>
+      <p>There are lots of things in the supermarket.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Around the shop</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>挂</h3><p>guà</p><span>to hang</span></div>
+      <div class="vocab-card"><h3>墙</h3><p>qiáng</p><span>wall</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">镜子挂在墙上。</p>
+      <p>The mirror hangs on the wall.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我去商店买东西。我想买礼物、文具和本子。超市里有很多日常用品。
+      </p>
+      <p>
+        I go to the shop to buy things. I want to buy gifts, stationery and notebooks. There are many daily necessities in the supermarket.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="shopping.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "东西 means?", options: ["Thing / stuff", "Shop", "Wall"], correct: "Thing / stuff" },
+    { q: "纪念品 means?", options: ["Souvenir", "Toothbrush", "Notebook"], correct: "Souvenir" },
+    { q: "礼物 means?", options: ["Gift", "Mirror", "Toy"], correct: "Gift" },
+    { q: "日常用品 means?", options: ["Daily necessities", "Stationery", "Supermarket"], correct: "Daily necessities" }
+  ],
+
+  q2: [
+    { q: "钥匙 means?", options: ["Key", "Pen", "Eraser"], correct: "Key" },
+    { q: "镜子 means?", options: ["Mirror", "Toothbrush", "Wall"], correct: "Mirror" },
+    { q: "橡皮 means?", options: ["Eraser", "Gift", "Toy"], correct: "Eraser" },
+    { q: "牙刷 means?", options: ["Toothbrush", "Pen", "Notebook"], correct: "Toothbrush" }
+  ],
+
+  q3: [
+    { q: "玩具 means?", options: ["Toy", "Shop", "Wall"], correct: "Toy" },
+    { q: "文具 means?", options: ["Stationery", "Souvenir", "Key"], correct: "Stationery" },
+    { q: "商店 means?", options: ["Shop", "Supermarket", "Mirror"], correct: "Shop" },
+    { q: "超市 means?", options: ["Supermarket", "Shop", "Notebook"], correct: "Supermarket" },
+    { q: "墙 means?", options: ["Wall", "Gift", "Pen"], correct: "Wall" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordering Food | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Eating and Drinking</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="eating-drinking.html">← Back to Eating and Drinking</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Ordering Food</h2>
+  <p>Learn how to order food, ask for help, describe taste and speak politely in restaurants.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Ordering in a restaurant</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>服务员</h3><p>fúwùyuán</p><span>waiter / waitress</span></div>
+      <div class="vocab-card"><h3>点菜</h3><p>diǎn cài</p><span>order food</span></div>
+      <div class="vocab-card"><h3>要</h3><p>yào</p><span>want / would like</span></div>
+      <div class="vocab-card"><h3>还是</h3><p>háishi</p><span>or</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">服务员，我要点菜。</p>
+      <p>Waiter, I would like to order food.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">你要茶还是水？</p>
+      <p>Do you want tea or water?</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Asking for help</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>加</h3><p>jiā</p><span>add</span></div>
+      <div class="vocab-card"><h3>杯子</h3><p>bēizi</p><span>cup / glass</span></div>
+      <div class="vocab-card"><h3>帮</h3><p>bāng</p><span>help</span></div>
+      <div class="vocab-card"><h3>拿</h3><p>ná</p><span>take / bring</span></div>
+      <div class="vocab-card"><h3>请你来</h3><p>qǐng nǐ lái</p><span>please come</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">请你来帮我拿杯子。</p>
+      <p>Please come and help me bring a cup.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">请加一杯水。</p>
+      <p>Please add one cup of water.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Describing food and people</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>友好</h3><p>yǒuhǎo</p><span>friendly</span></div>
+      <div class="vocab-card"><h3>尝尝</h3><p>chángchang</p><span>have a taste</span></div>
+      <div class="vocab-card"><h3>口渴</h3><p>kǒukě</p><span>thirsty</span></div>
+      <div class="vocab-card"><h3>新鲜</h3><p>xīnxiān</p><span>fresh</span></div>
+      <div class="vocab-card"><h3>味道</h3><p>wèidao</p><span>taste / flavour</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这个服务员很友好。</p>
+      <p>This waiter is very friendly.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这个水果很新鲜，味道很好。</p>
+      <p>This fruit is fresh and the taste is good.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Linking ideas</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>与</h3><p>yǔ</p><span>and / with</span></div>
+      <div class="vocab-card"><h3>时评</h3><p>shípíng</p><span>current affairs commentary</span></div>
+      <div class="vocab-card"><h3>就是</h3><p>jiùshì</p><span>exactly / that is</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢茶与点心。</p>
+      <p>I like tea and dim sum.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这就是我喜欢的味道。</p>
+      <p>This is exactly the taste I like.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        服务员，我要点菜。请你来帮我拿杯子。我口渴，想喝水。这个菜很新鲜，味道很好。
+      </p>
+      <p>
+        Waiter, I would like to order food. Please come and help me bring a cup.
+        I am thirsty and want to drink water. This dish is fresh and tastes good.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="eating-drinking.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "服务员 means?", options: ["Waiter / waitress", "Menu", "Cup"], correct: "Waiter / waitress" },
+    { q: "点菜 means?", options: ["Order food", "Drink water", "Cook rice"], correct: "Order food" },
+    { q: "要 means?", options: ["Want / would like", "Fresh", "Taste"], correct: "Want / would like" },
+    { q: "还是 means?", options: ["Or", "And", "Because"], correct: "Or" }
+  ],
+
+  q2: [
+    { q: "杯子 means?", options: ["Cup / glass", "Plate", "Knife"], correct: "Cup / glass" },
+    { q: "帮 means?", options: ["Help", "Taste", "Add"], correct: "Help" },
+    { q: "拿 means?", options: ["Take / bring", "Drink", "Cook"], correct: "Take / bring" },
+    { q: "加 means?", options: ["Add", "Fresh", "Friendly"], correct: "Add" }
+  ],
+
+  q3: [
+    { q: "友好 means?", options: ["Friendly", "Thirsty", "Fresh"], correct: "Friendly" },
+    { q: "尝尝 means?", options: ["Have a taste", "Order food", "Bring a cup"], correct: "Have a taste" },
+    { q: "口渴 means?", options: ["Thirsty", "Hungry", "Full"], correct: "Thirsty" },
+    { q: "新鲜 means?", options: ["Fresh", "Salty", "Bitter"], correct: "Fresh" },
+    { q: "味道 means?", options: ["Taste / flavour", "Restaurant", "Blog"], correct: "Taste / flavour" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

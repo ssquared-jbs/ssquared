@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transportation Final Test | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Transportation | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="transportation.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Transportation Final Test</h2>
+  <p>40 mixed questions: 30 from Transportation, plus 10 from previous topics.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder">
+    <p><strong>Write a Mandarin paragraph about transportation. Try to include:</strong></p>
+    <ul>
+      <li>two transport methods, like 校车, 电车, 出租车, 地铁 or 高铁</li>
+      <li>one sentence using 坐, 骑 or 开车</li>
+      <li>one ticket or station word, like 火车站, 单程票, 来回票 or 行李</li>
+      <li>one timetable or journey sentence using 时刻表, 路程 or 准时</li>
+      <li>one problem, like 堵车, 迟到, 误点 or 挤</li>
+      <li>one opinion, like 方便, 快, 慢 or 有名</li>
+      <li>one sentence using 因为</li>
+      <li>one sentence using 所以 or 先……然后……</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+    <button class="continue-btn" onclick="checkEssay()">Check Essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="transportation.html">← Back to Topic</a>
+  <a href="learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+  {t:"mcq", q:"交通 means?", o:["Transport / traffic","Weather","Subject"], a:"Transport / traffic"},
+  {t:"mcq", q:"摩托车 means?", o:["Motorbike","Tram","Taxi"], a:"Motorbike"},
+  {t:"mcq", q:"电车 means?", o:["Tram","Train station","Airport"], a:"Tram"},
+  {t:"mcq", q:"出租车 means?", o:["Taxi","Cable car","Ticket"], a:"Taxi"},
+  {t:"mcq", q:"火车站 means?", o:["Train station","Airport","Bus stop"], a:"Train station"},
+  {t:"mcq", q:"飞机场 means?", o:["Airport","Underground","Station"], a:"Airport"},
+  {t:"mcq", q:"准时 means?", o:["On time","Late","Crowded"], a:"On time"},
+  {t:"mcq", q:"堵车 means?", o:["Traffic jam","Route number","Return ticket"], a:"Traffic jam"},
+  {t:"mcq", q:"地铁 means?", o:["Underground","High-speed rail","Taxi"], a:"Underground"},
+  {t:"mcq", q:"高铁 means?", o:["High-speed rail","School bus","Rickshaw"], a:"High-speed rail"},
+
+  {t:"fill", q:"我每天坐 ____ 上学。", o:["校车","行李","小岛"], a:"校车"},
+  {t:"fill", q:"我今天 ____ 上班。", o:["打车","出发","售票员"], a:"打车"},
+  {t:"fill", q:"我要买一张 ____。", o:["来回票","摩托车","交通"], a:"来回票"},
+  {t:"fill", q:"我先坐车，____ 走路。", o:["然后","还","骑"], a:"然后"},
+  {t:"fill", q:"飞机准时 ____。", o:["起飞","堵车","出现"], a:"起飞"},
+  {t:"fill", q:"因为堵车，所以我 ____。", o:["迟到","直接","有名"], a:"迟到"},
+  {t:"fill", q:"地铁站的 ____ 很难找。", o:["出口","行李","单程票"], a:"出口"},
+  {t:"fill", q:"我每天 ____ 去学校。", o:["骑自行车","误点","到达"], a:"骑自行车"},
+
+  {t:"type", q:"Type the Chinese for: taxi", a:"出租车"},
+  {t:"type", q:"Type the Chinese for: school bus", a:"校车"},
+  {t:"type", q:"Type the Chinese for: train station", a:"火车站"},
+  {t:"type", q:"Type the Chinese for: airport", a:"飞机场"},
+  {t:"type", q:"Type the Chinese for: luggage", a:"行李"},
+  {t:"type", q:"Type the Chinese for: traffic jam", a:"堵车"},
+  {t:"type", q:"Type the Chinese for: high-speed rail", a:"高铁"},
+
+  {t:"order", q:"Build: I take the school bus.", w:["我","坐","校车"], a:"我坐校车"},
+  {t:"order", q:"Build: I take a taxi today.", w:["我","今天","打车"], a:"我今天打车"},
+  {t:"order", q:"Build: I buy a return ticket.", w:["我","买","来回票"], a:"我买来回票"},
+  {t:"order", q:"Build: The plane takes off on time.", w:["飞机","准时","起飞"], a:"飞机准时起飞"},
+  {t:"order", q:"Build: I ride a bike to school.", w:["我","骑自行车","去学校"], a:"我骑自行车去学校"},
+
+  {t:"mcq", q:"天气 means?", o:["Weather","Temperature","Season"], a:"Weather"},
+  {t:"mcq", q:"科目 means?", o:["Subject","Timetable","Campus"], a:"Subject"},
+  {t:"mcq", q:"北 means?", o:["North","South","East"], a:"North"},
+  {t:"mcq", q:"商店 means?", o:["Shop","School","Hospital"], a:"Shop"},
+  {t:"mcq", q:"医生 means?", o:["Doctor","Teacher","Friend"], a:"Doctor"},
+  {t:"fill", q:"我喜欢喝 ____。", o:["水","米饭","面包"], a:"水"},
+  {t:"fill", q:"我早上七点 ____。", o:["起床","搬家","喝茶"], a:"起床"},
+  {t:"type", q:"Type the Chinese for: friend", a:"朋友"},
+  {t:"type", q:"Type the Chinese for: rice", a:"米饭"},
+  {t:"order", q:"Build: I like playing football.", w:["我","喜欢","踢足球"], a:"我喜欢踢足球"}
+];
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function safe(text) {
+  return text.replace(/'/g, "\\'");
+}
+
+function loadQuestions() {
+  const area = document.getElementById("questionArea");
+  area.innerHTML = "";
+
+  shuffle([...questions]).forEach(function(q, i) {
+    area.innerHTML += buildQuestion(q, i);
+  });
+}
+
+function buildQuestion(q, i) {
+  if (q.t === "mcq") {
+    const options = shuffle([...q.o]);
+    const letters = ["A", "B", "C"];
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option, index) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                <strong>${letters[index]}.</strong> ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "fill") {
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p class="chinese">${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "type") {
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this, '${safe(q.a)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "order") {
+    const words = shuffle([...q.w]);
+    const builderId = "builder" + i;
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${words.map(function(word) {
+            return `<button onclick="addWord(this, '${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}', '${safe(q.a)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}', '${bankId}')">Reset</button>
+
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button, selected, correctAnswer) {
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selected === correctAnswer) {
+    button.classList.add("correct-answer");
+    markQuestion(true, feedback);
+  } else {
+    button.classList.add("wrong-answer");
+    markQuestion(false, feedback);
+  }
+}
+
+function checkTypedAnswer(button, correctAnswer) {
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+  const answer = input.value.trim();
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(answer === correctAnswer, feedback);
+}
+
+function addWord(button, builderId) {
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId, correctAnswer) {
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const answer = Array.from(builder.children)
+    .map(function(word) {
+      return word.textContent;
+    })
+    .join("");
+
+  if (answer === correctAnswer) {
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+    markQuestion(true, feedback);
+  } else {
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+    markQuestion(false, feedback);
+  }
+}
+
+function resetOrder(builderId, bankId) {
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button) {
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect, feedback) {
+  total++;
+
+  if (isCorrect) {
+    correct++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrong++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults() {
+  document.getElementById("totalQ").textContent = total;
+  document.getElementById("correctQ").textContent = correct;
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+  if (total > 0) {
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay() {
+  const text = document.getElementById("essay").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "校车", "电车", "出租车", "地铁", "高铁", "坐", "骑", "开车",
+    "火车站", "单程票", "来回票", "行李", "时刻表", "路程", "准时",
+    "堵车", "迟到", "误点", "挤", "方便", "快", "慢", "有名",
+    "因为", "所以", "先", "然后"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word) {
+    if (text.includes(word)) {
+      found++;
+    }
+  });
+
+  if (text.length < 40) {
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write a longer answer. Aim for at least 5 sentences.</p>";
+  } else if (found >= 8) {
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included lots of key Transportation vocabulary.</p>";
+  } else if (found >= 5) {
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail about tickets, delays or transport opinions.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but try to include more key transport vocabulary.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

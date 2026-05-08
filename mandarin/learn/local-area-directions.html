@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Directions and Area | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Living Environment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="living-environment.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Directions and Area</h2>
+  <p>Learn how to describe directions and parts of your area.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Basic Directions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>北</h3><p>běi</p><span>north</span></div>
+      <div class="vocab-card"><h3>南</h3><p>nán</p><span>south</span></div>
+      <div class="vocab-card"><h3>东</h3><p>dōng</p><span>east</span></div>
+      <div class="vocab-card"><h3>西</h3><p>xī</p><span>west</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我家在城市的北边。</p>
+      <p>My home is in the north of the city.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<!-- QUIZ 1 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Extended Directions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>东北</h3><p>dōng běi</p><span>northeast</span></div>
+      <div class="vocab-card"><h3>东南</h3><p>dōng nán</p><span>southeast</span></div>
+      <div class="vocab-card"><h3>西北</h3><p>xī běi</p><span>northwest</span></div>
+      <div class="vocab-card"><h3>西南</h3><p>xī nán</p><span>southwest</span></div>
+    </div>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>东边</h3><span>east side</span></div>
+      <div class="vocab-card"><h3>西方</h3><span>the west</span></div>
+      <div class="vocab-card"><h3>方向</h3><span>direction</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">学校在我家的东边。</p>
+      <p>The school is to the east of my house.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<!-- QUIZ 2 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Buildings and Levels</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>楼上</h3><p>lóu shàng</p><span>upstairs</span></div>
+      <div class="vocab-card"><h3>楼下</h3><p>lóu xià</p><span>downstairs</span></div>
+      <div class="vocab-card"><h3>时装店</h3><p>shí zhuāng diàn</p><span>boutique</span></div>
+      <div class="vocab-card"><h3>钢笔</h3><p>gāng bǐ</p><span>fountain pen</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">商店在楼下。</p>
+      <p>The shop is downstairs.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<!-- FINAL QUIZ -->
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+
+  </div>
+</section>
+
+<!-- END -->
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我家在城市的北边。学校在东边，商店在楼下。
+      </p>
+      <p>
+        My home is in the north of the city. The school is to the east, and the shop is downstairs.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "北 means?", options: ["North", "South", "West"], correct: "North" },
+    { q: "南 means?", options: ["South", "East", "West"], correct: "South" },
+    { q: "东 means?", options: ["East", "West", "North"], correct: "East" },
+    { q: "西 means?", options: ["West", "South", "East"], correct: "West" }
+  ],
+
+  q2: [
+    { q: "东北 means?", options: ["Northeast", "Southwest", "Northwest"], correct: "Northeast" },
+    { q: "东南 means?", options: ["Southeast", "Northwest", "West"], correct: "Southeast" },
+    { q: "西北 means?", options: ["Northwest", "Southeast", "East"], correct: "Northwest" },
+    { q: "西南 means?", options: ["Southwest", "Northeast", "North"], correct: "Southwest" },
+    { q: "方向 means?", options: ["Direction", "Boutique", "Fountain pen"], correct: "Direction" }
+  ],
+
+  q3: [
+    { q: "楼上 means?", options: ["Upstairs", "Downstairs", "Shop"], correct: "Upstairs" },
+    { q: "楼下 means?", options: ["Downstairs", "Upstairs", "North"], correct: "Downstairs" },
+    { q: "时装店 means?", options: ["Boutique", "Direction", "East side"], correct: "Boutique" },
+    { q: "钢笔 means?", options: ["Fountain pen", "Shop", "South"], correct: "Fountain pen" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>
