@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question Words Flashcards | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Flashcards | Question Words</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="flashcards/flashcards.html">← Back to Flashcards</a>
+</div>
+
+<section class="page-intro">
+  <h2>Question Words Flashcards</h2>
+  <p>All key IGCSE question words and question phrases. Tap to flip, swipe to move, and mark hard words.</p>
+</section>
+
+<section class="flashcard-container">
+
+  <div class="flashcard-scene" onclick="flipCard()" id="flashScene">
+    <div class="flashcard flip-card" id="card">
+      <div class="flashcard-face flashcard-front">
+        <div id="frontContent"></div>
+      </div>
+      <div class="flashcard-face flashcard-back">
+        <div id="backContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flashcard-controls">
+    <button onclick="prevCard()">← Previous</button>
+    <button onclick="flipCard()">Flip Card</button>
+    <button onclick="nextCard()">Next →</button>
+  </div>
+
+  <div class="flashcard-controls">
+    <button onclick="markHard()">⭐ Mark Hard</button>
+    <button onclick="reviewHard()">Review Hard</button>
+    <button onclick="resetAll()">Reset</button>
+  </div>
+
+  <p class="flash-progress" id="progress"></p>
+
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let originalCards = [
+  {han:"什么", pin:"shén me", eng:"what"},
+  {han:"谁", pin:"shéi", eng:"who"},
+  {han:"哪", pin:"nǎ", eng:"which"},
+  {han:"哪个", pin:"nǎ ge", eng:"which one"},
+  {han:"哪些", pin:"nǎ xiē", eng:"which ones"},
+  {han:"哪里", pin:"nǎ lǐ", eng:"where"},
+  {han:"哪儿", pin:"nǎr", eng:"where"},
+  {han:"为什么", pin:"wèi shén me", eng:"why"},
+  {han:"怎么", pin:"zěn me", eng:"how"},
+  {han:"怎么样", pin:"zěn me yàng", eng:"how is it / what is it like"},
+  {han:"怎样", pin:"zěn yàng", eng:"how / what kind of"},
+  {han:"多少", pin:"duō shǎo", eng:"how many / how much"},
+  {han:"几", pin:"jǐ", eng:"how many"},
+  {han:"什么时候", pin:"shén me shí hou", eng:"when"},
+  {han:"几点", pin:"jǐ diǎn", eng:"what time"},
+  {han:"多大", pin:"duō dà", eng:"how old / how big"},
+  {han:"多久", pin:"duō jiǔ", eng:"how long"},
+  {han:"多长时间", pin:"duō cháng shí jiān", eng:"how long"},
+  {han:"多远", pin:"duō yuǎn", eng:"how far"},
+  {han:"多高", pin:"duō gāo", eng:"how tall / how high"},
+  {han:"多重", pin:"duō zhòng", eng:"how heavy"},
+  {han:"几岁", pin:"jǐ suì", eng:"how old"},
+  {han:"多少钱", pin:"duō shǎo qián", eng:"how much money"},
+  {han:"第几", pin:"dì jǐ", eng:"which number / what position"},
+  {han:"为什么不", pin:"wèi shén me bù", eng:"why not"},
+  {han:"谁的", pin:"shéi de", eng:"whose"},
+  {han:"哪里的", pin:"nǎ lǐ de", eng:"from where / belonging to where"},
+  {han:"哪国人", pin:"nǎ guó rén", eng:"person from which country"},
+  {han:"哪一天", pin:"nǎ yì tiān", eng:"which day"},
+  {han:"哪个月", pin:"nǎ ge yuè", eng:"which month"},
+  {han:"哪一年", pin:"nǎ yì nián", eng:"which year"},
+  {han:"星期几", pin:"xīng qī jǐ", eng:"what day of the week"},
+  {han:"几号", pin:"jǐ hào", eng:"what date"},
+  {han:"几月几号", pin:"jǐ yuè jǐ hào", eng:"what month and date"},
+  {han:"几个人", pin:"jǐ ge rén", eng:"how many people"},
+  {han:"几口人", pin:"jǐ kǒu rén", eng:"how many people in a family"},
+  {han:"几个小时", pin:"jǐ ge xiǎo shí", eng:"how many hours"},
+  {han:"几分钟", pin:"jǐ fēn zhōng", eng:"how many minutes"},
+  {han:"几次", pin:"jǐ cì", eng:"how many times"},
+  {han:"几遍", pin:"jǐ biàn", eng:"how many times through"},
+  {han:"第几次", pin:"dì jǐ cì", eng:"which time / which occasion"},
+  {han:"有什么", pin:"yǒu shén me", eng:"what is there / what do you have"},
+  {han:"有没有", pin:"yǒu méi yǒu", eng:"is there / do you have"},
+  {han:"是不是", pin:"shì bú shì", eng:"is it or not"},
+  {han:"会不会", pin:"huì bú huì", eng:"can or cannot / will or will not"},
+  {han:"能不能", pin:"néng bu néng", eng:"can or cannot"},
+  {han:"可不可以", pin:"kě bù kě yǐ", eng:"can or cannot / may I"},
+  {han:"要不要", pin:"yào bú yào", eng:"want or not"},
+  {han:"想不想", pin:"xiǎng bù xiǎng", eng:"want to or not"},
+  {han:"喜欢不喜欢", pin:"xǐ huān bù xǐ huān", eng:"like or dislike"},
+  {han:"去不去", pin:"qù bú qù", eng:"go or not"},
+  {han:"吃不吃", pin:"chī bù chī", eng:"eat or not"},
+  {han:"喝不喝", pin:"hē bù hē", eng:"drink or not"},
+  {han:"对不对", pin:"duì bú duì", eng:"right or not"},
+  {han:"好吗", pin:"hǎo ma", eng:"is that okay?"},
+  {han:"可以吗", pin:"kě yǐ ma", eng:"is it okay / may I?"},
+  {han:"是吗", pin:"shì ma", eng:"is that so?"},
+  {han:"真的吗", pin:"zhēn de ma", eng:"really?"},
+  {han:"你呢", pin:"nǐ ne", eng:"what about you?"},
+  {han:"他呢", pin:"tā ne", eng:"what about him?"},
+  {han:"她呢", pin:"tā ne", eng:"what about her?"},
+  {han:"在哪儿", pin:"zài nǎr", eng:"where is it?"},
+  {han:"从哪儿来", pin:"cóng nǎr lái", eng:"where from?"},
+  {han:"到哪儿去", pin:"dào nǎr qù", eng:"where to?"},
+  {han:"怎么去", pin:"zěn me qù", eng:"how do you go?"},
+  {han:"坐什么车", pin:"zuò shén me chē", eng:"what transport do you take?"},
+  {han:"买什么", pin:"mǎi shén me", eng:"what to buy"},
+  {han:"吃什么", pin:"chī shén me", eng:"what to eat"},
+  {han:"喝什么", pin:"hē shén me", eng:"what to drink"},
+  {han:"做什么", pin:"zuò shén me", eng:"what to do"},
+  {han:"学什么", pin:"xué shén me", eng:"what to study"},
+  {han:"看什么", pin:"kàn shén me", eng:"what to watch / read"},
+  {han:"为什么喜欢", pin:"wèi shén me xǐ huān", eng:"why do you like"},
+  {han:"你叫什么名字？", pin:"nǐ jiào shén me míng zi", eng:"what is your name?"},
+  {han:"你几岁？", pin:"nǐ jǐ suì", eng:"how old are you?"},
+  {han:"你家有几口人？", pin:"nǐ jiā yǒu jǐ kǒu rén", eng:"how many people are in your family?"},
+  {han:"现在几点？", pin:"xiàn zài jǐ diǎn", eng:"what time is it now?"},
+  {han:"今天星期几？", pin:"jīn tiān xīng qī jǐ", eng:"what day is it today?"},
+  {han:"你喜欢什么科目？", pin:"nǐ xǐ huān shén me kē mù", eng:"what subject do you like?"},
+  {han:"你为什么学习中文？", pin:"nǐ wèi shén me xué xí zhōng wén", eng:"why do you study Chinese?"},
+  {han:"你觉得怎么样？", pin:"nǐ jué de zěn me yàng", eng:"what do you think of it?"},
+  {han:"你将来想做什么？", pin:"nǐ jiāng lái xiǎng zuò shén me", eng:"what do you want to do in the future?"}
+];
+
+let cards = [];
+let hardCards = [];
+let index = 0;
+let flipped = false;
+let startX = 0;
+let endX = 0;
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function initCards() {
+  cards = shuffle([...originalCards]);
+  index = 0;
+  flipped = false;
+  updateCard();
+}
+
+function updateCard() {
+  const card = cards[index];
+
+  document.getElementById("frontContent").innerHTML = `
+    <div class="han">${card.han}</div>
+    <div class="pin">${card.pin}</div>
+  `;
+
+  document.getElementById("backContent").innerHTML = `
+    <div class="eng">${card.eng}</div>
+  `;
+
+  document.getElementById("card").classList.toggle("is-flipped", flipped);
+  document.getElementById("progress").textContent =
+    `Card ${index + 1} of ${cards.length} | Hard cards: ${hardCards.length}`;
+
+  setTimeout(fitText, 0);
+}
+
+function fitText() {
+  const elements = document.querySelectorAll(".han, .eng");
+
+  elements.forEach(el => {
+    el.style.fontSize = "";
+    let size = parseFloat(window.getComputedStyle(el).fontSize);
+
+    while (el.scrollWidth > el.clientWidth && size > 24) {
+      size -= 2;
+      el.style.fontSize = size + "px";
+    }
+  });
+}
+
+function flipCard() {
+  flipped = !flipped;
+  updateCard();
+}
+
+function animateCard(direction, callback) {
+  const scene = document.getElementById("flashScene");
+
+  scene.classList.remove("flashcard-slide-left", "flashcard-slide-right");
+  void scene.offsetWidth;
+
+  scene.classList.add(direction === "next" ? "flashcard-slide-left" : "flashcard-slide-right");
+
+  setTimeout(function() {
+    callback();
+    scene.classList.remove("flashcard-slide-left", "flashcard-slide-right");
+  }, 220);
+}
+
+function nextCard() {
+  animateCard("next", function() {
+    index = (index + 1) % cards.length;
+    flipped = false;
+    updateCard();
+  });
+}
+
+function prevCard() {
+  animateCard("prev", function() {
+    index = (index - 1 + cards.length) % cards.length;
+    flipped = false;
+    updateCard();
+  });
+}
+
+function markHard() {
+  const current = cards[index];
+  const exists = hardCards.some(card => card.han === current.han);
+  if (!exists) hardCards.push(current);
+  nextCard();
+}
+
+function reviewHard() {
+  if (hardCards.length === 0) {
+    alert("No hard cards yet.");
+    return;
+  }
+
+  cards = shuffle([...hardCards]);
+  index = 0;
+  flipped = false;
+  updateCard();
+}
+
+function resetAll() {
+  hardCards = [];
+  initCards();
+}
+
+const scene = document.getElementById("flashScene");
+
+scene.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+scene.addEventListener("touchend", e => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+scene.addEventListener("mousedown", e => startX = e.clientX);
+scene.addEventListener("mouseup", e => {
+  endX = e.clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = endX - startX;
+
+  if (Math.abs(diff) > 60) {
+    if (diff < 0) nextCard();
+    else prevCard();
+  }
+}
+
+initCards();
+</script>
+
+</body>
+</html>

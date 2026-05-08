@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rapid Fire Unit C | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Rapid Fire | Unit C</p>
+</header>
+
+<main class="rf-game-wrap">
+
+<div class="back-button">
+  <a href="rapid-fire.html">← Back to Rapid Fire</a>
+</div>
+
+<section id="startScreen" class="rf-start-screen">
+  <h2>Unit C Rapid Fire</h2>
+  <p>Watch the Mandarin word float across the screen. Pick the correct English meaning before it disappears.</p>
+
+  <div class="rf-rules-grid">
+    <div>
+      <h3>Fast answer</h3>
+      <p>Under 1.5 seconds = 15 XP</p>
+    </div>
+    <div>
+      <h3>Good answer</h3>
+      <p>Under 2 seconds = 10 XP</p>
+    </div>
+    <div>
+      <h3>Safe answer</h3>
+      <p>Under 3 seconds = 7 XP</p>
+    </div>
+    <div>
+      <h3>Slow answer</h3>
+      <p>Under 4 seconds = 5 XP</p>
+    </div>
+  </div>
+
+  <button class="rf-start-btn" onclick="startGame()">Start Game</button>
+</section>
+
+<section id="gameScreen" class="hidden">
+
+  <section class="rf-topbar">
+    <div>XP: <span id="xp">0</span></div>
+    <div>Streak: <span id="streak">0</span></div>
+    <div>Best: <span id="bestStreak">0</span></div>
+    <div>Time: <span id="time">60</span>s</div>
+  </section>
+
+  <section class="rf-arena">
+    <div id="floatingWord" class="floating-word">开始</div>
+  </section>
+
+  <section class="rf-options" id="options"></section>
+
+  <section id="feedback" class="rf-feedback"></section>
+
+</section>
+
+<section id="endScreen" class="rf-end hidden">
+  <h2>Game Over</h2>
+  <p>Total XP: <span id="finalXp">0</span></p>
+  <p>Best Streak: <span id="finalBestStreak">0</span></p>
+
+  <button onclick="startGame()">Play Again</button>
+  <a href="rapid-fire.html">Choose Another Mode</a>
+</section>
+
+</main>
+
+<script src="vocab-bank.js"></script>
+
+<script>
+let unitCVocab = [];
+let currentQuestion = null;
+let xp = 0;
+let streak = 0;
+let bestStreak = 0;
+let timeLeft = 60;
+let gameTimer = null;
+let wordTimeout = null;
+let questionStartTime = 0;
+let acceptingAnswers = false;
+
+function startGame() {
+  unitCVocab = vocabBank.filter(function(item) {
+    return item.unit === "C";
+  });
+
+  if (unitCVocab.length < 3) {
+    alert("Unit C needs at least 3 words in vocab-bank.js with unit: \"C\".");
+    return;
+  }
+
+  xp = 0;
+  streak = 0;
+  bestStreak = 0;
+  timeLeft = 60;
+
+  document.getElementById("startScreen").classList.add("hidden");
+  document.getElementById("endScreen").classList.add("hidden");
+  document.getElementById("gameScreen").classList.remove("hidden");
+
+  updateStats();
+
+  clearInterval(gameTimer);
+  clearTimeout(wordTimeout);
+
+  gameTimer = setInterval(function() {
+    timeLeft--;
+    updateStats();
+
+    if (timeLeft <= 0) {
+      endGame();
+    }
+  }, 1000);
+
+  loadQuestion();
+}
+
+function loadQuestion() {
+  clearTimeout(wordTimeout);
+  acceptingAnswers = true;
+
+  document.getElementById("feedback").textContent = "";
+
+  currentQuestion = unitCVocab[Math.floor(Math.random() * unitCVocab.length)];
+  questionStartTime = Date.now();
+
+  const word = document.getElementById("floatingWord");
+  word.textContent = currentQuestion.word;
+
+  word.style.animation = "none";
+  void word.offsetWidth;
+  word.style.animation = "floatAcross 4s linear forwards";
+
+  const options = generateOptions(currentQuestion);
+  const optionsBox = document.getElementById("options");
+  optionsBox.innerHTML = "";
+
+  options.forEach(function(option) {
+    const button = document.createElement("button");
+    button.textContent = option;
+
+    button.onclick = function() {
+      checkAnswer(option, button);
+    };
+
+    optionsBox.appendChild(button);
+  });
+
+  wordTimeout = setTimeout(function() {
+    missQuestion();
+  }, 4000);
+}
+
+function generateOptions(question) {
+  const correctAnswer = question.answer;
+
+  let wrongAnswers = unitCVocab
+    .filter(function(item) {
+      return item.answer !== correctAnswer;
+    })
+    .map(function(item) {
+      return item.answer;
+    });
+
+  wrongAnswers = [...new Set(wrongAnswers)];
+
+  const twoWrong = shuffle([...wrongAnswers]).slice(0, 2);
+
+  return shuffle([correctAnswer].concat(twoWrong));
+}
+
+function checkAnswer(choice, clickedButton) {
+  if (!acceptingAnswers) return;
+
+  acceptingAnswers = false;
+  clearTimeout(wordTimeout);
+
+  const timeTaken = (Date.now() - questionStartTime) / 1000;
+  const feedback = document.getElementById("feedback");
+
+  disableButtons();
+
+  if (choice === currentQuestion.answer) {
+    streak++;
+
+    if (streak > bestStreak) {
+      bestStreak = streak;
+    }
+
+    let gained = calculateXp(timeTaken);
+
+    const streakBonus = Math.floor(streak / 3) * 2;
+    gained += streakBonus;
+
+    xp += gained;
+
+    clickedButton.classList.add("rf-correct");
+    feedback.textContent = "Correct! +" + gained + " XP";
+    feedback.className = "rf-feedback rf-good";
+  } else {
+    streak = 0;
+
+    clickedButton.classList.add("rf-wrong");
+    highlightCorrectAnswer();
+
+    feedback.textContent = "Wrong. Correct answer: " + currentQuestion.answer;
+    feedback.className = "rf-feedback rf-bad";
+  }
+
+  updateStats();
+
+  setTimeout(function() {
+    if (timeLeft > 0) {
+      loadQuestion();
+    }
+  }, 650);
+}
+
+function calculateXp(timeTaken) {
+  if (timeTaken <= 1.5) return 15;
+  if (timeTaken <= 2) return 10;
+  if (timeTaken <= 3) return 7;
+  return 5;
+}
+
+function missQuestion() {
+  if (!acceptingAnswers) return;
+
+  acceptingAnswers = false;
+  streak = 0;
+
+  disableButtons();
+  highlightCorrectAnswer();
+
+  const feedback = document.getElementById("feedback");
+  feedback.textContent = "Too slow. Correct answer: " + currentQuestion.answer;
+  feedback.className = "rf-feedback rf-bad";
+
+  updateStats();
+
+  setTimeout(function() {
+    if (timeLeft > 0) {
+      loadQuestion();
+    }
+  }, 750);
+}
+
+function disableButtons() {
+  document.querySelectorAll("#options button").forEach(function(button) {
+    button.disabled = true;
+  });
+}
+
+function highlightCorrectAnswer() {
+  document.querySelectorAll("#options button").forEach(function(button) {
+    if (button.textContent === currentQuestion.answer) {
+      button.classList.add("rf-correct");
+    }
+  });
+}
+
+function updateStats() {
+  document.getElementById("xp").textContent = xp;
+  document.getElementById("streak").textContent = streak;
+  document.getElementById("bestStreak").textContent = bestStreak;
+  document.getElementById("time").textContent = timeLeft;
+}
+
+function endGame() {
+  clearInterval(gameTimer);
+  clearTimeout(wordTimeout);
+  acceptingAnswers = false;
+
+  document.getElementById("gameScreen").classList.add("hidden");
+  document.getElementById("endScreen").classList.remove("hidden");
+
+  document.getElementById("finalXp").textContent = xp;
+  document.getElementById("finalBestStreak").textContent = bestStreak;
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+</script>
+
+</body>
+</html>

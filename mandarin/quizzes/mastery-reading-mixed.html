@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mixed Reading | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Mastery Reading | Mixed Practice</p>
+</header>
+
+<main class="reading-wrap">
+
+  <div class="back-button">
+    <a href="mastery-reading.html">← Back to Reading</a>
+  </div>
+
+  <section class="writing-hero">
+    <p class="quiz-label">Mixed Reading</p>
+    <h2>Full Course Reading Practice</h2>
+    <p>Texts can come from any unit, so this is proper mixed exam preparation.</p>
+  </section>
+
+  <section class="reading-card">
+    <h3>Text</h3>
+    <div id="readingText" class="chinese-text"></div>
+  </section>
+
+  <section id="questionCard" class="question-card"></section>
+
+  <section id="readingFeedback" class="mark-box hidden"></section>
+
+</main>
+
+<script>
+const readingBank = [
+  {
+    unit: "A",
+    text: `我叫王明，今年十五岁，是英国人。我家有五口人：爸爸、妈妈、姐姐、弟弟和我。我们家还有一只很可爱的狗。每天早上，我七点起床，然后吃早饭。早饭我常常吃面包，也喝一杯牛奶。
+
+放学以后，我喜欢听音乐和打篮球。周末的时候，我有时候和朋友去公园踢足球，有时候在家看电影。我觉得运动很有意思，也对身体很好。
+
+我最喜欢吃中国菜，特别是米饭、面条和饺子。可是我不太喜欢喝咖啡，因为我觉得咖啡太苦了。`,
+
+    questions: [
+      { type: "mcq", q: "How many people are in Wang Ming’s family?", options: ["Four", "Five", "Six"], answer: 1 },
+      { type: "text", q: "What pet does the family have?", keywords: ["dog", "狗"] },
+      { type: "text", q: "What does Wang Ming usually have for breakfast?", keywords: ["bread", "milk", "面包", "牛奶"] },
+      { type: "mcq", q: "What does he sometimes do at the park?", options: ["Plays football", "Goes shopping", "Reads newspapers"], answer: 0 },
+      { type: "text", q: "Why does he dislike coffee?", keywords: ["bitter", "苦"] }
+    ]
+  },
+
+  {
+    unit: "B",
+    text: `我的学校虽然不大，但是设备很齐全。学校里有教室、实验室、体育馆、食堂和一个很大的操场。每天中午，很多学生去食堂吃饭，有的人吃米饭和鸡肉，有的人吃面条。饭后，我常常和朋友去操场散步。
+
+我最喜欢的科目是化学，因为我觉得化学很有用，也很有意思。可是数学对我来说有点儿难，所以我每天晚上都复习。我的老师很认真，也很关心学生。她常常说，只要我们努力学习，就一定会进步。
+
+上个星期学校有开放日。很多家长来到学校参观教学楼和实验室。校长还介绍了学校的历史。虽然那天很忙，但是大家都很开心。`,
+
+    questions: [
+      { type: "mcq", q: "What facilities does the school have?", options: ["Only classrooms", "Classrooms, lab, gym, canteen and playground", "Only a library and office"], answer: 1 },
+      { type: "text", q: "What does the writer often do after lunch?", keywords: ["walk", "stroll", "go for a walk", "操场"] },
+      { type: "mcq", q: "Why does the writer like chemistry?", options: ["It is useful and interesting", "It is easy and short", "The teacher gives no homework"], answer: 0 },
+      { type: "text", q: "Which subject is difficult for the writer?", keywords: ["math", "mathematics", "maths", "数学"] },
+      { type: "text", q: "What does the teacher often say?", keywords: ["work hard", "improve", "努力", "进步"] }
+    ]
+  },
+
+  {
+    unit: "C",
+    text: `上个月，我和朋友去北京旅行。我们先坐高铁到北京，然后坐出租车去饭店。那天北京的天气很好，是晴天，但是有一点儿热。我们在饭店休息了一会儿，就去参观故宫和天安门广场。
+
+第二天，我们去爬长城。虽然路程有点儿远，但是风景非常壮观。长城上游客很多，可以说是人山人海。下午天气突然转阴，还刮风了，所以我们赶快回饭店。
+
+这次旅行让我印象很深刻。我觉得北京有很多名胜古迹，交通也很方便。下次我还想去上海看东方明珠塔。`,
+
+    questions: [
+      { type: "mcq", q: "Where did the writer travel last month?", options: ["Shanghai", "Beijing", "Guangzhou"], answer: 1 },
+      { type: "text", q: "How did they first get to Beijing?", keywords: ["high-speed rail", "train", "高铁"] },
+      { type: "text", q: "What was the weather like on the first day?", keywords: ["sunny", "hot", "晴天", "热"] },
+      { type: "mcq", q: "What did they visit on the first day?", options: ["The Forbidden City and Tiananmen Square", "The Summer Palace only", "A shopping centre"], answer: 0 },
+      { type: "text", q: "What does the writer want to visit next time?", keywords: ["oriental pearl tower", "东方明珠塔", "shanghai"] }
+    ]
+  },
+
+  {
+    unit: "D",
+    text: `王美正在找一份周末工作。她看见一家饭店正在招聘服务员，所以她写了一封求职信。她在信里介绍了自己的经验。去年暑假，她在学校的小卖部帮忙，所以她会和顾客说话，也会用收银机。
+
+星期六下午，她去饭店参加面试。经理问她为什么想要这份工作。王美说，她想挣钱，也想提高自己的沟通能力。经理觉得她很有礼貌，而且很认真，所以决定给她一次机会。
+
+王美很高兴。她知道这份工作不一定容易，但是她认为只要努力，就一定会进步。`,
+
+    questions: [
+      { type: "mcq", q: "What job is Wang Mei applying for?", options: ["Waitress", "Teacher", "Engineer"], answer: 0 },
+      { type: "text", q: "Where did she work last summer?", keywords: ["school shop", "tuck shop", "小卖部"] },
+      { type: "text", q: "Why does she want the job?", keywords: ["earn money", "communication", "挣钱", "沟通"] },
+      { type: "mcq", q: "What did the manager think of her?", options: ["Polite and serious", "Lazy and late", "Nervous and rude"], answer: 0 },
+      { type: "text", q: "Find the Chinese phrase meaning “application letter”.", keywords: ["求职信"] }
+    ]
+  },
+
+  {
+    unit: "E",
+    text: `近年来，环境问题越来越严重。由于工厂和汽车太多，空气污染变得很严重。有些地方的河水也不干净，很多植物和动物都受到了影响。为了保护地球，我们每个人都应该负责。
+
+在学校，我们参加了一个环保活动。老师让我们回收纸张和塑料瓶，也鼓励大家少用一次性用品。周末的时候，我和同学们去公园做志愿者，捡垃圾，还向路人说明保护环境的重要性。
+
+我觉得保护环境不是一件容易的事，但是只要大家一起努力，情况就会慢慢改善。以后我会关掉不用的电灯，也会尽量少坐汽车，多走路。`,
+
+    questions: [
+      { type: "mcq", q: "What environmental problem is mentioned first?", options: ["Air pollution", "Too much homework", "No public transport"], answer: 0 },
+      { type: "text", q: "What has affected plants and animals?", keywords: ["dirty river water", "pollution", "河水", "污染"] },
+      { type: "text", q: "What did students recycle?", keywords: ["paper", "plastic bottles", "纸", "塑料瓶"] },
+      { type: "mcq", q: "What did the students do in the park?", options: ["Picked up rubbish", "Played basketball", "Bought gifts"], answer: 0 },
+      { type: "text", q: "Name one thing the writer will do in the future.", keywords: ["switch off lights", "walk more", "less car", "关掉", "走路", "少坐汽车"] }
+    ]
+  }
+];
+
+let currentSet = null;
+
+function generateReading() {
+  const randomIndex = Math.floor(Math.random() * readingBank.length);
+  currentSet = readingBank[randomIndex];
+
+  document.getElementById("readingText").innerText = currentSet.text;
+
+  let html = "<h3>Questions</h3>";
+  html += '<p class="unit-tag">Current text: Unit ' + currentSet.unit + '</p>';
+
+  currentSet.questions.forEach(function(question, index) {
+    html += '<div class="question-block">';
+    html += "<p><strong>" + (index + 1) + ". " + question.q + "</strong></p>";
+
+    if (question.type === "mcq") {
+      question.options.forEach(function(option, optionIndex) {
+        html += '<label>';
+        html += '<input type="radio" name="q' + index + '" value="' + optionIndex + '"> ';
+        html += option;
+        html += '</label>';
+      });
+    }
+
+    if (question.type === "text") {
+      html += '<input type="text" id="q' + index + '" placeholder="Type your answer...">';
+    }
+
+    html += '</div>';
+  });
+
+  html += '<button type="button" onclick="markReading()" class="writing-btn">Mark Answers</button>';
+  html += '<button type="button" onclick="generateReading()" class="writing-btn secondary">Generate New Text</button>';
+
+  document.getElementById("questionCard").innerHTML = html;
+  document.getElementById("readingFeedback").classList.add("hidden");
+}
+
+function markReading() {
+  if (!currentSet) return;
+
+  let score = 0;
+  let feedback = [];
+
+  currentSet.questions.forEach(function(question, index) {
+    if (question.type === "mcq") {
+      const selected = document.querySelector('input[name="q' + index + '"]:checked');
+
+      if (selected && Number(selected.value) === question.answer) {
+        score++;
+        feedback.push("Q" + (index + 1) + ": correct.");
+      } else {
+        feedback.push("Q" + (index + 1) + ": incorrect.");
+      }
+    }
+
+    if (question.type === "text") {
+      const input = document.getElementById("q" + index);
+      const answer = input ? input.value.toLowerCase().trim() : "";
+
+      const correct = question.keywords.some(function(keyword) {
+        return answer.includes(keyword.toLowerCase());
+      });
+
+      if (correct) {
+        score++;
+        feedback.push("Q" + (index + 1) + ": correct.");
+      } else {
+        feedback.push("Q" + (index + 1) + ": needs improvement.");
+      }
+    }
+  });
+
+  const feedbackBox = document.getElementById("readingFeedback");
+  feedbackBox.classList.remove("hidden");
+
+  feedbackBox.innerHTML =
+    '<h2>Reading Score</h2>' +
+    '<div class="score-circle">' + score + '/' + currentSet.questions.length + '</div>' +
+    '<div class="feedback-grid">' +
+      '<div>' +
+        '<h4>Feedback</h4>' +
+        feedback.map(function(line) {
+          return "<p>" + line + "</p>";
+        }).join("") +
+      '</div>' +
+      '<div>' +
+        '<h4>Mixed Practice Skills</h4>' +
+        '<p>This text came from Unit ' + currentSet.unit + '.</p>' +
+        '<p>Look for time phrases, opinions, reasons and topic-specific vocabulary.</p>' +
+        '<p>Mixed practice helps prepare you for unseen exam texts.</p>' +
+      '</div>' +
+    '</div>';
+}
+
+generateReading();
+</script>
+
+</body>
+</html>

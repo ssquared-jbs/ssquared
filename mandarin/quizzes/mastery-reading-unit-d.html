@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit D Reading | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Mastery Reading | Unit D</p>
+</header>
+
+<main class="reading-wrap">
+
+  <div class="back-button">
+    <a href="mastery-reading.html">← Back to Reading</a>
+  </div>
+
+  <section class="writing-hero">
+    <p class="quiz-label">Unit D Reading</p>
+    <h2>Work, Jobs and Future Plans</h2>
+    <p>Read the Chinese text carefully, then answer the exam-style questions.</p>
+  </section>
+
+  <section class="reading-card">
+    <h3>Text</h3>
+    <div class="chinese-text" id="readingText"></div>
+  </section>
+
+  <section class="question-card" id="questionCard"></section>
+
+  <section id="readingFeedback" class="mark-box hidden"></section>
+
+</main>
+
+<script>
+const readingBank = [
+
+{
+text: `李华今年十六岁。上个月，他在一家小公司实习了两个星期。每天早上八点半，他坐公共汽车去公司，九点开始工作。他的经理很友好，也很认真。李华主要帮忙整理文件、接电话和安排会议。
+
+一开始，他觉得工作很难，因为他说话的时候有点儿紧张。可是后来，他慢慢习惯了。他认为这次实习很有用，因为他学会了怎样和别人合作，也了解了办公室里的工作。
+
+将来，李华想当记者，因为他喜欢写作，也喜欢采访不同的人。他觉得这份工作虽然很忙，但是很有意思。`,
+
+questions: [
+{ type: "mcq", q: "Where did Li Hua do work experience?", options: ["At a hospital", "At a small company", "At a school"], answer: 1 },
+{ type: "text", q: "How long did the work experience last?", keywords: ["two weeks", "2 weeks", "两个星期"] },
+{ type: "text", q: "Name one task Li Hua did at the company.", keywords: ["organise documents", "answer phone", "arrange meetings", "files", "phone", "meetings"] },
+{ type: "mcq", q: "Why did he find the work difficult at first?", options: ["He was nervous when speaking", "The manager was angry", "He hated writing"], answer: 0 },
+{ type: "text", q: "What did he learn from the experience?", keywords: ["cooperate", "work with others", "office work", "合作", "办公室"] },
+{ type: "text", q: "What job does he want to do in the future?", keywords: ["journalist", "reporter", "记者"] }
+]
+},
+
+{
+text: `王美正在找一份周末工作。她看见一家饭店正在招聘服务员，所以她写了一封求职信。她在信里介绍了自己的经验。去年暑假，她在学校的小卖部帮忙，所以她会和顾客说话，也会用收银机。
+
+星期六下午，她去饭店参加面试。经理问她为什么想要这份工作。王美说，她想挣钱，也想提高自己的沟通能力。经理觉得她很有礼貌，而且很认真，所以决定给她一次机会。
+
+王美很高兴。她知道这份工作不一定容易，但是她认为只要努力，就一定会进步。`,
+
+questions: [
+{ type: "mcq", q: "What job is Wang Mei applying for?", options: ["Waitress", "Teacher", "Engineer"], answer: 0 },
+{ type: "text", q: "Where did she work last summer?", keywords: ["school shop", "tuck shop", "小卖部"] },
+{ type: "text", q: "Why does she want the job?", keywords: ["earn money", "communication", "挣钱", "沟通"] },
+{ type: "mcq", q: "What did the manager think of her?", options: ["Polite and serious", "Lazy and late", "Nervous and rude"], answer: 0 },
+{ type: "text", q: "Find the Chinese phrase meaning “application letter”.", keywords: ["求职信"] },
+{ type: "text", q: "What does 王美 believe about hard work?", keywords: ["improve", "progress", "努力", "进步"] }
+]
+},
+
+{
+text: `我的朋友张强快要毕业了。他现在还没有决定将来做什么工作。他爸爸希望他当工程师，因为工程师的工作比较稳定。可是张强对科学不太感兴趣，他更喜欢动物。
+
+上个星期，他去动物医院参观了一天。他看见兽医怎样照顾生病的狗和猫，也了解了治疗动物的方法。虽然这份工作有时候很累，但是张强觉得很有意义。
+
+现在他打算以后去大学学习相关的专业。他说，如果将来能当兽医，他会很开心，因为他可以帮助动物，也可以做自己喜欢的事情。`,
+
+questions: [
+{ type: "mcq", q: "What does Zhang Qiang’s father want him to become?", options: ["Engineer", "Farmer", "Journalist"], answer: 0 },
+{ type: "text", q: "What is Zhang Qiang interested in?", keywords: ["animals", "动物"] },
+{ type: "text", q: "Where did he visit last week?", keywords: ["animal hospital", "vet", "动物医院"] },
+{ type: "mcq", q: "How does Zhang Qiang feel about being a vet?", options: ["Meaningful", "Boring", "Too easy"], answer: 0 },
+{ type: "text", q: "What does he plan to do at university?", keywords: ["study related subject", "相关", "专业"] },
+{ type: "text", q: "Why would he be happy as a vet?", keywords: ["help animals", "likes it", "帮助动物", "喜欢"] }
+]
+}
+
+];
+
+let currentSet = null;
+
+function generateReading() {
+  currentSet = readingBank[Math.floor(Math.random() * readingBank.length)];
+
+  document.getElementById("readingText").innerText = currentSet.text;
+
+  let html = `<h3>Questions</h3>`;
+
+  currentSet.questions.forEach((q, index) => {
+    html += `<div class="question-block">`;
+    html += `<p><strong>${index + 1}. ${q.q}</strong></p>`;
+
+    if (q.type === "mcq") {
+      q.options.forEach((option, i) => {
+        html += `
+          <label>
+            <input type="radio" name="q${index}" value="${i}">
+            ${option}
+          </label>`;
+      });
+    }
+
+    if (q.type === "text") {
+      html += `<input type="text" id="q${index}" placeholder="Type your answer...">`;
+    }
+
+    html += `</div>`;
+  });
+
+  html += `
+    <button onclick="markReading()" class="writing-btn">Mark Answers</button>
+    <button onclick="generateReading()" class="writing-btn secondary">Generate New Text</button>
+  `;
+
+  document.getElementById("questionCard").innerHTML = html;
+  document.getElementById("readingFeedback").classList.add("hidden");
+}
+
+function markReading() {
+  let score = 0;
+  let feedback = [];
+
+  currentSet.questions.forEach((q, index) => {
+    if (q.type === "mcq") {
+      const chosen = document.querySelector(`input[name="q${index}"]:checked`);
+
+      if (chosen && Number(chosen.value) === q.answer) {
+        score++;
+        feedback.push(`Q${index + 1}: correct.`);
+      } else {
+        feedback.push(`Q${index + 1}: check the text carefully.`);
+      }
+    }
+
+    if (q.type === "text") {
+      const value = document.getElementById(`q${index}`).value.toLowerCase().trim();
+
+      const correct = q.keywords.some(keyword => value.includes(keyword.toLowerCase()));
+
+      if (correct) {
+        score++;
+        feedback.push(`Q${index + 1}: correct.`);
+      } else {
+        feedback.push(`Q${index + 1}: needs improvement.`);
+      }
+    }
+  });
+
+  const box = document.getElementById("readingFeedback");
+  box.classList.remove("hidden");
+
+  box.innerHTML = `
+    <h2>Reading Score</h2>
+    <div class="score-circle">${score}/${currentSet.questions.length}</div>
+
+    <div class="feedback-grid">
+      <div>
+        <h4>Feedback</h4>
+        ${feedback.map(line => `<p>${line}</p>`).join("")}
+      </div>
+
+      <div>
+        <h4>Unit D Key Skills</h4>
+        <p>Look for job words like 实习, 经理, 求职信, 面试.</p>
+        <p>Future phrases often use 将来, 打算, 希望 or 如果.</p>
+        <p>Reasons often come after 因为.</p>
+      </div>
+    </div>
+  `;
+}
+
+generateReading();
+</script>
+
+</body>
+</html>

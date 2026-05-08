@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Facilities Flashcards | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Flashcards | School Facilities</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="flashcards-unit-b.html">← Back to Unit B</a>
+</div>
+
+<section class="page-intro">
+  <h2>School Facilities Flashcards</h2>
+  <p>Tap to flip. Swipe left/right to move. Mark hard words to review later.</p>
+</section>
+
+<section class="flashcard-container">
+
+  <div class="flashcard-scene" onclick="flipCard()" id="flashScene">
+    <div class="flashcard flip-card" id="card">
+      <div class="flashcard-face flashcard-front">
+        <div id="frontContent"></div>
+      </div>
+      <div class="flashcard-face flashcard-back">
+        <div id="backContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flashcard-controls">
+    <button onclick="prevCard()">← Previous</button>
+    <button onclick="flipCard()">Flip Card</button>
+    <button onclick="nextCard()">Next →</button>
+  </div>
+
+  <div class="flashcard-controls">
+    <button onclick="markHard()">⭐ Mark Hard</button>
+    <button onclick="reviewHard()">Review Hard</button>
+    <button onclick="resetAll()">Reset</button>
+  </div>
+
+  <p class="flash-progress" id="progress"></p>
+
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let originalCards = [
+  {han:"教室", pin:"jiào shì", eng:"classroom"},
+  {han:"实验室", pin:"shí yàn shì", eng:"laboratory"},
+  {han:"食堂", pin:"shí táng", eng:"canteen"},
+  {han:"体育馆", pin:"tǐ yù guǎn", eng:"gym / sports hall"},
+  {han:"操场", pin:"cāo chǎng", eng:"playground / sports field"},
+  {han:"办公室", pin:"bàn gōng shì", eng:"office"},
+  {han:"图书馆", pin:"tú shū guǎn", eng:"library"},
+  {han:"礼堂", pin:"lǐ táng", eng:"assembly hall"},
+  {han:"教学楼", pin:"jiào xué lóu", eng:"teaching building"},
+  {han:"小卖部", pin:"xiǎo mài bù", eng:"tuck shop"},
+  {han:"设备", pin:"shè bèi", eng:"equipment"},
+  {han:"校长", pin:"xiào zhǎng", eng:"head teacher / principal"},
+  {han:"开放日", pin:"kāi fàng rì", eng:"open day"},
+  {han:"路线", pin:"lù xiàn", eng:"route"},
+  {han:"讲解", pin:"jiǎng jiě", eng:"to explain"},
+  {han:"参观", pin:"cān guān", eng:"to visit / tour"},
+  {han:"开会", pin:"kāi huì", eng:"to have a meeting"},
+  {han:"历史悠久", pin:"lì shǐ yōu jiǔ", eng:"long history"},
+  {han:"特别", pin:"tè bié", eng:"special"},
+  {han:"厉害", pin:"lì hai", eng:"impressive / amazing"},
+  {han:"方便", pin:"fāng biàn", eng:"convenient"},
+  {han:"不方便", pin:"bù fāng biàn", eng:"inconvenient"},
+  {han:"现代化", pin:"xiàn dài huà", eng:"modern"},
+  {han:"漂亮", pin:"piào liang", eng:"beautiful / pretty"},
+  {han:"大", pin:"dà", eng:"big"},
+  {han:"小", pin:"xiǎo", eng:"small"},
+  {han:"干净", pin:"gān jìng", eng:"clean"},
+  {han:"安静", pin:"ān jìng", eng:"quiet"},
+  {han:"我喜欢体育馆", pin:"wǒ xǐ huān tǐ yù guǎn", eng:"I like the sports hall"},
+  {han:"我的学校有实验室和食堂", pin:"wǒ de xué xiào yǒu shí yàn shì hé shí táng", eng:"my school has laboratories and a canteen"},
+  {han:"实验室设备很好", pin:"shí yàn shì shè bèi hěn hǎo", eng:"the laboratory equipment is very good"},
+  {han:"校长讲解学校路线", pin:"xiào zhǎng jiǎng jiě xué xiào lù xiàn", eng:"the head teacher explains the school route"},
+  {han:"虽然学校不大，可是设备很好", pin:"suī rán xué xiào bú dà, kě shì shè bèi hěn hǎo", eng:"although the school is not big, the facilities are good"}
+];
+
+let cards = [];
+let hardCards = [];
+let index = 0;
+let flipped = false;
+let startX = 0;
+let endX = 0;
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function initCards() {
+  cards = shuffle([...originalCards]);
+  index = 0;
+  flipped = false;
+  updateCard();
+}
+
+function updateCard() {
+  const card = cards[index];
+
+  document.getElementById("frontContent").innerHTML = `
+    <div class="han">${card.han}</div>
+    <div class="pin">${card.pin}</div>
+  `;
+
+  document.getElementById("backContent").innerHTML = `
+    <div class="eng">${card.eng}</div>
+  `;
+
+  document.getElementById("card").classList.toggle("is-flipped", flipped);
+  document.getElementById("progress").textContent =
+    `Card ${index + 1} of ${cards.length} | Hard cards: ${hardCards.length}`;
+
+  setTimeout(fitText, 0);
+}
+
+function fitText() {
+  const elements = document.querySelectorAll(".han, .eng");
+
+  elements.forEach(el => {
+    el.style.fontSize = "";
+    let size = parseFloat(window.getComputedStyle(el).fontSize);
+
+    while (el.scrollWidth > el.clientWidth && size > 24) {
+      size -= 2;
+      el.style.fontSize = size + "px";
+    }
+  });
+}
+
+function flipCard() {
+  flipped = !flipped;
+  updateCard();
+}
+
+function animateCard(direction, callback) {
+  const scene = document.getElementById("flashScene");
+
+  scene.classList.remove("flashcard-slide-left", "flashcard-slide-right");
+  void scene.offsetWidth;
+
+  scene.classList.add(direction === "next" ? "flashcard-slide-left" : "flashcard-slide-right");
+
+  setTimeout(function() {
+    callback();
+    scene.classList.remove("flashcard-slide-left", "flashcard-slide-right");
+  }, 220);
+}
+
+function nextCard() {
+  animateCard("next", function() {
+    index = (index + 1) % cards.length;
+    flipped = false;
+    updateCard();
+  });
+}
+
+function prevCard() {
+  animateCard("prev", function() {
+    index = (index - 1 + cards.length) % cards.length;
+    flipped = false;
+    updateCard();
+  });
+}
+
+function markHard() {
+  const current = cards[index];
+  const exists = hardCards.some(card => card.han === current.han);
+  if (!exists) hardCards.push(current);
+  nextCard();
+}
+
+function reviewHard() {
+  if (hardCards.length === 0) {
+    alert("No hard cards yet.");
+    return;
+  }
+
+  cards = shuffle([...hardCards]);
+  index = 0;
+  flipped = false;
+  updateCard();
+}
+
+function resetAll() {
+  hardCards = [];
+  initCards();
+}
+
+const scene = document.getElementById("flashScene");
+
+scene.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+scene.addEventListener("touchend", e => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+scene.addEventListener("mousedown", e => startX = e.clientX);
+scene.addEventListener("mouseup", e => {
+  endX = e.clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = endX - startX;
+
+  if (Math.abs(diff) > 60) {
+    if (diff < 0) nextCard();
+    else prevCard();
+  }
+}
+
+initCards();
+</script>
+
+</body>
+</html>

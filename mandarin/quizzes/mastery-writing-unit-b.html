@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit B Writing | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Mastery Writing | Unit B</p>
+</header>
+
+<main class="writing-wrap">
+
+  <div class="back-button">
+    <a href="mastery-writing.html">← Back to Writing</a>
+  </div>
+
+  <section class="writing-hero">
+    <p class="quiz-label">Unit B Writing</p>
+    <h2>Guided Essay Practice</h2>
+    <p>Write an exam-style answer using Unit B vocabulary: health, home life, clothes, shopping, living environment and school.</p>
+  </section>
+
+  <section class="writing-layout">
+
+    <section class="writing-panel">
+      <h3>Your task</h3>
+      <div id="promptBox" class="prompt-box"></div>
+
+      <button onclick="newPrompt()" class="writing-btn">Generate New Question</button>
+
+      <h3>Your answer</h3>
+      <textarea id="studentAnswer" placeholder="Write your Mandarin answer here..."></textarea>
+
+      <div class="writing-actions">
+        <button onclick="markAnswer()" class="writing-btn">Mark My Answer</button>
+        <button onclick="clearAnswer()" class="writing-btn secondary">Clear</button>
+      </div>
+    </section>
+
+    <aside class="writing-sidebar">
+      <h3>Useful Unit B Vocab</h3>
+      <div id="vocabHelp" class="vocab-help"></div>
+
+      <h3>Useful Structures</h3>
+      <ul class="structure-list">
+        <li>我觉得……很方便。</li>
+        <li>虽然……但是……</li>
+        <li>因为……所以……</li>
+        <li>我最喜欢……因为……</li>
+        <li>附近有……也有……</li>
+        <li>如果我生病了，我会……</li>
+      </ul>
+    </aside>
+
+  </section>
+
+  <section id="markBox" class="mark-box hidden"></section>
+
+</main>
+
+<script src="vocab-bank.js"></script>
+
+<script>
+const unitBVocab = vocabBank.filter(item => item.unit === "B");
+
+const prompts = [
+  {
+    title: "My Home and Local Area",
+    task: "Write about your home and the area where you live.",
+    bullets: [
+      "Describe your house or flat",
+      "Say what facilities are near your home",
+      "Give one advantage and one disadvantage",
+      "Say what you would improve"
+    ]
+  },
+  {
+    title: "My School",
+    task: "Write about your school and school routine.",
+    bullets: [
+      "Describe your school facilities",
+      "Say what subject you like and why",
+      "Say what you usually do at school",
+      "Give an opinion about school"
+    ]
+  },
+  {
+    title: "Health and Fitness",
+    task: "Write about health, illness and keeping fit.",
+    bullets: [
+      "Say what you do to stay healthy",
+      "Describe a time when you were ill",
+      "Say what advice a doctor gave",
+      "Give your opinion about exercise"
+    ]
+  },
+  {
+    title: "Shopping and Clothes",
+    task: "Write about shopping and clothes.",
+    bullets: [
+      "Say what clothes you like wearing",
+      "Describe a recent shopping trip",
+      "Say what you bought",
+      "Give opinions about price, colour or style"
+    ]
+  }
+];
+
+let currentPrompt = prompts[0];
+
+function newPrompt() {
+  currentPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+
+  document.getElementById("promptBox").innerHTML = `
+    <h4>${currentPrompt.title}</h4>
+    <p>${currentPrompt.task}</p>
+    <ul>
+      ${currentPrompt.bullets.map(bullet => `<li>${bullet}</li>`).join("")}
+    </ul>
+  `;
+}
+
+function loadVocabHelp() {
+  const shuffled = [...unitBVocab].sort(() => Math.random() - 0.5).slice(0, 20);
+
+  document.getElementById("vocabHelp").innerHTML = shuffled.map(item => `
+    <div class="vocab-chip">
+      <span>${item.word}</span>
+      <small>${item.answer}</small>
+    </div>
+  `).join("");
+}
+
+function markAnswer() {
+  const answer = document.getElementById("studentAnswer").value.trim();
+  const markBox = document.getElementById("markBox");
+
+  if (answer.length < 10) {
+    alert("Write a bit more before marking.");
+    return;
+  }
+
+  const usedVocab = unitBVocab.filter(item => answer.includes(item.word));
+  const wordCount = answer.length;
+
+  const hasOpinion = /喜欢|觉得|有意思|方便|不错|难|容易|好看|健康|舒服|满意|重要/.test(answer);
+  const hasReason = /因为|所以|由于/.test(answer);
+  const hasTime = /昨天|今天|明天|周末|每天|以前|以后|最近|上个星期|这个星期|下个星期/.test(answer);
+  const hasConnective = /和|但是|也|还|然后|如果|就|虽然|可是|不过|此外/.test(answer);
+  const hasComparison = /比|最|更|比较/.test(answer);
+
+  let score = 0;
+
+  if (wordCount >= 100) score += 2;
+  else if (wordCount >= 60) score += 1;
+
+  if (usedVocab.length >= 10) score += 3;
+  else if (usedVocab.length >= 6) score += 2;
+  else if (usedVocab.length >= 3) score += 1;
+
+  if (hasOpinion) score += 2;
+  if (hasReason) score += 2;
+  if (hasTime) score += 1;
+  if (hasConnective) score += 2;
+  if (hasComparison) score += 1;
+
+  if (score > 12) score = 12;
+
+  let band = "Needs more detail";
+  if (score >= 10) band = "Strong response";
+  else if (score >= 7) band = "Good response";
+  else if (score >= 4) band = "Developing response";
+
+  markBox.classList.remove("hidden");
+
+  markBox.innerHTML = `
+    <h2>Your Writing Feedback</h2>
+
+    <div class="score-circle">${score}/12</div>
+    <h3>${band}</h3>
+
+    <div class="feedback-grid">
+      <div>
+        <h4>Strengths</h4>
+        <p>${usedVocab.length} Unit B words detected.</p>
+        <p>${hasOpinion ? "You included opinions." : "Try to include a clear opinion."}</p>
+        <p>${hasReason ? "You gave a reason." : "Add 因为 or 所以 to explain why."}</p>
+        <p>${hasComparison ? "You used comparison language." : "Try adding 比, 最, 更 or 比较."}</p>
+      </div>
+
+      <div>
+        <h4>To improve</h4>
+        <p>${hasTime ? "Good use of time phrases." : "Add a time phrase like 周末, 每天, 最近 or 上个星期."}</p>
+        <p>${hasConnective ? "Good linking words." : "Use connectives like 但是, 虽然, 然后, 也 or 所以."}</p>
+        <p>Make sure you answer all bullet points clearly.</p>
+      </div>
+    </div>
+
+    <h4>Vocab you used</h4>
+    <div class="used-vocab">
+      ${usedVocab.slice(0, 24).map(item => `<span>${item.word} = ${item.answer}</span>`).join("")}
+    </div>
+  `;
+}
+
+function clearAnswer() {
+  document.getElementById("studentAnswer").value = "";
+  document.getElementById("markBox").classList.add("hidden");
+}
+
+newPrompt();
+loadVocabHelp();
+</script>
+
+</body>
+</html>

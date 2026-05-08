@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sports | Three + Two</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background-glow"></div>
+
+<a class="back-link" href="three-plus-two.html">← Back</a>
+
+<header>
+  <h1>Mandarin²</h1>
+</header>
+
+<main>
+<div class="writing-card">
+
+  <div class="game-title">
+    <h2>SPORTS</h2>
+    <p>Use 3 sports words and 2 descriptive phrases.</p>
+  </div>
+
+  <div class="top-bar">
+    <div class="timer-ring">
+      <span id="timer">60</span>
+    </div>
+
+    <div class="progress-box">
+      <p>Sports Words: <span id="topicCount">0</span>/3</p>
+      <p>Descriptions and Connectives: <span id="descCount">0</span>/2</p>
+    </div>
+  </div>
+
+  <div class="requirements single-column">
+    <div class="req-box big-box">
+
+      <h3>Sports</h3>
+
+      <p class="small-help">
+        Use at least 3 of these in your answer.
+      </p>
+
+      <div id="topicWords"></div>
+
+    </div>
+  </div>
+
+  <textarea
+    id="answerBox"
+    placeholder="Write your Mandarin sentence here..."
+  ></textarea>
+
+  <div class="helper-section">
+
+    <button id="toggleHelpers">
+      Show Helper Words
+    </button>
+
+    <div class="helper-box" id="helperBox">
+
+      <h3>Descriptions & Connectives</h3>
+
+      <p class="small-help">
+        Use at least 2 of these.
+      </p>
+
+      <div id="descWords"></div>
+
+    </div>
+
+  </div>
+
+  <div class="live-detection">
+
+    <div>
+      <h4>Detected Sports Words</h4>
+      <div id="detectedTopic"></div>
+    </div>
+
+    <div>
+      <h4>Detected Descriptions</h4>
+      <div id="detectedDesc"></div>
+    </div>
+
+  </div>
+
+  <button id="submitBtn">
+    Finish Round
+  </button>
+
+  <div class="results-panel" id="resultsPanel">
+
+    <h3>Results</h3>
+
+    <div class="score-big" id="scoreDisplay">
+      0
+    </div>
+
+    <p>Sports Words Used: <span id="finalTopic">0</span></p>
+    <p>Descriptions Used: <span id="finalDesc">0</span></p>
+
+  </div>
+
+</div>
+</main>
+
+<script>
+document.documentElement.style.setProperty("--topic-color", "#ef4444");
+
+const topicWords = [
+  "足球", "篮球", "网球", "羽毛球", "乒乓球", "排球",
+  "游泳", "跑步", "骑车", "滑雪", "滑冰", "棒球",
+  "橄榄球", "高尔夫球", "体操", "武术", "瑜伽",
+  "比赛", "运动", "运动员", "体育馆", "健身房",
+  "马拉松", "跳舞", "散步", "爬山", "保龄球",
+  "跳高", "跳远", "举重", "训练", "冠军", "教练"
+];
+
+const descriptions = [
+  "很好玩", "很好", "非常好", "不错", "很有意思",
+  "有意思", "很累", "很难", "很简单", "很酷",
+  "非常酷", "很健康", "不健康", "很快", "很慢",
+  "很厉害", "很强", "我觉得", "我喜欢", "我不喜欢",
+  "我最喜欢", "因为", "所以", "不但", "而且",
+  "虽然", "但是", "特别好玩", "非常有意思"
+];
+
+const topicWordsDiv = document.getElementById("topicWords");
+const descWordsDiv = document.getElementById("descWords");
+const answerBox = document.getElementById("answerBox");
+const detectedTopic = document.getElementById("detectedTopic");
+const detectedDesc = document.getElementById("detectedDesc");
+const topicCount = document.getElementById("topicCount");
+const descCount = document.getElementById("descCount");
+const submitBtn = document.getElementById("submitBtn");
+const scoreDisplay = document.getElementById("scoreDisplay");
+const finalTopic = document.getElementById("finalTopic");
+const finalDesc = document.getElementById("finalDesc");
+const resultsPanel = document.getElementById("resultsPanel");
+const toggleHelpers = document.getElementById("toggleHelpers");
+const helperBox = document.getElementById("helperBox");
+const timer = document.getElementById("timer");
+
+let foundTopic = [];
+let foundDesc = [];
+let timeLeft = 60;
+let roundCompleted = false;
+let resultsShown = false;
+
+topicWords.forEach(word => {
+  topicWordsDiv.innerHTML += `
+    <span class="word-pill">${word}</span>
+  `;
+});
+
+descriptions.forEach(word => {
+  descWordsDiv.innerHTML += `
+    <span class="word-pill desc-pill">${word}</span>
+  `;
+});
+
+const countdown = setInterval(() => {
+
+  if (roundCompleted) {
+    clearInterval(countdown);
+    return;
+  }
+
+  timeLeft--;
+  timer.textContent = timeLeft;
+
+  if (timeLeft <= 10) {
+    document
+      .querySelector(".timer-ring")
+      .classList.add("danger");
+  }
+
+  if (timeLeft <= 0) {
+    timeLeft = 0;
+    timer.textContent = "0";
+    clearInterval(countdown);
+  }
+
+}, 1000);
+
+answerBox.addEventListener("input", () => {
+
+  const text = answerBox.value;
+
+  foundTopic = [];
+  foundDesc = [];
+
+  detectedTopic.innerHTML = "";
+  detectedDesc.innerHTML = "";
+
+  topicWords.forEach(word => {
+
+    if (
+      text.includes(word) &&
+      !foundTopic.includes(word)
+    ) {
+
+      foundTopic.push(word);
+
+      detectedTopic.innerHTML += `
+        <span class="detected-pill">
+          ✓ ${word}
+        </span>
+      `;
+    }
+
+  });
+
+  descriptions.forEach(word => {
+
+    if (
+      text.includes(word) &&
+      !foundDesc.includes(word)
+    ) {
+
+      foundDesc.push(word);
+
+      detectedDesc.innerHTML += `
+        <span class="detected-pill green">
+          ✓ ${word}
+        </span>
+      `;
+    }
+
+  });
+
+  topicCount.textContent = foundTopic.length;
+  descCount.textContent = foundDesc.length;
+
+  if (
+    foundTopic.length >= 3 &&
+    foundDesc.length >= 2 &&
+    !roundCompleted
+  ) {
+
+    roundCompleted = true;
+
+    clearInterval(countdown);
+
+    submitBtn.textContent = "Claim XP";
+
+    submitBtn.classList.add("ready-btn");
+
+  }
+
+});
+
+submitBtn.addEventListener("click", () => {
+
+  clearInterval(countdown);
+
+  roundCompleted = true;
+
+  if (resultsShown) {
+    return;
+  }
+
+  resultsShown = true;
+
+  const topicXP =
+    foundTopic.length * 10;
+
+  const descXP =
+    foundDesc.length * 15;
+
+  let speedBonus = 0;
+
+  if (
+    foundTopic.length >= 3 &&
+    foundDesc.length >= 2
+  ) {
+
+    speedBonus = timeLeft * 2;
+
+  }
+
+  const totalXP =
+    topicXP + descXP + speedBonus;
+
+  resultsPanel.style.display = "block";
+
+  scoreDisplay.textContent =
+    totalXP;
+
+  finalTopic.textContent =
+    foundTopic.length;
+
+  finalDesc.textContent =
+    foundDesc.length;
+
+  resultsPanel.innerHTML += `
+    <p>Speed Bonus: ${speedBonus} XP</p>
+    <p>Time Left: ${timeLeft}s</p>
+  `;
+
+});
+
+toggleHelpers.addEventListener("click", () => {
+
+  if (helperBox.style.display === "block") {
+
+    helperBox.style.display = "none";
+
+    toggleHelpers.textContent =
+      "Show Helper Words";
+
+  } else {
+
+    helperBox.style.display = "block";
+
+    toggleHelpers.textContent =
+      "Hide Helper Words";
+
+  }
+
+});
+</script>
+
+</body>
+</html>

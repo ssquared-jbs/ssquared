@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Experiences Flashcards | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Flashcards | Travel Experiences</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="flashcards-unit-c.html">← Back to Unit C</a>
+</div>
+
+<section class="page-intro">
+  <h2>Travel Experiences Flashcards</h2>
+  <p>Tap to flip. Swipe left/right to move. Mark hard words to review later.</p>
+</section>
+
+<section class="flashcard-container">
+
+  <div class="flashcard-scene" onclick="flipCard()" id="flashScene">
+    <div class="flashcard flip-card" id="card">
+      <div class="flashcard-face flashcard-front">
+        <div id="frontContent"></div>
+      </div>
+      <div class="flashcard-face flashcard-back">
+        <div id="backContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flashcard-controls">
+    <button onclick="prevCard()">← Previous</button>
+    <button onclick="flipCard()">Flip Card</button>
+    <button onclick="nextCard()">Next →</button>
+  </div>
+
+  <div class="flashcard-controls">
+    <button onclick="markHard()">⭐ Mark Hard</button>
+    <button onclick="reviewHard()">Review Hard</button>
+    <button onclick="resetAll()">Reset</button>
+  </div>
+
+  <p class="flash-progress" id="progress"></p>
+
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let originalCards = [
+  {han:"旅行", pin:"lǚ xíng", eng:"to travel / travel"},
+  {han:"旅游", pin:"lǚ yóu", eng:"tourism / to tour"},
+  {han:"参观", pin:"cān guān", eng:"to visit / tour"},
+  {han:"游客", pin:"yóu kè", eng:"tourist"},
+  {han:"首都", pin:"shǒu dū", eng:"capital city"},
+  {han:"北京", pin:"běi jīng", eng:"Beijing"},
+  {han:"上海", pin:"shàng hǎi", eng:"Shanghai"},
+  {han:"中国", pin:"zhōng guó", eng:"China"},
+  {han:"故宫", pin:"gù gōng", eng:"The Forbidden City"},
+  {han:"长城", pin:"cháng chéng", eng:"The Great Wall"},
+  {han:"天坛", pin:"tiān tán", eng:"Temple of Heaven"},
+  {han:"北海公园", pin:"běi hǎi gōng yuán", eng:"Beihai Park"},
+  {han:"名胜古迹", pin:"míng shèng gǔ jì", eng:"historic and scenic sites"},
+  {han:"博物馆", pin:"bó wù guǎn", eng:"museum"},
+  {han:"公园", pin:"gōng yuán", eng:"park"},
+  {han:"亲戚", pin:"qīn qi", eng:"relatives"},
+  {han:"欢迎", pin:"huān yíng", eng:"to welcome"},
+  {han:"印象", pin:"yìn xiàng", eng:"impression"},
+  {han:"有名", pin:"yǒu míng", eng:"famous"},
+  {han:"壮观", pin:"zhuàng guān", eng:"magnificent / spectacular"},
+  {han:"漂亮", pin:"piào liang", eng:"beautiful"},
+  {han:"热闹", pin:"rè nào", eng:"lively"},
+  {han:"安静", pin:"ān jìng", eng:"quiet"},
+  {han:"累", pin:"lèi", eng:"tired"},
+  {han:"开心", pin:"kāi xīn", eng:"happy"},
+  {han:"迷路", pin:"mí lù", eng:"to get lost"},
+  {han:"忽然", pin:"hū rán", eng:"suddenly"},
+  {han:"发现", pin:"fā xiàn", eng:"to discover / find out"},
+  {han:"着急", pin:"zháo jí", eng:"anxious / worried"},
+  {han:"以为", pin:"yǐ wéi", eng:"to mistakenly think"},
+  {han:"前天", pin:"qián tiān", eng:"the day before yesterday"},
+  {han:"上个月", pin:"shàng gè yuè", eng:"last month"},
+  {han:"去年", pin:"qù nián", eng:"last year"},
+  {han:"第一次", pin:"dì yī cì", eng:"the first time"},
+  {han:"拍照", pin:"pāi zhào", eng:"to take photos"},
+  {han:"买纪念品", pin:"mǎi jì niàn pǐn", eng:"to buy souvenirs"},
+  {han:"我去北京旅行", pin:"wǒ qù běi jīng lǚ xíng", eng:"I travelled to Beijing"},
+  {han:"我参观了长城", pin:"wǒ cān guān le cháng chéng", eng:"I visited the Great Wall"},
+  {han:"故宫给我留下了深刻的印象", pin:"gù gōng gěi wǒ liú xià le shēn kè de yìn xiàng", eng:"The Forbidden City left a deep impression on me"},
+  {han:"虽然很累，但是我玩得很开心", pin:"suī rán hěn lèi, dàn shì wǒ wán de hěn kāi xīn", eng:"Although it was tiring, I had a great time"}
+];
+
+let cards = [];
+let hardCards = [];
+let index = 0;
+let flipped = false;
+let startX = 0;
+let endX = 0;
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function initCards() {
+  cards = shuffle([...originalCards]);
+  index = 0;
+  flipped = false;
+  updateCard();
+}
+
+function updateCard() {
+  const card = cards[index];
+
+  document.getElementById("frontContent").innerHTML = `
+    <div class="han">${card.han}</div>
+    <div class="pin">${card.pin}</div>
+  `;
+
+  document.getElementById("backContent").innerHTML = `
+    <div class="eng">${card.eng}</div>
+  `;
+
+  document.getElementById("card").classList.toggle("is-flipped", flipped);
+  document.getElementById("progress").textContent =
+    `Card ${index + 1} of ${cards.length} | Hard cards: ${hardCards.length}`;
+
+  setTimeout(fitText, 0);
+}
+
+function fitText() {
+  const elements = document.querySelectorAll(".han, .eng");
+
+  elements.forEach(el => {
+    el.style.fontSize = "";
+    let size = parseFloat(window.getComputedStyle(el).fontSize);
+
+    while (el.scrollWidth > el.clientWidth && size > 24) {
+      size -= 2;
+      el.style.fontSize = size + "px";
+    }
+  });
+}
+
+function flipCard() {
+  flipped = !flipped;
+  updateCard();
+}
+
+function animateCard(direction, callback) {
+  const scene = document.getElementById("flashScene");
+
+  scene.classList.remove("flashcard-slide-left", "flashcard-slide-right");
+  void scene.offsetWidth;
+
+  scene.classList.add(direction === "next" ? "flashcard-slide-left" : "flashcard-slide-right");
+
+  setTimeout(function() {
+    callback();
+    scene.classList.remove("flashcard-slide-left", "flashcard-slide-right");
+  }, 220);
+}
+
+function nextCard() {
+  animateCard("next", function() {
+    index = (index + 1) % cards.length;
+    flipped = false;
+    updateCard();
+  });
+}
+
+function prevCard() {
+  animateCard("prev", function() {
+    index = (index - 1 + cards.length) % cards.length;
+    flipped = false;
+    updateCard();
+  });
+}
+
+function markHard() {
+  const current = cards[index];
+  const exists = hardCards.some(card => card.han === current.han);
+  if (!exists) hardCards.push(current);
+  nextCard();
+}
+
+function reviewHard() {
+  if (hardCards.length === 0) {
+    alert("No hard cards yet.");
+    return;
+  }
+
+  cards = shuffle([...hardCards]);
+  index = 0;
+  flipped = false;
+  updateCard();
+}
+
+function resetAll() {
+  hardCards = [];
+  initCards();
+}
+
+const scene = document.getElementById("flashScene");
+
+scene.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+scene.addEventListener("touchend", e => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+scene.addEventListener("mousedown", e => startX = e.clientX);
+scene.addEventListener("mouseup", e => {
+  endX = e.clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = endX - startX;
+
+  if (Math.abs(diff) > 60) {
+    if (diff < 0) nextCard();
+    else prevCard();
+  }
+}
+
+initCards();
+</script>
+
+</body>
+</html>

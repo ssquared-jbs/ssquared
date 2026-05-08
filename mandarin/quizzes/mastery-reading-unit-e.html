@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit E Reading | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Mastery Reading | Unit E</p>
+</header>
+
+<main class="reading-wrap">
+
+  <div class="back-button">
+    <a href="mastery-reading.html">← Back to Reading</a>
+  </div>
+
+  <section class="writing-hero">
+    <p class="quiz-label">Unit E Reading</p>
+    <h2>Culture, Technology and the Planet</h2>
+    <p>Read the Chinese text, answer the questions, then mark your work.</p>
+  </section>
+
+  <section class="reading-card">
+    <h3>Text</h3>
+    <div id="readingText" class="chinese-text"></div>
+  </section>
+
+  <section id="questionCard" class="question-card"></section>
+
+  <section id="readingFeedback" class="mark-box hidden"></section>
+
+</main>
+
+<script>
+const readingBank = [
+  {
+    text: `上个星期，我们学校邀请了一位有名的中国演员来做演讲。主持人先介绍了他，然后学生们有机会问问题。这位演员说，他小时候很紧张，不敢在很多人面前说话，但是后来他努力练习，终于变得很成功。
+
+有一个学生问他，成功最重要的原因是什么。他说，机会和运气当然有用，但是更重要的是努力。他还告诉我们，不要害怕失败，因为每一次失败都可以让人进步。
+
+演讲结束以后，很多学生都想和他合影。我觉得他很友好，也很幽默。这次活动让我明白了，如果想实现自己的理想，就应该坚持下去。`,
+
+    questions: [
+      { type: "mcq", q: "Who came to the school?", options: ["A Chinese actor", "A doctor", "A sports coach"], answer: 0 },
+      { type: "text", q: "What problem did he have when he was young?", keywords: ["nervous", "scared", "afraid", "紧张", "不敢"] },
+      { type: "text", q: "What did he say was more important than luck?", keywords: ["hard work", "effort", "努力"] },
+      { type: "mcq", q: "What did students want to do after the speech?", options: ["Take photos with him", "Give him medicine", "Go shopping"], answer: 0 },
+      { type: "text", q: "How did the writer describe him?", keywords: ["friendly", "humorous", "友好", "幽默"] },
+      { type: "text", q: "What lesson did the writer learn?", keywords: ["keep going", "persist", "ideal", "坚持", "理想"] }
+    ]
+  },
+
+  {
+    text: `现在，很多年轻人每天都使用手机和社交媒体。他们用手机发短信、看视频、下载电影，也在网站上分享照片。科技让生活更方便，因为人们可以很快地得到信息，也可以和远方的朋友交流。
+
+可是，科技也有坏处。有些学生花太多时间上网，所以没有足够的时间复习功课。还有人会在网络上欺凌别人，或者分享错误的信息。老师常常提醒我们，使用网络的时候一定要小心。
+
+我觉得科技本身不是问题，关键是我们怎样使用它。如果我们能正确使用手机和电脑，科技就会帮助我们学习，也会让生活更有意思。`,
+
+    questions: [
+      { type: "mcq", q: "What do many young people use every day?", options: ["Mobile phones and social media", "Postcards", "Only books"], answer: 0 },
+      { type: "text", q: "Name one thing people do on phones.", keywords: ["text", "watch videos", "download films", "share photos", "短信", "视频", "下载", "分享"] },
+      { type: "text", q: "Why does technology make life convenient?", keywords: ["information", "communicate", "信息", "交流"] },
+      { type: "mcq", q: "What is one disadvantage of technology?", options: ["Students may spend too much time online", "It makes everyone study more", "It stops people using computers"], answer: 0 },
+      { type: "text", q: "What problem can happen online?", keywords: ["bullying", "wrong information", "欺凌", "错误"] },
+      { type: "text", q: "What is the writer’s opinion about technology?", keywords: ["how we use it", "correctly use", "正确", "使用"] }
+    ]
+  },
+
+  {
+    text: `春节是中国最重要的传统节日之一。除夕晚上，很多家庭会一起吃年夜饭。桌子上常常有饺子、鱼、年糕和很多其他好吃的菜。吃饭以后，孩子们通常会收到红包，大家还会说“新年快乐”。
+
+春节有很多风俗。有些人会贴春联、放爆竹，也会去亲戚家拜年。以前，人们认为红色可以赶走怪兽，所以春节的时候到处都可以看到红色的装饰。
+
+我很喜欢春节，因为这个节日让家人有机会团圆。虽然现在有些年轻人更喜欢用手机发祝福，但是我觉得和家人面对面庆祝更有意义。`,
+
+    questions: [
+      { type: "mcq", q: "What meal do families eat on Chinese New Year’s Eve?", options: ["Reunion dinner", "Breakfast", "School lunch"], answer: 0 },
+      { type: "text", q: "Name two foods mentioned.", keywords: ["dumplings", "fish", "new year cake", "饺子", "鱼", "年糕"] },
+      { type: "text", q: "What do children usually receive?", keywords: ["red packet", "红包"] },
+      { type: "mcq", q: "Why is red important in the story?", options: ["It can drive away monsters", "It means cold weather", "It is only for schools"], answer: 0 },
+      { type: "text", q: "Why does the writer like Spring Festival?", keywords: ["family reunion", "reunite", "团圆"] },
+      { type: "text", q: "What does the writer think is more meaningful?", keywords: ["face to face", "with family", "家人", "面对面"] }
+    ]
+  },
+
+  {
+    text: `近年来，环境问题越来越严重。由于工厂和汽车太多，空气污染变得很严重。有些地方的河水也不干净，很多植物和动物都受到了影响。为了保护地球，我们每个人都应该负责。
+
+在学校，我们参加了一个环保活动。老师让我们回收纸张和塑料瓶，也鼓励大家少用一次性用品。周末的时候，我和同学们去公园做志愿者，捡垃圾，还向路人说明保护环境的重要性。
+
+我觉得保护环境不是一件容易的事，但是只要大家一起努力，情况就会慢慢改善。以后我会关掉不用的电灯，也会尽量少坐汽车，多走路。`,
+
+    questions: [
+      { type: "mcq", q: "What environmental problem is mentioned first?", options: ["Air pollution", "Too much homework", "No public transport"], answer: 0 },
+      { type: "text", q: "What has affected plants and animals?", keywords: ["dirty river water", "pollution", "河水", "污染"] },
+      { type: "text", q: "What did students recycle?", keywords: ["paper", "plastic bottles", "纸", "塑料瓶"] },
+      { type: "mcq", q: "What did the students do in the park?", options: ["Picked up rubbish", "Played basketball", "Bought gifts"], answer: 0 },
+      { type: "text", q: "What does the writer think will happen if everyone works together?", keywords: ["improve", "改善", "better"] },
+      { type: "text", q: "Name one thing the writer will do in the future.", keywords: ["switch off lights", "walk more", "less car", "关掉", "走路", "少坐汽车"] }
+    ]
+  }
+];
+
+let currentSet = null;
+
+function generateReading() {
+  const randomIndex = Math.floor(Math.random() * readingBank.length);
+  currentSet = readingBank[randomIndex];
+
+  document.getElementById("readingText").innerText = currentSet.text;
+
+  let html = "<h3>Questions</h3>";
+
+  currentSet.questions.forEach(function(question, index) {
+    html += '<div class="question-block">';
+    html += "<p><strong>" + (index + 1) + ". " + question.q + "</strong></p>";
+
+    if (question.type === "mcq") {
+      question.options.forEach(function(option, optionIndex) {
+        html += '<label>';
+        html += '<input type="radio" name="q' + index + '" value="' + optionIndex + '"> ';
+        html += option;
+        html += '</label>';
+      });
+    }
+
+    if (question.type === "text") {
+      html += '<input type="text" id="q' + index + '" placeholder="Type your answer...">';
+    }
+
+    html += '</div>';
+  });
+
+  html += '<button type="button" onclick="markReading()" class="writing-btn">Mark Answers</button>';
+  html += '<button type="button" onclick="generateReading()" class="writing-btn secondary">Generate New Text</button>';
+
+  document.getElementById("questionCard").innerHTML = html;
+  document.getElementById("readingFeedback").classList.add("hidden");
+}
+
+function markReading() {
+  if (!currentSet) return;
+
+  let score = 0;
+  let feedback = [];
+
+  currentSet.questions.forEach(function(question, index) {
+    if (question.type === "mcq") {
+      const selected = document.querySelector('input[name="q' + index + '"]:checked');
+
+      if (selected && Number(selected.value) === question.answer) {
+        score++;
+        feedback.push("Q" + (index + 1) + ": correct.");
+      } else {
+        feedback.push("Q" + (index + 1) + ": incorrect.");
+      }
+    }
+
+    if (question.type === "text") {
+      const input = document.getElementById("q" + index);
+      const answer = input ? input.value.toLowerCase().trim() : "";
+
+      const correct = question.keywords.some(function(keyword) {
+        return answer.includes(keyword.toLowerCase());
+      });
+
+      if (correct) {
+        score++;
+        feedback.push("Q" + (index + 1) + ": correct.");
+      } else {
+        feedback.push("Q" + (index + 1) + ": needs improvement.");
+      }
+    }
+  });
+
+  const feedbackBox = document.getElementById("readingFeedback");
+  feedbackBox.classList.remove("hidden");
+
+  feedbackBox.innerHTML =
+    '<h2>Reading Score</h2>' +
+    '<div class="score-circle">' + score + '/' + currentSet.questions.length + '</div>' +
+    '<div class="feedback-grid">' +
+      '<div>' +
+        '<h4>Feedback</h4>' +
+        feedback.map(function(line) {
+          return "<p>" + line + "</p>";
+        }).join("") +
+      '</div>' +
+      '<div>' +
+        '<h4>Unit E Key Skills</h4>' +
+        '<p>Culture texts often mention 节日, 风俗, 春节, 红包 and 团圆.</p>' +
+        '<p>Technology texts often use 手机, 网站, 下载, 分享 and 网络.</p>' +
+        '<p>Environment texts often use 污染, 回收, 保护, 改善 and 负责.</p>' +
+      '</div>' +
+    '</div>';
+}
+
+generateReading();
+</script>
+
+</body>
+</html>

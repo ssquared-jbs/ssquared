@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit C Writing | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Mastery Writing | Unit C</p>
+</header>
+
+<main class="writing-wrap">
+
+  <div class="back-button">
+    <a href="mastery-writing.html">← Back to Writing</a>
+  </div>
+
+  <section class="writing-hero">
+    <p class="quiz-label">Unit C Writing</p>
+    <h2>Guided Essay Practice</h2>
+    <p>Write an exam-style answer using Unit C vocabulary: weather, transport, travel, planning trips and public services.</p>
+  </section>
+
+  <section class="writing-layout">
+
+    <section class="writing-panel">
+      <h3>Your task</h3>
+      <div id="promptBox" class="prompt-box"></div>
+
+      <button onclick="newPrompt()" class="writing-btn">Generate New Question</button>
+
+      <h3>Your answer</h3>
+      <textarea id="studentAnswer" placeholder="Write your Mandarin answer here..."></textarea>
+
+      <div class="writing-actions">
+        <button onclick="markAnswer()" class="writing-btn">Mark My Answer</button>
+        <button onclick="clearAnswer()" class="writing-btn secondary">Clear</button>
+      </div>
+    </section>
+
+    <aside class="writing-sidebar">
+      <h3>Useful Unit C Vocab</h3>
+      <div id="vocabHelp" class="vocab-help"></div>
+
+      <h3>Useful Structures</h3>
+      <ul class="structure-list">
+        <li>如果天气好，我会……</li>
+        <li>我打算去……旅游。</li>
+        <li>我觉得坐高铁比坐飞机……</li>
+        <li>虽然……但是……</li>
+        <li>先……然后……</li>
+        <li>除了……以外，我还……</li>
+      </ul>
+    </aside>
+
+  </section>
+
+  <section id="markBox" class="mark-box hidden"></section>
+
+</main>
+
+<script src="vocab-bank.js"></script>
+
+<script>
+const unitCVocab = vocabBank.filter(item => item.unit === "C");
+
+const prompts = [
+  {
+    title: "Weather and Plans",
+    task: "Write about the weather and what you like doing in different weather.",
+    bullets: [
+      "Describe the weather where you live",
+      "Say what you do when the weather is good",
+      "Say what you do when the weather is bad",
+      "Give opinions and reasons"
+    ]
+  },
+  {
+    title: "Transport",
+    task: "Write about transport and how you usually travel.",
+    bullets: [
+      "Say how you usually travel",
+      "Compare two types of transport",
+      "Describe a problem with transport",
+      "Give your opinion about transport"
+    ]
+  },
+  {
+    title: "A Travel Experience",
+    task: "Write about a trip you went on.",
+    bullets: [
+      "Say where you went",
+      "Say how you travelled there",
+      "Describe what you visited",
+      "Say what you thought of the trip"
+    ]
+  },
+  {
+    title: "Planning a Trip",
+    task: "Write about a trip you are planning.",
+    bullets: [
+      "Say where you want to go",
+      "Say what you need to prepare",
+      "Describe where you will stay",
+      "Mention the weather or transport"
+    ]
+  },
+  {
+    title: "At the Airport or Post Office",
+    task: "Write about using public services while travelling.",
+    bullets: [
+      "Say where you went",
+      "Describe what problem you had",
+      "Say who helped you",
+      "Explain what happened in the end"
+    ]
+  }
+];
+
+let currentPrompt = prompts[0];
+
+function newPrompt() {
+  currentPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+
+  document.getElementById("promptBox").innerHTML = `
+    <h4>${currentPrompt.title}</h4>
+    <p>${currentPrompt.task}</p>
+    <ul>
+      ${currentPrompt.bullets.map(bullet => `<li>${bullet}</li>`).join("")}
+    </ul>
+  `;
+}
+
+function loadVocabHelp() {
+  const shuffled = [...unitCVocab].sort(() => Math.random() - 0.5).slice(0, 20);
+
+  document.getElementById("vocabHelp").innerHTML = shuffled.map(item => `
+    <div class="vocab-chip">
+      <span>${item.word}</span>
+      <small>${item.answer}</small>
+    </div>
+  `).join("");
+}
+
+function markAnswer() {
+  const answer = document.getElementById("studentAnswer").value.trim();
+  const markBox = document.getElementById("markBox");
+
+  if (answer.length < 10) {
+    alert("Write a bit more before marking.");
+    return;
+  }
+
+  const usedVocab = unitCVocab.filter(item => answer.includes(item.word));
+  const wordCount = answer.length;
+
+  const hasOpinion = /喜欢|觉得|有意思|方便|不错|难|容易|壮观|深刻|有名|美|好玩|重要/.test(answer);
+  const hasReason = /因为|所以|由于/.test(answer);
+  const hasTime = /昨天|今天|明天|周末|每天|以前|以后|最近|上个月|下次|暑假|前天|后来/.test(answer);
+  const hasConnective = /和|但是|也|还|然后|如果|就|虽然|可是|不过|此外|除了/.test(answer);
+  const hasComparison = /比|最|更|比较|越来越/.test(answer);
+  const hasTravel = /旅行|旅游|饭店|酒店|高铁|出租车|机场|护照|签证|天气|交通|参观|长城|故宫/.test(answer);
+
+  let score = 0;
+
+  if (wordCount >= 100) score += 2;
+  else if (wordCount >= 60) score += 1;
+
+  if (usedVocab.length >= 10) score += 3;
+  else if (usedVocab.length >= 6) score += 2;
+  else if (usedVocab.length >= 3) score += 1;
+
+  if (hasOpinion) score += 2;
+  if (hasReason) score += 2;
+  if (hasTime) score += 1;
+  if (hasConnective) score += 2;
+  if (hasComparison) score += 1;
+  if (hasTravel) score += 1;
+
+  if (score > 12) score = 12;
+
+  let band = "Needs more detail";
+  if (score >= 10) band = "Strong response";
+  else if (score >= 7) band = "Good response";
+  else if (score >= 4) band = "Developing response";
+
+  markBox.classList.remove("hidden");
+
+  markBox.innerHTML = `
+    <h2>Your Writing Feedback</h2>
+
+    <div class="score-circle">${score}/12</div>
+    <h3>${band}</h3>
+
+    <div class="feedback-grid">
+      <div>
+        <h4>Strengths</h4>
+        <p>${usedVocab.length} Unit C words detected.</p>
+        <p>${hasOpinion ? "You included opinions." : "Try to include a clear opinion."}</p>
+        <p>${hasReason ? "You gave a reason." : "Add 因为, 所以 or 由于 to explain why."}</p>
+        <p>${hasTravel ? "You used travel/weather topic language." : "Try adding travel or weather vocabulary."}</p>
+      </div>
+
+      <div>
+        <h4>To improve</h4>
+        <p>${hasTime ? "Good use of time phrases." : "Add a time phrase like 上个月, 暑假, 下次 or 后来."}</p>
+        <p>${hasConnective ? "Good linking words." : "Use connectives like 虽然, 但是, 然后, 如果 or 除了."}</p>
+        <p>${hasComparison ? "You used comparison language." : "Try adding 比, 最, 更 or 越来越."}</p>
+      </div>
+    </div>
+
+    <h4>Vocab you used</h4>
+    <div class="used-vocab">
+      ${usedVocab.slice(0, 24).map(item => `<span>${item.word} = ${item.answer}</span>`).join("")}
+    </div>
+  `;
+}
+
+function clearAnswer() {
+  document.getElementById("studentAnswer").value = "";
+  document.getElementById("markBox").classList.add("hidden");
+}
+
+newPrompt();
+loadVocabHelp();
+</script>
+
+</body>
+</html>

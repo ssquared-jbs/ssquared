@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit B Reading | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Mastery Reading | Unit B</p>
+</header>
+
+<main class="reading-wrap">
+
+  <div class="back-button">
+    <a href="mastery-reading.html">← Back to Reading</a>
+  </div>
+
+  <section class="writing-hero">
+    <p class="quiz-label">Unit B Reading</p>
+    <h2>Health, Home, School and Environment</h2>
+    <p>Read the Chinese text, answer the questions, then mark your work.</p>
+  </section>
+
+  <section class="reading-card">
+    <h3>Text</h3>
+    <div id="readingText" class="chinese-text"></div>
+  </section>
+
+  <section id="questionCard" class="question-card"></section>
+
+  <section id="readingFeedback" class="mark-box hidden"></section>
+
+</main>
+
+<script>
+const readingBank = [
+  {
+    text: `我家附近有一个很大的小区。小区里有图书馆、游泳池、停车场和一个漂亮的花园。我的房子不大，但是很干净。客厅旁边是厨房，楼上有三间卧室。
+
+我每天早上七点起床，然后去学校。学校有教学楼、实验室、体育馆和食堂。我最喜欢体育馆，因为我常常在那里打篮球。这个星期我有考试，所以我觉得有点儿紧张。
+
+上个星期我生病了，嗓子疼，还发烧了。妈妈带我去医院看医生。医生说我需要休息，也要多喝水。现在我已经好多了。`,
+
+    questions: [
+      { type: "mcq", q: "What facilities are in the housing estate?", options: ["Cinema, airport and hotel", "Library, swimming pool, car park and garden", "Bank, post office and theatre"], answer: 1 },
+      { type: "mcq", q: "What is the writer’s house like?", options: ["Not big, but clean", "Large and messy", "Old and expensive"], answer: 0 },
+      { type: "text", q: "Why does the writer like the gym?", keywords: ["basketball", "plays basketball", "play basketball"] },
+      { type: "text", q: "Why is the writer nervous this week?", keywords: ["exam", "test", "exams"] },
+      { type: "text", q: "Find the Chinese phrase meaning ‘to see a doctor’.", keywords: ["看医生", "看病"] },
+      { type: "text", q: "What advice did the doctor give?", keywords: ["rest", "drink water", "water"] }
+    ]
+  },
+
+  {
+    text: `我的学校虽然不大，但是设备很齐全。学校里有教室、实验室、体育馆、食堂和一个很大的操场。每天中午，很多学生去食堂吃饭，有的人吃米饭和鸡肉，有的人吃面条。饭后，我常常和朋友去操场散步。
+
+我最喜欢的科目是化学，因为我觉得化学很有用，也很有意思。可是数学对我来说有点儿难，所以我每天晚上都复习。我的老师很认真，也很关心学生。她常常说，只要我们努力学习，就一定会进步。
+
+上个星期学校有开放日。很多家长来到学校参观教学楼和实验室。校长还介绍了学校的历史。虽然那天很忙，但是大家都很开心。`,
+
+    questions: [
+      { type: "mcq", q: "What facilities does the school have?", options: ["Only classrooms", "Classrooms, lab, gym, canteen and playground", "Only a library and office"], answer: 1 },
+      { type: "text", q: "What does the writer often do after lunch?", keywords: ["walk", "stroll", "go for a walk", "操场"] },
+      { type: "mcq", q: "Why does the writer like chemistry?", options: ["It is useful and interesting", "It is easy and short", "The teacher gives no homework"], answer: 0 },
+      { type: "text", q: "Which subject is difficult for the writer?", keywords: ["math", "mathematics", "maths", "数学"] },
+      { type: "text", q: "What does the teacher often say?", keywords: ["work hard", "improve", "努力", "进步"] },
+      { type: "mcq", q: "What happened last week?", options: ["A sports day", "An open day", "A birthday party"], answer: 1 }
+    ]
+  },
+
+  {
+    text: `我的朋友李明最近搬家了。他的新房子在市中心附近，交通很方便。房子有两间卧室、一个客厅、一个厨房和一个洗澡间。客厅里有沙发、电视机和书架，窗户旁边还有一张书桌。他说这个房子虽然不大，但是很适合他。
+
+不过，他觉得附近的环境有好处，也有坏处。好处是离商店、银行和图书馆都很近，买东西很方便。坏处是路上车水马龙，有时候很吵，空气也不太清新。
+
+周末我去看他的时候，我们一起打扫房间，还去超市买了日常用品。李明说，以后他想在阳台上种花儿，让家里看起来更漂亮。`,
+
+    questions: [
+      { type: "mcq", q: "Who recently moved house?", options: ["The writer’s friend", "The writer’s older brother", "The writer’s teacher"], answer: 0 },
+      { type: "text", q: "Where is Li Ming’s new house?", keywords: ["near the city centre", "city centre", "市中心"] },
+      { type: "text", q: "How many bedrooms does the house have?", keywords: ["two", "2", "两"] },
+      { type: "mcq", q: "What is one advantage of the area?", options: ["It is near shops, banks and the library", "It is always quiet", "There are no cars"], answer: 0 },
+      { type: "text", q: "What is one disadvantage of the area?", keywords: ["noisy", "traffic", "air", "吵"] },
+      { type: "text", q: "What does Li Ming want to do later?", keywords: ["plant flowers", "flowers", "种花"] }
+    ]
+  }
+];
+
+let currentSet = null;
+
+function generateReading() {
+  const randomIndex = Math.floor(Math.random() * readingBank.length);
+  currentSet = readingBank[randomIndex];
+
+  document.getElementById("readingText").innerText = currentSet.text;
+
+  let html = "<h3>Questions</h3>";
+
+  currentSet.questions.forEach(function(question, index) {
+    html += '<div class="question-block">';
+    html += "<p><strong>" + (index + 1) + ". " + question.q + "</strong></p>";
+
+    if (question.type === "mcq") {
+      question.options.forEach(function(option, optionIndex) {
+        html += '<label>';
+        html += '<input type="radio" name="q' + index + '" value="' + optionIndex + '"> ';
+        html += option;
+        html += '</label>';
+      });
+    }
+
+    if (question.type === "text") {
+      html += '<input type="text" id="q' + index + '" placeholder="Type your answer...">';
+    }
+
+    html += '</div>';
+  });
+
+  html += '<button type="button" onclick="markReading()" class="writing-btn">Mark Answers</button>';
+  html += '<button type="button" onclick="generateReading()" class="writing-btn secondary">Generate New Text</button>';
+
+  document.getElementById("questionCard").innerHTML = html;
+  document.getElementById("readingFeedback").classList.add("hidden");
+}
+
+function markReading() {
+  if (!currentSet) return;
+
+  let score = 0;
+  let feedback = [];
+
+  currentSet.questions.forEach(function(question, index) {
+    if (question.type === "mcq") {
+      const selected = document.querySelector('input[name="q' + index + '"]:checked');
+
+      if (selected && Number(selected.value) === question.answer) {
+        score++;
+        feedback.push("Q" + (index + 1) + ": correct.");
+      } else {
+        feedback.push("Q" + (index + 1) + ": incorrect.");
+      }
+    }
+
+    if (question.type === "text") {
+      const input = document.getElementById("q" + index);
+      const answer = input ? input.value.toLowerCase().trim() : "";
+
+      const correct = question.keywords.some(function(keyword) {
+        return answer.includes(keyword.toLowerCase());
+      });
+
+      if (correct) {
+        score++;
+        feedback.push("Q" + (index + 1) + ": correct.");
+      } else {
+        feedback.push("Q" + (index + 1) + ": needs improvement.");
+      }
+    }
+  });
+
+  const feedbackBox = document.getElementById("readingFeedback");
+  feedbackBox.classList.remove("hidden");
+
+  feedbackBox.innerHTML =
+    '<h2>Reading Score</h2>' +
+    '<div class="score-circle">' + score + '/' + currentSet.questions.length + '</div>' +
+    '<div class="feedback-grid">' +
+      '<div>' +
+        '<h4>Feedback</h4>' +
+        feedback.map(function(line) {
+          return "<p>" + line + "</p>";
+        }).join("") +
+      '</div>' +
+      '<div>' +
+        '<h4>Unit B Key Skills</h4>' +
+        '<p>Look for place words like 小区, 图书馆, 体育馆 and 教学楼.</p>' +
+        '<p>Reasons often come after 因为.</p>' +
+        '<p>Health details often include 发烧, 嗓子疼, 医生 and 休息.</p>' +
+      '</div>' +
+    '</div>';
+}
+
+generateReading();
+</script>
+
+</body>
+</html>

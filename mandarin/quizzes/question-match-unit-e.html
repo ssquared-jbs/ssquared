@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question Match Unit E | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Question Match | Unit E</p>
+</header>
+
+<main class="match-wrap">
+
+  <div class="back-button">
+    <a href="question-match.html">← Back to Units</a>
+  </div>
+
+  <section class="match-hero">
+    <p class="quiz-label">Question Words</p>
+    <h2>Question Match</h2>
+    <p>Match culture, technology and environment question forms with their English meanings.</p>
+  </section>
+
+  <section class="match-stats">
+    <div>Moves: <span id="moves">0</span></div>
+    <div>Matches: <span id="matches">0</span>/<span id="totalPairs">0</span></div>
+    <div>XP: <span id="xp">0</span></div>
+  </section>
+
+  <section id="matchBoard" class="match-board"></section>
+
+  <section id="matchEnd" class="match-end hidden">
+    <h2>Completed!</h2>
+    <p>Total XP: <span id="finalXp">0</span></p>
+    <button onclick="startGame()" class="writing-btn">Play Again</button>
+  </section>
+
+</main>
+
+<script>
+const questionPairs = [
+  { chinese: "你常常用手机做什么", english: "What do you often use your phone for" },
+  { chinese: "你为什么喜欢上网", english: "Why do you like going online" },
+  { chinese: "科技有什么好处", english: "What advantages does technology have" },
+  { chinese: "春节是什么时候", english: "When is Spring Festival" },
+  { chinese: "春节人们吃什么", english: "What do people eat at Spring Festival" },
+  { chinese: "你怎么庆祝节日", english: "How do you celebrate festivals" },
+  { chinese: "学习中文有什么难点", english: "What difficulties are there in learning Chinese" },
+  { chinese: "你怎么复习生词", english: "How do you revise new vocabulary" },
+  { chinese: "环境问题是什么", english: "What are the environmental problems" },
+  { chinese: "我们应该怎么保护地球", english: "How should we protect the planet" }
+];
+
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+let moves = 0;
+let matches = 0;
+let xp = 0;
+
+function startGame() {
+  firstCard = null;
+  secondCard = null;
+  lockBoard = false;
+  moves = 0;
+  matches = 0;
+  xp = 0;
+
+  document.getElementById("matchEnd").classList.add("hidden");
+  document.getElementById("totalPairs").textContent = questionPairs.length;
+  updateStats();
+
+  const cards = [];
+
+  questionPairs.forEach(function(pair, index) {
+    cards.push({ text: pair.chinese, pairId: index, type: "chinese" });
+    cards.push({ text: pair.english, pairId: index, type: "english" });
+  });
+
+  shuffle(cards);
+
+  const board = document.getElementById("matchBoard");
+  board.innerHTML = "";
+
+  cards.forEach(function(cardData) {
+    const card = document.createElement("button");
+    card.className = "match-card";
+    card.dataset.pairId = cardData.pairId;
+    card.dataset.type = cardData.type;
+
+    card.innerHTML = `
+      <div class="match-card-inner">
+        <div class="match-card-front">?</div>
+        <div class="match-card-back">${cardData.text}</div>
+      </div>
+    `;
+
+    card.onclick = function() {
+      flipCard(card);
+    };
+
+    board.appendChild(card);
+  });
+}
+
+function flipCard(card) {
+  if (lockBoard) return;
+  if (card.classList.contains("flipped") || card.classList.contains("matched")) return;
+
+  card.classList.add("flipped");
+
+  if (!firstCard) {
+    firstCard = card;
+    return;
+  }
+
+  secondCard = card;
+  moves++;
+  updateStats();
+
+  checkMatch();
+}
+
+function checkMatch() {
+  const match = firstCard.dataset.pairId === secondCard.dataset.pairId &&
+                firstCard.dataset.type !== secondCard.dataset.type;
+
+  if (match) {
+    firstCard.classList.add("matched");
+    secondCard.classList.add("matched");
+
+    matches++;
+    xp += 10;
+
+    if (moves <= questionPairs.length + 3) xp += 5;
+
+    resetTurn();
+    updateStats();
+
+    if (matches === questionPairs.length) endGame();
+  } else {
+    lockBoard = true;
+    xp = Math.max(0, xp - 2);
+
+    setTimeout(function() {
+      firstCard.classList.remove("flipped");
+      secondCard.classList.remove("flipped");
+      resetTurn();
+      updateStats();
+    }, 800);
+  }
+}
+
+function resetTurn() {
+  firstCard = null;
+  secondCard = null;
+  lockBoard = false;
+}
+
+function updateStats() {
+  document.getElementById("moves").textContent = moves;
+  document.getElementById("matches").textContent = matches;
+  document.getElementById("xp").textContent = xp;
+}
+
+function endGame() {
+  document.getElementById("finalXp").textContent = xp;
+  document.getElementById("matchEnd").classList.remove("hidden");
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+startGame();
+</script>
+
+</body>
+</html>

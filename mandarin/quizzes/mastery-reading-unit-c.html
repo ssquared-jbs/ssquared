@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit C Reading | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Mastery Reading | Unit C</p>
+</header>
+
+<main class="reading-wrap">
+
+  <div class="back-button">
+    <a href="mastery-reading.html">← Back to Reading</a>
+  </div>
+
+  <section class="writing-hero">
+    <p class="quiz-label">Unit C Reading</p>
+    <h2>Weather, Transport and Travel</h2>
+    <p>Read the Chinese text, answer the questions, then mark your work.</p>
+  </section>
+
+  <section class="reading-card">
+    <h3>Text</h3>
+    <div id="readingText" class="chinese-text"></div>
+  </section>
+
+  <section id="questionCard" class="question-card"></section>
+
+  <section id="readingFeedback" class="mark-box hidden"></section>
+
+</main>
+
+<script>
+const readingBank = [
+  {
+    text: `上个月，我和朋友去北京旅行。我们先坐高铁到北京，然后坐出租车去饭店。那天北京的天气很好，是晴天，但是有一点儿热。我们在饭店休息了一会儿，就去参观故宫和天安门广场。
+
+第二天，我们去爬长城。虽然路程有点儿远，但是风景非常壮观。长城上游客很多，可以说是人山人海。下午天气突然转阴，还刮风了，所以我们赶快回饭店。
+
+这次旅行让我印象很深刻。我觉得北京有很多名胜古迹，交通也很方便。下次我还想去上海看东方明珠塔。`,
+
+    questions: [
+      { type: "mcq", q: "Where did the writer travel last month?", options: ["Shanghai", "Beijing", "Guangzhou"], answer: 1 },
+      { type: "text", q: "How did they first get to Beijing?", keywords: ["high-speed rail", "train", "高铁"] },
+      { type: "text", q: "What was the weather like on the first day?", keywords: ["sunny", "hot", "晴天", "热"] },
+      { type: "mcq", q: "What did they visit on the first day?", options: ["The Forbidden City and Tiananmen Square", "The Summer Palace only", "A shopping centre"], answer: 0 },
+      { type: "text", q: "Why did they return to the hotel quickly on the second day?", keywords: ["cloudy", "windy", "wind", "转阴", "刮风"] },
+      { type: "text", q: "What does the writer want to visit next time?", keywords: ["oriental pearl tower", "东方明珠塔", "shanghai"] }
+    ]
+  },
+
+  {
+    text: `李明打算暑假去杭州度假。他已经在网上订了酒店，也买了来回票。他准备坐火车去，因为火车比飞机便宜，而且车站离他家比较近。为了这次旅行，他还办好了签证，准备好了护照。
+
+李明最想去西湖。他听说西湖的风景很美，湖边有很多古迹和桥。妈妈提醒他说，旅行的时候一定要小心，不要忘记带现金和手机。
+
+不过，天气预报说明天可能会下雨，所以李明准备带雨衣和雨伞。他觉得如果天气不好，就先去博物馆参观。`,
+
+    questions: [
+      { type: "mcq", q: "Where is Li Ming planning to go?", options: ["Hangzhou", "Lhasa", "Chongqing"], answer: 0 },
+      { type: "text", q: "What has he booked online?", keywords: ["hotel", "酒店"] },
+      { type: "text", q: "Why does he choose the train?", keywords: ["cheaper", "near", "便宜", "近"] },
+      { type: "mcq", q: "What place does he most want to visit?", options: ["West Lake", "Yellow River", "Hyde Park"], answer: 0 },
+      { type: "text", q: "What did his mother remind him to bring?", keywords: ["cash", "phone", "现金", "手机"] },
+      { type: "text", q: "What will he do if the weather is bad?", keywords: ["museum", "博物馆"] }
+    ]
+  },
+
+  {
+    text: `昨天我在机场遇到了一点麻烦。我的航班本来应该下午三点起飞，可是因为天气不好，飞机误点了。机场里人很多，大家都在看时刻表。广播说飞机可能要晚两个小时才能出发。
+
+我想去兑换店换钱，可是忘记带会员卡了。后来，一位职员告诉我，除了护照以外，还需要填写一张表。填表以后，我终于换到了钱。
+
+等飞机的时候，我给朋友写了一张明信片，还买了几枚邮票。虽然这一天不太顺利，但是我学会了在机场遇到问题时要保持冷静。`,
+
+    questions: [
+      { type: "mcq", q: "Where did the problem happen?", options: ["At the airport", "At a school", "At a restaurant"], answer: 0 },
+      { type: "text", q: "Why was the plane delayed?", keywords: ["bad weather", "weather", "天气不好"] },
+      { type: "text", q: "How long might the flight be delayed?", keywords: ["two hours", "2 hours", "两个小时"] },
+      { type: "mcq", q: "What did the staff member say was needed apart from a passport?", options: ["A form", "A suitcase", "A ticket seller"], answer: 0 },
+      { type: "text", q: "What did the writer write while waiting?", keywords: ["postcard", "明信片"] },
+      { type: "text", q: "What lesson did the writer learn?", keywords: ["stay calm", "calm", "冷静"] }
+    ]
+  }
+];
+
+let currentSet = null;
+
+function generateReading() {
+  const randomIndex = Math.floor(Math.random() * readingBank.length);
+  currentSet = readingBank[randomIndex];
+
+  document.getElementById("readingText").innerText = currentSet.text;
+
+  let html = "<h3>Questions</h3>";
+
+  currentSet.questions.forEach(function(question, index) {
+    html += '<div class="question-block">';
+    html += "<p><strong>" + (index + 1) + ". " + question.q + "</strong></p>";
+
+    if (question.type === "mcq") {
+      question.options.forEach(function(option, optionIndex) {
+        html += '<label>';
+        html += '<input type="radio" name="q' + index + '" value="' + optionIndex + '"> ';
+        html += option;
+        html += '</label>';
+      });
+    }
+
+    if (question.type === "text") {
+      html += '<input type="text" id="q' + index + '" placeholder="Type your answer...">';
+    }
+
+    html += '</div>';
+  });
+
+  html += '<button type="button" onclick="markReading()" class="writing-btn">Mark Answers</button>';
+  html += '<button type="button" onclick="generateReading()" class="writing-btn secondary">Generate New Text</button>';
+
+  document.getElementById("questionCard").innerHTML = html;
+  document.getElementById("readingFeedback").classList.add("hidden");
+}
+
+function markReading() {
+  if (!currentSet) return;
+
+  let score = 0;
+  let feedback = [];
+
+  currentSet.questions.forEach(function(question, index) {
+    if (question.type === "mcq") {
+      const selected = document.querySelector('input[name="q' + index + '"]:checked');
+
+      if (selected && Number(selected.value) === question.answer) {
+        score++;
+        feedback.push("Q" + (index + 1) + ": correct.");
+      } else {
+        feedback.push("Q" + (index + 1) + ": incorrect.");
+      }
+    }
+
+    if (question.type === "text") {
+      const input = document.getElementById("q" + index);
+      const answer = input ? input.value.toLowerCase().trim() : "";
+
+      const correct = question.keywords.some(function(keyword) {
+        return answer.includes(keyword.toLowerCase());
+      });
+
+      if (correct) {
+        score++;
+        feedback.push("Q" + (index + 1) + ": correct.");
+      } else {
+        feedback.push("Q" + (index + 1) + ": needs improvement.");
+      }
+    }
+  });
+
+  const feedbackBox = document.getElementById("readingFeedback");
+  feedbackBox.classList.remove("hidden");
+
+  feedbackBox.innerHTML =
+    '<h2>Reading Score</h2>' +
+    '<div class="score-circle">' + score + '/' + currentSet.questions.length + '</div>' +
+    '<div class="feedback-grid">' +
+      '<div>' +
+        '<h4>Feedback</h4>' +
+        feedback.map(function(line) {
+          return "<p>" + line + "</p>";
+        }).join("") +
+      '</div>' +
+      '<div>' +
+        '<h4>Unit C Key Skills</h4>' +
+        '<p>Weather phrases include 晴天, 下雨, 刮风, 天气预报 and 天气不好.</p>' +
+        '<p>Transport details often include 坐, 高铁, 出租车, 起飞 and 误点.</p>' +
+        '<p>Travel texts often include plans, problems and opinions after 因为 or 虽然.</p>' +
+      '</div>' +
+    '</div>';
+}
+
+generateReading();
+</script>
+
+</body>
+</html>

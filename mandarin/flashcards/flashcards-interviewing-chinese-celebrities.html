@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interviewing Chinese Celebrities Flashcards | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Flashcards | Interviewing Chinese Celebrities</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="flashcards-unit-e.html">← Back to Unit E</a>
+</div>
+
+<section class="page-intro">
+  <h2>Interviewing Chinese Celebrities Flashcards</h2>
+  <p>Tap to flip. Swipe left/right to move. Mark hard words to review later.</p>
+</section>
+
+<section class="flashcard-container">
+
+  <div class="flashcard-scene" onclick="flipCard()" id="flashScene">
+    <div class="flashcard flip-card" id="card">
+      <div class="flashcard-face flashcard-front">
+        <div id="frontContent"></div>
+      </div>
+      <div class="flashcard-face flashcard-back">
+        <div id="backContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flashcard-controls">
+    <button onclick="prevCard()">← Previous</button>
+    <button onclick="flipCard()">Flip Card</button>
+    <button onclick="nextCard()">Next →</button>
+  </div>
+
+  <div class="flashcard-controls">
+    <button onclick="markHard()">⭐ Mark Hard</button>
+    <button onclick="reviewHard()">Review Hard</button>
+    <button onclick="resetAll()">Reset</button>
+  </div>
+
+  <p class="flash-progress" id="progress"></p>
+
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let originalCards = [
+  {han:"名人", pin:"míng rén", eng:"celebrity"},
+  {han:"明星", pin:"míng xīng", eng:"star"},
+  {han:"演员", pin:"yǎn yuán", eng:"actor"},
+  {han:"歌手", pin:"gē shǒu", eng:"singer"},
+  {han:"运动员", pin:"yùn dòng yuán", eng:"athlete"},
+  {han:"主持人", pin:"zhǔ chí rén", eng:"host / presenter"},
+  {han:"记者", pin:"jì zhě", eng:"reporter"},
+  {han:"采访", pin:"cǎi fǎng", eng:"to interview"},
+  {han:"节目", pin:"jié mù", eng:"programme / show"},
+  {han:"电视", pin:"diàn shì", eng:"television"},
+  {han:"电影", pin:"diàn yǐng", eng:"film"},
+  {han:"音乐", pin:"yīn yuè", eng:"music"},
+  {han:"粉丝", pin:"fěn sī", eng:"fans"},
+  {han:"成功", pin:"chéng gōng", eng:"success"},
+  {han:"努力", pin:"nǔ lì", eng:"hardworking"},
+  {han:"出名", pin:"chū míng", eng:"to become famous"},
+  {han:"受欢迎", pin:"shòu huān yíng", eng:"popular"},
+  {han:"为什么", pin:"wèi shén me", eng:"why"},
+  {han:"觉得", pin:"jué de", eng:"to think / feel"},
+  {han:"喜欢", pin:"xǐ huān", eng:"to like"},
+  {han:"不喜欢", pin:"bù xǐ huān", eng:"to dislike"},
+  {han:"因为", pin:"yīn wèi", eng:"because"},
+  {han:"所以", pin:"suǒ yǐ", eng:"so / therefore"},
+  {han:"将来", pin:"jiāng lái", eng:"future"},
+  {han:"计划", pin:"jì huà", eng:"plan"},
+  {han:"梦想", pin:"mèng xiǎng", eng:"dream"},
+  {han:"问题", pin:"wèn tí", eng:"question"},
+  {han:"回答", pin:"huí dá", eng:"to answer"},
+  {han:"介绍", pin:"jiè shào", eng:"to introduce"},
+  {han:"自我介绍", pin:"zì wǒ jiè shào", eng:"self introduction"},
+  {han:"你为什么想当演员？", pin:"nǐ wèi shén me xiǎng dāng yǎn yuán", eng:"why do you want to be an actor?"},
+  {han:"我从小喜欢表演", pin:"wǒ cóng xiǎo xǐ huān biǎo yǎn", eng:"I have liked performing since I was young"},
+  {han:"你的梦想是什么？", pin:"nǐ de mèng xiǎng shì shén me", eng:"what is your dream?"},
+  {han:"我希望将来更成功", pin:"wǒ xī wàng jiāng lái gèng chéng gōng", eng:"I hope to be more successful in the future"},
+  {han:"你觉得你的工作怎么样？", pin:"nǐ jué de nǐ de gōng zuò zěn me yàng", eng:"what do you think about your job?"},
+  {han:"虽然很累，但是很有意思", pin:"suī rán hěn lèi, dàn shì hěn yǒu yì si", eng:"although it is tiring, it is very interesting"}
+];
+
+let cards = [];
+let hardCards = [];
+let index = 0;
+let flipped = false;
+let startX = 0;
+let endX = 0;
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function initCards() {
+  cards = shuffle([...originalCards]);
+  index = 0;
+  flipped = false;
+  updateCard();
+}
+
+function updateCard() {
+  const card = cards[index];
+
+  document.getElementById("frontContent").innerHTML = `
+    <div class="han">${card.han}</div>
+    <div class="pin">${card.pin}</div>
+  `;
+
+  document.getElementById("backContent").innerHTML = `
+    <div class="eng">${card.eng}</div>
+  `;
+
+  document.getElementById("card").classList.toggle("is-flipped", flipped);
+  document.getElementById("progress").textContent =
+    `Card ${index + 1} of ${cards.length} | Hard cards: ${hardCards.length}`;
+
+  setTimeout(fitText, 0);
+}
+
+function fitText() {
+  const elements = document.querySelectorAll(".han, .eng");
+
+  elements.forEach(el => {
+    el.style.fontSize = "";
+    let size = parseFloat(window.getComputedStyle(el).fontSize);
+
+    while (el.scrollWidth > el.clientWidth && size > 24) {
+      size -= 2;
+      el.style.fontSize = size + "px";
+    }
+  });
+}
+
+function flipCard() {
+  flipped = !flipped;
+  updateCard();
+}
+
+function animateCard(direction, callback) {
+  const scene = document.getElementById("flashScene");
+
+  scene.classList.remove("flashcard-slide-left", "flashcard-slide-right");
+  void scene.offsetWidth;
+
+  scene.classList.add(direction === "next" ? "flashcard-slide-left" : "flashcard-slide-right");
+
+  setTimeout(function() {
+    callback();
+    scene.classList.remove("flashcard-slide-left", "flashcard-slide-right");
+  }, 220);
+}
+
+function nextCard() {
+  animateCard("next", function() {
+    index = (index + 1) % cards.length;
+    flipped = false;
+    updateCard();
+  });
+}
+
+function prevCard() {
+  animateCard("prev", function() {
+    index = (index - 1 + cards.length) % cards.length;
+    flipped = false;
+    updateCard();
+  });
+}
+
+function markHard() {
+  const current = cards[index];
+  const exists = hardCards.some(card => card.han === current.han);
+  if (!exists) hardCards.push(current);
+  nextCard();
+}
+
+function reviewHard() {
+  if (hardCards.length === 0) {
+    alert("No hard cards yet.");
+    return;
+  }
+
+  cards = shuffle([...hardCards]);
+  index = 0;
+  flipped = false;
+  updateCard();
+}
+
+function resetAll() {
+  hardCards = [];
+  initCards();
+}
+
+const scene = document.getElementById("flashScene");
+
+scene.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+scene.addEventListener("touchend", e => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+scene.addEventListener("mousedown", e => startX = e.clientX);
+scene.addEventListener("mouseup", e => {
+  endX = e.clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = endX - startX;
+
+  if (Math.abs(diff) > 60) {
+    if (diff < 0) nextCard();
+    else prevCard();
+  }
+}
+
+initCards();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit A Writing | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Mastery Writing | Unit A</p>
+</header>
+
+<main class="writing-wrap">
+
+  <div class="back-button">
+    <a href="mastery-mode.html">← Back to Mastery Mode</a>
+  </div>
+
+  <section class="writing-hero">
+    <p class="quiz-label">Unit A Writing</p>
+    <h2>Guided Essay Practice</h2>
+    <p>Write a short exam-style answer using Unit A vocabulary. Your answer will be checked for length, coverage, useful phrases and overall quality.</p>
+  </section>
+
+  <section class="writing-layout">
+
+    <section class="writing-panel">
+      <h3>Your task</h3>
+      <div id="promptBox" class="prompt-box"></div>
+
+      <button onclick="newPrompt()" class="writing-btn">Generate New Question</button>
+
+      <h3>Your answer</h3>
+      <textarea id="studentAnswer" placeholder="Write your Mandarin answer here..."></textarea>
+
+      <div class="writing-actions">
+        <button onclick="markAnswer()" class="writing-btn">Mark My Answer</button>
+        <button onclick="clearAnswer()" class="writing-btn secondary">Clear</button>
+      </div>
+    </section>
+
+    <aside class="writing-sidebar">
+      <h3>Useful Unit A Vocab</h3>
+      <div id="vocabHelp" class="vocab-help"></div>
+
+      <h3>Useful Structures</h3>
+      <ul class="structure-list">
+        <li>我喜欢……因为……</li>
+        <li>我觉得……很有意思。</li>
+        <li>以前……但是现在……</li>
+        <li>周末我常常……</li>
+        <li>我和我的家人……</li>
+      </ul>
+    </aside>
+
+  </section>
+
+  <section id="markBox" class="mark-box hidden"></section>
+
+</main>
+
+<script src="vocab-bank.js"></script>
+
+<script>
+const unitAVocab = vocabBank.filter(item => item.unit === "A");
+
+const prompts = [
+  {
+    title: "My Free Time",
+    task: "Write about what you like doing in your free time.",
+    bullets: [
+      "Say what hobbies you like",
+      "Say who you do them with",
+      "Give one opinion",
+      "Say what you did recently"
+    ]
+  },
+  {
+    title: "My Family and Pets",
+    task: "Write about your family and pets.",
+    bullets: [
+      "Describe your family",
+      "Say whether you have pets",
+      "Give opinions about family or pets",
+      "Say what you do together"
+    ]
+  },
+  {
+    title: "Food and Drink",
+    task: "Write about what you like eating and drinking.",
+    bullets: [
+      "Say what foods you like",
+      "Say what you dislike",
+      "Describe a meal",
+      "Give reasons for your opinions"
+    ]
+  },
+  {
+    title: "Everyday Life",
+    task: "Write about your daily routine.",
+    bullets: [
+      "Say what time you get up",
+      "Describe what you do after school",
+      "Mention the weekend",
+      "Give opinions"
+    ]
+  }
+];
+
+let currentPrompt = prompts[0];
+
+function newPrompt() {
+  currentPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+
+  document.getElementById("promptBox").innerHTML = `
+    <h4>${currentPrompt.title}</h4>
+    <p>${currentPrompt.task}</p>
+    <ul>
+      ${currentPrompt.bullets.map(bullet => `<li>${bullet}</li>`).join("")}
+    </ul>
+  `;
+}
+
+function loadVocabHelp() {
+  const shuffled = [...unitAVocab].sort(() => Math.random() - 0.5).slice(0, 18);
+
+  document.getElementById("vocabHelp").innerHTML = shuffled.map(item => `
+    <div class="vocab-chip">
+      <span>${item.word}</span>
+      <small>${item.answer}</small>
+    </div>
+  `).join("");
+}
+
+function markAnswer() {
+  const answer = document.getElementById("studentAnswer").value.trim();
+  const markBox = document.getElementById("markBox");
+
+  if (answer.length < 10) {
+    alert("Write a bit more before marking.");
+    return;
+  }
+
+  const usedVocab = unitAVocab.filter(item => answer.includes(item.word));
+  const bulletScore = currentPrompt.bullets.length;
+  const wordCount = answer.length;
+
+  const hasOpinion = /喜欢|觉得|有意思|好玩|不错|难|容易|好吃|好喝/.test(answer);
+  const hasReason = /因为|所以/.test(answer);
+  const hasTime = /昨天|今天|明天|周末|每天|以前|以后|最近|上个月|这个星期/.test(answer);
+  const hasConnective = /和|但是|也|还|然后|如果|就/.test(answer);
+
+  let score = 0;
+
+  if (wordCount >= 80) score += 2;
+  else if (wordCount >= 50) score += 1;
+
+  if (usedVocab.length >= 8) score += 3;
+  else if (usedVocab.length >= 5) score += 2;
+  else if (usedVocab.length >= 3) score += 1;
+
+  if (hasOpinion) score += 2;
+  if (hasReason) score += 2;
+  if (hasTime) score += 1;
+  if (hasConnective) score += 2;
+
+  if (score > 12) score = 12;
+
+  let band = "Needs more detail";
+  if (score >= 10) band = "Strong response";
+  else if (score >= 7) band = "Good response";
+  else if (score >= 4) band = "Developing response";
+
+  markBox.classList.remove("hidden");
+
+  markBox.innerHTML = `
+    <h2>Your Writing Feedback</h2>
+
+    <div class="score-circle">${score}/12</div>
+    <h3>${band}</h3>
+
+    <div class="feedback-grid">
+      <div>
+        <h4>Strengths</h4>
+        <p>${usedVocab.length} Unit A words detected.</p>
+        <p>${hasOpinion ? "You included opinions." : "Try to include a clear opinion."}</p>
+        <p>${hasReason ? "You gave a reason." : "Add 因为 to explain why."}</p>
+      </div>
+
+      <div>
+        <h4>To improve</h4>
+        <p>${hasTime ? "Good use of time phrases." : "Add a time phrase like 周末, 每天 or 最近."}</p>
+        <p>${hasConnective ? "Good linking words." : "Use connectives like 但是, 然后, 也 or 所以."}</p>
+        <p>Make sure you answer all bullet points clearly.</p>
+      </div>
+    </div>
+
+    <h4>Vocab you used</h4>
+    <div class="used-vocab">
+      ${usedVocab.slice(0, 20).map(item => `<span>${item.word} = ${item.answer}</span>`).join("")}
+    </div>
+  `;
+}
+
+function clearAnswer() {
+  document.getElementById("studentAnswer").value = "";
+  document.getElementById("markBox").classList.add("hidden");
+}
+
+newPrompt();
+loadVocabHelp();
+</script>
+
+</body>
+</html>

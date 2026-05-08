@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit A Reading | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="quiz-page">
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Mastery Reading | Unit A</p>
+</header>
+
+<main class="reading-wrap">
+
+  <div class="back-button">
+    <a href="mastery-reading.html">← Back to Reading</a>
+  </div>
+
+  <section class="writing-hero">
+    <p class="quiz-label">Unit A Reading</p>
+    <h2>Everyday Life, Family, Hobbies and Food</h2>
+    <p>Read the Chinese text, answer the questions, then mark your work.</p>
+  </section>
+
+  <section class="reading-card">
+    <h3>Text</h3>
+    <div id="readingText" class="chinese-text"></div>
+  </section>
+
+  <section id="questionCard" class="question-card"></section>
+
+  <section id="readingFeedback" class="mark-box hidden"></section>
+
+</main>
+
+<script>
+const readingBank = [
+  {
+    text: `我叫王明，今年十五岁，是英国人。我家有五口人：爸爸、妈妈、姐姐、弟弟和我。我们家还有一只很可爱的狗。每天早上，我七点起床，然后吃早饭。早饭我常常吃面包，也喝一杯牛奶。
+
+放学以后，我喜欢听音乐和打篮球。周末的时候，我有时候和朋友去公园踢足球，有时候在家看电影。我觉得运动很有意思，也对身体很好。
+
+我最喜欢吃中国菜，特别是米饭、面条和饺子。可是我不太喜欢喝咖啡，因为我觉得咖啡太苦了。`,
+
+    questions: [
+      { type: "mcq", q: "How many people are in Wang Ming’s family?", options: ["Four", "Five", "Six"], answer: 1 },
+      { type: "text", q: "What pet does the family have?", keywords: ["dog", "狗"] },
+      { type: "text", q: "What does Wang Ming usually have for breakfast?", keywords: ["bread", "milk", "面包", "牛奶"] },
+      { type: "mcq", q: "What does he sometimes do at the park?", options: ["Plays football", "Goes shopping", "Reads newspapers"], answer: 0 },
+      { type: "text", q: "Why does he like sport?", keywords: ["interesting", "good for body", "有意思", "身体"] },
+      { type: "text", q: "Why does he dislike coffee?", keywords: ["bitter", "苦"] }
+    ]
+  },
+
+  {
+    text: `我的朋友小丽住在伦敦。她今年十四岁，是一个很忙的学生。她每天早上六点半起床，七点吃早饭，八点去学校。她最喜欢的科目是中文，因为她觉得汉字很漂亮，也很有意思。
+
+小丽有很多爱好。她会弹钢琴，也喜欢看小说。星期六下午，她常常和妹妹一起去游泳。星期天，她有时候给笔友写信，介绍自己的家庭、学校和生活。
+
+她最喜欢的食物是水果，特别是草莓和西瓜。她说水果很甜，也很健康。`,
+
+    questions: [
+      { type: "mcq", q: "Where does Xiao Li live?", options: ["Beijing", "London", "Shanghai"], answer: 1 },
+      { type: "text", q: "What time does she get up?", keywords: ["six thirty", "6:30", "六点半"] },
+      { type: "text", q: "Why does she like Chinese?", keywords: ["characters", "beautiful", "interesting", "汉字", "漂亮", "有意思"] },
+      { type: "mcq", q: "What instrument can she play?", options: ["Guitar", "Piano", "Violin"], answer: 1 },
+      { type: "text", q: "Who does she swim with?", keywords: ["younger sister", "sister", "妹妹"] },
+      { type: "text", q: "Which fruits does she especially like?", keywords: ["strawberry", "watermelon", "草莓", "西瓜"] }
+    ]
+  },
+
+  {
+    text: `昨天是我的生日。我请了几个同学来我家参加生日会。妈妈做了很多好吃的东西，有鸡肉、米饭、蔬菜、面条和蛋糕。爸爸买了果汁和水果。我的朋友送给我一本小说和一支新钢笔。
+
+吃饭以后，我们一起听音乐、聊天，还看了一部很有意思的电影。我的同学李明喜欢打羽毛球，所以他说明天想和我一起去体育馆运动。
+
+我觉得昨天非常快乐。虽然我有很多作业，但是生日会以后我还是做完了作业，然后十一点睡觉。`,
+
+    questions: [
+      { type: "mcq", q: "What was special about yesterday?", options: ["It was the writer’s birthday", "It was a school exam", "It was a sports day"], answer: 0 },
+      { type: "text", q: "Name two foods mentioned.", keywords: ["chicken", "rice", "vegetables", "noodles", "cake", "鸡肉", "米饭", "蔬菜", "面条", "蛋糕"] },
+      { type: "text", q: "What presents did the writer receive?", keywords: ["novel", "pen", "小说", "钢笔"] },
+      { type: "mcq", q: "What did they do after eating?", options: ["Listened to music, chatted and watched a film", "Went shopping", "Played football outside"], answer: 0 },
+      { type: "text", q: "What sport does Li Ming like?", keywords: ["badminton", "羽毛球"] },
+      { type: "text", q: "What did the writer do before sleeping?", keywords: ["homework", "作业"] }
+    ]
+  }
+];
+
+let currentSet = null;
+
+function generateReading() {
+  const randomIndex = Math.floor(Math.random() * readingBank.length);
+  currentSet = readingBank[randomIndex];
+
+  document.getElementById("readingText").innerText = currentSet.text;
+
+  let html = "<h3>Questions</h3>";
+
+  currentSet.questions.forEach(function(question, index) {
+    html += '<div class="question-block">';
+    html += "<p><strong>" + (index + 1) + ". " + question.q + "</strong></p>";
+
+    if (question.type === "mcq") {
+      question.options.forEach(function(option, optionIndex) {
+        html += '<label>';
+        html += '<input type="radio" name="q' + index + '" value="' + optionIndex + '"> ';
+        html += option;
+        html += '</label>';
+      });
+    }
+
+    if (question.type === "text") {
+      html += '<input type="text" id="q' + index + '" placeholder="Type your answer...">';
+    }
+
+    html += '</div>';
+  });
+
+  html += '<button type="button" onclick="markReading()" class="writing-btn">Mark Answers</button>';
+  html += '<button type="button" onclick="generateReading()" class="writing-btn secondary">Generate New Text</button>';
+
+  document.getElementById("questionCard").innerHTML = html;
+  document.getElementById("readingFeedback").classList.add("hidden");
+}
+
+function markReading() {
+  if (!currentSet) return;
+
+  let score = 0;
+  let feedback = [];
+
+  currentSet.questions.forEach(function(question, index) {
+    if (question.type === "mcq") {
+      const selected = document.querySelector('input[name="q' + index + '"]:checked');
+
+      if (selected && Number(selected.value) === question.answer) {
+        score++;
+        feedback.push("Q" + (index + 1) + ": correct.");
+      } else {
+        feedback.push("Q" + (index + 1) + ": incorrect.");
+      }
+    }
+
+    if (question.type === "text") {
+      const input = document.getElementById("q" + index);
+      const answer = input ? input.value.toLowerCase().trim() : "";
+
+      const correct = question.keywords.some(function(keyword) {
+        return answer.includes(keyword.toLowerCase());
+      });
+
+      if (correct) {
+        score++;
+        feedback.push("Q" + (index + 1) + ": correct.");
+      } else {
+        feedback.push("Q" + (index + 1) + ": needs improvement.");
+      }
+    }
+  });
+
+  const feedbackBox = document.getElementById("readingFeedback");
+  feedbackBox.classList.remove("hidden");
+
+  feedbackBox.innerHTML =
+    '<h2>Reading Score</h2>' +
+    '<div class="score-circle">' + score + '/' + currentSet.questions.length + '</div>' +
+    '<div class="feedback-grid">' +
+      '<div>' +
+        '<h4>Feedback</h4>' +
+        feedback.map(function(line) {
+          return "<p>" + line + "</p>";
+        }).join("") +
+      '</div>' +
+      '<div>' +
+        '<h4>Unit A Key Skills</h4>' +
+        '<p>Look for family words like 家, 爸爸, 妈妈, 姐姐 and 弟弟.</p>' +
+        '<p>Daily routine often uses time phrases like 七点, 早上 and 放学以后.</p>' +
+        '<p>Opinions often use 我觉得, 喜欢, 不喜欢 and 因为.</p>' +
+      '</div>' +
+    '</div>';
+}
+
+generateReading();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colours | Three + Two</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background-glow"></div>
+
+<a class="back-link" href="three-plus-two.html">← Back</a>
+
+<header>
+  <h1>Mandarin²</h1>
+</header>
+
+<main>
+<div class="writing-card">
+
+  <div class="game-title">
+    <h2>COLOURS</h2>
+    <p>Use 3 colour words and 2 descriptive phrases.</p>
+  </div>
+
+  <div class="top-bar">
+    <div class="timer-ring">
+      <span id="timer">60</span>
+    </div>
+
+    <div class="progress-box">
+      <p>Colour Words: <span id="topicCount">0</span>/3</p>
+      <p>Descriptions and Connectives: <span id="descCount">0</span>/2</p>
+    </div>
+  </div>
+
+  <div class="requirements single-column">
+    <div class="req-box big-box">
+      <h3>Colours</h3>
+      <p class="small-help">Use at least 3 of these in your answer.</p>
+      <div id="topicWords"></div>
+    </div>
+  </div>
+
+  <textarea id="answerBox" placeholder="Write your Mandarin sentence here..."></textarea>
+
+  <div class="helper-section">
+    <button id="toggleHelpers">Show Helper Words</button>
+
+    <div class="helper-box" id="helperBox">
+      <h3>Descriptions & Connectives</h3>
+      <p class="small-help">Use at least 2 of these.</p>
+      <div id="descWords"></div>
+    </div>
+  </div>
+
+  <div class="live-detection">
+    <div>
+      <h4>Detected Colour Words</h4>
+      <div id="detectedTopic"></div>
+    </div>
+
+    <div>
+      <h4>Detected Descriptions</h4>
+      <div id="detectedDesc"></div>
+    </div>
+  </div>
+
+  <button id="submitBtn">Finish Round</button>
+
+  <div class="results-panel" id="resultsPanel">
+    <h3>Results</h3>
+    <div class="score-big" id="scoreDisplay">0</div>
+    <p>Colour Words Used: <span id="finalTopic">0</span></p>
+    <p>Descriptions Used: <span id="finalDesc">0</span></p>
+  </div>
+
+</div>
+</main>
+
+<script>
+document.documentElement.style.setProperty("--topic-color", "#ec4899");
+
+const topicWords = [
+  "颜色", "红色", "白色", "黄色", "蓝色", "橙色", "黑色", "绿色",
+  "灰色", "金色", "银色", "咖啡色", "紫色", "粉红色", "棕色",
+  "深蓝色", "浅蓝色", "深绿色", "浅绿色", "彩色", "黑白",
+  "红", "白", "黄", "蓝", "橙", "黑", "绿", "灰", "紫"
+];
+
+const descriptions = [
+  "很好看", "好看", "不好看", "很漂亮", "漂亮", "很酷", "酷",
+  "很时髦", "时髦", "很亮", "太亮了", "很暗", "很传统",
+  "很现代", "我觉得", "我喜欢", "我不喜欢", "我最喜欢",
+  "因为", "所以", "不但", "而且", "虽然", "但是",
+  "非常漂亮", "特别好看", "不错"
+];
+
+const topicWordsDiv = document.getElementById("topicWords");
+const descWordsDiv = document.getElementById("descWords");
+const answerBox = document.getElementById("answerBox");
+const detectedTopic = document.getElementById("detectedTopic");
+const detectedDesc = document.getElementById("detectedDesc");
+const topicCount = document.getElementById("topicCount");
+const descCount = document.getElementById("descCount");
+const submitBtn = document.getElementById("submitBtn");
+const scoreDisplay = document.getElementById("scoreDisplay");
+const finalTopic = document.getElementById("finalTopic");
+const finalDesc = document.getElementById("finalDesc");
+const resultsPanel = document.getElementById("resultsPanel");
+const toggleHelpers = document.getElementById("toggleHelpers");
+const helperBox = document.getElementById("helperBox");
+const timer = document.getElementById("timer");
+
+let foundTopic = [];
+let foundDesc = [];
+let timeLeft = 60;
+let roundCompleted = false;
+let resultsShown = false;
+
+topicWords.forEach(word => {
+  topicWordsDiv.innerHTML += `<span class="word-pill">${word}</span>`;
+});
+
+descriptions.forEach(word => {
+  descWordsDiv.innerHTML += `<span class="word-pill desc-pill">${word}</span>`;
+});
+
+const countdown = setInterval(() => {
+  if (roundCompleted) {
+    clearInterval(countdown);
+    return;
+  }
+
+  timeLeft--;
+  timer.textContent = timeLeft;
+
+  if (timeLeft <= 10) {
+    document.querySelector(".timer-ring").classList.add("danger");
+  }
+
+  if (timeLeft <= 0) {
+    timeLeft = 0;
+    timer.textContent = "0";
+    clearInterval(countdown);
+  }
+}, 1000);
+
+answerBox.addEventListener("input", () => {
+  const text = answerBox.value;
+
+  foundTopic = [];
+  foundDesc = [];
+  detectedTopic.innerHTML = "";
+  detectedDesc.innerHTML = "";
+
+  topicWords.forEach(word => {
+    if (text.includes(word) && !foundTopic.includes(word)) {
+      foundTopic.push(word);
+      detectedTopic.innerHTML += `<span class="detected-pill">✓ ${word}</span>`;
+    }
+  });
+
+  descriptions.forEach(word => {
+    if (text.includes(word) && !foundDesc.includes(word)) {
+      foundDesc.push(word);
+      detectedDesc.innerHTML += `<span class="detected-pill green">✓ ${word}</span>`;
+    }
+  });
+
+  topicCount.textContent = foundTopic.length;
+  descCount.textContent = foundDesc.length;
+
+  if (foundTopic.length >= 3 && foundDesc.length >= 2 && !roundCompleted) {
+    roundCompleted = true;
+    clearInterval(countdown);
+    submitBtn.textContent = "Claim XP";
+    submitBtn.classList.add("ready-btn");
+  }
+});
+
+submitBtn.addEventListener("click", () => {
+  clearInterval(countdown);
+  roundCompleted = true;
+
+  if (resultsShown) return;
+  resultsShown = true;
+
+  const topicXP = foundTopic.length * 10;
+  const descXP = foundDesc.length * 15;
+
+  let speedBonus = 0;
+
+  if (foundTopic.length >= 3 && foundDesc.length >= 2) {
+    speedBonus = timeLeft * 2;
+  }
+
+  const totalXP = topicXP + descXP + speedBonus;
+
+  resultsPanel.style.display = "block";
+  scoreDisplay.textContent = totalXP;
+  finalTopic.textContent = foundTopic.length;
+  finalDesc.textContent = foundDesc.length;
+
+  resultsPanel.innerHTML += `
+    <p>Speed Bonus: ${speedBonus} XP</p>
+    <p>Time Left: ${timeLeft}s</p>
+  `;
+});
+
+toggleHelpers.addEventListener("click", () => {
+  if (helperBox.style.display === "block") {
+    helperBox.style.display = "none";
+    toggleHelpers.textContent = "Show Helper Words";
+  } else {
+    helperBox.style.display = "block";
+    toggleHelpers.textContent = "Hide Helper Words";
+  }
+});
+</script>
+
+</body>
+</html>

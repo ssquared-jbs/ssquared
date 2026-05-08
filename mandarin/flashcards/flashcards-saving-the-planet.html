@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saving the Planet Flashcards | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Flashcards | Saving the Planet</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="flashcards-unit-e.html">← Back to Unit E</a>
+</div>
+
+<section class="page-intro">
+  <h2>Saving the Planet Flashcards</h2>
+  <p>Tap to flip. Swipe left/right to move. Mark hard words to review later.</p>
+</section>
+
+<section class="flashcard-container">
+
+  <div class="flashcard-scene" onclick="flipCard()" id="flashScene">
+    <div class="flashcard flip-card" id="card">
+      <div class="flashcard-face flashcard-front">
+        <div id="frontContent"></div>
+      </div>
+      <div class="flashcard-face flashcard-back">
+        <div id="backContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flashcard-controls">
+    <button onclick="prevCard()">← Previous</button>
+    <button onclick="flipCard()">Flip Card</button>
+    <button onclick="nextCard()">Next →</button>
+  </div>
+
+  <div class="flashcard-controls">
+    <button onclick="markHard()">⭐ Mark Hard</button>
+    <button onclick="reviewHard()">Review Hard</button>
+    <button onclick="resetAll()">Reset</button>
+  </div>
+
+  <p class="flash-progress" id="progress"></p>
+
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let originalCards = [
+  {han:"地球", pin:"dì qiú", eng:"Earth"},
+  {han:"环境", pin:"huán jìng", eng:"environment"},
+  {han:"自然", pin:"zì rán", eng:"nature"},
+  {han:"空气", pin:"kōng qì", eng:"air"},
+  {han:"水", pin:"shuǐ", eng:"water"},
+  {han:"森林", pin:"sēn lín", eng:"forest"},
+  {han:"污染", pin:"wū rǎn", eng:"pollution"},
+  {han:"空气污染", pin:"kōng qì wū rǎn", eng:"air pollution"},
+  {han:"水污染", pin:"shuǐ wū rǎn", eng:"water pollution"},
+  {han:"垃圾", pin:"lā jī", eng:"rubbish"},
+  {han:"塑料", pin:"sù liào", eng:"plastic"},
+  {han:"气候变化", pin:"qì hòu biàn huà", eng:"climate change"},
+  {han:"全球变暖", pin:"quán qiú biàn nuǎn", eng:"global warming"},
+  {han:"浪费", pin:"làng fèi", eng:"to waste"},
+  {han:"能源", pin:"néng yuán", eng:"energy"},
+  {han:"电", pin:"diàn", eng:"electricity"},
+  {han:"水资源", pin:"shuǐ zī yuán", eng:"water resources"},
+  {han:"保护", pin:"bǎo hù", eng:"to protect"},
+  {han:"回收", pin:"huí shōu", eng:"to recycle"},
+  {han:"节约", pin:"jié yuē", eng:"to save / conserve"},
+  {han:"减少", pin:"jiǎn shǎo", eng:"to reduce"},
+  {han:"使用", pin:"shǐ yòng", eng:"to use"},
+  {han:"少用", pin:"shǎo yòng", eng:"use less"},
+  {han:"多走路", pin:"duō zǒu lù", eng:"walk more"},
+  {han:"骑自行车", pin:"qí zì xíng chē", eng:"to ride a bike"},
+  {han:"坐公共汽车", pin:"zuò gōng gòng qì chē", eng:"to take the bus"},
+  {han:"种树", pin:"zhòng shù", eng:"to plant trees"},
+  {han:"关灯", pin:"guān dēng", eng:"turn off the lights"},
+  {han:"重复使用", pin:"chóng fù shǐ yòng", eng:"to reuse"},
+  {han:"责任", pin:"zé rèn", eng:"responsibility"},
+  {han:"重要", pin:"zhòng yào", eng:"important"},
+  {han:"严重", pin:"yán zhòng", eng:"serious"},
+  {han:"应该", pin:"yīng gāi", eng:"should"},
+  {han:"必须", pin:"bì xū", eng:"must"},
+  {han:"我们应该保护环境", pin:"wǒ men yīng gāi bǎo hù huán jìng", eng:"we should protect the environment"},
+  {han:"污染越来越严重", pin:"wū rǎn yuè lái yuè yán zhòng", eng:"pollution is becoming more and more serious"},
+  {han:"我们应该多回收，少用塑料", pin:"wǒ men yīng gāi duō huí shōu, shǎo yòng sù liào", eng:"we should recycle more and use less plastic"},
+  {han:"保护地球是我们的责任", pin:"bǎo hù dì qiú shì wǒ men de zé rèn", eng:"protecting the Earth is our responsibility"},
+  {han:"虽然保护环境很难，但是很重要", pin:"suī rán bǎo hù huán jìng hěn nán, dàn shì hěn zhòng yào", eng:"although protecting the environment is difficult, it is important"}
+];
+
+let cards = [];
+let hardCards = [];
+let index = 0;
+let flipped = false;
+let startX = 0;
+let endX = 0;
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function initCards() {
+  cards = shuffle([...originalCards]);
+  index = 0;
+  flipped = false;
+  updateCard();
+}
+
+function updateCard() {
+  const card = cards[index];
+
+  document.getElementById("frontContent").innerHTML = `
+    <div class="han">${card.han}</div>
+    <div class="pin">${card.pin}</div>
+  `;
+
+  document.getElementById("backContent").innerHTML = `
+    <div class="eng">${card.eng}</div>
+  `;
+
+  document.getElementById("card").classList.toggle("is-flipped", flipped);
+  document.getElementById("progress").textContent =
+    `Card ${index + 1} of ${cards.length} | Hard cards: ${hardCards.length}`;
+
+  setTimeout(fitText, 0);
+}
+
+function fitText() {
+  const elements = document.querySelectorAll(".han, .eng");
+
+  elements.forEach(el => {
+    el.style.fontSize = "";
+    let size = parseFloat(window.getComputedStyle(el).fontSize);
+
+    while (el.scrollWidth > el.clientWidth && size > 24) {
+      size -= 2;
+      el.style.fontSize = size + "px";
+    }
+  });
+}
+
+function flipCard() {
+  flipped = !flipped;
+  updateCard();
+}
+
+function animateCard(direction, callback) {
+  const scene = document.getElementById("flashScene");
+
+  scene.classList.remove("flashcard-slide-left", "flashcard-slide-right");
+  void scene.offsetWidth;
+
+  scene.classList.add(direction === "next" ? "flashcard-slide-left" : "flashcard-slide-right");
+
+  setTimeout(function() {
+    callback();
+    scene.classList.remove("flashcard-slide-left", "flashcard-slide-right");
+  }, 220);
+}
+
+function nextCard() {
+  animateCard("next", function() {
+    index = (index + 1) % cards.length;
+    flipped = false;
+    updateCard();
+  });
+}
+
+function prevCard() {
+  animateCard("prev", function() {
+    index = (index - 1 + cards.length) % cards.length;
+    flipped = false;
+    updateCard();
+  });
+}
+
+function markHard() {
+  const current = cards[index];
+  const exists = hardCards.some(card => card.han === current.han);
+  if (!exists) hardCards.push(current);
+  nextCard();
+}
+
+function reviewHard() {
+  if (hardCards.length === 0) {
+    alert("No hard cards yet.");
+    return;
+  }
+
+  cards = shuffle([...hardCards]);
+  index = 0;
+  flipped = false;
+  updateCard();
+}
+
+function resetAll() {
+  hardCards = [];
+  initCards();
+}
+
+const scene = document.getElementById("flashScene");
+
+scene.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+scene.addEventListener("touchend", e => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+scene.addEventListener("mousedown", e => startX = e.clientX);
+scene.addEventListener("mouseup", e => {
+  endX = e.clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = endX - startX;
+
+  if (Math.abs(diff) > 60) {
+    if (diff < 0) nextCard();
+    else prevCard();
+  }
+}
+
+initCards();
+</script>
+
+</body>
+</html>
