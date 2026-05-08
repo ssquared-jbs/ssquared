@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Living Environment Final Test | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Living Environment | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="living-environment.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Living Environment Final Test</h2>
+  <p>40 mixed questions: 30 from Living Environment, plus 10 from previous topics.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder">
+    <p><strong>Write a Mandarin paragraph about where you live. Try to include:</strong></p>
+    <ul>
+      <li>where your home is, using 北边, 东边, 南边 or 西边</li>
+      <li>two facilities nearby, like 图书馆, 电影院, 诊所 or 邮局</li>
+      <li>one sentence about the environment, using 环境, 空气清新 or 安全</li>
+      <li>one sentence about distance, using 离, 近 or 远</li>
+      <li>one countryside or seaside sentence, using 乡下, 海边 or 风景</li>
+      <li>one directions sentence, using 一直, 顺着, 过马路 or 拐</li>
+      <li>one opinion with 好处 or 坏处</li>
+      <li>one reason using 因为</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+    <button class="continue-btn" onclick="checkEssay()">Check Essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="living-environment.html">← Back to Topic</a>
+  <a href="learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+  {t:"mcq", q:"北 means?", o:["North","South","West"], a:"North"},
+  {t:"mcq", q:"东 means?", o:["East","West","North"], a:"East"},
+  {t:"mcq", q:"电影院 means?", o:["Cinema","Library","Clinic"], a:"Cinema"},
+  {t:"mcq", q:"图书馆 means?", o:["Library","Police station","Square"], a:"Library"},
+  {t:"mcq", q:"附近 means?", o:["Nearby","Opposite","Far"], a:"Nearby"},
+  {t:"mcq", q:"环境 means?", o:["Environment","Population","Factory"], a:"Environment"},
+  {t:"mcq", q:"空气 means?", o:["Air","Grass","Place"], a:"Air"},
+  {t:"mcq", q:"乡下 means?", o:["Countryside","Seaside","Junction"], a:"Countryside"},
+  {t:"mcq", q:"风景 means?", o:["Scenery","Resident","Direction"], a:"Scenery"},
+  {t:"mcq", q:"迷路 means?", o:["To get lost","To turn","To pass by"], a:"To get lost"},
+
+  {t:"fill", q:"我家在城市的 ____。", o:["北边","钢笔","草"], a:"北边"},
+  {t:"fill", q:"我家附近有 ____。", o:["图书馆","坏处","路口"], a:"图书馆"},
+  {t:"fill", q:"警察局在广场 ____。", o:["对面","人口","收藏"], a:"对面"},
+  {t:"fill", q:"这里的空气很 ____。", o:["清新","居民","转发"], a:"清新"},
+  {t:"fill", q:"我家离商场很 ____。", o:["近","收藏","目的地"], a:"近"},
+  {t:"fill", q:"乡下的风景很 ____。", o:["好看","楼下","人口"], a:"好看"},
+  {t:"fill", q:"到路口以后，向左 ____。", o:["拐","点赞","离"], a:"拐"},
+  {t:"fill", q:"过马路以后，____ 走。", o:["一直","空气","图书馆"], a:"一直"},
+
+  {t:"type", q:"Type the Chinese for: north", a:"北"},
+  {t:"type", q:"Type the Chinese for: library", a:"图书馆"},
+  {t:"type", q:"Type the Chinese for: cinema", a:"电影院"},
+  {t:"type", q:"Type the Chinese for: environment", a:"环境"},
+  {t:"type", q:"Type the Chinese for: countryside", a:"乡下"},
+  {t:"type", q:"Type the Chinese for: seaside", a:"海边"},
+  {t:"type", q:"Type the Chinese for: advantage", a:"好处"},
+
+  {t:"order", q:"Build: My home is in the north.", w:["我家","在","北边"], a:"我家在北边"},
+  {t:"order", q:"Build: There is a library nearby.", w:["附近","有","图书馆"], a:"附近有图书馆"},
+  {t:"order", q:"Build: The air here is fresh.", w:["这里的空气","很","清新"], a:"这里的空气很清新"},
+  {t:"order", q:"Build: I like the countryside.", w:["我","喜欢","乡下"], a:"我喜欢乡下"},
+  {t:"order", q:"Build: Turn left at the junction.", w:["到路口以后","向左","拐"], a:"到路口以后向左拐"},
+
+  {t:"mcq", q:"颜色 means?", o:["Colour","Room","Food"], a:"Colour"},
+  {t:"mcq", q:"商店 means?", o:["Shop","School","Hospital"], a:"Shop"},
+  {t:"mcq", q:"医生 means?", o:["Doctor","Teacher","Friend"], a:"Doctor"},
+  {t:"mcq", q:"水果 means?", o:["Fruit","Drink","Meat"], a:"Fruit"},
+  {t:"mcq", q:"爱好 means?", o:["Hobby","Pet","Family"], a:"Hobby"},
+  {t:"fill", q:"我喜欢喝 ____。", o:["水","米饭","面包"], a:"水"},
+  {t:"fill", q:"我早上七点 ____。", o:["起床","搬家","喝茶"], a:"起床"},
+  {t:"type", q:"Type the Chinese for: friend", a:"朋友"},
+  {t:"type", q:"Type the Chinese for: rice", a:"米饭"},
+  {t:"order", q:"Build: I like playing football.", w:["我","喜欢","踢足球"], a:"我喜欢踢足球"}
+];
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function safe(text) {
+  return text.replace(/'/g, "\\'");
+}
+
+function loadQuestions() {
+  const area = document.getElementById("questionArea");
+  area.innerHTML = "";
+
+  shuffle([...questions]).forEach(function(q, i) {
+    area.innerHTML += buildQuestion(q, i);
+  });
+}
+
+function buildQuestion(q, i) {
+  if (q.t === "mcq") {
+    const options = shuffle([...q.o]);
+    const letters = ["A", "B", "C"];
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option, index) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                <strong>${letters[index]}.</strong> ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "fill") {
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p class="chinese">${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "type") {
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this, '${safe(q.a)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "order") {
+    const words = shuffle([...q.w]);
+    const builderId = "builder" + i;
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${words.map(function(word) {
+            return `<button onclick="addWord(this, '${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}', '${safe(q.a)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}', '${bankId}')">Reset</button>
+
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button, selected, correctAnswer) {
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selected === correctAnswer) {
+    button.classList.add("correct-answer");
+    markQuestion(true, feedback);
+  } else {
+    button.classList.add("wrong-answer");
+    markQuestion(false, feedback);
+  }
+}
+
+function checkTypedAnswer(button, correctAnswer) {
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+  const answer = input.value.trim();
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(answer === correctAnswer, feedback);
+}
+
+function addWord(button, builderId) {
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId, correctAnswer) {
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const answer = Array.from(builder.children)
+    .map(function(word) {
+      return word.textContent;
+    })
+    .join("");
+
+  if (answer === correctAnswer) {
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+    markQuestion(true, feedback);
+  } else {
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+    markQuestion(false, feedback);
+  }
+}
+
+function resetOrder(builderId, bankId) {
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button) {
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect, feedback) {
+  total++;
+
+  if (isCorrect) {
+    correct++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrong++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults() {
+  document.getElementById("totalQ").textContent = total;
+  document.getElementById("correctQ").textContent = correct;
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+  if (total > 0) {
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay() {
+  const text = document.getElementById("essay").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "北边", "东边", "南边", "西边", "图书馆", "电影院", "诊所", "邮局",
+    "环境", "空气清新", "安全", "离", "近", "远", "乡下", "海边",
+    "风景", "一直", "顺着", "过马路", "拐", "好处", "坏处", "因为"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word) {
+    if (text.includes(word)) {
+      found++;
+    }
+  });
+
+  if (text.length < 40) {
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write a longer answer. Aim for at least 5 sentences.</p>";
+  } else if (found >= 8) {
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included lots of key Living Environment vocabulary.</p>";
+  } else if (found >= 5) {
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail about facilities, directions or environment.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but try to include more key living environment vocabulary.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Injury and Care | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Health and Fitness</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="health-fitness.html">← Back to Health and Fitness</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Injury and Care</h2>
+  <p>Learn how to talk about injuries, emergency care, appearance and kindness.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Injury words</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>手指</h3><p>shǒu zhǐ</p><span>finger</span></div>
+      <div class="vocab-card"><h3>受伤</h3><p>shòu shāng</p><span>to get injured</span></div>
+      <div class="vocab-card"><h3>流血</h3><p>liú xuè</p><span>to bleed</span></div>
+      <div class="vocab-card"><h3>严重</h3><p>yán zhòng</p><span>serious / severe</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的手指受伤了，还流血了。</p>
+      <p>My finger was injured and bled.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Hospital and emergency care</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>救护车</h3><p>jiù hù chē</p><span>ambulance</span></div>
+      <div class="vocab-card"><h3>急救中心</h3><p>jí jiù zhōng xīn</p><span>emergency centre</span></div>
+      <div class="vocab-card"><h3>出院</h3><p>chū yuàn</p><span>to leave hospital</span></div>
+      <div class="vocab-card"><h3>病历卡</h3><p>bìng lì kǎ</p><span>hospital report</span></div>
+      <div class="vocab-card"><h3>症状</h3><p>zhèng zhuàng</p><span>symptom</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">情况很严重，所以叫了救护车。</p>
+      <p>The situation was serious, so an ambulance was called.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">医生看了我的病历卡和症状。</p>
+      <p>The doctor looked at my hospital report and symptoms.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Appearance and care</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>年轻</h3><p>nián qīng</p><span>young</span></div>
+      <div class="vocab-card"><h3>皮肤</h3><p>pí fū</p><span>skin</span></div>
+      <div class="vocab-card"><h3>漂亮</h3><p>piào liang</p><span>beautiful</span></div>
+      <div class="vocab-card"><h3>心</h3><p>xīn</p><span>heart</span></div>
+      <div class="vocab-card"><h3>爱心</h3><p>ài xīn</p><span>love / kindness</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">护士很有爱心，也很漂亮。</p>
+      <p>The nurse is very kind and also beautiful.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">年轻人的皮肤很好。</p>
+      <p>Young people’s skin is very good.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我的手指受伤了，还流血了。情况很严重，所以去了急救中心。护士很有爱心。
+      </p>
+      <p>
+        My finger was injured and bled. The situation was serious, so I went to the emergency centre.
+        The nurse was very kind.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="health-fitness.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "手指 means?", options: ["Finger", "Hand", "Foot"], correct: "Finger" },
+    { q: "受伤 means?", options: ["To get injured", "To cough", "To exercise"], correct: "To get injured" },
+    { q: "流血 means?", options: ["To bleed", "To leave hospital", "To grow"], correct: "To bleed" },
+    { q: "严重 means?", options: ["Serious / severe", "Young", "Beautiful"], correct: "Serious / severe" }
+  ],
+
+  q2: [
+    { q: "救护车 means?", options: ["Ambulance", "Hospital", "Doctor"], correct: "Ambulance" },
+    { q: "急救中心 means?", options: ["Emergency centre", "Pharmacy", "School"], correct: "Emergency centre" },
+    { q: "出院 means?", options: ["Leave hospital", "Go to hospital", "Take medicine"], correct: "Leave hospital" },
+    { q: "症状 means?", options: ["Symptom", "Skin", "Heart"], correct: "Symptom" }
+  ],
+
+  q3: [
+    { q: "年轻 means?", options: ["Young", "Old", "Serious"], correct: "Young" },
+    { q: "皮肤 means?", options: ["Skin", "Heart", "Finger"], correct: "Skin" },
+    { q: "漂亮 means?", options: ["Beautiful", "Ugly", "Painful"], correct: "Beautiful" },
+    { q: "爱心 means?", options: ["Love / kindness", "Illness", "Medicine"], correct: "Love / kindness" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

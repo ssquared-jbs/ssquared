@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Life Final Test | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Home Life | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="home-life.html">← Back to Home Life</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Home Life Final Test</h2>
+  <p>40 mixed questions: 30 from Home Life, plus 10 from previous topics.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder">
+    <p><strong>Write a Mandarin paragraph about your home. Try to include:</strong></p>
+    <ul>
+      <li>what type of home you live in</li>
+      <li>rooms in your home</li>
+      <li>furniture or objects</li>
+      <li>where something is using 左边, 右边, 上边, 旁边 or 里边</li>
+      <li>whether your home is clean, spacious, quiet or convenient</li>
+      <li>one sentence about renting or moving house</li>
+      <li>one reason using 因为</li>
+      <li>one opinion about your home</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+    <button class="continue-btn" onclick="checkEssay()">Check Essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="home-life.html">← Back to Topic</a>
+  <a href="learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+  {t:"mcq", q:"房子 means?", o:["House","Garden","Kitchen"], a:"House"},
+  {t:"mcq", q:"房间 means?", o:["Room","Garage","Street"], a:"Room"},
+  {t:"mcq", q:"厨房 means?", o:["Kitchen","Bedroom","Living room"], a:"Kitchen"},
+  {t:"mcq", q:"客厅 means?", o:["Living room","Garage","Toilet"], a:"Living room"},
+  {t:"mcq", q:"卧室 means?", o:["Bedroom","Study room","Kitchen"], a:"Bedroom"},
+  {t:"mcq", q:"花园 means?", o:["Garden","Tree","Flower"], a:"Garden"},
+  {t:"mcq", q:"沙发 means?", o:["Sofa","Chair","Desk"], a:"Sofa"},
+  {t:"mcq", q:"冰箱 means?", o:["Fridge","Washing machine","Wardrobe"], a:"Fridge"},
+  {t:"mcq", q:"公寓 means?", o:["Apartment","Bungalow","Garage"], a:"Apartment"},
+  {t:"mcq", q:"搬家 means?", o:["Move house","Rent a flat","Buy things"], a:"Move house"},
+
+  {t:"fill", q:"我家有三 ____ 房。", o:["间","层","门"], a:"间"},
+  {t:"fill", q:"我在客厅 ____ 电视。", o:["看","吃","喝"], a:"看"},
+  {t:"fill", q:"厨房在客厅的 ____。", o:["右边","谁的","坏"], a:"右边"},
+  {t:"fill", q:"我的房间很 ____。", o:["干净","电视机","门"], a:"干净"},
+  {t:"fill", q:"电视机在桌子的 ____。", o:["上边","房子","花儿"], a:"上边"},
+  {t:"fill", q:"我想 ____ 房。", o:["租","喝","吃"], a:"租"},
+  {t:"fill", q:"这里很安静，也很 ____。", o:["方便","咳嗽","苹果"], a:"方便"},
+  {t:"fill", q:"下个星期我们要 ____。", o:["搬家","点菜","看病"], a:"搬家"},
+
+  {t:"type", q:"Type the Chinese for: house", a:"房子"},
+  {t:"type", q:"Type the Chinese for: bedroom", a:"卧室"},
+  {t:"type", q:"Type the Chinese for: garden", a:"花园"},
+  {t:"type", q:"Type the Chinese for: table", a:"桌子"},
+  {t:"type", q:"Type the Chinese for: sofa", a:"沙发"},
+  {t:"type", q:"Type the Chinese for: computer", a:"电脑"},
+  {t:"type", q:"Type the Chinese for: apartment", a:"公寓"},
+
+  {t:"order", q:"Build: I have a house.", w:["我","有","一个房子"], a:"我有一个房子"},
+  {t:"order", q:"Build: I watch TV in the living room.", w:["我","在客厅","看电视"], a:"我在客厅看电视"},
+  {t:"order", q:"Build: The kitchen is on the right.", w:["厨房","在","右边"], a:"厨房在右边"},
+  {t:"order", q:"Build: My room is very clean.", w:["我的房间","很","干净"], a:"我的房间很干净"},
+  {t:"order", q:"Build: My home is an apartment.", w:["我家","是","公寓"], a:"我家是公寓"},
+
+  {t:"mcq", q:"水果 means?", o:["Fruit","Drink","Meat"], a:"Fruit"},
+  {t:"mcq", q:"医生 means?", o:["Doctor","Teacher","Friend"], a:"Doctor"},
+  {t:"mcq", q:"爱好 means?", o:["Hobby","Pet","Family"], a:"Hobby"},
+  {t:"mcq", q:"时间 means?", o:["Time","Food","Body"], a:"Time"},
+  {t:"mcq", q:"中国 means?", o:["China","Japan","France"], a:"China"},
+  {t:"fill", q:"我喜欢喝 ____。", o:["水","米饭","面包"], a:"水"},
+  {t:"fill", q:"我早上七点 ____。", o:["起床","搬家","喝茶"], a:"起床"},
+  {t:"type", q:"Type the Chinese for: friend", a:"朋友"},
+  {t:"type", q:"Type the Chinese for: rice", a:"米饭"},
+  {t:"order", q:"Build: I like playing football.", w:["我","喜欢","踢足球"], a:"我喜欢踢足球"}
+];
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function safe(text) {
+  return text.replace(/'/g, "\\'");
+}
+
+function loadQuestions() {
+  const area = document.getElementById("questionArea");
+  area.innerHTML = "";
+
+  shuffle([...questions]).forEach(function(q, i) {
+    area.innerHTML += buildQuestion(q, i);
+  });
+}
+
+function buildQuestion(q, i) {
+  if (q.t === "mcq") {
+    const options = shuffle([...q.o]);
+    const letters = ["A", "B", "C"];
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option, index) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                <strong>${letters[index]}.</strong> ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "fill") {
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p class="chinese">${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "type") {
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this, '${safe(q.a)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "order") {
+    const words = shuffle([...q.w]);
+    const builderId = "builder" + i;
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${words.map(function(word) {
+            return `<button onclick="addWord(this, '${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}', '${safe(q.a)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}', '${bankId}')">Reset</button>
+
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button, selected, correctAnswer) {
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selected === correctAnswer) {
+    button.classList.add("correct-answer");
+    markQuestion(true, feedback);
+  } else {
+    button.classList.add("wrong-answer");
+    markQuestion(false, feedback);
+  }
+}
+
+function checkTypedAnswer(button, correctAnswer) {
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+  const answer = input.value.trim();
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(answer === correctAnswer, feedback);
+}
+
+function addWord(button, builderId) {
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId, correctAnswer) {
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const answer = Array.from(builder.children)
+    .map(function(word) {
+      return word.textContent;
+    })
+    .join("");
+
+  if (answer === correctAnswer) {
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+    markQuestion(true, feedback);
+  } else {
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+    markQuestion(false, feedback);
+  }
+}
+
+function resetOrder(builderId, bankId) {
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button) {
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect, feedback) {
+  total++;
+
+  if (isCorrect) {
+    correct++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrong++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults() {
+  document.getElementById("totalQ").textContent = total;
+  document.getElementById("correctQ").textContent = correct;
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+  if (total > 0) {
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay() {
+  const text = document.getElementById("essay").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "房子", "房间", "卧室", "厨房", "客厅", "花园", "沙发", "桌子",
+    "床", "电脑", "左边", "右边", "上边", "旁边", "里边", "干净",
+    "宽敞", "安静", "方便", "公寓", "租房", "搬家", "因为", "喜欢"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word) {
+    if (text.includes(word)) {
+      found++;
+    }
+  });
+
+  if (text.length < 40) {
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write a longer answer. Aim for at least 5 sentences.</p>";
+  } else if (found >= 8) {
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included lots of key Home Life vocabulary.</p>";
+  } else if (found >= 5) {
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail about rooms, furniture or location words.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but try to include more key home vocabulary.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

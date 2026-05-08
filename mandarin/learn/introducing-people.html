@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Introducing People | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Cambridge IGCSE Mandarin | Introducing People</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="everyday-activities.html">← Back to Everyday Activities</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Introducing People</h2>
+  <p>Learn how to talk about classmates, students, cities and simple descriptions.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. People at school</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>同学</h3><p>tóngxué</p><span>classmate</span></div>
+      <div class="vocab-card"><h3>学生</h3><p>xuésheng</p><span>student</span></div>
+      <div class="vocab-card"><h3>谁</h3><p>shéi</p><span>who</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">他是我的同学。</p>
+      <p class="pinyin">Tā shì wǒ de tóngxué.</p>
+      <p>He is my classmate.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Learning tasks</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>句子</h3><p>jùzi</p><span>sentence</span></div>
+      <div class="vocab-card"><h3>回答</h3><p>huídá</p><span>to answer / answer</span></div>
+      <div class="vocab-card"><h3>录音</h3><p>lùyīn</p><span>recording</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">请回答这个问题。</p>
+      <p class="pinyin">Qǐng huídá zhège wèntí.</p>
+      <p>Please answer this question.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Introducing yourself</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>介绍</h3><p>jièshào</p><span>to introduce</span></div>
+      <div class="vocab-card"><h3>自己</h3><p>zìjǐ</p><span>oneself / myself</span></div>
+      <div class="vocab-card"><h3>早上好</h3><p>zǎoshang hǎo</p><span>good morning</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">早上好，我介绍一下自己。</p>
+      <p class="pinyin">Zǎoshang hǎo, wǒ jièshào yíxià zìjǐ.</p>
+      <p>Good morning, I will introduce myself briefly.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Cities</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>上海</h3><p>Shànghǎi</p><span>Shanghai</span></div>
+      <div class="vocab-card"><h3>香港</h3><p>Xiānggǎng</p><span>Hong Kong</span></div>
+      <div class="vocab-card"><h3>东京</h3><p>Dōngjīng</p><span>Tokyo</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我住在上海。</p>
+      <p class="pinyin">Wǒ zhù zài Shànghǎi.</p>
+      <p>I live in Shanghai.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>5. Simple descriptions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>喜欢</h3><p>xǐhuān</p><span>to like</span></div>
+      <div class="vocab-card"><h3>忙</h3><p>máng</p><span>busy</span></div>
+      <div class="vocab-card"><h3>高</h3><p>gāo</p><span>tall / high</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的同学很忙。</p>
+      <p class="pinyin">Wǒ de tóngxué hěn máng.</p>
+      <p>My classmate is very busy.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">他很高，也喜欢中文。</p>
+      <p class="pinyin">Tā hěn gāo, yě xǐhuān Zhōngwén.</p>
+      <p>He is tall and also likes Chinese.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(8)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card">
+    <h2>Final check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(9)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step9">
+  <div class="lesson-card finish-card">
+    <h2>Lesson complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        早上好。我介绍一下自己。我叫大卫，是学生。我住在上海。我的同学很高，也很忙。
+      </p>
+      <p class="pinyin">
+        Zǎoshang hǎo. Wǒ jièshào yíxià zìjǐ. Wǒ jiào Dàwèi, shì xuésheng.
+        Wǒ zhù zài Shànghǎi. Wǒ de tóngxué hěn gāo, yě hěn máng.
+      </p>
+      <p>
+        Good morning. I will introduce myself briefly. I am called David and I am a student.
+        I live in Shanghai. My classmate is tall and also very busy.
+      </p>
+    </div>
+
+<div class="bottom-buttons">
+  <a href="everyday-activities.html">← Back to Topic</a>
+  <a href="section-sentence-builder.html">End of Section Practice →</a>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    {
+      q: "What does 同学 mean?",
+      options: ["Teacher", "Classmate", "City"],
+      correct: "Classmate"
+    },
+    {
+      q: "What does 学生 mean?",
+      options: ["Student", "Question", "Recording"],
+      correct: "Student"
+    },
+    {
+      q: "What does 谁 mean?",
+      options: ["Who", "What", "Where"],
+      correct: "Who"
+    }
+  ],
+
+  q2: [
+    {
+      q: "What does 句子 mean?",
+      options: ["Sentence", "Answer", "Recording"],
+      correct: "Sentence"
+    },
+    {
+      q: "What does 回答 mean?",
+      options: ["To introduce", "To answer", "To live"],
+      correct: "To answer"
+    },
+    {
+      q: "What does 录音 mean?",
+      options: ["Recording", "Classmate", "City"],
+      correct: "Recording"
+    }
+  ],
+
+  q3: [
+    {
+      q: "What does 介绍 mean?",
+      options: ["To introduce", "To like", "To ask"],
+      correct: "To introduce"
+    },
+    {
+      q: "What does 自己 mean?",
+      options: ["Oneself", "City", "Tall"],
+      correct: "Oneself"
+    },
+    {
+      q: "What does 忙 mean?",
+      options: ["Busy", "Happy", "Polite"],
+      correct: "Busy"
+    },
+    {
+      q: "Which city is 香港?",
+      options: ["Tokyo", "Hong Kong", "Shanghai"],
+      correct: "Hong Kong"
+    },
+    {
+      q: "What does 喜欢 mean?",
+      options: ["To like", "To speak", "To answer"],
+      correct: "To like"
+    }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${question.options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.trim().includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drinks | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Eating and Drinking</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="eating-drinking.html">← Back to Eating and Drinking</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Drinks</h2>
+  <p>Learn common drinks and how to talk about what people drink.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Everyday drinks</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>水</h3><p>shuǐ</p><span>water</span></div>
+      <div class="vocab-card"><h3>牛奶</h3><p>niúnǎi</p><span>milk</span></div>
+      <div class="vocab-card"><h3>果汁</h3><p>guǒzhī</p><span>fruit juice</span></div>
+      <div class="vocab-card"><h3>茶</h3><p>chá</p><span>tea</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢喝水和果汁。</p>
+      <p>I like drinking water and fruit juice.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Hot drinks and soup</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>汤</h3><p>tāng</p><span>soup</span></div>
+      <div class="vocab-card"><h3>咖啡</h3><p>kāfēi</p><span>coffee</span></div>
+      <div class="vocab-card"><h3>饮料</h3><p>yǐnliào</p><span>drink / beverage</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">妈妈喜欢喝茶，爸爸喜欢喝咖啡。</p>
+      <p>Mum likes drinking tea, Dad likes drinking coffee.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Other drinks</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>可口可乐</h3><p>kěkǒukělè</p><span>Coca-Cola</span></div>
+      <div class="vocab-card"><h3>啤酒</h3><p>píjiǔ</p><span>beer</span></div>
+      <div class="vocab-card"><h3>葡萄酒</h3><p>pútáojiǔ</p><span>wine</span></div>
+      <div class="vocab-card"><h3>白酒</h3><p>báijiǔ</p><span>Chinese white spirit</span></div>
+      <div class="vocab-card"><h3>汽水</h3><p>qìshuǐ</p><span>fizzy drink</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我不喝啤酒，也不喝葡萄酒。</p>
+      <p>I do not drink beer, and I also do not drink wine.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我有时候喝汽水。</p>
+      <p>Sometimes I drink fizzy drinks.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我喜欢喝水、牛奶和果汁。我不喜欢喝咖啡，但是我有时候喝茶。
+      </p>
+      <p>
+        I like drinking water, milk and fruit juice. I do not like drinking coffee, but sometimes I drink tea.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="eating-drinking.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "水 means?", options: ["Water", "Milk", "Tea"], correct: "Water" },
+    { q: "牛奶 means?", options: ["Milk", "Fruit juice", "Coffee"], correct: "Milk" },
+    { q: "果汁 means?", options: ["Fruit juice", "Water", "Soup"], correct: "Fruit juice" }
+  ],
+
+  q2: [
+    { q: "茶 means?", options: ["Tea", "Coffee", "Milk"], correct: "Tea" },
+    { q: "咖啡 means?", options: ["Coffee", "Soup", "Fizzy drink"], correct: "Coffee" },
+    { q: "饮料 means?", options: ["Drink / beverage", "Rice", "Fruit"], correct: "Drink / beverage" }
+  ],
+
+  q3: [
+    { q: "可口可乐 means?", options: ["Coca-Cola", "Tea", "Milk"], correct: "Coca-Cola" },
+    { q: "啤酒 means?", options: ["Beer", "Wine", "Water"], correct: "Beer" },
+    { q: "葡萄酒 means?", options: ["Wine", "Coffee", "Fruit juice"], correct: "Wine" },
+    { q: "汽水 means?", options: ["Fizzy drink", "Soup", "Tea"], correct: "Fizzy drink" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

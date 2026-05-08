@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Furniture and Homes | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Home Life</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="home-life.html">← Back to Home Life</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Furniture and Homes</h2>
+  <p>Learn furniture, home types and how to describe living spaces.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Living room furniture</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>沙发</h3><p>shā fā</p><span>sofa</span></div>
+      <div class="vocab-card"><h3>椅子</h3><p>yǐ zi</p><span>chair</span></div>
+      <div class="vocab-card"><h3>台灯</h3><p>tái dēng</p><span>reading lamp</span></div>
+      <div class="vocab-card"><h3>书桌</h3><p>shū zhuō</p><span>desk</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">客厅里有沙发和椅子。</p>
+      <p>There is a sofa and chairs in the living room.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Useful household items</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>冰箱</h3><p>bīng xiāng</p><span>fridge</span></div>
+      <div class="vocab-card"><h3>洗衣机</h3><p>xǐ yī jī</p><span>washing machine</span></div>
+      <div class="vocab-card"><h3>书架</h3><p>shū jià</p><span>bookshelf</span></div>
+      <div class="vocab-card"><h3>梳子</h3><p>shū zi</p><span>comb</span></div>
+      <div class="vocab-card"><h3>衣柜</h3><p>yī guì</p><span>wardrobe</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">厨房里有冰箱，卧室里有衣柜。</p>
+      <p>There is a fridge in the kitchen, and a wardrobe in the bedroom.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Types of homes</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>平房</h3><p>píng fáng</p><span>bungalow / flat</span></div>
+      <div class="vocab-card"><h3>楼房</h3><p>lóu fáng</p><span>building</span></div>
+      <div class="vocab-card"><h3>公寓</h3><p>gōng yù</p><span>apartment</span></div>
+      <div class="vocab-card"><h3>宽敞</h3><p>kuān chang</p><span>spacious</span></div>
+      <div class="vocab-card"><h3>为什么</h3><p>wèi shén me</p><span>why</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我家是公寓，不大，但是很宽敞。</p>
+      <p>My home is an apartment. It is not big, but it is spacious.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">你为什么喜欢你的房子？</p>
+      <p>Why do you like your house?</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我家是公寓，很宽敞。客厅里有沙发和椅子，卧室里有书桌和衣柜。
+      </p>
+      <p>
+        My home is an apartment and is spacious. In the living room there is a sofa and chairs, and in the bedroom there is a desk and wardrobe.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="home-life.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "沙发 means?", options: ["Sofa", "Chair", "Desk"], correct: "Sofa" },
+    { q: "椅子 means?", options: ["Chair", "Sofa", "Lamp"], correct: "Chair" },
+    { q: "书桌 means?", options: ["Desk", "Bookshelf", "Wardrobe"], correct: "Desk" }
+  ],
+
+  q2: [
+    { q: "冰箱 means?", options: ["Fridge", "Washing machine", "Comb"], correct: "Fridge" },
+    { q: "洗衣机 means?", options: ["Washing machine", "Fridge", "Wardrobe"], correct: "Washing machine" },
+    { q: "衣柜 means?", options: ["Wardrobe", "Bookshelf", "Chair"], correct: "Wardrobe" }
+  ],
+
+  q3: [
+    { q: "公寓 means?", options: ["Apartment", "Garden", "Garage"], correct: "Apartment" },
+    { q: "宽敞 means?", options: ["Spacious", "Broken", "Messy"], correct: "Spacious" },
+    { q: "为什么 means?", options: ["Why", "Where", "Whose"], correct: "Why" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Time Activities | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Hobbies</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="hobbies.html">← Back to Hobbies</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Free Time Activities</h2>
+  <p>Learn how to talk about hobbies, films, TV, going online and creative activities.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. People and hobbies</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>男</h3><p>nán</p><span>male / boy</span></div>
+      <div class="vocab-card"><h3>女</h3><p>nǚ</p><span>female / girl</span></div>
+      <div class="vocab-card"><h3>爱好</h3><p>àihào</p><span>hobby</span></div>
+      <div class="vocab-card"><h3>会</h3><p>huì</p><span>can / be able to</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的爱好是看电影。</p>
+      <p>My hobby is watching films.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Screen and town activities</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>电影</h3><p>diànyǐng</p><span>film</span></div>
+      <div class="vocab-card"><h3>电视</h3><p>diànshì</p><span>television</span></div>
+      <div class="vocab-card"><h3>逛街</h3><p>guàngjiē</p><span>go shopping / walk around town</span></div>
+      <div class="vocab-card"><h3>上网</h3><p>shàngwǎng</p><span>go online</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢看电视，也喜欢上网。</p>
+      <p>I like watching TV and also like going online.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Time and activities</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>运动</h3><p>yùndòng</p><span>sport / exercise</span></div>
+      <div class="vocab-card"><h3>多长时间</h3><p>duō cháng shíjiān</p><span>how long</span></div>
+      <div class="vocab-card"><h3>小时</h3><p>xiǎoshí</p><span>hour</span></div>
+      <div class="vocab-card"><h3>分钟</h3><p>fēnzhōng</p><span>minute</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">你每天运动多长时间？</p>
+      <p>How long do you exercise every day?</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Creative hobbies</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>照片</h3><p>zhàopiàn</p><span>photo</span></div>
+      <div class="vocab-card"><h3>写</h3><p>xiě</p><span>to write</span></div>
+      <div class="vocab-card"><h3>书法</h3><p>shūfǎ</p><span>calligraphy</span></div>
+      <div class="vocab-card"><h3>放风筝</h3><p>fàng fēngzheng</p><span>fly a kite</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我会写书法。</p>
+      <p>I can write calligraphy.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我一边看电视，一边写书法。</p>
+      <p>I write calligraphy while watching TV.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我的爱好是看电影和上网。我也会写书法。有时候我放风筝。
+      </p>
+      <p>
+        My hobbies are watching films and going online. I can also write calligraphy. Sometimes I fly a kite.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="hobbies.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "爱好 means?", options: ["Hobby", "Film", "Photo"], correct: "Hobby" },
+    { q: "会 means?", options: ["Can / be able to", "Wrong", "Before"], correct: "Can / be able to" },
+    { q: "女 means?", options: ["Female / girl", "Male / boy", "Student"], correct: "Female / girl" }
+  ],
+
+  q2: [
+    { q: "电影 means?", options: ["Film", "Television", "Sport"], correct: "Film" },
+    { q: "电视 means?", options: ["Television", "Photo", "Calligraphy"], correct: "Television" },
+    { q: "上网 means?", options: ["Go online", "Go shopping", "Exercise"], correct: "Go online" }
+  ],
+
+  q3: [
+    { q: "多长时间 means?", options: ["How long", "What time", "Sometimes"], correct: "How long" },
+    { q: "书法 means?", options: ["Calligraphy", "Photo", "Kite"], correct: "Calligraphy" },
+    { q: "放风筝 means?", options: ["Fly a kite", "Watch TV", "Write"], correct: "Fly a kite" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

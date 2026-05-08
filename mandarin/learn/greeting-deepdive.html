@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Greeting Skills | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Building Conversations</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="everyday-activities.html">← Back</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Building Conversations</h2>
+  <p>Now we go beyond greetings and start forming real conversations.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Asking questions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>问</h3><p>wèn</p><span>to ask</span></div>
+      <div class="vocab-card"><h3>什么</h3><p>shénme</p><span>what</span></div>
+      <div class="vocab-card"><h3>吗</h3><p>ma</p><span>question particle</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">你好吗？</p>
+      <p class="pinyin">Nǐ hǎo ma?</p>
+      <p>How are you?</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick check</h2>
+
+    <div id="q1"></div>
+
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Talking about feelings</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>很</h3><p>hěn</p><span>very</span></div>
+      <div class="vocab-card"><h3>高兴</h3><p>gāoxìng</p><span>happy</span></div>
+      <div class="vocab-card"><h3>认识</h3><p>rènshi</p><span>to meet/know</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">很高兴认识你。</p>
+      <p class="pinyin">Hěn gāoxìng rènshi nǐ.</p>
+      <p>Nice to meet you.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+
+    <div id="q2"></div>
+
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Names and identity</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>姓</h3><p>xìng</p><span>surname</span></div>
+      <div class="vocab-card"><h3>名字</h3><p>míngzi</p><span>name</span></div>
+      <div class="vocab-card"><h3>叫</h3><p>jiào</p><span>to be called</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">你叫什么名字？</p>
+      <p>What is your name?</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Personal details</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>年龄</h3><p>niánlíng</p><span>age</span></div>
+      <div class="vocab-card"><h3>城市</h3><p>chéngshì</p><span>city</span></div>
+      <div class="vocab-card"><h3>北京</h3><p>Běijīng</p><span>Beijing</span></div>
+      <div class="vocab-card"><h3>住</h3><p>zhù</p><span>to live</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我住在北京。</p>
+      <p>I live in Beijing.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final check</h2>
+
+    <div id="q3"></div>
+
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<!-- END -->
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <p>You can now build basic conversations.</p>
+
+    <div class="model-answer">
+      <p class="chinese">
+        你好！你叫什么名字？我叫杰瑞，很高兴认识你。我住在北京。
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="everyday-activities.html">← Back</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+const questions = {
+  q1: [
+    {
+      q: "What does 吗 do?",
+      options: ["It makes a question", "It means hello", "It means name"],
+      correct: "It makes a question"
+    },
+    {
+      q: "What does 什么 mean?",
+      options: ["Where", "What", "Who"],
+      correct: "What"
+    },
+    {
+      q: "What does 问 mean?",
+      options: ["To ask", "To live", "To speak"],
+      correct: "To ask"
+    }
+  ],
+
+  q2: [
+    {
+      q: "What does 高兴 mean?",
+      options: ["Happy", "Sorry", "City"],
+      correct: "Happy"
+    },
+    {
+      q: "What does 认识 mean?",
+      options: ["To meet / know", "To say goodbye", "To ask"],
+      correct: "To meet / know"
+    },
+    {
+      q: "What does 很 mean?",
+      options: ["Very", "Where", "What"],
+      correct: "Very"
+    }
+  ],
+
+  q3: [
+    {
+      q: "What does 住 mean?",
+      options: ["To live", "To ask", "To thank"],
+      correct: "To live"
+    },
+    {
+      q: "What does 城市 mean?",
+      options: ["City", "Country", "Name"],
+      correct: "City"
+    },
+    {
+      q: "What does 年龄 mean?",
+      options: ["Age", "Surname", "Beijing"],
+      correct: "Age"
+    }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${question.options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.trim().includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+</html>

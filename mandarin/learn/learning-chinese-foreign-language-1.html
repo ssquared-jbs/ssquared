@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning Chinese | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Learning Chinese as a Foreign Language</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="learning-chinese-foreign-language.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Learning Chinese</h2>
+  <p>Learn vocabulary for studying Chinese, lessons and language practice.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Studying Chinese</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>学中文</h3><p>xué zhōng wén</p><span>to learn Chinese</span></div>
+      <div class="vocab-card"><h3>汉语</h3><p>hàn yǔ</p><span>Chinese language / Mandarin</span></div>
+      <div class="vocab-card"><h3>老师</h3><p>lǎo shī</p><span>teacher</span></div>
+      <div class="vocab-card"><h3>学生</h3><p>xué sheng</p><span>student</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我在学校学中文。</p>
+      <p>I learn Chinese at school.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的中文老师很好。</p>
+      <p>My Chinese teacher is very good.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Lessons and homework</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>上课</h3><p>shàng kè</p><span>to attend lessons</span></div>
+      <div class="vocab-card"><h3>作业</h3><p>zuò yè</p><span>homework</span></div>
+      <div class="vocab-card"><h3>考试</h3><p>kǎo shì</p><span>exam</span></div>
+      <div class="vocab-card"><h3>练习</h3><p>liàn xí</p><span>to practise</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我每天做中文作业。</p>
+      <p>I do Chinese homework every day.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我常常练习汉语。</p>
+      <p>I often practise Mandarin.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Learning methods</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>听音乐</h3><p>tīng yīn yuè</p><span>to listen to music</span></div>
+      <div class="vocab-card"><h3>看视频</h3><p>kàn shì pín</p><span>to watch videos</span></div>
+      <div class="vocab-card"><h3>读书</h3><p>dú shū</p><span>to read books</span></div>
+      <div class="vocab-card"><h3>记单词</h3><p>jì dān cí</p><span>to memorise vocabulary</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢看中文视频。</p>
+      <p>I like watching Chinese videos.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我每天记中文单词。</p>
+      <p>I memorise Chinese vocabulary every day.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Basic opinions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>有意思</h3><p>yǒu yì si</p><span>interesting</span></div>
+      <div class="vocab-card"><h3>重要</h3><p>zhòng yào</p><span>important</span></div>
+      <div class="vocab-card"><h3>难</h3><p>nán</p><span>difficult</span></div>
+      <div class="vocab-card"><h3>容易</h3><p>róng yì</p><span>easy</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我觉得学中文很有意思。</p>
+      <p>I think learning Chinese is very interesting.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">汉语不容易，但是很重要。</p>
+      <p>Mandarin is not easy, but it is important.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我在学校学中文。我每天做作业，也常常练习汉语。我喜欢看中文视频和记单词。我觉得学中文很有意思，但是不容易。
+      </p>
+      <p>
+        I learn Chinese at school. I do homework every day and often practise Mandarin. I like watching Chinese videos and memorising vocabulary. I think learning Chinese is very interesting, but not easy.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="learning-chinese-foreign-language.html">← Back to Topic</a>
+      <a href="learning-chinese-foreign-language-2.html">Next Page →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "学中文 means?", options: ["To learn Chinese","To teach Chinese","To write Chinese"], correct: "To learn Chinese" },
+    { q: "汉语 means?", options: ["Chinese language / Mandarin","Homework","Lesson"], correct: "Chinese language / Mandarin" },
+    { q: "老师 means?", options: ["Teacher","Student","Parent"], correct: "Teacher" },
+    { q: "学生 means?", options: ["Student","Teacher","Friend"], correct: "Student" }
+  ],
+
+  q2: [
+    { q: "上课 means?", options: ["To attend lessons","To watch videos","To take photos"], correct: "To attend lessons" },
+    { q: "作业 means?", options: ["Homework","Exam","Language"], correct: "Homework" },
+    { q: "考试 means?", options: ["Exam","Festival","Competition"], correct: "Exam" },
+    { q: "练习 means?", options: ["To practise","To celebrate","To download"], correct: "To practise" }
+  ],
+
+  q3: [
+    { q: "听音乐 means?", options: ["To listen to music","To read books","To do homework"], correct: "To listen to music" },
+    { q: "读书 means?", options: ["To read books","To write essays","To travel"], correct: "To read books" },
+    { q: "记单词 means?", options: ["To memorise vocabulary","To take exams","To use apps"], correct: "To memorise vocabulary" },
+    { q: "难 means?", options: ["Difficult","Easy","Interesting"], correct: "Difficult" },
+    { q: "容易 means?", options: ["Easy","Hard","Important"], correct: "Easy" }
+  ]
+};
+
+function showStep(n){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+n).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadQuestion(id,set){
+  const q = questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts = shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(btn,sel,ans){
+  const box=btn.closest(".lesson-card");
+  const feedback=box.querySelector(".feedback");
+  const cont=box.querySelector(".continue-btn");
+
+  box.querySelectorAll(".quiz-buttons button").forEach(b=>{
+    b.disabled=true;
+    if(b.textContent.includes(ans)) b.classList.add("correct-answer");
+  });
+
+  if(sel===ans){
+    feedback.textContent="Correct.";
+    feedback.className="feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent="Not quite.";
+    feedback.className="feedback wrong-feedback";
+  }
+
+  cont.disabled = false;
+  cont.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activities and Events | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Everyday Life</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="everyday-life.html">← Back to Everyday Life</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Activities and Events</h2>
+  <p>Learn how to talk about going places, birthdays, school events and playing badminton.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Going to events</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>去</h3><p>qù</p><span>to go</span></div>
+      <div class="vocab-card"><h3>生日会</h3><p>shēngrì huì</p><span>birthday party</span></div>
+      <div class="vocab-card"><h3>一起</h3><p>yìqǐ</p><span>together</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我们一起去生日会。</p>
+      <p>We go to the birthday party together.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Sport and school</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>打</h3><p>dǎ</p><span>to play / hit</span></div>
+      <div class="vocab-card"><h3>羽毛球</h3><p>yǔmáoqiú</p><span>badminton</span></div>
+      <div class="vocab-card"><h3>学校</h3><p>xuéxiào</p><span>school</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我在学校打羽毛球。</p>
+      <p>I play badminton at school.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Performances and answers</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>演出</h3><p>yǎnchū</p><span>performance</span></div>
+      <div class="vocab-card"><h3>对</h3><p>duì</p><span>correct / right</span></div>
+      <div class="vocab-card"><h3>错</h3><p>cuò</p><span>wrong</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这个回答是对的。</p>
+      <p>This answer is correct.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">学校有一个演出。</p>
+      <p>The school has a performance.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我们一起去学校。下午我打羽毛球，晚上有一个演出。
+      </p>
+      <p>
+        We go to school together. In the afternoon I play badminton, and in the evening there is a performance.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="everyday-life.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "去 means?", options: ["To go", "To sleep", "To eat"], correct: "To go" },
+    { q: "生日会 means?", options: ["Birthday party", "School", "Performance"], correct: "Birthday party" },
+    { q: "一起 means?", options: ["Together", "Wrong", "Afternoon"], correct: "Together" }
+  ],
+
+  q2: [
+    { q: "打羽毛球 means?", options: ["Play badminton", "Go to school", "Watch a performance"], correct: "Play badminton" },
+    { q: "学校 means?", options: ["School", "Birthday party", "Time"], correct: "School" },
+    { q: "打 means?", options: ["To play / hit", "To rest", "To shower"], correct: "To play / hit" }
+  ],
+
+  q3: [
+    { q: "演出 means?", options: ["Performance", "Friend", "Question"], correct: "Performance" },
+    { q: "对 means?", options: ["Correct", "Wrong", "Together"], correct: "Correct" },
+    { q: "错 means?", options: ["Wrong", "Correct", "School"], correct: "Wrong" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

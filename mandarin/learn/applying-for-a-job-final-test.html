@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Applying for a Job Final Test | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Applying for a Job | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="applying-for-a-job.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Applying for a Job Final Test</h2>
+  <p>25 mixed questions and one exam-style writing task.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder light-essay">
+    <p><strong>Write a Mandarin paragraph about applying for a job. Try to include:</strong></p>
+
+    <ul>
+      <li>one reason why you want the job</li>
+      <li>one positive quality, like 认真 or 可靠</li>
+      <li>one skill, like 沟通能力 or 团队合作</li>
+      <li>one sentence about interviews or applications</li>
+      <li>one future reason using 将来</li>
+      <li>one sentence using 因为……所以……</li>
+      <li>one contrast using 虽然……但是……</li>
+      <li>one strong structure using 不仅……而且……</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+
+    <button class="continue-btn" onclick="checkEssay()">
+      Check Essay
+    </button>
+
+    <div id="essayFeedback" class="essay-feedback"></div>
+
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="applying-for-a-job-4.html">← Previous Page</a>
+  <a href="applying-for-a-job.html">Back to Topic</a>
+  <a href="../learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+
+  {t:"mcq", q:"申请工作 means?", o:["To apply for a job","To travel","To study"], a:"To apply for a job"},
+  {t:"mcq", q:"申请表 means?", o:["Application form","Luggage","Map"], a:"Application form"},
+  {t:"mcq", q:"简历 means?", o:["CV / résumé","Passport","Ticket"], a:"CV / résumé"},
+  {t:"mcq", q:"面试 means?", o:["Interview","Career","Office"], a:"Interview"},
+  {t:"mcq", q:"机会 means?", o:["Opportunity","Pressure","Customer"], a:"Opportunity"},
+  {t:"mcq", q:"可靠 means?", o:["Reliable","Relaxed","Boring"], a:"Reliable"},
+  {t:"mcq", q:"沟通能力 means?", o:["Communication skills","Holiday","Application"], a:"Communication skills"},
+  {t:"mcq", q:"团队合作 means?", o:["Teamwork","Future","Experience"], a:"Teamwork"},
+
+  {t:"fill", q:"我已经填写了 ____。", o:["申请表","天气","地图"], a:"申请表"},
+  {t:"fill", q:"我发送了我的 ____。", o:["简历","宾馆","飞机"], a:"简历"},
+  {t:"fill", q:"我觉得这个工作很 ____ 我。", o:["适合","文化","护照"], a:"适合"},
+  {t:"fill", q:"因为这个机会对我的将来有帮助，____ 我想申请这个工作。", o:["所以","但是","虽然"], a:"所以"},
+  {t:"fill", q:"虽然我有点儿紧张，____ 我准备好了。", o:["但是","因为","然后"], a:"但是"},
+  {t:"fill", q:"我不仅认真，____ 很可靠。", o:["而且","所以","但是"], a:"而且"},
+
+  {t:"type", q:"Type the Chinese for: company", a:"公司"},
+  {t:"type", q:"Type the Chinese for: manager", a:"经理"},
+  {t:"type", q:"Type the Chinese for: interview", a:"面试"},
+  {t:"type", q:"Type the Chinese for: future", a:"将来"},
+  {t:"type", q:"Type the Chinese for: to improve", a:"提高"},
+
+  {t:"order", q:"Build: I want to apply for this job.", w:["我","想","申请","这个工作"], a:"我想申请这个工作"},
+  {t:"order", q:"Build: I sent my CV.", w:["我","发送了","我的简历"], a:"我发送了我的简历"},
+  {t:"order", q:"Build: I have very good communication skills.", w:["我","有","很好的沟通能力"], a:"我有很好的沟通能力"},
+  {t:"order", q:"Build: This opportunity is helpful for my future.", w:["这个机会","对我的将来","有帮助"], a:"这个机会对我的将来有帮助"},
+  {t:"order", q:"Build: Although I was nervous, I was prepared.", w:["虽然我很紧张","但是","我准备好了"], a:"虽然我很紧张但是我准备好了"},
+  {t:"order", q:"Build: I am not only hardworking, but also reliable.", w:["我","不仅认真","而且很可靠"], a:"我不仅认真而且很可靠"}
+
+];
+
+function shuffle(array){
+  for(let i=array.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [array[i],array[j]]=[array[j],array[i]];
+  }
+  return array;
+}
+
+function safe(text){
+  return String(text).replace(/'/g,"\\'");
+}
+
+function loadQuestions(){
+
+  const area = document.getElementById("questionArea");
+
+  area.innerHTML = "";
+
+  shuffle([...questions]).slice(0,25).forEach(function(q,i){
+
+    area.innerHTML += buildQuestion(q,i);
+
+  });
+}
+
+function buildQuestion(q,i){
+
+  if(q.t === "mcq" || q.t === "fill"){
+
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+
+        <h3>Question ${i+1}</h3>
+
+        <p>${q.q}</p>
+
+        <div class="quiz-buttons">
+
+          ${options.map(function(option){
+
+            return `
+              <button onclick="checkAnswer(this,'${safe(option)}','${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+
+          }).join("")}
+
+        </div>
+
+        <p class="feedback"></p>
+
+      </div>
+    `;
+  }
+
+  if(q.t === "type"){
+
+    return `
+      <div class="fill-question">
+
+        <h3>Question ${i+1}</h3>
+
+        <p>${q.q}</p>
+
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+
+        <button class="continue-btn" onclick="checkTypedAnswer(this,'${safe(q.a)}')">
+          Check answer
+        </button>
+
+        <p class="feedback"></p>
+
+      </div>
+    `;
+  }
+
+  if(q.t === "order"){
+
+    const builderId = "builder" + i;
+
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+
+        <h3>Question ${i+1}</h3>
+
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+
+          ${shuffle([...q.w]).map(function(word){
+
+            return `
+              <button onclick="addWord(this,'${builderId}')">
+                ${word}
+              </button>
+            `;
+
+          }).join("")}
+
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}','${safe(q.a)}')">
+          Check sentence
+        </button>
+
+        <button class="reset-btn" onclick="resetOrder('${builderId}','${bankId}')">
+          Reset
+        </button>
+
+        <p class="feedback" id="${builderId}-feedback"></p>
+
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button,selected,answer){
+
+  const box = button.closest(".fill-question");
+
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn){
+
+    btn.disabled = true;
+
+    if(btn.textContent.includes(answer)){
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if(selected === answer){
+
+    button.classList.add("correct-answer");
+
+    markQuestion(true,feedback);
+
+  } else {
+
+    button.classList.add("wrong-answer");
+
+    markQuestion(false,feedback);
+  }
+}
+
+function checkTypedAnswer(button,answer){
+
+  const box = button.closest(".fill-question");
+
+  const input = box.querySelector(".type-answer");
+
+  const feedback = box.querySelector(".feedback");
+
+  input.disabled = true;
+
+  button.disabled = true;
+
+  markQuestion(input.value.trim() === answer,feedback);
+}
+
+function addWord(button,builderId){
+
+  const builder = document.getElementById(builderId);
+
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+
+  button.style.display = "none";
+}
+
+function checkOrder(builderId,answer){
+
+  const builder = document.getElementById(builderId);
+
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const studentAnswer = Array.from(builder.children)
+    .map(function(word){
+      return word.textContent;
+    })
+    .join("");
+
+  if(studentAnswer === answer){
+
+    builder.classList.add("correct-builder");
+
+    builder.classList.remove("wrong-builder");
+
+    markQuestion(true,feedback);
+
+  } else {
+
+    builder.classList.add("wrong-builder");
+
+    builder.classList.remove("correct-builder");
+
+    markQuestion(false,feedback);
+  }
+}
+
+function resetOrder(builderId,bankId){
+
+  const builder = document.getElementById(builderId);
+
+  const bank = document.getElementById(bankId);
+
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+
+  feedback.textContent = "";
+
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button){
+
+    button.style.display = "inline-block";
+
+  });
+}
+
+function markQuestion(isCorrect,feedback){
+
+  total++;
+
+  if(isCorrect){
+
+    correct++;
+
+    feedback.textContent = "Correct.";
+
+    feedback.className = "feedback correct-feedback";
+
+  } else {
+
+    wrong++;
+
+    feedback.textContent = "Not quite.";
+
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults(){
+
+  document.getElementById("totalQ").textContent = total;
+
+  document.getElementById("correctQ").textContent = correct;
+
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+
+  if(total > 0){
+
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay(){
+
+  const text = document.getElementById("essay").value;
+
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "申请工作","申请表","工作","公司","简历","文件","发送","电子邮件",
+    "面试","问题","回答","经理","成功","机会","将来","职业",
+    "认真","友好","努力","可靠","技能","经验","沟通能力","团队合作",
+    "中文","英文","提高","适合","感兴趣","紧张","有信心",
+    "因为","所以","虽然","但是","不仅","而且"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word){
+
+    if(text.includes(word)){
+      found++;
+    }
+
+  });
+
+  if(text.length < 40){
+
+    feedback.innerHTML = `
+      <p class='wrong-feedback'>
+        Try to write more. Aim for at least 5 sentences.
+      </p>
+    `;
+
+  } else if(found >= 9){
+
+    feedback.innerHTML = `
+      <p class='correct-feedback'>
+        Excellent. You included lots of strong job application vocabulary and structures.
+      </p>
+    `;
+
+  } else if(found >= 6){
+
+    feedback.innerHTML = `
+      <p class='correct-feedback'>
+        Good answer. Try adding more detail about interviews, skills or future plans.
+      </p>
+    `;
+
+  } else {
+
+    feedback.innerHTML = `
+      <p class='wrong-feedback'>
+        Good start, but add more key job application vocabulary and stronger structures.
+      </p>
+    `;
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

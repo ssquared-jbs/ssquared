@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countries | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Cambridge IGCSE Mandarin | Countries</p>
+</header>
+
+<main>
+
+  <div class="back-button">
+    <a href="everyday-activities.html">← Back to Everyday Activities</a>
+  </div>
+
+  <section class="country-hero">
+    <div>
+      <p class="label">Everyday Activities</p>
+      <h2>Countries and Places</h2>
+      <p>
+        In this lesson, you will learn how to recognise countries,
+        ask where places are, and use words linked to maps and continents.
+      </p>
+    </div>
+
+
+  </section>
+
+  <section class="step active-step" id="step1">
+    <div class="lesson-card">
+      <h2>1. Core country words</h2>
+      <p>These are the most important words for this topic.</p>
+
+      <div class="country-grid">
+        <div class="country-tile"><h3>国家</h3><p>guójiā</p><span>country</span></div>
+        <div class="country-tile"><h3>中国</h3><p>Zhōngguó</p><span>China</span></div>
+        <div class="country-tile"><h3>英国</h3><p>Yīngguó</p><span>United Kingdom</span></div>
+        <div class="country-tile"><h3>美国</h3><p>Měiguó</p><span>United States</span></div>
+        <div class="country-tile"><h3>德国</h3><p>Déguó</p><span>Germany</span></div>
+        <div class="country-tile"><h3>法国</h3><p>Fǎguó</p><span>France</span></div>
+        <div class="country-tile"><h3>日本</h3><p>Rìběn</p><span>Japan</span></div>
+        <div class="country-tile"><h3>印度</h3><p>Yìndù</p><span>India</span></div>
+        <div class="country-tile"><h3>新加坡</h3><p>Xīnjiāpō</p><span>Singapore</span></div>
+        <div class="country-tile"><h3>马来西亚</h3><p>Mǎláixīyà</p><span>Malaysia</span></div>
+      </div>
+
+      <button class="continue-btn" onclick="showStep(2)">I’ve read this →</button>
+    </div>
+  </section>
+
+  <section class="step" id="step2">
+    <div class="lesson-card">
+      <h2>2. Quick country check</h2>
+
+      <div id="random-country-question"></div>
+
+      <p class="feedback"></p>
+      <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+    </div>
+  </section>
+
+  <section class="step" id="step3">
+    <div class="lesson-card split-card">
+      <div>
+        <h2>3. Useful map words</h2>
+        <p>These words help you understand questions about the world, maps and locations.</p>
+      </div>
+
+      <table class="learn-table">
+        <tr>
+          <th>Chinese</th>
+          <th>Pinyin</th>
+          <th>English</th>
+        </tr>
+        <tr><td>世界</td><td>shìjiè</td><td>world</td></tr>
+        <tr><td>地图</td><td>dìtú</td><td>map</td></tr>
+        <tr><td>这些</td><td>zhèxiē</td><td>these</td></tr>
+        <tr><td>在</td><td>zài</td><td>at / in / located at</td></tr>
+        <tr><td>哪里</td><td>nǎlǐ</td><td>where</td></tr>
+        <tr><td>洲</td><td>zhōu</td><td>continent</td></tr>
+        <tr><td>亚洲</td><td>Yàzhōu</td><td>Asia</td></tr>
+        <tr><td>欧洲</td><td>Ōuzhōu</td><td>Europe</td></tr>
+        <tr><td>非洲</td><td>Fēizhōu</td><td>Africa</td></tr>
+        <tr><td>每周</td><td>měi zhōu</td><td>every week</td></tr>
+      </table>
+
+      <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+    </div>
+  </section>
+
+  <section class="step" id="step4">
+    <div class="lesson-card">
+      <h2>4. Sentences with countries</h2>
+
+      <div class="sentence-row">
+        <div class="sentence-block">
+          <p class="chinese">我说中文。</p>
+          <p class="pinyin">Wǒ shuō Zhōngwén.</p>
+          <p>I speak Chinese.</p>
+        </div>
+
+        <div class="sentence-block">
+          <p class="chinese">中国在亚洲。</p>
+          <p class="pinyin">Zhōngguó zài Yàzhōu.</p>
+          <p>China is in Asia.</p>
+        </div>
+
+        <div class="sentence-block">
+          <p class="chinese">英国在欧洲。</p>
+          <p class="pinyin">Yīngguó zài Ōuzhōu.</p>
+          <p>The UK is in Europe.</p>
+        </div>
+      </div>
+
+      <button class="continue-btn" onclick="showStep(5)">I understand →</button>
+    </div>
+  </section>
+
+  <section class="step" id="step5">
+    <div class="lesson-card">
+      <h2>5. Location check</h2>
+
+      <div id="random-location-question"></div>
+
+      <p class="feedback"></p>
+      <button class="continue-btn hidden" onclick="showStep(6)">Continue →</button>
+    </div>
+  </section>
+
+  <section class="step" id="step6">
+    <div class="lesson-card finish-card">
+      <h2>Lesson complete</h2>
+      <p>You have finished Countries and Places.</p>
+
+      <div class="model-answer">
+        <p class="chinese">
+          我说中文和英文。中国在亚洲，英国在欧洲。我喜欢看世界地图。
+        </p>
+        <p class="pinyin">
+          Wǒ shuō Zhōngwén hé Yīngwén. Zhōngguó zài Yàzhōu, Yīngguó zài Ōuzhōu.
+          Wǒ xǐhuān kàn shìjiè dìtú.
+        </p>
+        <p>
+          I speak Chinese and English. China is in Asia, and the UK is in Europe.
+          I like looking at world maps.
+        </p>
+      </div>
+
+      <div class="bottom-buttons">
+        <a href="everyday-activities.html">← Back to Topic</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+  const questionBank = {
+    countries: [
+      {
+        question: "What does 中国 mean?",
+        options: ["China", "Japan", "Germany"],
+        correct: "China"
+      },
+      {
+        question: "Which country is 英国?",
+        options: ["France", "United Kingdom", "United States"],
+        correct: "United Kingdom"
+      },
+      {
+        question: "What does 国家 mean?",
+        options: ["country", "map", "world"],
+        correct: "country"
+      },
+      {
+        question: "Which one means Japan?",
+        options: ["日本", "法国", "德国"],
+        correct: "日本"
+      },
+      {
+        question: "What does 美国 mean?",
+        options: ["United States", "United Kingdom", "Malaysia"],
+        correct: "United States"
+      }
+    ],
+
+    locations: [
+      {
+        question: "What does 世界 mean?",
+        options: ["map", "world", "continent"],
+        correct: "world"
+      },
+      {
+        question: "Which word means map?",
+        options: ["地图", "国家", "哪里"],
+        correct: "地图"
+      },
+      {
+        question: "What does 哪里 mean?",
+        options: ["where", "these", "every week"],
+        correct: "where"
+      },
+      {
+        question: "Which sentence means China is in Asia?",
+        options: ["中国在亚洲。", "英国在欧洲。", "日本在亚洲。"],
+        correct: "中国在亚洲。"
+      },
+      {
+        question: "What does 欧洲 mean?",
+        options: ["Asia", "Europe", "Africa"],
+        correct: "Europe"
+      }
+    ]
+  };
+
+  const usedQuestions = {
+    countries: [],
+    locations: []
+  };
+
+  function showStep(stepNumber) {
+    document.querySelectorAll(".step").forEach(step =>
+      step.classList.remove("active-step")
+    );
+
+    document.getElementById("step" + stepNumber).classList.add("active-step");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  function getRandomQuestion(topic) {
+    const questions = questionBank[topic];
+
+    if (usedQuestions[topic].length === questions.length) {
+      usedQuestions[topic] = [];
+    }
+
+    let index;
+
+    do {
+      index = Math.floor(Math.random() * questions.length);
+    } while (usedQuestions[topic].includes(index));
+
+    usedQuestions[topic].push(index);
+
+    return questions[index];
+  }
+
+  function loadRandomQuestion(containerId, topic) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const q = getRandomQuestion(topic);
+    const shuffledOptions = shuffle([...q.options]);
+
+    container.innerHTML = `
+      <p>${q.question}</p>
+      <div class="mcq">
+        ${shuffledOptions.map(option => `
+          <button onclick="checkAnswer(this, '${option.replace(/'/g, "\\'")}', '${q.correct.replace(/'/g, "\\'")}')">
+            ${option}
+          </button>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  function checkAnswer(button, selected, correct) {
+    const card = button.closest(".lesson-card");
+    const buttons = card.querySelectorAll(".mcq button");
+    const feedback = card.querySelector(".feedback");
+    const continueBtn = card.querySelector(".continue-btn");
+
+    buttons.forEach(btn => {
+      btn.disabled = true;
+
+      if (btn.textContent.trim() === correct) {
+        btn.classList.add("correct-answer");
+      }
+    });
+
+    if (selected === correct) {
+      feedback.textContent = "Correct. Well done.";
+      feedback.className = "feedback correct-feedback";
+    } else {
+      button.classList.add("wrong-answer");
+      feedback.textContent = "Not quite. The correct answer has been highlighted.";
+      feedback.className = "feedback wrong-feedback";
+    }
+
+    continueBtn.classList.remove("hidden");
+  }
+
+  loadRandomQuestion("random-country-question", "countries");
+  loadRandomQuestion("random-location-question", "locations");
+</script>
+
+</body>
+</html>

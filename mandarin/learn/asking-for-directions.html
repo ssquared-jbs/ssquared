@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Asking for Directions | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Living Environment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="living-environment.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Asking for Directions</h2>
+  <p>Learn how to ask where places are, how far they are, and how to get there.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Asking where and how far</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>……离……有多远？</h3><p>... lí ... yǒu duō yuǎn?</p><span>How far is ... from ...?</span></div>
+      <div class="vocab-card"><h3>……在哪儿？</h3><p>... zài nǎr?</p><span>Where is ...?</span></div>
+      <div class="vocab-card"><h3>目的地</h3><p>mù dì dì</p><span>destination</span></div>
+      <div class="vocab-card"><h3>公用电话</h3><p>gōng yòng diàn huà</p><span>public phone</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">图书馆离我家有多远？</p>
+      <p>How far is the library from my home?</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">电影院在哪儿？</p>
+      <p>Where is the cinema?</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Getting somewhere</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>到……怎么走？</h3><p>dào ... zěn me zǒu?</p><span>How do you get to ...?</span></div>
+      <div class="vocab-card"><h3>出去</h3><p>chū qù</p><span>to go out</span></div>
+      <div class="vocab-card"><h3>往……走</h3><p>wǎng ... zǒu</p><span>go towards / in the direction of</span></div>
+      <div class="vocab-card"><h3>路过</h3><p>lù guò</p><span>to pass through / pass by</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">到体育场怎么走？</p>
+      <p>How do you get to the sports stadium?</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">你出去以后，往南走。</p>
+      <p>After you go out, walk south.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Giving directions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>过马路</h3><p>guò mǎ lù</p><span>to cross the road</span></div>
+      <div class="vocab-card"><h3>一直</h3><p>yì zhí</p><span>straight / all the way</span></div>
+      <div class="vocab-card"><h3>顺着</h3><p>shùn zhe</p><span>along</span></div>
+      <div class="vocab-card"><h3>在……边</h3><p>zài ... biān</p><span>on the side</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">过马路以后，一直走。</p>
+      <p>After crossing the road, go straight ahead.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">顺着这条路走，邮局在右边。</p>
+      <p>Go along this road. The post office is on the right side.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Problems with directions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>迷路</h3><p>mí lù</p><span>to get lost</span></div>
+      <div class="vocab-card"><h3>麻烦你了</h3><p>má fan nǐ le</p><span>sorry to bother you</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我迷路了，麻烦你了。</p>
+      <p>I am lost, sorry to bother you.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        到图书馆怎么走？出去以后，过马路，然后一直走。图书馆在右边。
+      </p>
+      <p>
+        How do you get to the library? After going out, cross the road, then go straight. The library is on the right.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="living-environment.html">← Back to Topic</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "……离……有多远？ means?", options: ["How far is ... from ...?", "Where is ...?", "How old are you?"], correct: "How far is ... from ...?" },
+    { q: "……在哪儿？ means?", options: ["Where is ...?", "How far is ...?", "What time is it?"], correct: "Where is ...?" },
+    { q: "目的地 means?", options: ["Destination", "Road", "Library"], correct: "Destination" },
+    { q: "公用电话 means?", options: ["Public phone", "Mobile phone", "Police station"], correct: "Public phone" }
+  ],
+
+  q2: [
+    { q: "到……怎么走？ means?", options: ["How do you get to ...?", "Where do you live?", "How far is it?"], correct: "How do you get to ...?" },
+    { q: "出去 means?", options: ["To go out", "To turn", "To pass by"], correct: "To go out" },
+    { q: "往……走 means?", options: ["Go towards ...", "Get lost", "Cross the road"], correct: "Go towards ..." },
+    { q: "路过 means?", options: ["To pass by", "To go out", "To get lost"], correct: "To pass by" }
+  ],
+
+  q3: [
+    { q: "过马路 means?", options: ["Cross the road", "Go straight", "Get lost"], correct: "Cross the road" },
+    { q: "一直 means?", options: ["Straight / all the way", "Opposite", "Nearby"], correct: "Straight / all the way" },
+    { q: "顺着 means?", options: ["Along", "Far", "Close"], correct: "Along" },
+    { q: "迷路 means?", options: ["To get lost", "To know", "To save"], correct: "To get lost" },
+    { q: "麻烦你了 means?", options: ["Sorry to bother you", "Thank you", "Goodbye"], correct: "Sorry to bother you" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

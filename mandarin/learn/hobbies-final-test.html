@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hobbies Final Test | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Hobbies | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="hobbies.html">← Back to Hobbies</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Hobbies Final Test</h2>
+  <p>40 mixed questions: 30 from Hobbies, plus 10 from previous topics.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder">
+    <p><strong>Write a Mandarin paragraph about your hobbies. Try to include:</strong></p>
+    <ul>
+      <li>your main hobby</li>
+      <li>one sport you like</li>
+      <li>one music or creative hobby</li>
+      <li>one thing you do online or watch</li>
+      <li>one sentence using 因为</li>
+      <li>one opinion: 有意思, 没有意思, 好玩儿</li>
+      <li>one frequency word: 有时候, 常常, 总是</li>
+      <li>one time phrase: 以前, 以后, 从小到大</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+    <button class="continue-btn" onclick="checkEssay()">Check Essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="hobbies.html">← Back to Topic</a>
+  <a href="learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+  {t:"mcq", q:"爱好 means?", o:["Hobby","Film","Sport"], a:"Hobby"},
+  {t:"mcq", q:"电影 means?", o:["Film","TV","Book"], a:"Film"},
+  {t:"mcq", q:"电视 means?", o:["Television","Photo","Magazine"], a:"Television"},
+  {t:"mcq", q:"上网 means?", o:["Go online","Go shopping","Write a letter"], a:"Go online"},
+  {t:"mcq", q:"运动 means?", o:["Sport / exercise","Concert","Advertisement"], a:"Sport / exercise"},
+  {t:"mcq", q:"吉他 means?", o:["Guitar","Piano","Football"], a:"Guitar"},
+  {t:"mcq", q:"钢琴 means?", o:["Piano","Guitar","Novel"], a:"Piano"},
+  {t:"mcq", q:"小说 means?", o:["Novel","Photo","Concert"], a:"Novel"},
+  {t:"mcq", q:"书法 means?", o:["Calligraphy","Magazine","Skiing"], a:"Calligraphy"},
+  {t:"mcq", q:"古典音乐 means?", o:["Classical music","Pop song","Sports day"], a:"Classical music"},
+
+  {t:"fill", q:"我的 ____ 是看电影。", o:["爱好","照片","广告"], a:"爱好"},
+  {t:"fill", q:"我喜欢 ____ 电视。", o:["看","写","去"], a:"看"},
+  {t:"fill", q:"我会弹 ____。", o:["钢琴","足球","电视"], a:"钢琴"},
+  {t:"fill", q:"我觉得音乐很 ____。", o:["有意思","分钟","地方"], a:"有意思"},
+  {t:"fill", q:"我喜欢武术，____ 非常有意思。", o:["因为","但是","以后"], a:"因为"},
+  {t:"fill", q:"我 ____ 跑步。", o:["常常","以前","广告"], a:"常常"},
+  {t:"fill", q:"周末我 ____ 山。", o:["爬","写","看"], a:"爬"},
+  {t:"fill", q:"我喜欢听 ____。", o:["流行歌曲","连环画","桌球"], a:"流行歌曲"},
+  {t:"fill", q:"亲爱的 ____，我喜欢写信。", o:["笔友","明星","广告"], a:"笔友"},
+  {t:"fill", q:"我喜欢 ____ 足球。", o:["踢","弹","写"], a:"踢"},
+
+  {t:"type", q:"Type the Chinese for: hobby", a:"爱好"},
+  {t:"type", q:"Type the Chinese for: guitar", a:"吉他"},
+  {t:"type", q:"Type the Chinese for: piano", a:"钢琴"},
+  {t:"type", q:"Type the Chinese for: football", a:"足球"},
+  {t:"type", q:"Type the Chinese for: magazine", a:"杂志"},
+  {t:"type", q:"Type the Chinese for: pen friend", a:"笔友"},
+  {t:"type", q:"Type the Chinese for: pop song", a:"流行歌曲"},
+  {t:"type", q:"Type the Chinese for: hiking / climb mountains", a:"爬山"},
+
+  {t:"order", q:"Build: My hobby is watching films.", w:["我的爱好","是","看电影"], a:"我的爱好是看电影"},
+  {t:"order", q:"Build: I like going online.", w:["我","喜欢","上网"], a:"我喜欢上网"},
+  {t:"order", q:"Build: I can play piano.", w:["我","会","弹钢琴"], a:"我会弹钢琴"},
+  {t:"order", q:"Build: I often run.", w:["我","常常","跑步"], a:"我常常跑步"},
+  {t:"order", q:"Build: I think it is interesting.", w:["我觉得","很","有意思"], a:"我觉得很有意思"},
+  {t:"order", q:"Build: I like playing football.", w:["我","喜欢","踢足球"], a:"我喜欢踢足球"},
+
+  {t:"mcq", q:"起床 means?", o:["Get up","Sleep","Eat"], a:"Get up"},
+  {t:"mcq", q:"学校 means?", o:["School","City","Map"], a:"School"},
+  {t:"mcq", q:"中国 means?", o:["China","Japan","India"], a:"China"},
+  {t:"mcq", q:"家庭 means?", o:["Family","Pet","Food"], a:"Family"},
+  {t:"mcq", q:"宠物 means?", o:["Pet","Map","Question"], a:"Pet"},
+  {t:"fill", q:"我 ____ 中文。", o:["说","叫","住"], a:"说"},
+  {t:"fill", q:"我早上七点 ____。", o:["起床","睡觉","演出"], a:"起床"},
+  {t:"type", q:"Type the Chinese for: breakfast", a:"早饭"},
+  {t:"type", q:"Type the Chinese for: friend", a:"朋友"},
+  {t:"order", q:"Build: China is in Asia.", w:["中国","在","亚洲"], a:"中国在亚洲"}
+];
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function safe(text) {
+  return text.replace(/'/g, "\\'");
+}
+
+function loadQuestions() {
+  const area = document.getElementById("questionArea");
+  area.innerHTML = "";
+
+  shuffle([...questions]).forEach(function(q, i) {
+    area.innerHTML += buildQuestion(q, i);
+  });
+}
+
+function buildQuestion(q, i) {
+  if (q.t === "mcq") {
+    const options = shuffle([...q.o]);
+    const letters = ["A", "B", "C"];
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option, index) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                <strong>${letters[index]}.</strong> ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "fill") {
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p class="chinese">${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "type") {
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this, '${safe(q.a)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (q.t === "order") {
+    const words = shuffle([...q.w]);
+    const builderId = "builder" + i;
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i + 1}</h3>
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${words.map(function(word) {
+            return `<button onclick="addWord(this, '${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}', '${safe(q.a)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}', '${bankId}')">Reset</button>
+
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button, selected, correctAnswer) {
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selected === correctAnswer) {
+    button.classList.add("correct-answer");
+    markQuestion(true, feedback);
+  } else {
+    button.classList.add("wrong-answer");
+    markQuestion(false, feedback);
+  }
+}
+
+function checkTypedAnswer(button, correctAnswer) {
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+  const answer = input.value.trim();
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(answer === correctAnswer, feedback);
+}
+
+function addWord(button, builderId) {
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId, correctAnswer) {
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const answer = Array.from(builder.children)
+    .map(function(word) {
+      return word.textContent;
+    })
+    .join("");
+
+  if (answer === correctAnswer) {
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+    markQuestion(true, feedback);
+  } else {
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+    markQuestion(false, feedback);
+  }
+}
+
+function resetOrder(builderId, bankId) {
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button) {
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect, feedback) {
+  total++;
+
+  if (isCorrect) {
+    correct++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrong++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults() {
+  document.getElementById("totalQ").textContent = total;
+  document.getElementById("correctQ").textContent = correct;
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+  if (total > 0) {
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay() {
+  const text = document.getElementById("essay").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "爱好", "喜欢", "因为", "有意思", "没有意思", "好玩儿",
+    "有时候", "常常", "总是", "以前", "以后", "从小到大",
+    "电影", "电视", "上网", "书法", "音乐", "吉他", "钢琴",
+    "足球", "跑步", "爬山", "写信", "笔友"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word) {
+    if (text.includes(word)) {
+      found++;
+    }
+  });
+
+  if (text.length < 40) {
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write a longer answer. Aim for at least 5 sentences.</p>";
+  } else if (found >= 8) {
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included lots of key Hobbies vocabulary and sentence structures.</p>";
+  } else if (found >= 5) {
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail with reasons, opinions or frequency words.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but try to include more key vocabulary from the Hobbies topic.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

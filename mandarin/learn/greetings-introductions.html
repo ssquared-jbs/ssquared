@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greetings and Introductions | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Cambridge IGCSE Mandarin | Greetings and Introductions</p>
+</header>
+
+<main>
+
+  <section class="lesson-hero">
+    <div>
+      <p class="label">Topic 01</p>
+      <h2>Greetings and Introductions</h2>
+      <p>Work through each step, answer the questions, then continue.</p>
+    </div>
+
+
+  </section>
+
+  <section class="step active-step" id="step1">
+    <div class="lesson-card">
+      <h2>1. Basic greetings</h2>
+      <p>These are the first greetings you should recognise.</p>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <h3>你好</h3>
+          <p class="pinyin">nǐ hǎo</p>
+          <p>Hello</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>您好</h3>
+          <p class="pinyin">nín hǎo</p>
+          <p>Hello, polite</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>再见</h3>
+          <p class="pinyin">zài jiàn</p>
+          <p>Goodbye</p>
+        </div>
+      </div>
+
+      <button class="continue-btn" onclick="showStep(2)">I’ve read this →</button>
+    </div>
+  </section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>2. Quick check</h2>
+
+    <div id="random-greetings-question"></div>
+
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+  <section class="step" id="step3">
+    <div class="lesson-card">
+      <h2>3. Introducing yourself</h2>
+
+      <div class="sentence-block">
+        <p class="chinese">我叫杰瑞。</p>
+        <p class="pinyin">Wǒ jiào Jiéruì.</p>
+        <p>I am called Jerry.</p>
+      </div>
+
+      <div class="sentence-block">
+        <p class="chinese">我是英国人。</p>
+        <p class="pinyin">Wǒ shì Yīngguó rén.</p>
+        <p>I am British.</p>
+      </div>
+
+      <div class="sentence-block">
+        <p class="chinese">我十五岁。</p>
+        <p class="pinyin">Wǒ shíwǔ suì.</p>
+        <p>I am fifteen years old.</p>
+      </div>
+
+      <button class="continue-btn" onclick="showStep(4)">I understand →</button>
+    </div>
+  </section>
+
+  <section class="step" id="step4">
+    <div class="lesson-card">
+      <h2>4. Personal pronouns</h2>
+      <p>Pronouns are words like I, you, he, she and we. These are essential for IGCSE Mandarin.</p>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <h3>我</h3>
+          <p class="pinyin">wǒ</p>
+          <p>I / me</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>你</h3>
+          <p class="pinyin">nǐ</p>
+          <p>You</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>他</h3>
+          <p class="pinyin">tā</p>
+          <p>He / him</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>她</h3>
+          <p class="pinyin">tā</p>
+          <p>She / her</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>它</h3>
+          <p class="pinyin">tā</p>
+          <p>It</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>我们</h3>
+          <p class="pinyin">wǒ men</p>
+          <p>We / us</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>你们</h3>
+          <p class="pinyin">nǐ men</p>
+          <p>You plural</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>他们</h3>
+          <p class="pinyin">tā men</p>
+          <p>They, male or mixed group</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>她们</h3>
+          <p class="pinyin">tā men</p>
+          <p>They, female group</p>
+        </div>
+
+        <div class="vocab-card">
+          <h3>它们</h3>
+          <p class="pinyin">tā men</p>
+          <p>They, objects or animals</p>
+        </div>
+      </div>
+
+      <button class="continue-btn" onclick="showStep(5)">Continue →</button>
+    </div>
+  </section>
+
+ <section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>5. Pronoun check</h2>
+
+    <div id="random-pronoun-question"></div>
+
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+  <section class="step" id="step6">
+    <div class="lesson-card">
+      <h2>6. Asking someone’s name</h2>
+
+      <table class="learn-table">
+        <tr>
+          <th>Chinese</th>
+          <th>Pinyin</th>
+          <th>English</th>
+        </tr>
+        <tr>
+          <td>你叫什么名字？</td>
+          <td>nǐ jiào shénme míngzi?</td>
+          <td>What are you called?</td>
+        </tr>
+        <tr>
+          <td>你是哪国人？</td>
+          <td>nǐ shì nǎ guó rén?</td>
+          <td>What nationality are you?</td>
+        </tr>
+        <tr>
+          <td>你几岁？</td>
+          <td>nǐ jǐ suì?</td>
+          <td>How old are you?</td>
+        </tr>
+      </table>
+
+      <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+    </div>
+  </section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>2. Quick check</h2>
+
+    <div id="random-greetings-question"></div>
+
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>          
+
+  <section class="step" id="step8">
+    <div class="lesson-card finish-card">
+      <h2>Lesson complete</h2>
+      <p>You have finished Greetings and Introductions.</p>
+
+      <div class="model-answer">
+        <p class="chinese">
+          你好，我叫杰瑞。我十五岁。我是英国人。很高兴认识你。
+        </p>
+        <p class="pinyin">
+          Nǐ hǎo, wǒ jiào Jiéruì. Wǒ shíwǔ suì. Wǒ shì Yīngguó rén. Hěn gāoxìng rènshi nǐ.
+        </p>
+        <p>
+          Hello, I am called Jerry. I am fifteen years old. I am British. Nice to meet you.
+        </p>
+      </div>
+    </section>
+
+      <section>
+      <div class="bottom-buttons">
+        <a href="everyday-activities.html">← Back to Topic</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+  const questionBank = {
+    greetings: [
+      {
+        question: "What does 你好 mean?",
+        options: ["Goodbye", "Hello", "Thank you"],
+        correct: "Hello"
+      },
+      {
+        question: "What does 再见 mean?",
+        options: ["Goodbye", "Good morning", "Please"],
+        correct: "Goodbye"
+      },
+      {
+        question: "Which one means hello politely?",
+        options: ["您好", "再见", "谢谢"],
+        correct: "您好"
+      }
+    ],
+
+    pronouns: [
+      {
+        question: "Which character means she?",
+        options: ["他", "她", "它"],
+        correct: "她"
+      },
+      {
+        question: "What does 我们 mean?",
+        options: ["We / us", "You plural", "They"],
+        correct: "We / us"
+      },
+      {
+        question: "Which one means they for objects or animals?",
+        options: ["他们", "她们", "它们"],
+        correct: "它们"
+      }
+    ],
+
+    final: [
+      {
+        question: "What does 你叫什么名字？ mean?",
+        options: ["How old are you?", "What are you called?", "Where do you live?"],
+        correct: "What are you called?"
+      },
+      {
+        question: "What does 我十五岁 mean?",
+        options: ["I am fifteen years old", "I am British", "I am called David"],
+        correct: "I am fifteen years old"
+      },
+      {
+        question: "Which sentence means I am British?",
+        options: ["我是英国人。", "我叫安娜。", "我住在伦敦。"],
+        correct: "我是英国人。"
+      }
+    ]
+  };
+
+  // Tracks which questions have been used
+  const usedQuestions = {
+    greetings: [],
+    pronouns: [],
+    final: []
+  };
+
+  function showStep(stepNumber) {
+    document.querySelectorAll(".step").forEach(step =>
+      step.classList.remove("active-step")
+    );
+
+    document.getElementById("step" + stepNumber).classList.add("active-step");
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  // Shuffle function (Fisher-Yates)
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  function getRandomQuestion(topic) {
+    const questions = questionBank[topic];
+
+    // Reset if all used
+    if (usedQuestions[topic].length === questions.length) {
+      usedQuestions[topic] = [];
+    }
+
+    let index;
+    do {
+      index = Math.floor(Math.random() * questions.length);
+    } while (usedQuestions[topic].includes(index));
+
+    usedQuestions[topic].push(index);
+
+    return questions[index];
+  }
+
+  function loadRandomQuestion(containerId, topic) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const q = getRandomQuestion(topic);
+
+    const shuffledOptions = shuffle([...q.options]);
+
+    container.innerHTML = `
+      <p>${q.question}</p>
+      <div class="mcq">
+        ${shuffledOptions.map(option => `
+          <button onclick="checkAnswer(this, '${option.replace(/'/g, "\\'")}', '${q.correct.replace(/'/g, "\\'")}')">
+            ${option}
+          </button>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  function checkAnswer(button, selected, correct) {
+    const card = button.closest(".lesson-card");
+    const buttons = card.querySelectorAll(".mcq button");
+    const feedback = card.querySelector(".feedback");
+    const continueBtn = card.querySelector(".continue-btn");
+
+    buttons.forEach(btn => {
+      btn.disabled = true;
+      if (btn.textContent.trim() === correct) {
+        btn.classList.add("correct-answer");
+      }
+    });
+
+    if (selected === correct) {
+      feedback.textContent = "Correct. Well done.";
+      feedback.className = "feedback correct-feedback";
+    } else {
+      button.classList.add("wrong-answer");
+      feedback.textContent = "Not quite. The correct answer is highlighted.";
+      feedback.className = "feedback wrong-feedback";
+    }
+
+    continueBtn.classList.remove("hidden");
+  }
+
+  // Load questions
+  loadRandomQuestion("random-greetings-question", "greetings");
+  loadRandomQuestion("random-pronoun-question", "pronouns");
+  loadRandomQuestion("random-final-question", "final");
+</script>
+
+</body>
+</html>

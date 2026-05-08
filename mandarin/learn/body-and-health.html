@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Body and Health | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Health and Fitness</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="health-fitness.html">← Back to Health and Fitness</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Body and Health</h2>
+  <p>Learn body parts and basic health vocabulary.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Body parts</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>手</h3><p>shǒu</p><span>hand</span></div>
+      <div class="vocab-card"><h3>头</h3><p>tóu</p><span>head</span></div>
+      <div class="vocab-card"><h3>眼睛</h3><p>yǎn jīng</p><span>eye</span></div>
+      <div class="vocab-card"><h3>牙齿</h3><p>yá chǐ</p><span>tooth</span></div>
+      <div class="vocab-card"><h3>耳朵</h3><p>ěr duǒ</p><span>ear</span></div>
+      <div class="vocab-card"><h3>鼻子</h3><p>bí zi</p><span>nose</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我有两只眼睛和两只耳朵。</p>
+      <p>I have two eyes and two ears.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. More body parts</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>嘴</h3><p>zuǐ</p><span>mouth</span></div>
+      <div class="vocab-card"><h3>腿</h3><p>tuǐ</p><span>leg</span></div>
+      <div class="vocab-card"><h3>头发</h3><p>tóu fà</p><span>hair</span></div>
+      <div class="vocab-card"><h3>肚子</h3><p>dù zi</p><span>stomach</span></div>
+      <div class="vocab-card"><h3>脚</h3><p>jiǎo</p><span>foot</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我的腿很累。</p>
+      <p>My legs are tired.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Health basics</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>身体</h3><p>shēn tǐ</p><span>body</span></div>
+      <div class="vocab-card"><h3>吸烟</h3><p>xī yān</p><span>smoking</span></div>
+      <div class="vocab-card"><h3>对…好</h3><p>duì...hǎo</p><span>good for</span></div>
+      <div class="vocab-card"><h3>对…不好</h3><p>duì...bùhǎo</p><span>not good for</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">运动对身体很好。</p>
+      <p>Exercise is good for the body.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">吸烟对身体不好。</p>
+      <p>Smoking is bad for the body.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我有头、手和脚。运动对身体很好，但是吸烟对身体不好。
+      </p>
+      <p>
+        I have a head, hands and feet. Exercise is good for the body, but smoking is bad for the body.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="health-fitness.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "手 means?", options: ["Hand", "Head", "Foot"], correct: "Hand" },
+    { q: "头 means?", options: ["Head", "Eye", "Ear"], correct: "Head" },
+    { q: "眼睛 means?", options: ["Eye", "Nose", "Mouth"], correct: "Eye" }
+  ],
+
+  q2: [
+    { q: "腿 means?", options: ["Leg", "Hand", "Hair"], correct: "Leg" },
+    { q: "脚 means?", options: ["Foot", "Head", "Tooth"], correct: "Foot" },
+    { q: "肚子 means?", options: ["Stomach", "Eye", "Ear"], correct: "Stomach" }
+  ],
+
+  q3: [
+    { q: "身体 means?", options: ["Body", "Food", "Drink"], correct: "Body" },
+    { q: "吸烟 means?", options: ["Smoking", "Running", "Eating"], correct: "Smoking" },
+    { q: "对…好 means?", options: ["Good for", "Bad for", "Drink"], correct: "Good for" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

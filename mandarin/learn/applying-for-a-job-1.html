@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Applications | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Applying for a Job</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="applying-for-a-job.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Job Applications</h2>
+  <p>Learn how to talk about applying for jobs, CVs, forms and applications.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Applying for jobs</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>申请工作</h3><p>shēn qǐng gōng zuò</p><span>to apply for a job</span></div>
+      <div class="vocab-card"><h3>申请表</h3><p>shēn qǐng biǎo</p><span>application form</span></div>
+      <div class="vocab-card"><h3>工作</h3><p>gōng zuò</p><span>job / work</span></div>
+      <div class="vocab-card"><h3>公司</h3><p>gōng sī</p><span>company</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我想申请这个工作。</p>
+      <p>I want to apply for this job.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我已经填写了申请表。</p>
+      <p>I have already filled in the application form.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. CVs and documents</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>简历</h3><p>jiǎn lì</p><span>CV / résumé</span></div>
+      <div class="vocab-card"><h3>文件</h3><p>wén jiàn</p><span>document</span></div>
+      <div class="vocab-card"><h3>发送</h3><p>fā sòng</p><span>to send</span></div>
+      <div class="vocab-card"><h3>电子邮件</h3><p>diàn zǐ yóu jiàn</p><span>email</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我发送了我的简历。</p>
+      <p>I sent my CV.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我用电子邮件发送文件。</p>
+      <p>I sent the documents by email.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Interviews</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>面试</h3><p>miàn shì</p><span>interview</span></div>
+      <div class="vocab-card"><h3>问题</h3><p>wèn tí</p><span>question</span></div>
+      <div class="vocab-card"><h3>回答</h3><p>huí dá</p><span>to answer</span></div>
+      <div class="vocab-card"><h3>经理</h3><p>jīng lǐ</p><span>manager</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">经理问了我很多问题。</p>
+      <p>The manager asked me many questions.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我认真回答了问题。</p>
+      <p>I answered the questions seriously.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Results and future</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>成功</h3><p>chéng gōng</p><span>success / successful</span></div>
+      <div class="vocab-card"><h3>机会</h3><p>jī huì</p><span>opportunity</span></div>
+      <div class="vocab-card"><h3>将来</h3><p>jiāng lái</p><span>future</span></div>
+      <div class="vocab-card"><h3>职业</h3><p>zhí yè</p><span>career</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这个工作机会很好。</p>
+      <p>This job opportunity is very good.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我希望将来有成功的职业。</p>
+      <p>I hope to have a successful career in the future.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我想申请这个工作，所以我填写了申请表，也发送了我的简历。面试的时候，经理问了我很多问题。
+      </p>
+      <p>
+        I wanted to apply for this job, so I filled in the application form and also sent my CV. During the interview, the manager asked me many questions.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="applying-for-a-job.html">← Back to Topic</a>
+      <a href="applying-for-a-job-2.html">Next Page →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "申请工作 means?", options: ["To apply for a job","To travel","To study"], correct: "To apply for a job" },
+    { q: "申请表 means?", options: ["Application form","Passport","Luggage"], correct: "Application form" },
+    { q: "工作 means?", options: ["Job / work","Holiday","Ticket"], correct: "Job / work" },
+    { q: "公司 means?", options: ["Company","Museum","Restaurant"], correct: "Company" }
+  ],
+
+  q2: [
+    { q: "简历 means?", options: ["CV / résumé","Interview","Document"], correct: "CV / résumé" },
+    { q: "发送 means?", options: ["To send","To lose","To answer"], correct: "To send" },
+    { q: "电子邮件 means?", options: ["Email","Manager","Customer"], correct: "Email" },
+    { q: "文件 means?", options: ["Document","Map","Problem"], correct: "Document" }
+  ],
+
+  q3: [
+    { q: "面试 means?", options: ["Interview","Office","Experience"], correct: "Interview" },
+    { q: "回答 means?", options: ["To answer","To organise","To improve"], correct: "To answer" },
+    { q: "成功 means?", options: ["Success / successful","Busy","Relaxed"], correct: "Success / successful" },
+    { q: "机会 means?", options: ["Opportunity","Pressure","Skill"], correct: "Opportunity" },
+    { q: "职业 means?", options: ["Career","Address","Journey"], correct: "Career" }
+  ]
+};
+
+function showStep(n){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+n).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadQuestion(id,set){
+  const q = questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts = shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(btn, sel, ans) {
+  const box = btn.closest(".lesson-card");
+  const feedback = box.querySelector(".feedback");
+  const cont = box.querySelector(".continue-btn");
+
+  box.querySelectorAll(".quiz-buttons button").forEach(b => {
+    b.disabled = true;
+
+    if (b.textContent.includes(ans)) {
+      b.classList.add("correct-answer");
+    }
+  });
+
+  if (sel === ans) {
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  cont.disabled = false;
+  cont.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

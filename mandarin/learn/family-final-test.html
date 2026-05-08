@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family and Pets Final Test | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Family and Pets | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="family-pets.html">← Back to Family and Pets</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Family and Pets Final Test</h2>
+  <p>Answer 40 mixed questions using family, pets and previous vocabulary.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Practice</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+  <p>Write a short Mandarin paragraph about your family and pets.</p>
+
+  <div class="essay-builder">
+    <p><strong>Try to include:</strong></p>
+    <ul>
+      <li>how many people are in your family</li>
+      <li>family members</li>
+      <li>whether you have pets</li>
+      <li>one sentence using 但是</li>
+      <li>one sentence using 都</li>
+      <li>one opinion or description, like 可爱</li>
+    </ul>
+
+    <textarea id="essayAnswer" placeholder="Write your Mandarin answer here..."></textarea>
+
+    <button class="continue-btn" onclick="checkEssay()">Check my essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="family-pets.html">← Back to Topic</a>
+  <a href="learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let totalQuestions = 0;
+let correctAnswers = 0;
+let wrongAnswers = 0;
+
+const questions = [
+  { type: "mcq", q: "What does 家庭 mean?", options: ["Family", "Pet", "City"], correct: "Family" },
+  { type: "mcq", q: "What does 爸爸 mean?", options: ["Dad", "Brother", "Grandfather"], correct: "Dad" },
+  { type: "mcq", q: "What does 妈妈 mean?", options: ["Mum", "Sister", "Daughter"], correct: "Mum" },
+  { type: "mcq", q: "What does 哥哥 mean?", options: ["Older brother", "Younger brother", "Son"], correct: "Older brother" },
+  { type: "mcq", q: "What does 妹妹 mean?", options: ["Younger sister", "Older sister", "Mother"], correct: "Younger sister" },
+
+  { type: "fill", q: "我家有四 ____ 人。", options: ["口", "只", "个"], correct: "口" },
+  { type: "fill", q: "我有一 ____ 狗。", options: ["只", "口", "个"], correct: "只" },
+  { type: "fill", q: "这是我 ____ 爸爸。", options: ["的", "和", "都"], correct: "的" },
+  { type: "fill", q: "我没有猫，____ 我养一只狗。", options: ["但是", "都", "那"], correct: "但是" },
+  { type: "fill", q: "他们 ____ 会讲中文。", options: ["都", "只", "没"], correct: "都" },
+
+  { type: "type", q: "Type the Chinese for: dog", correct: "狗" },
+  { type: "type", q: "Type the Chinese for: cat", correct: "猫" },
+  { type: "type", q: "Type the Chinese for: pet", correct: "宠物" },
+  { type: "type", q: "Type the Chinese for: cute", correct: "可爱" },
+  { type: "type", q: "Type the Chinese for: mother", correct: "母亲" },
+
+  { type: "order", q: "Build: There are four people in my family.", words: ["有", "四口人", "我家"], correct: "我家有四口人" },
+  { type: "order", q: "Build: I have a dog.", words: ["有", "一只狗", "我"], correct: "我有一只狗" },
+  { type: "order", q: "Build: My cat is very cute.", words: ["很可爱", "我的猫"], correct: "我的猫很可爱" },
+  { type: "order", q: "Build: This is my pet.", words: ["这是", "我的", "宠物"], correct: "这是我的宠物" },
+  { type: "order", q: "Build: He has a son and a daughter.", words: ["他", "有", "一个儿子", "和", "一个女儿"], correct: "他有一个儿子和一个女儿" },
+
+  { type: "mcq", q: "What does 动物 mean?", options: ["Animal", "Pet", "Friend"], correct: "Animal" },
+  { type: "mcq", q: "What does 金鱼 mean?", options: ["Goldfish", "Rabbit", "Horse"], correct: "Goldfish" },
+  { type: "mcq", q: "What does 兔子 mean?", options: ["Rabbit", "Bird", "Dog"], correct: "Rabbit" },
+  { type: "mcq", q: "What does 很多 mean?", options: ["Many", "Now", "But"], correct: "Many" },
+  { type: "mcq", q: "What does 没有 mean?", options: ["Do not have", "Have", "Like"], correct: "Do not have" },
+
+  { type: "fill", q: "我的宠物现在很 ____。", options: ["可爱", "出生", "家庭"], correct: "可爱" },
+  { type: "fill", q: "____ 是我的宠物。", options: ["这", "养", "都"], correct: "这" },
+  { type: "fill", q: "我 ____ 一只狗。", options: ["养", "讲", "意思"], correct: "养" },
+  { type: "fill", q: "这个汉字是什么 ____？", options: ["意思", "宠物", "年龄"], correct: "意思" },
+  { type: "fill", q: "我的父亲会 ____ 中文。", options: ["讲", "养", "出生"], correct: "讲" },
+
+  { type: "mcq", q: "What does 儿子 mean?", options: ["Son", "Daughter", "Grandson"], correct: "Son" },
+  { type: "mcq", q: "What does 女儿 mean?", options: ["Daughter", "Wife", "Mother"], correct: "Daughter" },
+  { type: "mcq", q: "What does 孙子 mean?", options: ["Grandson", "Son", "Father"], correct: "Grandson" },
+  { type: "mcq", q: "What does 妻子 mean?", options: ["Wife", "Mother", "Daughter"], correct: "Wife" },
+  { type: "mcq", q: "What does 汉字 mean?", options: ["Chinese character", "Meaning", "Sentence"], correct: "Chinese character" },
+
+  { type: "type", q: "Type the Chinese for: father", correct: "父亲" },
+  { type: "type", q: "Type the Chinese for: son", correct: "儿子" },
+  { type: "type", q: "Type the Chinese for: daughter", correct: "女儿" },
+  { type: "order", q: "Build: They are all international students.", words: ["他们", "都是", "留学生"], correct: "他们都是留学生" },
+  { type: "order", q: "Build: I like Chinese.", words: ["我", "喜欢", "中文"], correct: "我喜欢中文" }
+];
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function safe(text) {
+  return text.replace(/'/g, "\\'");
+}
+
+function loadQuestions() {
+  const area = document.getElementById("questionArea");
+  const shuffledQuestions = shuffle([...questions]);
+  area.innerHTML = "";
+
+  shuffledQuestions.forEach(function(question, index) {
+    area.innerHTML += buildQuestion(question, index);
+  });
+}
+
+function buildQuestion(question, index) {
+  if (question.type === "mcq") {
+    const options = shuffle([...question.options]);
+    const letters = ["A", "B", "C"];
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p>${question.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option, i) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(question.correct)}')">
+                <strong>${letters[i]}.</strong> ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (question.type === "fill") {
+    const options = shuffle([...question.options]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p class="chinese">${question.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(question.correct)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (question.type === "type") {
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p>${question.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this, '${safe(question.correct)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (question.type === "order") {
+    const words = shuffle([...question.words]);
+    const builderId = "builder" + index;
+    const bankId = "bank" + index;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p>${question.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${words.map(function(word) {
+            return `<button onclick="addWord(this, '${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}', '${safe(question.correct)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}', '${bankId}')">Reset</button>
+
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button, selected, correct) {
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+    if (btn.textContent.includes(correct)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  markQuestion(selected === correct, feedback, button);
+}
+
+function checkTypedAnswer(button, correct) {
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+  const answer = input.value.trim();
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(answer === correct, feedback, button);
+}
+
+function addWord(button, builderId) {
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId, correct) {
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const answer = Array.from(builder.children)
+    .map(function(word) {
+      return word.textContent;
+    })
+    .join("");
+
+  markQuestion(answer === correct, feedback, builder);
+}
+
+function resetOrder(builderId, bankId) {
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-answer");
+  builder.classList.remove("wrong-answer");
+
+  bank.querySelectorAll("button").forEach(function(button) {
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect, feedback, element) {
+  totalQuestions++;
+
+  if (isCorrect) {
+    correctAnswers++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+    element.classList.add("correct-answer");
+  } else {
+    wrongAnswers++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+    element.classList.add("wrong-answer");
+  }
+
+  updateResults();
+}
+
+function updateResults() {
+  document.getElementById("totalQ").textContent = totalQuestions;
+  document.getElementById("correctQ").textContent = correctAnswers;
+  document.getElementById("wrongQ").textContent = wrongAnswers;
+
+  let percent = 0;
+
+  if (totalQuestions > 0) {
+    percent = Math.round((correctAnswers / totalQuestions) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay() {
+  const answer = document.getElementById("essayAnswer").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = ["家", "有", "爸爸", "妈妈", "宠物", "狗", "猫", "可爱", "但是", "都"];
+  let found = 0;
+
+  targets.forEach(function(word) {
+    if (answer.includes(word)) {
+      found++;
+    }
+  });
+
+  if (answer.length < 25) {
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write a longer answer. Aim for at least 5 sentences.</p>";
+  } else if (found >= 8) {
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You used lots of key Family and Pets vocabulary.</p>";
+  } else if (found >= 5) {
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail about pets or family members.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but try to include more key words from this topic.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

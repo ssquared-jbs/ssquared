@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colours and Accessories | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Clothes</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="clothes.html">← Back to Clothes</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Colours and Accessories</h2>
+  <p>Learn colours, accessories and useful clothing descriptions.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Colours</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>颜色</h3><p>yán sè</p><span>colour</span></div>
+      <div class="vocab-card"><h3>红色</h3><p>hóng sè</p><span>red</span></div>
+      <div class="vocab-card"><h3>白色</h3><p>bái sè</p><span>white</span></div>
+      <div class="vocab-card"><h3>黄色</h3><p>huáng sè</p><span>yellow</span></div>
+      <div class="vocab-card"><h3>蓝色</h3><p>lán sè</p><span>blue</span></div>
+      <div class="vocab-card"><h3>橙色</h3><p>chéng sè</p><span>orange</span></div>
+      <div class="vocab-card"><h3>黑色</h3><p>hēi sè</p><span>black</span></div>
+      <div class="vocab-card"><h3>绿色</h3><p>lǜ sè</p><span>green</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢蓝色和黑色。</p>
+      <p>I like blue and black.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Accessories</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>带</h3><p>dài</p><span>to bring / carry / wear</span></div>
+      <div class="vocab-card"><h3>领带</h3><p>lǐng dài</p><span>tie</span></div>
+      <div class="vocab-card"><h3>帽子</h3><p>mào zi</p><span>hat / cap</span></div>
+      <div class="vocab-card"><h3>手表</h3><p>shǒu biǎo</p><span>watch</span></div>
+      <div class="vocab-card"><h3>眼镜</h3><p>yǎn jìng</p><span>glasses</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我戴眼镜，也戴手表。</p>
+      <p>I wear glasses and also wear a watch.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">他戴黑色的帽子。</p>
+      <p>He wears a black hat.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Extra clothing words</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>长袖</h3><p>cháng xiù</p><span>long sleeve</span></div>
+      <div class="vocab-card"><h3>短袖</h3><p>duǎn xiù</p><span>short sleeve</span></div>
+      <div class="vocab-card"><h3>国旗</h3><p>guó qí</p><span>flag</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢穿白色的短袖。</p>
+      <p>I like wearing a white short-sleeved shirt.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">国旗是红色、白色和蓝色的。</p>
+      <p>The flag is red, white and blue.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我喜欢蓝色和黑色。我戴眼镜，也戴手表。我喜欢穿白色的短袖。
+      </p>
+      <p>
+        I like blue and black. I wear glasses and also wear a watch. I like wearing a white short-sleeved shirt.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="clothes.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "颜色 means?", options: ["Colour", "Hat", "Watch"], correct: "Colour" },
+    { q: "红色 means?", options: ["Red", "Blue", "Green"], correct: "Red" },
+    { q: "黄色 means?", options: ["Yellow", "White", "Black"], correct: "Yellow" },
+    { q: "绿色 means?", options: ["Green", "Orange", "Red"], correct: "Green" }
+  ],
+
+  q2: [
+    { q: "领带 means?", options: ["Tie", "Hat", "Glasses"], correct: "Tie" },
+    { q: "帽子 means?", options: ["Hat / cap", "Watch", "Tie"], correct: "Hat / cap" },
+    { q: "手表 means?", options: ["Watch", "Glasses", "Flag"], correct: "Watch" },
+    { q: "眼镜 means?", options: ["Glasses", "Hat", "Long sleeve"], correct: "Glasses" }
+  ],
+
+  q3: [
+    { q: "长袖 means?", options: ["Long sleeve", "Short sleeve", "Colour"], correct: "Long sleeve" },
+    { q: "短袖 means?", options: ["Short sleeve", "Long sleeve", "Tie"], correct: "Short sleeve" },
+    { q: "国旗 means?", options: ["Flag", "Watch", "Glasses"], correct: "Flag" },
+    { q: "蓝色 means?", options: ["Blue", "Black", "White"], correct: "Blue" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countryside and Opinions | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Living Environment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="living-environment.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Countryside and Opinions</h2>
+  <p>Learn how to describe the countryside, scenery, seaside and opinions about places.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Countryside and places</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>乡下</h3><p>xiāng xià</p><span>countryside</span></div>
+      <div class="vocab-card"><h3>村子</h3><p>cūn zi</p><span>village</span></div>
+      <div class="vocab-card"><h3>风景</h3><p>fēng jǐng</p><span>scenery</span></div>
+      <div class="vocab-card"><h3>树林</h3><p>shù lín</p><span>forest</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">乡下的风景很好看。</p>
+      <p>The scenery in the countryside is beautiful.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Seaside and roads</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>海边</h3><p>hǎi biān</p><span>seaside</span></div>
+      <div class="vocab-card"><h3>海</h3><p>hǎi</p><span>sea</span></div>
+      <div class="vocab-card"><h3>居民</h3><p>jū mín</p><span>residents</span></div>
+      <div class="vocab-card"><h3>路口</h3><p>lù kǒu</p><span>junction / intersection</span></div>
+      <div class="vocab-card"><h3>拐</h3><p>guǎi</p><span>to turn</span></div>
+      <div class="vocab-card"><h3>多久</h3><p>duō jiǔ</p><span>how long</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">到路口以后，向左拐。</p>
+      <p>After you get to the junction, turn left.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">你在海边住了多久？</p>
+      <p>How long have you lived by the seaside?</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Online opinions</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>收藏</h3><p>shōu cáng</p><span>to save</span></div>
+      <div class="vocab-card"><h3>转发</h3><p>zhuǎn fā</p><span>to repost / retweet</span></div>
+      <div class="vocab-card"><h3>评论</h3><p>píng lùn</p><span>to comment</span></div>
+      <div class="vocab-card"><h3>点赞</h3><p>diǎn zàn</p><span>to like</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢这个风景，所以点赞了。</p>
+      <p>I like this scenery, so I liked it online.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Advantages and disadvantages</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>好处</h3><p>hǎo chù</p><span>advantage</span></div>
+      <div class="vocab-card"><h3>坏处</h3><p>huài chù</p><span>disadvantage / harm</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">住在乡下有很多好处，但是也有坏处。</p>
+      <p>Living in the countryside has many advantages, but also disadvantages.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我喜欢乡下，因为风景很好看。海边很安静，但是离市中心很远。
+      </p>
+      <p>
+        I like the countryside because the scenery is beautiful. The seaside is quiet, but it is far from the city centre.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="living-environment.html">← Back to Topic</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "乡下 means?", options: ["Countryside", "Village", "Sea"], correct: "Countryside" },
+    { q: "村子 means?", options: ["Village", "Forest", "Road"], correct: "Village" },
+    { q: "风景 means?", options: ["Scenery", "Resident", "Advantage"], correct: "Scenery" },
+    { q: "树林 means?", options: ["Forest", "Seaside", "Junction"], correct: "Forest" }
+  ],
+
+  q2: [
+    { q: "海边 means?", options: ["Seaside", "Forest", "Village"], correct: "Seaside" },
+    { q: "居民 means?", options: ["Residents", "Scenery", "Sea"], correct: "Residents" },
+    { q: "路口 means?", options: ["Junction", "Village", "Forest"], correct: "Junction" },
+    { q: "拐 means?", options: ["To turn", "To save", "To comment"], correct: "To turn" },
+    { q: "多久 means?", options: ["How long", "How much", "Where"], correct: "How long" }
+  ],
+
+  q3: [
+    { q: "收藏 means?", options: ["To save", "To turn", "To live"], correct: "To save" },
+    { q: "转发 means?", options: ["To repost", "To comment", "To like"], correct: "To repost" },
+    { q: "评论 means?", options: ["To comment", "To save", "To turn"], correct: "To comment" },
+    { q: "点赞 means?", options: ["To like", "To save", "To repost"], correct: "To like" },
+    { q: "好处 means?", options: ["Advantage", "Disadvantage", "Junction"], correct: "Advantage" },
+    { q: "坏处 means?", options: ["Disadvantage / harm", "Advantage", "Scenery"], correct: "Disadvantage / harm" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

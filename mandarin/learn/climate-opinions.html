@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Climate Opinions | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Weather and Climate</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="weather-and-climate.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Climate and Opinions</h2>
+  <p>Learn how to describe changing weather, give opinions and talk about climate trends.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Ongoing changes</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>起来</h3><p>qǐ lái</p><span>indicates something has started and is ongoing</span></div>
+      <div class="vocab-card"><h3>变成</h3><p>biàn chéng</p><span>to become</span></div>
+      <div class="vocab-card"><h3>降</h3><p>jiàng</p><span>to drop / fall</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">天气冷起来了。</p>
+      <p>The weather has started to become cold.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">气温开始下降。</p>
+      <p>The temperature has started to drop.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Describing weather</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>好像</h3><p>hǎo xiàng</p><span>to seem / to look like</span></div>
+      <div class="vocab-card"><h3>低</h3><p>dī</p><span>low</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">今天好像要下雨。</p>
+      <p>It looks like it is going to rain today.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">气温很低。</p>
+      <p>The temperature is very low.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Events and changes</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>场</h3><p>chǎng</p><span>measure word for events</span></div>
+      <div class="vocab-card"><h3>上传</h3><p>shàng chuán</p><span>to upload</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这是一场很大的雷雨。</p>
+      <p>This is a big thunderstorm.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        最近天气冷起来了，气温下降了。今天好像要下雨，气温也很低。
+      </p>
+      <p>
+        Recently the weather has started to become cold, and the temperature has dropped. Today it looks like it will rain, and the temperature is also low.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="weather-and-climate.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "起来 means?", options: ["Indicates ongoing change", "To become", "To upload"], correct: "Indicates ongoing change" },
+    { q: "变成 means?", options: ["To become", "To drop", "Low"], correct: "To become" },
+    { q: "降 means?", options: ["To drop / fall", "To rise", "To upload"], correct: "To drop / fall" }
+  ],
+
+  q2: [
+    { q: "好像 means?", options: ["To seem / look like", "To upload", "To become"], correct: "To seem / look like" },
+    { q: "低 means?", options: ["Low", "High", "Warm"], correct: "Low" }
+  ],
+
+  q3: [
+    { q: "场 means?", options: ["Measure word for events", "Place", "Weather"], correct: "Measure word for events" },
+    { q: "上传 means?", options: ["To upload", "To drop", "To change"], correct: "To upload" },
+    { q: "天气冷起来了 means?", options: ["Weather is becoming cold", "Weather is hot", "Weather is sunny"], correct: "Weather is becoming cold" }
+  ]
+};
+
+function showStep(stepNumber) {
+  document.querySelectorAll(".step").forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  if (continueButton) {
+    continueButton.classList.remove("hidden");
+  }
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

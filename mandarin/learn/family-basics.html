@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family Basics | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Family and Pets</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="family-pets.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Family Basics</h2>
+  <p>Learn how to talk about your family and who is in it.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Core family words</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>家庭</h3><p>jiātíng</p><span>family</span></div>
+      <div class="vocab-card"><h3>爸爸</h3><p>bàba</p><span>dad</span></div>
+      <div class="vocab-card"><h3>妈妈</h3><p>māma</p><span>mum</span></div>
+      <div class="vocab-card"><h3>哥哥</h3><p>gēge</p><span>older brother</span></div>
+      <div class="vocab-card"><h3>姐姐</h3><p>jiějie</p><span>older sister</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我有一个家庭。</p>
+      <p>I have a family.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. Younger family members</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>弟弟</h3><p>dìdi</p><span>younger brother</span></div>
+      <div class="vocab-card"><h3>妹妹</h3><p>mèimei</p><span>younger sister</span></div>
+      <div class="vocab-card"><h3>兄弟姐妹</h3><p>xiōngdì jiěmèi</p><span>siblings</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我有两个兄弟姐妹。</p>
+      <p>I have two siblings.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Numbers and people</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>有</h3><p>yǒu</p><span>to have</span></div>
+      <div class="vocab-card"><h3>口</h3><p>kǒu</p><span>measure word (family)</span></div>
+      <div class="vocab-card"><h3>人</h3><p>rén</p><span>person</span></div>
+      <div class="vocab-card"><h3>个</h3><p>gè</p><span>general measure word</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我家有四口人。</p>
+      <p>There are four people in my family.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>4. Extended family</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>爷爷</h3><p>yéye</p><span>grandfather</span></div>
+      <div class="vocab-card"><h3>奶奶</h3><p>nǎinai</p><span>grandmother</span></div>
+      <div class="vocab-card"><h3>和</h3><p>hé</p><span>and</span></div>
+      <div class="vocab-card"><h3>的</h3><p>de</p><span>possessive</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这是我的爸爸和妈妈。</p>
+      <p>This is my dad and mum.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<!-- END -->
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我有一个家庭。我家有四口人：爸爸，妈妈，我和哥哥。
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="family-pets.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+const questions = {
+  q1: [
+    { q: "爸爸 means?", options: ["Dad", "Brother", "Friend"], correct: "Dad" },
+    { q: "妈妈 means?", options: ["Mum", "Sister", "Teacher"], correct: "Mum" },
+    { q: "家庭 means?", options: ["Family", "City", "School"], correct: "Family" }
+  ],
+
+  q2: [
+    { q: "弟弟 means?", options: ["Younger brother", "Older brother", "Grandfather"], correct: "Younger brother" },
+    { q: "妹妹 means?", options: ["Younger sister", "Older sister", "Mother"], correct: "Younger sister" },
+    { q: "兄弟姐妹 means?", options: ["Siblings", "Parents", "Friends"], correct: "Siblings" }
+  ],
+
+  q3: [
+    { q: "口 is used for counting what?", options: ["Family members", "Countries", "Cities"], correct: "Family members" },
+    { q: "和 means?", options: ["And", "Is", "Have"], correct: "And" },
+    { q: "的 usually shows...", options: ["Possession", "Question", "Goodbye"], correct: "Possession" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+  if (!box) return;
+
+  const question = getRandomQuestion(questionSet);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${question.options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.trim().includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

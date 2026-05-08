@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning Chinese Final Test | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Learning Chinese as a Foreign Language | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="learning-chinese-foreign-language.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Final Test</h2>
+  <p>25 mixed questions and one exam-style writing task.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder light-essay">
+    <p><strong>Write a Mandarin paragraph about learning Chinese. Try to include:</strong></p>
+
+    <ul>
+      <li>where or how you learn Chinese</li>
+      <li>one language skill, like 听力, 阅读 or 口语</li>
+      <li>one difficulty</li>
+      <li>one way you practise</li>
+      <li>one opinion about learning Chinese</li>
+      <li>one sentence using 因为……所以……</li>
+      <li>one contrast using 虽然……但是……</li>
+      <li>one strong structure using 不仅……而且……</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+    <button class="continue-btn" onclick="checkEssay()">Check Essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="learning-chinese-foreign-language-4.html">← Previous Page</a>
+  <a href="learning-chinese-foreign-language.html">Back to Topic</a>
+  <a href="../learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+  {t:"mcq", q:"学中文 means?", o:["To learn Chinese","To teach Chinese","To write Chinese"], a:"To learn Chinese"},
+  {t:"mcq", q:"汉语 means?", o:["Chinese language / Mandarin","Homework","Lesson"], a:"Chinese language / Mandarin"},
+  {t:"mcq", q:"作业 means?", o:["Homework","Exam","Language"], a:"Homework"},
+  {t:"mcq", q:"练习 means?", o:["To practise","To celebrate","To download"], a:"To practise"},
+  {t:"mcq", q:"发音 means?", o:["Pronunciation","Homework","Teacher"], a:"Pronunciation"},
+  {t:"mcq", q:"声调 means?", o:["Tones","Vocabulary","Characters"], a:"Tones"},
+  {t:"mcq", q:"听力 means?", o:["Listening","Reading","Writing"], a:"Listening"},
+  {t:"mcq", q:"阅读 means?", o:["Reading","Listening","Speaking"], a:"Reading"},
+
+  {t:"fill", q:"我在学校 ____。", o:["学中文","看表演","放烟花"], a:"学中文"},
+  {t:"fill", q:"我每天做中文 ____。", o:["作业","红包","账号"], a:"作业"},
+  {t:"fill", q:"中文的声调有一点 ____。", o:["难","好吃","热闹"], a:"难"},
+  {t:"fill", q:"我的中文越来越 ____。", o:["好","忙","贵"], a:"好"},
+  {t:"fill", q:"因为中文很有用，____ 我想继续学习。", o:["所以","但是","虽然"], a:"所以"},
+  {t:"fill", q:"虽然中文不容易，____ 很有意思。", o:["但是","因为","所以"], a:"但是"},
+
+  {t:"type", q:"Type the Chinese for: homework", a:"作业"},
+  {t:"type", q:"Type the Chinese for: exam", a:"考试"},
+  {t:"type", q:"Type the Chinese for: listening", a:"听力"},
+  {t:"type", q:"Type the Chinese for: confident", a:"自信"},
+  {t:"type", q:"Type the Chinese for: progress", a:"进步"},
+
+  {t:"order", q:"Build: I learn Chinese at school.", w:["我","在学校","学中文"], a:"我在学校学中文"},
+  {t:"order", q:"Build: I often practise Mandarin.", w:["我","常常","练习汉语"], a:"我常常练习汉语"},
+  {t:"order", q:"Build: I like reading Chinese articles.", w:["我","喜欢","阅读中文文章"], a:"我喜欢阅读中文文章"},
+  {t:"order", q:"Build: My Chinese is getting better and better.", w:["我的中文","越来越好"], a:"我的中文越来越好"},
+  {t:"order", q:"Build: Chinese is not only interesting, but also useful.", w:["中文","不仅有意思","而且很有用"], a:"中文不仅有意思而且很有用"},
+  {t:"order", q:"Build: If I persist, I will succeed.", w:["如果我坚持","我会成功"], a:"如果我坚持我会成功"}
+];
+
+function shuffle(array){
+  for(let i=array.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [array[i],array[j]]=[array[j],array[i]];
+  }
+  return array;
+}
+
+function safe(text){
+  return String(text).replace(/'/g,"\\'");
+}
+
+function loadQuestions(){
+  const area = document.getElementById("questionArea");
+  area.innerHTML = "";
+
+  shuffle([...questions]).slice(0,25).forEach(function(q,i){
+    area.innerHTML += buildQuestion(q,i);
+  });
+}
+
+function buildQuestion(q,i){
+  if(q.t === "mcq" || q.t === "fill"){
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option){
+            return `
+              <button onclick="checkAnswer(this,'${safe(option)}','${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if(q.t === "type"){
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this,'${safe(q.a)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if(q.t === "order"){
+    const builderId = "builder" + i;
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${shuffle([...q.w]).map(function(word){
+            return `<button onclick="addWord(this,'${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}','${safe(q.a)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}','${bankId}')">Reset</button>
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button,selected,answer){
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn){
+    btn.disabled = true;
+    if(btn.textContent.includes(answer)){
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if(selected === answer){
+    button.classList.add("correct-answer");
+    markQuestion(true,feedback);
+  } else {
+    button.classList.add("wrong-answer");
+    markQuestion(false,feedback);
+  }
+}
+
+function checkTypedAnswer(button,answer){
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(input.value.trim() === answer,feedback);
+}
+
+function addWord(button,builderId){
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId,answer){
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const studentAnswer = Array.from(builder.children)
+    .map(function(word){
+      return word.textContent;
+    })
+    .join("");
+
+  if(studentAnswer === answer){
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+    markQuestion(true,feedback);
+  } else {
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+    markQuestion(false,feedback);
+  }
+}
+
+function resetOrder(builderId,bankId){
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button){
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect,feedback){
+  total++;
+
+  if(isCorrect){
+    correct++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrong++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults(){
+  document.getElementById("totalQ").textContent = total;
+  document.getElementById("correctQ").textContent = correct;
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+  if(total > 0){
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay(){
+  const text = document.getElementById("essay").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "学中文","汉语","老师","学生","上课","作业","考试","练习",
+    "听音乐","看视频","读书","记单词","有意思","重要","难","容易",
+    "说中文","发音","声调","流利","听力","阅读","理解","文章",
+    "写汉字","笔画","句子","作文","进步","越来越好","努力","自信",
+    "困难","复杂","记不住","错误","提高","复习","继续","希望",
+    "目标","坚持","成功","耐心","因为","所以","虽然","但是","不仅","而且"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word){
+    if(text.includes(word)){
+      found++;
+    }
+  });
+
+  if(text.length < 40){
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write more. Aim for at least 5 sentences.</p>";
+  } else if(found >= 9){
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included lots of language-learning vocabulary and strong structures.</p>";
+  } else if(found >= 6){
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail about skills, challenges or progress.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but add more key Chinese-learning vocabulary and stronger structures.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

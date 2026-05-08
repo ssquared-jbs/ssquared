@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Achievements and Fame | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Interviewing Chinese Celebrities</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="interviewing-chinese-celebrities.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Achievements and Fame</h2>
+  <p>Learn how to describe success, awards, popularity and influence.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Achievements</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>成就</h3><p>chéng jiù</p><span>achievement</span></div>
+      <div class="vocab-card"><h3>成功</h3><p>chéng gōng</p><span>success / successful</span></div>
+      <div class="vocab-card"><h3>奖</h3><p>jiǎng</p><span>award / prize</span></div>
+      <div class="vocab-card"><h3>得奖</h3><p>dé jiǎng</p><span>to win an award</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这位演员有很多成就。</p>
+      <p>This actor has many achievements.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">她去年得了一个奖。</p>
+      <p>She won an award last year.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Popularity</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>受欢迎</h3><p>shòu huān yíng</p><span>popular</span></div>
+      <div class="vocab-card"><h3>粉丝</h3><p>fěn sī</p><span>fans</span></div>
+      <div class="vocab-card"><h3>有名</h3><p>yǒu míng</p><span>famous</span></div>
+      <div class="vocab-card"><h3>出名</h3><p>chū míng</p><span>to become famous</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">这个歌手很受欢迎。</p>
+      <p>This singer is very popular.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">他有很多年轻粉丝。</p>
+      <p>He has many young fans.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Influence</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>影响</h3><p>yǐng xiǎng</p><span>influence / impact</span></div>
+      <div class="vocab-card"><h3>榜样</h3><p>bǎng yàng</p><span>role model</span></div>
+      <div class="vocab-card"><h3>鼓励</h3><p>gǔ lì</p><span>to encourage</span></div>
+      <div class="vocab-card"><h3>年轻人</h3><p>nián qīng rén</p><span>young people</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">她是很多年轻人的榜样。</p>
+      <p>She is a role model for many young people.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">他的故事鼓励了很多人。</p>
+      <p>His story encouraged many people.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. Giving opinions on fame</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>压力</h3><p>yā lì</p><span>pressure / stress</span></div>
+      <div class="vocab-card"><h3>不容易</h3><p>bù róng yì</p><span>not easy</span></div>
+      <div class="vocab-card"><h3>值得佩服</h3><p>zhí de pèi fu</p><span>worth admiring</span></div>
+      <div class="vocab-card"><h3>努力工作</h3><p>nǔ lì gōng zuò</p><span>to work hard</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我觉得当明星不容易。</p>
+      <p>I think being a celebrity is not easy.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">她努力工作，值得佩服。</p>
+      <p>She works hard and is worth admiring.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        这位歌手很成功，也很受欢迎。她有很多粉丝，而且得过很多奖。我觉得她是年轻人的榜样，值得佩服。
+      </p>
+      <p>
+        This singer is very successful and popular. She has many fans and has won many awards. I think she is a role model for young people and is worth admiring.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="interviewing-chinese-celebrities-sentence-builder.html">← Sentence Builder</a>
+      <a href="interviewing-chinese-celebrities.html">Back to Topic</a>
+      <a href="interviewing-chinese-celebrities-4.html">Next Page →</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "成就 means?", options: ["Achievement", "Question", "Hobby"], correct: "Achievement" },
+    { q: "成功 means?", options: ["Success / successful", "Pressure", "Fan"], correct: "Success / successful" },
+    { q: "奖 means?", options: ["Award / prize", "Interview", "Dream"], correct: "Award / prize" },
+    { q: "得奖 means?", options: ["To win an award", "To become famous", "To answer"], correct: "To win an award" }
+  ],
+
+  q2: [
+    { q: "受欢迎 means?", options: ["Popular", "Difficult", "Nervous"], correct: "Popular" },
+    { q: "粉丝 means?", options: ["Fans", "Actors", "Writers"], correct: "Fans" },
+    { q: "有名 means?", options: ["Famous", "Young", "Important"], correct: "Famous" },
+    { q: "出名 means?", options: ["To become famous", "To interview", "To encourage"], correct: "To become famous" }
+  ],
+
+  q3: [
+    { q: "影响 means?", options: ["Influence / impact", "Award", "Success"], correct: "Influence / impact" },
+    { q: "榜样 means?", options: ["Role model", "Singer", "Director"], correct: "Role model" },
+    { q: "鼓励 means?", options: ["To encourage", "To admire", "To study"], correct: "To encourage" },
+    { q: "年轻人 means?", options: ["Young people", "Celebrities", "Fans"], correct: "Young people" },
+    { q: "值得佩服 means?", options: ["Worth admiring", "Very famous", "Not easy"], correct: "Worth admiring" }
+  ]
+};
+
+function showStep(n){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+  document.getElementById("step"+n).classList.add("active-step");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+  for(let i=a.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function loadQuestion(id,set){
+  const q = questions[set][Math.floor(Math.random()*questions[set].length)];
+  const opts = shuffle([...q.options]);
+  const letters=["A","B","C"];
+
+  document.getElementById(id).innerHTML = `
+    <p>${q.q}</p>
+    <div class="quiz-buttons">
+      ${opts.map((o,i)=>`
+        <button onclick="checkAnswer(this,'${o}','${q.correct}')">
+          <strong>${letters[i]}.</strong> ${o}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(btn,sel,ans){
+  const box=btn.closest(".lesson-card");
+  const feedback=box.querySelector(".feedback");
+  const cont=box.querySelector(".continue-btn");
+
+  box.querySelectorAll(".quiz-buttons button").forEach(b=>{
+    b.disabled=true;
+    if(b.textContent.includes(ans)) b.classList.add("correct-answer");
+  });
+
+  if(sel===ans){
+    feedback.textContent="Correct.";
+    feedback.className="feedback correct-feedback";
+  } else {
+    btn.classList.add("wrong-answer");
+    feedback.textContent="Not quite.";
+    feedback.className="feedback wrong-feedback";
+  }
+
+  cont.disabled = false;
+  cont.classList.remove("hidden");
+}
+
+loadQuestion("q1","q1");
+loadQuestion("q2","q2");
+loadQuestion("q3","q3");
+</script>
+
+</body>
+</html>

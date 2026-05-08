@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Facilities and Neighbourhood | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Living Environment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="living-environment.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Facilities and Neighbourhood</h2>
+  <p>Learn how to describe local facilities and places near your home.</p>
+</section>
+
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+
+    <h2>1. Public Facilities</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>设施</h3><p>shè shī</p><span>facilities</span></div>
+      <div class="vocab-card"><h3>电影院</h3><p>diàn yǐng yuàn</p><span>cinema</span></div>
+      <div class="vocab-card"><h3>体育场</h3><p>tǐ yù chǎng</p><span>sports stadium</span></div>
+      <div class="vocab-card"><h3>图书馆</h3><p>tú shū guǎn</p><span>library</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我家附近有图书馆和电影院。</p>
+      <p>There is a library and a cinema near my home.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step2">
+  <div class="lesson-card">
+
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step3">
+  <div class="lesson-card">
+
+    <h2>2. Around Town</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>警察局</h3><p>jǐng chá jú</p><span>police station</span></div>
+      <div class="vocab-card"><h3>广场</h3><p>guǎng chǎng</p><span>plaza / square</span></div>
+      <div class="vocab-card"><h3>对面</h3><p>duì miàn</p><span>opposite</span></div>
+      <div class="vocab-card"><h3>附近</h3><p>fù jìn</p><span>nearby</span></div>
+      <div class="vocab-card"><h3>小区</h3><p>xiǎo qū</p><span>housing estate</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">警察局在广场对面。</p>
+      <p>The police station is opposite the square.</p>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我住的小区很方便。</p>
+      <p>The housing estate where I live is very convenient.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step4">
+  <div class="lesson-card">
+
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step5">
+  <div class="lesson-card">
+
+    <h2>3. Useful Local Places</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>邻居</h3><p>lín jū</p><span>neighbour</span></div>
+      <div class="vocab-card"><h3>诊所</h3><p>zhěn suǒ</p><span>clinic</span></div>
+      <div class="vocab-card"><h3>汽车站</h3><p>qì chē zhàn</p><span>bus stop / bus station</span></div>
+      <div class="vocab-card"><h3>游泳池</h3><p>yóu yǒng chí</p><span>swimming pool</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我家附近有诊所、汽车站和游泳池。</p>
+      <p>Near my home there is a clinic, a bus stop and a swimming pool.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step6">
+  <div class="lesson-card">
+
+    <h2>4. More Places</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>停车场</h3><p>tíng chē chǎng</p><span>car park</span></div>
+      <div class="vocab-card"><h3>游乐场</h3><p>yóu lè chǎng</p><span>playground</span></div>
+      <div class="vocab-card"><h3>邮局</h3><p>yóu jú</p><span>post office</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">邮局在停车场旁边。</p>
+      <p>The post office is next to the car park.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(7)">Continue →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step7">
+  <div class="lesson-card">
+
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+
+    <button class="continue-btn hidden" onclick="showStep(8)">Finish →</button>
+
+  </div>
+</section>
+
+<section class="step" id="step8">
+  <div class="lesson-card finish-card">
+
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我家附近有图书馆、电影院和汽车站。警察局在广场对面，邮局在停车场旁边。
+      </p>
+      <p>
+        Near my home there is a library, cinema and bus stop. The police station is opposite the square, and the post office is beside the car park.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="living-environment.html">← Back to Topic</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "设施 means?", options: ["Facilities", "Cinema", "Neighbour"], correct: "Facilities" },
+    { q: "电影院 means?", options: ["Cinema", "Library", "Clinic"], correct: "Cinema" },
+    { q: "体育场 means?", options: ["Sports stadium", "Police station", "Bus stop"], correct: "Sports stadium" },
+    { q: "图书馆 means?", options: ["Library", "Square", "Car park"], correct: "Library" }
+  ],
+
+  q2: [
+    { q: "警察局 means?", options: ["Police station", "Post office", "Cinema"], correct: "Police station" },
+    { q: "广场 means?", options: ["Square", "Swimming pool", "Housing estate"], correct: "Square" },
+    { q: "对面 means?", options: ["Opposite", "Nearby", "North"], correct: "Opposite" },
+    { q: "附近 means?", options: ["Nearby", "Downstairs", "Direction"], correct: "Nearby" },
+    { q: "小区 means?", options: ["Housing estate", "Library", "Neighbour"], correct: "Housing estate" }
+  ],
+
+  q3: [
+    { q: "邻居 means?", options: ["Neighbour", "Clinic", "Bus stop"], correct: "Neighbour" },
+    { q: "诊所 means?", options: ["Clinic", "Police station", "Post office"], correct: "Clinic" },
+    { q: "汽车站 means?", options: ["Bus stop / bus station", "Car park", "Sports stadium"], correct: "Bus stop / bus station" },
+    { q: "游泳池 means?", options: ["Swimming pool", "Playground", "Square"], correct: "Swimming pool" },
+    { q: "停车场 means?", options: ["Car park", "Post office", "Library"], correct: "Car park" },
+    { q: "邮局 means?", options: ["Post office", "Cinema", "Clinic"], correct: "Post office" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

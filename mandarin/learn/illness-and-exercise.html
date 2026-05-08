@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Illness and Exercise | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Health and Fitness</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="health-fitness.html">← Back to Health and Fitness</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Illness and Exercise</h2>
+  <p>Learn how to talk about illness, doctors and staying healthy.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+<div class="lesson-card">
+<h2>1. Illness</h2>
+
+<div class="vocab-grid">
+<div class="vocab-card"><h3>病</h3><p>bìng</p><span>illness</span></div>
+<div class="vocab-card"><h3>发烧</h3><p>fā shāo</p><span>fever</span></div>
+<div class="vocab-card"><h3>感冒</h3><p>gǎn mào</p><span>cold / flu</span></div>
+<div class="vocab-card"><h3>疼</h3><p>téng</p><span>pain</span></div>
+</div>
+
+<div class="sentence-block">
+<p class="chinese">我感冒了，还有点儿发烧。</p>
+<p>I have a cold and also a bit of a fever.</p>
+</div>
+
+<button class="continue-btn" onclick="showStep(2)">Continue →</button>
+</div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+<div class="lesson-card">
+<h2>Quick Check</h2>
+<div id="q1"></div>
+<p class="feedback"></p>
+<button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+</div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+<div class="lesson-card">
+<h2>2. Doctors and hospitals</h2>
+
+<div class="vocab-grid">
+<div class="vocab-card"><h3>看病</h3><p>kàn bìng</p><span>see a doctor</span></div>
+<div class="vocab-card"><h3>医生</h3><p>yī shēng</p><span>doctor</span></div>
+<div class="vocab-card"><h3>医院</h3><p>yī yuàn</p><span>hospital</span></div>
+<div class="vocab-card"><h3>住院</h3><p>zhù yuàn</p><span>hospitalised</span></div>
+<div class="vocab-card"><h3>药房</h3><p>yào fáng</p><span>pharmacy</span></div>
+</div>
+
+<div class="sentence-block">
+<p class="chinese">我去医院看病。</p>
+<p>I go to the hospital to see a doctor.</p>
+</div>
+
+<button class="continue-btn" onclick="showStep(4)">Continue →</button>
+</div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+<div class="lesson-card">
+<h2>Check</h2>
+<div id="q2"></div>
+<p class="feedback"></p>
+<button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+</div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+<div class="lesson-card">
+<h2>3. Exercise and health</h2>
+
+<div class="vocab-grid">
+<div class="vocab-card"><h3>散步</h3><p>sàn bù</p><span>walk</span></div>
+<div class="vocab-card"><h3>锻炼身体</h3><p>duàn liàn shēn tǐ</p><span>exercise</span></div>
+<div class="vocab-card"><h3>开心</h3><p>kāi xīn</p><span>happy</span></div>
+<div class="vocab-card"><h3>聊天</h3><p>liáo tiān</p><span>chat</span></div>
+</div>
+
+<div class="sentence-block">
+<p class="chinese">我喜欢散步和锻炼身体。</p>
+<p>I like walking and exercising.</p>
+</div>
+
+<div class="sentence-block">
+<p class="chinese">我和朋友聊天，很开心。</p>
+<p>I chat with friends and feel happy.</p>
+</div>
+
+<button class="continue-btn" onclick="showStep(6)">Continue →</button>
+</div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" id="step6">
+<div class="lesson-card">
+<h2>Final Check</h2>
+<div id="q3"></div>
+<p class="feedback"></p>
+<button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+</div>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" id="step7">
+<div class="lesson-card finish-card">
+<h2>Complete</h2>
+
+<div class="model-answer">
+<p class="chinese">
+我感冒了，所以去医院看病。平时我喜欢散步和锻炼身体，这对身体很好。
+</p>
+<p>
+I had a cold, so I went to the hospital. Normally I like walking and exercising, which is good for my health.
+</p>
+</div>
+
+<div class="bottom-buttons">
+<a href="health-fitness.html">← Back to Topic</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+q1: [
+{ q:"病 means?", options:["Illness","Food","Drink"], correct:"Illness" },
+{ q:"发烧 means?", options:["Fever","Cold","Pain"], correct:"Fever" },
+{ q:"感冒 means?", options:["Cold / flu","Headache","Hospital"], correct:"Cold / flu" }
+],
+
+q2: [
+{ q:"医生 means?", options:["Doctor","Teacher","Friend"], correct:"Doctor" },
+{ q:"医院 means?", options:["Hospital","School","Restaurant"], correct:"Hospital" },
+{ q:"看病 means?", options:["See a doctor","Eat food","Drink water"], correct:"See a doctor" }
+],
+
+q3: [
+{ q:"散步 means?", options:["Walk","Run","Eat"], correct:"Walk" },
+{ q:"锻炼身体 means?", options:["Exercise","Sleep","Cook"], correct:"Exercise" },
+{ q:"开心 means?", options:["Happy","Sad","Tired"], correct:"Happy" }
+]
+};
+
+function showStep(step){
+document.querySelectorAll(".step").forEach(s=>s.classList.remove("active-step"));
+document.getElementById("step"+step).classList.add("active-step");
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function shuffle(a){
+for(let i=a.length-1;i>0;i--){
+let j=Math.floor(Math.random()*(i+1));
+[a[i],a[j]]=[a[j],a[i]];
+}
+return a;
+}
+
+function load(id,set){
+let q = questions[set][Math.floor(Math.random()*questions[set].length)];
+let box = document.getElementById(id);
+let ops = shuffle([...q.options]);
+
+box.innerHTML = `
+<p>${q.q}</p>
+<div class="quiz-buttons">
+${ops.map(o=>`<button onclick="check(this,'${o}','${q.correct}')">${o}</button>`).join("")}
+</div>
+`;
+}
+
+function check(btn,a,c){
+let card = btn.closest(".lesson-card");
+let fb = card.querySelector(".feedback");
+let btns = card.querySelectorAll("button");
+
+btns.forEach(b=>{
+b.disabled=true;
+if(b.textContent===c){b.classList.add("correct-answer");}
+});
+
+if(a===c){
+fb.textContent="Correct.";
+fb.className="feedback correct-feedback";
+} else {
+btn.classList.add("wrong-answer");
+fb.textContent="Not quite.";
+fb.className="feedback wrong-feedback";
+}
+
+card.querySelector(".continue-btn").classList.remove("hidden");
+}
+
+load("q1","q1");
+load("q2","q2");
+load("q3","q3");
+</script>
+
+</body>
+</html>

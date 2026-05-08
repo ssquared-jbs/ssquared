@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Everyday Life Sentence Builder | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Everyday Life | Sentence Builder</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="everyday-life.html">← Back to Everyday Life</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Everyday Life Sentence Builder</h2>
+  <p>Practise building sentences about time, daily routine and activities.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Mixed Practice</h2>
+  <p>Try the questions below. There are multiple choice, fill-in, typed answers and word-order questions.</p>
+
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="everyday-life.html">← Back to Topic</a>
+</div>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+let totalQuestions = 0;
+let correctAnswers = 0;
+let wrongAnswers = 0;
+
+const questions = [
+  { type: "mcq", q: "What does 起床 mean?", options: ["Get up", "Sleep", "Rest"], correct: "Get up" },
+  { type: "mcq", q: "What does 早饭 mean?", options: ["Breakfast", "Lunch", "Dinner"], correct: "Breakfast" },
+  { type: "mcq", q: "What does 下午 mean?", options: ["Afternoon", "Morning", "Midday"], correct: "Afternoon" },
+
+  { type: "fill", q: "我早上七点 ____。", options: ["起床", "睡觉", "演出"], correct: "起床" },
+  { type: "fill", q: "我中午吃 ____。", options: ["午饭", "早饭", "羽毛球"], correct: "午饭" },
+  { type: "fill", q: "我们一起 ____ 生日会。", options: ["去", "刷牙", "穿"], correct: "去" },
+  { type: "fill", q: "我在学校打 ____。", options: ["羽毛球", "晚饭", "时间"], correct: "羽毛球" },
+
+  { type: "type", q: "Type the Chinese for: get up", correct: "起床" },
+  { type: "type", q: "Type the Chinese for: breakfast", correct: "早饭" },
+  { type: "type", q: "Type the Chinese for: school", correct: "学校" },
+
+  { type: "order", q: "Build: I get up at 7am.", words: ["七点", "我", "起床"], correct: "我七点起床" },
+  { type: "order", q: "Build: I eat lunch at midday.", words: ["吃午饭", "我", "中午"], correct: "我中午吃午饭" },
+  { type: "order", q: "Build: We go together.", words: ["一起", "我们", "去"], correct: "我们一起去" },
+  { type: "order", q: "Build: I play badminton at school.", words: ["在学校", "我", "打羽毛球"], correct: "我在学校打羽毛球" },
+
+  { type: "mcq", q: "Which sentence means: I am brushing my teeth?", options: ["我正在刷牙。", "我正在睡觉。", "我正在吃午饭。"], correct: "我正在刷牙。" },
+  { type: "mcq", q: "Which sentence means: The answer is correct?", options: ["回答是对的。", "回答是错的。", "回答是忙的。"], correct: "回答是对的。" }
+];
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+  return array;
+}
+
+function safe(text) {
+  return text.replace(/'/g, "\\'");
+}
+
+function loadQuestions() {
+  const area = document.getElementById("questionArea");
+  const shuffledQuestions = shuffle([...questions]);
+  area.innerHTML = "";
+
+  shuffledQuestions.forEach(function(question, index) {
+    area.innerHTML += buildQuestion(question, index);
+  });
+}
+
+function buildQuestion(question, index) {
+  if (question.type === "mcq") {
+    const options = shuffle([...question.options]);
+    const letters = ["A", "B", "C"];
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p>${question.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option, i) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(question.correct)}')">
+                <strong>${letters[i]}.</strong> ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (question.type === "fill") {
+    const options = shuffle([...question.options]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p class="chinese">${question.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option) {
+            return `
+              <button onclick="checkAnswer(this, '${safe(option)}', '${safe(question.correct)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (question.type === "type") {
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p>${question.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this, '${safe(question.correct)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if (question.type === "order") {
+    const words = shuffle([...question.words]);
+    const builderId = "builder" + index;
+    const bankId = "bank" + index;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${index + 1}</h3>
+        <p>${question.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${words.map(function(word) {
+            return `<button onclick="addWord(this, '${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}', '${safe(question.correct)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}', '${bankId}')">Reset</button>
+
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button, selected, correct) {
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+    if (btn.textContent.includes(correct)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  markQuestion(selected === correct, feedback, button);
+}
+
+function checkTypedAnswer(button, correct) {
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+  const answer = input.value.trim();
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(answer === correct, feedback, button);
+}
+
+function addWord(button, builderId) {
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId, correct) {
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const answer = Array.from(builder.children)
+    .map(function(word) {
+      return word.textContent;
+    })
+    .join("");
+
+  markQuestion(answer === correct, feedback, builder);
+}
+
+function resetOrder(builderId, bankId) {
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-answer");
+  builder.classList.remove("wrong-answer");
+
+  bank.querySelectorAll("button").forEach(function(button) {
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect, feedback, element) {
+  totalQuestions++;
+
+  if (isCorrect) {
+    correctAnswers++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+    element.classList.add("correct-answer");
+  } else {
+    wrongAnswers++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+    element.classList.add("wrong-answer");
+  }
+
+  updateResults();
+}
+
+function updateResults() {
+  document.getElementById("totalQ").textContent = totalQuestions;
+  document.getElementById("correctQ").textContent = correctAnswers;
+  document.getElementById("wrongQ").textContent = wrongAnswers;
+
+  let percent = 0;
+
+  if (totalQuestions > 0) {
+    percent = Math.round((correctAnswers / totalQuestions) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>

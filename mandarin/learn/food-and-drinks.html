@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food and Drinks | Mandarin²</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Eating and Drinking</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="eating-drinking.html">← Back to Eating and Drinking</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Food and Drinks</h2>
+  <p>Learn common fruits and foods.</p>
+</section>
+
+<!-- STEP 1 -->
+<section class="step active-step" id="step1">
+  <div class="lesson-card">
+    <h2>1. Fruits</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>水果</h3><p>shuǐguǒ</p><span>fruit</span></div>
+      <div class="vocab-card"><h3>苹果</h3><p>píngguǒ</p><span>apple</span></div>
+      <div class="vocab-card"><h3>香蕉</h3><p>xiāngjiāo</p><span>banana</span></div>
+      <div class="vocab-card"><h3>橙子</h3><p>chéngzi</p><span>orange</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢吃水果。</p>
+      <p>I like eating fruit.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(2)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" id="step2">
+  <div class="lesson-card">
+    <h2>Quick Check</h2>
+    <div id="q1"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(3)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" id="step3">
+  <div class="lesson-card">
+    <h2>2. More fruits</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>葡萄</h3><p>pútáo</p><span>grapes</span></div>
+      <div class="vocab-card"><h3>草莓</h3><p>cǎoméi</p><span>strawberry</span></div>
+      <div class="vocab-card"><h3>西瓜</h3><p>xīguā</p><span>watermelon</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢吃草莓和西瓜。</p>
+      <p>I like eating strawberries and watermelon.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(4)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" id="step4">
+  <div class="lesson-card">
+    <h2>Check</h2>
+    <div id="q2"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(5)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" id="step5">
+  <div class="lesson-card">
+    <h2>3. Other food</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card"><h3>土豆</h3><p>tǔdòu</p><span>potato</span></div>
+    </div>
+
+    <div class="sentence-block">
+      <p class="chinese">我喜欢吃土豆。</p>
+      <p>I like eating potatoes.</p>
+    </div>
+
+    <button class="continue-btn" onclick="showStep(6)">Continue →</button>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" id="step6">
+  <div class="lesson-card">
+    <h2>Final Check</h2>
+    <div id="q3"></div>
+    <p class="feedback"></p>
+    <button class="continue-btn hidden" onclick="showStep(7)">Finish →</button>
+  </div>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" id="step7">
+  <div class="lesson-card finish-card">
+    <h2>Complete</h2>
+
+    <div class="model-answer">
+      <p class="chinese">
+        我喜欢吃水果，比如苹果、香蕉和西瓜。我也喜欢吃土豆。
+      </p>
+      <p>
+        I like eating fruit, such as apples, bananas and watermelon. I also like eating potatoes.
+      </p>
+    </div>
+
+    <div class="bottom-buttons">
+      <a href="eating-drinking.html">← Back to Topic</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Mandarin²</p>
+</footer>
+
+<script>
+const questions = {
+  q1: [
+    { q: "水果 means?", options: ["Fruit", "Vegetable", "Drink"], correct: "Fruit" },
+    { q: "苹果 means?", options: ["Apple", "Banana", "Grapes"], correct: "Apple" },
+    { q: "香蕉 means?", options: ["Banana", "Orange", "Strawberry"], correct: "Banana" }
+  ],
+
+  q2: [
+    { q: "葡萄 means?", options: ["Grapes", "Apple", "Potato"], correct: "Grapes" },
+    { q: "草莓 means?", options: ["Strawberry", "Watermelon", "Orange"], correct: "Strawberry" },
+    { q: "西瓜 means?", options: ["Watermelon", "Banana", "Grapes"], correct: "Watermelon" }
+  ],
+
+  q3: [
+    { q: "土豆 means?", options: ["Potato", "Apple", "Fruit"], correct: "Potato" },
+    { q: "我喜欢吃水果 means?", options: ["I like eating fruit", "I eat vegetables", "I drink water"], correct: "I like eating fruit" }
+  ]
+};
+
+function showStep(stepNumber) {
+  const steps = document.querySelectorAll(".step");
+
+  steps.forEach(function(step) {
+    step.classList.remove("active-step");
+  });
+
+  const nextStep = document.getElementById("step" + stepNumber);
+
+  if (nextStep) {
+    nextStep.classList.add("active-step");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
+function getRandomQuestion(questionSet) {
+  const list = questions[questionSet];
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+function loadQuestion(containerId, questionSet) {
+  const box = document.getElementById(containerId);
+
+  if (!box) {
+    return;
+  }
+
+  const question = getRandomQuestion(questionSet);
+  const options = shuffle([...question.options]);
+  const letters = ["A", "B", "C"];
+
+  box.innerHTML = `
+    <p class="question-text">${question.q}</p>
+    <div class="quiz-buttons">
+      ${options.map(function(option, index) {
+        return `
+          <button onclick="checkAnswer(this, '${option}', '${question.correct}')">
+            <strong>${letters[index]}.</strong> ${option}
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function checkAnswer(button, selectedAnswer, correctAnswer) {
+  const lessonCard = button.closest(".lesson-card");
+  const buttons = lessonCard.querySelectorAll(".quiz-buttons button");
+  const feedback = lessonCard.querySelector(".feedback");
+  const continueButton = lessonCard.querySelector(".continue-btn");
+
+  buttons.forEach(function(btn) {
+    btn.disabled = true;
+
+    if (btn.textContent.includes(correctAnswer)) {
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct. Well done.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    button.classList.add("wrong-answer");
+    feedback.textContent = "Not quite. The correct answer is highlighted.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+loadQuestion("q1", "q1");
+loadQuestion("q2", "q2");
+loadQuestion("q3", "q3");
+</script>
+
+</body>
+</html>

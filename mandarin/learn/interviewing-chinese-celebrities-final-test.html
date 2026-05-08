@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interviewing Chinese Celebrities Final Test | Mandarin²</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Mandarin²</h1>
+  <p>Interviewing Chinese Celebrities | Final Assessment</p>
+</header>
+
+<main>
+
+<div class="back-button">
+  <a href="interviewing-chinese-celebrities.html">← Back to Topic</a>
+</div>
+
+<section class="sentence-hero">
+  <h2>Final Test</h2>
+  <p>25 mixed questions and one exam-style writing task.</p>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 1: Mixed Questions</h2>
+  <div id="questionArea"></div>
+
+  <div class="results-box">
+    <h3>Your Results</h3>
+    <p>Total: <span id="totalQ">0</span></p>
+    <p>Correct: <span id="correctQ">0</span></p>
+    <p>Wrong: <span id="wrongQ">0</span></p>
+    <p>Score: <span id="percentage">0%</span></p>
+  </div>
+</section>
+
+<section class="lesson-card">
+  <h2>Part 2: Essay Builder</h2>
+
+  <div class="essay-builder light-essay">
+    <p><strong>Write a Mandarin paragraph about interviewing a Chinese celebrity. Try to include:</strong></p>
+
+    <ul>
+      <li>who the celebrity is</li>
+      <li>what type of celebrity they are</li>
+      <li>at least two interview questions</li>
+      <li>one opinion about them</li>
+      <li>one achievement or success word</li>
+      <li>one reason using 因为</li>
+      <li>one contrast using 虽然……但是……</li>
+      <li>one strong structure using 不仅……而且……</li>
+    </ul>
+
+    <textarea id="essay" placeholder="Write your Mandarin paragraph here..."></textarea>
+    <button class="continue-btn" onclick="checkEssay()">Check Essay</button>
+    <div id="essayFeedback" class="essay-feedback"></div>
+  </div>
+</section>
+
+<div class="bottom-buttons">
+  <a href="interviewing-chinese-celebrities-4.html">← Previous Page</a>
+  <a href="interviewing-chinese-celebrities.html">Back to Topic</a>
+  <a href="../learn.html">Back to Learn →</a>
+</div>
+
+</main>
+
+<footer>
+<p>Mandarin²</p>
+</footer>
+
+<script>
+let total = 0;
+let correct = 0;
+let wrong = 0;
+
+const questions = [
+  {t:"mcq", q:"名人 means?", o:["Famous person / celebrity","Teacher","Engineer"], a:"Famous person / celebrity"},
+  {t:"mcq", q:"明星 means?", o:["Star / celebrity","Writer","Director"], a:"Star / celebrity"},
+  {t:"mcq", q:"演员 means?", o:["Actor","Singer","Athlete"], a:"Actor"},
+  {t:"mcq", q:"歌手 means?", o:["Singer","Actor","Writer"], a:"Singer"},
+  {t:"mcq", q:"采访 means?", o:["To interview","To travel","To improve"], a:"To interview"},
+  {t:"mcq", q:"成就 means?", o:["Achievement","Question","Hobby"], a:"Achievement"},
+  {t:"mcq", q:"粉丝 means?", o:["Fans","Actors","Writers"], a:"Fans"},
+  {t:"mcq", q:"榜样 means?", o:["Role model","Singer","Director"], a:"Role model"},
+
+  {t:"fill", q:"我最喜欢的 ____ 是一个歌手。", o:["明星","宿舍","机场"], a:"明星"},
+  {t:"fill", q:"我想 ____ 一位中国演员。", o:["采访","申请","放弃"], a:"采访"},
+  {t:"fill", q:"这位歌手很 ____。", o:["受欢迎","困难","便宜"], a:"受欢迎"},
+  {t:"fill", q:"她去年得了一个 ____。", o:["奖","问题","课程"], a:"奖"},
+  {t:"fill", q:"虽然当明星压力很大，____ 她从不放弃。", o:["但是","因为","所以"], a:"但是"},
+  {t:"fill", q:"她不仅有名，____ 很有影响力。", o:["而且","但是","所以"], a:"而且"},
+
+  {t:"type", q:"Type the Chinese for: actor", a:"演员"},
+  {t:"type", q:"Type the Chinese for: singer", a:"歌手"},
+  {t:"type", q:"Type the Chinese for: question", a:"问题"},
+  {t:"type", q:"Type the Chinese for: dream", a:"梦想"},
+  {t:"type", q:"Type the Chinese for: influence", a:"影响"},
+
+  {t:"order", q:"Build: This actor is very famous.", w:["这个演员","很有名"], a:"这个演员很有名"},
+  {t:"order", q:"Build: I want to interview a Chinese athlete.", w:["我","想","采访","一个中国运动员"], a:"我想采访一个中国运动员"},
+  {t:"order", q:"Build: What are your hobbies?", w:["你的爱好","是什么"], a:"你的爱好是什么"},
+  {t:"order", q:"Build: I admire this celebrity.", w:["我","很佩服","这位名人"], a:"我很佩服这位名人"},
+  {t:"order", q:"Build: She is a role model for young people.", w:["她","是","年轻人的榜样"], a:"她是年轻人的榜样"},
+  {t:"order", q:"Build: She is not only famous, but also influential.", w:["她","不仅有名","而且很有影响力"], a:"她不仅有名而且很有影响力"}
+];
+
+function shuffle(array){
+  for(let i=array.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [array[i],array[j]]=[array[j],array[i]];
+  }
+  return array;
+}
+
+function safe(text){
+  return String(text).replace(/'/g,"\\'");
+}
+
+function loadQuestions(){
+  const area = document.getElementById("questionArea");
+  area.innerHTML = "";
+
+  shuffle([...questions]).slice(0,25).forEach(function(q,i){
+    area.innerHTML += buildQuestion(q,i);
+  });
+}
+
+function buildQuestion(q,i){
+  if(q.t === "mcq" || q.t === "fill"){
+    const options = shuffle([...q.o]);
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+        <div class="quiz-buttons">
+          ${options.map(function(option){
+            return `
+              <button onclick="checkAnswer(this,'${safe(option)}','${safe(q.a)}')">
+                ${option}
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if(q.t === "type"){
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+        <input class="type-answer" type="text" placeholder="Type your answer here">
+        <button class="continue-btn" onclick="checkTypedAnswer(this,'${safe(q.a)}')">Check answer</button>
+        <p class="feedback"></p>
+      </div>
+    `;
+  }
+
+  if(q.t === "order"){
+    const builderId = "builder" + i;
+    const bankId = "bank" + i;
+
+    return `
+      <div class="fill-question">
+        <h3>Question ${i+1}</h3>
+        <p>${q.q}</p>
+
+        <div class="word-bank" id="${bankId}">
+          ${shuffle([...q.w]).map(function(word){
+            return `<button onclick="addWord(this,'${builderId}')">${word}</button>`;
+          }).join("")}
+        </div>
+
+        <div class="sentence-drop" id="${builderId}"></div>
+
+        <button class="continue-btn" onclick="checkOrder('${builderId}','${safe(q.a)}')">Check sentence</button>
+        <button class="reset-btn" onclick="resetOrder('${builderId}','${bankId}')">Reset</button>
+        <p class="feedback" id="${builderId}-feedback"></p>
+      </div>
+    `;
+  }
+}
+
+function checkAnswer(button,selected,answer){
+  const box = button.closest(".fill-question");
+  const buttons = box.querySelectorAll(".quiz-buttons button");
+  const feedback = box.querySelector(".feedback");
+
+  buttons.forEach(function(btn){
+    btn.disabled = true;
+    if(btn.textContent.includes(answer)){
+      btn.classList.add("correct-answer");
+    }
+  });
+
+  if(selected === answer){
+    button.classList.add("correct-answer");
+    markQuestion(true,feedback);
+  } else {
+    button.classList.add("wrong-answer");
+    markQuestion(false,feedback);
+  }
+}
+
+function checkTypedAnswer(button,answer){
+  const box = button.closest(".fill-question");
+  const input = box.querySelector(".type-answer");
+  const feedback = box.querySelector(".feedback");
+
+  input.disabled = true;
+  button.disabled = true;
+
+  markQuestion(input.value.trim() === answer,feedback);
+}
+
+function addWord(button,builderId){
+  const builder = document.getElementById(builderId);
+  const word = document.createElement("span");
+
+  word.textContent = button.textContent;
+  word.className = "chosen-word";
+
+  builder.appendChild(word);
+  button.style.display = "none";
+}
+
+function checkOrder(builderId,answer){
+  const builder = document.getElementById(builderId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  const studentAnswer = Array.from(builder.children)
+    .map(function(word){
+      return word.textContent;
+    })
+    .join("");
+
+  if(studentAnswer === answer){
+    builder.classList.add("correct-builder");
+    builder.classList.remove("wrong-builder");
+    markQuestion(true,feedback);
+  } else {
+    builder.classList.add("wrong-builder");
+    builder.classList.remove("correct-builder");
+    markQuestion(false,feedback);
+  }
+}
+
+function resetOrder(builderId,bankId){
+  const builder = document.getElementById(builderId);
+  const bank = document.getElementById(bankId);
+  const feedback = document.getElementById(builderId + "-feedback");
+
+  builder.innerHTML = "";
+  feedback.textContent = "";
+  builder.classList.remove("correct-builder");
+  builder.classList.remove("wrong-builder");
+
+  bank.querySelectorAll("button").forEach(function(button){
+    button.style.display = "inline-block";
+  });
+}
+
+function markQuestion(isCorrect,feedback){
+  total++;
+
+  if(isCorrect){
+    correct++;
+    feedback.textContent = "Correct.";
+    feedback.className = "feedback correct-feedback";
+  } else {
+    wrong++;
+    feedback.textContent = "Not quite.";
+    feedback.className = "feedback wrong-feedback";
+  }
+
+  updateResults();
+}
+
+function updateResults(){
+  document.getElementById("totalQ").textContent = total;
+  document.getElementById("correctQ").textContent = correct;
+  document.getElementById("wrongQ").textContent = wrong;
+
+  let percent = 0;
+  if(total > 0){
+    percent = Math.round((correct / total) * 100);
+  }
+
+  document.getElementById("percentage").textContent = percent + "%";
+}
+
+function checkEssay(){
+  const text = document.getElementById("essay").value;
+  const feedback = document.getElementById("essayFeedback");
+
+  const targets = [
+    "名人","明星","演员","歌手","运动员","作家","导演","网红",
+    "采访","问题","回答","请问","爱好","空闲时间","成功","困难",
+    "梦想","成就","奖","得奖","受欢迎","粉丝","有名","影响",
+    "榜样","鼓励","年轻人","压力","佩服","因为","所以","虽然",
+    "但是","不仅","而且"
+  ];
+
+  let found = 0;
+
+  targets.forEach(function(word){
+    if(text.includes(word)){
+      found++;
+    }
+  });
+
+  if(text.length < 40){
+    feedback.innerHTML = "<p class='wrong-feedback'>Try to write more. Aim for at least 5 sentences.</p>";
+  } else if(found >= 9){
+    feedback.innerHTML = "<p class='correct-feedback'>Excellent. You included lots of celebrity interview vocabulary and strong structures.</p>";
+  } else if(found >= 6){
+    feedback.innerHTML = "<p class='correct-feedback'>Good answer. Try adding more detail about questions, achievements or opinions.</p>";
+  } else {
+    feedback.innerHTML = "<p class='wrong-feedback'>Good start, but add more key topic vocabulary and sentence structures.</p>";
+  }
+}
+
+loadQuestions();
+</script>
+
+</body>
+</html>
