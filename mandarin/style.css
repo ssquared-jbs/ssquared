@@ -3145,3 +3145,18 @@ textarea {
 .learn-section-card:hover {
   border-color: transparent;
 }
+
+.ssquared-button {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.ssquared-button:hover {
+    background: #333;
+}
