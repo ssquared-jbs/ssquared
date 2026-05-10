@@ -16,29 +16,51 @@
       font-family: Arial, sans-serif;
       background: #050505;
       color: white;
-      min-height: 100vh;
     }
 
     .hero {
-      min-height: 100vh;
-      padding: 40px 20px;
+      height: 62vh;
+      min-height: 420px;
+      position: relative;
+      overflow: hidden;
+
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
 
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.85)),
-        radial-gradient(circle at top, #2b2b2b, #050505 65%);
-      text-align: center;
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.75)),
+        url("images/stars.jpg");
+
+      background-size: cover;
+      background-position: center;
+      animation: slowMove 28s ease-in-out infinite alternate;
+      transform: scale(1.08);
+      z-index: -2;
+    }
+
+    @keyframes slowMove {
+      from {
+        background-position: center top;
+      }
+
+      to {
+        background-position: center bottom;
+      }
     }
 
     .brand {
       position: absolute;
       top: 35px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: bold;
       letter-spacing: 8px;
       text-transform: uppercase;
@@ -47,7 +69,6 @@
     .hero h1 {
       font-size: clamp(5rem, 14vw, 11rem);
       letter-spacing: 4px;
-      margin-bottom: 20px;
       font-weight: 800;
     }
 
@@ -57,15 +78,34 @@
     }
 
     .hero p {
+      margin-top: 15px;
       max-width: 650px;
-      font-size: 1.25rem;
-      color: #d0d0d0;
+      font-size: 1.2rem;
+      color: #e0e0e0;
       line-height: 1.7;
-      margin-bottom: 55px;
+      padding: 0 20px;
+    }
+
+    .platforms {
+      background: #050505;
+      padding: 70px 20px 90px;
+      text-align: center;
+    }
+
+    .platforms h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .platforms > p {
+      color: #aaa;
+      margin-bottom: 45px;
     }
 
     .cards {
       width: min(1000px, 100%);
+      margin: 0 auto;
+
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
@@ -75,8 +115,7 @@
       padding: 35px 28px;
       border-radius: 22px;
       background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.18);
-      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.16);
       box-shadow: 0 20px 50px rgba(0,0,0,0.35);
       transition: 0.25s ease;
     }
@@ -86,7 +125,7 @@
       background: rgba(255,255,255,0.13);
     }
 
-    .card h2 {
+    .card h3 {
       font-size: 2rem;
       margin-bottom: 15px;
     }
@@ -95,6 +134,7 @@
       font-size: 1rem;
       margin-bottom: 28px;
       color: #d6d6d6;
+      line-height: 1.6;
     }
 
     .button {
@@ -113,6 +153,10 @@
       transform: scale(1.03);
     }
 
+    .locked {
+      opacity: 0.75;
+    }
+
     .locked-button {
       display: inline-block;
       padding: 14px 28px;
@@ -123,26 +167,11 @@
       cursor: not-allowed;
     }
 
-    .locked {
-      opacity: 0.75;
-    }
-
     footer {
       padding: 25px;
       text-align: center;
-      background: #050505;
+      background: #030303;
       color: #777;
-    }
-
-    @media (max-width: 700px) {
-      .brand {
-        font-size: 1rem;
-        letter-spacing: 5px;
-      }
-
-      .hero {
-        padding-top: 100px;
-      }
     }
   </style>
 </head>
@@ -150,20 +179,23 @@
 <body>
 
   <section class="hero">
-
     <div class="brand">Ssquared HQ</div>
 
     <h1>S<span class="superscript">2</span></h1>
 
     <p>
       A central hub for creative, educational and interactive projects.
-      Choose a platform below to get started.
     </p>
+  </section>
+
+  <section class="platforms">
+    <h2>Choose a Platform</h2>
+    <p>Select a project below to get started.</p>
 
     <div class="cards">
 
       <div class="card">
-        <h2>Mandarin²</h2>
+        <h3>Mandarin²</h3>
         <p>
           Interactive GCSE Mandarin revision with Learn pages, quizzes,
           flashcards and the 3+2 revision game.
@@ -172,7 +204,7 @@
       </div>
 
       <div class="card locked">
-        <h2>Chemistry²</h2>
+        <h3>Chemistry²</h3>
         <p>
           A future interactive Chemistry platform currently in development.
         </p>
@@ -180,7 +212,6 @@
       </div>
 
     </div>
-
   </section>
 
   <footer>
