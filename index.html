@@ -1,172 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S²</title>    
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S² | Ssquared HQ</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #f5f5f5, #e6e6e6);
-            color: #222;
-            min-height: 100vh;
-        }
-
-        header {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        header h1 {
-            font-size: 4rem;
-            margin-bottom: 15px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .subjects-container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .subject-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .subject-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-        }
-
-        .subject-card h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .subject-card p {
-            margin-bottom: 30px;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .subject-button {
-            display: inline-block;
-            padding: 14px 28px;
-            background: #111;
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: bold;
-            transition: background 0.2s ease;
-        }
-
-        .subject-button:hover {
-            background: #333;
-        }
-
-        footer {
-            margin-top: 80px;
-            text-align: center;
-            padding: 30px;
-            color: #666;
-            background: #e0e0e0;
-        }
-
-    .locked {
-        opacity: 0.8;
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .locked-button {
-    display: inline-block;
-    padding: 14px 28px;
-
-    background: #bdbdbd;
-    color: #555;
-
-    border-radius: 12px;
-
-    font-weight: bold;
-
-    cursor: not-allowed;
-    opacity: 0.85;
+    body {
+      font-family: Arial, sans-serif;
+      background: #050505;
+      color: white;
+      min-height: 100vh;
     }
-       
-        header h1 {
-    font-size: 5rem;
-    margin-bottom: 15px;
-    font-weight: bold;
+
+    .hero {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.85)),
+        radial-gradient(circle at top, #2b2b2b, #050505 65%);
+      text-align: center;
+    }
+
+    .brand {
+      position: absolute;
+      top: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(5rem, 14vw, 11rem);
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      font-weight: 800;
     }
 
     .superscript {
-    font-size: 0.5em;
-    vertical-align: super;
+      font-size: 0.45em;
+      vertical-align: super;
     }
 
-    </style>
+    .hero p {
+      max-width: 650px;
+      font-size: 1.25rem;
+      color: #d0d0d0;
+      line-height: 1.7;
+      margin-bottom: 55px;
+    }
+
+    .cards {
+      width: min(1000px, 100%);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      padding: 35px 28px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.13);
+    }
+
+    .card h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 28px;
+      color: #d6d6d6;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: white;
+      color: #111;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #e7e7e7;
+      transform: scale(1.03);
+    }
+
+    .locked-button {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.2);
+      color: #aaa;
+      font-weight: bold;
+      cursor: not-allowed;
+    }
+
+    .locked {
+      opacity: 0.75;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      background: #050505;
+      color: #777;
+    }
+
+    @media (max-width: 700px) {
+      .brand {
+        font-size: 1rem;
+        letter-spacing: 5px;
+      }
+
+      .hero {
+        padding-top: 100px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>S<span class="superscript">2</span></h1>
-        <p>Interactive revision platforms for modern learners.</p>
-    </header>
+  <section class="hero">
 
-    <section class="subjects-container">
+    <div class="brand">Ssquared HQ</div>
 
-        <div class="subject-card">
-            <h2>Mandarin²</h2>
+    <h1>S<span class="superscript">2</span></h1>
 
-            <p>
-                Interactive GCSE Mandarin revision featuring quizzes,
-                flashcards, learning pages and revision games.
-            </p>
+    <p>
+      A central hub for creative, educational and interactive projects.
+      Choose a platform below to get started.
+    </p>
 
-            <a href="mandarin/index.html" class="subject-button">
-                Open Mandarin²
-            </a>
-        </div>
+    <div class="cards">
 
-        <div class="subject-card">
-            <h2>Chemistry²</h2>
+      <div class="card">
+        <h2>Mandarin²</h2>
+        <p>
+          Interactive GCSE Mandarin revision with Learn pages, quizzes,
+          flashcards and the 3+2 revision game.
+        </p>
+        <a href="mandarin/index.html" class="button">Open Mandarin²</a>
+      </div>
 
-            <p>
-                GCSE Chemistry revision platform currently in development.
-            </p>
+      <div class="card locked">
+        <h2>Chemistry²</h2>
+        <p>
+          A future interactive Chemistry platform currently in development.
+        </p>
+        <div class="locked-button">🔒 Coming Soon</div>
+      </div>
 
-            <div class="locked-button">
-                🔒 Coming Soon
-            </div>
-        </div>
+    </div>
 
-    </section>
+  </section>
 
-    <footer>
-        © 2026 Ssquared
-    </footer>
+  <footer>
+    © 2026 Ssquared HQ
+  </footer>
 
 </body>
 </html>
