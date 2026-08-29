@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lamb B — House Achievements</title>
+
+<style>
+
+:root {
+    --black: #070707;
+    --black2: #111111;
+    --red: #a90000;
+    --red-dark: #700000;
+    --red-light: #d00000;
+    --yellow: #f2c400;
+    --white: #f5f5f5;
+    --grey: #bdbdbd;
+    --line: #4b4b4b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top right, rgba(169,0,0,0.18), transparent 35%),
+        linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+    background: rgba(5,5,5,0.96);
+    border-bottom: 3px solid var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.brand-lion {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.brand span {
+    color: white;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    border: 1px solid var(--red);
+    padding: 7px 15px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.back-button:hover {
+    background: var(--red);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 25px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #252525;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: rgba(169,0,0,0.09);
+    filter: blur(70px);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 950px;
+    z-index: 2;
+}
+
+.hero-kicker {
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    margin: 15px 0 0;
+    font-size: clamp(55px, 10vw, 130px);
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: var(--red-light);
+}
+
+.hero-line {
+    width: 100px;
+    height: 5px;
+    background: var(--red);
+    margin: 35px auto 0;
+}
+
+.hero-subtitle {
+    max-width: 720px;
+    margin: 30px auto 0;
+    color: #d2d2d2;
+    font-size: 19px;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.achievements-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 25px;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    max-width: 850px;
+    margin: 0 auto 90px;
+    text-align: center;
+}
+
+.intro h2 {
+    color: var(--red-light);
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    color: #cfcfcf;
+    font-size: 17px;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.achievement-timeline {
+    position: relative;
+}
+
+.achievement-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--red) 4%,
+        var(--red) 96%,
+        transparent
+    );
+    transform: translateX(-50%);
+}
+
+.term {
+    width: 50%;
+    position: relative;
+    padding: 30px 55px;
+    margin-bottom: 20px;
+}
+
+.term.left {
+    left: 0;
+    text-align: right;
+}
+
+.term.right {
+    left: 50%;
+}
+
+.term-dot {
+    position: absolute;
+    top: 48px;
+    width: 20px;
+    height: 20px;
+    background: var(--red);
+    border: 4px solid var(--black);
+    outline: 2px solid var(--red);
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.term.left .term-dot {
+    right: -10px;
+}
+
+.term.right .term-dot {
+    left: -10px;
+}
+
+/* =========================
+   TERM CARD
+========================= */
+
+.term-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.01)
+        );
+    border: 1px solid #353535;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+    transition: 0.25s;
+}
+
+.term-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--red);
+}
+
+.term.left .term-card {
+    border-right: 4px solid var(--red);
+}
+
+.term.right .term-card {
+    border-left: 4px solid var(--red);
+}
+
+.term-name {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.term-card h2 {
+    margin: 7px 0 20px;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.term-card p {
+    color: #c9c9c9;
+}
+
+/* =========================
+   TROPHY PLACEHOLDER
+========================= */
+
+.trophy-area {
+    margin-top: 25px;
+}
+
+.trophy-placeholder {
+    min-height: 300px;
+    border: 2px dashed #555;
+    border-radius: 8px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(169,0,0,0.08),
+            transparent 65%
+        ),
+        #090909;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.trophy-placeholder span {
+    display: block;
+    color: #555;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   REAL TROPHY IMAGE
+========================= */
+
+.trophy-image {
+    width: 100%;
+    max-height: 550px;
+    object-fit: contain;
+    display: block;
+    background: #050505;
+    border: 1px solid #3a3a3a;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.trophy-caption {
+    margin-top: 12px;
+    color: #999;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+/* =========================
+   FUTURE TERM
+========================= */
+
+.future {
+    opacity: 0.65;
+}
+
+.future .term-card {
+    border-style: dashed;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #292929;
+    padding: 45px 25px;
+    text-align: center;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+footer strong {
+    color: var(--red-light);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .brand {
+        font-size: 12px;
+    }
+
+    .brand-lion {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero {
+        min-height: 380px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .achievement-timeline::before {
+        left: 20px;
+    }
+
+    .term,
+    .term.left,
+    .term.right {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding: 20px 0 20px 55px;
+    }
+
+    .term.left .term-dot,
+    .term.right .term-dot {
+        left: 11px;
+        right: auto;
+    }
+
+    .term.left .term-card,
+    .term.right .term-card {
+        border-left: 4px solid var(--red);
+        border-right: 1px solid #353535;
+    }
+
+    .achievements-container {
+        padding: 0 15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+====================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <img
+            src="../images/lamb-b-lion.jpg"
+            alt="Lamb B Red Lion"
+            class="brand-lion"
+        >
+
+        <span>Lamb B Achievements</span>
+
+    </div>
+
+    <a href="records.html" class="back-button">
+        ← House records home
+    </a>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-kicker">
+            The Lamb B Achievement Record
+        </div>
+
+        <h1>
+            House <span>Achievements</span>
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p class="hero-subtitle">
+            A visual record of the trophies, competitions and
+            achievements won by Lamb B, beginning with the
+            2026–27 school year.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="achievements-container">
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="intro">
+
+    <h2>A New Record Begins</h2>
+
+    <p>
+        From Michaelmas to Lent and Summer, every Lamb B achievement
+        can be added to the timeline below. Each trophy will have its
+        own photograph, creating a visual record of the House's
+        successes year after year.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     ACHIEVEMENT TIMELINE
+====================================================== -->
+
+<section class="achievement-timeline">
+
+
+<!-- =====================================================
+     MICHAELMAS 2026
+====================================================== -->
+
+<div class="term left">
+
+    <div class="term-dot"></div>
+
+    <div class="term-card">
+
+        <div class="term-name">
+            Michaelmas 2026
+        </div>
+
+        <h2>First Term</h2>
+
+        <p>
+            The beginning of the modern Lamb B achievement record.
+        </p>
+
+        <div class="trophy-area">
+
+            <div class="trophy-placeholder">
+
+                <div>
+                    <span>🏆</span>
+
+                    Trophy photograph will be added here.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LENT 2027
+====================================================== -->
+
+<div class="term right">
+
+    <div class="term-dot"></div>
+
+    <div class="term-card">
+
+        <div class="term-name">
+            Lent 2027
+        </div>
+
+        <h2>Second Term</h2>
+
+        <p>
+            House achievements from the Lent term.
+        </p>
+
+        <div class="trophy-area">
+
+            <div class="trophy-placeholder">
+
+                <div>
+                    <span>🏆</span>
+
+                    Trophy photograph will be added here.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SUMMER 2027
+====================================================== -->
+
+<div class="term left">
+
+    <div class="term-dot"></div>
+
+    <div class="term-card">
+
+        <div class="term-name">
+            Summer 2027
+        </div>
+
+        <h2>Third Term</h2>
+
+        <p>
+            House achievements from the Summer term.
+        </p>
+
+        <div class="trophy-area">
+
+            <div class="trophy-placeholder">
+
+                <div>
+                    <span>🏆</span>
+
+                    Trophy photograph will be added here.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MICHAELMAS 2027
+====================================================== -->
+
+<div class="term right future">
+
+    <div class="term-dot"></div>
+
+    <div class="term-card">
+
+        <div class="term-name">
+            Michaelmas 2027
+        </div>
+
+        <h2>Fourth Term</h2>
+
+        <p>
+            Future Lamb B achievements.
+        </p>
+
+        <div class="trophy-area">
+
+            <div class="trophy-placeholder">
+
+                <div>
+                    <span>🏆</span>
+
+                    Awaiting future achievements.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     LENT 2028
+====================================================== -->
+
+<div class="term left future">
+
+    <div class="term-dot"></div>
+
+    <div class="term-card">
+
+        <div class="term-name">
+            Lent 2028
+        </div>
+
+        <h2>Fifth Term</h2>
+
+        <p>
+            Future Lamb B achievements.
+        </p>
+
+        <div class="trophy-area">
+
+            <div class="trophy-placeholder">
+
+                <div>
+                    <span>🏆</span>
+
+                    Awaiting future achievements.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SUMMER 2028
+====================================================== -->
+
+<div class="term right future">
+
+    <div class="term-dot"></div>
+
+    <div class="term-card">
+
+        <div class="term-name">
+            Summer 2028
+        </div>
+
+        <h2>Sixth Term</h2>
+
+        <p>
+            Future Lamb B achievements.
+        </p>
+
+        <div class="trophy-area">
+
+            <div class="trophy-placeholder">
+
+                <div>
+                    <span>🏆</span>
+
+                    Awaiting future achievements.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <strong>LAMB B</strong><br><br>
+
+    An evolving digital record of the achievements,
+    competitions and traditions of Lamb B, Christ's Hospital.
+
+    <br><br>
+
+    The record begins in the 2026–27 school year.
+
+</footer>
+
+
+</body>
+</html>
+

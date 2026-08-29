@@ -3181,3 +3181,39 @@ textarea {
 .ssquared-home-button:hover {
     background: #990000;
 }
+
+.lamb-b-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 40px;
+    height: 40px;
+
+    z-index: 9999;
+
+    display: block;
+    padding: 0;
+    margin: 0;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.lamb-b-button img {
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    object-fit: contain;
+
+    background: transparent;
+    border: none;
+}
+
+.lamb-b-button:hover img {
+    transform: scale(1.1);
+}

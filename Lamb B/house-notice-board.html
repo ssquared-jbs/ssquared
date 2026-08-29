@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lamb B — House Notice Board</title>
+
+<style>
+
+:root {
+    --black: #070707;
+    --black2: #111111;
+    --red: #a90000;
+    --red-dark: #700000;
+    --red-light: #d00000;
+    --yellow: #f2c400;
+    --white: #f5f5f5;
+    --grey: #bdbdbd;
+    --line: #4b4b4b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top right, rgba(169,0,0,0.18), transparent 35%),
+        linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.75;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+    background: rgba(5,5,5,0.96);
+    border-bottom: 3px solid var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.brand-lion {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.brand span {
+    color: white;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    border: 1px solid var(--red);
+    padding: 7px 15px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.back-button:hover {
+    background: var(--red);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 25px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #252525;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: rgba(169,0,0,0.09);
+    filter: blur(70px);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 950px;
+    z-index: 2;
+}
+
+.hero-kicker {
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    margin: 15px 0 0;
+    font-size: clamp(55px, 10vw, 125px);
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    color: var(--red-light);
+}
+
+.hero-subtitle {
+    max-width: 720px;
+    margin: 30px auto 0;
+    color: #d2d2d2;
+    font-size: 19px;
+}
+
+.hero-line {
+    width: 100px;
+    height: 5px;
+    background: var(--red);
+    margin: 35px auto 0;
+}
+
+/* =========================
+   WEEK SELECTOR
+========================= */
+
+.week-section {
+    max-width: 1100px;
+    margin: 65px auto 25px;
+    padding: 0 25px;
+}
+
+.week-header {
+    border: 1px solid #383838;
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01));
+    border-left: 4px solid var(--red);
+    padding: 25px 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.week-label {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.week-header h2 {
+    margin: 5px 0;
+    font-size: 34px;
+}
+
+.week-header p {
+    margin: 5px 0 0;
+    color: #aaa;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* =========================
+   NOTICE BOARD
+========================= */
+
+.notice-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 25px 100px;
+}
+
+.notice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* =========================
+   NOTICE CARDS
+========================= */
+
+.notice-card {
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01));
+    border: 1px solid #353535;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+    transition: 0.25s;
+}
+
+.notice-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--red);
+}
+
+.notice-card::after {
+    content: "LAMB B";
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+    font-family: Arial, sans-serif;
+    font-size: 65px;
+    font-weight: bold;
+    color: rgba(169,0,0,0.045);
+    pointer-events: none;
+}
+
+/* =========================
+   CARD HEADINGS
+========================= */
+
+.notice-kicker {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.notice-card h2 {
+    font-size: 30px;
+    margin: 8px 0 15px;
+    line-height: 1.2;
+}
+
+.notice-card p {
+    color: #d0d0d0;
+}
+
+/* =========================
+   WINNER DISPLAY
+========================= */
+
+.winner {
+    margin-top: 20px;
+    min-height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px dashed #444;
+    background: rgba(0,0,0,0.3);
+    border-radius: 7px;
+    padding: 20px;
+    position: relative;
+}
+
+.winner.empty {
+    color: #666;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.winner-name {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.winner-detail {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+}
+
+/* =========================
+   SPECIAL AWARDS
+========================= */
+
+.lamb-card {
+    border-top: 4px solid var(--red);
+    background:
+        radial-gradient(circle at center, rgba(169,0,0,0.14), transparent 65%),
+        #101010;
+}
+
+.lamb-symbol {
+    font-size: 70px;
+    line-height: 1;
+    text-align: center;
+    margin: 5px 0 12px;
+}
+
+.wally-card {
+    border-top: 4px solid #765f00;
+    background:
+        linear-gradient(145deg, rgba(242,196,0,0.07), rgba(255,255,255,0.01));
+}
+
+.wally-symbol {
+    font-size: 58px;
+    text-align: center;
+    line-height: 1;
+    margin: 10px 0;
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stat-list {
+    margin-top: 20px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    color: #bbb;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    color: white;
+    font-weight: bold;
+    text-align: right;
+}
+
+.stat-empty {
+    color: #666;
+    font-weight: normal;
+}
+
+/* =========================
+   YEAR GROUP TABLE
+========================= */
+
+.year-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.year-table th,
+.year-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #292929;
+    text-align: left;
+}
+
+.year-table th {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.year-table td {
+    color: #ccc;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.year-table td:last-child {
+    text-align: right;
+    font-weight: bold;
+    color: white;
+}
+
+/* =========================
+   OTHER EVENTS
+========================= */
+
+.events-card {
+    border-left: 4px solid var(--yellow);
+}
+
+.event-list {
+    margin-top: 20px;
+}
+
+.event-item {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    gap: 18px;
+    padding: 15px 0;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-date {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.event-text {
+    color: #d0d0d0;
+}
+
+.event-text strong {
+    color: white;
+}
+
+/* =========================
+   WEEKLY NOTES
+========================= */
+
+.notes-section {
+    max-width: 1200px;
+    margin: 0 auto 90px;
+    padding: 0 25px;
+}
+
+.notes-card {
+    border: 1px solid #353535;
+    background: #0d0d0d;
+    border-radius: 10px;
+    padding: 30px;
+    border-top: 3px solid var(--red);
+}
+
+.notes-card h2 {
+    margin-top: 0;
+    font-size: 27px;
+}
+
+.notes-card p {
+    color: #aaa;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #292929;
+    padding: 45px 25px;
+    text-align: center;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+footer strong {
+    color: var(--red-light);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .brand {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 360px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .notice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notice-card {
+        padding: 25px;
+    }
+
+    .event-item {
+        grid-template-columns: 70px 1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP BAR
+====================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <img
+            src="../images/lamb-b-lion.jpg"
+            alt="Lamb B Red Lion"
+            class="brand-lion"
+        >
+
+        <span>Lamb B Notice Board</span>
+
+    </div>
+
+    <a href="home.html" class="back-button">
+        ← House Home
+    </a>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-kicker">
+            Lamb B · Weekly House Life
+        </div>
+
+        <h1>
+            Notice <span>Board</span>
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p class="hero-subtitle">
+            The weekly record of Lamb B — rooms, awards, achievements,
+            misdemeanours, birthdays and everything else happening around
+            the House.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CURRENT WEEK
+====================================================== -->
+
+<section class="week-section">
+
+    <div class="week-header">
+
+        <div class="week-label">
+            Current Week
+        </div>
+
+        <!-- CHANGE THIS EACH WEEK -->
+
+        <h2>Week 1 · Michaelmas 2026</h2>
+
+        <p>
+            Lamb B House Notice Board
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NOTICE BOARD GRID
+====================================================== -->
+
+<section class="notice-section">
+
+<div class="notice-grid">
+
+
+<!-- 50s OF THE WEEK -->
+
+<div class="notice-card">
+
+    <div class="notice-kicker">
+        Room Checks
+    </div>
+
+    <h2>🏆 50s of the Week</h2>
+
+    <p>
+        The best rooms from this week's room inspections.
+    </p>
+
+    <div class="winner empty">
+        Winner to be announced
+    </div>
+
+</div>
+
+
+<!-- LAMB OF THE WEEK -->
+
+<div class="notice-card lamb-card">
+
+    <div class="notice-kicker">
+        House Award
+    </div>
+
+    <div class="lamb-symbol">🐑</div>
+
+    <h2>Lamb of the Week</h2>
+
+    <p>
+        Awarded to a member of Lamb B who has gone above and beyond
+        during the week.
+    </p>
+
+    <div class="winner empty">
+        Recipient to be announced
+    </div>
+
+    <p style="text-align:center; font-family:Arial,sans-serif; font-size:11px; color:#888;">
+        The recipient receives the Lamb teddy.
+    </p>
+
+</div>
+
+
+<!-- LAMB WALLY -->
+
+<div class="notice-card wally-card">
+
+    <div class="notice-kicker">
+        Questionable Decisions
+    </div>
+
+    <div class="wally-symbol">🤡</div>
+
+    <h2>Lamb Wally</h2>
+
+    <p>
+        For the person who has done something particularly silly
+        that definitely should <strong>not</strong> be rewarded.
+    </p>
+
+    <div class="winner empty">
+        Wally to be announced
+    </div>
+
+</div>
+
+
+<!-- MOST COMMENDATIONS -->
+
+<div class="notice-card">
+
+    <div class="notice-kicker">
+        Achievement
+    </div>
+
+    <h2>📝 Most Commendations</h2>
+
+    <p>
+        The Lamb B member who has collected the most commendations
+        this week.
+    </p>
+
+    <div class="winner empty">
+        Leader to be announced
+    </div>
+
+</div>
+
+
+<!-- MOST SENIOR MERITS -->
+
+<div class="notice-card">
+
+    <div class="notice-kicker">
+        Achievement
+    </div>
+
+    <h2>⭐ Most Senior Merits</h2>
+
+    <p>
+        The person who has earned the most Senior Merits this week.
+    </p>
+
+    <div class="winner empty">
+        Leader to be announced
+    </div>
+
+</div>
+
+
+<!-- MOST NEGATIVES -->
+
+<div class="notice-card">
+
+    <div class="notice-kicker">
+        Sunday Trade
+    </div>
+
+    <h2>📉 Most Negatives</h2>
+
+    <p>
+        Which year group has collected the most negatives this week?
+        That year earns the honour of the Sunday Trade.
+    </p>
+
+    <table class="year-table">
+
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Negatives</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Year 13</td>
+                <td>—</td>
+            </tr>
+
+            <tr>
+                <td>Year 12</td>
+                <td>—</td>
+            </tr>
+
+            <tr>
+                <td>Year 11</td>
+                <td>—</td>
+            </tr>
+
+            <tr>
+                <td>Year 10</td>
+                <td>—</td>
+            </tr>
+
+            <tr>
+                <td>Year 9</td>
+                <td>—</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+<!-- OTHER EVENTS -->
+
+<div class="notice-card events-card">
+
+    <div class="notice-kicker">
+        House Life
+    </div>
+
+    <h2>📅 Other Events</h2>
+
+    <p>
+        Birthdays, achievements, special occasions and anything else
+        worth putting on the House notice board.
+    </p>
+
+    <div class="event-list">
+
+        <!-- COPY THIS BLOCK FOR NEW EVENTS -->
+
+        <div class="event-item">
+
+            <div class="event-date">
+                — 
+            </div>
+
+            <div class="event-text">
+                <strong>Nothing yet</strong><br>
+                The term has not started.
+            </div>
+
+        </div>
+
+        <!-- EXAMPLE:
+        <div class="event-item">
+
+            <div class="event-date">
+                12 SEP
+            </div>
+
+            <div class="event-text">
+                <strong>Birthday — Jeremiah</strong><br>
+                Happy birthday from everyone in Lamb B!
+            </div>
+
+        </div>
+        -->
+
+    </div>
+
+</div>
+
+
+<!-- WEEKLY HOUSE UPDATE -->
+
+<div class="notice-card">
+
+    <div class="notice-kicker">
+        House News
+    </div>
+
+    <h2>📣 Weekly House Update</h2>
+
+    <p>
+        Important announcements, reminders and news for Lamb B.
+    </p>
+
+    <div class="winner empty">
+        No announcements yet
+    </div>
+
+</div>
+
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     NOTES
+====================================================== -->
+
+<section class="notes-section">
+
+    <div class="notes-card">
+
+        <h2>Notes from the House</h2>
+
+        <p>
+            This section can be used for anything that does not fit neatly
+            into the weekly awards — House competitions, upcoming events,
+            reminders, funny moments, achievements or messages from the
+            House Captain and Housemasters.
+        </p>
+
+        <p>
+            As the term progresses, this page becomes the living weekly
+            record of Lamb B.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <strong>LAMB B</strong><br><br>
+
+    The weekly House Notice Board.
+
+    <br><br>
+
+    <span>
+        Lamb B · Christ's Hospital
+    </span>
+
+</footer>
+
+
+</body>
+</html>

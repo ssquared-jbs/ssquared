@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Lamb B | Home</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #000;
+        color: #fff;
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    /* Red background accents */
+    .red-glow-top {
+        position: fixed;
+        top: -300px;
+        left: -300px;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: #7d0000;
+        opacity: 0.3;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .red-glow-bottom {
+        position: fixed;
+        bottom: -350px;
+        right: -300px;
+        width: 750px;
+        height: 750px;
+        border-radius: 50%;
+        background: #8b0000;
+        opacity: 0.25;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* Lamb B lion */
+    .lamb-lion {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+
+        width: 40px;
+        height: 40px;
+
+        object-fit: contain;
+        display: block;
+
+        z-index: 20;
+    }
+
+    /* Main content */
+    .container {
+        position: relative;
+        z-index: 5;
+
+        width: min(1100px, 90%);
+        margin: 0 auto;
+
+        padding: 80px 0 70px;
+    }
+
+    /* Header */
+    .header {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    .yellow-line {
+        width: 45px;
+        height: 3px;
+
+        background: #d4af37;
+
+        margin: 0 auto 22px;
+    }
+
+    .header h1 {
+        margin: 0;
+
+        font-size: clamp(38px, 6vw, 64px);
+        font-weight: 800;
+
+        letter-spacing: 8px;
+        text-transform: uppercase;
+    }
+
+    .header h2 {
+        margin: 12px 0 0;
+
+        color: #b00000;
+
+        font-size: 16px;
+        font-weight: 600;
+
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+
+    .header p {
+        margin: 20px auto 0;
+
+        max-width: 600px;
+
+        color: #888;
+
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* Navigation grid */
+    .house-grid {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 22px;
+
+        max-width: 900px;
+
+        margin: 0 auto;
+    }
+
+    /* Individual navigation cards */
+    .house-card {
+        position: relative;
+
+        min-height: 190px;
+
+        padding: 35px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        text-decoration: none;
+
+        color: white;
+
+        background: #080808;
+
+        border: 1px solid #500000;
+        border-left: 4px solid #8b0000;
+
+        transition:
+            transform 0.2s ease,
+            background 0.2s ease,
+            border-color 0.2s ease;
+
+        overflow: hidden;
+    }
+
+    .house-card::after {
+        content: "";
+
+        position: absolute;
+
+        right: -45px;
+        bottom: -45px;
+
+        width: 130px;
+        height: 130px;
+
+        border-radius: 50%;
+
+        background: #8b0000;
+
+        opacity: 0.08;
+    }
+
+    .house-card:hover {
+        transform: translateY(-5px);
+
+        background: #101010;
+
+        border-color: #b00000;
+        border-left-color: #d4af37;
+    }
+
+    .card-number {
+        position: absolute;
+
+        top: 18px;
+        right: 22px;
+
+        color: #333;
+
+        font-size: 12px;
+        font-weight: bold;
+
+        letter-spacing: 2px;
+    }
+
+    .house-card h3 {
+        margin: 0 0 10px;
+
+        font-size: 24px;
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+    }
+
+    .house-card p {
+        margin: 0;
+
+        color: #777;
+
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .card-arrow {
+        margin-top: 22px;
+
+        color: #b00000;
+
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .house-card:hover .card-arrow {
+        color: #d4af37;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 60px;
+
+        text-align: center;
+
+        color: #444;
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    /* Bottom yellow line */
+    .bottom-line {
+        position: fixed;
+
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 3px;
+
+        background: #d4af37;
+
+        z-index: 20;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+
+        .container {
+            padding-top: 75px;
+        }
+
+        .house-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .house-card {
+            min-height: 160px;
+        }
+
+        .header {
+            margin-bottom: 35px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- Background -->
+<div class="red-glow-top"></div>
+<div class="red-glow-bottom"></div>
+
+<!-- Lamb B lion -->
+<img
+    class="lamb-lion"
+    src="../images/lamb-b-lion.jpg"
+    alt="Lamb B"
+>
+
+<!-- Main content -->
+<main class="container">
+
+    <header class="header">
+
+        <div class="yellow-line"></div>
+
+        <h1>Lamb B</h1>
+
+        <h2>House Portal</h2>
+
+        <p>
+            Welcome to the Lamb B house portal.
+            Explore our history, keep up with the latest news,
+            check important notices and discover our house records.
+        </p>
+
+    </header>
+
+
+    <!-- Four main pages -->
+    <section class="house-grid">
+
+        <a href="history.html" class="house-card">
+
+            <span class="card-number">01</span>
+
+            <h3>House History</h3>
+
+            <p>
+                Discover the story, traditions and heritage
+                of Lamb B.
+            </p>
+
+            <span class="card-arrow">→</span>
+
+        </a>
+
+
+        <a href="news.html" class="house-card">
+
+            <span class="card-number">02</span>
+
+            <h3>House News</h3>
+
+            <p>
+                Keep up with the latest events, achievements
+                and developments around Lamb B.
+            </p>
+
+            <span class="card-arrow">→</span>
+
+        </a>
+
+
+        <a href="house-notice-board.html" class="house-card">
+
+            <span class="card-number">03</span>
+
+            <h3>House Noticeboard</h3>
+
+            <p>
+                Important announcements, upcoming events
+                and information for the house.
+            </p>
+
+            <span class="card-arrow">→</span>
+
+        </a>
+
+
+        <a href="records.html" class="house-card">
+
+            <span class="card-number">04</span>
+
+            <h3>House Records</h3>
+
+            <p>
+                View Lamb B records, achievements,
+                competitions and notable results.
+            </p>
+
+            <span class="card-arrow">→</span>
+
+        </a>
+
+    </section>
+
+
+    <footer>
+        Lamb B · SSquaredHQ
+    </footer>
+
+</main>
+
+
+<!-- Bottom accent -->
+<div class="bottom-line"></div>
+```
+
+</body>
+</html>

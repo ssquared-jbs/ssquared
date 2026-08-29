@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lamb B — House Records</title>
+
+<style>
+
+:root {
+    --black: #070707;
+    --black2: #111111;
+    --red: #a90000;
+    --red-dark: #700000;
+    --red-light: #d00000;
+    --yellow: #f2c400;
+    --white: #f5f5f5;
+    --grey: #bdbdbd;
+    --line: #4b4b4b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top right, rgba(169,0,0,0.18), transparent 35%),
+        linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+    background: rgba(5,5,5,0.96);
+    border-bottom: 3px solid var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.brand-lion {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.brand span {
+    color: white;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    border: 1px solid var(--red);
+    padding: 7px 15px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.back-button:hover {
+    background: var(--red);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 25px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #252525;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: rgba(169,0,0,0.09);
+    filter: blur(70px);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 950px;
+    z-index: 2;
+}
+
+.hero-kicker {
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    margin: 15px 0 0;
+    font-size: clamp(60px, 11vw, 135px);
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: var(--red-light);
+}
+
+.hero-line {
+    width: 100px;
+    height: 5px;
+    background: var(--red);
+    margin: 35px auto 0;
+}
+
+.hero-subtitle {
+    max-width: 720px;
+    margin: 30px auto 0;
+    color: #d2d2d2;
+    font-size: 19px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.records-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 25px;
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title .small {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+    margin: 8px 0;
+}
+
+.section-title p {
+    max-width: 750px;
+    margin: 15px auto 0;
+    color: #aaa;
+}
+
+/* =========================
+   HISTORICAL FIGURES
+========================= */
+
+.history-box {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(169,0,0,0.13),
+            rgba(255,255,255,0.02)
+        );
+    border: 1px solid #4a4a4a;
+    border-top: 4px solid var(--red);
+    border-radius: 10px;
+    padding: 35px;
+    margin-bottom: 85px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+}
+
+.history-box h2 {
+    margin-top: 0;
+    color: var(--red-light);
+    font-size: 30px;
+}
+
+.history-intro {
+    color: #cfcfcf;
+    margin-bottom: 30px;
+}
+
+.historical-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.historical-person {
+    background: rgba(0,0,0,0.35);
+    border: 1px solid #333;
+    border-left: 3px solid var(--red);
+    padding: 18px 20px;
+    border-radius: 6px;
+}
+
+.historical-person h3 {
+    margin: 0 0 5px;
+    color: white;
+    font-size: 20px;
+}
+
+.historical-role {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.historical-person p {
+    margin: 0;
+    color: #c7c7c7;
+    font-size: 14px;
+}
+
+/* =========================
+   CURRENT RECORDS
+========================= */
+
+.current-section {
+    margin-bottom: 80px;
+}
+
+.records-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #363636;
+    border-radius: 8px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+}
+
+.records-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0d0d0d;
+    min-width: 850px;
+}
+
+.records-table th,
+.records-table td {
+    padding: 19px 20px;
+    border-bottom: 1px solid #292929;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.records-table th {
+    background: var(--red-dark);
+    color: white;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.records-table tbody tr {
+    transition: 0.2s;
+}
+
+.records-table tbody tr:hover {
+    background: rgba(169,0,0,0.08);
+}
+
+.records-table td:first-child {
+    color: var(--yellow);
+    font-weight: bold;
+    white-space: nowrap;
+    width: 130px;
+}
+
+.records-table td:nth-child(2) {
+    width: 260px;
+}
+
+.records-table td:nth-child(3) {
+    width: 260px;
+}
+
+.records-table td:nth-child(4) {
+    width: auto;
+}
+
+/* =========================
+   RECORD SYMBOLS
+========================= */
+
+.record-symbol {
+    color: var(--yellow);
+    font-weight: bold;
+    font-size: 17px;
+    margin-left: 5px;
+    white-space: nowrap;
+}
+
+.monitor-line {
+    display: block;
+    width: 90%;
+    height: 1px;
+    background: #555;
+    margin: 5px 0;
+}
+
+/* =========================
+   KEY
+========================= */
+
+.key-box {
+    margin-top: 25px;
+    padding: 20px 25px;
+    border: 1px solid #3a3a3a;
+    background: rgba(255,255,255,0.025);
+    border-radius: 7px;
+}
+
+.key-box h3 {
+    margin: 0 0 15px;
+    color: var(--red-light);
+    font-size: 19px;
+}
+
+.key-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.key-item {
+    font-family: Arial, sans-serif;
+    color: #cfcfcf;
+    font-size: 13px;
+}
+
+.key-symbol {
+    color: var(--yellow);
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 7px;
+}
+
+/* =========================
+   FUTURE YEARS
+========================= */
+
+.future-note {
+    margin-top: 25px;
+    padding: 18px 22px;
+    border-left: 3px solid var(--yellow);
+    background: rgba(242,196,0,0.04);
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #292929;
+    padding: 45px 25px;
+    text-align: center;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+footer strong {
+    color: var(--red-light);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .brand {
+        font-size: 12px;
+    }
+
+    .brand-lion {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero {
+        min-height: 380px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .historical-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-box {
+        padding: 25px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    .records-container {
+        padding: 0 15px;
+    }
+
+    .key-grid {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP BAR
+====================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <img
+            src="../images/lamb-b-lion.jpg"
+            alt="Lamb B Red Lion"
+            class="brand-lion"
+        >
+
+        <span>Lamb B Records</span>
+
+    </div>
+
+    <a href="records.html" class="back-button">
+        ← House records home
+    </a>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-kicker">
+            The Lamb B Record
+        </div>
+
+        <h1>
+            House <span>Records</span>
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p class="hero-subtitle">
+            A continuing record of Lamb B House Captains,
+            Deputy House Captains and Monitors,
+            beginning with the current generation of the House.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="records-container">
+
+
+<!-- =====================================================
+     HISTORICAL FIGURES
+====================================================== -->
+
+<section class="history-box">
+
+    <h2>Historical Lamb B Figures</h2>
+
+    <p class="history-intro">
+        Before the modern record begins, these are some of the
+        previously identified Lamb B House Captains and Senior Grecians.
+        They are presented here as historical figures rather than as
+        part of the chronological modern record.
+    </p>
+
+
+    <div class="historical-grid">
+
+
+        <div class="historical-person">
+
+            <h3>Miners</h3>
+
+            <div class="historical-role">
+                House Captain · 1951
+            </div>
+
+            <p>
+                Identified as House Captain in the Summer 1951 Lamb B
+                house photograph.
+            </p>
+
+        </div>
+
+
+        <div class="historical-person">
+
+            <h3>Ian Pitter</h3>
+
+            <div class="historical-role">
+                House Captain · 1953
+            </div>
+
+            <p>
+                Identified as House Captain in the Summer 1953 Lamb B
+                house photograph.
+            </p>
+
+        </div>
+
+
+        <div class="historical-person">
+
+            <h3>R. A. Leach</h3>
+
+            <div class="historical-role">
+                Senior Grecian · 1946–47
+            </div>
+
+            <p>
+                Recorded as Senior Grecian for Lamb B in 1946–47.
+            </p>
+
+        </div>
+
+
+        <div class="historical-person">
+
+            <h3>Geoffrey Hines</h3>
+
+            <div class="historical-role">
+                Senior Grecian · 1958–59
+            </div>
+
+            <p>
+                Lamb B pupil and Senior Grecian in 1958–59.
+                Later became an Oxford rugby player and Oxford Blue.
+            </p>
+
+        </div>
+
+
+        <div class="historical-person">
+
+            <h3>Frank Hunter</h3>
+
+            <div class="historical-role">
+                Senior Grecian · 1964–65
+            </div>
+
+            <p>
+                Recorded as Senior Grecian for Lamb B in 1964–65.
+            </p>
+
+        </div>
+
+
+        <div class="historical-person">
+
+            <h3>Brian Miller</h3>
+
+            <div class="historical-role">
+                Senior Grecian · 1970–71
+            </div>
+
+            <p>
+                Recorded as Senior Grecian for Lamb B in 1970–71.
+            </p>
+
+        </div>
+
+
+        <div class="historical-person">
+
+            <h3>Luke Pullen</h3>
+
+            <div class="historical-role">
+                House Captain · 2021–22
+            </div>
+
+            <p>
+                House Captain in 2021–22 and later became
+                Second Monitor.
+            </p>
+
+        </div>
+
+
+        <div class="historical-person">
+
+            <h3>Amer Ademola-Ali</h3>
+
+            <div class="historical-role">
+                House Captain · 2024–25
+            </div>
+
+            <p>
+                House Captain in 2024–25 and later became
+                a Monitor.
+            </p>
+
+        </div>
+
+
+        <div class="historical-person">
+
+            <h3>Harry Dolan</h3>
+
+            <div class="historical-role">
+                House Captain · 2025–26
+            </div>
+
+            <p>
+                House Captain in 2025–26 and later became
+                a Monitor.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CURRENT RECORD
+====================================================== -->
+
+<section class="current-section">
+
+    <div class="section-title">
+
+        <div class="small">
+            Modern Record
+        </div>
+
+        <h2>House Leadership</h2>
+
+        <p>
+            The modern Lamb B record begins with the current House
+            leadership and will continue to grow year by year.
+        </p>
+
+    </div>
+
+
+    <div class="records-table-wrapper">
+
+        <table class="records-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Year</th>
+
+                    <th>House Captain</th>
+
+                    <th>Deputy House Captain</th>
+
+                    <th>Monitors</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+                <!-- 2026–27 -->
+
+                <tr>
+
+                    <td>
+                        2026–27
+                    </td>
+
+                    <td>
+                        Jeremiah Ssembatya
+                    </td>
+
+                    <td>
+                        Ayodeji Olusanya
+                    </td>
+
+                    <td>
+                        <span class="monitor-line"></span>
+                    </td>
+
+                </tr>
+
+
+                <!-- Future years can be added above this comment -->
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- =========================
+         SYMBOL KEY
+    ========================== -->
+
+    <div class="key-box">
+
+        <h3>Record Key</h3>
+
+        <div class="key-grid">
+
+            <div class="key-item">
+    <span class="key-symbol">◆</span>
+    Monitor
+</div>
+
+<div class="key-item">
+    <span class="key-symbol">✦</span>
+    Second Monitor
+</div>
+
+<div class="key-item">
+    <span class="key-symbol">★</span>
+    Senior Grecian
+</div>
+
+        </div>
+
+    </div>
+
+
+    <div class="future-note">
+
+        As the House's records continue, each year's row can be
+        completed with the House Captain, Deputy House Captain and
+        appointed Monitors. If a Captain or Deputy later becomes a
+        Monitor, Second Monitor or Senior Grecian, the appropriate
+        symbol can be added beside their name.
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <strong>LAMB B</strong><br><br>
+
+    An evolving digital record of the leadership,
+    people and traditions of Lamb B, Christ's Hospital.
+
+    <br><br>
+
+    Historical information should be checked against the original
+    archival sources where possible.
+
+</footer>
+
+
+</body>
+</html>

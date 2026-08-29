@@ -1,0 +1,2369 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lamb B — House History</title>
+
+<style>
+
+:root {
+    --black: #070707;
+    --black2: #111111;
+    --red: #a90000;
+    --red-dark: #700000;
+    --red-light: #d00000;
+    --yellow: #f2c400;
+    --white: #f5f5f5;
+    --grey: #bdbdbd;
+    --line: #4b4b4b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top right, rgba(169,0,0,0.18), transparent 35%),
+        linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.75;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+    background: rgba(5,5,5,0.96);
+    border-bottom: 3px solid var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.brand-lion {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.brand span {
+    color: white;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    border: 1px solid var(--red);
+    padding: 7px 15px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.back-button:hover {
+    background: var(--red);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 25px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #252525;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: rgba(169,0,0,0.09);
+    filter: blur(70px);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 950px;
+    z-index: 2;
+}
+
+.hero-kicker {
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    margin: 15px 0 0;
+    font-size: clamp(65px, 12vw, 150px);
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: var(--red-light);
+}
+
+.hero-subtitle {
+    max-width: 720px;
+    margin: 30px auto 0;
+    color: #d2d2d2;
+    font-size: 19px;
+}
+
+.hero-line {
+    width: 100px;
+    height: 5px;
+    background: var(--red);
+    margin: 35px auto 0;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.introduction {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 25px;
+}
+
+.introduction h2 {
+    color: var(--red-light);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    color: #d4d4d4;
+    font-size: 17px;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 25px 100px;
+}
+
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--red) 5%,
+        var(--red) 95%,
+        transparent
+    );
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 30px 55px;
+    position: relative;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 45px;
+    width: 19px;
+    height: 19px;
+    background: var(--red);
+    border: 4px solid var(--black);
+    outline: 2px solid var(--red);
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.timeline-item.left .timeline-dot {
+    right: -10px;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -10px;
+}
+
+.timeline-card {
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01));
+    border: 1px solid #353535;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+    transition: 0.25s;
+}
+
+.timeline-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--red);
+}
+
+.timeline-item.left .timeline-card {
+    border-right: 4px solid var(--red);
+}
+
+.timeline-item.right .timeline-card {
+    border-left: 4px solid var(--red);
+}
+
+.year {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.timeline-card h2 {
+    margin: 7px 0 15px;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.timeline-card h3 {
+    color: var(--red-light);
+    margin-top: 25px;
+}
+
+.timeline-card p {
+    color: #d0d0d0;
+}
+
+.timeline-card ul {
+    color: #d0d0d0;
+    padding-left: 22px;
+}
+
+.timeline-card strong {
+    color: white;
+}
+
+/* =========================
+   SPECIAL CARDS
+========================= */
+
+.unknown-card {
+    border-color: #765f00;
+    background:
+        linear-gradient(145deg, rgba(242,196,0,0.08), rgba(255,255,255,0.01));
+}
+
+.unknown-card .year {
+    color: var(--yellow);
+}
+
+.lion-card {
+    background:
+        radial-gradient(circle at center, rgba(169,0,0,0.25), transparent 65%),
+        #090909;
+    text-align: center;
+}
+
+.lion-symbol {
+    width: 150px;
+    height: 150px;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lion-symbol img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.quote {
+    border-left: 4px solid var(--yellow);
+    padding: 15px 20px;
+    margin: 25px 0;
+    background: rgba(255,255,255,0.03);
+    color: #ddd;
+    font-style: italic;
+}
+
+/* =========================
+   ARCHIVE PHOTOS
+========================= */
+
+.archive-photo {
+    margin-top: 25px;
+    background: #050505;
+    border: 1px solid #3a3a3a;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.archive-photo img {
+    width: 100%;
+    display: block;
+    max-height: 600px;
+    object-fit: contain;
+    background: #111;
+}
+
+.photo-caption {
+    padding: 12px 5px 3px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.photo-caption strong {
+    color: white;
+}
+
+.names-box {
+    margin-top: 18px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+.names-box summary {
+    cursor: pointer;
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.names-box p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 12px;
+}
+
+/* =========================
+   PEOPLE / ALUMNI
+========================= */
+
+.person-card {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 22px;
+    align-items: start;
+    margin-top: 25px;
+    padding: 18px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid #333;
+    border-radius: 7px;
+}
+
+.person-photo {
+    width: 130px;
+    height: 165px;
+    object-fit: cover;
+    background: #1a1a1a;
+}
+
+.person-card h3 {
+    margin: 0 0 5px;
+    color: white;
+    font-size: 22px;
+}
+
+.person-role {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* =========================
+   CAPTAIN TABLE
+========================= */
+
+.captains-section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title .small {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.section-title h2 {
+    font-size: 42px;
+    margin: 8px 0;
+}
+
+.captain-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0d0d0d;
+    border: 1px solid #333;
+}
+
+.captain-table th,
+.captain-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #292929;
+    text-align: left;
+}
+
+.captain-table th {
+    background: var(--red-dark);
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.captain-table td:first-child {
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+/* =========================
+   WALL OF FAME
+========================= */
+
+.fame-section {
+    background:
+        linear-gradient(180deg, #0c0c0c, #050505);
+    border-top: 2px solid var(--red);
+    border-bottom: 2px solid var(--red);
+    padding: 90px 25px;
+}
+
+.fame-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.fame-card {
+    border: 1px solid #3a3a3a;
+    background: #101010;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fame-card::before {
+    content: "LAMB B";
+    position: absolute;
+    right: -15px;
+    top: 8px;
+    color: rgba(169,0,0,0.08);
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.fame-card .category {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.fame-card h3 {
+    font-size: 28px;
+    margin: 8px 0;
+}
+
+.fame-card p {
+    color: #c9c9c9;
+}
+
+/* =========================
+   UNKNOWN YEARS
+========================= */
+
+.mystery {
+    max-width: 1000px;
+    margin: 90px auto;
+    padding: 0 25px;
+}
+
+.mystery-box {
+    border: 1px solid #6d5900;
+    background: linear-gradient(
+        145deg,
+        rgba(242,196,0,0.07),
+        rgba(255,255,255,0.01)
+    );
+    padding: 35px;
+    border-radius: 8px;
+}
+
+.mystery-box h2 {
+    color: var(--yellow);
+}
+
+.mystery-box li {
+    margin-bottom: 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #292929;
+    padding: 45px 25px;
+    text-align: center;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+footer strong {
+    color: var(--red-light);
+}
+
+@media (max-width: 800px) {
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .brand {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 430px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding: 20px 0 20px 55px;
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+        left: 11px;
+        right: auto;
+    }
+
+    .timeline-card {
+        border-left: 4px solid var(--red) !important;
+        border-right: 1px solid #353535 !important;
+    }
+
+    .fame-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .person-card {
+        grid-template-columns: 90px 1fr;
+    }
+
+    .person-photo {
+        width: 90px;
+        height: 120px;
+    }
+
+    .captain-table {
+        font-size: 14px;
+    }
+
+    .captain-table th,
+    .captain-table td {
+        padding: 12px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP BAR
+====================================================== -->
+
+<header class="topbar">
+
+```
+<div class="brand">
+
+    <img
+        src="../images/lamb-b-lion.jpg"
+        alt="Lamb B Red Lion"
+        class="brand-lion"
+    >
+
+    <span>Lamb B Archive</span>
+
+</div>
+
+<a href="home.html" class="back-button">
+    ← House Home
+</a>
+```
+
+</header>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+```
+<div class="hero-content">
+
+    <div class="hero-kicker">
+        The History of Lamb B
+    </div>
+
+    <h1>
+        Lamb <span>B</span>
+    </h1>
+
+    <div class="hero-line"></div>
+
+    <p class="hero-subtitle">
+        From the name of Charles Lamb to the red lion of today,
+        this is the developing historical record of Lamb B,
+        its pupils, Housemasters, Captains and Old Blues.
+    </p>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="introduction">
+
+```
+<h2>An unfinished history</h2>
+
+<p>
+    Lamb B's history stretches across more than a century,
+    but not every chapter has survived in easily accessible records.
+    Some years are preserved through photographs, school publications
+    and Old Blue recollections; others remain waiting to be discovered.
+</p>
+
+<p>
+    This timeline therefore deliberately distinguishes between
+    <strong>what is documented</strong> and <strong>what remains unknown</strong>.
+    Where the evidence does not give us an answer, the archive does not
+    invent one.
+</p>
+```
+
+</section>
+
+<!-- =====================================================
+     TIMELINE
+====================================================== -->
+
+<section class="timeline-section">
+
+<div class="timeline">
+
+<!-- CHARLES LAMB -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1775–1834 · The Namesake</div>
+
+    <h2>Charles Lamb</h2>
+
+    <div class="person-card">
+
+        <img
+            src="../images/charles-lamb.jpg"
+            alt="Portrait of Charles Lamb"
+            class="person-photo"
+        >
+
+        <div>
+
+            <div class="person-role">
+                Honorary Founder / Namesake
+            </div>
+
+            <p>
+                Charles Lamb is the historical figure at the beginning
+                of Lamb B's story.
+            </p>
+
+        </div>
+
+    </div>
+
+    <p>
+        Charles Lamb attended Christ's Hospital from <strong>1782</strong>.
+        During his time at the school he formed his famous friendship
+        with Samuel Taylor Coleridge.
+    </p>
+
+    <p>
+        Lamb later became one of the best-known English essayists and
+        poets of the Romantic period.
+    </p>
+
+    <p>
+        He was <strong>not a Lamb B pupil</strong>. The house did not
+        exist in its present form during his lifetime. Instead,
+        <strong>Lamb A and Lamb B were subsequently named in his honour.</strong>
+    </p>
+
+    <p>
+        Charles Lamb is also one of the old blues one the statue on the Quad, alongside Samuel Taylor Coleridge and 2 other old blues however
+        he is only one not holding a book. This is becaus he did not attend Grecians because he failed th Grecians speech. H did not fail due his own 
+        incompetence but because he was dyslexic which made it extremely difficult for him to read and speak. The key thing is that he didn't let this define
+        him and he went on to become one of the most famous essayists and poets of the Romantic period.
+    </p>
+
+    <div class="quote">
+        Charles Lamb is therefore the namesake of Lamb B,
+        rather than an Old Blue of the house itself.
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- 1902 -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1902</div>
+
+    <h2>Christ's Hospital Comes to Horsham</h2>
+
+    <p>
+        In 1902, Christ's Hospital moved from London to its new site
+        at Horsham, West Sussex.
+    </p>
+
+    <p>
+        This marks the beginning of the Horsham period of Lamb B's
+        history.
+    </p>
+
+    <p>
+        Unfortunately, the surviving publicly accessible material
+        does not currently provide a complete Lamb B pupil register
+        from the early Horsham years.
+    </p>
+
+    <div class="quote">
+        We know the Horsham house system existed.
+        We do not yet know exactly who the first Lamb B boys were.
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- 1902-1924 -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card unknown-card">
+
+    <div class="year">1902–1924 · The Missing Beginning</div>
+
+    <h2>The First Lamb B Boy?</h2>
+
+    <p>
+        This remains the largest gap in the Lamb B record.
+    </p>
+
+    <p>
+        We have not yet identified the first Lamb B pupil.
+        We have also not identified the first Lamb B House Captain.
+    </p>
+
+    <p>
+        This does not mean that there was no House Captain.
+        It means that the surviving digitised material currently
+        available to us does not provide the answer.
+    </p>
+
+    <h3>Current historical position</h3>
+
+    <ul>
+        <li><strong>First Lamb B boy:</strong> Unknown</li>
+        <li><strong>First Lamb B House Captain:</strong> Unknown</li>
+    </ul>
+
+    <p>
+        The most promising sources for solving this mystery are
+        early copies of <em>The Blue</em>, <em>Housey</em>,
+        house photographs, school lists and other CH archival
+        publications.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1925 -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">By 1925</div>
+
+    <h2>Herbert Szumowski</h2>
+
+    <h3>House-Master of Lamb B</h3>
+
+    <p>
+        By 1925 we have definite documentary evidence that Lamb B
+        was an established and functioning house.
+    </p>
+
+    <p>
+        <strong>Herbert Szumowski</strong>, a former Senior French
+        Master at Christ's Hospital, is recorded as
+        <strong>House-Master of Lamb B</strong>.
+    </p>
+
+    <div class="quote">
+        Lamb B definitely existed as a functioning house by 1925.
+    </div>
+
+    <p>
+        This gives future researchers a firm point from which the
+        missing early history can be reconstructed backwards.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1930s -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card unknown-card">
+
+    <div class="year">1930s · Records to be Reconstructed</div>
+
+    <h2>The Lost Decade</h2>
+
+    <p>
+        The public material currently available does not provide
+        enough evidence to construct a detailed Lamb B chronology
+        for the 1930s.
+    </p>
+
+    <p>
+        Future research should concentrate on:
+    </p>
+
+    <ul>
+        <li><em>The Blue</em></li>
+        <li><em>Housey</em></li>
+        <li>School photographs</li>
+        <li>Senior Grecian lists</li>
+        <li>Sporting records</li>
+        <li>House competitions</li>
+        <li>School magazines</li>
+        <li>Old Blue recollections</li>
+    </ul>
+
+</div>
+```
+
+</div>
+
+<!-- 1940 -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1940</div>
+
+    <h2>R. L. Denyer</h2>
+
+    <h3>Wireless Society</h3>
+
+    <p>
+        By 1940 we have another direct contemporary connection.
+    </p>
+
+    <p>
+        <strong>R. L. Denyer</strong> was a Lamb B pupil and served
+        as <strong>Honorary Secretary of the Christ's Hospital
+        wireless society</strong>.
+    </p>
+
+    <p>
+        His affiliation was explicitly recorded as:
+    </p>
+
+    <div class="quote">
+        Lamb B, Christ's Hospital, Horsham.
+    </div>
+
+    <p>
+        This is valuable contemporary evidence that Lamb B was active
+        and producing pupils who held significant roles in school
+        societies by the beginning of the Second World War.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- WWII -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card unknown-card">
+
+    <div class="year">1942–1945 · Second World War</div>
+
+    <h2>Lamb B During WWII</h2>
+
+    <p>
+        The wartime period remains incompletely reconstructed.
+    </p>
+
+    <p>
+        The surviving Senior Grecian material currently available
+        does not identify a Lamb B Senior Grecian through these
+        particular years.
+    </p>
+
+    <p>
+        That does <strong>not</strong> mean Lamb B had no notable
+        pupils or events during the war.
+    </p>
+
+    <p>
+        Wartime copies of <em>The Blue</em>, Old Blue recollections
+        and school records may reveal:
+    </p>
+
+    <ul>
+        <li>Pupils serving in wartime organisations</li>
+        <li>Former pupils killed in the war</li>
+        <li>Wartime sporting and school activities</li>
+        <li>House competitions</li>
+        <li>Housemasters</li>
+        <li>Prefects and Captains</li>
+        <li>Evacuation and school-life details</li>
+    </ul>
+
+    <p>
+        For now, this period remains open for research.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1946 RED LION -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card lion-card">
+
+    <div class="year">1946 · House Identity</div>
+
+    <div class="lion-symbol">
+        <img
+            src="../images/lamb-b-lion.jpg"
+            alt="Red lion rampant, Lamb B emblem"
+        >
+    </div>
+
+    <h2>The Red Lion</h2>
+
+    <h3>Red Lion Rampant</h3>
+
+    <p>
+        The 1946 edition of <em>Housey</em> records Lamb B's badge
+        as the <strong>red lion rampant</strong>.
+    </p>
+
+    <p>
+        Lamb A is recorded with the white lion rampant.
+    </p>
+
+    <p>
+        This establishes that the red lion is not simply a modern
+        Lamb B design.
+    </p>
+
+    <div class="quote">
+        The red lion identity of Lamb B is documented at least
+        as far back as 1946.
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- LEACH -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1946–47</div>
+
+    <h2>R. A. Leach</h2>
+
+    <h3>Senior Grecian — Lamb B</h3>
+
+    <p>
+        R. A. Leach is recorded as
+        <strong>Senior Grecian, Lamb B, 1946–47</strong>.
+    </p>
+
+    <p>
+        Being a Senior Grecian was a major senior-school distinction
+        at Christ's Hospital.
+    </p>
+
+    <p>
+        We do not currently have sufficient evidence to identify
+        Leach as a House Captain or to give a verified post-CH career,
+        so the archive deliberately leaves those details open.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1951 PHOTO -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">Summer 1951 · Archive Photograph</div>
+
+    <h2>Lamb B — Summer 1951</h2>
+
+    <div class="archive-photo">
+
+        <img
+            src="../images/lamb-b-1951.jpg"
+            alt="Lamb B House photograph, Summer 1951"
+            loading="lazy"
+        >
+
+        <div class="photo-caption">
+            <strong>Lamb B — Summer 1951</strong><br>
+            Historical house photograph with surviving row-by-row identifications.
+        </div>
+
+    </div>
+
+    <h3>🏆 Miners — House Captain</h3>
+
+    <p>
+        This photograph is one of the most important surviving pieces
+        of the Lamb B social record.
+    </p>
+
+    <p>
+        The surviving identifications supplied for the photograph are
+        organised by row below.
+    </p>
+
+    <ul>
+        <li><strong>Miners</strong> — House Captain</li>
+        <li><strong>Mr Archbold</strong> — Senior Housemaster</li>
+        <li><strong>Miss Hull</strong> — Matron</li>
+        <li><strong>Mr Terry</strong> — Junior Housemaster</li>
+    </ul>
+
+    <details class="names-box">
+
+        <summary>Show the complete 1951 identifications</summary>
+
+        <p>
+            <strong>Back Row:</strong><br>
+            Dyball; Miller, W; Purdue; Wells; Hammond; Wells;
+            Norris; Gillespie; Hopkins.
+        </p>
+
+        <p>
+            <strong>Second Row:</strong><br>
+            Richardson; Bates; Parker; Aird; Harris; Matthews;
+            Hook; Barnard; Young; Romer; G-Stevens; Earl;
+            Wornell, P.
+        </p>
+
+        <p>
+            <strong>Third Row:</strong><br>
+            McOustra; Bamber; Green; Wilden; Almack; Pearcey;
+            Stewart; Burnside; Clark; Butterworth; White; Hewitt.
+        </p>
+
+        <p>
+            <strong>Fourth Row:</strong><br>
+            Pitter; Wilson; Rickards; <strong>Miners (House Captain)</strong>;
+            <strong>Mr Archbold (Senior Housemaster)</strong>;
+            <strong>Miss Hull (Matron)</strong>;
+            <strong>Mr Terry (Junior Housemaster)</strong>;
+            Nathan; Harding; Newman; Baker.
+        </p>
+
+        <p>
+            <strong>Front Row:</strong><br>
+            Waldron; Harrison; Wells; Moth; Madge; Miller, D;
+            Wornell, R; Skinner; Cousins; McAuley.
+        </p>
+
+        <p>
+            <strong>Trophies:</strong><br>
+            Swimming Cup; Boxing Cup (front).
+        </p>
+
+    </details>
+
+    <div class="quote">
+        Miners is currently the earliest identified Lamb B
+        House Captain — but this does not prove that he was
+        the first-ever Captain.
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- PEARCEY -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">Early 1950s · Arts & Music</div>
+
+    <h2>Leonard Pearcey</h2>
+
+    <h3>Music, Singing & Performance</h3>
+
+    <p>
+        Leonard Pearcey appears in the early-1950s Lamb B material
+        and is visible in the surviving historical house photographs.
+    </p>
+
+    <p>
+        CH recollections identify Pearcey as a notable bass singer
+        and as someone who became well known in the musical world.
+    </p>
+
+    <p>
+        He represents one of the earliest identifiable Lamb B
+        connections with the arts.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- HINES -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1951–1959 · Sport</div>
+
+    <h2>Geoffrey Hines</h2>
+
+    <h3>Rugby — Oxford Blue</h3>
+
+    <p>
+        Geoffrey Hines was a Lamb B pupil from 1951 to 1959 and
+        became <strong>Senior Grecian in 1958–59</strong>.
+    </p>
+
+    <ul>
+        <li>Lamb B pupil</li>
+        <li>Senior Grecian, 1958–59</li>
+        <li>Oxford rugby player</li>
+        <li>Oxford Blue</li>
+        <li>England rugby trialist</li>
+    </ul>
+
+    <p>
+        Hines later recalled that T. E. Archbold was his Housemaster
+        throughout his time at CH and described Archbold's influence
+        on his early rugby.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- ARCHBOLD -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1951–1959 · Housemaster</div>
+
+    <h2>T. E. Archbold</h2>
+
+    <h3>A Defining Lamb B Housemaster</h3>
+
+    <p>
+        <strong>T. E. Archbold</strong> was Senior Housemaster of
+        Lamb B through the 1950s.
+    </p>
+
+    <p>
+        He appears in the 1951 and 1953 house photographs and was
+        remembered by Lamb B pupils as an important influence on
+        house life.
+    </p>
+
+    <ul>
+        <li>Senior Housemaster of Lamb B</li>
+        <li>Biology teacher</li>
+        <li>Rugby coach</li>
+        <li>Former rugby player</li>
+        <li>Major figure in post-war Lamb B life</li>
+    </ul>
+
+    <p>
+        Geoffrey Hines later recalled Archbold as a devoted schoolmaster
+        and keen sportsman who coached him during his early rugby years.
+    </p>
+
+    <div class="quote">
+        "Tommy Archbold was a devoted Schoolmaster and a keen sportsman."
+    </div>
+
+    <p>
+        Hines was in Lamb B and had Archbold as his Housemaster from
+        <strong>September 1951 until Archbold's death in January 1959</strong>.
+        He later described Archbold as a particularly important influence
+        during his formative years at Christ's Hospital.
+    </p>
+
+    <p>
+        In Hines' recollection, Archbold coached him in the
+        <strong>Colts XV in 1954 and 1955</strong>, together with
+        <strong>Kit Aitken</strong>. Hines also remembered Archbold
+        teaching him the rudiments of rugby when he was a small boy
+        first learning the game.
+    </p>
+
+    <p>
+        Hines said that the influence of Archbold remained with him
+        later in his rugby career. He recalled feeling Archbold's
+        influence and presence when standing to attention for the
+        National Anthem before playing for Oxford in the
+        <strong>1961 Varsity Match</strong>.
+    </p>
+
+    <p>
+        Hines ultimately described Archbold as a man who
+        <strong>inspired him during his formative years</strong>
+        and to whom he felt he owed a great debt.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1953 PHOTO -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">Summer 1953 · Archive Photograph</div>
+
+    <h2>Lamb B — Summer 1953</h2>
+
+    <div class="archive-photo">
+
+        <img
+            src="../images/lamb-b-1953.jpg"
+            alt="Lamb B House photograph, Summer 1953"
+            loading="lazy"
+        >
+
+        <div class="photo-caption">
+            <strong>Lamb B — Summer 1953</strong><br>
+            House photograph; House Captain identified as Ian Pitter.
+        </div>
+
+    </div>
+
+    <h3>🏆 Ian Pitter — House Captain</h3>
+
+    <p>
+        The surviving photograph is identified as Summer 1953.
+        Ian Pitter is identified as House Captain.
+    </p>
+
+    <ul>
+        <li><strong>Ian Pitter</strong> — House Captain</li>
+        <li><strong>T. E. Archbold</strong> — Senior Housemaster</li>
+        <li><strong>Miss Hull</strong> — Matron</li>
+        <li><strong>Mr Barker</strong> — Junior Housemaster</li>
+    </ul>
+
+    <details class="names-box">
+
+        <summary>Show surviving name identifications</summary>
+
+        <p>
+            Stewart, Parker, Gillespie, Young, Earl, Clarke,
+            Wornell, Miller, Skinner, Hewitt, Pearcey, Madge,
+            Richardson, Bates, Cousins, Wells, Moth, Taplin,
+            Swayne, Waldron, Chapman, Brindley, Harrison,
+            Wheatley, Hines, Cordingly, Nisbett, Pitter,
+            Bamford, Purdue, Archbold, Miss Hull, Barker,
+            Miller, Dyball, Gray-Stephens, Matthews, Thomas,
+            Williams, Levy, Harris, Showan, Sharp, Duncan,
+            Archer and Johnson.
+        </p>
+
+    </details>
+
+</div>
+```
+
+</div>
+
+<!-- ARCHBOLD DEATH -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">January 1959</div>
+
+    <h2>The Death of T. E. Archbold</h2>
+
+    <p>
+        Archbold's time as Housemaster came to an end in January 1959
+        when he died following a skiing accident in Switzerland.
+    </p>
+
+    <p>
+        Geoffrey Hines later recalled that, about one week before the
+        end of the Christmas holidays, the then Headmaster,
+        <strong>C. M. E. Seaman</strong>, telephoned him at home to say
+        that Archbold had suffered an accident on the ski slopes in
+        Switzerland.
+    </p>
+
+    <p>
+        According to Hines' recollection, Archbold died a few days
+        later after <strong>pneumonia had set in</strong>.
+    </p>
+
+    <p>
+        Hines remembered Archbold's funeral service in the
+        <strong>Christ's Hospital Chapel</strong>. He recalled Archbold
+        lying in a particularly elaborate coffin, which he felt was
+        inappropriate for the man he knew.
+    </p>
+
+    <p>
+        Hines also remembered reading the lesson from
+        <em>Ecclesiasticus, Chapter 44</em>, beginning with the passage
+        traditionally associated with remembering the lives of notable
+        people and one's fathers.
+    </p>
+
+    <div class="quote">
+        Hines remembered Archbold not simply as a Housemaster,
+        but as a man who had inspired him during his formative years
+        and whose influence stayed with him throughout his later
+        rugby career.
+    </div>
+
+    <p>
+        Archbold's death therefore marked the end of one of the most
+        important Housemaster periods in the surviving post-war
+        Lamb B record.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- BARKER -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1959 onwards</div>
+
+    <h2>Martin Barker</h2>
+
+    <h3>From Junior Housemaster to Successor</h3>
+
+    <p>
+        Martin Barker had already appeared in the 1953 Lamb B
+        photograph as <strong>Junior Housemaster</strong>.
+    </p>
+
+    <p>
+        Following Archbold's death, Barker became associated with
+        Lamb B as his successor.
+    </p>
+
+    <div class="quote">
+        1953 — Barker: Junior Housemaster<br>
+        Later — Barker: Housemaster
+    </div>
+
+    <p>
+        His story provides a rare glimpse into the continuity of
+        house leadership across the post-war period.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- LANSLey -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1957–1966 · Science & Medicine</div>
+
+    <h2>Dr Peter Lansley</h2>
+
+    <p>
+        Peter Lansley's CH house history records:
+    </p>
+
+    <div class="quote">
+        Prep A → Lamb B, 1957–66
+    </div>
+
+    <p>
+        He later became a doctor and forms part of Lamb B's
+        growing connection with science and medicine.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- IAN JOHNSON -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1959–1966 · Science & Medicine</div>
+
+    <h2>Ian Johnson</h2>
+
+    <p>
+        Ian Johnson entered Christ's Hospital in 1959 and went to
+        Lamb B.
+    </p>
+
+    <p>
+        Later Old Blue recollections identify him as becoming a
+        <strong>medical professor at the University of Nottingham</strong>.
+    </p>
+
+    <div class="quote">
+        Lamb B → Medicine → University Professor
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- FRANK HUNTER -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1964–65</div>
+
+    <h2>Frank Hunter</h2>
+
+    <h3>Senior Grecian — Lamb B</h3>
+
+    <p>
+        Frank Hunter is recorded as Senior Grecian for
+        <strong>1964–65</strong>, with Lamb B identified as his house.
+    </p>
+
+    <p>
+        His place in the archive is currently based on the
+        documented Senior Grecian record; his later career
+        remains to be researched.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1970 -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1970–71</div>
+
+    <h2>Brian Miller</h2>
+
+    <h3>Senior Grecian — Lamb B</h3>
+
+    <p>
+        Brian Miller is recorded as Senior Grecian for
+        <strong>1970–71</strong>, with Lamb B as his house.
+    </p>
+
+    <p>
+        His entry extends the documented Senior Grecian chronology
+        nearly two decades beyond R. A. Leach.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1971 PHOTO -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">c.1971 · Archive Photograph</div>
+
+    <h2>Lamb B — c.1971</h2>
+
+    <div class="archive-photo">
+
+        <img
+            src="../images/lamb-b-1971.jpg"
+            alt="Lamb B House photograph, approximately 1971"
+            loading="lazy"
+        >
+
+        <div class="photo-caption">
+            <strong>Lamb B — approximately 1971</strong><br>
+            Identifications supplied by former Lamb B pupils.
+        </div>
+
+    </div>
+
+    <p>
+        This photograph bridges a major gap in the visual record,
+        showing Lamb B approximately twenty years after the 1951
+        house photograph.
+    </p>
+
+    <details class="names-box">
+
+        <summary>Show surviving identifications</summary>
+
+        <p>
+            A. 1, Bridges?, Steven Lloyd, Charlie Fraser,
+            Peter Everett, Yeomans, Rodgers, Erskine, Jock Fairbairn,
+            10, Tim Walmsley, David Hemy?, Dave Sergeant.
+        </p>
+
+        <p>
+            B. Campbell, Nigel Hutchins, Paul Brazier, Steen Lagoni,
+            Pickering?, Stonhill, Hubbard, Cooper, Alan Larsen,
+            Parkinson?, Paul?, Langley?, Dave Johnson.
+        </p>
+
+        <p>
+            C. 1, 2, 3, 4, Dave O'Meara, Bob Rae, 7, 8, 9,
+            Nigel Wood, Paul Sibley.
+        </p>
+
+        <p>
+            D. 1, 2, Chadwick, De Mattos?, Cox?, Gelpke,
+            Ian Argyle, 8, Paul?, Chris Comley.
+        </p>
+
+    </details>
+
+</div>
+```
+
+</div>
+
+<!-- 1987 PHOTO -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1987 · Archive Photograph</div>
+
+    <h2>Lamb B — 1987</h2>
+
+    <div class="archive-photo">
+
+        <img
+            src="../images/lamb-b-1987.jpg"
+            alt="Lamb B House photograph, 1987"
+            loading="lazy"
+        >
+
+        <div class="photo-caption">
+            <strong>Lamb B — 1987</strong><br>
+            Surviving late-20th-century Lamb B house photograph.
+        </div>
+
+    </div>
+
+    <p>
+        This photograph adds another visual record of Lamb B during
+        the late twentieth century and helps bridge the gap between
+        the earlier 1970s photograph and the later 1980s records.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1988 PHOTO -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1988 · Archive Photograph</div>
+
+    <h2>Lamb B — 1988</h2>
+
+    <div class="archive-photo">
+
+        <img
+            src="../images/lamb-b-1988.jpg"
+            alt="Lamb B House photograph, 1988"
+            loading="lazy"
+        >
+
+        <div class="photo-caption">
+            <strong>Lamb B — 1988</strong><br>
+            Surviving late-20th-century house photograph.
+        </div>
+
+    </div>
+
+    <p>
+        This photograph provides another visual snapshot of Lamb B
+        during the late twentieth century.
+    </p>
+
+    <p>
+        It is especially interesting when viewed alongside the
+        approximately 1971 photograph and the records of pupils
+        such as James D'Arcy, who attended CH during this era.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1989 PHOTO -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1989 · Archive Photograph</div>
+
+    <h2>Lamb B — 1989</h2>
+
+    <div class="archive-photo">
+
+        <img
+            src=" ../images/lamb-b-1989.jpg"
+            alt="Lamb B House photograph, 1989"
+            loading="lazy"
+        >
+
+        <div class="photo-caption">
+            <strong>Lamb B — 1989</strong><br>
+            Surviving late-20th-century house photograph.
+        </div>
+
+    </div>
+
+    <p>
+        Another surviving house photograph from the late 1980s,
+        helping document Lamb B's people and appearance during this
+        period.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1990 PHOTO -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1990 · Archive Photograph</div>
+
+    <h2>Lamb B — 1990</h2>
+
+    <div class="archive-photo">
+
+        <img
+            src=" ../images/lamb-b-1990.jpg"
+            alt="Lamb B House photograph, 1990"
+            loading="lazy"
+        >
+
+        <div class="photo-caption">
+            <strong>Lamb B — 1990</strong><br>
+            Surviving late-20th-century house photograph.
+        </div>
+
+    </div>
+
+    <p>
+        The 1990 photograph continues the visual record of Lamb B
+        into the final decade of the twentieth century.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- 1984 JAMES DARCY -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1984–1991 · Arts / Film / Television</div>
+
+    <h2>James D'Arcy</h2>
+
+    <div class="person-card">
+
+        <img
+            src=" ../images/james-darcy.jpg"
+            alt="James D'Arcy"
+            class="person-photo"
+            loading="lazy"
+        >
+
+        <div>
+
+            <div class="person-role">
+                Lamb B / Lamb A · 1984–91
+            </div>
+
+            <p>
+                One of the best-known modern Old Blues connected
+                with Lamb B.
+            </p>
+
+        </div>
+
+    </div>
+
+    <p>
+        James D'Arcy attended Christ's Hospital from
+        <strong>1984 to 1991</strong>.
+    </p>
+
+    <p>
+        The surviving CH record specifically identifies his
+        association as <strong>Lamb B / Lamb A</strong>, so the
+        archive does not simplify his entire CH period to Lamb B.
+    </p>
+
+    <h3>Career</h3>
+
+    <ul>
+        <li>Edwin Jarvis in <em>Agent Carter</em></li>
+        <li>Edwin Jarvis in <em>Avengers: Endgame</em></li>
+        <li><em>Dunkirk</em></li>
+        <li><em>Broadchurch</em></li>
+        <li><em>Master and Commander</em></li>
+        <li><em>Hitchcock</em></li>
+        <li>Writer/director of <em>Made in Italy</em></li>
+    </ul>
+
+    <div class="quote">
+        James D'Arcy is one of the strongest modern names
+        in the Lamb B alumni archive.
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- MATTHEW ADAMS -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1995–1998 · Military / Aviation</div>
+
+    <h2>Matthew Adams</h2>
+
+    <h3>Lamb B → Leadership → Aviation</h3>
+
+    <p>
+        Matthew Adams is documented as a Lamb B pupil from
+        <strong>1995–98</strong>.
+    </p>
+
+    <p>
+        His later CH progression included other houses and senior
+        positions, eventually reaching <strong>Second Monitor</strong>.
+    </p>
+
+    <ul>
+        <li>Lamb B, 1995–98</li>
+        <li>Later CH senior leadership</li>
+        <li>RAF service</li>
+        <li>Aviation career</li>
+        <li>Delta Air Lines pilot</li>
+        <li>Friends of Christ's Hospital USA involvement</li>
+    </ul>
+
+</div>
+```
+
+</div>
+
+<!-- TOM FORREST -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">1996–2003</div>
+
+    <h2>Tom Forrest</h2>
+
+    <h3>Lamb B / Mid A</h3>
+
+    <p>
+        Tom Forrest is recorded as having been associated with
+        <strong>Lamb B and Mid A from 1996–2003</strong>.
+    </p>
+
+    <p>
+        He belongs in the continuing alumni record, although his
+        post-CH career is still to be researched in sufficient
+        detail for a full notable-alumnus profile.
+    </p>
+
+</div>
+```
+
+</div>
+
+<!-- KEIR -->
+
+<div class="timeline-item left">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+    <div class="year">2020 · House Leadership</div>
+
+    <h2>Keir Churchill</h2>
+
+    <h3>House Captain — Lamb B</h3>
+
+    <p>
+        Keir Churchill is recorded as
+        <strong>House Captain of Lamb B in 2020</strong>.
+    </p>
+
+    <p>
+        His documented CH achievements included:
+    </p>
+
+    <ul>
+        <li>Drama Scholarship</li>
+        <li>Drama Prize</li>
+        <li>Rugby colours</li>
+        <li>Leadership positions</li>
+        <li>Head Teacher's Award</li>
+    </ul>
+
+    <div class="quote">
+        A modern link in the long line of Lamb B House leadership.
+    </div>
+
+</div>
+```
+
+</div>
+
+<!-- TODAY -->
+
+<div class="timeline-item right">
+
+```
+<div class="timeline-dot"></div>
+
+<div class="timeline-card lion-card">
+
+    <div class="year">Today</div>
+
+    <div class="lion-symbol">
+        <img
+            src=" ../images/lamb-b-lion.jpg"
+            alt="Lamb B red rampant lion"
+        >
+    </div>
+
+    <h2>The Story Continues</h2>
+
+    <p>
+        Lamb B is still writing its history.
+    </p>
+
+    <p>
+        The archive will continue to grow with new photographs,
+        House Captains, Old Blues, House achievements and memories.
+    </p>
+
+    <p>
+        The gaps in the historical record are not the end of the
+        story — they are invitations to discover what comes next.
+    </p>
+
+</div>
+```
+
+</div>
+
+</div>
+</section>
+
+
+
+<!-- =====================================================
+     WALL OF FAME
+====================================================== -->
+
+<section class="fame-section">
+
+```
+<div class="section-title">
+
+    <div class="small">Lamb B Alumni</div>
+
+    <h2>Notable Old Blues</h2>
+
+</div>
+
+
+<div class="fame-grid">
+
+
+    <div class="fame-card">
+
+        <div class="category">Arts · Film · Television</div>
+
+        <h3>James D'Arcy</h3>
+
+        <p>
+            Lamb B / Lamb A, 1984–91.
+            Actor known for Edwin Jarvis in
+            <em>Agent Carter</em> and
+            <em>Avengers: Endgame</em>, as well as
+            <em>Dunkirk</em>, <em>Broadchurch</em> and other film
+            and television work.
+        </p>
+
+    </div>
+
+
+    <div class="fame-card">
+
+        <div class="category">Sport · Rugby</div>
+
+        <h3>Geoffrey Hines</h3>
+
+        <p>
+            Lamb B, 1951–59.
+            Senior Grecian, Oxford rugby player,
+            Oxford Blue and England rugby trialist.
+        </p>
+
+    </div>
+
+
+    <div class="fame-card">
+
+        <div class="category">Science · Medicine</div>
+
+        <h3>Ian Johnson</h3>
+
+        <p>
+            Lamb B, 1959–66.
+            Later became a medical professor at the
+            University of Nottingham.
+        </p>
+
+    </div>
+
+
+    <div class="fame-card">
+
+        <div class="category">Military · Aviation</div>
+
+        <h3>Matthew Adams</h3>
+
+        <p>
+            Lamb B, 1995–98.
+            Later RAF officer, pilot and involved with
+            Friends of Christ's Hospital USA.
+        </p>
+
+    </div>
+
+
+    <div class="fame-card">
+
+        <div class="category">Arts · Music</div>
+
+        <h3>Leonard Pearcey</h3>
+
+        <p>
+            Lamb B in the early 1950s.
+            Remembered in CH material as a notable bass singer
+            who became well known in the musical world.
+        </p>
+
+    </div>
+
+
+    <div class="fame-card">
+
+        <div class="category">Science · Medicine</div>
+
+        <h3>Dr Peter Lansley</h3>
+
+        <p>
+            Prep A → Lamb B, 1957–66.
+            Later became a doctor.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     UNKNOWN HISTORY
+====================================================== -->
+
+<section class="mystery">
+
+```
+<div class="mystery-box">
+
+    <h2>The Archive Is Still Missing Pieces</h2>
+
+    <p>
+        Lamb B's history is not yet complete. These are some of
+        the biggest unanswered questions:
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>Who was the first Lamb B boy?</strong>
+            Currently unknown.
+        </li>
+
+        <li>
+            <strong>Who was the first Lamb B House Captain?</strong>
+            Currently unknown.
+        </li>
+
+        <li>
+            <strong>What happened to Lamb B between 1902 and 1925?</strong>
+            Only partially reconstructed.
+        </li>
+
+        <li>
+            <strong>Who led Lamb B during the 1930s?</strong>
+            Further records required.
+        </li>
+
+        <li>
+            <strong>What was Lamb B's wartime story?</strong>
+            Further wartime copies of <em>The Blue</em>,
+            <em>Housey</em> and related records need to be examined.
+        </li>
+
+        <li>
+            <strong>Who were all the House Captains between 1953 and 2020?</strong>
+            The current list is incomplete.
+        </li>
+
+    </ul>
+
+    <p>
+        If new photographs, Housey pages, Old Blue memories,
+        House Captain records or other historical material are found,
+        they can be added to this archive.
+    </p>
+
+</div>
+```
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+```
+<strong>LAMB B</strong><br><br>
+
+An evolving digital record of the history,
+people and traditions of Lamb B, Christ's Hospital.
+
+<br><br>
+
+<span>
+    Historical information should be checked against the original
+    archival sources where possible.
+</span>
+```
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lamb B — House News</title>
+
+<style>
+
+:root {
+    --black: #070707;
+    --black2: #111111;
+    --red: #a90000;
+    --red-dark: #700000;
+    --red-light: #d00000;
+    --yellow: #f2c400;
+    --white: #f5f5f5;
+    --grey: #bdbdbd;
+    --line: #4b4b4b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top right, rgba(169,0,0,0.18), transparent 35%),
+        linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.75;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+    background: rgba(5,5,5,0.96);
+    border-bottom: 3px solid var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.brand-lion {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.brand span {
+    color: white;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    border: 1px solid var(--red);
+    padding: 7px 15px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.back-button:hover {
+    background: var(--red);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 25px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #252525;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: rgba(169,0,0,0.09);
+    filter: blur(70px);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 950px;
+    z-index: 2;
+}
+
+.hero-kicker {
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    margin: 15px 0 0;
+    font-size: clamp(60px, 11vw, 140px);
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: var(--red-light);
+}
+
+.hero-subtitle {
+    max-width: 750px;
+    margin: 30px auto 0;
+    color: #d2d2d2;
+    font-size: 19px;
+}
+
+.hero-line {
+    width: 100px;
+    height: 5px;
+    background: var(--red);
+    margin: 35px auto 0;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    max-width: 1000px;
+    margin: 70px auto 40px;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.intro h2 {
+    color: var(--red-light);
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    color: #cfcfcf;
+    font-size: 17px;
+}
+
+/* =========================
+   NEWS SECTION
+========================= */
+
+.news-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 25px 100px;
+}
+
+/* =========================
+   FEATURED STORY
+========================= */
+
+.featured {
+    position: relative;
+    border: 1px solid #3b3b3b;
+    border-top: 4px solid var(--red);
+    border-radius: 10px;
+    overflow: hidden;
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+    margin-bottom: 35px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+}
+
+.featured-content {
+    padding: 40px;
+}
+
+.news-label {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.featured h2 {
+    font-size: 40px;
+    margin: 10px 0 15px;
+}
+
+.featured p {
+    color: #ccc;
+    font-size: 16px;
+    max-width: 850px;
+}
+
+.date {
+    color: #888;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   NEWS GRID
+========================= */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.news-card {
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01));
+    border: 1px solid #353535;
+    border-radius: 9px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.25s;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--red);
+}
+
+.news-card::after {
+    content: "LAMB B";
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+    color: rgba(169,0,0,0.045);
+    font-family: Arial, sans-serif;
+    font-size: 65px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.news-card h3 {
+    font-size: 27px;
+    margin: 8px 0 12px;
+}
+
+.news-card p {
+    color: #c8c8c8;
+}
+
+.news-category {
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* =========================
+   PHOTO AREA
+========================= */
+
+.news-photo {
+    margin: 20px 0;
+    border: 1px solid #3a3a3a;
+    background: #050505;
+    padding: 9px;
+    border-radius: 6px;
+}
+
+.news-photo img {
+    width: 100%;
+    display: block;
+    max-height: 500px;
+    object-fit: cover;
+    background: #111;
+}
+
+.photo-placeholder {
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px dashed #444;
+    background: #0b0b0b;
+    color: #666;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   NEWS META
+========================= */
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #2c2c2c;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   HOUSE COMPETITIONS
+========================= */
+
+.competition-card {
+    border-left: 4px solid var(--red);
+}
+
+.competition-card h3 {
+    color: white;
+}
+
+/* =========================
+   ANNOUNCEMENT
+========================= */
+
+.announcement {
+    margin-top: 35px;
+    border: 1px solid #6b5900;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(242,196,0,0.07),
+            rgba(255,255,255,0.01)
+        );
+    border-radius: 9px;
+    padding: 30px;
+}
+
+.announcement h2 {
+    color: var(--yellow);
+    margin-top: 0;
+}
+
+.announcement p {
+    color: #ccc;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    text-align: center;
+    padding: 65px 30px;
+    border: 1px dashed #3e3e3e;
+    border-radius: 9px;
+    background: rgba(0,0,0,0.25);
+}
+
+.empty-state h2 {
+    margin: 0 0 10px;
+    font-size: 30px;
+}
+
+.empty-state p {
+    color: #777;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #292929;
+    padding: 45px 25px;
+    text-align: center;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+footer strong {
+    color: var(--red-light);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .brand {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 360px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-content {
+        padding: 28px;
+    }
+
+    .featured h2 {
+        font-size: 32px;
+    }
+
+    .news-card {
+        padding: 25px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     TOP BAR
+====================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <img
+            src="../images/lamb-b-lion.jpg"
+            alt="Lamb B Red Lion"
+            class="brand-lion"
+        >
+
+        <span>Lamb B House News</span>
+
+    </div>
+
+    <a href="home.html" class="back-button">
+        ← House Home
+    </a>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-kicker">
+            Lamb B · News & Events
+        </div>
+
+        <h1>
+            House <span>News</span>
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p class="hero-subtitle">
+            The latest news, achievements, competitions, events and
+            stories from Lamb B.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="intro">
+
+    <h2>The Lamb B Chronicle</h2>
+
+    <p>
+        This is the home of Lamb B's current story.
+        Major events, House competitions, achievements, trips,
+        celebrations and memorable moments will be recorded here
+        throughout the year.
+    </p>
+
+    <p>
+        Unlike the historical archive, this page records the events
+        happening <strong>now</strong> — creating a permanent record
+        for future generations of Lamb B.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     NEWS
+====================================================== -->
+
+<section class="news-section">
+
+
+<!-- FEATURED STORY -->
+
+<div class="featured">
+
+    <div class="featured-content">
+
+        <div class="news-label">
+            Featured Story
+        </div>
+
+        <h2>Welcome to a New Year in Lamb B</h2>
+
+        <div class="date">
+            Michaelmas 2026
+        </div>
+
+        <p>
+            The 2026–27 Lamb B year is about to begin.
+            This space will become the home of the year's biggest
+            House stories, achievements and events.
+        </p>
+
+        <p>
+            From House competitions and sporting achievements to
+            performances, trips, celebrations and the everyday moments
+            that make Lamb B what it is, everything important can be
+            recorded here.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- NEWS STORIES -->
+
+<div class="news-grid">
+
+
+<!-- HOUSE COMPETITIONS -->
+
+<div class="news-card competition-card">
+
+    <div class="news-category">
+        House Competitions
+    </div>
+
+    <h3>House Competition News</h3>
+
+    <div class="photo-placeholder">
+        Competition photograph
+    </div>
+
+    <p>
+        Reports of Lamb B's progress in House competitions,
+        including sporting, musical, academic and other events.
+    </p>
+
+    <div class="news-meta">
+        <span>Michaelmas 2026</span>
+        <span>Awaiting Results</span>
+    </div>
+
+</div>
+
+
+<!-- SPORT -->
+
+<div class="news-card">
+
+    <div class="news-category">
+        Sport
+    </div>
+
+    <h3>Lamb B Sport</h3>
+
+    <div class="photo-placeholder">
+        Sport photograph
+    </div>
+
+    <p>
+        Results, performances and achievements from Lamb B members
+        across the school's sporting programme.
+    </p>
+
+    <div class="news-meta">
+        <span>2026–27</span>
+        <span>Awaiting News</span>
+    </div>
+
+</div>
+
+
+<!-- MUSIC & ARTS -->
+
+<div class="news-card">
+
+    <div class="news-category">
+        Arts & Culture
+    </div>
+
+    <h3>Music, Drama & Arts</h3>
+
+    <div class="photo-placeholder">
+        Performance photograph
+    </div>
+
+    <p>
+        Performances, concerts, exhibitions, productions and other
+        creative achievements involving members of Lamb B.
+    </p>
+
+    <div class="news-meta">
+        <span>2026–27</span>
+        <span>Awaiting News</span>
+    </div>
+
+</div>
+
+
+<!-- ACADEMIC -->
+
+<div class="news-card">
+
+    <div class="news-category">
+        Academic
+    </div>
+
+    <h3>Academic Achievements</h3>
+
+    <div class="photo-placeholder">
+        Academic achievement photograph
+    </div>
+
+    <p>
+        Scholarships, prizes, academic competitions, examination
+        achievements and other notable academic successes.
+    </p>
+
+    <div class="news-meta">
+        <span>2026–27</span>
+        <span>Awaiting News</span>
+    </div>
+
+</div>
+
+
+<!-- EVENTS -->
+
+<div class="news-card">
+
+    <div class="news-category">
+        House Life
+    </div>
+
+    <h3>Events & Activities</h3>
+
+    <div class="photo-placeholder">
+        Event photograph
+    </div>
+
+    <p>
+        House events, trips, celebrations, socials and other moments
+        from life in Lamb B.
+    </p>
+
+    <div class="news-meta">
+        <span>2026–27</span>
+        <span>Awaiting News</span>
+    </div>
+
+</div>
+
+
+<!-- ACHIEVEMENTS -->
+
+<div class="news-card">
+
+    <div class="news-category">
+        People
+    </div>
+
+    <h3>Individual Achievements</h3>
+
+    <div class="photo-placeholder">
+        Achievement photograph
+    </div>
+
+    <p>
+        Major achievements by individual Lamb B members, inside or
+        outside school, that deserve to be celebrated by the House.
+    </p>
+
+    <div class="news-meta">
+        <span>2026–27</span>
+        <span>Awaiting News</span>
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     ANNOUNCEMENTS
+====================================================== -->
+
+<div class="announcement">
+
+    <h2>📣 House Announcements</h2>
+
+    <p>
+        Important House-wide announcements can go here.
+        This could include information from the House Captain,
+        Deputy House Captain, Housemaster or other House leadership.
+    </p>
+
+    <p style="color:#777;">
+        No announcements currently.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     EMPTY ARCHIVE
+====================================================== -->
+
+<div style="margin-top:35px;">
+
+    <div class="empty-state">
+
+        <h2>The Chronicle Begins Here</h2>
+
+        <p>
+            There are no further news stories yet.
+            As the 2026–27 year progresses, this section will grow
+            into an archive of Lamb B's achievements and memories.
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <strong>LAMB B</strong><br><br>
+
+    The Lamb B House Chronicle.
+
+    <br><br>
+
+    <span>
+        Christ's Hospital · 2026–27
+    </span>
+
+</footer>
+
+
+</body>
+</html>

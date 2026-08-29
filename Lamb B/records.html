@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lamb B — Records & Achievements</title>
+
+<style>
+
+:root {
+    --black: #070707;
+    --black2: #111111;
+    --red: #a90000;
+    --red-dark: #700000;
+    --red-light: #d00000;
+    --yellow: #f2c400;
+    --white: #f5f5f5;
+    --grey: #bdbdbd;
+    --line: #383838;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top right, rgba(169,0,0,0.18), transparent 35%),
+        linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+    background: rgba(5,5,5,0.96);
+    border-bottom: 3px solid var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.brand-lion {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.brand span {
+    color: white;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    border: 1px solid var(--red);
+    padding: 7px 15px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.back-button:hover {
+    background: var(--red);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 25px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #252525;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: rgba(169,0,0,0.09);
+    filter: blur(70px);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 950px;
+    z-index: 2;
+}
+
+.hero-kicker {
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    margin: 15px 0 0;
+    font-size: clamp(55px, 10vw, 125px);
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    color: var(--red-light);
+}
+
+.hero-subtitle {
+    max-width: 720px;
+    margin: 30px auto 0;
+    color: #d2d2d2;
+    font-size: 19px;
+}
+
+.hero-line {
+    width: 100px;
+    height: 5px;
+    background: var(--red);
+    margin: 35px auto 0;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.introduction {
+    max-width: 950px;
+    margin: 75px auto 55px;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.introduction h2 {
+    color: var(--red-light);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    color: #d0d0d0;
+    font-size: 17px;
+}
+
+/* =========================
+   MAIN CHOICE
+========================= */
+
+.records-choice {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 20px 25px 110px;
+}
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* =========================
+   CHOICE CARDS
+========================= */
+
+.choice-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 390px;
+    padding: 42px;
+    text-decoration: none;
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.012)
+        );
+
+    border: 1px solid #3b3b3b;
+    border-radius: 10px;
+
+    box-shadow: 0 20px 55px rgba(0,0,0,0.3);
+
+    overflow: hidden;
+    transition:
+        transform 0.25s,
+        border-color 0.25s,
+        box-shadow 0.25s;
+}
+
+.choice-card::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    right: -100px;
+    top: -100px;
+    background: rgba(169,0,0,0.13);
+    filter: blur(10px);
+}
+
+.choice-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--red);
+    box-shadow: 0 25px 65px rgba(169,0,0,0.15);
+}
+
+.choice-number {
+    position: relative;
+    color: var(--yellow);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.choice-symbol {
+    position: relative;
+    font-size: 70px;
+    line-height: 1;
+    margin: 25px 0 20px;
+    color: var(--red-light);
+}
+
+.choice-card h2 {
+    position: relative;
+    font-size: 38px;
+    margin: 0 0 15px;
+    line-height: 1.1;
+}
+
+.choice-card p {
+    position: relative;
+    color: #c9c9c9;
+    font-size: 16px;
+    max-width: 520px;
+}
+
+.choice-list {
+    position: relative;
+    margin: 15px 0 25px;
+    padding-left: 20px;
+    color: #c9c9c9;
+}
+
+.choice-list li {
+    margin-bottom: 6px;
+}
+
+.choice-button {
+    position: relative;
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+
+    padding: 10px 20px;
+
+    background: var(--red-dark);
+    border: 1px solid var(--red);
+    border-radius: 5px;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.2s;
+}
+
+.choice-card:hover .choice-button {
+    background: var(--red);
+}
+
+/* =========================
+   RECORDS CARD
+========================= */
+
+.records-card {
+    border-top: 5px solid var(--red);
+}
+
+.records-card .choice-symbol {
+    color: var(--red-light);
+}
+
+/* =========================
+   ACHIEVEMENTS CARD
+========================= */
+
+.achievements-card {
+    border-top: 5px solid var(--yellow);
+}
+
+.achievements-card .choice-symbol {
+    color: var(--yellow);
+}
+
+.achievements-card:hover {
+    border-color: var(--yellow);
+}
+
+.achievements-card:hover .choice-button {
+    background: #806900;
+    border-color: var(--yellow);
+}
+
+/* =========================
+   BOTTOM NOTE
+========================= */
+
+.archive-note {
+    max-width: 950px;
+    margin: 0 auto 100px;
+    padding: 0 25px;
+}
+
+.archive-note-box {
+    border: 1px solid #3a3a3a;
+    border-left: 4px solid var(--yellow);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(242,196,0,0.06),
+            rgba(255,255,255,0.01)
+        );
+    padding: 30px;
+    border-radius: 7px;
+}
+
+.archive-note-box h3 {
+    color: var(--yellow);
+    margin-top: 0;
+}
+
+.archive-note-box p {
+    color: #c9c9c9;
+    margin-bottom: 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #292929;
+    padding: 45px 25px;
+    text-align: center;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+footer strong {
+    color: var(--red-light);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .brand {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 420px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .choice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .choice-card {
+        min-height: 350px;
+        padding: 30px;
+    }
+
+    .choice-card h2 {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+====================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <img
+            src="../images/lamb-b-lion.jpg"
+            alt="Lamb B Red Lion"
+            class="brand-lion"
+        >
+
+        <span>Lamb B Archive</span>
+
+    </div>
+
+    <a href="home.html" class="back-button">
+        ← House Home
+    </a>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-kicker">
+            Lamb B Archive
+        </div>
+
+        <h1>
+            Records <span>&</span><br>
+            Achievements
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <p class="hero-subtitle">
+            The continuing record of Lamb B —
+            its leaders, monitors, house achievements,
+            competitions and traditions.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="introduction">
+
+    <h2>Two sides of the record</h2>
+
+    <p>
+        Lamb B's history tells us where the House has come from.
+        These records show what the House is doing now and what
+        generations of Lamb B pupils have achieved.
+    </p>
+
+    <p>
+        The archive is divided into two sections:
+        <strong>House Records</strong>, documenting the people who
+        lead the House, and <strong>House Achievements</strong>,
+        recording the competitions, trophies and accomplishments
+        that form part of Lamb B's continuing story.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     TWO MAIN PAGES
+====================================================== -->
+
+<section class="records-choice">
+
+    <div class="choice-grid">
+
+
+        <!-- HOUSE RECORDS -->
+
+        <a href="house-records.html" class="choice-card records-card">
+
+            <div class="choice-number">
+                01 · House Records
+            </div>
+
+            <div class="choice-symbol">
+                ♜
+            </div>
+
+            <h2>House Records</h2>
+
+            <p>
+                The leadership record of Lamb B, beginning with the
+                modern House and continuing year by year.
+            </p>
+
+            <ul class="choice-list">
+
+                <li>House Captains</li>
+                <li>Deputy House Captains</li>
+                <li>Monitors</li>
+                <li>Historical House Captains</li>
+                <li>Historical Senior Grecians</li>
+
+            </ul>
+
+            <div class="choice-button">
+                Enter House Records →
+            </div>
+
+        </a>
+
+
+        <!-- HOUSE ACHIEVEMENTS -->
+
+        <a href="achievements.html" class="choice-card achievements-card">
+
+            <div class="choice-number">
+                02 · House Achievements
+            </div>
+
+            <div class="choice-symbol">
+                🏆
+            </div>
+
+            <h2>House Achievements</h2>
+
+            <p>
+                A growing record of the competitions, trophies,
+                sporting successes and other achievements of Lamb B.
+            </p>
+
+            <ul class="choice-list">
+
+                <li>House competitions</li>
+                <li>Sporting achievements</li>
+                <li>House cups and trophies</li>
+                <li>Music, drama and arts</li>
+                <li>Notable House accomplishments</li>
+
+            </ul>
+
+            <div class="choice-button">
+                Enter Achievements →
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ARCHIVE NOTE
+====================================================== -->
+
+<section class="archive-note">
+
+    <div class="archive-note-box">
+
+        <h3>A Living Record</h3>
+
+        <p>
+            Unlike the historical archive, these pages are designed
+            to continue growing. Each new House year can be added to
+            the leadership record, while new trophies, competitions
+            and achievements can be added to the House's permanent
+            record.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <strong>LAMB B</strong><br><br>
+
+    An evolving digital record of the history,
+    people, leadership and achievements of Lamb B,
+    Christ's Hospital.
+
+    <br><br>
+
+    <span>
+        Historical information should be checked against original
+        archival sources where possible.
+    </span>
+
+</footer>
+
+
+</body>
+</html>
