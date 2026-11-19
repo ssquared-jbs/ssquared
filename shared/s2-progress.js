@@ -102,6 +102,75 @@
     save();
   }
 
+
+  // ---------- XP and levels (the fun bit) ----------
+  var LEVELS = [
+    [0, "Spark", "✨"], [100, "Atom", "⚛️"], [250, "Molecule", "🧪"], [500, "Cell", "🦠"], [900, "Crystal", "💎"],
+    [1400, "Planet", "🪐"], [2000, "Star", "⭐"], [3000, "Nebula", "🌌"], [4500, "Galaxy", "🌀"], [6500, "Universe", "🌠"]
+  ];
+  function xp() { return load().xp || 0; }
+  function level(x) {
+    x = x == null ? xp() : x;
+    var i = 0; while (i + 1 < LEVELS.length && x >= LEVELS[i + 1][0]) i++;
+    var cur = LEVELS[i], next = LEVELS[i + 1];
+    return { n: i + 1, name: cur[1], icon: cur[2], from: cur[0], to: next ? next[0] : null, pct: next ? Math.round((x - cur[0]) / (next[0] - cur[0]) * 100) : 100 };
+  }
+  var pills = [];
+  function xpPill() {
+    var a = document.createElement("span");
+    a.className = "s2-xp-pill";
+    function draw() {
+      var L = level(), x = xp();
+      a.innerHTML = '<span aria-hidden="true">' + L.icon + "</span> Lv " + L.n + "<i style='--p:" + L.pct + "%'></i>";
+      a.title = L.name + " · " + x + " XP" + (L.to ? " · " + (L.to - x) + " XP to the next level" : " · top level!");
+      a.setAttribute("aria-label", "Level " + L.n + ", " + L.name + ", " + x + " XP");
+    }
+    draw(); pills.push(draw);
+    return a;
+  }
+  function chip(text, cls) {
+    var c = document.createElement("div");
+    c.className = "s2-xp-chip " + (cls || "");
+    c.textContent = text;
+    if (cls === "big") document.body.appendChild(c);
+    else {
+      var box = document.querySelector(".s2-chips");
+      if (!box) { box = document.createElement("div"); box.className = "s2-chips"; box.setAttribute("aria-live", "polite"); document.body.appendChild(box); }
+      box.appendChild(c);
+    }
+    setTimeout(function () { c.classList.add("go"); }, 20);
+    setTimeout(function () { c.remove(); }, 1600);
+  }
+  function addXP(n, why) {
+    if (!n || n < 0) return;
+    var d = load(), before = level(d.xp || 0);
+    d.xp = (d.xp || 0) + Math.round(n);
+    markActive(); save();
+    var after = level(d.xp);
+    pills.forEach(function (f) { f(); });
+    chip("+" + Math.round(n) + " XP" + (why ? " · " + why : ""));
+    if (after.n > before.n) {
+      setTimeout(function () { confetti(); chip("Level up! You're now " + after.icon + " " + after.name, "big"); }, 350);
+    }
+  }
+  function confetti(opts) {
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var c = document.createElement("canvas"), ctx = c.getContext("2d");
+    if (!ctx) return;
+    c.className = "s2-confetti"; document.body.appendChild(c);
+    var W = c.width = innerWidth, H = c.height = innerHeight, cs = getComputedStyle(document.body);
+    var cols = [cs.getPropertyValue("--accent") || "#e0383e", "#ffdf5d", "#3fcf8e", "#2f62d8", "#d9661f", "#e0383e"];
+    var parts = [];
+    for (var i = 0; i < 110; i++) parts.push({ x: W / 2 + (Math.random() - 0.5) * W * 0.3, y: H * 0.35, vx: (Math.random() - 0.5) * 14, vy: -Math.random() * 13 - 4, r: Math.random() * 6 + 4, a: Math.random() * 6, va: (Math.random() - 0.5) * 0.4, c: cols[i % cols.length].trim() });
+    var t0 = performance.now();
+    (function frame(t) {
+      var dt = Math.min(32, t - (frame.last || t)); frame.last = t;
+      ctx.clearRect(0, 0, W, H);
+      parts.forEach(function (p) { p.vy += 0.35 * dt / 16; p.x += p.vx * dt / 16; p.y += p.vy * dt / 16; p.a += p.va; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.fillStyle = p.c; ctx.fillRect(-p.r / 2, -p.r / 4, p.r, p.r / 2); ctx.restore(); });
+      if (t - t0 < 2200) requestAnimationFrame(frame); else c.remove();
+    })(t0);
+  }
+
   function themeButton() {
     var b = document.createElement("button");
     b.type = "button"; b.className = "s2-theme-btn";
@@ -125,5 +194,5 @@
     document.documentElement.setAttribute("data-theme", pref === "dark" || (pref !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
   }
 
-  window.S2 = { themeButton: themeButton, touch: touch, item: item, items: items, streak: streak, ring: ring, streakPill: streakPill, weekHtml: weekHtml, timeAgo: timeAgo, markActive: function () { markActive(); save(); }, reset: reset, today: today };
+  window.S2 = { themeButton: themeButton, xp: xp, level: level, xpPill: xpPill, addXP: addXP, confetti: confetti, chip: chip, touch: touch, item: item, items: items, streak: streak, ring: ring, streakPill: streakPill, weekHtml: weekHtml, timeAgo: timeAgo, markActive: function () { markActive(); save(); }, reset: reset, today: today };
 })();

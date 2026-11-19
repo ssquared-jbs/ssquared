@@ -245,3 +245,49 @@ body.s2 :focus-visible { outline: 3px solid var(--hl); outline-offset: 2px; bord
 @media (max-width: 560px) {
   .s2-continue { flex-direction: column; align-items: flex-start; }
 }
+
+/* ---------- XP, chips, confetti ---------- */
+.s2-xp-pill {
+  position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 5px; flex: none;
+  font-weight: 700; font-size: 0.9rem; padding: 6px 12px; border-radius: 999px; background: var(--card); color: var(--ink);
+  border: 1.5px solid var(--line); cursor: default;
+}
+.s2-xp-pill i { position: absolute; left: 0; bottom: 0; height: 3px; width: var(--p); background: var(--accent); }
+.s2-chips { position: fixed; right: 18px; bottom: 18px; z-index: 120; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; pointer-events: none; }
+.s2-xp-chip {
+  position: relative; background: var(--panel); color: #fff; font-weight: 700;
+  padding: 8px 14px; border-radius: 12px; box-shadow: 0 4px 0 var(--hl); opacity: 0; transform: translateY(12px);
+  transition: opacity 0.25s, transform 0.25s; pointer-events: none; max-width: 80vw;
+}
+.s2-xp-chip.go { opacity: 1; transform: translateY(0); animation: s2chip 1.6s ease forwards; }
+.s2-xp-chip.big { position: fixed; z-index: 121; right: 50%; transform: translate(50%, 12px); bottom: 50%; font-size: 1.2rem; padding: 14px 22px; background: var(--hl); color: #3a2d00; box-shadow: 0 5px 0 #c9a400; }
+.s2-xp-chip.big.go { transform: translate(50%, 0); }
+@keyframes s2chip { 0% { opacity: 0; } 12% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; } }
+.s2-confetti { position: fixed; inset: 0; pointer-events: none; z-index: 110; }
+@media (max-width: 760px) { .s2-xp-pill { display: none; } }
+
+/* ---------- notebook (OneNote-style) ---------- */
+.s2-notebook { margin-top: 26px; }
+.s2-notebook .nb-head h2 { font-size: 1.35rem; }
+.s2-notebook .nb-head p { color: var(--ink-2); font-size: 0.95rem; margin: 4px 0 12px; }
+.nb-paper { background: var(--card); border: 1.5px solid var(--line); border-radius: 16px; box-shadow: 0 3px 0 var(--line); overflow: hidden; }
+.nb-tools { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px; background: var(--surface-2); border-bottom: 1.5px solid var(--line); position: sticky; top: 0; }
+.nb-tools button { font: inherit; font-size: 0.88rem; padding: 6px 10px; border-radius: 9px; border: 1.5px solid transparent; background: transparent; color: var(--ink-2); cursor: pointer; }
+.nb-tools button:hover { background: var(--card); border-color: var(--line); color: var(--ink); }
+.hl-swatch { background: #ffdf5d; color: #3a2d00; padding: 0 4px; border-radius: 3px; font-weight: 700; }
+.nb-page {
+  min-height: 220px; padding: 10px 22px 22px 62px; outline: none; line-height: 30px; font-size: 1.02rem; color: var(--ink);
+  background-image:
+    linear-gradient(90deg, transparent 46px, rgba(224, 56, 62, 0.35) 46px, rgba(224, 56, 62, 0.35) 48px, transparent 48px),
+    repeating-linear-gradient(transparent 0 29px, var(--grid) 29px 30px);
+  background-position: 0 10px;
+}
+.nb-page:empty::before { content: attr(data-placeholder); color: var(--ink-3); }
+.nb-page h3 { font-size: 1.15rem; line-height: 30px; margin: 0; color: var(--accent-text); }
+.nb-page p, .nb-page div { margin: 0; }
+.nb-page ul, .nb-page ol { margin: 0; padding-left: 1.4em; }
+.nb-page .nb-key { background: var(--hl-soft); border-left: 4px solid var(--hl); padding: 0 10px; border-radius: 6px; margin: 2px 0; }
+.nb-page .nb-todo input { width: 16px; height: 16px; vertical-align: -2px; accent-color: var(--accent); }
+.nb-foot { display: flex; justify-content: space-between; padding: 6px 14px; font-size: 0.82rem; color: var(--ink-3); border-top: 1px solid var(--line); background: var(--surface-2); }
+.s2-notebook.compact .nb-page { min-height: 120px; }
+[data-theme="dark"] .nb-page span[style*="background"] { color: #2a2000; }

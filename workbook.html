@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag + AdSense -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-73KC2J774N"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5555086410809788"
+  crossorigin="anonymous"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-73KC2J774N');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My workbook · Ssquared HQ</title>
+  <link rel="stylesheet" href="shared/s2.css">
+  <link rel="stylesheet" href="shared/s2-subject.css">
+  <script src="shared/s2-theme.js"></script>
+  <style>
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip { font: inherit; font-weight: 700; font-size: 0.9rem; padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--card); color: var(--ink-2); cursor: pointer; }
+    .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .wb-subject-title { display: flex; align-items: center; gap: 10px; }
+    .wb-subject-title a { font-size: 0.9rem; font-weight: 700; color: var(--accent-text); margin-left: auto; }
+    .wb-empty { text-align: center; padding: 40px 20px; }
+    .wb-empty h2 { font-size: 1.5rem; margin-bottom: 6px; }
+    .wb-empty p { color: var(--ink-2); max-width: 52ch; margin: 0 auto 16px; }
+  </style>
+</head>
+<body class="s2">
+  <header class="s2-appbar">
+    <a class="s2-logo" href="index.html" title="Ssquared HQ">S<sup>2</sup></a>
+    <div class="s2-brand"><a class="s2-title" href="index.html">My workbook</a><span class="s2-sub">Every note you've written, in one place</span></div>
+    <span id="bar-extra" style="display:flex;gap:8px;align-items:center"></span>
+  </header>
+  <main class="s2-wrap">
+    <section class="s2-hello wb-hello"><div><h1>My workbook</h1><p>All your notes from Mandarin², Chemistry², Physics² and Biology², labelled by subject and topic. Edit them here or on the topic page. Everything saves on this device.</p></div>
+      <div class="wb-actions"><button class="s2-btn ghost small" id="wb-print">Print / save as PDF</button></div></section>
+    <div class="wb-bar s2-card">
+      <div class="chips" id="chips"></div>
+      <label class="wb-search"><span class="sr">Search notes</span><input type="search" placeholder="Search all your notes"></label>
+      <span class="wb-count"></span>
+    </div>
+    <div id="book"></div>
+  </main>
+  <footer class="s2-footer"><span>© 2026 Ssquared HQ</span><span><a href="index.html">Home</a></span></footer>
+  <script src="shared/s2-progress.js"></script>
+  <script src="shared/s2-notes.js"></script>
+  <script>
+  (function () {
+    var SUBJ = [
+      ["mandarin", "Mandarin²", "mandarin/index.html"], ["chemistry", "Chemistry²", "chemistry/workbook.html"],
+      ["physics", "Physics²", "physics/workbook.html"], ["biology", "Biology²", "biology/workbook.html"]
+    ];
+    var extra = document.getElementById("bar-extra");
+    if (window.S2) { extra.appendChild(S2.xpPill()); extra.appendChild(S2.streakPill()); extra.appendChild(S2.themeButton()); }
+    var notes = S2Notes.all();
+    var want = (/[?&]s=(\w+)/.exec(location.search) || [])[1] || "all";
+    var chips = document.getElementById("chips"), book = document.getElementById("book");
+    function esc(s) { return String(s || "").replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+    [["all", "All subjects"]].concat(SUBJ).forEach(function (s) {
+      var b = document.createElement("button"); b.className = "chip" + (s[0] === want ? " on" : ""); b.textContent = s[1]; b.dataset.s = s[0];
+      if (s[0] !== "all") b.classList.add("s2-" + s[0]);
+      b.onclick = function () { want = s[0]; [].forEach.call(chips.children, function (c) { c.classList.toggle("on", c === b); }); filter(); };
+      chips.appendChild(b);
+    });
+    if (!notes.length) {
+      book.innerHTML = "<div class='s2-card wb-empty'><h2>Your workbook is empty, for now</h2><p>Open any topic in Chemistry², Physics² or Biology², or any Mandarin² lesson, and write in the notebook at the bottom. Your notes appear here automatically, labelled by subject and topic.</p><a class='s2-btn' href='index.html#platforms' style='--accent:var(--panel);--accent-ink:#000'>Choose a subject</a></div>";
+    }
+    SUBJ.forEach(function (s) {
+      var list = notes.filter(function (n) { return n.s === s[0]; });
+      if (!list.length) return;
+      list.sort(function (a, b) { return String(a.code || a.t).localeCompare(String(b.code || b.t), undefined, { numeric: true }); });
+      var sec = document.createElement("section"); sec.className = "wb-group s2-" + s[0]; sec.dataset.s = s[0];
+      sec.innerHTML = "<h2 class='wb-group-title wb-subject-title'>" + s[1] + " <a href='" + s[2] + "'>" + (s[0] === "mandarin" ? "Open Mandarin²" : "Open full " + s[1] + " workbook") + " →</a></h2>";
+      list.forEach(function (n) {
+        var art = document.createElement("article"); art.className = "wb-topic"; art.dataset.title = ((n.code || "") + " " + n.t).toLowerCase();
+        art.innerHTML = "<header class='wb-label'>" + (n.code ? "<span class='wb-code'>" + esc(n.code) + "</span>" : "") + "<div><h3>" + esc(n.t) + "</h3><p>" + esc(n.group || "") + (n.updated ? " · edited " + S2.timeAgo(n.updated) : "") + "</p></div>" +
+          "<a class='s2-btn ghost small' href='" + s[0] + "/" + esc(n.u || "index.html") + "'>Open topic</a></header><div class='wb-ed'></div>";
+        art.querySelector(".wb-ed").appendChild(S2Notes.editor({ subject: n.s, id: n.id, t: n.t, code: n.code, group: n.group, u: n.u, compact: true }));
+        sec.appendChild(art);
+      });
+      book.appendChild(sec);
+    });
+    var q = document.querySelector(".wb-search input"), cnt = document.querySelector(".wb-count");
+    function filter() {
+      var term = q.value.trim().toLowerCase(), shown = 0;
+      [].forEach.call(book.querySelectorAll(".wb-group"), function (g) {
+        var any = false;
+        [].forEach.call(g.querySelectorAll(".wb-topic"), function (a) {
+          var text = (a.querySelector(".nb-page").innerText || "").toLowerCase();
+          var ok = (want === "all" || g.dataset.s === want) && (!term || a.dataset.title.indexOf(term) >= 0 || text.indexOf(term) >= 0);
+          a.hidden = !ok; if (ok) { any = true; shown++; }
+        });
+        g.hidden = !any;
+      });
+      cnt.textContent = notes.length ? shown + " of " + notes.length + " pages of notes" : "";
+    }
+    q.addEventListener("input", filter);
+    document.getElementById("wb-print").onclick = function () { window.print(); };
+    filter();
+  })();
+  </script>
+</body>
+</html>

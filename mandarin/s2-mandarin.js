@@ -56,7 +56,7 @@
     } else { header = el("header"); body.insertBefore(header, body.firstChild); }
     sub = sub.replace(/^Cambridge IGCSE Mandarin\s*\|\s*/, "") || "IGCSE Mandarin revision";
     header.className = "s2-appbar";
-    var nav = [["index.html", "Home"], ["learn.html", "Learn"], ["quizzes/quizzes.html", "Quizzes"], ["flashcards.html", "Flashcards"], ["three-plus-two/three-plus-two.html", "3+2 Game"]];
+    var nav = [["index.html", "Home"], ["learn.html", "Learn"], ["quizzes/quizzes.html", "Quizzes"], ["flashcards.html", "Flashcards"], ["three-plus-two/three-plus-two.html", "3+2 Game"], ["../workbook.html?s=mandarin", "Workbook"]];
     var section = PATH === "index.html" ? "index.html" : /^learn/.test(PATH) ? "learn.html" : /^quizzes\//.test(PATH) ? "quizzes/quizzes.html" : /^flashcards/.test(PATH) ? "flashcards.html" : "";
     header.innerHTML =
       '<a class="s2-logo" href="' + url("../index.html") + '" title="Back to Ssquared HQ">S<sup>2</sup></a>' +
@@ -64,6 +64,7 @@
       '<nav class="s2-nav" aria-label="Mandarin²">' + nav.map(function (n) {
         return '<a href="' + url(n[0]) + '"' + (section === n[0] ? ' class="active" aria-current="page"' : "") + ">" + n[1] + "</a>";
       }).join("") + "</nav>";
+    header.appendChild(S2.xpPill());
     header.appendChild(S2.streakPill());
     header.appendChild(S2.themeButton());
     if (header.parentNode !== body || header !== body.firstElementChild) body.insertBefore(header, body.firstChild);
@@ -94,7 +95,8 @@
         var wasDone = best >= 100;
         best = Math.max(best, pct);
         S2.touch(key(PATH), { s: "mandarin", kind: "lesson", t: info.t, u: PATH, pct: best, topic: info.topic ? info.topic.t : "" });
-        if (best >= 100 && !wasDone) toast("Lesson complete: " + info.t);
+        if (best >= 100 && !wasDone) { toast("Lesson complete: " + info.t); S2.confetti(); S2.addXP(50, "Lesson complete"); }
+        else if (idx > 0) S2.addXP(5);
       }
     }
     var mo = new MutationObserver(update);
@@ -137,6 +139,7 @@
           var patch = { s: "mandarin", kind: kind, t: title, u: PATH, completed: (prog(PATH).completed || 0) + 1 };
           if (xp && /\d/.test(xp.textContent)) { var n = parseInt(xp.textContent.replace(/[^\d]/g, ""), 10); patch.lastXp = n; patch.bestXp = Math.max(prog(PATH).bestXp || 0, n); }
           S2.touch(key(PATH), patch);
+          S2.addXP(20, "Game finished");
         }
       });
     });
@@ -230,6 +233,23 @@
     });
   }
 
+  function notebook() {
+    var isLesson = !!document.querySelector(".step"), isTopic = !!document.querySelector(".subtopic-grid, .learn-section-grid");
+    if (!isLesson && !isTopic) return;
+    var sc = document.createElement("script");
+    sc.src = BASE + "../shared/s2-notes.js";
+    sc.onload = function () {
+      var main = document.querySelector("main") || body;
+      var info = LESSON_INDEX[PATH], title = pageTitle();
+      var topicName = info && info.topic ? "Topic " + info.topic.n + ": " + info.topic.t : "";
+      if (!info) MAP.forEach(function (t) { if (t.u === PATH) topicName = "Topic " + t.n + ": " + t.t; });
+      var ed = S2Notes.editor({ subject: "mandarin", id: PATH, t: title, code: info && info.topic ? info.topic.n : "", group: topicName, u: PATH, title: "My notes: " + title, workbook: BASE + "../workbook.html?s=mandarin" });
+      ed.classList.add("man-notebook");
+      main.appendChild(ed);
+    };
+    document.head.appendChild(sc);
+  }
+
   function run() {
     chrome();
     if (PATH === "index.html") dashboard();
@@ -237,6 +257,7 @@
     trackLesson();
     trackFlashcards();
     trackGame();
+    notebook();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run); else run();
 })();

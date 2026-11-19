@@ -73,6 +73,15 @@
     setTimeout(function () { t.classList.remove("show"); setTimeout(function () { t.remove(); }, 300); }, 2400);
   }
   var hasAnyExam = Object.keys(EXAMS).length > 0;
+  var CHEERS = ["Correct.", "Nailed it.", "Spot on.", "Yes, exactly.", "Correct, nice work.", "That's the one."];
+  function cheer() { return CHEERS[Math.floor(Math.random() * CHEERS.length)]; }
+  function xp(n, why) { if (S2 && S2.addXP) S2.addXP(n, why); }
+  function party() { if (S2 && S2.confetti) S2.confetti(); }
+  function factOfDay() {
+    var f = CFG.facts || []; if (!f.length) return "";
+    var d = new Date(), i = (d.getFullYear() * 372 + d.getMonth() * 31 + d.getDate()) % f.length;
+    return f[i];
+  }
 
   // ---------- chrome ----------
   function chrome(active) {
@@ -80,13 +89,14 @@
     var nav = ["index.html|Home", "learn.html|Learn", "quizzes.html|Quizzes"];
     if (hasAnyExam) nav.push("exam.html|Exam questions");
     nav.push("flashcards.html|Flashcards");
+    nav.push("workbook.html|Workbook");
     bar.innerHTML =
       '<a class="s2-logo" href="../index.html" title="Back to Ssquared HQ">S<sup>2</sup></a>' +
       '<div class="s2-brand"><a class="s2-title" href="index.html">' + CFG.name + '</a><span class="s2-sub">' + CFG.sub + "</span></div>" +
       '<nav class="s2-nav" aria-label="' + CFG.name + '">' + nav.map(function (x) {
         var p = x.split("|"); return '<a href="' + p[0] + '"' + (active === p[0] ? ' class="active" aria-current="page"' : "") + ">" + p[1] + "</a>";
       }).join("") + "</nav>";
-    if (S2) { bar.appendChild(S2.streakPill()); bar.appendChild(S2.themeButton()); }
+    if (S2) { bar.appendChild(S2.xpPill()); bar.appendChild(S2.streakPill()); bar.appendChild(S2.themeButton()); }
     document.body.insertBefore(bar, document.body.firstChild);
     var footer = el("footer", { class: "s2-footer" });
     footer.innerHTML = '<span>' + CFG.name + ' · part of <a href="../index.html" style="margin:0">Ssquared HQ</a></span><span><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></span>';
@@ -137,6 +147,10 @@
       "<div class='s2-card s2-stat'><div class='num'>" + started.length + "<span style='font-size:1rem;color:var(--ink-3)'> / " + topics.length + "</span></div><div class='lbl'>Topics started</div></div>" +
       "<div class='s2-card s2-stat'><div class='num'>" + mastered.length + "</div><div class='lbl'>Topics mastered (80%+)</div></div></div>";
 
+    var fod = factOfDay(), L = S2 && S2.level ? S2.level() : null;
+    html += "<div class='fun-row'>" +
+      (L ? "<div class='s2-card level-card'><div class='lv-icon'>" + L.icon + "</div><div><div class='s2-kicker'>Level " + L.n + "</div><h3>" + L.name + "</h3><div class='s2-bar'><i style='width:" + L.pct + "%'></i></div><p>" + S2.xp() + " XP" + (L.to ? " · " + (L.to - S2.xp()) + " XP to the next level" : " · top level reached") + ". Earn XP for notes, quizzes, exam marks and flashcards.</p></div></div>" : "") +
+      (fod ? "<div class='s2-card fact-card'><div class='s2-kicker'>Did you know?</div><p>" + fod + "</p></div>" : "") + "</div>";
     html += "<h2 class='s2-section-title'>Your topics</h2><div class='group-grid'>";
     Object.keys(GROUPS).forEach(function (g) {
       g = +g; var list = inGroup(g); if (!list.length) return;
@@ -178,7 +192,9 @@
     var t = byId(param("id") || "");
     if (!t) { main.innerHTML = "<p>That topic doesn't exist. <a href='learn.html'>See all topics</a></p>"; return; }
     document.title = code(t) + " " + t.title + " · " + CFG.name;
+    var firstRead = !prog(t.id).read;
     save(t, { read: 1 });
+    if (firstRead) setTimeout(function () { xp(10, "Notes opened"); }, 600);
     var idx = topics.indexOf(t), prev = topics[idx - 1], next = topics[idx + 1], m = mastery(t), p = prog(t.id), ex = exam(t.id);
     var checks = "<li class='done'>Notes read</li><li class='" + (p.best ? "done" : "") + "'>Quiz" + (p.best ? " (best " + p.best.s + "/" + p.best.t + ")" : "") + "</li>" +
       (ex.length ? "<li class='" + (p.exam ? "done" : "") + "'>Exam questions" + (p.exam ? " (best " + p.exam.s + "/" + p.exam.t + ")" : "") + "</li>" : "") +
@@ -187,7 +203,8 @@
       "<div class='crumbs'><a href='learn.html'>Learn</a> › <a href='learn.html#g" + t.group + "'>" + groupLabel(t.group) + "</a></div>" +
       "<div class='topic-layout'><div>" +
       "<header class='topic-head'><h1>" + code(t) + " " + t.title + "</h1><p>" + (t.summary || "") + tagHtml(t) + "</p></header>" +
-      "<article class='notes s2-card'>" + t.notes + "</article>" +
+      "<article class='notes s2-card'>" + t.notes + (t.fact ? "<div class='box box-fun'><span class='box-title'>🤯 Did you know?</span>" + t.fact + "</div>" : "") + "</article>" +
+      "<div id='notebook-slot'></div>" +
       "<div class='pager'>" +
       (prev ? "<a class='s2-btn ghost' href='topic.html?id=" + prev.id + "'>← " + code(prev) + " " + prev.title + "</a>" : "<span></span>") +
       (next ? "<a class='s2-btn ghost' href='topic.html?id=" + next.id + "'>" + code(next) + " " + next.title + " →</a>" : "<span></span>") +
@@ -196,7 +213,8 @@
       "<div class='side-label'>Topic mastery</div><ul class='checklist'>" + checks + "</ul>" +
       "<a class='s2-btn' href='quizzes.html?id=" + t.id + "'>Take the quiz</a>" +
       (ex.length ? "<a class='s2-btn' href='exam.html?id=" + t.id + "'>Exam questions (" + ex.length + ")</a>" : "") +
-      "<a class='s2-btn ghost' href='flashcards.html?id=" + t.id + "'>Practise flashcards</a></div></aside></div>";
+      "<a class='s2-btn ghost' href='flashcards.html?id=" + t.id + "'>Practise flashcards</a><a class='side-link' href='#notebook-slot'>✏️ My notes for this topic</a></div></aside></div>";
+    if (window.S2Notes) main.querySelector("#notebook-slot").appendChild(S2Notes.editor({ subject: CFG.slug, id: t.id, t: t.title, code: code(t), group: groupLabel(t.group), u: "topic.html?id=" + t.id, title: "My notes: " + code(t) + " " + t.title }));
     window.scrollTo(0, 0);
   };
 
@@ -251,15 +269,15 @@
     var set = collect(id, "quiz");
     if (!set.items.length) { main.innerHTML = "<p>No questions found for this quiz. <a href='quizzes.html'>Choose a quiz</a></p>"; return; }
     var MAX = set.single ? set.items.length : 20;
-    var qs, i, score, wrong;
+    var qs, i, score, wrong, combo = 0, bestCombo = 0;
 
-    function start() { qs = shuffle(set.items).slice(0, MAX); i = 0; score = 0; wrong = []; render(); }
+    function start() { qs = shuffle(set.items).slice(0, MAX); i = 0; score = 0; wrong = []; combo = 0; bestCombo = 0; render(); }
     function render() {
       var cur = qs[i], q = cur.item;
       var order = shuffle(q.o.map(function (_, k) { return k; }));
       main.innerHTML =
         "<div class='quiz-wrap'><div class='crumbs'><a href='quizzes.html'>Quizzes</a> › " + set.title + "</div>" +
-        "<div class='q-meta'><span>Question " + (i + 1) + " of " + qs.length + (set.single ? "" : " · " + code(cur.topic) + " " + cur.topic.title) + "</span><span>" + score + " correct</span></div>" +
+        "<div class='q-meta'><span>Question " + (i + 1) + " of " + qs.length + (set.single ? "" : " · " + code(cur.topic) + " " + cur.topic.title) + "</span><span>" + (combo >= 2 ? "<span class='combo'>🔥 " + combo + " in a row</span> · " : "") + score + " correct</span></div>" +
         "<div class='s2-bar quiz-bar'><i style='width:" + (i / qs.length * 100) + "%'></i></div>" +
         "<div class='s2-card q-card'><div class='q-text'>" + q.q + "</div><div class='options'></div>" +
         "<div class='feedback' role='status'></div>" +
@@ -275,8 +293,12 @@
         var all = box.querySelectorAll(".option");
         for (var n = 0; n < all.length; n++) { all[n].disabled = true; if (+all[n].dataset.k === q.a) all[n].classList.add("correct"); }
         var fb = main.querySelector(".feedback");
-        if (k === q.a) { score++; fb.className = "feedback show good"; fb.innerHTML = "<b>Correct.</b> " + (q.e || ""); }
-        else { btn.classList.add("wrong"); wrong.push({ q: q, pick: k, topic: cur.topic }); fb.className = "feedback show bad"; fb.innerHTML = "<b>Not quite.</b> The answer is <b>" + q.o[q.a] + "</b>. " + (q.e || ""); }
+        if (k === q.a) {
+          score++; combo++; bestCombo = Math.max(bestCombo, combo);
+          fb.className = "feedback show good"; fb.innerHTML = "<b>" + cheer() + "</b> " + (combo >= 3 ? "<span class='combo'>🔥 " + combo + " in a row!</span> " : "") + (q.e || "");
+          xp(combo >= 3 ? 8 : 5);
+        }
+        else { combo = 0; btn.classList.add("wrong"); wrong.push({ q: q, pick: k, topic: cur.topic }); fb.className = "feedback show bad"; fb.innerHTML = "<b>Not quite.</b> The answer is <b>" + q.o[q.a] + "</b>. " + (q.e || ""); }
         var nx = main.querySelector("#next"); nx.hidden = false; nx.focus();
         nx.onclick = function () { i++; if (i < qs.length) render(); else finish(); };
       }
@@ -289,7 +311,10 @@
         else save(set.single, {});
       } else if (S2) { S2.markActive(); }
       var pct = Math.round(score / qs.length * 100);
-      var msg = pct >= 90 ? "Outstanding." : pct >= 70 ? "Great work." : pct >= 50 ? "Good effort. Go over the questions you missed below." : "Re-read the notes, then try again.";
+      var msg = pct === 100 ? "Perfect score. Absolute legend." : pct >= 90 ? "Outstanding." : pct >= 70 ? "Great work." : pct >= 50 ? "Good effort. Go over the questions you missed below." : "Re-read the notes, then try again.";
+      if (pct >= 80) setTimeout(party, 200);
+      if (improved) xp(20, "New best score");
+      if (bestCombo >= 5) msg += " Best streak: " + bestCombo + " in a row 🔥";
       var html = "<div class='quiz-wrap'><div class='crumbs'><a href='quizzes.html'>Quizzes</a> › " + set.title + "</div><div class='s2-card results'>" +
         "<div class='score-big'>" + score + "<span>/" + qs.length + "</span></div><p class='pct'>" + pct + "% · " + msg + "</p>";
       if (set.single) {
@@ -365,7 +390,7 @@
       nextB.onclick = function () { if (i + 1 < qs.length) { i++; render(); } else finish(); };
       var box = main.querySelector(".ex-answer"), fb = main.querySelector(".feedback");
       function done(mark, html, cls) {
-        if (!st.done) { st.done = true; st.got = mark; }
+        if (!st.done) { st.done = true; st.got = mark; if (mark > 0) xp(mark * 5, mark + " mark" + (mark > 1 ? "s" : "")); }
         fb.className = "feedback show " + (cls || (mark === m ? "good" : mark > 0 ? "part" : "bad"));
         fb.innerHTML = html;
         checkB.hidden = true; nextB.hidden = false;
@@ -469,6 +494,7 @@
       var s = got(), before = mastery(t), p = prog(t.id);
       if (!p.exam || s / total > p.exam.s / p.exam.t) save(t, { exam: { s: s, t: total } }); else save(t, {});
       var after = mastery(t), pct = Math.round(s / total * 100);
+      if (pct >= 70) setTimeout(party, 200);
       var grade = pct >= 80 ? "Excellent: that's top-grade territory." : pct >= 60 ? "Solid. Look over the questions you dropped marks on." : pct >= 40 ? "Getting there. Re-read the notes and try the ones you missed." : "Go back over the notes, then have another go.";
       var rows = qs.map(function (q, n) {
         var st = state[n], mm = q.m || 1;
@@ -487,6 +513,46 @@
     render();
   };
 
+  pages.workbook = function (main) {
+    var html = "<section class='s2-hello wb-hello'><div><h1>" + CFG.name.replace("²", "") + " workbook</h1><p>Every topic in one place, with your own notes under each heading. Type straight into any page: it saves automatically on this device. Print it or save it as a PDF to revise on paper.</p></div>" +
+      "<div class='wb-actions'><button class='s2-btn ghost small' id='wb-print'>Print / save as PDF</button><a class='s2-btn ghost small' href='../workbook.html'>All subjects' notes</a></div></section>" +
+      "<div class='wb-bar s2-card'><label class='wb-search'><span class='sr'>Search notes</span><input type='search' placeholder='Search your notes and topic titles'></label>" +
+      "<label class='wb-toggle'><input type='checkbox' id='wb-only'> Only topics with notes</label><span class='wb-count'></span></div>" +
+      "<nav class='wb-toc s2-card' aria-label='Contents'><b>Contents</b><ol>" + Object.keys(GROUPS).map(function (g) { g = +g; return inGroup(g).length ? "<li><a href='#wb-g" + g + "'>" + groupLabel(g) + "</a></li>" : ""; }).join("") + "</ol></nav>";
+    Object.keys(GROUPS).forEach(function (g) {
+      g = +g; var list = inGroup(g); if (!list.length) return;
+      html += "<section class='wb-group' id='wb-g" + g + "'><h2 class='wb-group-title'>" + groupLabel(g) + "</h2>";
+      list.forEach(function (t) {
+        html += "<article class='wb-topic' data-id='" + t.id + "' data-title='" + (code(t) + " " + t.title).toLowerCase().replace(/'/g, "") + "'>" +
+          "<header class='wb-label'><span class='wb-code'>" + code(t) + "</span><div><h3>" + t.title + tagHtml(t) + "</h3><p>" + (t.summary || "") + "</p></div>" + ring(mastery(t), 40) +
+          "<a class='s2-btn ghost small' href='topic.html?id=" + t.id + "'>Open topic</a></header><div class='wb-ed'></div></article>";
+      });
+      html += "</section>";
+    });
+    main.innerHTML = html;
+    var arts = [].slice.call(main.querySelectorAll(".wb-topic"));
+    arts.forEach(function (a) {
+      var t = byId(a.dataset.id);
+      if (window.S2Notes) a.querySelector(".wb-ed").appendChild(S2Notes.editor({ subject: CFG.slug, id: t.id, t: t.title, code: code(t), group: groupLabel(t.group), u: "topic.html?id=" + t.id, compact: true }));
+    });
+    var q = main.querySelector(".wb-search input"), only = main.querySelector("#wb-only"), cnt = main.querySelector(".wb-count");
+    function filter() {
+      var term = q.value.trim().toLowerCase(), shown = 0, withNotes = 0;
+      arts.forEach(function (a) {
+        var text = (a.querySelector(".nb-page").innerText || "").toLowerCase(), has = text.trim().length > 0;
+        if (has) withNotes++;
+        var ok = (!only.checked || has) && (!term || a.dataset.title.indexOf(term) >= 0 || text.indexOf(term) >= 0);
+        a.hidden = !ok; if (ok) shown++;
+      });
+      [].forEach.call(main.querySelectorAll(".wb-group"), function (g) { g.hidden = !g.querySelector(".wb-topic:not([hidden])"); });
+      cnt.textContent = withNotes + " of " + arts.length + " topics have notes";
+    }
+    q.addEventListener("input", filter); only.addEventListener("change", filter);
+    main.addEventListener("input", function () { clearTimeout(filter.t); filter.t = setTimeout(filter, 800); });
+    main.querySelector("#wb-print").onclick = function () { window.print(); };
+    filter();
+  };
+
   pages.flashcards = function (main) {
     var id = param("id");
     if (!id) return picker(main, "fc");
@@ -496,7 +562,7 @@
 
     function known(c) {
       var p = prog(c.topic.id), fc = (p.fc || []).slice();
-      if (fc.indexOf(c.i) < 0) { fc.push(c.i); save(c.topic, { fc: fc }); }
+      if (fc.indexOf(c.i) < 0) { fc.push(c.i); save(c.topic, { fc: fc }); xp(2); }
     }
     main.innerHTML =
       "<div class='crumbs'><a href='flashcards.html'>Flashcards</a> › " + set.title + "</div>" +
@@ -528,6 +594,7 @@
         main.querySelector("#front").innerHTML = "Deck complete";
         main.querySelector("#back").innerHTML = "You know every card in this deck.";
         main.querySelector("#count").innerHTML = "You've got every card. <a href='#' id='restart'>Start again</a>";
+        party();
         if (set.single) toast("Flashcards done: " + code(set.single) + " is now " + mastery(set.single) + "% mastered");
         main.querySelector("#restart").onclick = function (e) { e.preventDefault(); deck = set.items.slice(); pos = 0; round = 1; show(); };
       }
@@ -550,7 +617,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     var page = document.body.getAttribute("data-page");
-    chrome({ home: "index.html", learn: "learn.html", topic: "learn.html", quizzes: "quizzes.html", flashcards: "flashcards.html", exam: "exam.html" }[page]);
+    chrome({ home: "index.html", learn: "learn.html", topic: "learn.html", quizzes: "quizzes.html", flashcards: "flashcards.html", exam: "exam.html", workbook: "workbook.html" }[page]);
     var main = document.querySelector("main");
     if (pages[page]) pages[page](main);
   });
