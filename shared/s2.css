@@ -30,9 +30,12 @@
 }
 .s2-mandarin { --accent: #e0383e; --accent-ink: #a91f28; --accent-soft: #ffeced; }
 .s2-chemistry { --accent: #10a074; --accent-ink: #0a7354; --accent-soft: #e1f5ee; }
+.s2-physics { --accent: #2f62d8; --accent-ink: #1f449e; --accent-soft: #e6edff; }
+.s2-biology { --accent: #d9661f; --accent-ink: #a14810; --accent-soft: #fff0e4; }
 
 /* ---------- base ---------- */
 body.s2, body.s2 * { box-sizing: border-box; }
+body.s2 [hidden] { display: none !important; }
 :where(body.s2) :where(h1, h2, h3, h4, p) { margin: 0; }
 body.s2 {
   margin: 0;
