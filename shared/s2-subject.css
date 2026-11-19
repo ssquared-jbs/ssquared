@@ -150,3 +150,75 @@ a { color: var(--accent-ink); }
   .s2-appbar, .s2-footer, .topic-side, .pager { display: none; }
   body.s2 { background: #fff; }
 }
+
+/* ---------- exam questions ---------- */
+.exam-wrap { max-width: 860px; margin: 0 auto; }
+.ex-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.ex-head h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.ex-score { color: var(--ink-2); font-size: 0.95rem; }
+.ex-score b { font-family: var(--font-display); font-size: 1.3rem; color: var(--ink); }
+.ex-dots { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.ex-dot {
+  width: 34px; height: 34px; border-radius: 10px; border: 1.5px solid var(--line); background: #fff; color: var(--ink-2);
+  font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; box-shadow: 0 2px 0 var(--line);
+}
+.ex-dot.cur { outline: 2.5px solid var(--ink); outline-offset: 1px; }
+.ex-dot.full { background: var(--good); border-color: var(--good); color: #fff; box-shadow: 0 2px 0 #0b6a3e; }
+.ex-dot.part { background: var(--hl); border-color: #e7c200; color: var(--hl-ink); box-shadow: 0 2px 0 #d4b000; }
+.ex-dot.zero { background: var(--bad-soft); border-color: #f2a9b0; color: var(--bad); }
+.ex-card { padding: clamp(18px, 3vw, 28px); }
+.ex-qhead { display: flex; justify-content: space-between; color: var(--ink-3); font-weight: 700; font-size: 0.9rem; margin-bottom: 6px; }
+.ex-marks { color: var(--ink-2); }
+.ex-q { font-size: 1.22rem; }
+.ex-q table { border-collapse: collapse; margin: 10px 0; font-family: var(--font-body); font-size: 0.95rem; font-weight: 400; }
+.ex-q td, .ex-q th { border: 1px solid var(--line); padding: 6px 10px; }
+.ex-actions { display: flex; gap: 10px; align-items: center; margin-top: 18px; }
+.ex-actions .grow { flex: 1; }
+.num-row { display: flex; align-items: center; gap: 10px; }
+.num-in { font: inherit; font-size: 1.15rem; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 12px; width: min(260px, 100%); background: #fff; color: var(--ink); }
+.num-in:focus, .text-in:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.num-in.ok { border-color: var(--good); background: var(--good-soft); }
+.num-in.no { border-color: var(--bad); background: var(--bad-soft); }
+.unit { font-weight: 700; color: var(--ink-2); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.hint-sm { color: var(--ink-3); font-size: 0.85rem; margin-top: 6px; }
+.text-in { width: 100%; font: inherit; font-size: 1.02rem; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 12px; resize: vertical; background: #fff; color: var(--ink); }
+.feedback.part { background: var(--hl-soft); }
+.feedback.neutral { background: #f4f6fb; }
+.ms { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #c9cfe0; }
+.ms ul, .ms-check { margin: 6px 0 0; padding-left: 1.2em; }
+.ms-check { list-style: none; padding-left: 0; }
+.ms-check li { margin: 6px 0; }
+.ms-check label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+.ms-check input { width: 20px; height: 20px; accent-color: var(--accent); margin-top: 3px; flex: none; }
+.ms-note { color: var(--ink-2); font-size: 0.92rem; margin: 8px 0; }
+.ms-result { margin-top: 10px; }
+.feedback .s2-btn { margin-top: 10px; }
+.ex-results { display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 8px; }
+.ex-res { display: flex; flex-direction: column; align-items: center; padding: 8px; border-radius: 12px; border: 1.5px solid var(--line); background: #fff; font: inherit; cursor: pointer; color: var(--ink-2); }
+.ex-res b { color: var(--ink); }
+.ex-res.full { background: var(--good-soft); border-color: #9fdcbc; }
+.ex-res.part { background: var(--hl-soft); border-color: #f2d65a; }
+.ex-res.zero { background: var(--bad-soft); border-color: #f4b3b9; }
+.s2-row.muted { opacity: 0.6; }
+
+/* ---------- molecule drawer ---------- */
+.molpad { border: 1.5px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; margin-top: 4px; }
+.molpad-tools { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px; background: #f6f7fb; border-bottom: 1.5px solid var(--line); }
+.molpad-tools button {
+  min-width: 40px; height: 38px; padding: 0 10px; border-radius: 10px; border: 1.5px solid var(--line); background: #fff; color: var(--ink);
+  font: inherit; font-weight: 700; cursor: pointer; box-shadow: 0 2px 0 var(--line);
+}
+.molpad-tools button.on { background: var(--ink); color: #fff; border-color: var(--ink); box-shadow: 0 2px 0 var(--accent); }
+.molpad-tools .mp-sep { width: 1px; background: var(--line); margin: 2px 4px; }
+.molpad-svg { display: block; width: 100%; height: auto; touch-action: none; cursor: crosshair; user-select: none; }
+.mp-dot { fill: #d3d8e6; }
+.mp-bond { stroke: var(--ink); stroke-width: 2.6; stroke-linecap: round; }
+.mp-ghost { stroke: var(--accent); stroke-width: 2.6; stroke-dasharray: 6 5; }
+.mp-atom-g circle { fill: #fff; stroke: none; }
+.mp-atom-g text { font-family: var(--font-display); font-weight: 800; font-size: 19px; fill: var(--ink); }
+.mp-atom-g.c text { fill: var(--ink); }
+.mp-atom-g.bad circle { fill: var(--bad-soft); stroke: var(--bad); stroke-width: 2; }
+.molpad-help { padding: 8px 12px; font-size: 0.85rem; color: var(--ink-3); border-top: 1px solid var(--line); }
+.notes table { display: table; }
+@media (max-width: 640px) { .notes table { display: block; } }
