@@ -65,6 +65,7 @@
         return '<a href="' + url(n[0]) + '"' + (section === n[0] ? ' class="active" aria-current="page"' : "") + ">" + n[1] + "</a>";
       }).join("") + "</nav>";
     header.appendChild(S2.streakPill());
+    header.appendChild(S2.themeButton());
     if (header.parentNode !== body || header !== body.firstElementChild) body.insertBefore(header, body.firstChild);
 
     var footer = document.querySelector("footer");

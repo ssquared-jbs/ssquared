@@ -20,10 +20,11 @@
   <title>S² | Ssquared HQ</title>
   <meta name="description" content="Free GCSE and IGCSE revision: Mandarin², Chemistry², Physics² and Biology². Notes, quizzes, exam questions, flashcards and progress tracking.">
   <link rel="stylesheet" href="shared/s2.css">
+  <script src="shared/s2-theme.js"></script>
   <style>
     .hq-bar { display: flex; align-items: center; gap: 12px; padding: 14px clamp(16px, 4vw, 40px); }
     .hq-bar .name { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; margin-right: auto; }
-    .lamb-link { display: block; width: 40px; height: 40px; border-radius: 10px; overflow: hidden; border: 1.5px solid var(--line); background: #fff; }
+    .lamb-link { display: block; width: 40px; height: 40px; border-radius: 10px; overflow: hidden; border: 1.5px solid var(--line); background: var(--card); }
     .lamb-link img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
     .hq-hero { width: min(1120px, 92%); margin: 18px auto 0; display: grid; grid-template-columns: auto 1fr; gap: clamp(20px, 5vw, 56px); align-items: center; }
@@ -41,7 +42,7 @@
     .platforms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .platform {
       display: flex; flex-direction: column; text-decoration: none; color: var(--ink);
-      background: #fff; border: 1.5px solid var(--line); border-radius: 20px; box-shadow: 0 4px 0 var(--line);
+      background: var(--card); border: 1.5px solid var(--line); border-radius: 20px; box-shadow: 0 4px 0 var(--line);
       overflow: hidden; transition: border-color 0.15s, transform 0.08s;
     }
     .platform:hover { border-color: var(--accent); }
@@ -52,7 +53,7 @@
     .platform .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
     .platform h3 { font-size: 1.4rem; }
     .platform p { color: var(--ink-2); font-size: 0.95rem; }
-    .platform .status { margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--accent-ink); font-size: 0.95rem; }
+    .platform .status { margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--accent-text); font-size: 0.95rem; }
 
     .hq-why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
     .hq-why h3 { font-size: 1.1rem; margin-bottom: 4px; }
@@ -131,6 +132,7 @@
   (function () {
     if (!window.S2) return;
     document.getElementById("streak").appendChild(S2.streakPill());
+    document.getElementById("streak").insertAdjacentElement("afterend", S2.themeButton());
     var all = S2.items();
     var cta = document.getElementById("hero-cta");
     function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
@@ -139,7 +141,7 @@
       cta.innerHTML = '<a class="s2-btn s2-' + last.s + '" href="' + last.s + "/" + (last.u || "index.html") + '">Continue: ' + esc(last.t) + "</a>" +
         '<span style="color:var(--ink-2)">Last studied ' + S2.timeAgo(last.v) + "</span>";
     } else {
-      cta.innerHTML = '<a class="s2-btn" href="#platforms" style="--accent:var(--ink);--accent-ink:#000">Choose a subject</a>';
+      cta.innerHTML = '<a class="s2-btn" href="#platforms" style="--accent:var(--panel);--accent-ink:#000">Choose a subject</a>';
     }
     [].forEach.call(document.querySelectorAll(".platform"), function (a) {
       var items = S2.items(a.dataset.subject);
