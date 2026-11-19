@@ -74,7 +74,8 @@
   <div class="hq-bar">
     <span class="s2-logo" aria-hidden="true">S<sup>2</sup></span>
     <span class="name">Ssquared HQ</span>
-    <span id="streak"></span>
+    <a class="s2-btn ghost small" href="workbook.html">📓 My workbook</a>
+    <span id="streak" style="display:flex;gap:8px;align-items:center"></span>
     <a class="lamb-link" href="./Lamb%20B/password.html" aria-label="Lamb B">
       <img src="./images/lamb-b-lion.jpg" alt="">
     </a>
@@ -116,9 +117,9 @@
     </div>
 
     <section class="hq-why">
-      <div class="s2-card"><h3>Pick up where you left off</h3><p>Each subject remembers what you last studied and suggests what to do next.</p></div>
+      <div class="s2-card"><h3>Your own notebook</h3><p>Every topic has a notebook for your own notes, all collected in <a href="workbook.html">your workbook</a> to print or revise from.</p></div>
       <div class="s2-card"><h3>See what you've mastered</h3><p>Rings fill up as you read notes, score on quizzes and learn flashcards.</p></div>
-      <div class="s2-card"><h3>Keep your streak going</h3><p>Revise a little every day. One streak covers every subject.</p></div>
+      <div class="s2-card"><h3>Level up as you go</h3><p>Earn XP for notes, quizzes, exam marks and flashcards, and climb from Spark to Universe. One streak covers every subject.</p></div>
     </section>
   </main>
 
@@ -131,6 +132,7 @@
   <script>
   (function () {
     if (!window.S2) return;
+    document.getElementById("streak").appendChild(S2.xpPill());
     document.getElementById("streak").appendChild(S2.streakPill());
     document.getElementById("streak").insertAdjacentElement("afterend", S2.themeButton());
     var all = S2.items();

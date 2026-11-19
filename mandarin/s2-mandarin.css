@@ -422,3 +422,7 @@ body.s2-mandarin .home-button { background: var(--accent); color: #fff; border-r
 [data-theme="dark"] body.s2-mandarin .feedback { color: var(--ink); }
 [data-theme="dark"] body.s2-mandarin .learn-table th { color: var(--accent-text); }
 [data-theme="dark"] body.s2-mandarin .pinyin { color: var(--accent-text); }
+body.s2-mandarin .man-notebook { width: 100%; margin: 30px 0 10px; }
+body.s2-mandarin .man-notebook h2 { color: var(--ink); }
+body.s2-mandarin .nb-tools button { color: var(--ink-2); background: transparent; box-shadow: none; }
+body.s2-mandarin .nb-page { color: var(--ink); }
