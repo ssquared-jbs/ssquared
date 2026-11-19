@@ -19,7 +19,8 @@ window.SUBJECT = {
   ,facts: ["A teaspoon of water contains about 1.7 × 10<sup>23</sup> molecules, more than the number of teaspoons of water in the Atlantic Ocean.", "Diamond and graphite are both pure carbon. The only difference is how the atoms are bonded.", "Helium was discovered in the Sun's spectrum in 1868, 27 years before anyone found it on Earth.", "Gallium melts at about 30 °C, so a lump of it will melt in your hand.", "The smell of rain after a dry spell comes partly from a compound called geosmin, made by soil bacteria.", "Hydrofluoric acid is a weak acid, but it can dissolve glass.", "Fireworks get their colours from metal ions, the same chemistry as flame tests: strontium for red, copper for blue-green, sodium for yellow.", "Your body contains about 0.2 mg of gold, mostly in your blood.", "Polythene was discovered by accident in 1933, when an experiment with ethene went wrong.", "Graphite in a pencil is stacks of graphene sheets, each just one atom thick. Writing works because the layers slide off onto the paper.", "Bananas are slightly radioactive because they contain potassium-40.", "Bombardier beetles defend themselves by mixing hydrogen peroxide with an enzyme catalyst, spraying boiling liquid at attackers."]
 };
 window.S2Data = window.CHEM = {
-  topics: [], exams: {},
+  topics: [], exams: {}, details: {},
   add: function (t) { this.topics.push(t); },
+  detail: function (id, d) { this.details[id] = d; },
   exam: function (id, qs) { this.exams[id] = qs; }
 };

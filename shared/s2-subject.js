@@ -77,6 +77,15 @@
   function cheer() { return CHEERS[Math.floor(Math.random() * CHEERS.length)]; }
   function xp(n, why) { if (S2 && S2.addXP) S2.addXP(n, why); }
   function party() { if (S2 && S2.confetti) S2.confetti(); }
+  function detailHtml(t) {
+    var d = (DATA.details || {})[t.id] || {}, h = "";
+    if (d.deeper) h += "<h3>Going deeper</h3>" + d.deeper;
+    if (d.mistakes && d.mistakes.length) h += "<div class='box box-mistake'><span class='box-title'>⚠️ Common mistakes</span><ul>" + d.mistakes.map(function (m) { return "<li>" + m + "</li>"; }).join("") + "</ul></div>";
+    if (d.tips && d.tips.length) h += "<div class='box box-tip'><span class='box-title'>🎯 Exam tips</span><ul>" + d.tips.map(function (m) { return "<li>" + m + "</li>"; }).join("") + "</ul></div>";
+    var fact = t.fact || d.fact;
+    if (fact) h += "<div class='box box-fun'><span class='box-title'>🤯 Did you know?</span>" + fact + "</div>";
+    return h;
+  }
   function factOfDay() {
     var f = CFG.facts || []; if (!f.length) return "";
     var d = new Date(), i = (d.getFullYear() * 372 + d.getMonth() * 31 + d.getDate()) % f.length;
@@ -203,7 +212,7 @@
       "<div class='crumbs'><a href='learn.html'>Learn</a> › <a href='learn.html#g" + t.group + "'>" + groupLabel(t.group) + "</a></div>" +
       "<div class='topic-layout'><div>" +
       "<header class='topic-head'><h1>" + code(t) + " " + t.title + "</h1><p>" + (t.summary || "") + tagHtml(t) + "</p></header>" +
-      "<article class='notes s2-card'>" + t.notes + (t.fact ? "<div class='box box-fun'><span class='box-title'>🤯 Did you know?</span>" + t.fact + "</div>" : "") + "</article>" +
+      "<article class='notes s2-card'>" + t.notes + detailHtml(t) + "</article>" +
       "<div id='notebook-slot'></div>" +
       "<div class='pager'>" +
       (prev ? "<a class='s2-btn ghost' href='topic.html?id=" + prev.id + "'>← " + code(prev) + " " + prev.title + "</a>" : "<span></span>") +

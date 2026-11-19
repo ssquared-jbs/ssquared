@@ -284,3 +284,6 @@ a { color: var(--accent-text); }
   .nb-paper { box-shadow: none; }
   .wb-topic[hidden], .wb-group[hidden] { display: none !important; }
 }
+.box-mistake { background: var(--bad-soft); border-color: #f2a9b0; }
+[data-theme="dark"] .box-mistake { border-color: #6b2530; }
+.box ul { margin: 4px 0 0; padding-left: 1.2em; }
