@@ -1,0 +1,402 @@
+/* =========================================================
+   Mandarin² — S² theme layer.
+   Loaded after style.css; restyles the existing pages without
+   changing their markup or game logic.
+   ========================================================= */
+
+/* ---------- type & base ---------- */
+body.s2-mandarin, body.s2-mandarin * { font-family: var(--font-body); }
+body.s2-mandarin h1, body.s2-mandarin h2, body.s2-mandarin h3, body.s2-mandarin h4 { font-family: var(--font-display); }
+body.s2-mandarin { opacity: 1; animation: none; color: var(--ink); }
+body.s2-mandarin main { width: min(1120px, 92%); margin: 26px auto 10px; flex: 1; padding: 0; max-width: none; }
+body.s2-mandarin .ssquared-home-button,
+body.s2-mandarin .lamb-b-button { display: none; }
+body.s2-mandarin .s2-appbar a { color: inherit; }
+body.s2-mandarin .s2-appbar .s2-logo { color: #fff; }
+body.s2-mandarin > .container { flex: 1; }
+body.s2-mandarin .s2-page-title { font-size: clamp(1.9rem, 4.6vw, 2.7rem); font-weight: 800; color: var(--ink); width: min(760px, 92%); margin: 26px auto 0; }
+body.s2-mandarin .s2-appbar .s2-nav a { color: var(--ink-2); }
+body.s2-mandarin .s2-appbar .s2-nav a:hover,
+body.s2-mandarin .s2-appbar .s2-nav a.active { color: var(--accent-ink); }
+body.s2-mandarin .s2-appbar .s2-title { color: var(--ink); }
+body.s2-mandarin .s2-footer a { color: var(--ink-2); }
+body.s2-mandarin .s2-footer p { color: var(--ink-3); }
+body.s2-mandarin .s2-row, body.s2-mandarin .s2-row .t { color: var(--ink); }
+body.s2-mandarin .s2-row .d, body.s2-mandarin .s2-row .when { color: var(--ink-3); }
+body.s2-mandarin .s2-hello h1 { color: var(--ink); }
+body.s2-mandarin .s2-hello p { color: var(--ink-2); }
+body.s2-mandarin .s2-card h2 { color: var(--ink); }
+body.s2-mandarin .s2-streak-card p { color: var(--hl-ink); }
+body.s2-mandarin .s2-continue .meta, body.s2-mandarin .s2-stat .lbl { color: var(--ink-2); }
+body.s2-mandarin .s2-btn { color: #fff; }
+body.s2-mandarin .s2-btn.ghost { color: var(--ink); }
+
+/* lesson progress strip (added by s2-mandarin.js) */
+.s2-lesson-progress { position: sticky; top: 59px; z-index: 40; background: rgba(255,255,255,0.94); border-bottom: 1.5px solid var(--line); }
+.s2-lesson-inner { width: min(1120px, 92%); margin: 0 auto; display: flex; align-items: center; gap: 14px; padding: 8px 0; }
+.s2-lesson-inner .lbl { font-weight: 700; font-size: 0.88rem; color: var(--ink-2); white-space: nowrap; }
+.s2-lesson-inner .s2-bar { flex: 1; margin: 0; }
+@media (max-width: 760px) { .s2-lesson-progress { top: 0; position: relative; } }
+
+/* ---------- back links ---------- */
+body.s2-mandarin .back-button { margin: 0 0 14px; }
+body.s2-mandarin .back-button a {
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 11px;
+  background: #fff; color: var(--ink-2); border: 1.5px solid var(--line); box-shadow: 0 3px 0 var(--line);
+  font-weight: 700; font-size: 0.92rem; text-decoration: none;
+}
+body.s2-mandarin .back-button a:hover { color: var(--accent-ink); border-color: var(--accent); background: #fff; }
+
+/* ---------- page intros ---------- */
+body.s2-mandarin .page-intro,
+body.s2-mandarin .flash-zone-hero,
+body.s2-mandarin .flash-hero {
+  background: transparent; border: 0; box-shadow: none; padding: 4px 0 6px; margin-bottom: 18px; text-align: left; border-radius: 0;
+}
+body.s2-mandarin .page-intro h2,
+body.s2-mandarin .flash-zone-hero h2,
+body.s2-mandarin .flash-hero h2 { color: var(--ink); font-size: clamp(1.9rem, 4.6vw, 2.7rem); font-weight: 800; margin-bottom: 6px; }
+body.s2-mandarin .page-intro p { color: var(--ink-2); max-width: 64ch; }
+
+/* ---------- home menu ---------- */
+body.s2-mandarin .menu-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+body.s2-mandarin .menu-card {
+  background: #fff; color: var(--ink); border: 1.5px solid var(--line); border-radius: var(--r-card);
+  box-shadow: 0 3px 0 var(--line); min-height: 0; padding: 20px; transform: none;
+}
+body.s2-mandarin .menu-card h2 { color: var(--ink); font-size: 1.3rem; margin-bottom: 6px; }
+body.s2-mandarin .menu-card p { color: var(--ink-2); font-size: 0.95rem; }
+body.s2-mandarin .menu-card:hover { background: #fff; color: var(--ink); border-color: var(--accent); transform: none; }
+body.s2-mandarin .menu-card:hover h2 { color: var(--accent-ink); }
+@media (max-width: 900px) { body.s2-mandarin .menu-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- learn: topic list ---------- */
+body.s2-mandarin .topic-list { gap: 10px; }
+body.s2-mandarin .learn-topic-card {
+  background: #fff; border: 1.5px solid var(--line); border-radius: 16px; box-shadow: 0 3px 0 var(--line);
+  padding: 14px 18px; gap: 16px; color: var(--ink); transform: none;
+}
+body.s2-mandarin .learn-topic-card:hover { border-color: var(--accent); background: #fff; transform: none; }
+body.s2-mandarin .learn-topic-card h2 { color: var(--ink); font-size: 1.2rem; margin-bottom: 2px; }
+body.s2-mandarin .learn-topic-card p { color: var(--ink-3); font-size: 0.93rem; }
+body.s2-mandarin .learn-topic-card span { color: var(--accent-ink); margin-top: 4px; font-size: 0.88rem; }
+body.s2-mandarin .learn-topic-card .s2-topic-meta { display: block; color: var(--ink-2); font-weight: 700; }
+body.s2-mandarin .topic-number { background: var(--accent-soft); color: var(--accent-ink); font-size: 1.1rem; padding: 12px; border-radius: 12px; }
+.s2-topic-ring { flex: none; }
+@media (max-width: 750px) { body.s2-mandarin .learn-topic-card { flex-direction: row; align-items: center; } }
+
+/* ---------- topic pages: subtopic cards ---------- */
+body.s2-mandarin .subtopic-grid,
+body.s2-mandarin .learn-section-grid { gap: 14px; margin-top: 10px; }
+body.s2-mandarin .subtopic-card,
+body.s2-mandarin .learn-section-card {
+  position: relative; background: #fff; color: var(--ink); border: 1.5px solid var(--line); border-radius: var(--r-card);
+  box-shadow: 0 3px 0 var(--line); padding: 20px; min-height: 0; transform: none;
+}
+body.s2-mandarin .subtopic-card.s2-has-badge,
+body.s2-mandarin .learn-section-card.s2-has-badge { padding-bottom: 50px; }
+body.s2-mandarin .subtopic-card:hover,
+body.s2-mandarin .learn-section-card:hover { background: #fff; border-color: var(--accent); transform: none; box-shadow: 0 3px 0 var(--line); }
+body.s2-mandarin .subtopic-card h3,
+body.s2-mandarin .learn-section-card h3,
+body.s2-mandarin .subtopic-card:hover h3,
+body.s2-mandarin .learn-section-card:hover h3 { color: var(--ink); font-size: 1.2rem; }
+body.s2-mandarin .subtopic-card p,
+body.s2-mandarin .learn-section-card p,
+body.s2-mandarin .learn-section-card:hover p { color: var(--ink-2); font-size: 0.97rem; }
+body.s2-mandarin .learn-test-card {
+  position: relative; background: var(--ink); border-radius: var(--r-card); box-shadow: 0 4px 0 var(--accent); min-height: 0; padding: 26px 26px 52px;
+}
+body.s2-mandarin .learn-test-card span { background: var(--accent); color: #fff; padding: 10px 20px; margin-top: 16px; }
+body.s2-mandarin .learn-test-card .s2-lesson-badge { background: rgba(255,255,255,0.14); color: #fff; padding: 3px 10px; margin: 0; }
+.s2-lesson-badge {
+  position: absolute; left: 20px; bottom: 14px; font-size: 0.8rem; font-weight: 700; padding: 3px 10px; border-radius: 999px;
+  background: #eef0f6; color: var(--ink-3);
+}
+.s2-lesson-badge.part { background: var(--hl-soft); color: var(--hl-ink); }
+.s2-lesson-badge.done { background: var(--good-soft); color: var(--good); }
+
+/* ---------- lessons ---------- */
+body.s2-mandarin .lesson-hero,
+body.s2-mandarin .topic-hero,
+body.s2-mandarin .country-hero,
+body.s2-mandarin .sentence-hero {
+  background: var(--accent); color: #fff; border-radius: 22px; box-shadow: 0 5px 0 var(--accent-ink); padding: clamp(22px, 4vw, 34px); margin-bottom: 22px;
+}
+body.s2-mandarin .lesson-hero h2,
+body.s2-mandarin .topic-hero h2,
+body.s2-mandarin .country-hero h2,
+body.s2-mandarin .sentence-hero h2 { color: #fff; font-size: clamp(1.8rem, 4.5vw, 2.5rem); font-weight: 800; }
+body.s2-mandarin .lesson-hero .label,
+body.s2-mandarin .topic-hero .label { background: rgba(255,255,255,0.18); color: #fff; opacity: 1; font-size: 0.85rem; }
+body.s2-mandarin .lesson-card,
+body.s2-mandarin .flow-hero {
+  background: #fff; border: 1.5px solid var(--line); border-radius: 20px; box-shadow: 0 3px 0 var(--line); padding: clamp(20px, 3.5vw, 32px);
+}
+body.s2-mandarin .lesson-card h2,
+body.s2-mandarin .flow-hero h2 { color: var(--ink); font-size: clamp(1.4rem, 3.4vw, 1.9rem); margin-bottom: 14px; }
+body.s2-mandarin .lesson-card > p { color: var(--ink-2); }
+body.s2-mandarin .vocab-grid { gap: 12px; }
+body.s2-mandarin .vocab-card {
+  background: #fff; border: 1.5px solid var(--line); border-radius: 16px; box-shadow: 0 3px 0 var(--line); padding: 18px 14px;
+}
+body.s2-mandarin .vocab-card h3,
+body.s2-mandarin .chinese,
+body.s2-mandarin .chinese-inline,
+body.s2-mandarin .han { font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", var(--font-body); color: var(--ink); }
+body.s2-mandarin .vocab-card h3 { font-size: 2.1rem; font-weight: 700; }
+body.s2-mandarin .pinyin { color: var(--accent-ink); font-style: normal; font-weight: 700; }
+body.s2-mandarin .sentence-block,
+body.s2-mandarin .example-box {
+  background: #f8f9fd; border: 1.5px solid var(--line); border-left: 5px solid var(--accent); border-radius: 14px; padding: 14px 18px;
+}
+body.s2-mandarin .chinese { font-size: 1.5rem; }
+body.s2-mandarin .continue-btn,
+body.s2-mandarin .check-btn,
+body.s2-mandarin .flow-actions button {
+  font-weight: 700; font-size: 1rem; padding: 12px 22px; border-radius: var(--r-btn); border: 0; cursor: pointer;
+  background: var(--accent); color: #fff; box-shadow: 0 4px 0 var(--accent-ink); transition: transform 0.08s, box-shadow 0.08s, background 0.15s;
+}
+body.s2-mandarin .continue-btn:hover,
+body.s2-mandarin .check-btn:hover { background: var(--accent-ink); }
+body.s2-mandarin .continue-btn:active,
+body.s2-mandarin .check-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--accent-ink); }
+body.s2-mandarin .continue-btn.hidden { display: none; }
+
+/* answer buttons in lessons */
+body.s2-mandarin .quiz-buttons button,
+body.s2-mandarin .mcq button,
+body.s2-mandarin .fill-question button {
+  background: #fff; color: var(--ink); border: 1.5px solid var(--line); border-radius: 14px; box-shadow: 0 3px 0 var(--line);
+  padding: 13px 16px; font-weight: 700; font-size: 1.02rem; text-align: left; margin: 0;
+}
+body.s2-mandarin .quiz-buttons button:hover,
+body.s2-mandarin .mcq button:hover,
+body.s2-mandarin .fill-question button:hover { border-color: var(--accent); background: #fff; }
+body.s2-mandarin .correct-answer { background: var(--good-soft) !important; border-color: var(--good) !important; color: #0c5c37 !important; box-shadow: 0 3px 0 #9fdcbc !important; }
+body.s2-mandarin .wrong-answer { background: var(--bad-soft) !important; border-color: var(--bad) !important; color: #7f1d1d !important; box-shadow: 0 3px 0 #f4b3b9 !important; }
+body.s2-mandarin .fill-question,
+body.s2-mandarin .test-question,
+body.s2-mandarin .question-box,
+body.s2-mandarin .model-answer,
+body.s2-mandarin .light-essay { background: #f8f9fd; border: 1.5px solid var(--line); border-radius: 16px; }
+body.s2-mandarin .fill-question h3 { color: var(--ink); }
+body.s2-mandarin .correct-feedback { color: var(--good); }
+body.s2-mandarin .wrong-feedback { color: var(--bad); }
+body.s2-mandarin .type-answer,
+body.s2-mandarin .essay-box textarea,
+body.s2-mandarin .light-essay textarea { border: 1.5px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); }
+body.s2-mandarin .type-answer:focus,
+body.s2-mandarin .light-essay textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+
+/* sentence builders */
+body.s2-mandarin .word-bank,
+body.s2-mandarin .sentence-drop,
+body.s2-mandarin .builder-word-bank,
+body.s2-mandarin .builder-answer-box { background: #f8f9fd; border: 1.5px dashed #c6cde0; border-radius: 16px; }
+body.s2-mandarin .word-bank button,
+body.s2-mandarin .builder-word-bank button,
+body.s2-mandarin .builder-answer-box button,
+body.s2-mandarin .chosen-word {
+  background: #fff; color: var(--ink); border: 1.5px solid var(--line); box-shadow: 0 3px 0 var(--line); border-radius: 12px; font-size: 1.2rem; font-weight: 700;
+}
+body.s2-mandarin .word-bank button:hover { border-color: var(--accent); }
+body.s2-mandarin .correct-builder { border-color: var(--good) !important; background: var(--good-soft) !important; }
+body.s2-mandarin .wrong-builder { border-color: var(--bad) !important; background: var(--bad-soft) !important; }
+body.s2-mandarin .reset-btn { background: #fff; color: var(--ink-2); border: 1.5px solid var(--line); box-shadow: 0 3px 0 var(--line); border-radius: 12px; }
+
+/* tables + results */
+body.s2-mandarin .learn-table { border-collapse: separate; border-spacing: 0; border: 1.5px solid var(--line); border-radius: 12px; overflow: hidden; }
+body.s2-mandarin .learn-table th { background: var(--accent-soft); color: var(--accent-ink); }
+body.s2-mandarin .learn-table td { border-bottom: 1px solid var(--line); }
+body.s2-mandarin .learn-table tr:nth-child(even) { background: #f8f9fd; }
+body.s2-mandarin .results-box { background: #fff; border: 1.5px solid var(--line); box-shadow: 0 3px 0 var(--line); border-radius: 16px; }
+body.s2-mandarin .results-box h3 { color: var(--ink); }
+body.s2-mandarin .end-topic-section { background: var(--ink); border-radius: 22px; box-shadow: 0 5px 0 var(--accent); }
+body.s2-mandarin .end-topic-btn { background: var(--accent); color: #fff; box-shadow: 0 4px 0 var(--accent-ink); border-radius: var(--r-btn); }
+body.s2-mandarin .end-topic-btn:hover { background: var(--accent-ink); }
+body.s2-mandarin .bottom-buttons a {
+  background: #fff; color: var(--ink); border: 1.5px solid var(--line); box-shadow: 0 3px 0 var(--line); border-radius: var(--r-btn);
+}
+body.s2-mandarin .bottom-buttons a:hover { border-color: var(--accent); color: var(--accent-ink); background: #fff; }
+body.s2-mandarin .country-tile { background: #fff; border: 1.5px solid var(--line); box-shadow: 0 3px 0 var(--line); }
+body.s2-mandarin .country-tile h3 { color: var(--ink); }
+body.s2-mandarin .map-card, body.s2-mandarin .image-box { border-radius: 16px; }
+
+/* ---------- menus: flashcards hub, quiz zone, unit pickers ---------- */
+body.s2-mandarin .rapid-grid,
+body.s2-mandarin .rapid-unit-grid,
+body.s2-mandarin .quiz-mode-grid,
+body.s2-mandarin .mastery-grid,
+body.s2-mandarin .unit-grid { max-width: none; padding: 0; margin: 0; gap: 14px; }
+body.s2-mandarin .rapid-unit-card,
+body.s2-mandarin .quiz-mode-card,
+body.s2-mandarin .mastery-card,
+body.s2-mandarin .unit-card,
+body.s2-mandarin .flash-unit-card {
+  background: #fff; color: var(--ink); border: 1.5px solid var(--line); border-radius: var(--r-card);
+  box-shadow: 0 3px 0 var(--line); min-height: 0; padding: 22px; animation: none; transform: none; overflow: hidden;
+}
+body.s2-mandarin .rapid-unit-card::after,
+body.s2-mandarin .quiz-mode-card::after { display: none; }
+body.s2-mandarin .rapid-unit-card:hover,
+body.s2-mandarin .quiz-mode-card:hover,
+body.s2-mandarin .mastery-card:hover,
+body.s2-mandarin .unit-card:hover,
+body.s2-mandarin .flash-unit-card:hover { border-color: var(--accent); transform: none; box-shadow: 0 3px 0 var(--line); }
+body.s2-mandarin .rapid-unit-card h3,
+body.s2-mandarin .quiz-mode-card h3,
+body.s2-mandarin .mastery-card h3,
+body.s2-mandarin .unit-card h3,
+body.s2-mandarin .flash-unit-card h3 { color: var(--ink); font-size: 1.35rem; margin: 10px 0 6px; }
+body.s2-mandarin .rapid-unit-card p,
+body.s2-mandarin .quiz-mode-card p,
+body.s2-mandarin .mastery-card p,
+body.s2-mandarin .unit-card p,
+body.s2-mandarin .flash-unit-card p { color: var(--ink-2); max-width: none; opacity: 1; margin-bottom: 0; }
+body.s2-mandarin .unit-action,
+body.s2-mandarin .mastery-card span,
+body.s2-mandarin .unit-card span,
+body.s2-mandarin .flash-unit-card strong { position: static; display: inline-block; margin-top: 12px; color: var(--accent-ink); background: none; padding: 0; font-weight: 700; }
+body.s2-mandarin .unit-badge,
+body.s2-mandarin .quiz-tag,
+body.s2-mandarin .flash-badge { background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; font-size: 0.78rem; margin: 0; }
+body.s2-mandarin .unit-number,
+body.s2-mandarin .mastery-icon,
+body.s2-mandarin .flash-letter { color: #d7dbe8; font-size: 2rem; margin: 0; }
+body.s2-mandarin .rapid-unit-card.mixed,
+body.s2-mandarin .mixed-card { background: var(--ink); border-color: var(--ink); box-shadow: 0 4px 0 var(--accent); }
+body.s2-mandarin .rapid-unit-card.mixed h3,
+body.s2-mandarin .mixed-card h3,
+body.s2-mandarin .rapid-unit-card.mixed .unit-action { color: #fff; }
+body.s2-mandarin .rapid-unit-card.mixed p,
+body.s2-mandarin .mixed-card p { color: #c9cde3; }
+body.s2-mandarin .rapid-unit-card.locked,
+body.s2-mandarin .unit-card.locked { opacity: 0.5; filter: none; }
+
+/* quiz zone page shells */
+body.s2-mandarin.quiz-page,
+body.s2-mandarin.flashcards-page,
+body.s2-mandarin.flash-zone-page { color: var(--ink); }
+body.s2-mandarin.quiz-page main > p,
+body.s2-mandarin.quiz-page .quiz-hub > p { color: var(--ink-2); }
+body.s2-mandarin .quiz-hub,
+body.s2-mandarin .rf-game-wrap,
+body.s2-mandarin .match-wrap,
+body.s2-mandarin .writing-wrap,
+body.s2-mandarin .reading-wrap,
+body.s2-mandarin .flashcards-hub,
+body.s2-mandarin .flash-zone-wrap,
+body.s2-mandarin .learn-flow { max-width: none; padding: 0; }
+body.s2-mandarin .quiz-hero,
+body.s2-mandarin .rapid-fire-hero,
+body.s2-mandarin .mastery-hero,
+body.s2-mandarin .rf-menu {
+  background: transparent; color: var(--ink); border: 0; box-shadow: none; padding: 4px 0 6px; margin-bottom: 18px; border-radius: 0;
+}
+body.s2-mandarin .quiz-hero h2,
+body.s2-mandarin .rf-menu h2 { color: var(--ink); font-size: clamp(1.9rem, 4.6vw, 2.7rem); font-weight: 800; }
+body.s2-mandarin .quiz-hero p,
+body.s2-mandarin .rf-menu p { color: var(--ink-2); opacity: 1; }
+body.s2-mandarin .quiz-label,
+body.s2-mandarin .unit-tag { background: var(--accent-soft); color: var(--accent-ink); }
+
+/* ---------- game screens: "ink" panels ---------- */
+body.s2-mandarin .rf-start-screen,
+body.s2-mandarin .rf-end,
+body.s2-mandarin .rf-arena,
+body.s2-mandarin .match-hero,
+body.s2-mandarin .match-end,
+body.s2-mandarin .writing-hero,
+body.s2-mandarin .writing-panel,
+body.s2-mandarin .writing-sidebar,
+body.s2-mandarin .mark-box,
+body.s2-mandarin .reading-card,
+body.s2-mandarin .question-card {
+  background: var(--ink); color: #fff; border: 0; border-radius: 22px; box-shadow: 0 5px 0 #0b0e22;
+}
+body.s2-mandarin .rf-start-screen h2,
+body.s2-mandarin .match-hero h2,
+body.s2-mandarin .writing-hero h2 { color: #fff; font-size: clamp(1.8rem, 4.5vw, 2.6rem); }
+body.s2-mandarin .rf-start-screen p,
+body.s2-mandarin .rf-end p,
+body.s2-mandarin .match-hero p,
+body.s2-mandarin .writing-hero p,
+body.s2-mandarin .reading-card p,
+body.s2-mandarin .question-card p { color: #d5d8ea; }
+body.s2-mandarin .rf-rules-grid div,
+body.s2-mandarin .rf-topbar div,
+body.s2-mandarin .match-stats div,
+body.s2-mandarin .prompt-box,
+body.s2-mandarin .question-block,
+body.s2-mandarin .feedback-grid div,
+body.s2-mandarin .vocab-chip,
+body.s2-mandarin .chinese-text {
+  background: #262c55; border: 1.5px solid #343b6b; color: #fff; border-radius: 14px; box-shadow: none;
+}
+body.s2-mandarin .rf-topbar div { background: #fff; color: var(--ink); border-color: var(--line); box-shadow: 0 3px 0 var(--line); }
+body.s2-mandarin .rf-arena { background: var(--ink); background-image: linear-gradient(#262c55 1px, transparent 1px), linear-gradient(90deg, #262c55 1px, transparent 1px); background-size: 28px 28px; box-shadow: 0 5px 0 #0b0e22; }
+body.s2-mandarin .floating-word { background: var(--accent); border: 0; box-shadow: 0 5px 0 var(--accent-ink); font-family: "PingFang SC", "Noto Sans SC", var(--font-body); }
+body.s2-mandarin .rf-start-btn,
+body.s2-mandarin .writing-btn,
+body.s2-mandarin .rf-end button,
+body.s2-mandarin .rf-end a {
+  background: var(--accent); color: #fff; border: 0; border-radius: var(--r-btn); box-shadow: 0 4px 0 var(--accent-ink); font-weight: 700;
+}
+body.s2-mandarin .writing-btn { margin-bottom: 16px; }
+body.s2-mandarin .rf-start-screen .quiz-label, body.s2-mandarin .match-hero .quiz-label, body.s2-mandarin .writing-hero .quiz-label,
+body.s2-mandarin .rf-start-screen .unit-tag, body.s2-mandarin .match-hero .unit-tag, body.s2-mandarin .writing-hero .unit-tag,
+body.s2-mandarin .reading-card .unit-tag, body.s2-mandarin .reading-card .quiz-label { background: var(--accent); color: #fff; }
+body.s2-mandarin .writing-btn.secondary { background: #3a4170; box-shadow: 0 4px 0 #20254a; }
+body.s2-mandarin .rf-options button {
+  background: #fff; color: var(--ink); border: 1.5px solid var(--line); border-radius: 14px; box-shadow: 0 3px 0 var(--line); font-weight: 700;
+}
+body.s2-mandarin .rf-options button:hover { border-color: var(--accent); transform: none; box-shadow: 0 3px 0 var(--line); }
+body.s2-mandarin .rf-options .rf-correct { background: var(--good-soft); border-color: var(--good); color: #0c5c37; }
+body.s2-mandarin .rf-options .rf-wrong { background: var(--bad-soft); border-color: var(--bad); color: #7f1d1d; }
+body.s2-mandarin .rf-good { color: var(--good); }
+body.s2-mandarin .rf-bad { color: var(--bad); }
+body.s2-mandarin .match-card-front { background: var(--ink); border: 0; box-shadow: 0 4px 0 #0b0e22; color: #fff; }
+body.s2-mandarin .match-card-back { background: #fff; color: var(--ink); border: 1.5px solid var(--line); box-shadow: 0 4px 0 var(--line); }
+body.s2-mandarin .match-card.matched .match-card-back { background: var(--good-soft); border-color: var(--good); box-shadow: 0 4px 0 #9fdcbc; }
+body.s2-mandarin textarea,
+body.s2-mandarin .question-block input[type="text"] { background: #10142b; border: 1.5px solid #343b6b; color: #fff; border-radius: 14px; }
+body.s2-mandarin .score-circle { background: var(--accent); box-shadow: 0 4px 0 var(--accent-ink); }
+body.s2-mandarin .used-vocab span { background: #343b6b; border: 0; }
+body.s2-mandarin .score-pop { background: var(--hl); color: var(--hl-ink); box-shadow: 0 4px 0 #e0b800; }
+
+/* ---------- flashcard player ---------- */
+body.s2-mandarin .flashcard { background: transparent; box-shadow: none; padding: 0; }
+body.s2-mandarin .flashcard-container { margin: 20px auto 0; }
+body.s2-mandarin .flashcard-face {
+  background: #fff; color: var(--ink); border: 1.5px solid var(--line); box-shadow: 0 6px 0 var(--line); border-radius: 26px;
+}
+body.s2-mandarin .flashcard-back { background: var(--accent-soft); border-color: #f6c5c8; box-shadow: 0 6px 0 #f6c5c8; }
+body.s2-mandarin .flashcard .han { color: var(--ink); }
+body.s2-mandarin .flashcard .pin { color: var(--accent-ink); }
+body.s2-mandarin .flashcard .eng { color: var(--ink); font-family: var(--font-display); }
+body.s2-mandarin .flashcard-controls { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+body.s2-mandarin .flashcard-controls + .flashcard-controls { margin-top: 10px; }
+body.s2-mandarin .flashcard-controls button {
+  margin: 0; background: #fff; color: var(--ink); border: 1.5px solid var(--line); box-shadow: 0 4px 0 var(--line); border-radius: var(--r-btn); font-weight: 700; padding: 11px 18px;
+}
+body.s2-mandarin .flashcard-controls button:hover { background: #fff; border-color: var(--accent); color: var(--accent-ink); transform: none; }
+body.s2-mandarin .flashcard-controls:first-of-type button:nth-child(2) { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 4px 0 var(--accent-ink); }
+body.s2-mandarin .flashcard-controls button:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--line); }
+body.s2-mandarin .flash-progress { color: var(--ink-2); }
+
+/* ---------- info pages ---------- */
+body.s2-mandarin .container { width: min(760px, 92%); margin: 28px auto; }
+body.s2-mandarin .container .card {
+  background: #fff; border: 1.5px solid var(--line); border-radius: var(--r-card); box-shadow: 0 3px 0 var(--line); color: var(--ink); padding: clamp(20px, 3.5vw, 32px);
+}
+body.s2-mandarin .container .card h2 { color: var(--ink); }
+body.s2-mandarin .container .card p { color: var(--ink-2); }
+body.s2-mandarin .email-box { background: var(--accent-soft); color: var(--accent-ink); border: 1.5px solid var(--accent); border-radius: 14px; }
+body.s2-mandarin .home-button { background: var(--accent); color: #fff; border-radius: var(--r-btn); box-shadow: 0 4px 0 var(--accent-ink); }
+
+@media (max-width: 700px) {
+  body.s2-mandarin .menu-grid { grid-template-columns: 1fr; }
+  body.s2-mandarin .rapid-grid, body.s2-mandarin .rapid-unit-grid, body.s2-mandarin .quiz-mode-grid,
+  body.s2-mandarin .mastery-grid, body.s2-mandarin .subtopic-grid, body.s2-mandarin .learn-section-grid { grid-template-columns: 1fr; }
+}
