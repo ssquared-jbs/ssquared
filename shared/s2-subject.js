@@ -86,7 +86,7 @@
       '<nav class="s2-nav" aria-label="' + CFG.name + '">' + nav.map(function (x) {
         var p = x.split("|"); return '<a href="' + p[0] + '"' + (active === p[0] ? ' class="active" aria-current="page"' : "") + ">" + p[1] + "</a>";
       }).join("") + "</nav>";
-    if (S2) bar.appendChild(S2.streakPill());
+    if (S2) { bar.appendChild(S2.streakPill()); bar.appendChild(S2.themeButton()); }
     document.body.insertBefore(bar, document.body.firstChild);
     var footer = el("footer", { class: "s2-footer" });
     footer.innerHTML = '<span>' + CFG.name + ' · part of <a href="../index.html" style="margin:0">Ssquared HQ</a></span><span><a href="about.html">About</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></span>';

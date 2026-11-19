@@ -102,5 +102,28 @@
     save();
   }
 
-  window.S2 = { touch: touch, item: item, items: items, streak: streak, ring: ring, streakPill: streakPill, weekHtml: weekHtml, timeAgo: timeAgo, markActive: function () { markActive(); save(); }, reset: reset, today: today };
+  function themeButton() {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "s2-theme-btn";
+    function sync() {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      b.textContent = dark ? "☀️" : "🌙";
+      b.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      b.title = b.getAttribute("aria-label");
+    }
+    b.onclick = function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("s2-theme", next); } catch (e) {}
+      sync();
+    };
+    sync();
+    return b;
+  }
+  if (!document.documentElement.getAttribute("data-theme")) {
+    var pref = null; try { pref = localStorage.getItem("s2-theme"); } catch (e) {}
+    document.documentElement.setAttribute("data-theme", pref === "dark" || (pref !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
+  }
+
+  window.S2 = { themeButton: themeButton, touch: touch, item: item, items: items, streak: streak, ring: ring, streakPill: streakPill, weekHtml: weekHtml, timeAgo: timeAgo, markActive: function () { markActive(); save(); }, reset: reset, today: today };
 })();
