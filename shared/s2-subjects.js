@@ -10,6 +10,7 @@
     mandarin: { name: "Mandarin²", path: "mandarin/index.html", cls: "s2-mandarin", glyph: "中文", course: "IGCSE Mandarin", blurb: "25 topics of step-by-step lessons, rapid-fire quizzes, flashcards and the 3+2 game." },
     chemistry: { name: "Chemistry²", path: "chemistry/index.html", cls: "s2-chemistry", glyph: "H₂O", course: "Edexcel IGCSE & GCSE", blurb: "Every topic with notes, videos, quizzes, exam questions, flashcards and a molecule drawer." },
     physics: { name: "Physics²", path: "physics/index.html", cls: "s2-physics", glyph: "F=ma", course: "Edexcel IGCSE & GCSE", blurb: "Forces, electricity, waves, energy, magnetism and space, with every equation explained." },
+    "alevel-chemistry": { name: "A-level Chemistry²", path: "alevel-chemistry/index.html", cls: "s2-alevel-chemistry", glyph: "ΔG", course: "Edexcel A level (9CH0)", blurb: "All 19 topics of Edexcel A level Chemistry, step by step, with quick checks and flashcards." },
     biology: { name: "Biology²", path: "biology/index.html", cls: "s2-biology", glyph: "DNA", course: "Edexcel IGCSE & GCSE", blurb: "Cells, the human body, plants, genetics and ecology, with key processes broken down." }
   };
 
@@ -27,7 +28,7 @@
       ["latin", "Latin", []], ["citizenship", "Citizenship", []]
     ] },
     alevel: { name: "A level", short: "A level", core: [], subjects: [
-      ["maths", "Maths", []], ["further-maths", "Further Maths", []], ["biology", "Biology", []], ["chemistry", "Chemistry", []], ["physics", "Physics", []],
+      ["maths", "Maths", []], ["further-maths", "Further Maths", []], ["biology", "Biology", []], ["chemistry", "Chemistry", ["alevel-chemistry"]], ["physics", "Physics", []],
       ["psychology", "Psychology", []], ["economics", "Economics", []], ["business", "Business", []], ["computer-science", "Computer Science", []],
       ["english-lit", "English Literature", []], ["english-lang", "English Language", []], ["history", "History", []], ["geography", "Geography", []],
       ["politics", "Politics", []], ["sociology", "Sociology", []], ["law", "Law", []], ["rs", "Religious Studies / Philosophy", []],

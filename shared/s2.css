@@ -314,3 +314,10 @@ body.nb-open .nb-fab { right: min(458px, calc(100% - 70px)); }
 .nb-addsel { position: absolute; z-index: 960; padding: 8px 12px; border-radius: 10px; border: 0; background: var(--panel); color: #fff; font: inherit; font-weight: 700; font-size: .9rem; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
 .nb-quote { margin: 8px 0; padding: 6px 12px; border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; color: var(--ink); }
 @media print { .nb-fab, .nb-drawer, .nb-addsel { display: none !important; } }
+/* A-level platforms */
+.s2-alevel-chemistry { --accent: #0b7d6a; --accent-ink: #065a4c; --accent-text: #065a4c; --accent-soft: #dcf1ec; }
+.s2-alevel-physics { --accent: #4150c8; --accent-ink: #2c3794; --accent-text: #2c3794; --accent-soft: #e7e9fb; }
+.s2-alevel-biology { --accent: #c2410c; --accent-ink: #8f2f07; --accent-text: #8f2f07; --accent-soft: #fdebe1; }
+[data-theme="dark"] .s2-alevel-chemistry { --accent-text: #5ed6bf; --accent-soft: #0d302a; }
+[data-theme="dark"] .s2-alevel-physics { --accent-text: #9aa6ff; --accent-soft: #1d2250; }
+[data-theme="dark"] .s2-alevel-biology { --accent-text: #ffa070; --accent-soft: #3a1c0d; }

@@ -11,7 +11,8 @@
   var topics = DATA.topics || [];
   var EXAMS = DATA.exams || {};
   var VIDEOS = DATA.videos || {};
-  topics.sort(function (a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
+  function idKey(id) { var m = /^(\d+)(.*)$/.exec(id) || [0, 0, id]; return [+m[1], m[2]]; }
+  topics.sort(function (a, b) { var x = idKey(a.id), y = idKey(b.id); return x[0] - y[0] || (x[1] < y[1] ? -1 : x[1] > y[1] ? 1 : 0); });
   function byId(id) { for (var i = 0; i < topics.length; i++) if (topics[i].id === id) return topics[i]; return null; }
   function inGroup(g) { return topics.filter(function (t) { return t.group === g; }); }
   function groupLabel(g) { return g !== EXTRA ? "Topic " + g + ": " + GROUPS[g].name : GROUPS[g].name; }
@@ -78,9 +79,11 @@
     var s = "";
     if (t.paper2) s += ' <span class="tag tag-c">Paper 2 only</span>';
     if (t.gcse) s += ' <span class="tag tag-g">GCSE only</span>';
+    if (t.y2) s += ' <span class="tag tag-g">Year 13</span>';
+    if (t.y1) s += ' <span class="tag tag-p">Year 12 (AS)</span>';
     return s;
   }
-  function code(t) { return t.id.charAt(0) + "(" + t.id.slice(1) + ")"; }
+  function code(t) { return t.id.replace(/^(\d+)([a-z]+)$/, "$1($2)"); }
   function ring(p, size) { return S2 ? S2.ring(p, size) : ""; }
   function bigRing(p, size) { return ring(p, size).replace('class="s2-ring"', 'class="s2-ring big"'); }
   function toast(msg) {
