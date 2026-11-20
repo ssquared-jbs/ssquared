@@ -14,6 +14,7 @@
       if (empty) localStorage.removeItem(PREFIX + subject + ":" + id);
       else localStorage.setItem(PREFIX + subject + ":" + id, JSON.stringify({ s: subject, id: id, t: meta.t, code: meta.code || "", group: meta.group || "", u: meta.u || "", html: clean, updated: Date.now() }));
     } catch (e) {}
+    try { window.dispatchEvent(new CustomEvent("s2-note-saved", { detail: { key: subject + ":" + id, from: put.from || null } })); } catch (e) {}
   }
   function all() {
     var out = [];
@@ -73,7 +74,7 @@
     var timer = null, firstEdit = !saved;
     function words() { var n = (page.innerText || "").trim().split(/\s+/).filter(Boolean).length; count.textContent = n ? n + " word" + (n === 1 ? "" : "s") : ""; }
     function save() {
-      put(meta.subject, meta.id, meta, sanitize(page.innerHTML));
+      put.from = wrap; put(meta.subject, meta.id, meta, sanitize(page.innerHTML)); put.from = null;
       status.textContent = "Saved just now";
       if (firstEdit && window.S2 && S2.addXP) { firstEdit = false; S2.addXP(10, "First notes on this topic"); }
     }
@@ -107,10 +108,74 @@
       } else document.execCommand(c);
       page.dispatchEvent(new Event("input"));
     });
+    window.addEventListener("s2-note-saved", function (e) {
+      if (e.detail.key !== meta.subject + ":" + meta.id || e.detail.from === wrap || document.activeElement === page) return;
+      var n = get(meta.subject, meta.id); page.innerHTML = n ? sanitize(n.html) : ""; status.textContent = n ? "Saved just now" : "Not started"; words();
+    });
     words();
     return wrap;
   }
+
+  /* add a snippet to the end of a topic's notes */
+  function append(meta, html) {
+    var n = get(meta.subject, meta.id), cur = n ? n.html : "";
+    put(meta.subject, meta.id, meta, sanitize(cur + html));
+  }
+
+  /* A floating notebook: a button that opens this topic's notes in a side panel,
+     plus "Add to my notes" when the learner highlights text inside `selectFrom`. */
+  function drawer(meta, selectFrom) {
+    if (document.querySelector(".nb-fab")) return;
+    var fab = document.createElement("button");
+    fab.type = "button"; fab.className = "nb-fab"; fab.setAttribute("aria-expanded", "false");
+    fab.innerHTML = "<span aria-hidden='true'>✏️</span><span class='lbl'>My notes</span>";
+    fab.title = "Open your notes for " + meta.t;
+    var panel = document.createElement("aside");
+    panel.className = "nb-drawer"; panel.setAttribute("aria-label", "My notes"); panel.hidden = true;
+    panel.innerHTML = "<div class='nb-drawer-head'><div><b>My notes</b><span>" + String(meta.code || "") + " " + String(meta.t).replace(/</g, "&lt;") + "</span></div><button type='button' class='nb-close' aria-label='Close notes'>×</button></div>";
+    var ed = editor(Object.assign({}, meta, { compact: true }));
+    panel.appendChild(ed);
+    var tip = document.createElement("p"); tip.className = "nb-tip";
+    tip.innerHTML = "Tip: highlight any text in the notes and press <b>＋ Add to my notes</b>. Everything here is in your <a href='" + (meta.workbook || "workbook.html") + "'>workbook</a> too.";
+    panel.appendChild(tip);
+    document.body.appendChild(fab); document.body.appendChild(panel);
+    function open(focus) {
+      panel.hidden = false; document.body.classList.add("nb-open"); fab.setAttribute("aria-expanded", "true");
+      if (focus !== false) { var pg = panel.querySelector(".nb-page"); pg.focus(); var r = document.createRange(); r.selectNodeContents(pg); r.collapse(false); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); }
+    }
+    function close() { panel.hidden = true; document.body.classList.remove("nb-open"); fab.setAttribute("aria-expanded", "false"); fab.focus(); }
+    fab.onclick = function () { panel.hidden ? open() : close(); };
+    panel.querySelector(".nb-close").onclick = close;
+    panel.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+
+    if (selectFrom) {
+      var pop = document.createElement("button"); pop.type = "button"; pop.className = "nb-addsel"; pop.textContent = "＋ Add to my notes"; pop.hidden = true;
+      document.body.appendChild(pop);
+      var pending = "";
+      function check() {
+        var sel = window.getSelection(), text = sel ? sel.toString().trim() : "";
+        if (!text || text.length < 3 || !sel.rangeCount || !selectFrom.contains(sel.anchorNode)) { pop.hidden = true; return; }
+        var r = sel.getRangeAt(0).getBoundingClientRect();
+        pending = text.slice(0, 1500);
+        pop.hidden = false;
+        pop.style.top = (window.scrollY + r.bottom + 8) + "px";
+        pop.style.left = Math.max(8, Math.min(window.scrollX + r.left + r.width / 2 - 75, window.scrollX + document.documentElement.clientWidth - 170)) + "px";
+      }
+      document.addEventListener("mouseup", function () { setTimeout(check, 10); });
+      document.addEventListener("keyup", function (e) { if (e.shiftKey || e.key === "Shift") check(); });
+      document.addEventListener("selectionchange", function () { if (!window.getSelection().toString()) pop.hidden = true; });
+      pop.addEventListener("mousedown", function (e) { e.preventDefault(); });
+      pop.onclick = function () {
+        var safe = pending.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\n+/g, "<br>");
+        append(meta, "<blockquote class='nb-quote'>" + safe + "</blockquote><p><br></p>");
+        pop.hidden = true; window.getSelection().removeAllRanges();
+        if (window.S2 && S2.chip) S2.chip("Added to your notes ✏️");
+        fab.classList.add("pulse"); setTimeout(function () { fab.classList.remove("pulse"); }, 900);
+      };
+    }
+    return { open: open, close: close };
+  }
   function ago(ts) { return window.S2 && S2.timeAgo ? S2.timeAgo(ts) : new Date(ts).toLocaleDateString(); }
 
-  window.S2Notes = { editor: editor, get: get, all: all, sanitize: sanitize };
+  window.S2Notes = { editor: editor, get: get, all: all, sanitize: sanitize, append: append, drawer: drawer };
 })();

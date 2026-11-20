@@ -626,7 +626,7 @@
     main.querySelector("#prev").onclick = function () { if (pos > 0) { pos--; show(); } };
     main.querySelector("#shuf").onclick = function () { deck = shuffle(deck); pos = 0; show(); };
     document.addEventListener("keydown", function (e) {
-      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.isContentEditable || document.body.classList.contains("nb-open") && e.target.closest && e.target.closest(".nb-drawer")) return;
       var onControl = e.target.tagName === "BUTTON" || e.target.tagName === "A";
       if ((e.key === " " || e.key === "Enter") && !onControl) { e.preventDefault(); flip(); }
       else if (e.key === "ArrowRight") { if (pos < deck.length) { pos++; show(); } }
@@ -640,5 +640,8 @@
     chrome({ home: "index.html", learn: "learn.html", topic: "learn.html", quizzes: "quizzes.html", flashcards: "flashcards.html", exam: "exam.html", workbook: "workbook.html" }[page]);
     var main = document.querySelector("main");
     if (pages[page]) pages[page](main);
+    var tid = param("id"), tt = tid && byId(tid);
+    if (tt && window.S2Notes && S2Notes.drawer && ["topic", "quizzes", "flashcards", "exam"].indexOf(page) >= 0)
+      S2Notes.drawer({ subject: CFG.slug, id: tt.id, t: tt.title, code: code(tt), group: groupLabel(tt.group), u: "topic.html?id=" + tt.id }, page === "topic" ? main.querySelector(".notes") || main : main);
   });
 })();
