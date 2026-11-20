@@ -22,5 +22,7 @@ window.S2Data = window.CHEM = {
   topics: [], exams: {}, details: {},
   add: function (t) { this.topics.push(t); },
   detail: function (id, d) { this.details[id] = d; },
-  exam: function (id, qs) { this.exams[id] = qs; }
+  exam: function (id, qs) { this.exams[id] = qs; },
+  videos: {},
+  video: function (id, v) { this.videos[id] = v; }
 };
