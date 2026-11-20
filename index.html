@@ -189,7 +189,7 @@
             if (src) html += src.outerHTML;
           });
         } else {
-          html += "<div class='platform soon' aria-label='" + esc(sj.name) + ": coming soon'><div class='top'><div class='glyph'>" + esc(sj.name.charAt(0)) + "</div><div class='course'>" + esc(L.short) + "</div></div><div class='body'><h3>" + esc(sj.name) + "</h3><p>We're building this. It'll appear here as soon as it's ready.</p><div class='status'>Coming soon</div></div></div>";
+          html += "<div class='platform soon' aria-label='" + esc(sj.name) + ": coming soon'><div class='top'><div class='glyph'>" + esc(sj.name.charAt(0)) + "</div><div class='course'>" + esc(sj.boardName || L.short) + "</div></div><div class='body'><h3>" + esc(sj.name) + "</h3><p>We're building this. It'll appear here as soon as it's ready.</p><div class='status'>Coming soon</div></div></div>";
         }
       });
       grid.innerHTML = html || "<p style='color:var(--ink-2)'>You haven't picked any subjects yet.</p>";
