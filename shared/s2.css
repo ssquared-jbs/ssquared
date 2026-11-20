@@ -126,7 +126,7 @@ body.s2 :focus-visible { outline: 3px solid var(--hl); outline-offset: 2px; bord
 }
 .s2-logo sup { font-size: 0.6em; color: var(--hl); margin-left: 1px; }
 .s2-brand { display: flex; flex-direction: column; min-width: 0; margin-right: auto; }
-.s2-brand .s2-title { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--ink); text-decoration: none; line-height: 1.1; }
+.s2-brand .s2-title { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--ink); text-decoration: none; line-height: 1.1; white-space: nowrap; }
 .s2-brand .s2-sub { font-size: 0.82rem; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .s2-nav { display: flex; gap: 4px; }
 .s2-nav a {
@@ -142,6 +142,14 @@ body.s2 :focus-visible { outline: 3px solid var(--hl); outline-offset: 2px; bord
   background: var(--track); color: var(--ink-3); border: 1.5px solid var(--line);
 }
 .s2-streak-pill.is-lit { background: var(--hl); color: var(--hl-ink); border-color: #f0c400; }
+@media (max-width: 1180px) {
+  .s2-brand .s2-sub { display: none; }
+  .s2-nav a { padding: 8px 9px; font-size: 0.9rem; }
+}
+@media (max-width: 1040px) {
+  .s2-appbar { flex-wrap: wrap; }
+  .s2-nav { order: 3; width: 100%; overflow-x: auto; }
+}
 @media (max-width: 760px) {
   .s2-appbar { flex-wrap: wrap; }
   .s2-nav { order: 3; width: 100%; overflow-x: auto; }
