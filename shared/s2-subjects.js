@@ -13,6 +13,7 @@
     "alevel-chemistry": { name: "A-level Chemistry²", path: "alevel-chemistry/index.html", cls: "s2-alevel-chemistry", glyph: "ΔG", course: "Edexcel A level (9CH0)", blurb: "All 19 topics of Edexcel A level Chemistry, step by step, with quick checks and flashcards." },
     "alevel-physics": { name: "A-level Physics²", path: "alevel-physics/index.html", cls: "s2-alevel-physics", glyph: "E=hf", course: "Edexcel A level (9PH0)", blurb: "All 13 topics of Edexcel A level Physics, with worked calculations, quick checks and flashcards." },
     "alevel-biology-a": { name: "A-level Biology A²", path: "alevel-biology-a/index.html", cls: "s2-alevel-biology", glyph: "ATP", course: "Edexcel A level Biology A (9BN0)", blurb: "Salters-Nuffield Biology A, all 8 topics, with step-by-step notes, quick checks and flashcards." },
+    "alevel-biology-b": { name: "A-level Biology B²", path: "alevel-biology-b/index.html", cls: "s2-alevel-biology", glyph: "DNA", course: "Edexcel A level Biology B (9BI0)", blurb: "Biology B, all 10 topics, with step-by-step notes, quick checks and flashcards." },
     biology: { name: "Biology²", path: "biology/index.html", cls: "s2-biology", glyph: "DNA", course: "Edexcel IGCSE & GCSE", blurb: "Cells, the human body, plants, genetics and ecology, with key processes broken down." }
   };
 
@@ -30,7 +31,7 @@
       ["latin", "Latin", []], ["citizenship", "Citizenship", []]
     ] },
     alevel: { name: "A level", short: "A level", core: [], subjects: [
-      ["maths", "Maths", []], ["further-maths", "Further Maths", []], ["biology", "Biology", [], [["bio-a", "Edexcel A, Salters-Nuffield (9BN0)", "alevel-biology-a"], ["bio-b", "Edexcel B (9BI0)", null]]],
+      ["maths", "Maths", []], ["further-maths", "Further Maths", []], ["biology", "Biology", [], [["bio-a", "Edexcel A, Salters-Nuffield (9BN0)", "alevel-biology-a"], ["bio-b", "Edexcel B (9BI0)", "alevel-biology-b"]]],
       ["chemistry", "Chemistry", ["alevel-chemistry"], [["edexcel", "Edexcel (9CH0)", "alevel-chemistry"], ["ocr-a", "OCR A (H432)", null]]],
       ["physics", "Physics", ["alevel-physics"]],
       ["psychology", "Psychology", []], ["economics", "Economics", []], ["business", "Business", []], ["computer-science", "Computer Science", []],
