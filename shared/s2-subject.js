@@ -11,13 +11,28 @@
   var topics = DATA.topics || [];
   var EXAMS = DATA.exams || {};
   var VIDEOS = DATA.videos || {};
-  topics.sort(function (a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
+  function idKey(id) { var m = /^(\d+)(.*)$/.exec(id) || [0, 0, id]; return [+m[1], m[2]]; }
+  topics.sort(function (a, b) { var x = idKey(a.id), y = idKey(b.id); return x[0] - y[0] || (x[1] < y[1] ? -1 : x[1] > y[1] ? 1 : 0); });
   function byId(id) { for (var i = 0; i < topics.length; i++) if (topics[i].id === id) return topics[i]; return null; }
   function inGroup(g) { return topics.filter(function (t) { return t.group === g; }); }
   function groupLabel(g) { return g !== EXTRA ? "Topic " + g + ": " + GROUPS[g].name : GROUPS[g].name; }
   function groupShort(g) { return g !== EXTRA ? "Topic " + g : "GCSE extras"; }
   function exam(id) { return EXAMS[id] || []; }
   function examMarks(qs) { return qs.reduce(function (s, q) { return s + (q.m || 1); }, 0); }
+
+  // ---------- learner-made flashcards (localStorage "s2-cards", synced by s2-auth) ----------
+  var CARDS_KEY = "s2-cards";
+  function cardsAll() { try { return JSON.parse(localStorage.getItem(CARDS_KEY)) || {}; } catch (e) { return {}; } }
+  function cardsSave(all) { try { localStorage.setItem(CARDS_KEY, JSON.stringify(all)); } catch (e) {} }
+  function myCards(tid) {
+    var all = cardsAll(), out = [];
+    Object.keys(all).forEach(function (k) { var c = all[k]; if (c && !c.del && c.s === CFG.slug && (!tid || c.topic === tid)) out.push(c); });
+    out.sort(function (a, b) { return (a.created || 0) - (b.created || 0); });
+    return out;
+  }
+  function cardPut(c) { var all = cardsAll(); c.updated = Date.now(); if (!c.created) c.created = c.updated; all[c.id] = c; cardsSave(all); }
+  function cardDel(id) { var all = cardsAll(); if (all[id]) { all[id] = { id: id, del: true, updated: Date.now() }; cardsSave(all); } }
+  function plain(s) { return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>"); }
 
   // ---------- progress ----------
   function key(id) { return CFG.keyPrefix + ":" + id; }
@@ -35,7 +50,8 @@
     if (p.read) m += w[0];
     if (p.best) m += w[1] * p.best.s / p.best.t;
     if (hasExam && p.exam) m += w[2] * p.exam.s / p.exam.t;
-    if (p.fc && t.flashcards.length) m += w[3] * Math.min(p.fc.length, t.flashcards.length) / t.flashcards.length;
+    var fcKnown = (p.fc || []).filter(function (x) { return typeof x === "number"; }).length;
+    if (fcKnown && t.flashcards.length) m += w[3] * Math.min(fcKnown, t.flashcards.length) / t.flashcards.length;
     return Math.round(m);
   }
   function courseMastery(list) {
@@ -63,9 +79,11 @@
     var s = "";
     if (t.paper2) s += ' <span class="tag tag-c">Paper 2 only</span>';
     if (t.gcse) s += ' <span class="tag tag-g">GCSE only</span>';
+    if (t.y2) s += ' <span class="tag tag-g">Year 13</span>';
+    if (t.y1) s += ' <span class="tag tag-p">Year 12 (AS)</span>';
     return s;
   }
-  function code(t) { return t.id.charAt(0) + "(" + t.id.slice(1) + ")"; }
+  function code(t) { return t.id.replace(/^(\d+)([a-z]+)$/, "$1($2)"); }
   function ring(p, size) { return S2 ? S2.ring(p, size) : ""; }
   function bigRing(p, size) { return ring(p, size).replace('class="s2-ring"', 'class="s2-ring big"'); }
   function toast(msg) {
@@ -75,6 +93,7 @@
   }
   var hasAnyExam = Object.keys(EXAMS).length > 0;
   var CHEERS = ["Correct.", "Nailed it.", "Spot on.", "Yes, exactly.", "Correct, nice work.", "That's the one."];
+  function fcKnownN(p) { return (p.fc || []).filter(function (x) { return typeof x === "number"; }).length; }
   function cheer() { return CHEERS[Math.floor(Math.random() * CHEERS.length)]; }
   function xp(n, why) { if (S2 && S2.addXP) S2.addXP(n, why); }
   function party() { if (S2 && S2.confetti) S2.confetti(); }
@@ -209,7 +228,7 @@
     var vid = VIDEOS[t.id];
     var checks = (vid ? "<li class='" + (p.video ? "done" : "") + "'>Video watched</li>" : "") + "<li class='done'>Notes read</li><li class='" + (p.best ? "done" : "") + "'>Quiz" + (p.best ? " (best " + p.best.s + "/" + p.best.t + ")" : "") + "</li>" +
       (ex.length ? "<li class='" + (p.exam ? "done" : "") + "'>Exam questions" + (p.exam ? " (best " + p.exam.s + "/" + p.exam.t + ")" : "") + "</li>" : "") +
-      "<li class='" + ((p.fc || []).length ? "done" : "") + "'>Flashcards" + ((p.fc || []).length ? " (" + p.fc.length + "/" + t.flashcards.length + " known)" : "") + "</li>";
+      "<li class='" + (fcKnownN(p) ? "done" : "") + "'>Flashcards" + (fcKnownN(p) ? " (" + fcKnownN(p) + "/" + t.flashcards.length + " known)" : "") + "</li>";
     main.innerHTML =
       "<div class='crumbs'><a href='learn.html'>Learn</a> › <a href='learn.html#g" + t.group + "'>" + groupLabel(t.group) + "</a></div>" +
       "<div class='topic-layout'><div>" +
@@ -225,7 +244,7 @@
       "<div class='side-label'>Topic mastery</div><ul class='checklist'>" + checks + "</ul>" +
       "<a class='s2-btn' href='quizzes.html?id=" + t.id + "'>Take the quiz</a>" +
       (ex.length ? "<a class='s2-btn' href='exam.html?id=" + t.id + "'>Exam questions (" + ex.length + ")</a>" : "") +
-      "<a class='s2-btn ghost' href='flashcards.html?id=" + t.id + "'>Practise flashcards</a><a class='side-link' href='#notebook-slot'>✏️ My notes for this topic</a></div></aside></div>";
+      "<a class='s2-btn ghost' href='flashcards.html?id=" + t.id + "'>Practise flashcards</a><a class='side-link' href='flashcards.html?id=" + t.id + "#mine'>🃏 Make my own flashcards</a><a class='side-link' href='#notebook-slot'>✏️ My notes for this topic</a></div></aside></div>";
     if (vid && window.S2Video) {
       if (!vid.title) vid.title = code(t) + " " + t.title + " explained";
       if (!vid.kicker) vid.kicker = CFG.name + " · " + code(t);
@@ -234,9 +253,100 @@
         onDone: function () { var first = !prog(t.id).video; save(t, { video: 1 }); if (first) xp(15, "Video watched"); }
       });
     }
+    stepify(main.querySelector("article.notes"), t);
     if (window.S2Notes) main.querySelector("#notebook-slot").appendChild(S2Notes.editor({ subject: CFG.slug, id: t.id, t: t.title, code: code(t), group: groupLabel(t.group), u: "topic.html?id=" + t.id, title: "My notes: " + code(t) + " " + t.title }));
     window.scrollTo(0, 0);
   };
+
+  /* ---------- step-by-step notes ---------- */
+  var MODE_KEY = "s2-notes-mode";
+  function stepMode() { try { return localStorage.getItem(MODE_KEY) !== "all"; } catch (e) { return true; } }
+  function stepify(article, t) {
+    if (!article) return;
+    // 1. split into chunks: a new chunk at every h3, and long runs are split further
+    var kids = [].slice.call(article.children), chunks = [], cur = null, len = 0;
+    function start() { cur = []; chunks.push(cur); len = 0; }
+    kids.forEach(function (k) {
+      var isHead = k.tagName === "H3", size = (k.textContent || "").length + (k.querySelector("table,svg,img") ? 400 : 0);
+      if (!cur || isHead || (len > 650 && cur.length >= 2 && k.tagName !== "H4" && !(cur[cur.length - 1].tagName === "H4"))) start();
+      cur.push(k); len += size;
+    });
+    if (chunks.length < 3) return; // short notes: just show them
+    var wraps = chunks.map(function (c, i) {
+      var w = el("section", { class: "nchunk", "data-i": i });
+      article.insertBefore(w, c[0]); c.forEach(function (k) { w.appendChild(k); });
+      return w;
+    });
+    // 2. quick checks from the topic's own quiz, after every second chunk
+    var qs = (t.quiz || []).slice(), qi = 0, checks = {};
+    for (var i = 1; i < wraps.length - 1 && qi < qs.length; i += 2) checks[i] = qs[qi++];
+
+    var bar = el("div", { class: "nstep-bar" });
+    bar.innerHTML = "<div class='nstep-mode' role='group' aria-label='How to read the notes'><button type='button' data-m='step'>Step by step</button><button type='button' data-m='all'>Show everything</button></div><div class='nstep-prog'><span></span><div class='s2-bar'><i></i></div></div>";
+    article.insertBefore(bar, article.firstChild);
+    var ctl = el("div", { class: "nstep-next" });
+    var p = prog(t.id), reached = Math.min(p.step || 0, wraps.length - 1);
+
+    function paintBar(n) {
+      bar.querySelector(".nstep-prog span").textContent = n >= wraps.length - 1 && done() ? "All " + wraps.length + " sections done ✓" : "Section " + (n + 1) + " of " + wraps.length;
+      bar.querySelector(".s2-bar i").style.width = Math.round((n + 1) / wraps.length * 100) + "%";
+    }
+    function done() { return !!prog(t.id).notesDone; }
+    function render(scrollTo) {
+      var step = stepMode();
+      [].forEach.call(bar.querySelectorAll("[data-m]"), function (b) { b.setAttribute("aria-pressed", (b.getAttribute("data-m") === "step") === step); });
+      bar.querySelector(".nstep-prog").hidden = !step;
+      wraps.forEach(function (w, i) { w.hidden = step && i > reached; w.classList.toggle("nchunk-current", step && i === reached); });
+      if (!step) { if (ctl.parentNode) ctl.remove(); return; }
+      paintBar(reached);
+      var last = reached >= wraps.length - 1, q = checks[reached] && !checks[reached].passed ? checks[reached] : null;
+      ctl.innerHTML = "";
+      if (q) {
+        var order = shuffle(q.o.map(function (_, k) { return k; }));
+        ctl.innerHTML = "<div class='ncheck'><div class='ncheck-h'>Quick check</div><div class='ncheck-q'>" + q.q + "</div><div class='ncheck-o'></div><div class='ncheck-fb' role='status'></div></div>";
+        var box = ctl.querySelector(".ncheck-o");
+        order.forEach(function (k) {
+          var b = el("button", { type: "button", class: "option" }, "<span>" + q.o[k] + "</span>");
+          b.onclick = function () {
+            [].forEach.call(box.querySelectorAll("button"), function (x) { x.disabled = true; });
+            var ok = k === q.a; b.classList.add(ok ? "correct" : "wrong");
+            if (!ok) [].forEach.call(box.querySelectorAll("button"), function (x, n) { if (order[n] === q.a) x.classList.add("correct"); });
+            ctl.querySelector(".ncheck-fb").innerHTML = (ok ? "<b>" + cheer() + "</b> " : "<b>Not quite.</b> The answer is <b>" + q.o[q.a] + "</b>. ") + (q.e || "");
+            if (ok) xp(3);
+            q.passed = true;
+            var go = el("button", { type: "button", class: "s2-btn" }, last ? "Finish the notes ✓" : "Continue →");
+            go.onclick = advance; ctl.querySelector(".ncheck").appendChild(go); go.focus();
+          };
+          box.appendChild(b);
+        });
+      } else if (!last) {
+        var b = el("button", { type: "button", class: "s2-btn" }, "I understand · Continue →");
+        b.onclick = advance; ctl.appendChild(b);
+        var sk = el("button", { type: "button", class: "s2-btn ghost small" }, "Show everything");
+        sk.onclick = function () { setMode(false); }; ctl.appendChild(sk);
+      } else if (!done()) {
+        var f = el("button", { type: "button", class: "s2-btn" }, "I understand · Finish the notes ✓");
+        f.onclick = finish; ctl.appendChild(f);
+      } else {
+        ctl.innerHTML = "<div class='ndone'><b>Notes finished ✓</b> Ready to test yourself? <a class='s2-btn small' href='quizzes.html?id=" + t.id + "'>Take the quiz</a></div>";
+      }
+      wraps[reached].appendChild(ctl);
+      if (scrollTo) setTimeout(function () { wraps[reached].scrollIntoView({ behavior: "smooth", block: "start" }); }, 30);
+    }
+    function advance() {
+      if (reached >= wraps.length - 1) return finish();
+      reached++; save(t, { step: reached }); render(true);
+      var f = wraps[reached].querySelector("h3,h4,p"); if (f) { f.tabIndex = -1; f.focus({ preventScroll: true }); }
+    }
+    function finish() {
+      var first = !done(); save(t, { step: wraps.length - 1, notesDone: 1 });
+      if (first) { xp(15, "Notes finished"); party(); }
+      render(false);
+    }
+    function setMode(step) { try { localStorage.setItem(MODE_KEY, step ? "step" : "all"); } catch (e) {} render(false); }
+    [].forEach.call(bar.querySelectorAll("[data-m]"), function (b) { b.onclick = function () { setMode(b.getAttribute("data-m") === "step"); }; });
+    render(false);
+  }
 
   function picker(main, kind) {
     var target = { quiz: "quizzes.html", fc: "flashcards.html", exam: "exam.html" }[kind];
@@ -259,7 +369,7 @@
       list.forEach(function (t) {
         var p = prog(t.id), info, href = target + "?id=" + t.id, cls = "s2-row";
         if (kind === "quiz") info = p.best ? "Best " + p.best.s + "/" + p.best.t : t.quiz.length + " questions";
-        else if (kind === "fc") info = (p.fc || []).length ? p.fc.length + "/" + t.flashcards.length + " known" : t.flashcards.length + " cards";
+        else if (kind === "fc") { var mineN = myCards(t.id).length; info = (fcKnownN(p) ? fcKnownN(p) + "/" + t.flashcards.length + " known" : t.flashcards.length + " cards") + (mineN ? " + " + mineN + " of yours" : ""); }
         else {
           var ex = exam(t.id);
           if (!ex.length) { info = "Coming soon"; href = "topic.html?id=" + t.id; cls += " muted"; }
@@ -278,7 +388,10 @@
     else if (/^g\d+$/.test(id)) list = inGroup(+id.slice(1));
     else { var t = byId(id); list = t ? [t] : []; }
     var items = [];
-    list.forEach(function (t) { t[field].forEach(function (x, i) { items.push({ item: x, topic: t, i: i }); }); });
+    list.forEach(function (t) {
+      t[field].forEach(function (x, i) { items.push({ item: x, topic: t, i: i }); });
+      if (field === "flashcards") myCards(t.id).forEach(function (c) { items.push({ item: [plain(c.f), plain(c.b)], topic: t, i: "c:" + c.id, mine: true }); });
+    });
     var title = id === "all" ? "Mixed: everything" : /^g\d+$/.test(id) ? groupLabel(+id.slice(1)) : (list[0] ? code(list[0]) + " " + list[0].title : "");
     return { title: title, items: items, single: list.length === 1 ? list[0] : null };
   }
@@ -576,16 +689,16 @@
   pages.flashcards = function (main) {
     var id = param("id");
     if (!id) return picker(main, "fc");
-    var set = collect(id, "flashcards");
-    if (!set.items.length) { main.innerHTML = "<p>No cards found for this deck. <a href='flashcards.html'>Choose a deck</a></p>"; return; }
-    var deck = set.items.slice(), pos = 0, learning = [], round = 1;
-
+    var set = collect(id, "flashcards"), filter = "all";
+    var deck, pos = 0, learning = [], round = 1;
+    function source() { return set.items.filter(function (c) { return filter === "all" || (filter === "mine") === !!c.mine; }); }
     function known(c) {
       var p = prog(c.topic.id), fc = (p.fc || []).slice();
       if (fc.indexOf(c.i) < 0) { fc.push(c.i); save(c.topic, { fc: fc }); xp(2); }
     }
     main.innerHTML =
       "<div class='crumbs'><a href='flashcards.html'>Flashcards</a> › " + set.title + "</div>" +
+      "<div class='fc-filter' role='group' aria-label='Which cards'><button type='button' data-f='all'>All cards</button><button type='button' data-f='pre'>Ready-made</button><button type='button' data-f='mine'>My cards</button></div>" +
       "<div class='fc-stage'><div class='fc' id='fc' tabindex='0' role='button' aria-label='Flip card'>" +
       "<div class='fc-face fc-front'><span class='lbl'>Question</span><div id='front'></div></div>" +
       "<div class='fc-face fc-back'><span class='lbl'>Answer</span><div id='back'></div></div></div></div>" +
@@ -595,15 +708,21 @@
       "<button class='s2-btn ghost' id='learn'>Still learning</button>" +
       "<button class='s2-btn' id='got'>Got it</button>" +
       "<button class='s2-btn ghost' id='shuf'>Shuffle</button></div>" +
-      (set.single ? "<div class='fc-controls'><a class='s2-btn ghost small' href='topic.html?id=" + set.single.id + "'>Back to notes</a><a class='s2-btn ghost small' href='quizzes.html?id=" + set.single.id + "'>Take the quiz</a></div>" : "");
+      (set.single ? "<div class='fc-controls'><a class='s2-btn ghost small' href='topic.html?id=" + set.single.id + "'>Back to notes</a><a class='s2-btn ghost small' href='quizzes.html?id=" + set.single.id + "'>Take the quiz</a></div>" : "") +
+      (set.single ? "<section class='s2-card fc-mine' id='mine'></section>" : "<p class='fc-mine-note'>To make your own cards, open a single topic's deck.</p>");
     var card = main.querySelector("#fc");
     function show() {
       card.classList.remove("flipped");
+      if (!deck.length) {
+        main.querySelector("#front").innerHTML = filter === "mine" ? "You haven't made any cards here yet" : "No cards";
+        main.querySelector("#back").innerHTML = "Make one below.";
+        main.querySelector("#count").innerHTML = ""; return;
+      }
       if (pos >= deck.length) return endRound();
       var c = deck[pos];
       main.querySelector("#front").innerHTML = c.item[0];
       main.querySelector("#back").innerHTML = c.item[1];
-      main.querySelector("#count").innerHTML = "Card " + (pos + 1) + " of " + deck.length + (round > 1 ? " · Round " + round : "") + (set.single ? "" : " · " + code(c.topic) + " " + c.topic.title);
+      main.querySelector("#count").innerHTML = (c.mine ? "<span class='tag tag-v'>Your card</span> " : "") + "Card " + (pos + 1) + " of " + deck.length + (round > 1 ? " · Round " + round : "") + (set.single ? "" : " · " + code(c.topic) + " " + c.topic.title);
     }
     function endRound() {
       if (learning.length) {
@@ -616,9 +735,12 @@
         main.querySelector("#count").innerHTML = "You've got every card. <a href='#' id='restart'>Start again</a>";
         party();
         if (set.single) toast("Flashcards done: " + code(set.single) + " is now " + mastery(set.single) + "% mastered");
-        main.querySelector("#restart").onclick = function (e) { e.preventDefault(); deck = set.items.slice(); pos = 0; round = 1; show(); };
+        main.querySelector("#restart").onclick = function (e) { e.preventDefault(); restart(); };
       }
     }
+    function restart() { deck = source(); pos = 0; round = 1; learning = []; show(); }
+    function paintFilter() { [].forEach.call(main.querySelectorAll("[data-f]"), function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-f") === filter); }); }
+    [].forEach.call(main.querySelectorAll("[data-f]"), function (b) { b.onclick = function () { filter = b.getAttribute("data-f"); paintFilter(); restart(); }; });
     function flip() { card.classList.toggle("flipped"); }
     card.onclick = flip;
     main.querySelector("#got").onclick = function () { if (pos < deck.length) { known(deck[pos]); pos++; show(); } };
@@ -626,13 +748,41 @@
     main.querySelector("#prev").onclick = function () { if (pos > 0) { pos--; show(); } };
     main.querySelector("#shuf").onclick = function () { deck = shuffle(deck); pos = 0; show(); };
     document.addEventListener("keydown", function (e) {
-      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA" || e.target.isContentEditable || document.body.classList.contains("nb-open") && e.target.closest && e.target.closest(".nb-drawer")) return;
       var onControl = e.target.tagName === "BUTTON" || e.target.tagName === "A";
       if ((e.key === " " || e.key === "Enter") && !onControl) { e.preventDefault(); flip(); }
       else if (e.key === "ArrowRight") { if (pos < deck.length) { pos++; show(); } }
       else if (e.key === "ArrowLeft") { if (pos > 0) { pos--; show(); } }
     });
-    show();
+
+    /* make / edit / delete your own cards (single-topic decks) */
+    function renderMine(editing) {
+      var box = main.querySelector("#mine"); if (!box) return;
+      var t = set.single, mine = myCards(t.id), ed = editing ? mine.filter(function (c) { return c.id === editing; })[0] : null;
+      box.innerHTML = "<h2>My cards <span class='count'>" + mine.length + "</span></h2><p class='sub'>Make cards for the things you keep forgetting. They go into this deck and your progress syncs if you're signed in.</p>" +
+        "<form class='fc-form'><label for='fc-f'>" + (ed ? "Edit card: front" : "Front (question)") + "</label><textarea id='fc-f' rows='2' maxlength='400' required placeholder='e.g. What is the charge on a proton?'></textarea>" +
+        "<label for='fc-b'>Back (answer)</label><textarea id='fc-b' rows='2' maxlength='600' required placeholder='e.g. +1'></textarea>" +
+        "<div class='row'><button class='s2-btn' type='submit'>" + (ed ? "Save changes" : "＋ Add card") + "</button>" + (ed ? "<button type='button' class='s2-btn ghost' id='fc-cancel'>Cancel</button>" : "") + "<span class='fc-msg' role='status'></span></div></form>" +
+        (mine.length ? "<ul class='fc-list'>" + mine.map(function (c) { return "<li><div><b>" + plain(c.f) + "</b><span>" + plain(c.b) + "</span></div><button type='button' class='s2-btn ghost small' data-ed='" + c.id + "'>Edit</button><button type='button' class='s2-btn ghost small' data-del='" + c.id + "'>Delete</button></li>"; }).join("") + "</ul>" : "");
+      var f = box.querySelector("#fc-f"), bk = box.querySelector("#fc-b");
+      if (ed) { f.value = ed.f; bk.value = ed.b; f.focus(); }
+      box.querySelector("form").onsubmit = function (e) {
+        e.preventDefault();
+        var fv = f.value.trim(), bv = bk.value.trim(), msg = box.querySelector(".fc-msg");
+        if (!fv || !bv) { msg.textContent = "Fill in both sides."; return; }
+        var first = !myCards().length;
+        cardPut(ed ? Object.assign(ed, { f: fv, b: bv }) : { id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), s: CFG.slug, topic: t.id, f: fv, b: bv });
+        if (!ed) xp(first ? 10 : 3, first ? "Your first flashcard" : "");
+        set = collect(id, "flashcards"); renderMine(); restart();
+        var m2 = box.querySelector(".fc-msg"); m2.textContent = ed ? "Saved." : "Added to this deck."; box.querySelector("#fc-f").focus();
+      };
+      var cancel = box.querySelector("#fc-cancel"); if (cancel) cancel.onclick = function () { renderMine(); };
+      [].forEach.call(box.querySelectorAll("[data-ed]"), function (b) { b.onclick = function () { renderMine(b.getAttribute("data-ed")); box.scrollIntoView({ behavior: "smooth", block: "start" }); }; });
+      [].forEach.call(box.querySelectorAll("[data-del]"), function (b) { b.onclick = function () { if (!confirm("Delete this card?")) return; cardDel(b.getAttribute("data-del")); set = collect(id, "flashcards"); renderMine(); restart(); }; });
+    }
+    if (!set.items.length && !set.single) { main.innerHTML = "<p>No cards found for this deck. <a href='flashcards.html'>Choose a deck</a></p>"; return; }
+    paintFilter(); renderMine(); restart();
+    if (location.hash === "#mine") setTimeout(function () { var m = main.querySelector("#mine"); if (m) m.scrollIntoView(); }, 50);
   };
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -640,5 +790,8 @@
     chrome({ home: "index.html", learn: "learn.html", topic: "learn.html", quizzes: "quizzes.html", flashcards: "flashcards.html", exam: "exam.html", workbook: "workbook.html" }[page]);
     var main = document.querySelector("main");
     if (pages[page]) pages[page](main);
+    var tid = param("id"), tt = tid && byId(tid);
+    if (tt && window.S2Notes && S2Notes.drawer && ["topic", "quizzes", "flashcards", "exam"].indexOf(page) >= 0)
+      S2Notes.drawer({ subject: CFG.slug, id: tt.id, t: tt.title, code: code(tt), group: groupLabel(tt.group), u: "topic.html?id=" + tt.id }, page === "topic" ? main.querySelector(".notes") || main : main);
   });
 })();

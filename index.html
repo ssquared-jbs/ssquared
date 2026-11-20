@@ -55,6 +55,14 @@
     .platform p { color: var(--ink-2); font-size: 0.95rem; }
     .platform .status { margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--accent-text); font-size: 0.95rem; }
 
+    .mine-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+    .mine-head h2 { margin: 0 !important; }
+    #mine { margin-bottom: 36px; }
+    .platform.soon { box-shadow: none; border-style: dashed; cursor: default; }
+    .platform.soon .top { background: var(--surface-2); color: var(--ink-2); }
+    .platform.soon:hover { border-color: var(--line); }
+    .platform.soon:active { transform: none; }
+    .platform.soon .status { color: var(--ink-3); }
     .hq-why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
     .hq-why h3 { font-size: 1.1rem; margin-bottom: 4px; }
     .hq-why p { color: var(--ink-2); font-size: 0.95rem; }
@@ -84,14 +92,18 @@
   <section class="hq-hero">
     <div class="hq-mark" aria-hidden="true">S<sup>2</sup></div>
     <div>
-      <h1>Free GCSE revision that keeps track for you</h1>
-      <p>Notes, quizzes, exam questions and flashcards for Mandarin, Chemistry, Physics and Biology. Your progress and streak are saved on this device, with no account needed.</p>
+      <h1>Free revision that keeps track for you</h1>
+      <p>Notes, videos, quizzes, exam questions and flashcards for GCSE and A level. Start straight away with no account, or sign in to keep your progress on every device.</p>
       <div class="hq-cta" id="hero-cta"></div>
     </div>
   </section>
 
   <main class="hq-main">
-    <h2>Choose a subject</h2>
+    <section id="mine" hidden>
+      <div class="mine-head"><h2 id="mine-h">Your subjects</h2><button type="button" class="s2-btn ghost small" id="change-subjects">Change subjects</button></div>
+      <div class="platforms" id="mine-grid"></div>
+    </section>
+    <div class="mine-head" id="all-head"><h2 id="all-h">Choose a subject</h2><button type="button" class="s2-btn ghost small" id="pick-subjects">Pick my subjects</button></div>
     <div class="platforms" id="platforms">
 
       <a class="platform s2-mandarin" href="mandarin/index.html" data-subject="mandarin">
@@ -114,6 +126,11 @@
         <div class="body"><h3>Biology²</h3><p>Cells, the human body, plants, genetics and ecology, with key processes broken down.</p><div class="status">Start revising</div></div>
       </a>
 
+      <a class="platform s2-alevel-chemistry" href="alevel-chemistry/index.html" data-subject="alevel-chemistry">
+        <div class="top"><div class="glyph">ΔG</div><div class="course">Edexcel A level (9CH0)</div></div>
+        <div class="body"><h3>A-level Chemistry²</h3><p>Edexcel A level Chemistry, topic by topic, with step-by-step notes, quick checks and flashcards.</p><div class="status">Start revising</div></div>
+      </a>
+
     </div>
 
     <section class="hq-why">
@@ -129,6 +146,7 @@
   </footer>
 
   <script src="shared/s2-progress.js"></script>
+  <script src="shared/s2-subjects.js"></script>
   <script>
   (function () {
     if (!window.S2) return;
@@ -145,10 +163,51 @@
     } else {
       cta.innerHTML = '<a class="s2-btn" href="#platforms" style="--accent:var(--panel);--accent-ink:#000">Choose a subject</a>';
     }
-    [].forEach.call(document.querySelectorAll(".platform"), function (a) {
+    function status(a) {
       var items = S2.items(a.dataset.subject);
       if (items.length) a.querySelector(".status").textContent = "Continue · last studied " + S2.timeAgo(items[0].v);
-    });
+    }
+    [].forEach.call(document.querySelectorAll("#platforms .platform"), status);
+
+    var SS = window.S2Subjects;
+    function render() {
+      if (!SS) return;
+      var p = SS.profile(), mine = document.getElementById("mine"), grid = document.getElementById("mine-grid");
+      var allCards = document.querySelectorAll("#platforms .platform");
+      [].forEach.call(allCards, function (a) { a.hidden = false; });
+      if (!p || !p.level) {
+        mine.hidden = true; document.getElementById("all-h").textContent = "Choose a subject"; document.getElementById("pick-subjects").hidden = false; return;
+      }
+      var L = SS.levels[p.level], shown = {}, html = "";
+      var list = (p.subjects || []).map(function (id) { return SS.subject(p.level, id); }).filter(Boolean);
+      list.sort(function (a, b) { return (b.platforms.length ? 1 : 0) - (a.platforms.length ? 1 : 0); });
+      list.forEach(function (sj) {
+        if (sj.platforms.length) {
+          sj.platforms.forEach(function (pl) {
+            if (shown[pl]) return; shown[pl] = 1;
+            var src = document.querySelector("#platforms .platform[data-subject='" + pl + "']");
+            if (src) html += src.outerHTML;
+          });
+        } else {
+          html += "<div class='platform soon' aria-label='" + esc(sj.name) + ": coming soon'><div class='top'><div class='glyph'>" + esc(sj.name.charAt(0)) + "</div><div class='course'>" + esc(L.short) + "</div></div><div class='body'><h3>" + esc(sj.name) + "</h3><p>We're building this. It'll appear here as soon as it's ready.</p><div class='status'>Coming soon</div></div></div>";
+        }
+      });
+      grid.innerHTML = html || "<p style='color:var(--ink-2)'>You haven't picked any subjects yet.</p>";
+      [].forEach.call(grid.querySelectorAll(".platform[data-subject]"), status);
+      document.getElementById("mine-h").textContent = "Your " + L.short + " subjects";
+      mine.hidden = false;
+      document.getElementById("pick-subjects").hidden = true;
+      var rest = 0;
+      [].forEach.call(allCards, function (a) { a.hidden = !!shown[a.dataset.subject]; if (!a.hidden) rest++; });
+      document.getElementById("all-head").hidden = !rest;
+      document.getElementById("all-h").textContent = "More subjects";
+    }
+    if (SS) {
+      render(); SS.onChange(render);
+      document.getElementById("change-subjects").onclick = function () { SS.pick({ restart: true }); };
+      document.getElementById("pick-subjects").onclick = function () { SS.pick(); };
+      if (SS.needsPicking()) setTimeout(function () { if (SS.needsPicking()) SS.pick(); }, 600);
+    }
   })();
   </script>
 </body>

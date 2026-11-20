@@ -200,7 +200,7 @@
     var me = document.currentScript || document.querySelector("script[src*='s2-progress.js']");
     var base = me ? me.getAttribute("src").replace(/s2-progress\.js.*$/, "") : "shared/";
     function add(src, then) { var t = document.createElement("script"); t.src = base + src; t.onload = then; t.onerror = then; (document.head || document.documentElement).appendChild(t); }
-    add("s2-firebase-config.js", function () { add("s2-auth.js"); });
+    add("s2-subjects.js", function () { add("s2-firebase-config.js", function () { add("s2-auth.js"); }); });
   })();
 
   window.S2 = { themeButton: themeButton, xp: xp, level: level, xpPill: xpPill, addXP: addXP, confetti: confetti, chip: chip, touch: touch, item: item, items: items, streak: streak, ring: ring, streakPill: streakPill, weekHtml: weekHtml, timeAgo: timeAgo, markActive: function () { markActive(); save(); }, reset: reset, today: today };

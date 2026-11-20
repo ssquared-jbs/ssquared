@@ -246,6 +246,7 @@
       var ed = S2Notes.editor({ subject: "mandarin", id: PATH, t: title, code: info && info.topic ? info.topic.n : "", group: topicName, u: PATH, title: "My notes: " + title, workbook: BASE + "../workbook.html?s=mandarin" });
       ed.classList.add("man-notebook");
       main.appendChild(ed);
+      if (S2Notes.drawer) S2Notes.drawer({ subject: "mandarin", id: PATH, t: title, code: info && info.topic ? info.topic.n : "", group: topicName, u: PATH, workbook: BASE + "../workbook.html?s=mandarin" }, main);
     };
     document.head.appendChild(sc);
   }
