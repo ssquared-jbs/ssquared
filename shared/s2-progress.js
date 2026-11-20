@@ -1,5 +1,5 @@
 /* S² progress engine — streaks, recent activity and mastery.
-   Everything is stored in this browser only (localStorage). No accounts. */
+   Stored in this browser (localStorage). If the learner signs in, s2-auth.js syncs it to their account. */
 (function () {
   "use strict";
   var KEY = "s2-progress-v1";
@@ -193,6 +193,15 @@
     var pref = null; try { pref = localStorage.getItem("s2-theme"); } catch (e) {}
     document.documentElement.setAttribute("data-theme", pref === "dark" || (pref !== "light" && window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
   }
+
+  /* load accounts (shared/s2-firebase-config.js + shared/s2-auth.js) once per page */
+  (function () {
+    if (window.__s2AuthLoading) return; window.__s2AuthLoading = true;
+    var me = document.currentScript || document.querySelector("script[src*='s2-progress.js']");
+    var base = me ? me.getAttribute("src").replace(/s2-progress\.js.*$/, "") : "shared/";
+    function add(src, then) { var t = document.createElement("script"); t.src = base + src; t.onload = then; t.onerror = then; (document.head || document.documentElement).appendChild(t); }
+    add("s2-firebase-config.js", function () { add("s2-auth.js"); });
+  })();
 
   window.S2 = { themeButton: themeButton, xp: xp, level: level, xpPill: xpPill, addXP: addXP, confetti: confetti, chip: chip, touch: touch, item: item, items: items, streak: streak, ring: ring, streakPill: streakPill, weekHtml: weekHtml, timeAgo: timeAgo, markActive: function () { markActive(); save(); }, reset: reset, today: today };
 })();

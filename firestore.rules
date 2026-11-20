@@ -1,0 +1,16 @@
+rules_version = '2';
+// S² accounts: each signed-in learner can read and write only their own document.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid} {
+      allow read, delete: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['data', 'updated', 'version'])
+        && request.resource.data.data is string
+        && request.resource.data.data.size() < 900000;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
