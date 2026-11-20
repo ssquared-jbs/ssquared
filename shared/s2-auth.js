@@ -7,7 +7,8 @@
   if (window.S2Auth) return;
 
   var SDK = "https://www.gstatic.com/firebasejs/12.15.0/";
-  var PROGRESS = "s2-progress-v1", NOTE = "s2-note:";
+  var PROGRESS = "s2-progress-v1", NOTE = "s2-note:", PROFILE = "s2-profile", CARDS = "s2-cards";
+  function json(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
   var cfg = window.S2_FIREBASE || {};
   var preview = /[?&]auth=preview\b/.test(location.search);
   var enabled = !!(cfg.apiKey || window.S2AuthBackend || preview);
@@ -79,13 +80,15 @@
       var k = localStorage.key(i);
       if (k && k.indexOf(NOTE) === 0) { try { notes[k] = JSON.parse(localStorage.getItem(k)); } catch (e) {} }
     }
-    return { progress: p, notes: notes };
+    return { progress: p, notes: notes, profile: json(PROFILE), cards: json(CARDS) || {} };
   }
   function writeLocal(d) {
     applying = true;
     try {
       localStorage.setItem(PROGRESS, JSON.stringify(d.progress || {}));
       Object.keys(d.notes || {}).forEach(function (k) { if (d.notes[k]) localStorage.setItem(k, JSON.stringify(d.notes[k])); });
+      if (d.profile) localStorage.setItem(PROFILE, JSON.stringify(d.profile));
+      localStorage.setItem(CARDS, JSON.stringify(d.cards || {}));
     } catch (e) {}
     applying = false;
   }
@@ -94,7 +97,7 @@
     applying = true;
     try {
       var ks = [];
-      for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (k === PROGRESS || (k && k.indexOf(NOTE) === 0)) ks.push(k); }
+      for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (k === PROGRESS || k === PROFILE || k === CARDS || (k && k.indexOf(NOTE) === 0)) ks.push(k); }
       ks.forEach(function (k) { localStorage.removeItem(k); });
     } catch (e) {}
     applying = false;
@@ -119,7 +122,11 @@
     Object.keys(ri).concat(Object.keys(li)).forEach(function (k) { p.items[k] = mergeItem(li[k], ri[k]); });
     var notes = {}, ln = L.notes || {}, rn = R.notes || {};
     Object.keys(rn).concat(Object.keys(ln)).forEach(function (k) { var a = ln[k], b = rn[k]; notes[k] = !a ? b : !b ? a : ((a.updated || 0) >= (b.updated || 0) ? a : b); });
-    return { progress: p, notes: notes };
+    var lpf = L.profile, rpf = R.profile, profile = !lpf ? rpf : !rpf ? lpf : ((lpf.updated || 0) >= (rpf.updated || 0) ? lpf : rpf);
+    if (lpf && rpf && lpf.skipped && !lpf.level && rpf.level) profile = rpf;
+    var cards = {}, lc = L.cards || {}, rc = R.cards || {};
+    Object.keys(rc).concat(Object.keys(lc)).forEach(function (k) { var a = lc[k], b = rc[k]; cards[k] = !a ? b : !b ? a : ((a.updated || 0) >= (b.updated || 0) ? a : b); });
+    return { progress: p, notes: notes, profile: profile || null, cards: cards };
   }
   function same(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
 
@@ -130,7 +137,7 @@
     setState("syncing");
     return backend.load(user.uid).then(function (remote) {
       var local = readLocal(), merged = merge(local, remote);
-      var localChanged = !same(merged.progress, local.progress) || !same(merged.notes, local.notes);
+      var localChanged = !same(merged.progress, local.progress) || !same(merged.notes, local.notes) || !same(merged.cards, local.cards) || !same(merged.profile, local.profile);
       writeLocal(merged);
       return backend.save(user.uid, merged).then(function () {
         lastSync = Date.now(); setState("in");
@@ -139,6 +146,8 @@
           try { if (!sessionStorage.getItem(flag)) { sessionStorage.setItem(flag, "1"); location.reload(); return; } } catch (e) {}
         }
         try { sessionStorage.removeItem("s2-auth-reloaded"); } catch (e) {}
+        var pf = merged.profile;
+        if (window.S2Subjects && (!pf || !pf.level)) S2Subjects.pick();
       });
     }).catch(function (e) { console.warn("S2 sync failed", e); setState("error"); });
   }
@@ -160,7 +169,7 @@
   (function watchStorage() {
     var proto = window.Storage && Storage.prototype; if (!proto) return;
     var set = proto.setItem, rem = proto.removeItem;
-    proto.setItem = function (k, v) { set.call(this, k, v); if (this === window.localStorage && (k === PROGRESS || String(k).indexOf(NOTE) === 0)) pushSoon(); };
+    proto.setItem = function (k, v) { set.call(this, k, v); if (this === window.localStorage && (k === PROGRESS || k === PROFILE || k === CARDS || String(k).indexOf(NOTE) === 0)) pushSoon(); };
     proto.removeItem = function (k) { rem.call(this, k); if (!applying && this === window.localStorage && String(k).indexOf(NOTE) === 0) pushSoon(); };
   })();
   document.addEventListener("visibilitychange", function () { if (document.hidden && pushTimer) pushNow(); });
@@ -208,7 +217,7 @@
     if (v === "account") return renderAccount(box);
     var x = "<button type='button' class='x' aria-label='Close'>×</button>";
     if (v === "start") {
-      box.innerHTML = x + "<h2 id='s2-auth-h'>Sign in to S²</h2><p class='sub'>Save your progress, XP, streak and notes, and pick up on any device.</p>" +
+      box.innerHTML = x + "<h2 id='s2-auth-h'>Sign in to S²</h2><p class='sub'>Save your subjects, progress, XP, streak, notes and flashcards, and pick up on any device.</p>" +
         "<button type='button' class='prov' data-p='google'>" + G + "Continue with Google</button>" +
         "<button type='button' class='prov' data-p='microsoft'>" + M + "Continue with Microsoft</button>" +
         "<div class='or'>or</div><button type='button' class='prov' data-v='email-in'>✉️ Continue with email</button>" +
