@@ -121,8 +121,14 @@
     return { html: "<div class='vx-scene vx-svg'>" + head(s) + "<div class='area'><svg viewBox='" + (s.viewBox || "0 0 1100 500") + "' preserveAspectRatio='xMidYMid meet'><defs><marker id='vxb' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0 0L10 5L0 10z' class='fillA'/></marker></defs>" + s.svg + "</svg></div></div>" };
   };
   R.compare = function (s) {
-    var b = s.start || 0, h = "<div class='vx-scene vx-compare" + (s.rows.length > 4 ? " many" : "") + "'>" + head(s) + "<table><thead><tr><th></th><th>" + s.h[0] + "</th><th>" + s.h[1] + "</th></tr></thead><tbody>";
-    s.rows.forEach(function (r, i) { h += "<tr" + st(b + i) + "><td>" + r[0] + "</td><td>" + r[1] + "</td><td>" + r[2] + "</td></tr>"; });
+    var b = s.start || 0, n = s.h.length, h = "<div class='vx-scene vx-compare" + (s.rows.length > 4 ? " many" : "") + (n === 1 ? " one" : "") + "'>" + head(s) + "<table><thead><tr><th></th>";
+    s.h.forEach(function (c) { h += "<th>" + c + "</th>"; });
+    h += "</tr></thead><tbody>";
+    s.rows.forEach(function (r, i) {
+      h += "<tr" + st(b + i) + "><td>" + r[0] + "</td>";
+      for (var k = 1; k <= n; k++) h += "<td>" + (r[k] == null ? "" : r[k]) + "</td>";
+      h += "</tr>";
+    });
     return { html: h + "</tbody></table></div>" };
   };
   R.pyramid = function (s) {
