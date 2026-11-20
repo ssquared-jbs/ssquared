@@ -41,6 +41,7 @@
 .s2-geog { --accent: #15803d; --accent-ink: #166534; --accent-text: #166534; --accent-soft: #dcfce7; }
 .s2-hist { --accent: #92400e; --accent-ink: #78350f; --accent-text: #78350f; --accent-soft: #fef3c7; }
 .s2-psych { --accent: #7e22ce; --accent-ink: #6b21a8; --accent-text: #6b21a8; --accent-soft: #f3e8ff; }
+.s2-bus { --accent: #0369a1; --accent-ink: #075985; --accent-text: #075985; --accent-soft: #e0f2fe; }
 .s2-maths { --accent: #6d4ed8; --accent-ink: #4c32a8; --accent-text: #4c32a8; --accent-soft: #efeaff; }
 .s2-physics { --accent: #2f62d8; --accent-ink: #1f449e; --accent-text: #1f449e; --accent-soft: #e6edff; }
 .s2-biology { --accent: #d9661f; --accent-ink: #a14810; --accent-text: #a14810; --accent-soft: #fff0e4; }
@@ -77,6 +78,7 @@
 [data-theme="dark"] .s2-geog { --accent-text: #86efac; --accent-soft: #052e16; }
 [data-theme="dark"] .s2-hist { --accent-text: #fcd34d; --accent-soft: #2d1a05; }
 [data-theme="dark"] .s2-psych { --accent-text: #d8b4fe; --accent-soft: #2e1065; }
+[data-theme="dark"] .s2-bus { --accent-text: #7dd3fc; --accent-soft: #082f49; }
 [data-theme="dark"] .s2-maths { --accent-text: #b7a4ff; --accent-soft: #241a49; }
 [data-theme="dark"] .s2-physics { --accent-text: #93b2ff; --accent-soft: #1a2549; }
 [data-theme="dark"] .s2-biology { --accent-text: #ffaf73; --accent-soft: #3a2414; }
