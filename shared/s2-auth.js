@@ -11,7 +11,8 @@
   function json(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
   var cfg = window.S2_FIREBASE || {};
   var preview = /[?&]auth=preview\b/.test(location.search);
-  var enabled = !!(cfg.apiKey || window.S2AuthBackend || preview);
+  var live = !!(cfg.apiKey || window.S2AuthBackend || preview);
+  var enabled = true; /* the button always shows; until Firebase is set up it explains that accounts are coming */
   var backend = null, user = null, state = "out", lastSync = 0, pushTimer = null, applying = false, buttons = [];
 
   window.S2Auth = { enabled: enabled, user: function () { return user; }, open: open };
@@ -216,6 +217,15 @@
     view = v; var box = back.querySelector(".s2-auth"); box.setAttribute("data-view", v);
     if (v === "account") return renderAccount(box);
     var x = "<button type='button' class='x' aria-label='Close'>×</button>";
+    if (v === "start" && !live) {
+      box.innerHTML = x + "<h2 id='s2-auth-h'>Accounts are coming soon</h2><p class='sub'>Soon you'll be able to sign in with Google, Microsoft or email and pick up on any device.</p>" +
+        "<div class='sync'>For now, everything you do (your subjects, progress, XP, streak, notes and flashcards) is saved on this device.</div>" +
+        (window.S2Subjects ? "<button type='button' class='go' data-subjects>Choose my subjects</button>" : "");
+      var sb = box.querySelector("[data-subjects]");
+      if (sb) sb.onclick = function () { close(); window.S2Subjects.pick(); };
+      box.querySelector(".x").onclick = close;
+      return;
+    }
     if (v === "start") {
       box.innerHTML = x + "<h2 id='s2-auth-h'>Sign in to S²</h2><p class='sub'>Save your subjects, progress, XP, streak, notes and flashcards, and pick up on any device.</p>" +
         "<button type='button' class='prov' data-p='google'>" + G + "Continue with Google</button>" +

@@ -2,7 +2,7 @@
 
 Accounts let learners sign in with **Google**, **Microsoft** or **email and password**. Their progress, XP, streak and notes then sync across devices.
 
-The code is already in the site. Accounts stay switched off until you paste your Firebase settings into `shared/s2-firebase-config.js`. Until then, nobody sees a Sign in button.
+The code is already in the site. Real sign-in stays switched off until you paste your Firebase settings into `shared/s2-firebase-config.js`. Until then, the Sign in button shows an "Accounts are coming soon" message and offers the subject picker instead.
 
 To preview the sign-in screens on any page before setting anything up, add `?auth=preview` to the address, e.g. `https://ssquaredhq.com/?auth=preview`. The buttons won't sign anyone in yet.
 
