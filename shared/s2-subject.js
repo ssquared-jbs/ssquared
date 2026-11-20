@@ -10,6 +10,7 @@
   var S2 = window.S2;
   var topics = DATA.topics || [];
   var EXAMS = DATA.exams || {};
+  var VIDEOS = DATA.videos || {};
   topics.sort(function (a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
   function byId(id) { for (var i = 0; i < topics.length; i++) if (topics[i].id === id) return topics[i]; return null; }
   function inGroup(g) { return topics.filter(function (t) { return t.group === g; }); }
@@ -188,7 +189,7 @@
       list.forEach(function (t) {
         var p = prog(t.id);
         html += "<a class='s2-row' href='topic.html?id=" + t.id + "'>" + ring(mastery(t), 44) +
-          "<div class='grow'><div class='t'><span class='code'>" + code(t) + "</span> " + t.title + tagHtml(t) + "</div><div class='d'>" + (t.summary || "") + "</div></div>" +
+          "<div class='grow'><div class='t'><span class='code'>" + code(t) + "</span> " + t.title + tagHtml(t) + (VIDEOS[t.id] ? " <span class='tag tag-v' title='Has a video explainer'>▶ Video</span>" : "") + "</div><div class='d'>" + (t.summary || "") + "</div></div>" +
           "<span class='when'>" + (p.exam ? "Exam best " + p.exam.s + "/" + p.exam.t : p.best ? "Quiz best " + p.best.s + "/" + p.best.t : p.read ? "Notes read" : "Not started") + "</span></a>";
       });
       html += "</div></section>";
@@ -205,13 +206,15 @@
     save(t, { read: 1 });
     if (firstRead) setTimeout(function () { xp(10, "Notes opened"); }, 600);
     var idx = topics.indexOf(t), prev = topics[idx - 1], next = topics[idx + 1], m = mastery(t), p = prog(t.id), ex = exam(t.id);
-    var checks = "<li class='done'>Notes read</li><li class='" + (p.best ? "done" : "") + "'>Quiz" + (p.best ? " (best " + p.best.s + "/" + p.best.t + ")" : "") + "</li>" +
+    var vid = VIDEOS[t.id];
+    var checks = (vid ? "<li class='" + (p.video ? "done" : "") + "'>Video watched</li>" : "") + "<li class='done'>Notes read</li><li class='" + (p.best ? "done" : "") + "'>Quiz" + (p.best ? " (best " + p.best.s + "/" + p.best.t + ")" : "") + "</li>" +
       (ex.length ? "<li class='" + (p.exam ? "done" : "") + "'>Exam questions" + (p.exam ? " (best " + p.exam.s + "/" + p.exam.t + ")" : "") + "</li>" : "") +
       "<li class='" + ((p.fc || []).length ? "done" : "") + "'>Flashcards" + ((p.fc || []).length ? " (" + p.fc.length + "/" + t.flashcards.length + " known)" : "") + "</li>";
     main.innerHTML =
       "<div class='crumbs'><a href='learn.html'>Learn</a> › <a href='learn.html#g" + t.group + "'>" + groupLabel(t.group) + "</a></div>" +
       "<div class='topic-layout'><div>" +
       "<header class='topic-head'><h1>" + code(t) + " " + t.title + "</h1><p>" + (t.summary || "") + tagHtml(t) + "</p></header>" +
+      (vid && window.S2Video ? "<section id='video-slot'></section>" : "") +
       "<article class='notes s2-card'>" + t.notes + detailHtml(t) + "</article>" +
       "<div id='notebook-slot'></div>" +
       "<div class='pager'>" +
@@ -223,6 +226,14 @@
       "<a class='s2-btn' href='quizzes.html?id=" + t.id + "'>Take the quiz</a>" +
       (ex.length ? "<a class='s2-btn' href='exam.html?id=" + t.id + "'>Exam questions (" + ex.length + ")</a>" : "") +
       "<a class='s2-btn ghost' href='flashcards.html?id=" + t.id + "'>Practise flashcards</a><a class='side-link' href='#notebook-slot'>✏️ My notes for this topic</a></div></aside></div>";
+    if (vid && window.S2Video) {
+      if (!vid.title) vid.title = code(t) + " " + t.title + " explained";
+      if (!vid.kicker) vid.kicker = CFG.name + " · " + code(t);
+      S2Video.mount(main.querySelector("#video-slot"), vid, {
+        quizHref: "quizzes.html?id=" + t.id,
+        onDone: function () { var first = !prog(t.id).video; save(t, { video: 1 }); if (first) xp(15, "Video watched"); }
+      });
+    }
     if (window.S2Notes) main.querySelector("#notebook-slot").appendChild(S2Notes.editor({ subject: CFG.slug, id: t.id, t: t.title, code: code(t), group: groupLabel(t.group), u: "topic.html?id=" + t.id, title: "My notes: " + code(t) + " " + t.title }));
     window.scrollTo(0, 0);
   };
