@@ -11,10 +11,11 @@
     chemistry: { name: "Chemistry²", path: "chemistry/index.html", cls: "s2-chemistry", glyph: "H₂O", course: "Edexcel IGCSE & GCSE", blurb: "Every topic with notes, videos, quizzes, exam questions, flashcards and a molecule drawer." },
     physics: { name: "Physics²", path: "physics/index.html", cls: "s2-physics", glyph: "F=ma", course: "Edexcel IGCSE & GCSE", blurb: "Forces, electricity, waves, energy, magnetism and space, with every equation explained." },
     "alevel-chemistry": { name: "A-level Chemistry²", path: "alevel-chemistry/index.html", cls: "s2-alevel-chemistry", glyph: "ΔG", course: "Edexcel A level (9CH0)", blurb: "All 19 topics of Edexcel A level Chemistry, step by step, with quick checks and flashcards." },
+    "alevel-physics": { name: "A-level Physics²", path: "alevel-physics/index.html", cls: "s2-alevel-physics", glyph: "E=hf", course: "Edexcel A level (9PH0)", blurb: "All 13 topics of Edexcel A level Physics, with worked calculations, quick checks and flashcards." },
     biology: { name: "Biology²", path: "biology/index.html", cls: "s2-biology", glyph: "DNA", course: "Edexcel IGCSE & GCSE", blurb: "Cells, the human body, plants, genetics and ecology, with key processes broken down." }
   };
 
-  /* p: platforms that cover it (empty = coming soon) */
+  /* [id, name, platforms that cover it (empty = coming soon), optional boards: [boardId, label, platform or null]] */
   var LEVELS = {
     gcse: { name: "GCSE / IGCSE", short: "GCSE", core: ["maths", "english-lang", "english-lit"], subjects: [
       ["maths", "Maths", []], ["english-lang", "English Language", []], ["english-lit", "English Literature", []],
@@ -28,7 +29,9 @@
       ["latin", "Latin", []], ["citizenship", "Citizenship", []]
     ] },
     alevel: { name: "A level", short: "A level", core: [], subjects: [
-      ["maths", "Maths", []], ["further-maths", "Further Maths", []], ["biology", "Biology", []], ["chemistry", "Chemistry", ["alevel-chemistry"]], ["physics", "Physics", []],
+      ["maths", "Maths", []], ["further-maths", "Further Maths", []], ["biology", "Biology", [], [["bio-a", "Edexcel A, Salters-Nuffield (9BN0)", null], ["bio-b", "Edexcel B (9BI0)", null]]],
+      ["chemistry", "Chemistry", ["alevel-chemistry"], [["edexcel", "Edexcel (9CH0)", "alevel-chemistry"], ["ocr-a", "OCR A (H432)", null]]],
+      ["physics", "Physics", ["alevel-physics"]],
       ["psychology", "Psychology", []], ["economics", "Economics", []], ["business", "Business", []], ["computer-science", "Computer Science", []],
       ["english-lit", "English Literature", []], ["english-lang", "English Language", []], ["history", "History", []], ["geography", "Geography", []],
       ["politics", "Politics", []], ["sociology", "Sociology", []], ["law", "Law", []], ["rs", "Religious Studies / Philosophy", []],
@@ -42,7 +45,20 @@
   function set(p) { p.updated = Date.now(); try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) {} fire(); return p; }
   var listeners = [];
   function fire() { listeners.forEach(function (f) { try { f(get()); } catch (e) {} }); }
-  function subject(level, id) { var L = LEVELS[level]; if (!L) return null; for (var i = 0; i < L.subjects.length; i++) if (L.subjects[i][0] === id) return { id: id, name: L.subjects[i][1], platforms: L.subjects[i][2] }; return null; }
+  function boardOf(level, s, prof) {
+    if (!s[3]) return null;
+    var b = prof && prof.level === level && prof.boards && prof.boards[s[0]];
+    for (var i = 0; i < s[3].length; i++) if (s[3][i][0] === b) return s[3][i];
+    return s[3][0];
+  }
+  function subject(level, id, prof) {
+    var L = LEVELS[level]; if (!L) return null; prof = prof || get();
+    for (var i = 0; i < L.subjects.length; i++) if (L.subjects[i][0] === id) {
+      var s = L.subjects[i], bd = boardOf(level, s, prof);
+      return { id: id, name: s[1], platforms: bd ? (bd[2] ? [bd[2]] : []) : s[2], board: bd ? bd[0] : null, boardName: bd ? bd[1] : null };
+    }
+    return null;
+  }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
   /* ---------- picker ---------- */
@@ -61,6 +77,8 @@
     ".s2-pick .sj input{width:18px;height:18px;accent-color:var(--accent,#3b5bdb);flex:none}" +
     ".s2-pick .sj .n{flex:1;font-weight:700;font-size:.95rem}.s2-pick .sj .t{font-size:.72rem;font-weight:700;padding:2px 7px;border-radius:99px;background:var(--surface-2,#f1f3f9);color:var(--ink-3,#7a809e);white-space:nowrap}" +
     ".s2-pick .sj .t.on{background:var(--good-soft,#def5e8);color:var(--good,#128a52)}" +
+    ".s2-pick .sj.hasb{flex-wrap:wrap}.s2-pick .bsel{display:none;flex-basis:100%;margin:4px 0 0 28px;max-width:calc(100% - 28px);padding:6px 8px;border-radius:8px;border:1.5px solid var(--line,#dce1ee);background:var(--card,#fff);color:inherit;font:inherit;font-size:.8rem;text-overflow:ellipsis}" +
+    ".s2-pick .sj:has(input:checked) .bsel{display:block}" +
     ".s2-pick h3{font-size:.95rem;margin:14px 0 2px;color:var(--ink-2,#4b5174)}" +
     ".s2-pick .go{padding:12px 20px;border-radius:12px;border:0;background:var(--accent,#3b5bdb);color:#fff;font:inherit;font-weight:700;cursor:pointer;margin-left:auto}" +
     ".s2-pick .ln{background:none;border:0;padding:0;color:var(--accent-text,#263f9e);font:inherit;text-decoration:underline;cursor:pointer}" +
@@ -93,9 +111,12 @@
     }
     function step2(lv) {
       var L = LEVELS[lv], chosen = cur.level === lv ? (cur.subjects || []) : L.core.slice();
+      var boards = cur.level === lv && cur.boards ? cur.boards : {};
+      function tag(on) { return "<span class='t" + (on ? " on" : "") + "'>" + (on ? "Ready" : "Coming soon") + "</span>"; }
       function item(s) {
-        var on = s[2].length > 0;
-        return "<label class='sj'><input type='checkbox' value='" + s[0] + "'" + (chosen.indexOf(s[0]) >= 0 ? " checked" : "") + "><span class='n'>" + esc(s[1]) + "</span><span class='t" + (on ? " on" : "") + "'>" + (on ? "Ready" : "Coming soon") + "</span></label>";
+        var bd = boardOf(lv, s, { level: lv, boards: boards }), on = bd ? !!bd[2] : s[2].length > 0;
+        var sel = s[3] ? "<select class='bsel' aria-label='Exam board for " + esc(s[1]) + "'>" + s[3].map(function (o) { return "<option value='" + o[0] + "'" + (o === bd ? " selected" : "") + ">" + esc(o[1]) + "</option>"; }).join("") + "</select>" : "";
+        return "<label class='sj" + (s[3] ? " hasb" : "") + "' data-s='" + s[0] + "'><input type='checkbox' value='" + s[0] + "'" + (chosen.indexOf(s[0]) >= 0 ? " checked" : "") + "><span class='n'>" + esc(s[1]) + "</span>" + tag(on) + sel + "</label>";
       }
       var core = L.subjects.filter(function (s) { return L.core.indexOf(s[0]) >= 0; }), rest = L.subjects.filter(function (s) { return L.core.indexOf(s[0]) < 0; });
       box().innerHTML = "<div class='hd'><h2 id='s2-pick-h'>Your " + L.short + " subjects</h2><p class='sub'>Tick everything you're taking. Subjects marked coming soon are on the way.</p></div>" +
@@ -104,10 +125,19 @@
       var b = box();
       function count() { var n = b.querySelectorAll("input:checked").length; b.querySelector(".count").textContent = n + " chosen"; }
       [].forEach.call(b.querySelectorAll("input"), function (i) { i.onchange = count; }); count();
+      [].forEach.call(b.querySelectorAll(".bsel"), function (sel) {
+        sel.onclick = function (e) { e.preventDefault(); e.stopPropagation(); };
+        sel.onchange = function () {
+          var lab = sel.closest(".sj"), id = lab.getAttribute("data-s"), s = L.subjects.filter(function (x) { return x[0] === id; })[0];
+          boards[id] = sel.value; lab.querySelector("input").checked = true; count();
+          var bd = boardOf(lv, s, { level: lv, boards: boards }); lab.querySelector(".t").outerHTML = tag(!!bd[2]);
+        };
+      });
       b.querySelector("[data-back]").onclick = step1;
       b.querySelector(".go").onclick = function () {
         var ids = [].map.call(b.querySelectorAll("input:checked"), function (i) { return i.value; });
-        set({ level: lv, subjects: ids });
+        var keep = {}; ids.forEach(function (id) { var s = L.subjects.filter(function (x) { return x[0] === id; })[0]; if (s && s[3]) { var bd = boardOf(lv, s, { level: lv, boards: boards }); keep[id] = bd[0]; } });
+        set({ level: lv, subjects: ids, boards: keep });
         close();
         if (opts.onDone) opts.onDone(get());
         if (window.S2 && S2.chip) S2.chip("Subjects saved");
