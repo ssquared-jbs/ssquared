@@ -9,6 +9,7 @@
   var PLATFORMS = {
     mandarin: { name: "Mandarin²", path: "mandarin/index.html", cls: "s2-mandarin", glyph: "中文", course: "IGCSE Mandarin", blurb: "25 topics of step-by-step lessons, rapid-fire quizzes, flashcards and the 3+2 game." },
     chemistry: { name: "Chemistry²", path: "chemistry/index.html", cls: "s2-chemistry", glyph: "H₂O", course: "Edexcel IGCSE & GCSE", blurb: "Every topic with notes, videos, quizzes, exam questions, flashcards and a molecule drawer." },
+    "alevel-maths": { name: "A-level Maths²", path: "alevel-maths/index.html", cls: "s2-maths", glyph: "∫", course: "Edexcel A level (9MA0)", blurb: "Pure, statistics and mechanics, with worked examples, quick checks and flashcards." },
     maths: { name: "Maths²", path: "maths/index.html", cls: "s2-maths", glyph: "x²", course: "Edexcel GCSE (1MA1)", blurb: "Number, algebra, ratio, geometry, probability and statistics, Foundation and Higher, with worked examples." },
     physics: { name: "Physics²", path: "physics/index.html", cls: "s2-physics", glyph: "F=ma", course: "Edexcel IGCSE & GCSE", blurb: "Forces, electricity, waves, energy, magnetism and space, with every equation explained." },
     "alevel-chemistry-ocr": { name: "A-level Chemistry A²", path: "alevel-chemistry-ocr/index.html", cls: "s2-alevel-chemistry", glyph: "Kc", course: "OCR A level Chemistry A (H432)", blurb: "All of OCR Chemistry A, module by module, with step-by-step notes, quick checks and flashcards." },
@@ -33,7 +34,7 @@
       ["latin", "Latin", []], ["citizenship", "Citizenship", []]
     ] },
     alevel: { name: "A level", short: "A level", core: [], subjects: [
-      ["maths", "Maths", []], ["further-maths", "Further Maths", []], ["biology", "Biology", [], [["bio-a", "Edexcel A, Salters-Nuffield (9BN0)", "alevel-biology-a"], ["bio-b", "Edexcel B (9BI0)", "alevel-biology-b"]]],
+      ["maths", "Maths", ["alevel-maths"]], ["further-maths", "Further Maths", []], ["biology", "Biology", [], [["bio-a", "Edexcel A, Salters-Nuffield (9BN0)", "alevel-biology-a"], ["bio-b", "Edexcel B (9BI0)", "alevel-biology-b"]]],
       ["chemistry", "Chemistry", ["alevel-chemistry"], [["edexcel", "Edexcel (9CH0)", "alevel-chemistry"], ["ocr-a", "OCR A (H432)", "alevel-chemistry-ocr"]]],
       ["physics", "Physics", ["alevel-physics"]],
       ["psychology", "Psychology", []], ["economics", "Economics", []], ["business", "Business", []], ["computer-science", "Computer Science", []],
