@@ -153,3 +153,12 @@
 @media (max-width: 560px) { .vx-cc { font-size: 0.95rem; } .vx-bar .lbl { display: none; } }
 @keyframes vxspin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .vx svg g[style*="vxspin"] { animation: none !important; } }
+
+/* dense variants */
+.vx-points.many ul { gap: 1cqw; }
+.vx-points.many li { font-size: 2.15cqw; padding: .9cqw 1.6cqw; }
+.vx-flow.many .node { font-size: 1.85cqw; padding: 1cqw 1.1cqw; max-width: 13cqw; }
+.vx-flow.many .arrow { font-size: 2.4cqw; padding: 0 .5cqw; }
+.vx-compare.many table { font-size: 1.85cqw; border-spacing: 0 .6cqw; }
+.vx-compare.many td { padding: .65cqw 1.4cqw; }
+.vx-compare.many th { font-size: 2.2cqw; }

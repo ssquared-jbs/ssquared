@@ -55,7 +55,7 @@
       (s.sub ? "<p" + st(s.subStep || 0) + ">" + s.sub + "</p>" : "") + "<div class='mark'>" + (s.mark || "S²") + "</div></div>" };
   };
   R.points = function (s) {
-    var b = s.start || 0, h = "<div class='vx-scene vx-points" + (s.two ? " two" : "") + "'>" + head(s) + "<ul>";
+    var b = s.start || 0, h = "<div class='vx-scene vx-points" + (s.two ? " two" : "") + (s.items.length > 4 && !s.two ? " many" : "") + "'>" + head(s) + "<ul>";
     s.items.forEach(function (it, i) { h += "<li" + st(b + i) + ">" + (s.numbered ? "<span class='n'>" + (i + 1) + "</span>" : "") + "<span>" + it + "</span></li>"; });
     return { html: h + "</ul></div>" };
   };
@@ -85,7 +85,7 @@
     return { html: h + "</div></div>" };
   };
   R.flow = function (s) {
-    var b = s.start || 0, h = "<div class='vx-scene vx-flow" + (s.col ? " col" : "") + "'>" + head(s) + "<div class='chain'>";
+    var b = s.start || 0, h = "<div class='vx-scene vx-flow" + (s.col ? " col" : "") + (!s.col && s.nodes.length > 4 ? " many" : "") + "'>" + head(s) + "<div class='chain'>";
     s.nodes.forEach(function (n, i) {
       if (i) {
         var lab = s.arrows && s.arrows[i - 1];
@@ -121,7 +121,7 @@
     return { html: "<div class='vx-scene vx-svg'>" + head(s) + "<div class='area'><svg viewBox='" + (s.viewBox || "0 0 1100 500") + "' preserveAspectRatio='xMidYMid meet'><defs><marker id='vxb' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0 0L10 5L0 10z' class='fillA'/></marker></defs>" + s.svg + "</svg></div></div>" };
   };
   R.compare = function (s) {
-    var b = s.start || 0, h = "<div class='vx-scene vx-compare'>" + head(s) + "<table><thead><tr><th></th><th>" + s.h[0] + "</th><th>" + s.h[1] + "</th></tr></thead><tbody>";
+    var b = s.start || 0, h = "<div class='vx-scene vx-compare" + (s.rows.length > 4 ? " many" : "") + "'>" + head(s) + "<table><thead><tr><th></th><th>" + s.h[0] + "</th><th>" + s.h[1] + "</th></tr></thead><tbody>";
     s.rows.forEach(function (r, i) { h += "<tr" + st(b + i) + "><td>" + r[0] + "</td><td>" + r[1] + "</td><td>" + r[2] + "</td></tr>"; });
     return { html: h + "</tbody></table></div>" };
   };
@@ -149,7 +149,7 @@
       "<g" + st(b) + "><text class='txt s' text-anchor='middle' transform='translate(" + (X0 - 40) + " " + ((Y0 + Y1) / 2) + ") rotate(-90)'>" + s.y + "</text></g>";
     (s.lines || [{ pts: s.pts }]).forEach(function (L, i) {
       var pts = L.pts.map(P), d = L.straight ? "M" + pts.map(function (p) { return p[0].toFixed(1) + " " + p[1].toFixed(1); }).join(" L") : smooth(pts);
-      svg += "<path class='stroke draw" + (L.cls ? " " + L.cls : "") + "' pathLength='1' d='" + d + "'" + (L.dash ? " stroke-dasharray='8 8'" : "") + st(b + (L.s == null ? 1 : L.s)) + " style='stroke-width:5'/>";
+      svg += "<path class='stroke" + (L.dash ? "" : " draw") + (L.cls ? " " + L.cls : "") + "'" + (L.dash ? "" : " pathLength='1'") + " d='" + d + "'" + (L.dash ? " stroke-dasharray='10 9'" : "") + st(b + (L.s == null ? 1 : L.s)) + " style='stroke-width:5'/>";
       if (L.label) { var e = pts[pts.length - 1]; svg += "<text class='txt b' x='" + (e[0] + 10) + "' y='" + (e[1] + 8) + "'" + st(b + (L.s == null ? 1 : L.s)) + ">" + L.label + "</text>"; }
     });
     (s.marks || []).forEach(function (m) {
