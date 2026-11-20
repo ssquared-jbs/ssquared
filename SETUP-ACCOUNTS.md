@@ -84,3 +84,7 @@ Commit the updated `shared/s2-firebase-config.js` and merge to your live branch.
 
 - **Age.** Google accounts need users to be 13+ in the UK, and the UK's Age Appropriate Design Code applies to services likely to be used by children. The privacy policies on the site have been updated to describe accounts, but have someone check they suit your situation. This guide isn't legal advice.
 - **Email verification** isn't required. If you want it, it can be added later.
+
+## Choosing which sign-in buttons appear
+
+`providers` in `shared/s2-firebase-config.js` controls the buttons. It's currently `["google", "email"]`. To bring Microsoft back once it's set up in Firebase, change it to `["google", "microsoft", "email"]`.

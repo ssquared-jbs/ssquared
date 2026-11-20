@@ -7,5 +7,7 @@ window.S2_FIREBASE = {
   apiKey: "AIzaSyDU5-BcnFJRAqZMgKZkDG7bR2QIyMJ_wC8",
   authDomain: "ssquared-3032e.firebaseapp.com",
   projectId: "ssquared-3032e",
-  appId: "1:868811717154:web:17b91f8ace156d830d287b"
+  appId: "1:868811717154:web:17b91f8ace156d830d287b",
+  /* Sign-in options shown on the site. Add "microsoft" once it's set up in Firebase. */
+  providers: ["google", "email"]
 };
