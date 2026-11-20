@@ -330,3 +330,8 @@ a { color: var(--accent-text); }
 .fc-list b { display: block; }
 .fc-list span { color: var(--ink-2); font-size: .92rem; }
 .fc-mine-note { text-align: center; color: var(--ink-3); margin-top: 18px; }
+
+/* Code in notes, quizzes and exam questions (Computer Science) */
+pre { background: #0f172a; color: #e2e8f0; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .92rem; line-height: 1.5; padding: 12px 16px; border-radius: 10px; overflow-x: auto; margin: 10px 0; white-space: pre; max-width: 100%; }
+.notes code, code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .92em; background: var(--accent-soft); color: var(--accent-text); padding: 1px 5px; border-radius: 5px; }
+pre code { background: none; color: inherit; padding: 0; }
