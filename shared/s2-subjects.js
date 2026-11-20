@@ -9,16 +9,20 @@
   var PLATFORMS = {
     mandarin: { name: "Mandarin²", path: "mandarin/index.html", cls: "s2-mandarin", glyph: "中文", course: "IGCSE Mandarin", blurb: "25 topics of step-by-step lessons, rapid-fire quizzes, flashcards and the 3+2 game." },
     chemistry: { name: "Chemistry²", path: "chemistry/index.html", cls: "s2-chemistry", glyph: "H₂O", course: "Edexcel IGCSE & GCSE", blurb: "Every topic with notes, videos, quizzes, exam questions, flashcards and a molecule drawer." },
+    maths: { name: "Maths²", path: "maths/index.html", cls: "s2-maths", glyph: "x²", course: "Edexcel GCSE (1MA1)", blurb: "Number, algebra, ratio, geometry, probability and statistics, Foundation and Higher, with worked examples." },
     physics: { name: "Physics²", path: "physics/index.html", cls: "s2-physics", glyph: "F=ma", course: "Edexcel IGCSE & GCSE", blurb: "Forces, electricity, waves, energy, magnetism and space, with every equation explained." },
+    "alevel-chemistry-ocr": { name: "A-level Chemistry A²", path: "alevel-chemistry-ocr/index.html", cls: "s2-alevel-chemistry", glyph: "Kc", course: "OCR A level Chemistry A (H432)", blurb: "All of OCR Chemistry A, module by module, with step-by-step notes, quick checks and flashcards." },
     "alevel-chemistry": { name: "A-level Chemistry²", path: "alevel-chemistry/index.html", cls: "s2-alevel-chemistry", glyph: "ΔG", course: "Edexcel A level (9CH0)", blurb: "All 19 topics of Edexcel A level Chemistry, step by step, with quick checks and flashcards." },
     "alevel-physics": { name: "A-level Physics²", path: "alevel-physics/index.html", cls: "s2-alevel-physics", glyph: "E=hf", course: "Edexcel A level (9PH0)", blurb: "All 13 topics of Edexcel A level Physics, with worked calculations, quick checks and flashcards." },
+    "alevel-biology-a": { name: "A-level Biology A²", path: "alevel-biology-a/index.html", cls: "s2-alevel-biology", glyph: "ATP", course: "Edexcel A level Biology A (9BN0)", blurb: "Salters-Nuffield Biology A, all 8 topics, with step-by-step notes, quick checks and flashcards." },
+    "alevel-biology-b": { name: "A-level Biology B²", path: "alevel-biology-b/index.html", cls: "s2-alevel-biology", glyph: "DNA", course: "Edexcel A level Biology B (9BI0)", blurb: "Biology B, all 10 topics, with step-by-step notes, quick checks and flashcards." },
     biology: { name: "Biology²", path: "biology/index.html", cls: "s2-biology", glyph: "DNA", course: "Edexcel IGCSE & GCSE", blurb: "Cells, the human body, plants, genetics and ecology, with key processes broken down." }
   };
 
   /* [id, name, platforms that cover it (empty = coming soon), optional boards: [boardId, label, platform or null]] */
   var LEVELS = {
     gcse: { name: "GCSE / IGCSE", short: "GCSE", core: ["maths", "english-lang", "english-lit"], subjects: [
-      ["maths", "Maths", []], ["english-lang", "English Language", []], ["english-lit", "English Literature", []],
+      ["maths", "Maths", ["maths"]], ["english-lang", "English Language", []], ["english-lit", "English Literature", []],
       ["biology", "Biology", ["biology"]], ["chemistry", "Chemistry", ["chemistry"]], ["physics", "Physics", ["physics"]],
       ["combined", "Combined Science", ["biology", "chemistry", "physics"]],
       ["mandarin", "Chinese (Mandarin)", ["mandarin"]], ["french", "French", []], ["spanish", "Spanish", []], ["german", "German", []],
@@ -29,8 +33,8 @@
       ["latin", "Latin", []], ["citizenship", "Citizenship", []]
     ] },
     alevel: { name: "A level", short: "A level", core: [], subjects: [
-      ["maths", "Maths", []], ["further-maths", "Further Maths", []], ["biology", "Biology", [], [["bio-a", "Edexcel A, Salters-Nuffield (9BN0)", null], ["bio-b", "Edexcel B (9BI0)", null]]],
-      ["chemistry", "Chemistry", ["alevel-chemistry"], [["edexcel", "Edexcel (9CH0)", "alevel-chemistry"], ["ocr-a", "OCR A (H432)", null]]],
+      ["maths", "Maths", []], ["further-maths", "Further Maths", []], ["biology", "Biology", [], [["bio-a", "Edexcel A, Salters-Nuffield (9BN0)", "alevel-biology-a"], ["bio-b", "Edexcel B (9BI0)", "alevel-biology-b"]]],
+      ["chemistry", "Chemistry", ["alevel-chemistry"], [["edexcel", "Edexcel (9CH0)", "alevel-chemistry"], ["ocr-a", "OCR A (H432)", "alevel-chemistry-ocr"]]],
       ["physics", "Physics", ["alevel-physics"]],
       ["psychology", "Psychology", []], ["economics", "Economics", []], ["business", "Business", []], ["computer-science", "Computer Science", []],
       ["english-lit", "English Literature", []], ["english-lang", "English Language", []], ["history", "History", []], ["geography", "Geography", []],
