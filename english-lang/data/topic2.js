@@ -358,9 +358,10 @@ S2Data.add({
 <p>2 hours; 96 marks; 60% of the GCSE. Section A: two non-fiction texts (one 20th/21st-century, one 19th-century). Section B: transactional writing.</p>
 <table>
 <tr><th>Q</th><th>Marks</th><th>Skill</th></tr>
-<tr><td>1–3, 5–6</td><td>1–2 each, plus short analysis</td><td>Retrieval and short analysis</td></tr>
-<tr><td>3 / 6</td><td>6</td><td>Analyse language and structure</td></tr>
-<tr><td>4</td><td>15</td><td>Evaluate Text 1</td></tr>
+<tr><td>1, 2</td><td>1, 2</td><td>Retrieve and explain from Text 1</td></tr>
+<tr><td>3</td><td>15</td><td>Analyse language and structure in Text 1</td></tr>
+<tr><td>4, 5</td><td>1, 2</td><td>Retrieve and explain from Text 2</td></tr>
+<tr><td>6</td><td>15</td><td>Evaluate Text 2</td></tr>
 <tr><td>7a</td><td>6</td><td>Synthesis of both texts</td></tr>
 <tr><td>7b</td><td>14</td><td>Compare ideas and perspectives</td></tr>
 <tr><td>8 or 9</td><td>40</td><td>Transactional writing</td></tr>
