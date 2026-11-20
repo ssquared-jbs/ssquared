@@ -311,3 +311,22 @@ a { color: var(--accent-text); }
 .ncheck-fb { margin: 6px 0 12px; color: var(--ink-2); }
 .ndone { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
 @media print { .nstep-bar, .nstep-next { display: none !important; } .nchunk[hidden] { display: block !important; } }
+
+/* ---------- learner-made flashcards ---------- */
+.fc-filter { display: flex; justify-content: center; gap: 0; margin: 4px auto 14px; border: 1.5px solid var(--line); border-radius: 12px; overflow: hidden; width: max-content; max-width: 100%; }
+.fc-filter button { font: inherit; font-size: .9rem; font-weight: 700; padding: 7px 14px; border: 0; background: var(--card); color: var(--ink-2); cursor: pointer; }
+.fc-filter button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.fc-mine { max-width: 720px; margin: 28px auto 0; padding: 20px; }
+.fc-mine h2 { font-size: 1.3rem; margin: 0; }
+.fc-mine h2 .count { font-size: .85rem; background: var(--accent-soft); color: var(--accent-text); padding: 2px 9px; border-radius: 99px; vertical-align: middle; }
+.fc-mine .sub { color: var(--ink-2); margin: 4px 0 12px; }
+.fc-form label { display: block; font-weight: 700; font-size: .9rem; margin: 10px 0 4px; }
+.fc-form textarea { width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--surface-2); color: var(--ink); font: inherit; resize: vertical; }
+.fc-form .row { display: flex; gap: 10px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+.fc-msg { color: var(--good); font-weight: 700; font-size: .9rem; }
+.fc-list { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 8px; }
+.fc-list li { display: flex; gap: 8px; align-items: center; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 12px; }
+.fc-list li div { flex: 1; min-width: 0; }
+.fc-list b { display: block; }
+.fc-list span { color: var(--ink-2); font-size: .92rem; }
+.fc-mine-note { text-align: center; color: var(--ink-3); margin-top: 18px; }

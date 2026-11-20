@@ -147,7 +147,7 @@
         }
         try { sessionStorage.removeItem("s2-auth-reloaded"); } catch (e) {}
         var pf = merged.profile;
-        if (window.S2Subjects && (!pf || !pf.level)) S2Subjects.pick();
+        if (window.S2Subjects && (!pf || (!pf.level && !pf.skipped))) S2Subjects.pick();
       });
     }).catch(function (e) { console.warn("S2 sync failed", e); setState("error"); });
   }
