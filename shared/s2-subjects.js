@@ -15,6 +15,7 @@
     "computer-science": { name: "Computer Science²", path: "computer-science/index.html", cls: "s2-cs", glyph: "{ }", course: "Edexcel GCSE (1CP2)", blurb: "Algorithms, binary, hardware, networks, cyber security and Python programming." },
     "geography": { name: "Geography²", path: "geography/index.html", cls: "s2-geog", glyph: "🌍", course: "Edexcel GCSE B (1GB0)", blurb: "Hazards, development, cities, coasts, rivers, fieldwork, forests and energy, with case studies." },
     "history": { name: "History²", path: "history/index.html", cls: "s2-hist", glyph: "⌛", course: "Edexcel GCSE (1HI0)", blurb: "Medicine and the Western Front, the Cold War, Elizabethan England, and Weimar and Nazi Germany." },
+    "psychology": { name: "Psychology²", path: "psychology/index.html", cls: "s2-psych", glyph: "Ψ", course: "Edexcel GCSE (1PS0)", blurb: "Development, memory, the brain, social influence, criminal psychology, sleep and research methods." },
     maths: { name: "Maths²", path: "maths/index.html", cls: "s2-maths", glyph: "x²", course: "Edexcel GCSE (1MA1)", blurb: "Number, algebra, ratio, geometry, probability and statistics, Foundation and Higher, with worked examples." },
     physics: { name: "Physics²", path: "physics/index.html", cls: "s2-physics", glyph: "F=ma", course: "Edexcel IGCSE & GCSE", blurb: "Forces, electricity, waves, energy, magnetism and space, with every equation explained." },
     "alevel-chemistry-ocr": { name: "A-level Chemistry A²", path: "alevel-chemistry-ocr/index.html", cls: "s2-alevel-chemistry", glyph: "Kc", course: "OCR A level Chemistry A (H432)", blurb: "All of OCR Chemistry A, module by module, with step-by-step notes, quick checks and flashcards." },
@@ -33,7 +34,7 @@
       ["combined", "Combined Science", ["biology", "chemistry", "physics"]],
       ["mandarin", "Chinese (Mandarin)", ["mandarin"]], ["french", "French", []], ["spanish", "Spanish", []], ["german", "German", []],
       ["computer-science", "Computer Science", ["computer-science"]], ["geography", "Geography", ["geography"]], ["history", "History", ["history"]], ["rs", "Religious Studies", []],
-      ["business", "Business", []], ["economics", "Economics", []], ["psychology", "Psychology", []], ["sociology", "Sociology", []],
+      ["business", "Business", []], ["economics", "Economics", []], ["psychology", "Psychology", ["psychology"]], ["sociology", "Sociology", []],
       ["further-maths", "Further Maths", []], ["statistics", "Statistics", []], ["dt", "Design & Technology", []], ["art", "Art & Design", []],
       ["music", "Music", []], ["drama", "Drama", []], ["pe", "PE", []], ["food", "Food Preparation & Nutrition", []], ["media", "Media Studies", []],
       ["latin", "Latin", []], ["citizenship", "Citizenship", []]
