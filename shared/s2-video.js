@@ -61,14 +61,14 @@
   };
   R.big = function (s) {
     var L = strip(s.text).length, fs = L <= 10 ? 9 : Math.max(4.5, Math.min(9, 86 / (L * 0.58)));
-    return { html: "<div class='vx-scene vx-big'>" + head(s) + "<div class='big' style='font-size:" + fs.toFixed(2) + "cqw'" + st(s.start || 0) + ">" + s.text + "</div>" + (s.sub ? "<div class='sub'" + st((s.start || 0) + (s.subStep == null ? 1 : s.subStep)) + ">" + s.sub + "</div>" : "") + "</div>" };
+    return { html: "<div class='vx-scene vx-big'>" + head(s) + "<div class='big' style='font-size:calc(" + fs.toFixed(2) + " * var(--u))'" + st(s.start || 0) + ">" + s.text + "</div>" + (s.sub ? "<div class='sub'" + st((s.start || 0) + (s.subStep == null ? 1 : s.subStep)) + ">" + s.sub + "</div>" : "") + "</div>" };
   };
   R.equation = function (s) {
     var b = s.start || 0, h = "<div class='vx-scene vx-eq'>" + head(s);
     (s.rows || [s.parts]).forEach(function (row, r) {
       var chars = row.reduce(function (n, p) { return n + strip(typeof p === "string" ? p : p.t).length; }, 0);
       var fs = Math.max(2.2, Math.min(4.4, (86 - row.length * 4.2) / (chars * 0.62)));
-      h += "<div class='row' style='font-size:" + fs.toFixed(2) + "cqw" + (r ? ";margin-top:2.4cqw" : "") + "'>";
+      h += "<div class='row' style='font-size:calc(" + fs.toFixed(2) + " * var(--u))" + (r ? ";margin-top:calc(2.4 * var(--u))" : "") + "'>";
       row.forEach(function (p) {
         var o = typeof p === "string" ? { t: p } : p, cls = /^(\+|→|⇌|=|×|÷|−)$/.test(o.t) ? "op" : (o.k ? "k" : "box");
         h += "<span class='" + cls + "'" + st(b + (o.s || 0)) + ">" + o.t + "</span>";
@@ -112,7 +112,7 @@
       }
     }
     pos.forEach(function (p, i) {
-      svg += "<foreignObject x='" + (p[0] - 120) + "' y='" + (p[1] - 45) + "' width='240' height='90'" + st(b + i) + "><div xmlns='http://www.w3.org/1999/xhtml' style='height:90px;display:flex;align-items:center;justify-content:center'><div style='background:var(--card);border:3px solid var(--accent);border-radius:14px;padding:8px 12px;font-size:22px;line-height:1.15;text-align:center;color:var(--ink);font-family:var(--font-body)'>" + s.nodes[i] + "</div></div></foreignObject>";
+      svg += "<foreignObject x='" + (p[0] - 135) + "' y='" + (p[1] - 55) + "' width='270' height='110'" + st(b + i) + "><div xmlns='http://www.w3.org/1999/xhtml' style='height:110px;display:flex;align-items:center;justify-content:center'><div style='background:var(--card);border:3px solid var(--accent);border-radius:14px;padding:8px 14px;font-size:26px;line-height:1.15;text-align:center;color:var(--ink);font-family:var(--font-body)'>" + s.nodes[i] + "</div></div></foreignObject>";
     });
     if (s.centre) svg += "<text class='txt b' text-anchor='middle' x='" + cx + "' y='" + (cy + 9) + "'" + st(b) + ">" + s.centre + "</text>";
     return { html: "<div class='vx-scene vx-cycle'>" + head(s) + "<div class='area'>" + svg + "</svg></div></div>" };
@@ -127,7 +127,7 @@
   };
   R.pyramid = function (s) {
     var b = s.start || 0, h = "<div class='vx-scene vx-pyr'>" + head(s) + "<div class='stack'>";
-    s.levels.forEach(function (l, i) { var o = typeof l === "string" ? { t: l, w: 1 - i * 0.2 } : l; h += "<div class='lvl'" + st(b + i) + " style='width:" + Math.round(o.w * 70) + "cqw'>" + o.t + "</div>"; });
+    s.levels.forEach(function (l, i) { var o = typeof l === "string" ? { t: l, w: 1 - i * 0.2 } : l; h += "<div class='lvl'" + st(b + i) +  " style='width:calc(" + Math.round(o.w * 70) + " * var(--u))'>" + o.t + "</div>"; });
     h += "</div>" + (s.side ? "<div class='side'" + st(b + (s.sideStep || s.levels.length)) + ">" + s.side + "</div>" : "");
     return { html: h + "</div>" };
   };
@@ -276,6 +276,16 @@
     });
   };
 
+  /* shrink a scene's type until it fits the frame */
+  function fit(node) {
+    var k = window.matchMedia && matchMedia("(max-width: 640px)").matches ? 1.5 : 1;
+    node.style.removeProperty("--u");
+    for (var i = 0; i < 14; i++) {
+      if (node.scrollHeight <= node.clientHeight + 2 && node.scrollWidth <= node.clientWidth + 2) return;
+      k *= 0.92; node.style.setProperty("--u", k.toFixed(3) + "cqw");
+    }
+  }
+
   /* ---------- player ---------- */
   function Player(root, video, opts) {
     opts = opts || {};
@@ -320,6 +330,7 @@
       if (e.key === "ArrowLeft") root.querySelector(".prev").click();
     });
     root.tabIndex = -1;
+    window.addEventListener("resize", function () { var n = P.stage.querySelector(".vx-scene"); if (n) fit(n); });
     if (TTS && this.voice) { var vv = bestVoice(); if (vv) this.voiceInfo = vv.name; }
     this.onDone = opts.onDone; this.quizHref = opts.quizHref;
     this.show(0, 0);
@@ -335,6 +346,7 @@
       var old = this.stage.querySelector(".vx-scene"); if (old) old.remove();
       var tmp = document.createElement("div"); tmp.innerHTML = r.html; var node = tmp.firstChild;
       this.stage.insertBefore(node, this.stage.firstChild);
+      fit(node);
       this.mounted = r.mount ? r.mount(node) : null; this.isQuiz = !!r.quiz;
       if (r.quiz) this.wireQuiz(node, s);
       this.si = si;
@@ -466,7 +478,7 @@
 
   window.S2Video = {
     mount: function (root, video, opts) { return new Player(root, video, opts); },
-    renderers: R,
+    renderers: R, fit: fit,
     words: function (video) { var n = 0; video.scenes.forEach(function (s) { (s.say || []).forEach(function (l) { n += words(lineText(l)); }); }); return n; }
   };
   document.addEventListener("visibilitychange", function () { if (document.hidden && active && active.playing) active.pause(); });
