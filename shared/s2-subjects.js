@@ -10,6 +10,7 @@
     mandarin: { name: "Mandarin²", path: "mandarin/index.html", cls: "s2-mandarin", glyph: "中文", course: "IGCSE Mandarin", blurb: "25 topics of step-by-step lessons, rapid-fire quizzes, flashcards and the 3+2 game." },
     chemistry: { name: "Chemistry²", path: "chemistry/index.html", cls: "s2-chemistry", glyph: "H₂O", course: "Edexcel IGCSE & GCSE", blurb: "Every topic with notes, videos, quizzes, exam questions, flashcards and a molecule drawer." },
     "alevel-maths": { name: "A-level Maths²", path: "alevel-maths/index.html", cls: "s2-maths", glyph: "∫", course: "Edexcel A level (9MA0)", blurb: "Pure, statistics and mechanics, with worked examples, quick checks and flashcards." },
+    "english-lang": { name: "English Language²", path: "english-lang/index.html", cls: "s2-english", glyph: "Aa", course: "Edexcel GCSE (1EN0)", blurb: "Reading, writing and exam technique for both papers, with worked examples and practice questions." },
     maths: { name: "Maths²", path: "maths/index.html", cls: "s2-maths", glyph: "x²", course: "Edexcel GCSE (1MA1)", blurb: "Number, algebra, ratio, geometry, probability and statistics, Foundation and Higher, with worked examples." },
     physics: { name: "Physics²", path: "physics/index.html", cls: "s2-physics", glyph: "F=ma", course: "Edexcel IGCSE & GCSE", blurb: "Forces, electricity, waves, energy, magnetism and space, with every equation explained." },
     "alevel-chemistry-ocr": { name: "A-level Chemistry A²", path: "alevel-chemistry-ocr/index.html", cls: "s2-alevel-chemistry", glyph: "Kc", course: "OCR A level Chemistry A (H432)", blurb: "All of OCR Chemistry A, module by module, with step-by-step notes, quick checks and flashcards." },
@@ -23,7 +24,7 @@
   /* [id, name, platforms that cover it (empty = coming soon), optional boards: [boardId, label, platform or null]] */
   var LEVELS = {
     gcse: { name: "GCSE / IGCSE", short: "GCSE", core: ["maths", "english-lang", "english-lit"], subjects: [
-      ["maths", "Maths", ["maths"]], ["english-lang", "English Language", []], ["english-lit", "English Literature", []],
+      ["maths", "Maths", ["maths"]], ["english-lang", "English Language", ["english-lang"]], ["english-lit", "English Literature", []],
       ["biology", "Biology", ["biology"]], ["chemistry", "Chemistry", ["chemistry"]], ["physics", "Physics", ["physics"]],
       ["combined", "Combined Science", ["biology", "chemistry", "physics"]],
       ["mandarin", "Chinese (Mandarin)", ["mandarin"]], ["french", "French", []], ["spanish", "Spanish", []], ["german", "German", []],
