@@ -79,6 +79,7 @@
     var s = "";
     if (t.paper2) s += ' <span class="tag tag-c">Paper 2 only</span>';
     if (t.gcse) s += ' <span class="tag tag-g">GCSE only</span>';
+    if (t.higher) s += ' <span class="tag tag-c">Higher</span>';
     if (t.y2) s += ' <span class="tag tag-g">Year 13</span>';
     if (t.y1) s += ' <span class="tag tag-p">Year 12 (AS)</span>';
     return s;
