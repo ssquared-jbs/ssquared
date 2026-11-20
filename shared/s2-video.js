@@ -154,7 +154,7 @@
     });
     (s.marks || []).forEach(function (m) {
       var p = P([m.x, m.y]);
-      svg += "<g" + st(b + (m.s || 2)) + ">" + (m.dot !== false ? "<circle cx='" + p[0] + "' cy='" + p[1] + "' r='9' class='hlf' stroke='var(--ink)' stroke-width='2'/>" : "") +
+      svg += "<g" + st(b + (m.s == null ? 2 : m.s)) + ">" + (m.dot !== false ? "<circle cx='" + p[0] + "' cy='" + p[1] + "' r='9' class='hlf' stroke='var(--ink)' stroke-width='2'/>" : "") +
         "<text class='txt b' text-anchor='" + (m.anchor || "middle") + "' x='" + (p[0] + (m.dx || 0)) + "' y='" + (p[1] + (m.dy == null ? -22 : m.dy)) + "'>" + m.t + "</text></g>";
     });
     return { html: "<div class='vx-scene vx-svg'>" + head(s) + "<div class='area'><svg viewBox='0 0 1100 500' preserveAspectRatio='xMidYMid meet'><defs><marker id='vxb' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='6' markerHeight='6' orient='auto-start-reverse'><path d='M0 0L10 5L0 10z' style='fill:var(--ink)'/></marker></defs>" + svg + "</svg></div></div>" };
