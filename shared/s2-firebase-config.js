@@ -4,8 +4,10 @@
    These values are not secret: Firebase web config is meant to be public. Your data is
    protected by the Firestore security rules in firestore.rules. */
 window.S2_FIREBASE = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  appId: ""
+  apiKey: "AIzaSyDU5-BcnFJRAqZMgKZkDG7bR2QIyMJ_wC8",
+  authDomain: "ssquared-3032e.firebaseapp.com",
+  projectId: "ssquared-3032e",
+  appId: "1:868811717154:web:17b91f8ace156d830d287b",
+  /* Sign-in options shown on the site. Add "microsoft" once it's set up in Firebase. */
+  providers: ["google", "email"]
 };

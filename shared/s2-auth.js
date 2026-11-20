@@ -11,6 +11,8 @@
   function json(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
   var cfg = window.S2_FIREBASE || {};
   var preview = /[?&]auth=preview\b/.test(location.search);
+  /* sign-in options shown; set S2_FIREBASE.providers to change them */
+  function on(p) { return (cfg.providers || ["google", "microsoft", "email"]).indexOf(p) >= 0; }
   var live = !!(cfg.apiKey || window.S2AuthBackend || preview);
   var enabled = true; /* the button always shows; until Firebase is set up it explains that accounts are coming */
   var backend = null, user = null, state = "out", lastSync = 0, pushTimer = null, applying = false, buttons = [];
@@ -228,8 +230,8 @@
     }
     if (v === "start") {
       box.innerHTML = x + "<h2 id='s2-auth-h'>Sign in to S²</h2><p class='sub'>Save your subjects, progress, XP, streak, notes and flashcards, and pick up on any device.</p>" +
-        "<button type='button' class='prov' data-p='google'>" + G + "Continue with Google</button>" +
-        "<button type='button' class='prov' data-p='microsoft'>" + M + "Continue with Microsoft</button>" +
+        (on("google") ? "<button type='button' class='prov' data-p='google'>" + G + "Continue with Google</button>" : "") +
+        (on("microsoft") ? "<button type='button' class='prov' data-p='microsoft'>" + M + "Continue with Microsoft</button>" : "") +
         "<div class='or'>or</div><button type='button' class='prov' data-v='email-in'>✉️ Continue with email</button>" +
         "<div class='msg' hidden></div>" +
         "<p class='fine'>You don't need an account to use S². Without one, progress is saved on this device only. When you sign in, anything already saved on this device is added to your account. Signing out removes it from this device. See our <a href='" + root() + "privacy.html'>privacy policy</a>.</p>";
