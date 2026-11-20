@@ -289,3 +289,25 @@ a { color: var(--accent-text); }
 .box ul { margin: 4px 0 0; padding-left: 1.2em; }
 
 .tag.tag-v { background: var(--accent-soft); color: var(--accent-text); }
+
+/* ---------- step-by-step notes ---------- */
+.nstep-bar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 14px; padding-bottom: 12px; border-bottom: 1.5px solid var(--line); }
+.nstep-mode { display: inline-flex; border: 1.5px solid var(--line); border-radius: 12px; overflow: hidden; }
+.nstep-mode button { font: inherit; font-size: .9rem; font-weight: 700; padding: 7px 12px; border: 0; background: var(--card); color: var(--ink-2); cursor: pointer; }
+.nstep-mode button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.nstep-prog { flex: 1; min-width: 180px; display: flex; align-items: center; gap: 10px; font-size: .9rem; color: var(--ink-2); font-weight: 700; }
+.nstep-prog .s2-bar { flex: 1; }
+.nstep-prog[hidden] { display: none; }
+.nchunk[hidden] { display: none; }
+.nchunk { scroll-margin-top: 90px; }
+.nchunk-current { animation: nchunkIn .45s ease; }
+@keyframes nchunkIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .nchunk-current { animation: none; } }
+.nstep-next { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 22px 0 6px; padding-top: 16px; border-top: 1.5px dashed var(--line); }
+.ncheck { width: 100%; background: var(--surface-2); border: 1.5px solid var(--line); border-radius: 16px; padding: 16px; }
+.ncheck-h { font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--accent-text); margin-bottom: 6px; }
+.ncheck-q { font-weight: 700; margin-bottom: 10px; }
+.ncheck-o { display: grid; gap: 8px; margin-bottom: 8px; }
+.ncheck-fb { margin: 6px 0 12px; color: var(--ink-2); }
+.ndone { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+@media print { .nstep-bar, .nstep-next { display: none !important; } .nchunk[hidden] { display: block !important; } }

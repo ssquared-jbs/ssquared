@@ -234,9 +234,100 @@
         onDone: function () { var first = !prog(t.id).video; save(t, { video: 1 }); if (first) xp(15, "Video watched"); }
       });
     }
+    stepify(main.querySelector("article.notes"), t);
     if (window.S2Notes) main.querySelector("#notebook-slot").appendChild(S2Notes.editor({ subject: CFG.slug, id: t.id, t: t.title, code: code(t), group: groupLabel(t.group), u: "topic.html?id=" + t.id, title: "My notes: " + code(t) + " " + t.title }));
     window.scrollTo(0, 0);
   };
+
+  /* ---------- step-by-step notes ---------- */
+  var MODE_KEY = "s2-notes-mode";
+  function stepMode() { try { return localStorage.getItem(MODE_KEY) !== "all"; } catch (e) { return true; } }
+  function stepify(article, t) {
+    if (!article) return;
+    // 1. split into chunks: a new chunk at every h3, and long runs are split further
+    var kids = [].slice.call(article.children), chunks = [], cur = null, len = 0;
+    function start() { cur = []; chunks.push(cur); len = 0; }
+    kids.forEach(function (k) {
+      var isHead = k.tagName === "H3", size = (k.textContent || "").length + (k.querySelector("table,svg,img") ? 400 : 0);
+      if (!cur || isHead || (len > 650 && cur.length >= 2 && k.tagName !== "H4" && !(cur[cur.length - 1].tagName === "H4"))) start();
+      cur.push(k); len += size;
+    });
+    if (chunks.length < 3) return; // short notes: just show them
+    var wraps = chunks.map(function (c, i) {
+      var w = el("section", { class: "nchunk", "data-i": i });
+      article.insertBefore(w, c[0]); c.forEach(function (k) { w.appendChild(k); });
+      return w;
+    });
+    // 2. quick checks from the topic's own quiz, after every second chunk
+    var qs = (t.quiz || []).slice(), qi = 0, checks = {};
+    for (var i = 1; i < wraps.length - 1 && qi < qs.length; i += 2) checks[i] = qs[qi++];
+
+    var bar = el("div", { class: "nstep-bar" });
+    bar.innerHTML = "<div class='nstep-mode' role='group' aria-label='How to read the notes'><button type='button' data-m='step'>Step by step</button><button type='button' data-m='all'>Show everything</button></div><div class='nstep-prog'><span></span><div class='s2-bar'><i></i></div></div>";
+    article.insertBefore(bar, article.firstChild);
+    var ctl = el("div", { class: "nstep-next" });
+    var p = prog(t.id), reached = Math.min(p.step || 0, wraps.length - 1);
+
+    function paintBar(n) {
+      bar.querySelector(".nstep-prog span").textContent = n >= wraps.length - 1 && done() ? "All " + wraps.length + " sections done ✓" : "Section " + (n + 1) + " of " + wraps.length;
+      bar.querySelector(".s2-bar i").style.width = Math.round((n + 1) / wraps.length * 100) + "%";
+    }
+    function done() { return !!prog(t.id).notesDone; }
+    function render(scrollTo) {
+      var step = stepMode();
+      [].forEach.call(bar.querySelectorAll("[data-m]"), function (b) { b.setAttribute("aria-pressed", (b.getAttribute("data-m") === "step") === step); });
+      bar.querySelector(".nstep-prog").hidden = !step;
+      wraps.forEach(function (w, i) { w.hidden = step && i > reached; w.classList.toggle("nchunk-current", step && i === reached); });
+      if (!step) { if (ctl.parentNode) ctl.remove(); return; }
+      paintBar(reached);
+      var last = reached >= wraps.length - 1, q = checks[reached] && !checks[reached].passed ? checks[reached] : null;
+      ctl.innerHTML = "";
+      if (q) {
+        var order = shuffle(q.o.map(function (_, k) { return k; }));
+        ctl.innerHTML = "<div class='ncheck'><div class='ncheck-h'>Quick check</div><div class='ncheck-q'>" + q.q + "</div><div class='ncheck-o'></div><div class='ncheck-fb' role='status'></div></div>";
+        var box = ctl.querySelector(".ncheck-o");
+        order.forEach(function (k) {
+          var b = el("button", { type: "button", class: "option" }, "<span>" + q.o[k] + "</span>");
+          b.onclick = function () {
+            [].forEach.call(box.querySelectorAll("button"), function (x) { x.disabled = true; });
+            var ok = k === q.a; b.classList.add(ok ? "correct" : "wrong");
+            if (!ok) [].forEach.call(box.querySelectorAll("button"), function (x, n) { if (order[n] === q.a) x.classList.add("correct"); });
+            ctl.querySelector(".ncheck-fb").innerHTML = (ok ? "<b>" + cheer() + "</b> " : "<b>Not quite.</b> The answer is <b>" + q.o[q.a] + "</b>. ") + (q.e || "");
+            if (ok) xp(3);
+            q.passed = true;
+            var go = el("button", { type: "button", class: "s2-btn" }, last ? "Finish the notes ✓" : "Continue →");
+            go.onclick = advance; ctl.querySelector(".ncheck").appendChild(go); go.focus();
+          };
+          box.appendChild(b);
+        });
+      } else if (!last) {
+        var b = el("button", { type: "button", class: "s2-btn" }, "I understand · Continue →");
+        b.onclick = advance; ctl.appendChild(b);
+        var sk = el("button", { type: "button", class: "s2-btn ghost small" }, "Show everything");
+        sk.onclick = function () { setMode(false); }; ctl.appendChild(sk);
+      } else if (!done()) {
+        var f = el("button", { type: "button", class: "s2-btn" }, "I understand · Finish the notes ✓");
+        f.onclick = finish; ctl.appendChild(f);
+      } else {
+        ctl.innerHTML = "<div class='ndone'><b>Notes finished ✓</b> Ready to test yourself? <a class='s2-btn small' href='quizzes.html?id=" + t.id + "'>Take the quiz</a></div>";
+      }
+      wraps[reached].appendChild(ctl);
+      if (scrollTo) setTimeout(function () { wraps[reached].scrollIntoView({ behavior: "smooth", block: "start" }); }, 30);
+    }
+    function advance() {
+      if (reached >= wraps.length - 1) return finish();
+      reached++; save(t, { step: reached }); render(true);
+      var f = wraps[reached].querySelector("h3,h4,p"); if (f) { f.tabIndex = -1; f.focus({ preventScroll: true }); }
+    }
+    function finish() {
+      var first = !done(); save(t, { step: wraps.length - 1, notesDone: 1 });
+      if (first) { xp(15, "Notes finished"); party(); }
+      render(false);
+    }
+    function setMode(step) { try { localStorage.setItem(MODE_KEY, step ? "step" : "all"); } catch (e) {} render(false); }
+    [].forEach.call(bar.querySelectorAll("[data-m]"), function (b) { b.onclick = function () { setMode(b.getAttribute("data-m") === "step"); }; });
+    render(false);
+  }
 
   function picker(main, kind) {
     var target = { quiz: "quizzes.html", fc: "flashcards.html", exam: "exam.html" }[kind];
