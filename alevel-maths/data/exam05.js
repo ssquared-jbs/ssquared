@@ -3,6 +3,7 @@
 const M = (q, ...o) => ({ t: "mcq", m: 1, q, o, a: 0 });
 const N = (m, q, ans, ms, x) => Object.assign({ t: "num", m, q, ans, ms }, x || {});
 const T = (m, q, ...p) => ({ t: "text", m, q, ms: p.map(x => x[0]), kw: p.map(x => x.slice(1)) });
+const R = String.raw;
 const E = { rel: 0.001 };
 const D2 = { tol: 0.006 };
 const D3 = { tol: 0.0006 };
