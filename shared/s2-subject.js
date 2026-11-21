@@ -534,7 +534,7 @@
       function msHtml(q) {
         if (!q.ms) return "";
         var pts = [].concat(q.ms);
-        return "<div class='ms'><b>Mark scheme</b><ul>" + pts.map(function (p) { return "<li>" + p + "</li>"; }).join("") + "</ul></div>";
+        return "<div class='ms'><b>" + (CFG.math ? "Worked solution" : "Mark scheme") + "</b><ul>" + pts.map(function (p) { return "<li>" + String(p).replace(/\s*\((\d)\)\s*$/, function (_, n) { return " <span class='ms-mk' title='" + n + " mark" + (n > 1 ? "s" : "") + "'>" + n + " mark" + (n > 1 ? "s" : "") + "</span>"; }) + "</li>"; }).join("") + "</ul></div>";
       }
       var kind = q.t || "mcq";
 

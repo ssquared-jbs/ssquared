@@ -1,4 +1,5 @@
 /* A-level Maths² — subject settings. Loaded before the topic files. */
+window.R = String.raw; /* lets data files write LaTeX with single backslashes, e.g. R`\(\frac{a}{b}\)` */
 window.SUBJECT = {
   slug: "alevel-maths",
   keyPrefix: "amaths",
@@ -7,6 +8,7 @@ window.SUBJECT = {
   subjectWord: "A-level Maths",
   course: "Edexcel A level Mathematics (9MA0)",
   intro: "Every topic of Pearson Edexcel A level Mathematics (9MA0): pure, statistics and mechanics:",
+  math: true,
   extrasGroup: 99,
   groups: {
     1: { name: "Proof", sub: "Pure: deduction, exhaustion, counter-example and contradiction" },

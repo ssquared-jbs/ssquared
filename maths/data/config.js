@@ -1,4 +1,5 @@
 /* Maths² — subject settings. Loaded before the topic files. */
+window.R = String.raw; /* lets data files write LaTeX with single backslashes, e.g. R`\(\frac{a}{b}\)` */
 window.SUBJECT = {
   slug: "maths",
   keyPrefix: "maths",
@@ -7,6 +8,7 @@ window.SUBJECT = {
   subjectWord: "GCSE Maths",
   course: "Edexcel GCSE Mathematics (1MA1)",
   intro: "Every area of Pearson Edexcel GCSE Mathematics (1MA1), Foundation and Higher:",
+  math: true,
   extrasGroup: 99,
   groups: {
     1: { name: "Number", sub: "Place value, factors, fractions, percentages, powers, standard form and surds" },
