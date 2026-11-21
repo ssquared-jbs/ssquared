@@ -63,255 +63,289 @@ S2Data.add({
 S2Data.add({
   id: "5b", group: 5, y2: true, title: "Radians, arcs and reciprocal functions",
   summary: "Radian measure, arc length and sector area, small-angle approximations, sec, cosec, cot and inverse trig functions.",
-  notes: `
+  notes: R`
 <h3>Radians</h3>
-<p>π radians = 180°. 1 rad ≈ 57.3°. 30° = π/6, 45° = π/4, 60° = π/3, 90° = π/2.</p>
-<ul>
-<li>Arc length <b>s = rθ</b>; sector area <b>A = ½r<sup>2</sup>θ</b> (θ in radians).</li>
-<li>Segment area = ½r<sup>2</sup>(θ − sin θ).</li>
-</ul>
-<h3>Small-angle approximations (θ in radians)</h3>
-<p>sin θ ≈ θ; tan θ ≈ θ; cos θ ≈ 1 − θ<sup>2</sup>/2.</p>
+<p>\(\pi\) radians \(= 180^\circ\), so 1 radian \(\approx 57.3^\circ\). To convert degrees to radians, multiply by \(\dfrac{\pi}{180}\).</p>
+<table><tr><th>Degrees</th><td>\(30^\circ\)</td><td>\(45^\circ\)</td><td>\(60^\circ\)</td><td>\(90^\circ\)</td><td>\(180^\circ\)</td><td>\(360^\circ\)</td></tr>
+<tr><th>Radians</th><td>\(\dfrac{\pi}{6}\)</td><td>\(\dfrac{\pi}{4}\)</td><td>\(\dfrac{\pi}{3}\)</td><td>\(\dfrac{\pi}{2}\)</td><td>\(\pi\)</td><td>\(2\pi\)</td></tr></table>
+<h3>Arcs and sectors (\(\theta\) in radians)</h3>
+<p>\[\text{Arc length } s = r\theta \qquad \text{Sector area } A = \tfrac12 r^2\theta \qquad \text{Segment area} = \tfrac12 r^2(\theta - \sin\theta)\]</p>
+<div class="box box-prac"><span class="box-title">Worked example</span>A sector has radius 6 cm and angle \(\dfrac{\pi}{3}\).
+<ol><li>Arc length: \(s = 6 \times \dfrac{\pi}{3} = 2\pi \approx 6.28\) cm.</li>
+<li>Area: \(A = \tfrac12 \times 36 \times \dfrac{\pi}{3} = 6\pi \approx 18.85\text{ cm}^2\).</li></ol></div>
+<h3>Small-angle approximations (\(\theta\) in radians)</h3>
+<p>\[\sin\theta \approx \theta \qquad \tan\theta \approx \theta \qquad \cos\theta \approx 1 - \frac{\theta^2}{2}\]</p>
 <h3>Reciprocal functions</h3>
-<p>sec θ = 1/cos θ; cosec θ = 1/sin θ; cot θ = 1/tan θ.</p>
-<p>Identities: <b>1 + tan<sup>2</sup>θ ≡ sec<sup>2</sup>θ</b>; <b>1 + cot<sup>2</sup>θ ≡ cosec<sup>2</sup>θ</b>.</p>
+<p>\[\sec\theta = \frac{1}{\cos\theta} \qquad \operatorname{cosec}\theta = \frac{1}{\sin\theta} \qquad \cot\theta = \frac{1}{\tan\theta}\]</p>
+<p>Dividing \(\sin^2\theta + \cos^2\theta \equiv 1\) by \(\cos^2\theta\) and by \(\sin^2\theta\) gives:</p>
+<p>\[1 + \tan^2\theta \equiv \sec^2\theta \qquad 1 + \cot^2\theta \equiv \operatorname{cosec}^2\theta\]</p>
 <h3>Inverse trig functions</h3>
-<p>arcsin x: domain −1 ≤ x ≤ 1, range −π/2 to π/2. arccos x: range 0 to π. arctan x: domain ℝ, range −π/2 to π/2 (exclusive).</p>
+<table><tr><th>Function</th><th>Domain</th><th>Range</th></tr>
+<tr><td>\(\arcsin x\)</td><td>\(-1 \le x \le 1\)</td><td>\(-\dfrac{\pi}{2} \le y \le \dfrac{\pi}{2}\)</td></tr>
+<tr><td>\(\arccos x\)</td><td>\(-1 \le x \le 1\)</td><td>\(0 \le y \le \pi\)</td></tr>
+<tr><td>\(\arctan x\)</td><td>\(x \in \mathbb{R}\)</td><td>\(-\dfrac{\pi}{2} < y < \dfrac{\pi}{2}\)</td></tr></table>
 `,
   quiz: [
-    { q: "60° in radians?", o: ["π/3", "π/6", "π/4", "2π/3"], a: 0, e: "" },
-    { q: "Arc length formula (θ in radians)?", o: ["rθ", "½r²θ", "2πr", "r²θ"], a: 0, e: "" },
-    { q: "Sector area formula?", o: ["½r²θ", "rθ", "πr²", "r²θ"], a: 0, e: "" },
-    { q: "Small-angle approximation for cos θ?", o: ["1 − θ²/2", "θ", "1", "1 − θ"], a: 0, e: "" },
-    { q: "sec θ = …", o: ["1/cos θ", "1/sin θ", "1/tan θ", "cos θ/sin θ"], a: 0, e: "" },
-    { q: "1 + tan²θ = …", o: ["sec²θ", "cosec²θ", "cot²θ", "1"], a: 0, e: "" },
-    { q: "Range of arccos x?", o: ["0 ≤ y ≤ π", "−π/2 ≤ y ≤ π/2", "−π ≤ y ≤ π", "All reals"], a: 0, e: "" },
-    { q: "Arc length when r = 6 and θ = π/3?", o: ["2π", "6π", "π", "12π"], a: 0, e: "" },
-    { q: "1 + cot²θ = …", o: ["cosec²θ", "sec²θ", "tan²θ", "sin²θ"], a: 0, e: "" }
+    { q: R`\(60^\circ\) in radians is…`, o: [R`\(\dfrac{\pi}{3}\)`, R`\(\dfrac{\pi}{6}\)`, R`\(\dfrac{\pi}{4}\)`, R`\(\dfrac{2\pi}{3}\)`], a: 0, e: R`\(60 \times \dfrac{\pi}{180} = \dfrac{\pi}{3}\).` },
+    { q: R`The arc length formula (\(\theta\) in radians) is…`, o: [R`\(r\theta\)`, R`\(\tfrac12 r^2\theta\)`, R`\(2\pi r\)`, R`\(r^2\theta\)`], a: 0, e: R`A full turn (\(2\pi\)) gives the circumference \(2\pi r\), so angle \(\theta\) gives \(r\theta\).` },
+    { q: "The sector area formula is…", o: [R`\(\tfrac12 r^2\theta\)`, R`\(r\theta\)`, R`\(\pi r^2\)`, R`\(r^2\theta\)`], a: 0, e: R`A full turn gives \(\tfrac12 r^2(2\pi) = \pi r^2\), the whole circle.` },
+    { q: R`The small-angle approximation for \(\cos\theta\) is…`, o: [R`\(1 - \dfrac{\theta^2}{2}\)`, R`\(\theta\)`, R`\(1\)`, R`\(1 - \theta\)`], a: 0, e: R`Near \(\theta = 0\), cosine is close to 1 and curves down like a parabola.` },
+    { q: R`\(\sec\theta = \ ?\)`, o: [R`\(\dfrac{1}{\cos\theta}\)`, R`\(\dfrac{1}{\sin\theta}\)`, R`\(\dfrac{1}{\tan\theta}\)`, R`\(\dfrac{\cos\theta}{\sin\theta}\)`], a: 0, e: R`A handy rule: the third letter tells you: se<b>c</b> ↔ <b>c</b>os, co<b>s</b>ec ↔ <b>s</b>in, co<b>t</b> ↔ <b>t</b>an.` },
+    { q: R`\(1 + \tan^2\theta = \ ?\)`, o: [R`\(\sec^2\theta\)`, R`\(\operatorname{cosec}^2\theta\)`, R`\(\cot^2\theta\)`, R`\(1\)`], a: 0, e: R`Divide \(\sin^2\theta + \cos^2\theta = 1\) by \(\cos^2\theta\).` },
+    { q: R`The range of \(\arccos x\) is…`, o: [R`\(0 \le y \le \pi\)`, R`\(-\dfrac{\pi}{2} \le y \le \dfrac{\pi}{2}\)`, R`\(-\pi \le y \le \pi\)`, "All reals"], a: 0, e: R`On \([0, \pi]\), cosine takes every value from 1 down to \(-1\) exactly once, so the inverse is defined there.` },
+    { q: R`Find the arc length when \(r = 6\) and \(\theta = \dfrac{\pi}{3}\).`, o: [R`\(2\pi\)`, R`\(6\pi\)`, R`\(\pi\)`, R`\(12\pi\)`], a: 0, e: R`\(s = r\theta = 6 \times \dfrac{\pi}{3} = 2\pi\).` },
+    { q: R`\(1 + \cot^2\theta = \ ?\)`, o: [R`\(\operatorname{cosec}^2\theta\)`, R`\(\sec^2\theta\)`, R`\(\tan^2\theta\)`, R`\(\sin^2\theta\)`], a: 0, e: R`Divide \(\sin^2\theta + \cos^2\theta = 1\) by \(\sin^2\theta\).` }
   ],
   flashcards: [
-    ["π rad", "180°"],
-    ["Arc length", "s = rθ"],
-    ["Sector area", "½r²θ"],
-    ["Small angles", "sin θ ≈ θ, tan θ ≈ θ, cos θ ≈ 1 − θ²/2"],
-    ["sec / cosec / cot", "1/cos / 1/sin / 1/tan"],
-    ["1 + tan²θ", "sec²θ"],
-    ["1 + cot²θ", "cosec²θ"],
-    ["Ranges of arcsin, arccos, arctan", "[−π/2, π/2], [0, π], (−π/2, π/2)"]
+    [R`\(\pi\) radians`, R`\(180^\circ\)`],
+    ["Arc length", R`\(s = r\theta\)`],
+    ["Sector area", R`\(A = \tfrac12 r^2\theta\)`],
+    ["Small angles", R`\(\sin\theta \approx \theta\), \(\tan\theta \approx \theta\), \(\cos\theta \approx 1 - \frac{\theta^2}{2}\)`],
+    [R`\(\sec\), \(\operatorname{cosec}\), \(\cot\)`, R`\(\frac{1}{\cos}\), \(\frac{1}{\sin}\), \(\frac{1}{\tan}\)`],
+    [R`\(1 + \tan^2\theta\)`, R`\(\sec^2\theta\)`],
+    [R`\(1 + \cot^2\theta\)`, R`\(\operatorname{cosec}^2\theta\)`],
+    [R`Ranges of \(\arcsin\), \(\arccos\), \(\arctan\)`, R`\(\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\), \([0, \pi]\), \(\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)\)`]
   ]
 });
 
 S2Data.add({
-  id: "5c", group: 5, y2: true, title: "Compound and double angles, R cos(x − α)",
+  id: "5c", group: 5, y2: true, title: R`Compound and double angles, \(R\cos(x - \alpha)\)`,
   summary: "Addition formulae, double angle formulae, harmonic form and proving identities.",
-  notes: `
+  notes: R`
 <h3>Addition formulae</h3>
-<p>sin(A ± B) = sin A cos B ± cos A sin B<br>cos(A ± B) = cos A cos B ∓ sin A sin B<br>tan(A ± B) = (tan A ± tan B)/(1 ∓ tan A tan B)</p>
+<p>\[\begin{aligned}\sin(A \pm B) &= \sin A\cos B \pm \cos A\sin B\\ \cos(A \pm B) &= \cos A\cos B \mp \sin A\sin B\\ \tan(A \pm B) &= \frac{\tan A \pm \tan B}{1 \mp \tan A\tan B}\end{aligned}\]</p>
+<p>Note the sign <b>swaps</b> in the cosine formula.</p>
 <h3>Double angle formulae</h3>
-<p>sin 2A = 2 sin A cos A<br>cos 2A = cos<sup>2</sup>A − sin<sup>2</sup>A = 2cos<sup>2</sup>A − 1 = 1 − 2sin<sup>2</sup>A<br>tan 2A = 2tan A/(1 − tan<sup>2</sup>A)</p>
+<p>Put \(B = A\) in the addition formulae:</p>
+<p>\[\begin{aligned}\sin 2A &= 2\sin A\cos A\\ \cos 2A &= \cos^2 A - \sin^2 A = 2\cos^2 A - 1 = 1 - 2\sin^2 A\\ \tan 2A &= \frac{2\tan A}{1 - \tan^2 A}\end{aligned}\]</p>
 <h3>Harmonic form</h3>
-<p>a sin x + b cos x = R sin(x + α), where R = √(a<sup>2</sup> + b<sup>2</sup>) and tan α = b/a.</p>
-<div class="box box-prac"><span class="box-title">Worked example</span>3 sin x + 4 cos x = R sin(x + α): R cos α = 3, R sin α = 4 → R = 5, α = 53.1°.<br>Maximum value 5, when x + 53.1° = 90°, so x = 36.9°.</div>
+<p>\(a\sin x + b\cos x\) can be written as one wave, \(R\sin(x + \alpha)\), where \(R = \sqrt{a^2 + b^2}\) and \(\tan\alpha = \dfrac{b}{a}\).</p>
+<div class="box box-prac"><span class="box-title">Worked example</span>Write \(3\sin x + 4\cos x\) as \(R\sin(x + \alpha)\).
+<ol><li>Expand: \(R\sin(x + \alpha) = R\sin x\cos\alpha + R\cos x\sin\alpha\).</li>
+<li>Compare coefficients: \(R\cos\alpha = 3\) and \(R\sin\alpha = 4\).</li>
+<li>Square and add: \(R^2 = 9 + 16 = 25\), so \(R = 5\). Divide: \(\tan\alpha = \tfrac43\), so \(\alpha = 53.1^\circ\).</li></ol>
+So \(3\sin x + 4\cos x = 5\sin(x + 53.1^\circ)\). Its maximum is 5, when \(x + 53.1^\circ = 90^\circ\), i.e. \(x = 36.9^\circ\).</div>
 <h3>Proving identities</h3>
-<p>Start with the more complicated side; convert everything to sin and cos; use the identities; finish with "= RHS".</p>
+<p>Start with the more complicated side, rewrite everything in terms of \(\sin\) and \(\cos\), use the identities, and finish with "\(= \text{RHS}\)".</p>
 `,
   quiz: [
-    { q: "sin 2A = …", o: ["2 sin A cos A", "2 sin A", "sin²A − cos²A", "1 − 2sin²A"], a: 0, e: "" },
-    { q: "Which is NOT a form of cos 2A?", o: ["2sin²A − 1", "cos²A − sin²A", "2cos²A − 1", "1 − 2sin²A"], a: 0, e: "" },
-    { q: "cos(A + B) = …", o: ["cos A cos B − sin A sin B", "cos A cos B + sin A sin B", "sin A cos B + cos A sin B", "cos A + cos B"], a: 0, e: "" },
-    { q: "3 sin x + 4 cos x = R sin(x + α). R = …", o: ["5", "7", "1", "25"], a: 0, e: "" },
-    { q: "Maximum of 3 sin x + 4 cos x?", o: ["5", "7", "4", "1"], a: 0, e: "" },
-    { q: "tan 2A = …", o: ["2tan A/(1 − tan²A)", "2tan A", "tan²A − 1", "2tan A/(1 + tan²A)"], a: 0, e: "" },
-    { q: "sin(A − B) = …", o: ["sin A cos B − cos A sin B", "sin A cos B + cos A sin B", "cos A cos B − sin A sin B", "sin A − sin B"], a: 0, e: "" },
-    { q: "Exact value of sin 75° uses…", o: ["sin(45° + 30°)", "sin 2 × 37.5°", "sin(90° − 15°) only", "Small-angle approximation"], a: 0, e: "" },
-    { q: "In R sin(x + α) with a sin x + b cos x, tan α = …", o: ["b/a", "a/b", "R/a", "ab"], a: 0, e: "" }
+    { q: R`\(\sin 2A = \ ?\)`, o: [R`\(2\sin A\cos A\)`, R`\(2\sin A\)`, R`\(\sin^2 A - \cos^2 A\)`, R`\(1 - 2\sin^2 A\)`], a: 0, e: R`Put \(B = A\) in \(\sin(A + B) = \sin A\cos B + \cos A\sin B\).` },
+    { q: R`Which is <b>not</b> a form of \(\cos 2A\)?`, o: [R`\(2\sin^2 A - 1\)`, R`\(\cos^2 A - \sin^2 A\)`, R`\(2\cos^2 A - 1\)`, R`\(1 - 2\sin^2 A\)`], a: 0, e: R`The correct one is \(1 - 2\sin^2 A\); \(2\sin^2 A - 1\) is its negative.` },
+    { q: R`\(\cos(A + B) = \ ?\)`, o: [R`\(\cos A\cos B - \sin A\sin B\)`, R`\(\cos A\cos B + \sin A\sin B\)`, R`\(\sin A\cos B + \cos A\sin B\)`, R`\(\cos A + \cos B\)`], a: 0, e: "In the cosine formula the sign flips: + inside becomes − outside." },
+    { q: R`\(3\sin x + 4\cos x = R\sin(x + \alpha)\). \(R = \ ?\)`, o: ["5", "7", "1", "25"], a: 0, e: R`\(R = \sqrt{3^2 + 4^2} = 5\).` },
+    { q: R`The maximum value of \(3\sin x + 4\cos x\) is…`, o: ["5", "7", "4", "1"], a: 0, e: R`It equals \(5\sin(x + \alpha)\), and \(\sin\) is at most 1.` },
+    { q: R`\(\tan 2A = \ ?\)`, o: [R`\(\dfrac{2\tan A}{1 - \tan^2 A}\)`, R`\(2\tan A\)`, R`\(\tan^2 A - 1\)`, R`\(\dfrac{2\tan A}{1 + \tan^2 A}\)`], a: 0, e: R`Put \(B = A\) in \(\tan(A + B) = \dfrac{\tan A + \tan B}{1 - \tan A\tan B}\).` },
+    { q: R`\(\sin(A - B) = \ ?\)`, o: [R`\(\sin A\cos B - \cos A\sin B\)`, R`\(\sin A\cos B + \cos A\sin B\)`, R`\(\cos A\cos B - \sin A\sin B\)`, R`\(\sin A - \sin B\)`], a: 0, e: "For sine, the sign stays the same as inside the bracket." },
+    { q: R`The exact value of \(\sin 75^\circ\) can be found using…`, o: [R`\(\sin(45^\circ + 30^\circ)\)`, R`\(\sin 2 \times 37.5^\circ\)`, R`\(\sin(90^\circ - 15^\circ)\) only`, "A small-angle approximation"], a: 0, e: R`\(45^\circ\) and \(30^\circ\) have exact trig values, so the addition formula gives an exact answer.` },
+    { q: R`For \(a\sin x + b\cos x = R\sin(x + \alpha)\), \(\tan\alpha = \ ?\)`, o: [R`\(\dfrac{b}{a}\)`, R`\(\dfrac{a}{b}\)`, R`\(\dfrac{R}{a}\)`, R`\(ab\)`], a: 0, e: R`\(R\sin\alpha = b\) and \(R\cos\alpha = a\); dividing gives \(\tan\alpha = \frac{b}{a}\).` }
   ],
   flashcards: [
-    ["sin(A ± B)", "sin A cos B ± cos A sin B"],
-    ["cos(A ± B)", "cos A cos B ∓ sin A sin B"],
-    ["sin 2A", "2 sin A cos A"],
-    ["cos 2A", "cos²A − sin²A = 2cos²A − 1 = 1 − 2sin²A"],
-    ["tan 2A", "2tan A/(1 − tan²A)"],
-    ["Harmonic form", "R = √(a² + b²), tan α from coefficients"],
+    [R`\(\sin(A \pm B)\)`, R`\(\sin A\cos B \pm \cos A\sin B\)`],
+    [R`\(\cos(A \pm B)\)`, R`\(\cos A\cos B \mp \sin A\sin B\)`],
+    [R`\(\sin 2A\)`, R`\(2\sin A\cos A\)`],
+    [R`\(\cos 2A\)`, R`\(\cos^2 A - \sin^2 A = 2\cos^2 A - 1 = 1 - 2\sin^2 A\)`],
+    [R`\(\tan 2A\)`, R`\(\dfrac{2\tan A}{1 - \tan^2 A}\)`],
+    ["Harmonic form", R`\(R = \sqrt{a^2 + b^2}\); find \(\alpha\) by comparing coefficients`],
     ["Proving identities", "Work from the harder side to the other"]
   ]
 });
 
 S2Data.add({
   id: "6a", group: 6, y1: true, title: "Exponentials and logarithms",
-  summary: "eˣ and ln x, laws of logarithms, solving equations and exponential models.",
-  notes: `
+  summary: R`\(e^x\) and \(\ln x\), laws of logarithms, solving equations and exponential models.`,
+  notes: R`
 <h3>Exponentials</h3>
-<p>y = aˣ passes through (0, 1). y = eˣ is special: its gradient equals its value, d/dx(e<sup>kx</sup>) = ke<sup>kx</sup>.</p>
+<p>Every graph \(y = a^x\) (\(a > 0\)) passes through \((0, 1)\). The graph \(y = e^x\) is special: its gradient at every point equals its value, so \(\dfrac{d}{dx}\left(e^{kx}\right) = ke^{kx}\).</p>
 <h3>Logarithms</h3>
-<p>log<sub>a</sub>b = c ⇔ a<sup>c</sup> = b. ln x = log<sub>e</sub>x, the inverse of eˣ.</p>
+<p>\[\log_a b = c \iff a^c = b\]</p>
+<p>A logarithm answers "what power?". \(\ln x\) means \(\log_e x\): it's the inverse of \(e^x\).</p>
 <table>
-<tr><th>Law</th></tr>
-<tr><td>log a + log b = log(ab)</td></tr>
-<tr><td>log a − log b = log(a/b)</td></tr>
-<tr><td>k log a = log(aᵏ)</td></tr>
-<tr><td>log<sub>a</sub>a = 1; log<sub>a</sub>1 = 0</td></tr>
+<tr><th>Law</th><th>Example</th></tr>
+<tr><td>\(\log a + \log b = \log(ab)\)</td><td>\(\log 2 + \log 5 = \log 10\)</td></tr>
+<tr><td>\(\log a - \log b = \log\left(\dfrac{a}{b}\right)\)</td><td>\(\ln 12 - \ln 3 = \ln 4\)</td></tr>
+<tr><td>\(k\log a = \log\left(a^k\right)\)</td><td>\(3\ln x = \ln x^3\)</td></tr>
+<tr><td>\(\log_a a = 1,\ \ \log_a 1 = 0\)</td><td>\(\ln e = 1\)</td></tr>
 </table>
-<div class="box box-prac"><span class="box-title">Worked example</span>Solve 3<sup>x</sup> = 20: x = ln 20 / ln 3 = <b>2.73</b>.<br>Solve e<sup>2x</sup> − 5e<sup>x</sup> + 6 = 0: let u = e<sup>x</sup>, (u − 2)(u − 3) = 0, x = ln 2 or ln 3.</div>
+<div class="box box-prac"><span class="box-title">Worked examples</span>
+<b>Solve \(3^x = 20\).</b> Take logs of both sides: \(x\ln 3 = \ln 20\), so \(x = \dfrac{\ln 20}{\ln 3} = 2.73\).<br><br>
+<b>Solve \(e^{2x} - 5e^x + 6 = 0\).</b> Since \(e^{2x} = (e^x)^2\), let \(u = e^x\): \(u^2 - 5u + 6 = 0\), so \((u - 2)(u - 3) = 0\). Then \(e^x = 2\) or \(3\), giving \(x = \ln 2\) or \(\ln 3\).</div>
 <h3>Linearising data</h3>
 <ul>
-<li>y = ax<sup>n</sup> → log y = log a + n log x: plot log y against log x (gradient n, intercept log a).</li>
-<li>y = ab<sup>x</sup> → log y = log a + x log b: plot log y against x (gradient log b).</li>
+<li>\(y = ax^n \Rightarrow \log y = \log a + n\log x\): plot \(\log y\) against \(\log x\). Gradient \(n\), intercept \(\log a\).</li>
+<li>\(y = ab^x \Rightarrow \log y = \log a + x\log b\): plot \(\log y\) against \(x\). Gradient \(\log b\), intercept \(\log a\).</li>
 </ul>
 <h3>Modelling</h3>
-<p>Growth/decay: N = N₀e<sup>kt</sup> (k &gt; 0 growth, k &lt; 0 decay). Comment on limitations (e.g. unlimited growth is unrealistic).</p>
+<p>Growth and decay: \(N = N_0 e^{kt}\), with \(k > 0\) for growth and \(k < 0\) for decay. \(N_0\) is the starting value. Always comment on limitations (e.g. unlimited growth is unrealistic).</p>
 `,
   quiz: [
-    { q: "log a + log b = …", o: ["log(ab)", "log(a + b)", "log a × log b", "log(a/b)"], a: 0, e: "" },
-    { q: "3 log x = …", o: ["log x³", "log 3x", "(log x)³", "log(x + 3)"], a: 0, e: "" },
-    { q: "ln e = …", o: ["1", "0", "e", "10"], a: 0, e: "" },
-    { q: "Solve eˣ = 5.", o: ["x = ln 5", "x = log 5", "x = 5/e", "x = e⁵"], a: 0, e: "" },
-    { q: "d/dx (e³ˣ) = …", o: ["3e³ˣ", "e³ˣ", "3xe³ˣ⁻¹", "e³"], a: 0, e: "" },
-    { q: "log₂ 32 = …", o: ["5", "16", "6", "2.5"], a: 0, e: "" },
-    { q: "To linearise y = axⁿ, plot…", o: ["log y against log x", "log y against x", "y against log x", "y against xⁿ"], a: 0, e: "" },
-    { q: "In N = N₀e^(−0.2t), N…", o: ["Decays", "Grows", "Is constant", "Oscillates"], a: 0, e: "" },
-    { q: "Solve 3ˣ = 20 (2 d.p.).", o: ["2.73", "6.67", "1.30", "2.99"], a: 0, e: "" }
+    { q: R`\(\log a + \log b = \ ?\)`, o: [R`\(\log(ab)\)`, R`\(\log(a + b)\)`, R`\(\log a \times \log b\)`, R`\(\log\frac{a}{b}\)`], a: 0, e: R`Logs turn multiplication into addition, because \(a^m \times a^n = a^{m+n}\).` },
+    { q: R`\(3\log x = \ ?\)`, o: [R`\(\log x^3\)`, R`\(\log 3x\)`, R`\((\log x)^3\)`, R`\(\log(x + 3)\)`], a: 0, e: R`A multiplier in front becomes a power inside: \(k\log a = \log a^k\).` },
+    { q: R`\(\ln e = \ ?\)`, o: ["1", "0", R`\(e\)`, "10"], a: 0, e: R`\(e^1 = e\), so the power needed is 1.` },
+    { q: R`Solve \(e^x = 5\).`, o: [R`\(x = \ln 5\)`, R`\(x = \log 5\)`, R`\(x = \frac{5}{e}\)`, R`\(x = e^5\)`], a: 0, e: R`Take \(\ln\) of both sides; \(\ln\) undoes \(e^x\).` },
+    { q: R`\(\dfrac{d}{dx}\left(e^{3x}\right) = \ ?\)`, o: [R`\(3e^{3x}\)`, R`\(e^{3x}\)`, R`\(3xe^{3x - 1}\)`, R`\(e^3\)`], a: 0, e: R`\(\dfrac{d}{dx}(e^{kx}) = ke^{kx}\) with \(k = 3\).` },
+    { q: R`\(\log_2 32 = \ ?\)`, o: ["5", "16", "6", "2.5"], a: 0, e: R`\(2^5 = 32\).` },
+    { q: R`To linearise \(y = ax^n\), plot…`, o: [R`\(\log y\) against \(\log x\)`, R`\(\log y\) against \(x\)`, R`\(y\) against \(\log x\)`, R`\(y\) against \(x^n\)`], a: 0, e: R`\(\log y = n\log x + \log a\) has the form \(Y = mX + c\) with \(X = \log x\).` },
+    { q: R`In \(N = N_0 e^{-0.2t}\), \(N\)…`, o: ["Decays", "Grows", "Is constant", "Oscillates"], a: 0, e: R`The exponent's coefficient is negative, so \(N\) decreases as \(t\) increases.` },
+    { q: R`Solve \(3^x = 20\) (2 d.p.).`, o: ["2.73", "6.67", "1.30", "2.99"], a: 0, e: R`\(x = \dfrac{\ln 20}{\ln 3} = 2.73\).` }
   ],
   flashcards: [
-    ["logₐb = c", "aᶜ = b"],
-    ["ln x", "Inverse of eˣ (log base e)"],
-    ["log a + log b", "log ab"],
-    ["log a − log b", "log(a/b)"],
-    ["k log a", "log aᵏ"],
-    ["d/dx e^(kx)", "ke^(kx)"],
-    ["y = axⁿ linearised", "log y vs log x: gradient n"],
-    ["y = abˣ linearised", "log y vs x: gradient log b"]
+    [R`\(\log_a b = c\)`, R`\(a^c = b\)`],
+    [R`\(\ln x\)`, R`Inverse of \(e^x\) (log base \(e\))`],
+    [R`\(\log a + \log b\)`, R`\(\log ab\)`],
+    [R`\(\log a - \log b\)`, R`\(\log\frac{a}{b}\)`],
+    [R`\(k\log a\)`, R`\(\log a^k\)`],
+    [R`\(\frac{d}{dx}\,e^{kx}\)`, R`\(ke^{kx}\)`],
+    [R`\(y = ax^n\) linearised`, R`\(\log y\) vs \(\log x\): gradient \(n\)`],
+    [R`\(y = ab^x\) linearised`, R`\(\log y\) vs \(x\): gradient \(\log b\)`]
   ]
 });
 
 S2Data.add({
   id: "7a", group: 7, y1: true, title: "Differentiation basics",
-  summary: "First principles, differentiating xⁿ, tangents and normals, stationary points and optimisation.",
-  notes: `
+  summary: R`First principles, differentiating \(x^n\), tangents and normals, stationary points and optimisation.`,
+  notes: R`
 <h3>First principles</h3>
-<p>f′(x) = lim<sub>h→0</sub> [f(x + h) − f(x)]/h. For f(x) = x<sup>2</sup>: [(x + h)<sup>2</sup> − x<sup>2</sup>]/h = 2x + h → <b>2x</b>.</p>
+<p>The derivative is the limit of the gradient of a chord as it shrinks to a point:</p>
+<p>\[f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}\]</p>
+<div class="box box-prac"><span class="box-title">Worked example</span>Differentiate \(f(x) = x^2\) from first principles.
+<ol><li>\(\dfrac{(x + h)^2 - x^2}{h} = \dfrac{x^2 + 2xh + h^2 - x^2}{h} = \dfrac{2xh + h^2}{h}\).</li>
+<li>Cancel \(h\): \(2x + h\).</li>
+<li>As \(h \to 0\), this tends to \(2x\). So \(f'(x) = 2x\).</li></ol></div>
 <h3>Differentiating powers</h3>
-<p>d/dx(axⁿ) = naxⁿ⁻¹. Rewrite roots and fractions first: y = 4/√x = 4x<sup>−1/2</sup> → dy/dx = −2x<sup>−3/2</sup>.</p>
+<p>\[\frac{d}{dx}\left(ax^n\right) = nax^{n-1}\]</p>
+<p>Multiply by the power, then reduce the power by 1. Rewrite roots and fractions as powers first: \(y = \dfrac{4}{\sqrt{x}} = 4x^{-\frac12}\), so \(\dfrac{dy}{dx} = -2x^{-\frac32}\).</p>
 <h3>Tangents and normals</h3>
-<p>At x = a: gradient of tangent m = f′(a); normal gradient = −1/m. Use y − y₁ = m(x − x₁).</p>
+<p>At \(x = a\): the tangent has gradient \(m = f'(a)\); the normal is perpendicular, with gradient \(-\dfrac1m\). Then use \(y - y_1 = m(x - x_1)\).</p>
 <h3>Stationary points</h3>
 <ul>
-<li>Solve dy/dx = 0.</li>
-<li>d<sup>2</sup>y/dx<sup>2</sup> &gt; 0: minimum; &lt; 0: maximum; = 0: check either side.</li>
-<li>Increasing where f′(x) &gt; 0; decreasing where f′(x) &lt; 0.</li>
+<li>Find them by solving \(\dfrac{dy}{dx} = 0\).</li>
+<li>Classify with the second derivative: \(\dfrac{d^2y}{dx^2} > 0\) means a minimum; \(< 0\) a maximum; \(= 0\) means check the gradient either side.</li>
+<li>The function is increasing where \(f'(x) > 0\) and decreasing where \(f'(x) < 0\).</li>
 </ul>
-<div class="box box-prac"><span class="box-title">Worked example (optimisation)</span>A box with square base x and open top has volume 32. Surface area A = x<sup>2</sup> + 128/x.<br>dA/dx = 2x − 128/x<sup>2</sup> = 0 → x<sup>3</sup> = 64 → x = 4. d<sup>2</sup>A/dx<sup>2</sup> = 2 + 256/x<sup>3</sup> &gt; 0, so minimum A = 48.</div>
-<div class="box box-c"><span class="box-title">Year 13</span>Points of inflection: f″(x) = 0 with a change of sign. Concave where f″ &lt; 0, convex where f″ &gt; 0.</div>
+<div class="box box-prac"><span class="box-title">Worked example (optimisation)</span>An open box with a square base of side \(x\) has volume 32. Its surface area is \(A = x^2 + \dfrac{128}{x}\). Find the minimum area.
+<ol><li>\(\dfrac{dA}{dx} = 2x - \dfrac{128}{x^2}\). Set to zero: \(2x = \dfrac{128}{x^2}\), so \(x^3 = 64\) and \(x = 4\).</li>
+<li>Check: \(\dfrac{d^2A}{dx^2} = 2 + \dfrac{256}{x^3} > 0\), so it's a minimum.</li>
+<li>\(A = 16 + \dfrac{128}{4} = 48\).</li></ol></div>
+<div class="box box-c"><span class="box-title">Year 13</span>A point of inflection has \(f''(x) = 0\) <i>and</i> \(f''\) changes sign there. The curve is concave where \(f''(x) < 0\) and convex where \(f''(x) > 0\).</div>
 `,
   quiz: [
-    { q: "d/dx (5x⁴) = …", o: ["20x³", "5x³", "20x⁴", "4x³"], a: 0, e: "" },
-    { q: "d/dx (4x^(−1/2)) = …", o: ["−2x^(−3/2)", "2x^(−3/2)", "−2x^(1/2)", "−8x^(−3/2)"], a: 0, e: "" },
-    { q: "At a stationary point…", o: ["dy/dx = 0", "d²y/dx² = 0", "y = 0", "x = 0"], a: 0, e: "" },
-    { q: "d²y/dx² > 0 at a stationary point means…", o: ["Minimum", "Maximum", "Inflection", "Undefined"], a: 0, e: "" },
-    { q: "Tangent gradient is 4. Normal gradient?", o: ["−1/4", "4", "−4", "1/4"], a: 0, e: "" },
-    { q: "f(x) = x² from first principles gives…", o: ["2x", "x²", "2", "2x + h"], a: 0, e: "" },
-    { q: "f(x) is increasing where…", o: ["f′(x) > 0", "f′(x) < 0", "f(x) > 0", "f″(x) > 0"], a: 0, e: "" },
-    { q: "Y13: f″(x) > 0 means the curve is…", o: ["Convex", "Concave", "Decreasing", "At a maximum"], a: 0, e: "" },
-    { q: "Gradient of y = x³ − 3x at x = 2?", o: ["9", "2", "12", "6"], a: 0, e: "" }
+    { q: R`\(\dfrac{d}{dx}\left(5x^4\right) = \ ?\)`, o: [R`\(20x^3\)`, R`\(5x^3\)`, R`\(20x^4\)`, R`\(4x^3\)`], a: 0, e: R`Multiply by the power (4) and reduce it by one: \(4 \times 5x^3\).` },
+    { q: R`\(\dfrac{d}{dx}\left(4x^{-\frac12}\right) = \ ?\)`, o: [R`\(-2x^{-\frac32}\)`, R`\(2x^{-\frac32}\)`, R`\(-2x^{\frac12}\)`, R`\(-8x^{-\frac32}\)`], a: 0, e: R`\(-\tfrac12 \times 4 = -2\), and the power becomes \(-\tfrac12 - 1 = -\tfrac32\).` },
+    { q: "At a stationary point…", o: [R`\(\dfrac{dy}{dx} = 0\)`, R`\(\dfrac{d^2y}{dx^2} = 0\)`, R`\(y = 0\)`, R`\(x = 0\)`], a: 0, e: "The gradient is zero: the curve is momentarily flat." },
+    { q: R`\(\dfrac{d^2y}{dx^2} > 0\) at a stationary point means…`, o: ["Minimum", "Maximum", "Inflection", "Undefined"], a: 0, e: R`The gradient is increasing through zero (negative, then positive), which is a \(\cup\) shape.` },
+    { q: "The tangent gradient is 4. What is the normal gradient?", o: [R`\(-\tfrac14\)`, "4", "−4", R`\(\tfrac14\)`], a: 0, e: R`Perpendicular gradients multiply to \(-1\): \(4 \times \left(-\tfrac14\right) = -1\).` },
+    { q: R`Differentiating \(f(x) = x^2\) from first principles gives…`, o: [R`\(2x\)`, R`\(x^2\)`, "2", R`\(2x + h\)`], a: 0, e: R`The expression is \(2x + h\) before taking the limit; as \(h \to 0\) it becomes \(2x\).` },
+    { q: R`\(f(x)\) is increasing where…`, o: [R`\(f'(x) > 0\)`, R`\(f'(x) < 0\)`, R`\(f(x) > 0\)`, R`\(f''(x) > 0\)`], a: 0, e: "A positive gradient means the curve is going up." },
+    { q: R`Year 13: \(f''(x) > 0\) means the curve is…`, o: ["Convex", "Concave", "Decreasing", "At a maximum"], a: 0, e: R`The gradient is increasing, so the curve bends upwards like \(\cup\).` },
+    { q: R`Find the gradient of \(y = x^3 - 3x\) at \(x = 2\).`, o: ["9", "2", "12", "6"], a: 0, e: R`\(\dfrac{dy}{dx} = 3x^2 - 3 = 12 - 3 = 9\).` }
   ],
   flashcards: [
-    ["First principles", "lim h→0 [f(x + h) − f(x)]/h"],
-    ["d/dx (axⁿ)", "naxⁿ⁻¹"],
-    ["Tangent / normal gradient", "f′(a) / −1/f′(a)"],
-    ["Stationary points", "dy/dx = 0"],
-    ["Nature", "f″ > 0 min; f″ < 0 max"],
-    ["Increasing / decreasing", "f′ > 0 / f′ < 0"],
-    ["Optimisation", "Form an expression in one variable, differentiate, set to 0"],
-    ["Inflection (Y13)", "f″ = 0 and changes sign"]
+    ["First principles", R`\(f'(x) = \displaystyle\lim_{h \to 0}\frac{f(x + h) - f(x)}{h}\)`],
+    [R`\(\frac{d}{dx}(ax^n)\)`, R`\(nax^{n-1}\)`],
+    ["Tangent / normal gradient", R`\(f'(a)\) / \(-\dfrac{1}{f'(a)}\)`],
+    ["Stationary points", R`\(\dfrac{dy}{dx} = 0\)`],
+    ["Nature of a stationary point", R`\(f'' > 0\) minimum; \(f'' < 0\) maximum`],
+    ["Increasing / decreasing", R`\(f' > 0\) / \(f' < 0\)`],
+    ["Optimisation", "Write the quantity in one variable, differentiate, set to 0, check"],
+    ["Inflection (Y13)", R`\(f'' = 0\) and changes sign`]
   ]
 });
 
 S2Data.add({
   id: "7b", group: 7, y2: true, title: "Further differentiation",
   summary: "Trig, exponential and log derivatives, chain, product and quotient rules, implicit and parametric differentiation, connected rates.",
-  notes: `
+  notes: R`
 <h3>Standard derivatives</h3>
 <table>
-<tr><th>f(x)</th><th>f′(x)</th></tr>
-<tr><td>sin kx</td><td>k cos kx</td></tr>
-<tr><td>cos kx</td><td>−k sin kx</td></tr>
-<tr><td>tan kx</td><td>k sec<sup>2</sup> kx</td></tr>
-<tr><td>e<sup>kx</sup></td><td>ke<sup>kx</sup></td></tr>
-<tr><td>ln x</td><td>1/x</td></tr>
-<tr><td>a<sup>x</sup></td><td>a<sup>x</sup> ln a</td></tr>
+<tr><th>\(f(x)\)</th><th>\(f'(x)\)</th></tr>
+<tr><td>\(\sin kx\)</td><td>\(k\cos kx\)</td></tr>
+<tr><td>\(\cos kx\)</td><td>\(-k\sin kx\)</td></tr>
+<tr><td>\(\tan kx\)</td><td>\(k\sec^2 kx\)</td></tr>
+<tr><td>\(e^{kx}\)</td><td>\(ke^{kx}\)</td></tr>
+<tr><td>\(\ln x\)</td><td>\(\dfrac1x\)</td></tr>
+<tr><td>\(a^x\)</td><td>\(a^x\ln a\)</td></tr>
 </table>
 <h3>Rules</h3>
+<table><tr><th>Rule</th><th>Formula</th><th>Use for</th></tr>
+<tr><td>Chain</td><td>\(\dfrac{dy}{dx} = \dfrac{dy}{du} \times \dfrac{du}{dx}\)</td><td>A function of a function, e.g. \((3x + 1)^5\)</td></tr>
+<tr><td>Product</td><td>\((uv)' = u'v + uv'\)</td><td>Two functions multiplied</td></tr>
+<tr><td>Quotient</td><td>\(\left(\dfrac{u}{v}\right)' = \dfrac{u'v - uv'}{v^2}\)</td><td>One function divided by another</td></tr></table>
+<p>Chain rule example: \(\dfrac{d}{dx}(3x + 1)^5 = 5(3x + 1)^4 \times 3 = 15(3x + 1)^4\).</p>
+<div class="box box-prac"><span class="box-title">Worked example (product rule)</span>Differentiate \(y = x^2e^{3x}\).
+<ol><li>Let \(u = x^2\), so \(u' = 2x\); and \(v = e^{3x}\), so \(v' = 3e^{3x}\).</li>
+<li>\(\dfrac{dy}{dx} = u'v + uv' = 2xe^{3x} + 3x^2e^{3x}\).</li>
+<li>Factorise: \(xe^{3x}(2 + 3x)\).</li></ol></div>
+<h3>Implicit and parametric differentiation</h3>
 <ul>
-<li><b>Chain</b>: dy/dx = dy/du × du/dx. d/dx(3x + 1)<sup>5</sup> = 15(3x + 1)<sup>4</sup>.</li>
-<li><b>Product</b>: (uv)′ = u′v + uv′.</li>
-<li><b>Quotient</b>: (u/v)′ = (u′v − uv′)/v<sup>2</sup>.</li>
-</ul>
-<div class="box box-prac"><span class="box-title">Worked example</span>y = x<sup>2</sup>e<sup>3x</sup>: dy/dx = 2xe<sup>3x</sup> + 3x<sup>2</sup>e<sup>3x</sup> = xe<sup>3x</sup>(2 + 3x).</div>
-<h3>Implicit and parametric</h3>
-<ul>
-<li>Implicit: differentiate each term with respect to x; d/dx(y<sup>2</sup>) = 2y dy/dx; d/dx(xy) = y + x dy/dx.</li>
-<li>Parametric: dy/dx = (dy/dt)/(dx/dt).</li>
+<li><b>Implicit:</b> differentiate every term with respect to \(x\). Any \(y\) term picks up a factor \(\dfrac{dy}{dx}\): \(\dfrac{d}{dx}(y^2) = 2y\dfrac{dy}{dx}\), and \(\dfrac{d}{dx}(xy) = y + x\dfrac{dy}{dx}\) (product rule).</li>
+<li><b>Parametric:</b> \(\dfrac{dy}{dx} = \dfrac{dy/dt}{dx/dt}\).</li>
 </ul>
 <h3>Connected rates of change</h3>
-<p>Use the chain rule: dV/dt = dV/dr × dr/dt. A sphere's radius grows at 0.1 cm/s; when r = 5, dV/dt = 4πr<sup>2</sup> × 0.1 = 10π cm<sup>3</sup>/s.</p>
+<p>Link rates with the chain rule, e.g. \(\dfrac{dV}{dt} = \dfrac{dV}{dr} \times \dfrac{dr}{dt}\).</p>
+<div class="box box-prac"><span class="box-title">Worked example</span>A sphere's radius grows at 0.1 cm/s. How fast is its volume growing when \(r = 5\)?<br>\(V = \tfrac43\pi r^3\), so \(\dfrac{dV}{dr} = 4\pi r^2 = 100\pi\). Then \(\dfrac{dV}{dt} = 100\pi \times 0.1 = 10\pi \approx 31.4\text{ cm}^3/\text{s}\).</div>
 `,
   quiz: [
-    { q: "d/dx (sin 3x) = …", o: ["3cos 3x", "cos 3x", "−3cos 3x", "3sin 3x"], a: 0, e: "" },
-    { q: "d/dx (ln x) = …", o: ["1/x", "ln x", "x", "eˣ"], a: 0, e: "" },
-    { q: "d/dx (3x + 1)⁵ = …", o: ["15(3x + 1)⁴", "5(3x + 1)⁴", "(3x + 1)⁴", "15(3x + 1)⁵"], a: 0, e: "" },
-    { q: "Product rule: (uv)′ = …", o: ["u′v + uv′", "u′v′", "u′v − uv′", "(u′v − uv′)/v²"], a: 0, e: "" },
-    { q: "Quotient rule: (u/v)′ = …", o: ["(u′v − uv′)/v²", "(uv′ − u′v)/v²", "u′/v′", "(u′v + uv′)/v²"], a: 0, e: "" },
-    { q: "d/dx (y²) with respect to x = …", o: ["2y dy/dx", "2y", "2x", "y²"], a: 0, e: "" },
-    { q: "d/dx (2ˣ) = …", o: ["2ˣ ln 2", "x2ˣ⁻¹", "2ˣ", "2ˣ/ln 2"], a: 0, e: "" },
-    { q: "d/dx (tan x) = …", o: ["sec²x", "cot x", "−sec²x", "cosec²x"], a: 0, e: "" },
-    { q: "dV/dt in connected rates = …", o: ["dV/dr × dr/dt", "dV/dr ÷ dr/dt", "dr/dt ÷ dV/dr", "dV/dr + dr/dt"], a: 0, e: "" }
+    { q: R`\(\dfrac{d}{dx}(\sin 3x) = \ ?\)`, o: [R`\(3\cos 3x\)`, R`\(\cos 3x\)`, R`\(-3\cos 3x\)`, R`\(3\sin 3x\)`], a: 0, e: R`\(\sin\) differentiates to \(\cos\), and the chain rule brings out the 3.` },
+    { q: R`\(\dfrac{d}{dx}(\ln x) = \ ?\)`, o: [R`\(\dfrac1x\)`, R`\(\ln x\)`, R`\(x\)`, R`\(e^x\)`], a: 0, e: "This is a standard result worth memorising." },
+    { q: R`\(\dfrac{d}{dx}(3x + 1)^5 = \ ?\)`, o: [R`\(15(3x + 1)^4\)`, R`\(5(3x + 1)^4\)`, R`\((3x + 1)^4\)`, R`\(15(3x + 1)^5\)`], a: 0, e: R`Chain rule: \(5(3x + 1)^4\) times the derivative of the inside, 3.` },
+    { q: R`Product rule: \((uv)' = \ ?\)`, o: [R`\(u'v + uv'\)`, R`\(u'v'\)`, R`\(u'v - uv'\)`, R`\(\dfrac{u'v - uv'}{v^2}\)`], a: 0, e: "Differentiate one at a time, keeping the other fixed, and add." },
+    { q: R`Quotient rule: \(\left(\dfrac{u}{v}\right)' = \ ?\)`, o: [R`\(\dfrac{u'v - uv'}{v^2}\)`, R`\(\dfrac{uv' - u'v}{v^2}\)`, R`\(\dfrac{u'}{v'}\)`, R`\(\dfrac{u'v + uv'}{v^2}\)`], a: 0, e: R`The order matters in the numerator: \(u'v\) comes first.` },
+    { q: R`\(\dfrac{d}{dx}(y^2) = \ ?\)`, o: [R`\(2y\dfrac{dy}{dx}\)`, R`\(2y\)`, R`\(2x\)`, R`\(y^2\)`], a: 0, e: R`Differentiate with respect to \(y\) (giving \(2y\)), then multiply by \(\dfrac{dy}{dx}\) (chain rule).` },
+    { q: R`\(\dfrac{d}{dx}\left(2^x\right) = \ ?\)`, o: [R`\(2^x\ln 2\)`, R`\(x2^{x-1}\)`, R`\(2^x\)`, R`\(\dfrac{2^x}{\ln 2}\)`], a: 0, e: R`\(2^x = e^{x\ln 2}\), which differentiates to \(\ln 2 \cdot e^{x\ln2}\).` },
+    { q: R`\(\dfrac{d}{dx}(\tan x) = \ ?\)`, o: [R`\(\sec^2 x\)`, R`\(\cot x\)`, R`\(-\sec^2 x\)`, R`\(\operatorname{cosec}^2 x\)`], a: 0, e: R`Using the quotient rule on \(\dfrac{\sin x}{\cos x}\) gives \(\dfrac{1}{\cos^2 x}\).` },
+    { q: R`In connected rates, \(\dfrac{dV}{dt} = \ ?\)`, o: [R`\(\dfrac{dV}{dr} \times \dfrac{dr}{dt}\)`, R`\(\dfrac{dV}{dr} \div \dfrac{dr}{dt}\)`, R`\(\dfrac{dr}{dt} \div \dfrac{dV}{dr}\)`, R`\(\dfrac{dV}{dr} + \dfrac{dr}{dt}\)`], a: 0, e: R`Chain rule: the \(dr\)'s 'cancel'.` }
   ],
   flashcards: [
-    ["sin kx / cos kx", "k cos kx / −k sin kx"],
-    ["tan kx", "k sec² kx"],
-    ["e^(kx) / ln x", "ke^(kx) / 1/x"],
-    ["aˣ", "aˣ ln a"],
-    ["Chain rule", "dy/dx = dy/du × du/dx"],
-    ["Product rule", "u′v + uv′"],
-    ["Quotient rule", "(u′v − uv′)/v²"],
-    ["Implicit y terms", "Multiply by dy/dx"],
-    ["Connected rates", "Chain rule with t"]
+    [R`\(\sin kx\) / \(\cos kx\)`, R`\(k\cos kx\) / \(-k\sin kx\)`],
+    [R`\(\tan kx\)`, R`\(k\sec^2 kx\)`],
+    [R`\(e^{kx}\) / \(\ln x\)`, R`\(ke^{kx}\) / \(\frac1x\)`],
+    [R`\(a^x\)`, R`\(a^x\ln a\)`],
+    ["Chain rule", R`\(\dfrac{dy}{dx} = \dfrac{dy}{du}\times\dfrac{du}{dx}\)`],
+    ["Product rule", R`\(u'v + uv'\)`],
+    ["Quotient rule", R`\(\dfrac{u'v - uv'}{v^2}\)`],
+    [R`Implicit \(y\) terms`, R`Multiply by \(\dfrac{dy}{dx}\)`],
+    ["Connected rates", R`Chain rule with \(t\)`]
   ]
 });
 
 S2Data.add({
   id: "8a", group: 8, y1: true, title: "Integration basics",
-  summary: "Integrating xⁿ, finding constants, definite integrals and areas under curves.",
-  notes: `
+  summary: R`Integrating \(x^n\), finding constants, definite integrals and areas under curves.`,
+  notes: R`
 <h3>Indefinite integration</h3>
-<p>∫xⁿ dx = xⁿ⁺¹/(n + 1) + c (n ≠ −1). Rewrite roots and fractions as powers first. Always add + c.</p>
-<p>Given dy/dx and a point, find c: dy/dx = 6x<sup>2</sup>, curve through (1, 5): y = 2x<sup>3</sup> + c, 5 = 2 + c, c = 3.</p>
+<p>Integration reverses differentiation:</p>
+<p>\[\int x^n\,dx = \frac{x^{n+1}}{n + 1} + c \qquad (n \ne -1)\]</p>
+<p>Increase the power by 1, then divide by the new power. Rewrite roots and fractions as powers first, and always add \(+\,c\).</p>
+<div class="box box-prac"><span class="box-title">Worked example</span>\(\dfrac{dy}{dx} = 6x^2\) and the curve passes through \((1, 5)\). Find \(y\).
+<ol><li>Integrate: \(y = \dfrac{6x^3}{3} + c = 2x^3 + c\).</li>
+<li>Substitute the point: \(5 = 2(1)^3 + c\), so \(c = 3\).</li></ol>
+So \(y = 2x^3 + 3\).</div>
 <h3>Definite integrals</h3>
-<p>∫<sub>a</sub><sup>b</sup> f(x) dx = F(b) − F(a).</p>
-<div class="box box-prac"><span class="box-title">Worked example</span>∫<sub>1</sub><sup>3</sup> (3x<sup>2</sup> − 2x) dx = [x<sup>3</sup> − x<sup>2</sup>]<sub>1</sub><sup>3</sup> = (27 − 9) − (1 − 1) = <b>18</b>.</div>
+<p>\[\int_a^b f(x)\,dx = \Big[F(x)\Big]_a^b = F(b) - F(a)\]</p>
+<div class="box box-prac"><span class="box-title">Worked example</span>\(\displaystyle\int_1^3 (3x^2 - 2x)\,dx = \Big[x^3 - x^2\Big]_1^3 = (27 - 9) - (1 - 1) = 18\).</div>
 <h3>Areas</h3>
 <ul>
-<li>Area between a curve and the x-axis = ∫ y dx; regions below the axis give negative values, so split at the roots and add magnitudes.</li>
-<li>Area between two curves = ∫ (upper − lower) dx between their intersections.</li>
+<li>The area between a curve and the \(x\)-axis is \(\displaystyle\int y\,dx\). Parts below the axis come out negative, so split at the roots and add the sizes.</li>
+<li>The area between two curves is \(\displaystyle\int (\text{upper} - \text{lower})\,dx\) between their intersections.</li>
 </ul>
 `,
   quiz: [
-    { q: "∫ x³ dx = …", o: ["x⁴/4 + c", "3x² + c", "x⁴ + c", "4x⁴ + c"], a: 0, e: "" },
-    { q: "∫ 6x² dx = …", o: ["2x³ + c", "12x + c", "6x³ + c", "3x³ + c"], a: 0, e: "" },
-    { q: "∫ x^(−2) dx = …", o: ["−x^(−1) + c", "x^(−1) + c", "−2x^(−3) + c", "x^(−3)/3 + c"], a: 0, e: "" },
-    { q: "∫₁³ (3x² − 2x) dx = …", o: ["18", "20", "26", "8"], a: 0, e: "" },
-    { q: "Why add + c?", o: ["Differentiating any constant gives 0", "It makes the answer bigger", "It's optional", "For definite integrals"], a: 0, e: "" },
-    { q: "Area between two curves = ∫ …", o: ["(upper − lower) dx", "(lower − upper) dx", "upper × lower dx", "upper dx only"], a: 0, e: "" },
-    { q: "A definite integral of a region below the x-axis is…", o: ["Negative", "Positive", "Zero", "Undefined"], a: 0, e: "" },
-    { q: "∫ √x dx = …", o: ["⅔x^(3/2) + c", "½x^(−1/2) + c", "x^(3/2) + c", "1.5x^(1/2) + c"], a: 0, e: "" },
-    { q: "∫₀² x dx = …", o: ["2", "4", "1", "0"], a: 0, e: "" }
+    { q: R`\(\displaystyle\int x^3\,dx = \ ?\)`, o: [R`\(\dfrac{x^4}{4} + c\)`, R`\(3x^2 + c\)`, R`\(x^4 + c\)`, R`\(4x^4 + c\)`], a: 0, e: "Add one to the power (to 4), then divide by the new power." },
+    { q: R`\(\displaystyle\int 6x^2\,dx = \ ?\)`, o: [R`\(2x^3 + c\)`, R`\(12x + c\)`, R`\(6x^3 + c\)`, R`\(3x^3 + c\)`], a: 0, e: R`\(\dfrac{6x^3}{3} = 2x^3\). Check by differentiating: \(6x^2\) ✓.` },
+    { q: R`\(\displaystyle\int x^{-2}\,dx = \ ?\)`, o: [R`\(-x^{-1} + c\)`, R`\(x^{-1} + c\)`, R`\(-2x^{-3} + c\)`, R`\(\dfrac{x^{-3}}{3} + c\)`], a: 0, e: R`The power goes up to \(-1\); divide by \(-1\).` },
+    { q: R`\(\displaystyle\int_1^3 (3x^2 - 2x)\,dx = \ ?\)`, o: ["18", "20", "26", "8"], a: 0, e: R`\(\Big[x^3 - x^2\Big]_1^3 = 18 - 0\).` },
+    { q: R`Why add \(+\,c\)?`, o: ["Differentiating any constant gives 0", "It makes the answer bigger", "It's optional", "Only for definite integrals"], a: 0, e: R`\(x^2\), \(x^2 + 5\) and \(x^2 - 7\) all have derivative \(2x\), so we can't know the constant.` },
+    { q: R`The area between two curves is \(\int \ ?\)`, o: [R`\((\text{upper} - \text{lower})\,dx\)`, R`\((\text{lower} - \text{upper})\,dx\)`, R`\(\text{upper} \times \text{lower}\,dx\)`, R`\(\text{upper}\,dx\) only`], a: 0, e: "Subtracting the lower curve removes the area underneath it." },
+    { q: R`A definite integral over a region below the \(x\)-axis is…`, o: ["Negative", "Positive", "Zero", "Undefined"], a: 0, e: R`The \(y\)-values are negative there, so the integral is negative. Take its size for an area.` },
+    { q: R`\(\displaystyle\int \sqrt{x}\,dx = \ ?\)`, o: [R`\(\tfrac23 x^{\frac32} + c\)`, R`\(\tfrac12 x^{-\frac12} + c\)`, R`\(x^{\frac32} + c\)`, R`\(1.5x^{\frac12} + c\)`], a: 0, e: R`\(\sqrt x = x^{\frac12}\). Add one: \(x^{\frac32}\); divide by \(\tfrac32\) (multiply by \(\tfrac23\)).` },
+    { q: R`\(\displaystyle\int_0^2 x\,dx = \ ?\)`, o: ["2", "4", "1", "0"], a: 0, e: R`\(\Big[\tfrac12 x^2\Big]_0^2 = 2\). (It's a triangle with base 2 and height 2.)` }
   ],
   flashcards: [
-    ["∫ xⁿ dx", "xⁿ⁺¹/(n + 1) + c, n ≠ −1"],
-    ["Finding c", "Substitute a known point"],
-    ["Definite integral", "F(b) − F(a)"],
-    ["Area under a curve", "∫ y dx; split at roots"],
-    ["Area between curves", "∫ (upper − lower) dx"],
+    [R`\(\int x^n\,dx\)`, R`\(\dfrac{x^{n+1}}{n + 1} + c\), \(n \ne -1\)`],
+    [R`Finding \(c\)`, "Substitute a known point"],
+    ["Definite integral", R`\(F(b) - F(a)\)`],
+    ["Area under a curve", R`\(\int y\,dx\); split at the roots`],
+    ["Area between curves", R`\(\int(\text{upper} - \text{lower})\,dx\)`],
     ["Prepare first", "Rewrite roots and fractions as powers"]
   ]
 });
@@ -319,129 +353,144 @@ S2Data.add({
 S2Data.add({
   id: "8b", group: 8, y2: true, title: "Integration techniques and differential equations",
   summary: "Standard integrals, reverse chain rule, substitution, by parts, partial fractions, trig identities and separable differential equations.",
-  notes: `
+  notes: R`
 <h3>Standard integrals</h3>
-<p>∫e<sup>kx</sup> dx = (1/k)e<sup>kx</sup>; ∫1/x dx = ln|x|; ∫cos kx dx = (1/k)sin kx; ∫sin kx dx = −(1/k)cos kx; ∫sec<sup>2</sup>kx dx = (1/k)tan kx.</p>
-<h3>Recognising forms</h3>
+<table><tr><th>\(f(x)\)</th><th>\(\int f(x)\,dx\)</th></tr>
+<tr><td>\(e^{kx}\)</td><td>\(\dfrac1k e^{kx} + c\)</td></tr>
+<tr><td>\(\dfrac1x\)</td><td>\(\ln|x| + c\)</td></tr>
+<tr><td>\(\cos kx\)</td><td>\(\dfrac1k\sin kx + c\)</td></tr>
+<tr><td>\(\sin kx\)</td><td>\(-\dfrac1k\cos kx + c\)</td></tr>
+<tr><td>\(\sec^2 kx\)</td><td>\(\dfrac1k\tan kx + c\)</td></tr></table>
+<h3>Recognising forms (reverse chain rule)</h3>
 <ul>
-<li>∫ f′(x)/f(x) dx = ln|f(x)| + c. ∫ 2x/(x<sup>2</sup> + 1) dx = ln(x<sup>2</sup> + 1) + c.</li>
-<li>∫ f′(x)[f(x)]<sup>n</sup> dx = [f(x)]<sup>n+1</sup>/(n + 1) + c.</li>
+<li>\(\displaystyle\int \frac{f'(x)}{f(x)}\,dx = \ln|f(x)| + c\). E.g. \(\displaystyle\int \frac{2x}{x^2 + 1}\,dx = \ln(x^2 + 1) + c\), because the top is the derivative of the bottom.</li>
+<li>\(\displaystyle\int f'(x)\big[f(x)\big]^n\,dx = \frac{\big[f(x)\big]^{n+1}}{n + 1} + c\).</li>
 </ul>
 <h3>Techniques</h3>
 <ul>
-<li><b>Substitution</b>: replace u = g(x), du = g′(x) dx, change limits.</li>
-<li><b>By parts</b>: ∫u dv/dx dx = uv − ∫v du/dx dx. Choose u to become simpler (e.g. x, ln x).</li>
-<li><b>Partial fractions</b>: ∫ 1/((x + 1)(x + 2)) dx = ln|x + 1| − ln|x + 2| + c.</li>
-<li><b>Trig identities</b>: ∫ sin<sup>2</sup>x dx = ∫ ½(1 − cos 2x) dx = x/2 − (sin 2x)/4 + c.</li>
+<li><b>Substitution:</b> let \(u = g(x)\), replace \(dx\) using \(\dfrac{du}{dx} = g'(x)\), and change the limits to \(u\)-values.</li>
+<li><b>By parts:</b> \(\displaystyle\int u\frac{dv}{dx}\,dx = uv - \int v\frac{du}{dx}\,dx\). Choose \(u\) to be the part that gets simpler when differentiated (e.g. \(x\), or \(\ln x\)).</li>
+<li><b>Partial fractions:</b> \(\displaystyle\int \frac{1}{(x + 1)(x + 2)}\,dx = \int\left(\frac{1}{x + 1} - \frac{1}{x + 2}\right)dx = \ln|x + 1| - \ln|x + 2| + c\).</li>
+<li><b>Trig identities:</b> \(\displaystyle\int \sin^2 x\,dx = \int \tfrac12(1 - \cos 2x)\,dx = \frac{x}{2} - \frac{\sin 2x}{4} + c\).</li>
 </ul>
-<div class="box box-prac"><span class="box-title">Worked example (by parts)</span>∫ xe<sup>x</sup> dx: u = x, dv/dx = e<sup>x</sup>. = xe<sup>x</sup> − ∫e<sup>x</sup> dx = <b>e<sup>x</sup>(x − 1) + c</b>.</div>
+<div class="box box-prac"><span class="box-title">Worked example (by parts)</span>Find \(\displaystyle\int xe^x\,dx\).
+<ol><li>Let \(u = x\) (so \(\dfrac{du}{dx} = 1\)) and \(\dfrac{dv}{dx} = e^x\) (so \(v = e^x\)).</li>
+<li>\(\displaystyle\int xe^x\,dx = xe^x - \int e^x \times 1\,dx = xe^x - e^x + c\).</li></ol>
+Answer: \(e^x(x - 1) + c\).</div>
 <h3>Differential equations</h3>
-<p>Separate variables: dy/dx = f(x)g(y) → ∫ 1/g(y) dy = ∫ f(x) dx. Example: dy/dx = ky → ln y = kx + c → y = Ae<sup>kx</sup>. Use initial conditions for the constant, and interpret in context.</p>
+<p>For \(\dfrac{dy}{dx} = f(x)g(y)\), separate the variables and integrate both sides:</p>
+<p>\[\int \frac{1}{g(y)}\,dy = \int f(x)\,dx\]</p>
+<p>Example: \(\dfrac{dy}{dx} = ky \Rightarrow \displaystyle\int\frac1y\,dy = \int k\,dx \Rightarrow \ln y = kx + c \Rightarrow y = Ae^{kx}\). Use the initial conditions to find the constant, and interpret the answer in context.</p>
 `,
   quiz: [
-    { q: "∫ e^(3x) dx = …", o: ["⅓e^(3x) + c", "3e^(3x) + c", "e^(3x) + c", "e^(3x)/x + c"], a: 0, e: "" },
-    { q: "∫ 1/x dx = …", o: ["ln|x| + c", "x⁰ + c", "−1/x² + c", "eˣ + c"], a: 0, e: "" },
-    { q: "∫ cos 2x dx = …", o: ["½sin 2x + c", "2sin 2x + c", "−½sin 2x + c", "sin 2x + c"], a: 0, e: "" },
-    { q: "∫ 2x/(x² + 1) dx = …", o: ["ln(x² + 1) + c", "2ln x + c", "x² + c", "1/(x² + 1) + c"], a: 0, e: "" },
-    { q: "Integration by parts formula?", o: ["uv − ∫v du/dx dx", "uv + ∫v du/dx dx", "u′v − uv′", "∫u dx × ∫v dx"], a: 0, e: "" },
-    { q: "∫ xeˣ dx = …", o: ["eˣ(x − 1) + c", "xeˣ + c", "eˣ(x + 1) + c", "x²eˣ/2 + c"], a: 0, e: "" },
-    { q: "To integrate sin²x, use…", o: ["cos 2x = 1 − 2sin²x", "Parts", "Partial fractions", "Small angles"], a: 0, e: "" },
-    { q: "dy/dx = ky has general solution…", o: ["y = Ae^(kx)", "y = kx + c", "y = e^(k) x", "y = ln(kx)"], a: 0, e: "" },
-    { q: "In substitution for a definite integral, you should…", o: ["Change the limits to u-values", "Keep the x limits", "Ignore limits", "Add c"], a: 0, e: "" }
+    { q: R`\(\displaystyle\int e^{3x}\,dx = \ ?\)`, o: [R`\(\tfrac13 e^{3x} + c\)`, R`\(3e^{3x} + c\)`, R`\(e^{3x} + c\)`, R`\(\dfrac{e^{3x}}{x} + c\)`], a: 0, e: R`Differentiating \(e^{3x}\) gives \(3e^{3x}\), so divide by 3 to undo it.` },
+    { q: R`\(\displaystyle\int \frac1x\,dx = \ ?\)`, o: [R`\(\ln|x| + c\)`, R`\(x^0 + c\)`, R`\(-\dfrac{1}{x^2} + c\)`, R`\(e^x + c\)`], a: 0, e: R`The power rule fails for \(n = -1\); this is the special case.` },
+    { q: R`\(\displaystyle\int \cos 2x\,dx = \ ?\)`, o: [R`\(\tfrac12\sin 2x + c\)`, R`\(2\sin 2x + c\)`, R`\(-\tfrac12\sin 2x + c\)`, R`\(\sin 2x + c\)`], a: 0, e: R`\(\dfrac{d}{dx}(\sin 2x) = 2\cos 2x\), so halve it.` },
+    { q: R`\(\displaystyle\int \frac{2x}{x^2 + 1}\,dx = \ ?\)`, o: [R`\(\ln(x^2 + 1) + c\)`, R`\(2\ln x + c\)`, R`\(x^2 + c\)`, R`\(\dfrac{1}{x^2 + 1} + c\)`], a: 0, e: R`The numerator \(2x\) is the derivative of the denominator, so it's \(\ln|f(x)|\).` },
+    { q: "The integration by parts formula is…", o: [R`\(uv - \int v\frac{du}{dx}\,dx\)`, R`\(uv + \int v\frac{du}{dx}\,dx\)`, R`\(u'v - uv'\)`, R`\(\int u\,dx \times \int v\,dx\)`], a: 0, e: "It comes from integrating the product rule." },
+    { q: R`\(\displaystyle\int xe^x\,dx = \ ?\)`, o: [R`\(e^x(x - 1) + c\)`, R`\(xe^x + c\)`, R`\(e^x(x + 1) + c\)`, R`\(\dfrac{x^2e^x}{2} + c\)`], a: 0, e: R`By parts with \(u = x\): \(xe^x - \int e^x\,dx\).` },
+    { q: R`To integrate \(\sin^2 x\), use…`, o: [R`\(\cos 2x = 1 - 2\sin^2 x\)`, "Parts", "Partial fractions", "Small angles"], a: 0, e: R`It rewrites \(\sin^2 x\) as \(\tfrac12(1 - \cos 2x)\), which integrates directly.` },
+    { q: R`\(\dfrac{dy}{dx} = ky\) has general solution…`, o: [R`\(y = Ae^{kx}\)`, R`\(y = kx + c\)`, R`\(y = e^k x\)`, R`\(y = \ln(kx)\)`], a: 0, e: R`Separating gives \(\ln y = kx + c\), so \(y = e^{c}e^{kx} = Ae^{kx}\).` },
+    { q: "When using substitution in a definite integral, you should…", o: [R`Change the limits to \(u\)-values`, R`Keep the \(x\) limits`, "Ignore the limits", R`Add \(c\)`], a: 0, e: R`Once everything is in \(u\), the limits must be \(u\)-values too (or substitute back first).` }
   ],
   flashcards: [
-    ["∫ e^(kx)", "(1/k)e^(kx)"],
-    ["∫ 1/x", "ln|x|"],
-    ["∫ cos kx / sin kx", "(1/k) sin kx / −(1/k) cos kx"],
-    ["∫ f′/f", "ln|f(x)|"],
-    ["By parts", "uv − ∫v u′ dx"],
-    ["Choosing u", "LATE: logs, algebra, trig, exponentials"],
-    ["∫ sin²x", "Use sin²x = ½(1 − cos 2x)"],
-    ["Separable DE", "∫ 1/g(y) dy = ∫ f(x) dx"]
+    [R`\(\int e^{kx}\,dx\)`, R`\(\frac1k e^{kx} + c\)`],
+    [R`\(\int \frac1x\,dx\)`, R`\(\ln|x| + c\)`],
+    [R`\(\int\cos kx\,dx\) / \(\int\sin kx\,dx\)`, R`\(\frac1k\sin kx\) / \(-\frac1k\cos kx\)`],
+    [R`\(\int \frac{f'(x)}{f(x)}\,dx\)`, R`\(\ln|f(x)| + c\)`],
+    ["By parts", R`\(uv - \int v\frac{du}{dx}\,dx\)`],
+    [R`Choosing \(u\)`, "LATE: Logs, Algebra, Trig, Exponentials"],
+    [R`\(\int\sin^2 x\,dx\)`, R`Use \(\sin^2 x = \tfrac12(1 - \cos 2x)\)`],
+    ["Separable DE", R`\(\int\frac{1}{g(y)}\,dy = \int f(x)\,dx\)`]
   ]
 });
 
 S2Data.add({
   id: "9a", group: 9, y2: true, title: "Numerical methods",
   summary: "Locating roots by sign change, fixed-point iteration, Newton–Raphson and the trapezium rule.",
-  notes: `
+  notes: R`
 <h3>Locating roots</h3>
-<p>If f(x) is continuous on [a, b] and f(a), f(b) have opposite signs, there's a root between a and b. This can fail if f has an asymptote (discontinuity) or two roots close together (no sign change).</p>
+<p>If \(f(x)\) is continuous on \([a, b]\) and \(f(a)\) and \(f(b)\) have opposite signs, there's a root between \(a\) and \(b\). This can fail if \(f\) has an asymptote (a discontinuity), or if two roots are close together (no sign change).</p>
 <h3>Fixed-point iteration</h3>
-<p>Rearrange f(x) = 0 into x = g(x); then xₙ₊₁ = g(xₙ). It converges if |g′(x)| &lt; 1 near the root. Staircase and cobweb diagrams show convergence or divergence.</p>
+<p>Rearrange \(f(x) = 0\) into \(x = g(x)\), then iterate \(x_{n+1} = g(x_n)\). It converges if \(|g'(x)| < 1\) near the root. Staircase and cobweb diagrams show convergence or divergence.</p>
 <h3>Newton–Raphson</h3>
-<p><b>xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ)</b>. Fails if f′(xₙ) = 0 (tangent is horizontal) or the starting value is near a turning point.</p>
-<div class="box box-prac"><span class="box-title">Worked example</span>f(x) = x<sup>2</sup> − 2, x₀ = 1: x₁ = 1 − (−1)/2 = 1.5; x₂ = 1.5 − 0.25/3 = 1.4167 (√2 = 1.4142).</div>
+<p>\[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\]</p>
+<p>Each step follows the tangent down to the \(x\)-axis. It fails if \(f'(x_n) = 0\) (horizontal tangent), or if the starting value is near a turning point.</p>
+<div class="box box-prac"><span class="box-title">Worked example</span>Use Newton–Raphson on \(f(x) = x^2 - 2\) with \(x_0 = 1\). Here \(f'(x) = 2x\).
+<ol><li>\(x_1 = 1 - \dfrac{1^2 - 2}{2(1)} = 1 - \dfrac{-1}{2} = 1.5\).</li>
+<li>\(x_2 = 1.5 - \dfrac{1.5^2 - 2}{2(1.5)} = 1.5 - \dfrac{0.25}{3} = 1.4167\).</li></ol>
+This is already close to \(\sqrt2 = 1.4142\ldots\).</div>
 <h3>Trapezium rule</h3>
-<p>∫<sub>a</sub><sup>b</sup> y dx ≈ (h/2)[y₀ + 2(y₁ + … + yₙ₋₁) + yₙ], with h = (b − a)/n. It overestimates for convex curves and underestimates for concave ones. More strips give a better estimate.</p>
+<p>\[\int_a^b y\,dx \approx \frac{h}{2}\Big[y_0 + 2(y_1 + y_2 + \cdots + y_{n-1}) + y_n\Big], \qquad h = \frac{b - a}{n}\]</p>
+<p>It overestimates for convex curves (\(\cup\)) and underestimates for concave ones (\(\cap\)). More strips give a better estimate.</p>
 `,
   quiz: [
-    { q: "A sign change of f(x) on [a, b] shows a root if f is…", o: ["Continuous", "Increasing", "Positive", "Quadratic"], a: 0, e: "" },
-    { q: "Newton–Raphson formula?", o: ["xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ)", "xₙ₊₁ = xₙ + f(xₙ)/f′(xₙ)", "xₙ₊₁ = f(xₙ)", "xₙ₊₁ = f′(xₙ)/f(xₙ)"], a: 0, e: "" },
-    { q: "Newton–Raphson fails when…", o: ["f′(xₙ) = 0", "f(xₙ) = 0", "xₙ = 0", "f is a polynomial"], a: 0, e: "" },
-    { q: "Fixed-point iteration converges if near the root…", o: ["|g′(x)| < 1", "|g′(x)| > 1", "g(x) = 0", "g′(x) = 1"], a: 0, e: "" },
-    { q: "f(x) = x² − 2, x₀ = 1. Newton–Raphson x₁ = …", o: ["1.5", "1.414", "2", "0.5"], a: 0, e: "" },
-    { q: "Trapezium rule strip width h = …", o: ["(b − a)/n", "(b + a)/n", "n/(b − a)", "b − a"], a: 0, e: "" },
-    { q: "For a convex curve, the trapezium rule gives…", o: ["An overestimate", "An underestimate", "The exact value", "Zero"], a: 0, e: "" },
-    { q: "A sign change can fail to show a root when…", o: ["There's an asymptote between a and b", "f is continuous", "a < b", "f is linear"], a: 0, e: "" },
-    { q: "To improve a trapezium estimate…", o: ["Use more strips", "Use fewer strips", "Increase h", "Use only the endpoints"], a: 0, e: "" }
+    { q: R`A sign change of \(f(x)\) on \([a, b]\) shows a root if \(f\) is…`, o: ["Continuous", "Increasing", "Positive", "Quadratic"], a: 0, e: "A continuous graph can't get from negative to positive without crossing zero." },
+    { q: "The Newton–Raphson formula is…", o: [R`\(x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}\)`, R`\(x_{n+1} = x_n + \dfrac{f(x_n)}{f'(x_n)}\)`, R`\(x_{n+1} = f(x_n)\)`, R`\(x_{n+1} = \dfrac{f'(x_n)}{f(x_n)}\)`], a: 0, e: R`It's where the tangent at \(x_n\) meets the \(x\)-axis.` },
+    { q: "Newton–Raphson fails when…", o: [R`\(f'(x_n) = 0\)`, R`\(f(x_n) = 0\)`, R`\(x_n = 0\)`, R`\(f\) is a polynomial`], a: 0, e: "You'd be dividing by zero: a horizontal tangent never meets the axis." },
+    { q: "Fixed-point iteration converges if, near the root…", o: [R`\(|g'(x)| < 1\)`, R`\(|g'(x)| > 1\)`, R`\(g(x) = 0\)`, R`\(g'(x) = 1\)`], a: 0, e: "A shallow gradient pulls successive values closer to the root." },
+    { q: R`\(f(x) = x^2 - 2\), \(x_0 = 1\). Newton–Raphson gives \(x_1 = \ ?\)`, o: ["1.5", "1.414", "2", "0.5"], a: 0, e: R`\(1 - \dfrac{-1}{2} = 1.5\).` },
+    { q: R`In the trapezium rule, the strip width \(h = \ ?\)`, o: [R`\(\dfrac{b - a}{n}\)`, R`\(\dfrac{b + a}{n}\)`, R`\(\dfrac{n}{b - a}\)`, R`\(b - a\)`], a: 0, e: R`The interval from \(a\) to \(b\) is split into \(n\) equal strips.` },
+    { q: "For a convex curve, the trapezium rule gives…", o: ["An overestimate", "An underestimate", "The exact value", "Zero"], a: 0, e: "The straight tops of the trapezia lie above a curve that bends upwards." },
+    { q: "A sign change can fail to show a root when…", o: [R`There's an asymptote between \(a\) and \(b\)`, R`\(f\) is continuous`, R`\(a < b\)`, R`\(f\) is linear`], a: 0, e: R`E.g. \(\frac1x\) changes sign across \(x = 0\) but has no root there.` },
+    { q: "To improve a trapezium rule estimate…", o: ["Use more strips", "Use fewer strips", R`Increase \(h\)`, "Use only the endpoints"], a: 0, e: "Narrower strips follow the curve more closely." }
   ],
   flashcards: [
-    ["Sign change", "Root in [a, b] if f continuous and signs differ"],
-    ["Iteration", "xₙ₊₁ = g(xₙ); converges if |g′| < 1"],
-    ["Newton–Raphson", "xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ)"],
-    ["N–R failure", "f′(xₙ) = 0 or near a turning point"],
-    ["Trapezium rule", "(h/2)[y₀ + 2(middle) + yₙ]"],
-    ["Convex / concave", "Trapezium over / underestimates"]
+    ["Sign change", R`Root in \([a, b]\) if \(f\) is continuous and the signs differ`],
+    ["Fixed-point iteration", R`\(x_{n+1} = g(x_n)\); converges if \(|g'| < 1\)`],
+    ["Newton–Raphson", R`\(x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}\)`],
+    ["When Newton–Raphson fails", R`\(f'(x_n) = 0\), or starting near a turning point`],
+    ["Trapezium rule", R`\(\frac{h}{2}\big[y_0 + 2(\text{middle } y\text{'s}) + y_n\big]\)`],
+    ["Convex / concave", "Trapezium rule over / underestimates"]
   ]
 });
 
 S2Data.add({
   id: "10a", group: 10, y1: true, title: "Vectors",
   summary: "Vectors in 2D and 3D: magnitude, direction, position vectors, unit vectors and geometric problems.",
-  notes: `
+  notes: R`
 <h3>Notation</h3>
-<p>a = 3i + 4j, or as a column vector. In 3D (Year 13), a = xi + yj + zk.</p>
+<p>A vector can be written as \(\mathbf{a} = 3\mathbf{i} + 4\mathbf{j}\) or as a column \(\begin{pmatrix}3\\4\end{pmatrix}\). In 3D (Year 13): \(\mathbf{a} = x\mathbf{i} + y\mathbf{j} + z\mathbf{k}\).</p>
 <ul>
-<li>Magnitude |a| = √(x<sup>2</sup> + y<sup>2</sup> (+ z<sup>2</sup>)). |3i + 4j| = 5.</li>
-<li>Direction (2D): angle with i, tan θ = y/x.</li>
-<li>Unit vector â = a/|a|.</li>
+<li>Magnitude: \(|\mathbf{a}| = \sqrt{x^2 + y^2}\) (add \(z^2\) in 3D). E.g. \(|3\mathbf{i} + 4\mathbf{j}| = \sqrt{9 + 16} = 5\).</li>
+<li>Direction (2D): the angle \(\theta\) with \(\mathbf{i}\) satisfies \(\tan\theta = \dfrac{y}{x}\).</li>
+<li>Unit vector (length 1): \(\hat{\mathbf{a}} = \dfrac{\mathbf{a}}{|\mathbf{a}|}\).</li>
 </ul>
 <h3>Position vectors</h3>
-<p>OA = a, OB = b; AB = b − a. Distance AB = |b − a|. Midpoint position vector = ½(a + b).</p>
+<p>If \(\overrightarrow{OA} = \mathbf{a}\) and \(\overrightarrow{OB} = \mathbf{b}\), then \(\overrightarrow{AB} = \mathbf{b} - \mathbf{a}\) ("end minus start"). The distance \(AB = |\mathbf{b} - \mathbf{a}|\), and the midpoint of \(AB\) has position vector \(\tfrac12(\mathbf{a} + \mathbf{b})\).</p>
 <h3>Geometry</h3>
-<p>Parallel vectors are scalar multiples. To show A, B, C are collinear, show AB = kBC. Problems may require solving for unknown scalars by equating i and j components.</p>
-<div class="box box-c"><span class="box-title">Year 13: 3D</span>Distance between (1, 2, 3) and (4, 6, 15): √(9 + 16 + 144) = 13. Vectors model forces and velocities in mechanics.</div>
+<p>Parallel vectors are scalar multiples of each other. To show \(A\), \(B\), \(C\) are collinear, show \(\overrightarrow{AB} = k\overrightarrow{BC}\) (they're parallel and share point \(B\)). To find unknown scalars, equate the \(\mathbf{i}\) and \(\mathbf{j}\) components.</p>
+<div class="box box-c"><span class="box-title">Year 13: 3D</span>The distance between \((1, 2, 3)\) and \((4, 6, 15)\) is \(\sqrt{3^2 + 4^2 + 12^2} = \sqrt{169} = 13\). Vectors model forces and velocities in mechanics.</div>
 `,
   quiz: [
-    { q: "|3i + 4j| = …", o: ["5", "7", "25", "1"], a: 0, e: "" },
-    { q: "OA = a, OB = b. AB = …", o: ["b − a", "a − b", "a + b", "ab"], a: 0, e: "" },
-    { q: "Unit vector in the direction of 3i + 4j?", o: ["0.6i + 0.8j", "3i + 4j", "i + j", "0.3i + 0.4j"], a: 0, e: "" },
-    { q: "Which is parallel to 2i − 3j?", o: ["−4i + 6j", "3i − 2j", "2i + 3j", "4i + 6j"], a: 0, e: "" },
-    { q: "Midpoint position vector of A and B?", o: ["½(a + b)", "b − a", "a + b", "½(b − a)"], a: 0, e: "" },
-    { q: "Angle 5i + 5j makes with i?", o: ["45°", "90°", "30°", "60°"], a: 0, e: "" },
-    { q: "Y13: |2i − j + 2k| = …", o: ["3", "√5", "5", "9"], a: 0, e: "" },
-    { q: "Collinear means…", o: ["On the same straight line", "Perpendicular", "Equal length", "Parallel but separate"], a: 0, e: "" },
-    { q: "Y13: distance between (1, 2, 3) and (4, 6, 15)?", o: ["13", "19", "√91", "12"], a: 0, e: "" }
+    { q: R`\(|3\mathbf{i} + 4\mathbf{j}| = \ ?\)`, o: ["5", "7", "25", "1"], a: 0, e: R`\(\sqrt{3^2 + 4^2} = \sqrt{25} = 5\).` },
+    { q: R`\(\overrightarrow{OA} = \mathbf{a}\), \(\overrightarrow{OB} = \mathbf{b}\). \(\overrightarrow{AB} = \ ?\)`, o: [R`\(\mathbf{b} - \mathbf{a}\)`, R`\(\mathbf{a} - \mathbf{b}\)`, R`\(\mathbf{a} + \mathbf{b}\)`, R`\(\mathbf{ab}\)`], a: 0, e: R`Go from \(A\) back to \(O\) (\(-\mathbf{a}\)), then out to \(B\) (\(+\mathbf{b}\)).` },
+    { q: R`The unit vector in the direction of \(3\mathbf{i} + 4\mathbf{j}\) is…`, o: [R`\(0.6\mathbf{i} + 0.8\mathbf{j}\)`, R`\(3\mathbf{i} + 4\mathbf{j}\)`, R`\(\mathbf{i} + \mathbf{j}\)`, R`\(0.3\mathbf{i} + 0.4\mathbf{j}\)`], a: 0, e: R`Divide by the magnitude 5: \(\tfrac35\mathbf{i} + \tfrac45\mathbf{j}\).` },
+    { q: R`Which is parallel to \(2\mathbf{i} - 3\mathbf{j}\)?`, o: [R`\(-4\mathbf{i} + 6\mathbf{j}\)`, R`\(3\mathbf{i} - 2\mathbf{j}\)`, R`\(2\mathbf{i} + 3\mathbf{j}\)`, R`\(4\mathbf{i} + 6\mathbf{j}\)`], a: 0, e: R`\(-4\mathbf{i} + 6\mathbf{j} = -2(2\mathbf{i} - 3\mathbf{j})\), a scalar multiple.` },
+    { q: R`The position vector of the midpoint of \(A\) and \(B\) is…`, o: [R`\(\tfrac12(\mathbf{a} + \mathbf{b})\)`, R`\(\mathbf{b} - \mathbf{a}\)`, R`\(\mathbf{a} + \mathbf{b}\)`, R`\(\tfrac12(\mathbf{b} - \mathbf{a})\)`], a: 0, e: R`\(\mathbf{a} + \tfrac12(\mathbf{b} - \mathbf{a}) = \tfrac12(\mathbf{a} + \mathbf{b})\): the average of the two.` },
+    { q: R`What angle does \(5\mathbf{i} + 5\mathbf{j}\) make with \(\mathbf{i}\)?`, o: [R`\(45^\circ\)`, R`\(90^\circ\)`, R`\(30^\circ\)`, R`\(60^\circ\)`], a: 0, e: R`\(\tan\theta = \tfrac55 = 1\), so \(\theta = 45^\circ\).` },
+    { q: R`Year 13: \(|2\mathbf{i} - \mathbf{j} + 2\mathbf{k}| = \ ?\)`, o: ["3", R`\(\sqrt5\)`, "5", "9"], a: 0, e: R`\(\sqrt{4 + 1 + 4} = \sqrt9 = 3\).` },
+    { q: "Collinear means…", o: ["On the same straight line", "Perpendicular", "Equal length", "Parallel but separate"], a: 0, e: "Parallel vectors that share a point must lie on one line." },
+    { q: R`Year 13: the distance between \((1, 2, 3)\) and \((4, 6, 15)\) is…`, o: ["13", "19", R`\(\sqrt{91}\)`, "12"], a: 0, e: R`\(\sqrt{3^2 + 4^2 + 12^2} = \sqrt{169} = 13\).` }
   ],
   flashcards: [
-    ["Magnitude", "√(x² + y² + z²)"],
-    ["Unit vector", "a/|a|"],
-    ["AB", "b − a"],
-    ["Midpoint", "½(a + b)"],
-    ["Parallel", "Scalar multiples"],
-    ["Collinear", "AB = kBC with a shared point"],
-    ["Direction (2D)", "tan θ = y/x from i"]
+    ["Magnitude", R`\(\sqrt{x^2 + y^2 + z^2}\)`],
+    ["Unit vector", R`\(\hat{\mathbf{a}} = \dfrac{\mathbf{a}}{|\mathbf{a}|}\)`],
+    [R`\(\overrightarrow{AB}\)`, R`\(\mathbf{b} - \mathbf{a}\)`],
+    ["Midpoint", R`\(\tfrac12(\mathbf{a} + \mathbf{b})\)`],
+    ["Parallel", "Scalar multiples of each other"],
+    ["Collinear", R`\(\overrightarrow{AB} = k\overrightarrow{BC}\) with a shared point`],
+    ["Direction (2D)", R`\(\tan\theta = \dfrac{y}{x}\), measured from \(\mathbf{i}\)`]
   ]
 });
 
-S2Data.detail("5a", { mistakes: ["Dividing both sides by cos x and losing solutions where cos x = 0."], tips: ["Sketch the graph for the given interval to find all solutions."], fact: "Hipparchus compiled the first trig table, of chords, around 140 BCE." });
-S2Data.detail("5b", { mistakes: ["Using degrees in s = rθ. θ must be in radians."], tips: ["Check calculator mode: radians for calculus and arcs."], fact: "A radian is the angle where the arc length equals the radius." });
-S2Data.detail("5c", { mistakes: ["Getting the sign wrong in cos(A + B): it's minus."], tips: ["For R cos(x − α), expand and compare coefficients of cos x and sin x."], fact: "Harmonic form is how engineers combine AC voltages with different phases." });
-S2Data.detail("6a", { mistakes: ["Writing log(a + b) = log a + log b. There's no law for logs of sums."], tips: ["For exponential equations with eˣ terms, try u = eˣ."], fact: "e is about 2.71828 and appears in compound interest when interest is compounded continuously." });
-S2Data.detail("7a", { mistakes: ["Forgetting to justify the nature of a stationary point."], tips: ["In optimisation, use given constraints to write the quantity in one variable."], fact: "Fermat used an early form of differentiation to find maxima and minima in the 1630s." });
-S2Data.detail("7b", { mistakes: ["Forgetting the chain-rule factor: d/dx sin 3x is 3cos 3x, not cos 3x."], tips: ["In implicit differentiation, every y term picks up a dy/dx."], fact: "The notation dy/dx comes from Leibniz; Newton used dots above letters." });
+S2Data.detail("5a", { mistakes: [R`Dividing both sides by \(\cos x\) and losing the solutions where \(\cos x = 0\).`], tips: ["Sketch the graph over the given interval to find every solution."], fact: "Hipparchus compiled the first trig table, of chords, around 140 BCE." });
+S2Data.detail("5b", { mistakes: [R`Using degrees in \(s = r\theta\). \(\theta\) must be in radians.`], tips: ["Check your calculator mode: radians for calculus and arcs."], fact: "A radian is the angle at which the arc length equals the radius." });
+S2Data.detail("5c", { mistakes: [R`Getting the sign wrong in \(\cos(A + B)\): it's \(\cos A\cos B - \sin A\sin B\).`], tips: [R`For \(R\cos(x - \alpha)\), expand and compare the coefficients of \(\cos x\) and \(\sin x\).`], fact: "Harmonic form is how engineers combine AC voltages with different phases." });
+S2Data.detail("6a", { mistakes: [R`Writing \(\log(a + b) = \log a + \log b\). There's no law for the log of a sum.`], tips: [R`For equations with \(e^{2x}\) and \(e^x\) terms, try \(u = e^x\).`], fact: R`\(e \approx 2.71828\) appears in compound interest when interest is compounded continuously.` });
+S2Data.detail("7a", { mistakes: ["Forgetting to justify the nature of a stationary point."], tips: ["In optimisation, use the given constraint to write the quantity in terms of one variable."], fact: "Fermat used an early form of differentiation to find maxima and minima in the 1630s." });
+S2Data.detail("7b", { mistakes: [R`Forgetting the chain-rule factor: \(\frac{d}{dx}\sin 3x = 3\cos 3x\), not \(\cos 3x\).`], tips: [R`In implicit differentiation, every \(y\) term picks up a \(\frac{dy}{dx}\).`], fact: R`The notation \(\frac{dy}{dx}\) comes from Leibniz; Newton used dots above letters.` });
 S2Data.detail("8a", { mistakes: ["Adding definite-integral values for regions above and below the axis without making both positive."], tips: ["Sketch the curve before finding areas."], fact: "Archimedes found the area under a parabola using an early limit argument around 250 BCE." });
-S2Data.detail("8b", { mistakes: ["Forgetting the modulus in ∫1/x dx = ln|x|."], tips: ["For by parts, let u be the factor that simplifies when differentiated."], fact: "Differential equations model everything from cooling coffee to population growth." });
-S2Data.detail("9a", { mistakes: ["Concluding no root exists because there's no sign change. There could be two roots close together."], tips: ["Show the sign change explicitly with values and a conclusion."], fact: "Calculators use variants of Newton–Raphson to compute square roots." });
-S2Data.detail("10a", { mistakes: ["Calculating AB as a − b instead of b − a."], tips: ["Draw a diagram and label every route you use."], fact: "GPS uses 3D vectors to locate you from satellite distances." });
+S2Data.detail("8b", { mistakes: [R`Forgetting the modulus in \(\int\frac1x\,dx = \ln|x| + c\).`], tips: [R`For integration by parts, let \(u\) be the factor that gets simpler when differentiated.`], fact: "Differential equations model everything from cooling coffee to population growth." });
+S2Data.detail("9a", { mistakes: ["Concluding that no root exists because there's no sign change. There could be two roots close together."], tips: ["Show the sign change explicitly, with values and a conclusion."], fact: "Calculators use variants of Newton–Raphson to compute square roots." });
+S2Data.detail("10a", { mistakes: [R`Calculating \(\overrightarrow{AB}\) as \(\mathbf{a} - \mathbf{b}\) instead of \(\mathbf{b} - \mathbf{a}\).`], tips: ["Draw a diagram and label every route you use."], fact: "GPS uses 3D vectors to locate you from satellite distances." });
