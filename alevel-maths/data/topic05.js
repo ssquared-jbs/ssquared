@@ -2,41 +2,61 @@
 
 S2Data.add({
   id: "5a", group: 5, y1: true, title: "Trigonometry: rules, graphs and identities",
-  summary: "Sine and cosine rules, trig graphs, solving trig equations and the identities tan θ = sin θ/cos θ and sin²θ + cos²θ = 1.",
-  notes: `
+  summary: String.raw`Sine and cosine rules, trig graphs, solving trig equations and the identities \(\tan\theta \equiv \frac{\sin\theta}{\cos\theta}\) and \(\sin^2\theta + \cos^2\theta \equiv 1\).`,
+  notes: String.raw`
 <h3>Triangles</h3>
-<p>Sine rule a/sin A = b/sin B; cosine rule a<sup>2</sup> = b<sup>2</sup> + c<sup>2</sup> − 2bc cos A; area = ½ab sin C. Watch for the ambiguous case of the sine rule (two possible angles).</p>
-<h3>Graphs and the unit circle</h3>
-<p>sin and cos have period 360°; tan has period 180° with asymptotes at 90°, 270°. Useful symmetries: sin(180° − θ) = sin θ; cos(360° − θ) = cos θ; tan(180° + θ) = tan θ.</p>
-<h3>Identities</h3>
-<p><b>tan θ ≡ sin θ / cos θ</b> and <b>sin<sup>2</sup>θ + cos<sup>2</sup>θ ≡ 1</b>.</p>
-<h3>Solving equations</h3>
-<div class="box box-prac"><span class="box-title">Worked example</span>Solve 2sin<sup>2</sup>x + 3cos x − 3 = 0 for 0 ≤ x &lt; 360°.<br>Replace sin<sup>2</sup>x = 1 − cos<sup>2</sup>x: 2 − 2cos<sup>2</sup>x + 3cos x − 3 = 0 → 2cos<sup>2</sup>x − 3cos x + 1 = 0 → (2cos x − 1)(cos x − 1) = 0.<br>cos x = ½: x = 60°, 300°. cos x = 1: x = 0°.</div>
+<p>For any triangle with sides \(a, b, c\) opposite angles \(A, B, C\):</p>
+<table><tr><th>Rule</th><th>Formula</th><th>Use it when you know…</th></tr>
+<tr><td>Sine rule</td><td>\(\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}\)</td><td>A side and its opposite angle, plus one more side or angle</td></tr>
+<tr><td>Cosine rule</td><td>\(a^2 = b^2 + c^2 - 2bc\cos A\)</td><td>Two sides and the angle between them, or all three sides</td></tr>
+<tr><td>Area</td><td>\(\text{Area} = \tfrac12 ab\sin C\)</td><td>Two sides and the angle between them</td></tr></table>
+<div class="box box-mistake"><span class="box-title">The ambiguous case</span>When the sine rule gives \(\sin B = 0.8\), there are two possible angles: \(B = 53.1^\circ\) or \(B = 180^\circ - 53.1^\circ = 126.9^\circ\). Check whether both fit in the triangle (the angles must add to less than \(180^\circ\)).</div>
+<h3>Graphs and symmetry</h3>
 <ul>
-<li>For sin 2x = k over 0 ≤ x &lt; 360°, solve for 2x over 0 ≤ 2x &lt; 720°, then halve.</li>
-<li>Don't divide by sin x or cos x: factorise instead, or you lose solutions.</li>
+<li>\(y = \sin x\) and \(y = \cos x\) repeat every \(360^\circ\) and stay between \(-1\) and \(1\).</li>
+<li>\(y = \tan x\) repeats every \(180^\circ\) and has vertical asymptotes at \(x = 90^\circ, 270^\circ\).</li>
+<li>Symmetries that give the second solution: \(\sin(180^\circ - \theta) = \sin\theta\), \(\cos(360^\circ - \theta) = \cos\theta\), \(\tan(180^\circ + \theta) = \tan\theta\).</li>
+</ul>
+<h3>The two identities</h3>
+<p>\[\tan\theta \equiv \frac{\sin\theta}{\cos\theta} \qquad\qquad \sin^2\theta + \cos^2\theta \equiv 1\]</p>
+<p>Use them to rewrite an equation so it contains only <b>one</b> trig function.</p>
+<h3>Solving equations</h3>
+<div class="box box-prac"><span class="box-title">Worked example</span>Solve \(2\sin^2 x + 3\cos x - 3 = 0\) for \(0 \le x < 360^\circ\).
+<ol>
+<li>The equation mixes \(\sin\) and \(\cos\), so replace \(\sin^2 x\) with \(1 - \cos^2 x\):
+\[2(1 - \cos^2 x) + 3\cos x - 3 = 0\]</li>
+<li>Expand and tidy into a quadratic in \(\cos x\):
+\[2\cos^2 x - 3\cos x + 1 = 0\]</li>
+<li>Factorise: \((2\cos x - 1)(\cos x - 1) = 0\), so \(\cos x = \tfrac12\) or \(\cos x = 1\).</li>
+<li>\(\cos x = \tfrac12\): the calculator gives \(60^\circ\); the second solution is \(360^\circ - 60^\circ = 300^\circ\).</li>
+<li>\(\cos x = 1\): \(x = 0^\circ\).</li>
+</ol>
+<b>Answer:</b> \(x = 0^\circ, 60^\circ, 300^\circ\).</div>
+<ul>
+<li>For \(\sin 2x = k\) with \(0 \le x < 360^\circ\), first solve for \(2x\) over \(0 \le 2x < 720^\circ\), then halve every answer.</li>
+<li>Never divide both sides by \(\sin x\) or \(\cos x\): you lose the solutions where it equals 0. Factorise instead.</li>
 </ul>
 `,
   quiz: [
-    { q: "sin²θ + cos²θ = …", o: ["1", "0", "tan θ", "2"], a: 0, e: "" },
-    { q: "tan θ = …", o: ["sin θ / cos θ", "cos θ / sin θ", "1 / sin θ", "sin θ × cos θ"], a: 0, e: "" },
-    { q: "Period of y = tan x?", o: ["180°", "360°", "90°", "720°"], a: 0, e: "" },
-    { q: "Solve sin x = 0.5, 0 ≤ x < 360°.", o: ["30°, 150°", "30°, 330°", "60°, 120°", "30° only"], a: 0, e: "" },
-    { q: "Solve cos x = ½, 0 ≤ x < 360°.", o: ["60°, 300°", "60°, 120°", "30°, 330°", "60° only"], a: 0, e: "" },
-    { q: "sin(180° − θ) = …", o: ["sin θ", "−sin θ", "cos θ", "−cos θ"], a: 0, e: "" },
-    { q: "To solve sin 2x = ½ for 0 ≤ x < 360°, consider 2x over…", o: ["0 ≤ 2x < 720°", "0 ≤ 2x < 360°", "0 ≤ 2x < 180°", "−360° ≤ 2x < 360°"], a: 0, e: "" },
-    { q: "Why not divide sin x cos x = sin x by sin x?", o: ["You'd lose the solutions sin x = 0", "It's undefined", "It's slower", "You'd gain extra solutions"], a: 0, e: "" },
-    { q: "Area of a triangle with sides 5, 8 and included angle 30°?", o: ["10", "20", "40", "13"], a: 0, e: "" }
+    { q: String.raw`\(\sin^2\theta + \cos^2\theta = \ ?\)`, o: ["\\(1\\)", "\\(0\\)", "\\(\\tan\\theta\\)", "\\(2\\)"], a: 0, e: String.raw`This is the Pythagorean identity: it holds for every angle \(\theta\).` },
+    { q: String.raw`\(\tan\theta = \ ?\)`, o: ["\\(\\dfrac{\\sin\\theta}{\\cos\\theta}\\)", "\\(\\dfrac{\\cos\\theta}{\\sin\\theta}\\)", "\\(\\dfrac{1}{\\sin\\theta}\\)", "\\(\\sin\\theta\\cos\\theta\\)"], a: 0, e: String.raw`On the unit circle, \(\tan\theta\) is the gradient: \(y\) over \(x\), which is \(\sin\theta\) over \(\cos\theta\).` },
+    { q: String.raw`What is the period of \(y = \tan x\)?`, o: ["\\(180^\\circ\\)", "\\(360^\\circ\\)", "\\(90^\\circ\\)", "\\(720^\\circ\\)"], a: 0, e: String.raw`\(\tan(x + 180^\circ) = \tan x\), so the graph repeats every \(180^\circ\).` },
+    { q: String.raw`Solve \(\sin x = 0.5\) for \(0 \le x < 360^\circ\).`, o: ["\\(30^\\circ, 150^\\circ\\)", "\\(30^\\circ, 330^\\circ\\)", "\\(60^\\circ, 120^\\circ\\)", "\\(30^\\circ\\) only"], a: 0, e: String.raw`The calculator gives \(30^\circ\). Sine is positive in the first and second quadrants, so the other solution is \(180^\circ - 30^\circ = 150^\circ\).` },
+    { q: String.raw`Solve \(\cos x = \tfrac12\) for \(0 \le x < 360^\circ\).`, o: ["\\(60^\\circ, 300^\\circ\\)", "\\(60^\\circ, 120^\\circ\\)", "\\(30^\\circ, 330^\\circ\\)", "\\(60^\\circ\\) only"], a: 0, e: String.raw`The calculator gives \(60^\circ\). Cosine is symmetric about \(360^\circ\), so the other solution is \(360^\circ - 60^\circ = 300^\circ\).` },
+    { q: String.raw`\(\sin(180^\circ - \theta) = \ ?\)`, o: ["\\(\\sin\\theta\\)", "\\(-\\sin\\theta\\)", "\\(\\cos\\theta\\)", "\\(-\\cos\\theta\\)"], a: 0, e: String.raw`The sine graph is symmetric about \(90^\circ\), so angles \(\theta\) and \(180^\circ - \theta\) have the same sine.` },
+    { q: String.raw`To solve \(\sin 2x = \tfrac12\) for \(0 \le x < 360^\circ\), you should consider \(2x\) over…`, o: ["\\(0 \\le 2x < 720^\\circ\\)", "\\(0 \\le 2x < 360^\\circ\\)", "\\(0 \\le 2x < 180^\\circ\\)", "\\(-360^\\circ \\le 2x < 360^\\circ\\)"], a: 0, e: String.raw`Doubling the interval \(0 \le x < 360^\circ\) gives \(0 \le 2x < 720^\circ\). Find every value of \(2x\) there, then halve them.` },
+    { q: String.raw`Why shouldn't you divide \(\sin x\cos x = \sin x\) by \(\sin x\)?`, o: ["You'd lose the solutions where \\(\\sin x = 0\\)", "It's undefined", "It's slower", "You'd gain extra solutions"], a: 0, e: String.raw`Factorise instead: \(\sin x(\cos x - 1) = 0\), giving \(\sin x = 0\) <i>or</i> \(\cos x = 1\). Dividing throws away \(\sin x = 0\).` },
+    { q: String.raw`Find the area of a triangle with sides 5 and 8 and included angle \(30^\circ\).`, o: ["\\(10\\)", "\\(20\\)", "\\(40\\)", "\\(13\\)"], a: 0, e: String.raw`\(\tfrac12 \times 5 \times 8 \times \sin 30^\circ = 20 \times \tfrac12 = 10\).` }
   ],
   flashcards: [
-    ["Sine rule", "a/sin A = b/sin B = c/sin C"],
-    ["Cosine rule", "a² = b² + c² − 2bc cos A"],
-    ["Triangle area", "½ab sin C"],
-    ["Key identities", "tan θ = sin θ/cos θ; sin²θ + cos²θ = 1"],
-    ["sin(180° − θ)", "sin θ"],
-    ["cos(360° − θ)", "cos θ"],
-    ["sin kx = c", "Solve over k × the interval, then divide"],
-    ["Never divide by…", "sin x or cos x: factorise instead"]
+    ["Sine rule", String.raw`\(\dfrac{a}{\sin A} = \dfrac{b}{\sin B} = \dfrac{c}{\sin C}\)`],
+    ["Cosine rule", String.raw`\(a^2 = b^2 + c^2 - 2bc\cos A\)`],
+    ["Triangle area", String.raw`\(\tfrac12 ab\sin C\)`],
+    ["Key identities", String.raw`\(\tan\theta \equiv \dfrac{\sin\theta}{\cos\theta}\), \(\ \sin^2\theta + \cos^2\theta \equiv 1\)`],
+    [String.raw`\(\sin(180^\circ - \theta)\)`, String.raw`\(\sin\theta\)`],
+    [String.raw`\(\cos(360^\circ - \theta)\)`, String.raw`\(\cos\theta\)`],
+    [String.raw`Solving \(\sin kx = c\)`, String.raw`Solve over \(k\) times the interval, then divide by \(k\)`],
+    ["Never divide by…", String.raw`\(\sin x\) or \(\cos x\): factorise instead`]
   ]
 });
 

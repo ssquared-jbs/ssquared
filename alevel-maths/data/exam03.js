@@ -3,43 +3,45 @@
 const M = (q, ...o) => ({ t: "mcq", m: 1, q, o, a: 0 });
 const N = (m, q, ans, ms, x) => Object.assign({ t: "num", m, q, ans, ms }, x || {});
 const T = (m, q, ...p) => ({ t: "text", m, q, ms: p.map(x => x[0]), kw: p.map(x => x.slice(1)) });
+const R = String.raw;
 const E = { rel: 0.001 };
 const D1 = { tol: 0.06 };
 const D2 = { tol: 0.006 };
 const D3 = { tol: 0.0006 };
 
 S2Data.exam("5a", [
-  M("Solve tan x = 1 for 0 ≤ x < 360°.", "45°, 225°", "45°, 135°", "45° only", "45°, 315°"),
-  M("Solve sin x = −½ for 0 ≤ x < 360°.", "210°, 330°", "30°, 150°", "150°, 210°", "330° only"),
-  M("cos(−θ) = …", "cos θ", "−cos θ", "sin θ", "−sin θ"),
-  M("Simplify (1 − cos²θ)/cos²θ.", "tan²θ", "sin²θ", "1", "cot²θ"),
-  M("sin θ/tan θ = …", "cos θ", "sin²θ", "1/cos θ", "tan θ"),
-  M("The graph y = cos x passes through…", "(0, 1)", "(0, 0)", "(90°, 1)", "(180°, 1)"),
-  M("y = sin 2x has period…", "180°", "360°", "720°", "90°"),
-  M("Sine rule ambiguous case occurs when finding…", "An angle from a side opposite a known angle", "A side from two angles", "An angle using the cosine rule", "Area"),
+  M(R`Solve \(\tan x = 1\) for \(0 \le x < 360^\circ\).`, R`\(45^\circ, 225^\circ\)`, R`\(45^\circ, 135^\circ\)`, R`\(45^\circ\) only`, R`\(45^\circ, 315^\circ\)`),
+  M(R`Solve \(\sin x = -\tfrac12\) for \(0 \le x < 360^\circ\).`, R`\(210^\circ, 330^\circ\)`, R`\(30^\circ, 150^\circ\)`, R`\(150^\circ, 210^\circ\)`, R`\(330^\circ\) only`),
+  M(R`\(\cos(-\theta) = \ ?\)`, R`\(\cos\theta\)`, R`\(-\cos\theta\)`, R`\(\sin\theta\)`, R`\(-\sin\theta\)`),
+  M(R`Simplify \(\dfrac{1 - \cos^2\theta}{\cos^2\theta}\).`, R`\(\tan^2\theta\)`, R`\(\sin^2\theta\)`, R`\(1\)`, R`\(\cot^2\theta\)`),
+  M(R`\(\dfrac{\sin\theta}{\tan\theta} = \ ?\)`, R`\(\cos\theta\)`, R`\(\sin^2\theta\)`, R`\(\dfrac{1}{\cos\theta}\)`, R`\(\tan\theta\)`),
+  M(R`The graph of \(y = \cos x\) passes through…`, R`\((0, 1)\)`, R`\((0, 0)\)`, R`\((90^\circ, 1)\)`, R`\((180^\circ, 1)\)`),
+  M(R`What is the period of \(y = \sin 2x\)?`, R`\(180^\circ\)`, R`\(360^\circ\)`, R`\(720^\circ\)`, R`\(90^\circ\)`),
+  M("The ambiguous case of the sine rule occurs when finding…", "An angle, using a side opposite a known angle", "A side from two angles", "An angle using the cosine rule", "An area"),
   M("A triangle has sides 7, 8 and 13. The largest angle is opposite…", "13", "7", "8", "Can't tell"),
-  M("Solve sin x = 2.", "No solutions", "x = 90°", "x = 2°", "x = 180°"),
-  N(2, "Solve sin x = 0.4 for 0 ≤ x < 360°. Give the larger solution to 1 d.p.", 156.4, ["x = 23.6° (1)", "180 − 23.6 = 156.4° (1)"], D1),
-  N(2, "Solve cos x = −0.3 for 0 ≤ x < 360°. Give the smaller solution to 1 d.p.", 107.5, ["x = cos⁻¹(−0.3) (1)", "= 107.5° (1)"], D1),
-  N(2, "Solve tan x = 3 for 0 ≤ x < 360°. Give the larger solution to 1 d.p.", 251.6, ["x = 71.6° (1)", "+ 180 = 251.6° (1)"], D1),
-  N(2, "Solve sin 2x = 0.5 for 0 ≤ x < 180°. Give the larger solution.", 75, ["2x = 30°, 150° (1)", "x = 15°, 75° (1)"], E),
-  N(3, "Solve 2cos²x − cos x − 1 = 0 for 0 ≤ x < 360°. Give the largest solution.", 240, ["(2cos x + 1)(cos x − 1) = 0 (1)", "cos x = −½: 120°, 240°; cos x = 1: 0° (1)", "Largest 240° (1)"], E),
-  N(3, "Solve 2sin²x = 3cos x for 0 ≤ x < 360°. Give the larger solution.", 300, ["2 − 2cos²x = 3cos x → 2cos²x + 3cos x − 2 = 0 (1)", "(2cos x − 1)(cos x + 2) = 0 → cos x = ½ (1)", "x = 60°, 300° (1)"], E),
-  N(2, "Solve sin x = 3cos x for 0 ≤ x < 180° to 1 d.p.", 71.6, ["tan x = 3 (1)", "x = 71.6° (1)"], D1),
-  N(2, "Find side a when b = 8, c = 11, A = 40° (2 d.p.).", 7.08, ["a² = 64 + 121 − 176 cos 40° (1)", "a = 7.08 (1)"], D2),
-  N(2, "Find angle B when a = 9, A = 50°, b = 7 (1 d.p., acute).", 36.6, ["sin B = 7 sin 50°/9 (1)", "B = 36.6° (1)"], D1),
-  N(2, "Find the largest angle of a triangle with sides 5, 7, 10 (1 d.p.).", 111.8, ["cos C = (25 + 49 − 100)/70 (1)", "C = 111.8° (1)"], D1),
-  N(2, "Area of a triangle with sides 9 and 12 and included angle 35° (1 d.p.).", 31, ["½ × 9 × 12 × sin 35° (1)", "= 31.0 (1)"], D1),
-  N(2, "sin θ = 0.6 and θ is obtuse. Find cos θ.", -0.8, ["cos²θ = 1 − 0.36 = 0.64 (1)", "Obtuse: cos θ = −0.8 (1)"], E),
-  N(2, "tan θ = 2.4 and θ is acute. Find sin θ to 3 d.p.", 0.923, ["Hypotenuse √(1 + 5.76) = 2.6 (1)", "sin θ = 2.4/2.6 = 0.923 (1)"], D3),
-  N(2, "How many solutions does sin 3x = 0.2 have for 0 ≤ x < 360°?", 6, ["3x in [0, 1080°): two per cycle (1)", "3 cycles: 6 (1)"], E),
-  T(3, "Prove that (1 − sin²θ)/(sin θ cos θ) ≡ 1/tan θ.", ["1 − sin²θ = cos²θ", "cos²θ"], ["cos²θ/(sin θ cos θ) = cos θ/sin θ", "cos θ/sin θ", "cosθ/sinθ"], ["= 1/tan θ", "1/tan θ", "1/tanθ"]),
-  T(3, "Prove that sin⁴θ − cos⁴θ ≡ sin²θ − cos²θ.", ["Difference of squares: (sin²θ − cos²θ)(sin²θ + cos²θ)", "difference of squares", "(sin²θ + cos²θ)"], ["sin²θ + cos²θ = 1", "= 1"], ["So the expression equals sin²θ − cos²θ", "sin²θ − cos²θ"]),
-  T(2, "Explain why dividing sin x cos x = ½ sin x by sin x loses solutions.", ["sin x = 0 is also a solution", "sin x = 0"], ["Factorise instead: sin x(cos x − ½) = 0", "factorise", "sin x(cos x"]),
-  T(2, "Explain the ambiguous case of the sine rule.", ["sin θ = sin(180° − θ)", "180"], ["So an angle found may be acute or obtuse; both can give valid triangles", "acute", "obtuse", "two"]),
-  T(2, "Describe the graph of y = tan x for 0 ≤ x ≤ 360°.", ["Period 180°, passes through 0°, 180°, 360°", "180", "period"], ["Vertical asymptotes at 90° and 270°", "asymptote", "90", "270"]),
-  T(3, "Solve 4sin²x − 1 = 0 for 0 ≤ x < 360°.", ["sin²x = ¼", "¼", "1/4", "0.25"], ["sin x = ±½", "±½", "±1/2", "± 0.5"], ["x = 30°, 150°, 210°, 330°", "30", "150", "210", "330"])
+  M(R`Solve \(\sin x = 2\).`, "No solutions", R`\(x = 90^\circ\)`, R`\(x = 2^\circ\)`, R`\(x = 180^\circ\)`),
+  N(2, R`Solve \(\sin x = 0.4\) for \(0 \le x < 360^\circ\). Give the larger solution to 1 d.p.`, 156.4, [R`Use the calculator: \(x = \sin^{-1}(0.4) = 23.6^\circ\). (1)`, R`Sine is also positive in the second quadrant, so the other solution is \(180^\circ - 23.6^\circ = 156.4^\circ\). (1)`], D1),
+  N(2, R`Solve \(\cos x = -0.3\) for \(0 \le x < 360^\circ\). Give the smaller solution to 1 d.p.`, 107.5, [R`Use the calculator: \(x = \cos^{-1}(-0.3)\). (1)`, R`\(= 107.5^\circ\). (The other solution is \(360^\circ - 107.5^\circ = 252.5^\circ\).) (1)`], D1),
+  N(2, R`Solve \(\tan x = 3\) for \(0 \le x < 360^\circ\). Give the larger solution to 1 d.p.`, 251.6, [R`Use the calculator: \(x = \tan^{-1}(3) = 71.6^\circ\). (1)`, R`\(\tan\) repeats every \(180^\circ\), so add \(180^\circ\): \(71.6^\circ + 180^\circ = 251.6^\circ\). (1)`], D1),
+  N(2, R`Solve \(\sin 2x = 0.5\) for \(0 \le x < 180^\circ\). Give the larger solution.`, 75, [R`Let \(u = 2x\), so \(0 \le u < 360^\circ\). \(\sin u = 0.5\) gives \(u = 30^\circ\) or \(180^\circ - 30^\circ = 150^\circ\). (1)`, R`Halve each one: \(x = 15^\circ\) or \(75^\circ\). The larger is \(75^\circ\). (1)`], E),
+  N(3, R`Solve \(2\cos^2 x - \cos x - 1 = 0\) for \(0 \le x < 360^\circ\). Give the largest solution.`, 240, [R`It's a quadratic in \(\cos x\). Factorise: \((2\cos x + 1)(\cos x - 1) = 0\). (1)`, R`\(\cos x = -\tfrac12\) gives \(x = 120^\circ\) and \(360^\circ - 120^\circ = 240^\circ\); \(\cos x = 1\) gives \(x = 0^\circ\). (1)`, R`The largest solution is \(240^\circ\). (1)`], E),
+  N(3, R`Solve \(2\sin^2 x = 3\cos x\) for \(0 \le x < 360^\circ\). Give the larger solution.`, 300, [R`Replace \(\sin^2 x\) with \(1 - \cos^2 x\): \(2 - 2\cos^2 x = 3\cos x\), so \(2\cos^2 x + 3\cos x - 2 = 0\). (1)`, R`Factorise: \((2\cos x - 1)(\cos x + 2) = 0\). \(\cos x = -2\) is impossible, so \(\cos x = \tfrac12\). (1)`, R`\(x = 60^\circ\) or \(360^\circ - 60^\circ = 300^\circ\). (1)`], E),
+  N(2, R`Solve \(\sin x = 3\cos x\) for \(0 \le x < 180^\circ\), to 1 d.p.`, 71.6, [R`Divide both sides by \(\cos x\) (safe here, since \(\cos x = 0\) isn't a solution): \(\tan x = 3\). (1)`, R`\(x = \tan^{-1}(3) = 71.6^\circ\). (1)`], D1),
+  N(2, R`Find side \(a\) when \(b = 8\), \(c = 11\) and \(A = 40^\circ\). Give your answer to 2 d.p.`, 7.08, [R`Two sides and the included angle, so use the cosine rule: \(a^2 = 8^2 + 11^2 - 2(8)(11)\cos 40^\circ = 185 - 176\cos 40^\circ\). (1)`, R`\(a^2 = 50.17\ldots\), so \(a = 7.08\). (1)`], D2),
+  N(2, R`Find angle \(B\) when \(a = 9\), \(A = 50^\circ\) and \(b = 7\). Give the acute answer to 1 d.p.`, 36.6, [R`A side with its opposite angle is known, so use the sine rule: \(\dfrac{\sin B}{7} = \dfrac{\sin 50^\circ}{9}\), so \(\sin B = \dfrac{7\sin 50^\circ}{9}\). (1)`, R`\(\sin B = 0.5958\ldots\), so \(B = 36.6^\circ\). (1)`], D1),
+  N(2, "Find the largest angle of a triangle with sides 5, 7 and 10. Give your answer to 1 d.p.", 111.8, [R`The largest angle \(C\) is opposite the longest side, 10. Rearrange the cosine rule: \(\cos C = \dfrac{5^2 + 7^2 - 10^2}{2(5)(7)} = \dfrac{-26}{70}\). (1)`, R`\(C = \cos^{-1}\!\left(-\tfrac{26}{70}\right) = 111.8^\circ\). (1)`], D1),
+  N(2, R`Find the area of a triangle with sides 9 and 12 and included angle \(35^\circ\). Give your answer to 1 d.p.`, 31, [R`\(\text{Area} = \tfrac12 ab\sin C = \tfrac12 \times 9 \times 12 \times \sin 35^\circ\). (1)`, R`\(= 54\sin 35^\circ = 31.0\). (1)`], D1),
+  N(2, R`\(\sin\theta = 0.6\) and \(\theta\) is obtuse. Find \(\cos\theta\).`, -0.8, [R`Use \(\sin^2\theta + \cos^2\theta = 1\): \(\cos^2\theta = 1 - 0.36 = 0.64\), so \(\cos\theta = \pm 0.8\). (1)`, R`Cosine is negative for obtuse angles, so \(\cos\theta = -0.8\). (1)`], E),
+  N(2, R`\(\tan\theta = 2.4\) and \(\theta\) is acute. Find \(\sin\theta\) to 3 d.p.`, 0.923, [R`Draw a right-angled triangle with opposite 2.4 and adjacent 1. The hypotenuse is \(\sqrt{2.4^2 + 1^2} = \sqrt{6.76} = 2.6\). (1)`, R`\(\sin\theta = \dfrac{\text{opp}}{\text{hyp}} = \dfrac{2.4}{2.6} = 0.923\). (1)`], D3),
+  N(2, R`How many solutions does \(\sin 3x = 0.2\) have for \(0 \le x < 360^\circ\)?`, 6, [R`Let \(u = 3x\), so \(0 \le u < 1080^\circ\): three full cycles of the sine graph. (1)`, R`The line \(y = 0.2\) crosses each cycle twice, so there are \(3 \times 2 = 6\) solutions. (1)`], E),
+  T(3, R`Prove that \(\dfrac{1 - \sin^2\theta}{\sin\theta\cos\theta} \equiv \dfrac{1}{\tan\theta}\).`, [R`Start with the left-hand side and use \(1 - \sin^2\theta = \cos^2\theta\)`, "cos²θ", "cos^2"], [R`Cancel one \(\cos\theta\): \(\dfrac{\cos^2\theta}{\sin\theta\cos\theta} = \dfrac{\cos\theta}{\sin\theta}\)`, "cos θ/sin θ", "cosθ/sinθ", "cos/sin"], [R`Since \(\tan\theta = \dfrac{\sin\theta}{\cos\theta}\), this equals \(\dfrac{1}{\tan\theta}\)`, "1/tan θ", "1/tanθ", "1/tan"]),
+  T(3, R`Prove that \(\sin^4\theta - \cos^4\theta \equiv \sin^2\theta - \cos^2\theta\).`, [R`Treat it as a difference of two squares: \((\sin^2\theta - \cos^2\theta)(\sin^2\theta + \cos^2\theta)\)`, "difference of squares", "(sin²θ + cos²θ)", "sin^2"], [R`Use \(\sin^2\theta + \cos^2\theta = 1\)`, "= 1"], [R`So the expression equals \(\sin^2\theta - \cos^2\theta\)`, "sin²θ − cos²θ", "sin^2θ - cos^2θ"]),
+  T(2, R`Explain why dividing \(\sin x\cos x = \tfrac12\sin x\) by \(\sin x\) loses solutions.`, [R`\(\sin x = 0\) also satisfies the equation, but dividing by \(\sin x\) removes it`, "sin x = 0"], [R`Factorise instead: \(\sin x(\cos x - \tfrac12) = 0\), giving \(\sin x = 0\) or \(\cos x = \tfrac12\)`, "factorise", "sin x(cos x"]),
+  T(2, "Explain the ambiguous case of the sine rule.", [R`\(\sin\theta = \sin(180^\circ - \theta)\), so the sine rule gives two possible angles`, "180"], ["One acute and one obtuse; both may give valid triangles", "acute", "obtuse", "two"]),
+  T(2, R`Describe the graph of \(y = \tan x\) for \(0 \le x \le 360^\circ\).`, [R`It repeats every \(180^\circ\), crossing the \(x\)-axis at \(0^\circ, 180^\circ, 360^\circ\)`, "180", "period"], [R`It has vertical asymptotes at \(90^\circ\) and \(270^\circ\)`, "asymptote", "90", "270"]),
+  T(3, R`Solve \(4\sin^2 x - 1 = 0\) for \(0 \le x < 360^\circ\).`, [R`Rearrange: \(\sin^2 x = \tfrac14\)`, "¼", "1/4", "0.25"], [R`Square-root both sides, remembering both signs: \(\sin x = \pm\tfrac12\)`, "±½", "±1/2", "± 0.5", "+-"], [R`\(\sin x = \tfrac12\): \(30^\circ, 150^\circ\); \(\sin x = -\tfrac12\): \(210^\circ, 330^\circ\)`, "30", "150", "210", "330"])
 ]);
+
 
 S2Data.exam("5b", [
   M("135° in radians?", "3π/4", "2π/3", "5π/6", "π/4"),
