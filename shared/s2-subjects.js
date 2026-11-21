@@ -9,6 +9,15 @@
   var PLATFORMS = {
     mandarin: { name: "Mandarin²", path: "mandarin/index.html", cls: "s2-mandarin", glyph: "中文", course: "IGCSE Mandarin", blurb: "25 topics of step-by-step lessons, rapid-fire quizzes, flashcards and the 3+2 game." },
     chemistry: { name: "Chemistry²", path: "chemistry/index.html", cls: "s2-chemistry", glyph: "H₂O", course: "Edexcel IGCSE & GCSE", blurb: "Every topic with notes, videos, quizzes, exam questions, flashcards and a molecule drawer." },
+    "alevel-maths": { name: "A-level Maths²", path: "alevel-maths/index.html", cls: "s2-maths", glyph: "∫", course: "Edexcel A level (9MA0)", blurb: "Pure, statistics and mechanics, with worked examples, quick checks and flashcards." },
+    "english-lang": { name: "English Language²", path: "english-lang/index.html", cls: "s2-english", glyph: "Aa", course: "Edexcel GCSE (1EN0)", blurb: "Reading, writing and exam technique for both papers, with worked examples and practice questions." },
+    "english-lit": { name: "English Literature²", path: "english-lit/index.html", cls: "s2-englit", glyph: "❦", course: "Edexcel GCSE (1ET0)", blurb: "Study guides for Macbeth, Romeo and Juliet, An Inspector Calls, A Christmas Carol, Jekyll and Hyde and the Conflict poems." },
+    "computer-science": { name: "Computer Science²", path: "computer-science/index.html", cls: "s2-cs", glyph: "{ }", course: "Edexcel GCSE (1CP2)", blurb: "Algorithms, binary, hardware, networks, cyber security and Python programming." },
+    "geography": { name: "Geography²", path: "geography/index.html", cls: "s2-geog", glyph: "🌍", course: "Edexcel GCSE B (1GB0)", blurb: "Hazards, development, cities, coasts, rivers, fieldwork, forests and energy, with case studies." },
+    "history": { name: "History²", path: "history/index.html", cls: "s2-hist", glyph: "⌛", course: "Edexcel GCSE (1HI0)", blurb: "Medicine and the Western Front, the Cold War, Elizabethan England, and Weimar and Nazi Germany." },
+    "psychology": { name: "Psychology²", path: "psychology/index.html", cls: "s2-psych", glyph: "Ψ", course: "Edexcel GCSE (1PS0)", blurb: "Development, memory, the brain, social influence, criminal psychology, sleep and research methods." },
+    "business": { name: "Business²", path: "business/index.html", cls: "s2-bus", glyph: "£", course: "Edexcel GCSE (1BS0)", blurb: "Enterprise, market research, finance and break-even, marketing, operations and people." },
+    "economics": { name: "Economics²", path: "economics/index.html", cls: "s2-econ", glyph: "⇅", course: "AQA GCSE (8136)", blurb: "Demand and supply, elasticity, market failure, inflation, unemployment, policy and trade." },
     maths: { name: "Maths²", path: "maths/index.html", cls: "s2-maths", glyph: "x²", course: "Edexcel GCSE (1MA1)", blurb: "Number, algebra, ratio, geometry, probability and statistics, Foundation and Higher, with worked examples." },
     physics: { name: "Physics²", path: "physics/index.html", cls: "s2-physics", glyph: "F=ma", course: "Edexcel IGCSE & GCSE", blurb: "Forces, electricity, waves, energy, magnetism and space, with every equation explained." },
     "alevel-chemistry-ocr": { name: "A-level Chemistry A²", path: "alevel-chemistry-ocr/index.html", cls: "s2-alevel-chemistry", glyph: "Kc", course: "OCR A level Chemistry A (H432)", blurb: "All of OCR Chemistry A, module by module, with step-by-step notes, quick checks and flashcards." },
@@ -22,18 +31,18 @@
   /* [id, name, platforms that cover it (empty = coming soon), optional boards: [boardId, label, platform or null]] */
   var LEVELS = {
     gcse: { name: "GCSE / IGCSE", short: "GCSE", core: ["maths", "english-lang", "english-lit"], subjects: [
-      ["maths", "Maths", ["maths"]], ["english-lang", "English Language", []], ["english-lit", "English Literature", []],
+      ["maths", "Maths", ["maths"]], ["english-lang", "English Language", ["english-lang"]], ["english-lit", "English Literature", ["english-lit"]],
       ["biology", "Biology", ["biology"]], ["chemistry", "Chemistry", ["chemistry"]], ["physics", "Physics", ["physics"]],
       ["combined", "Combined Science", ["biology", "chemistry", "physics"]],
       ["mandarin", "Chinese (Mandarin)", ["mandarin"]], ["french", "French", []], ["spanish", "Spanish", []], ["german", "German", []],
-      ["computer-science", "Computer Science", []], ["geography", "Geography", []], ["history", "History", []], ["rs", "Religious Studies", []],
-      ["business", "Business", []], ["economics", "Economics", []], ["psychology", "Psychology", []], ["sociology", "Sociology", []],
+      ["computer-science", "Computer Science", ["computer-science"]], ["geography", "Geography", ["geography"]], ["history", "History", ["history"]], ["rs", "Religious Studies", []],
+      ["business", "Business", ["business"]], ["economics", "Economics", ["economics"]], ["psychology", "Psychology", ["psychology"]], ["sociology", "Sociology", []],
       ["further-maths", "Further Maths", []], ["statistics", "Statistics", []], ["dt", "Design & Technology", []], ["art", "Art & Design", []],
       ["music", "Music", []], ["drama", "Drama", []], ["pe", "PE", []], ["food", "Food Preparation & Nutrition", []], ["media", "Media Studies", []],
       ["latin", "Latin", []], ["citizenship", "Citizenship", []]
     ] },
     alevel: { name: "A level", short: "A level", core: [], subjects: [
-      ["maths", "Maths", []], ["further-maths", "Further Maths", []], ["biology", "Biology", [], [["bio-a", "Edexcel A, Salters-Nuffield (9BN0)", "alevel-biology-a"], ["bio-b", "Edexcel B (9BI0)", "alevel-biology-b"]]],
+      ["maths", "Maths", ["alevel-maths"]], ["further-maths", "Further Maths", []], ["biology", "Biology", [], [["bio-a", "Edexcel A, Salters-Nuffield (9BN0)", "alevel-biology-a"], ["bio-b", "Edexcel B (9BI0)", "alevel-biology-b"]]],
       ["chemistry", "Chemistry", ["alevel-chemistry"], [["edexcel", "Edexcel (9CH0)", "alevel-chemistry"], ["ocr-a", "OCR A (H432)", "alevel-chemistry-ocr"]]],
       ["physics", "Physics", ["alevel-physics"]],
       ["psychology", "Psychology", []], ["economics", "Economics", []], ["business", "Business", []], ["computer-science", "Computer Science", []],
