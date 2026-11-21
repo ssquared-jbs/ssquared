@@ -3,7 +3,7 @@
 S2Data.add({
   id: "6a", group: 6, y1: true, title: "Introduction to organic chemistry",
   summary: "Formulae, IUPAC naming, functional groups, structural and E/Z isomerism, reaction types and hazards.",
-  notes: `
+  notes: R`
 <h3>Types of formula</h3>
 <table>
 <tr><th>Formula</th><th>Butan-1-ol example</th></tr>
@@ -72,7 +72,7 @@ S2Data.add({
 S2Data.add({
   id: "6b", group: 6, y1: true, title: "Alkanes",
   summary: "Fuels, combustion and pollution, cracking and reforming, and free-radical substitution.",
-  notes: `
+  notes: R`
 <h3>Alkanes as fuels</h3>
 <ul>
 <li>Saturated hydrocarbons, C<sub>n</sub>H<sub>2n+2</sub>, obtained from crude oil by <b>fractional distillation</b>.</li>
@@ -122,7 +122,7 @@ S2Data.add({
 S2Data.add({
   id: "6c", group: 6, y1: true, title: "Alkenes",
   summary: "The C=C bond, electrophilic addition, Markovnikov's rule, test for alkenes and addition polymers.",
-  notes: `
+  notes: R`
 <h3>Structure</h3>
 <p>Alkenes (C<sub>n</sub>H<sub>2n</sub>) are <b>unsaturated</b>. The C=C has a σ bond and a <b>π bond</b>, formed by sideways overlap of p orbitals. The π bond is a region of high electron density above and below the plane, and is weaker than the σ bond, making alkenes reactive. Bond angles around C=C are about 120° (trigonal planar).</p>
 <h3>Addition reactions</h3>
@@ -178,7 +178,7 @@ S2Data.add({
 S2Data.add({
   id: "6d", group: 6, y1: true, title: "Halogenoalkanes",
   summary: "Classification, nucleophilic substitution and elimination, and rates of hydrolysis.",
-  notes: `
+  notes: R`
 <h3>Classification</h3>
 <p><b>Primary</b>: the C–X carbon is bonded to one other carbon. <b>Secondary</b>: two. <b>Tertiary</b>: three.</p>
 <h3>Reactivity</h3>
@@ -231,7 +231,7 @@ S2Data.add({
 S2Data.add({
   id: "6e", group: 6, y1: true, title: "Alcohols",
   summary: "Classification, combustion, oxidation with dichromate, halogenation, dehydration and practical techniques.",
-  notes: `
+  notes: R`
 <h3>Classification</h3>
 <p><b>Primary</b> (C–OH carbon attached to one carbon), <b>secondary</b> (two), <b>tertiary</b> (three).</p>
 <h3>Reactions</h3>
@@ -287,7 +287,7 @@ S2Data.add({
 S2Data.add({
   id: "7a", group: 7, y1: true, title: "Mass spectrometry and infrared spectroscopy",
   summary: "Using molecular ion and fragment peaks, and identifying bonds from IR absorptions.",
-  notes: `
+  notes: R`
 <h3>Mass spectrometry of organic compounds</h3>
 <ul>
 <li>The <b>molecular ion</b> M<sup>+</sup> peak at the highest m/z gives the M<sub>r</sub>. A small <b>M+1</b> peak comes from <sup>13</sup>C.</li>

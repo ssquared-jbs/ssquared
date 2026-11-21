@@ -3,7 +3,7 @@
 S2Data.add({
   id: "2a", group: 2, y1: true, title: "Ionic bonding",
   summary: "Ionic bonds, ion sizes, polarisation and the properties of ionic lattices.",
-  notes: `
+  notes: R`
 <h3>Ionic bonding</h3>
 <div class="box box-key"><span class="box-title">Definition</span>Ionic bonding is the <b>strong electrostatic attraction between oppositely charged ions</b> in a lattice.</div>
 <ul>
@@ -57,7 +57,7 @@ S2Data.add({
 S2Data.add({
   id: "2b", group: 2, y1: true, title: "Covalent bonds and shapes of molecules",
   summary: "Covalent and dative bonds, σ and π bonds, and electron-pair repulsion theory.",
-  notes: `
+  notes: R`
 <h3>Covalent bonds</h3>
 <div class="box box-key"><span class="box-title">Definition</span>A covalent bond is the <b>strong electrostatic attraction between two nuclei and a shared pair of electrons</b> between them.</div>
 <ul>
@@ -113,7 +113,7 @@ S2Data.add({
 S2Data.add({
   id: "2c", group: 2, y1: true, title: "Electronegativity, polarity and intermolecular forces",
   summary: "Polar bonds and molecules, London forces, permanent dipoles and hydrogen bonding.",
-  notes: `
+  notes: R`
 <h3>Electronegativity</h3>
 <p><b>Electronegativity</b> is the ability of an atom to attract the bonding electrons in a covalent bond. It increases across a period and up a group. Fluorine is the most electronegative element (Pauling value 4.0).</p>
 <ul>
@@ -172,7 +172,7 @@ S2Data.add({
 S2Data.add({
   id: "2d", group: 2, y1: true, title: "Metallic bonding and structures",
   summary: "Metallic bonding and comparing giant ionic, giant covalent, metallic and molecular structures.",
-  notes: `
+  notes: R`
 <h3>Metallic bonding</h3>
 <div class="box box-key"><span class="box-title">Definition</span>Metallic bonding is the <b>strong electrostatic attraction between a lattice of positive metal ions and a sea of delocalised electrons</b>.</div>
 <ul>

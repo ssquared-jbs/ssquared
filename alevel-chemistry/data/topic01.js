@@ -3,7 +3,7 @@
 S2Data.add({
   id: "1a", group: 1, y1: true, title: "Atoms, isotopes and mass spectrometry",
   summary: "Subatomic particles, isotopes, relative masses and how a mass spectrometer works.",
-  notes: `
+  notes: R`
 <h3>Subatomic particles</h3>
 <table>
 <tr><th>Particle</th><th>Relative mass</th><th>Relative charge</th><th>Where</th></tr>
@@ -68,7 +68,7 @@ S2Data.add({
 S2Data.add({
   id: "1b", group: 1, y1: true, title: "Electron configurations and ionisation energies",
   summary: "Shells, sub-shells and orbitals; spdf notation; ionisation energy trends as evidence for structure.",
-  notes: `
+  notes: R`
 <h3>Shells, sub-shells and orbitals</h3>
 <ul>
 <li>Electrons occupy <b>orbitals</b>: regions that can hold up to <b>two electrons with opposite spins</b>.</li>
@@ -135,7 +135,7 @@ S2Data.add({
 S2Data.add({
   id: "1c", group: 1, y1: true, title: "Periodicity",
   summary: "Trends across Period 3 in atomic radius, ionisation energy, melting point and structure.",
-  notes: `
+  notes: R`
 <h3>The Periodic Table</h3>
 <ul>
 <li>Elements are arranged in order of <b>atomic number</b>. Elements in the same <b>group</b> have the same outer electron configuration, so similar reactions.</li>

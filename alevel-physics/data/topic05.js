@@ -3,7 +3,7 @@
 S2Data.add({
   id: "5a", group: 5, y1: true, title: "Wave properties and polarisation",
   summary: "Progressive waves, the wave equation, transverse and longitudinal waves, phase and polarisation.",
-  notes: `
+  notes: R`
 <h3>Progressive waves</h3>
 <p>A progressive wave transfers energy without transferring matter. Key terms: <b>amplitude</b> (maximum displacement), <b>wavelength λ</b> (distance between adjacent points in phase), <b>frequency f</b> (waves per second), <b>period T = 1/f</b>.</p>
 <div class="box box-key"><span class="box-title">Wave equation</span>v = fλ</div>
@@ -56,7 +56,7 @@ S2Data.add({
 S2Data.add({
   id: "5b", group: 5, y1: true, title: "Superposition and stationary waves",
   summary: "Superposition, interference, stationary waves, nodes and antinodes, and harmonics on strings and in pipes.",
-  notes: `
+  notes: R`
 <h3>Superposition</h3>
 <p>When waves meet, the resultant displacement is the <b>vector sum</b> of the individual displacements. In phase → <b>constructive</b> interference; antiphase → <b>destructive</b>.</p>
 <p><b>Coherent</b> sources have the same frequency and a constant phase difference. They're needed for a stable interference pattern.</p>
@@ -112,7 +112,7 @@ S2Data.add({
 S2Data.add({
   id: "5c", group: 5, y1: true, title: "Refraction, total internal reflection and lenses",
   summary: "Refractive index, Snell's law, critical angle, optical fibres and thin lenses.",
-  notes: `
+  notes: R`
 <h3>Refraction</h3>
 <ul>
 <li>Refractive index: <b>n = c/v</b>, where c = 3.00 × 10<sup>8</sup> m s<sup>−1</sup>.</li>
@@ -160,7 +160,7 @@ S2Data.add({
 S2Data.add({
   id: "5d", group: 5, y1: true, title: "Diffraction and interference",
   summary: "Diffraction, the diffraction grating, Young's double slit and electron diffraction.",
-  notes: `
+  notes: R`
 <h3>Diffraction</h3>
 <p>Waves spread out when they pass through a gap or round an obstacle. Diffraction is most noticeable when the gap is about the same size as the wavelength. A wider gap gives less spreading.</p>
 <h3>Diffraction grating</h3>
@@ -208,7 +208,7 @@ S2Data.add({
 S2Data.add({
   id: "5e", group: 5, y1: true, title: "Photons, the photoelectric effect and energy levels",
   summary: "Photon energy, the photoelectric effect, work function, the electronvolt, energy levels and spectra.",
-  notes: `
+  notes: R`
 <h3>Photons</h3>
 <p>Light comes in packets of energy called <b>photons</b>: <b>E = hf = hc/λ</b>.</p>
 <p>The <b>electronvolt</b>: 1 eV = 1.60 × 10<sup>−19</sup> J (energy gained by an electron accelerated through 1 V). Electron accelerated through V gains ½mv<sup>2</sup> = eV.</p>

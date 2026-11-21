@@ -3,7 +3,7 @@
 S2Data.add({
   id: "6a", group: 6, title: "Magnetism",
   summary: "Magnetic poles, fields, magnetic materials and induced magnetism.",
-  notes: `
+  notes: R`
 <h3>Magnets</h3>
 <ul>
 <li>Magnets have a <b>north</b> and a <b>south</b> pole. <b>Like poles repel</b> and <b>unlike poles attract</b>.</li>
@@ -46,7 +46,7 @@ S2Data.add({
 S2Data.add({
   id: "6b", group: 6, title: "Electromagnetism and the motor effect",
   summary: "Fields around wires and solenoids, electromagnets, the motor effect, motors and loudspeakers.",
-  notes: `
+  notes: R`
 <h3>Magnetic effect of a current</h3>
 <ul>
 <li>A current in a wire creates a circular magnetic field around it. The <b>right-hand grip rule</b> gives the direction: thumb along the current, fingers curl in the field direction.</li>
@@ -92,7 +92,7 @@ S2Data.add({
 S2Data.add({
   id: "6c", group: 6, title: "Electromagnetic induction",
   summary: "Inducing a voltage, generators and transformers.",
-  notes: `
+  notes: R`
 <h3>Inducing a voltage</h3>
 <p>A voltage is <b>induced</b> in a conductor when it moves through a magnetic field, or when the field around it changes. If the circuit is complete, a current flows.</p>
 <ul>

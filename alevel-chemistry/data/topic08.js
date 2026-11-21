@@ -3,7 +3,7 @@
 S2Data.add({
   id: "8a", group: 8, y1: true, title: "Enthalpy changes and calorimetry",
   summary: "Standard conditions, the key enthalpy definitions, and measuring ΔH with Q = mcΔT.",
-  notes: `
+  notes: R`
 <h3>Enthalpy basics</h3>
 <ul>
 <li><b>Enthalpy change, ΔH</b>: the heat energy change at constant pressure. <b>Exothermic</b>: ΔH negative (surroundings get hotter). <b>Endothermic</b>: ΔH positive.</li>
@@ -57,7 +57,7 @@ S2Data.add({
 S2Data.add({
   id: "8b", group: 8, y1: true, title: "Hess's law and bond enthalpies",
   summary: "Using cycles with formation and combustion data, and calculating ΔH from mean bond enthalpies.",
-  notes: `
+  notes: R`
 <h3>Hess's law</h3>
 <p>The enthalpy change for a reaction is <b>independent of the route</b> taken, provided the start and end conditions are the same. So you can find enthalpy changes you can't measure directly.</p>
 <h3>Using formation data</h3>
@@ -101,7 +101,7 @@ S2Data.add({
 S2Data.add({
   id: "9a", group: 9, y1: true, title: "Kinetics I",
   summary: "Collision theory, factors affecting rate, Maxwell–Boltzmann distributions, catalysts and measuring rates.",
-  notes: `
+  notes: R`
 <h3>Collision theory</h3>
 <p>For a reaction, particles must <b>collide</b> with <b>energy ≥ the activation energy</b> (E<sub>a</sub>) and in the correct <b>orientation</b>. The rate depends on the <b>frequency of successful collisions</b>.</p>
 <ul>
@@ -151,7 +151,7 @@ S2Data.add({
 S2Data.add({
   id: "10a", group: 10, y1: true, title: "Equilibrium I",
   summary: "Dynamic equilibrium, writing Kc expressions, Le Chatelier's principle and industrial compromises.",
-  notes: `
+  notes: R`
 <h3>Dynamic equilibrium</h3>
 <p>In a <b>closed system</b>, a reversible reaction reaches equilibrium when the <b>forward and backward rates are equal</b> and the <b>concentrations stay constant</b> (not necessarily equal).</p>
 <h3>The equilibrium constant K<sub>c</sub></h3>

@@ -3,7 +3,7 @@
 S2Data.add({
   id: "2a", group: 2, y1: true, title: "Atoms, isotopes and mass spectrometry",
   summary: "Subatomic particles, isotopes, relative masses and how a mass spectrometer works.",
-  notes: `
+  notes: R`
 <h3>Subatomic particles</h3>
 <table>
 <tr><th>Particle</th><th>Relative mass</th><th>Relative charge</th><th>Where</th></tr>
@@ -68,7 +68,7 @@ S2Data.add({
 S2Data.add({
   id: "2b", group: 2, y1: true, title: "Moles, gases and solutions",
   summary: "The mole, empirical and molecular formulae, ideal gas equation, molar volume and concentrations.",
-  notes: `
+  notes: R`
 <h3>The mole</h3>
 <ul>
 <li>One mole contains <b>6.02 × 10<sup>23</sup></b> particles (the Avogadro constant, L).</li>
@@ -120,7 +120,7 @@ S2Data.add({
 S2Data.add({
   id: "2c", group: 2, y1: true, title: "Yield, atom economy, titrations and errors",
   summary: "Percentage yield, atom economy, acid–base titration calculations and measurement uncertainty.",
-  notes: `
+  notes: R`
 <h3>Yield and atom economy</h3>
 <ul>
 <li><b>Percentage yield</b> = (actual yield ÷ theoretical yield) × 100.</li>
@@ -167,7 +167,7 @@ S2Data.add({
 S2Data.add({
   id: "2d", group: 2, y1: true, title: "Oxidation numbers and redox equations",
   summary: "Assigning oxidation numbers, naming with Roman numerals, half-equations and disproportionation.",
-  notes: `
+  notes: R`
 <h3>Oxidation and reduction</h3>
 <ul>
 <li><b>Oxidation</b>: loss of electrons, or an <b>increase</b> in oxidation number.</li>
@@ -230,7 +230,7 @@ S2Data.add({
 S2Data.add({
   id: "2e", group: 2, y1: true, title: "Electron configurations and ionisation energies",
   summary: "Shells, sub-shells and orbitals; spdf notation; ionisation energy trends as evidence for structure.",
-  notes: `
+  notes: R`
 <h3>Shells, sub-shells and orbitals</h3>
 <ul>
 <li>Electrons occupy <b>orbitals</b>: regions that can hold up to <b>two electrons with opposite spins</b>.</li>
@@ -297,7 +297,7 @@ S2Data.add({
 S2Data.add({
   id: "2f", group: 2, y1: true, title: "Ionic bonding",
   summary: "Ionic bonds, ion sizes, polarisation and the properties of ionic lattices.",
-  notes: `
+  notes: R`
 <h3>Ionic bonding</h3>
 <div class="box box-key"><span class="box-title">Definition</span>Ionic bonding is the <b>strong electrostatic attraction between oppositely charged ions</b> in a lattice.</div>
 <ul>
@@ -351,7 +351,7 @@ S2Data.add({
 S2Data.add({
   id: "2g", group: 2, y1: true, title: "Covalent bonds and shapes of molecules",
   summary: "Covalent and dative bonds, σ and π bonds, and electron-pair repulsion theory.",
-  notes: `
+  notes: R`
 <h3>Covalent bonds</h3>
 <div class="box box-key"><span class="box-title">Definition</span>A covalent bond is the <b>strong electrostatic attraction between two nuclei and a shared pair of electrons</b> between them.</div>
 <ul>
@@ -407,7 +407,7 @@ S2Data.add({
 S2Data.add({
   id: "2h", group: 2, y1: true, title: "Electronegativity, polarity and intermolecular forces",
   summary: "Polar bonds and molecules, London forces, permanent dipoles and hydrogen bonding.",
-  notes: `
+  notes: R`
 <h3>Electronegativity</h3>
 <p><b>Electronegativity</b> is the ability of an atom to attract the bonding electrons in a covalent bond. It increases across a period and up a group. Fluorine is the most electronegative element (Pauling value 4.0).</p>
 <ul>
@@ -466,7 +466,7 @@ S2Data.add({
 S2Data.add({
   id: "3a", group: 3, y1: true, title: "Periodicity",
   summary: "Trends across Period 3 in atomic radius, ionisation energy, melting point and structure.",
-  notes: `
+  notes: R`
 <h3>The Periodic Table</h3>
 <ul>
 <li>Elements are arranged in order of <b>atomic number</b>. Elements in the same <b>group</b> have the same outer electron configuration, so similar reactions.</li>
@@ -515,7 +515,7 @@ S2Data.add({
 S2Data.add({
   id: "3b", group: 3, y1: true, title: "Metallic bonding and structures",
   summary: "Metallic bonding and comparing giant ionic, giant covalent, metallic and molecular structures.",
-  notes: `
+  notes: R`
 <h3>Metallic bonding</h3>
 <div class="box box-key"><span class="box-title">Definition</span>Metallic bonding is the <b>strong electrostatic attraction between a lattice of positive metal ions and a sea of delocalised electrons</b>.</div>
 <ul>
@@ -568,7 +568,7 @@ S2Data.add({
 S2Data.add({
   id: "3c", group: 3, y1: true, title: "Groups 1 and 2",
   summary: "Trends in Group 2 reactivity, solubility, thermal stability of carbonates and nitrates, and flame tests.",
-  notes: `
+  notes: R`
 <h3>Group 2 trends</h3>
 <ul>
 <li><b>First ionisation energy decreases</b> down the group (more shells, more shielding).</li>
@@ -628,7 +628,7 @@ S2Data.add({
 S2Data.add({
   id: "3d", group: 3, y1: true, title: "Group 7: the halogens",
   summary: "Trends, displacement, disproportionation, halide reactions with sulfuric acid, and halide tests.",
-  notes: `
+  notes: R`
 <h3>Trends down Group 7</h3>
 <ul>
 <li>F<sub>2</sub> pale yellow gas · Cl<sub>2</sub> green gas · Br<sub>2</sub> red-brown liquid · I<sub>2</sub> grey-black solid (purple vapour).</li>
@@ -691,7 +691,7 @@ S2Data.add({
 S2Data.add({
   id: "3e", group: 3, y1: true, title: "Enthalpy changes and calorimetry",
   summary: "Standard conditions, the key enthalpy definitions, and measuring ΔH with Q = mcΔT.",
-  notes: `
+  notes: R`
 <h3>Enthalpy basics</h3>
 <ul>
 <li><b>Enthalpy change, ΔH</b>: the heat energy change at constant pressure. <b>Exothermic</b>: ΔH negative (surroundings get hotter). <b>Endothermic</b>: ΔH positive.</li>
@@ -745,7 +745,7 @@ S2Data.add({
 S2Data.add({
   id: "3f", group: 3, y1: true, title: "Hess's law and bond enthalpies",
   summary: "Using cycles with formation and combustion data, and calculating ΔH from mean bond enthalpies.",
-  notes: `
+  notes: R`
 <h3>Hess's law</h3>
 <p>The enthalpy change for a reaction is <b>independent of the route</b> taken, provided the start and end conditions are the same. So you can find enthalpy changes you can't measure directly.</p>
 <h3>Using formation data</h3>
@@ -789,7 +789,7 @@ S2Data.add({
 S2Data.add({
   id: "3g", group: 3, y1: true, title: "Reaction rates",
   summary: "Collision theory, factors affecting rate, Maxwell–Boltzmann distributions, catalysts and measuring rates.",
-  notes: `
+  notes: R`
 <h3>Collision theory</h3>
 <p>For a reaction, particles must <b>collide</b> with <b>energy ≥ the activation energy</b> (E<sub>a</sub>) and in the correct <b>orientation</b>. The rate depends on the <b>frequency of successful collisions</b>.</p>
 <ul>
@@ -839,7 +839,7 @@ S2Data.add({
 S2Data.add({
   id: "3h", group: 3, y1: true, title: "Chemical equilibrium",
   summary: "Dynamic equilibrium, writing Kc expressions, Le Chatelier's principle and industrial compromises.",
-  notes: `
+  notes: R`
 <h3>Dynamic equilibrium</h3>
 <p>In a <b>closed system</b>, a reversible reaction reaches equilibrium when the <b>forward and backward rates are equal</b> and the <b>concentrations stay constant</b> (not necessarily equal).</p>
 <h3>The equilibrium constant K<sub>c</sub></h3>
@@ -892,7 +892,7 @@ S2Data.add({
 S2Data.add({
   id: "4a", group: 4, y1: true, title: "Introduction to organic chemistry",
   summary: "Formulae, IUPAC naming, functional groups, structural and E/Z isomerism, reaction types and hazards.",
-  notes: `
+  notes: R`
 <h3>Types of formula</h3>
 <table>
 <tr><th>Formula</th><th>Butan-1-ol example</th></tr>
@@ -961,7 +961,7 @@ S2Data.add({
 S2Data.add({
   id: "4b", group: 4, y1: true, title: "Alkanes",
   summary: "Fuels, combustion and pollution, cracking and reforming, and free-radical substitution.",
-  notes: `
+  notes: R`
 <h3>Alkanes as fuels</h3>
 <ul>
 <li>Saturated hydrocarbons, C<sub>n</sub>H<sub>2n+2</sub>, obtained from crude oil by <b>fractional distillation</b>.</li>
@@ -1011,7 +1011,7 @@ S2Data.add({
 S2Data.add({
   id: "4c", group: 4, y1: true, title: "Alkenes",
   summary: "The C=C bond, electrophilic addition, Markovnikov's rule, test for alkenes and addition polymers.",
-  notes: `
+  notes: R`
 <h3>Structure</h3>
 <p>Alkenes (C<sub>n</sub>H<sub>2n</sub>) are <b>unsaturated</b>. The C=C has a σ bond and a <b>π bond</b>, formed by sideways overlap of p orbitals. The π bond is a region of high electron density above and below the plane, and is weaker than the σ bond, making alkenes reactive. Bond angles around C=C are about 120° (trigonal planar).</p>
 <h3>Addition reactions</h3>
@@ -1067,7 +1067,7 @@ S2Data.add({
 S2Data.add({
   id: "4d", group: 4, y1: true, title: "Alcohols",
   summary: "Classification, combustion, oxidation with dichromate, halogenation, dehydration and practical techniques.",
-  notes: `
+  notes: R`
 <h3>Classification</h3>
 <p><b>Primary</b> (C–OH carbon attached to one carbon), <b>secondary</b> (two), <b>tertiary</b> (three).</p>
 <h3>Reactions</h3>
@@ -1123,7 +1123,7 @@ S2Data.add({
 S2Data.add({
   id: "4e", group: 4, y1: true, title: "Halogenoalkanes",
   summary: "Classification, nucleophilic substitution and elimination, and rates of hydrolysis.",
-  notes: `
+  notes: R`
 <h3>Classification</h3>
 <p><b>Primary</b>: the C–X carbon is bonded to one other carbon. <b>Secondary</b>: two. <b>Tertiary</b>: three.</p>
 <h3>Reactivity</h3>
@@ -1176,7 +1176,7 @@ S2Data.add({
 S2Data.add({
   id: "4f", group: 4, y1: true, title: "Mass spectrometry and infrared spectroscopy",
   summary: "Using molecular ion and fragment peaks, and identifying bonds from IR absorptions.",
-  notes: `
+  notes: R`
 <h3>Mass spectrometry of organic compounds</h3>
 <ul>
 <li>The <b>molecular ion</b> M<sup>+</sup> peak at the highest m/z gives the M<sub>r</sub>. A small <b>M+1</b> peak comes from <sup>13</sup>C.</li>
@@ -1226,7 +1226,7 @@ S2Data.add({
 S2Data.add({
   id: "5a", group: 5, y2: true, title: "Rate equations and orders",
   summary: "Rate equations, orders, rate constants, half-life and finding orders from experiments and graphs.",
-  notes: `
+  notes: R`
 <h3>Rate equations</h3>
 <div class="box box-key"><span class="box-title">Rate = k[A]<sup>m</sup>[B]<sup>n</sup></span>m and n are the <b>orders</b> with respect to A and B (found by experiment, not from the equation). The <b>overall order</b> is m + n. k is the <b>rate constant</b>.</div>
 <ul>
@@ -1280,7 +1280,7 @@ S2Data.add({
 S2Data.add({
   id: "5b", group: 5, y2: true, title: "Mechanisms and the Arrhenius equation",
   summary: "Rate-determining step, linking rate equations to mechanisms, SN1 vs SN2, and finding Ea.",
-  notes: `
+  notes: R`
 <h3>Rate-determining step</h3>
 <ul>
 <li>The <b>rate-determining step</b> (RDS) is the <b>slowest step</b> in a mechanism.</li>
@@ -1335,7 +1335,7 @@ S2Data.add({
 S2Data.add({
   id: "5c", group: 5, y2: true, title: "Equilibrium constants: Kc and Kp",
   summary: "Calculating Kc from equilibrium amounts, partial pressures and Kp, and how temperature affects K.",
-  notes: `
+  notes: R`
 <h3>Calculating K<sub>c</sub></h3>
 <p>Use an <b>ICE table</b>: Initial moles, Change, Equilibrium moles. Then divide by the volume to get concentrations.</p>
 <p><b>Example</b>: 1.00 mol of ethanoic acid and 1.00 mol of ethanol reach equilibrium in volume V. 0.67 mol of ester has formed.</p>
@@ -1385,7 +1385,7 @@ S2Data.add({
 S2Data.add({
   id: "5d", group: 5, y2: true, title: "Acids, bases and pH",
   summary: "Brønsted–Lowry acids and bases, pH of strong and weak acids, Ka, pKa and Kw.",
-  notes: `
+  notes: R`
 <h3>Brønsted–Lowry theory</h3>
 <ul>
 <li>An <b>acid</b> is a <b>proton donor</b>; a <b>base</b> is a <b>proton acceptor</b>.</li>
@@ -1441,7 +1441,7 @@ S2Data.add({
 S2Data.add({
   id: "5e", group: 5, y2: true, title: "Buffers, titration curves and indicators",
   summary: "How buffers work and their pH, pH curves for different acid–base pairs, and choosing an indicator.",
-  notes: `
+  notes: R`
 <h3>Buffers</h3>
 <p>A <b>buffer</b> resists changes in pH when small amounts of acid or alkali are added. An <b>acidic buffer</b> is a weak acid plus its salt (conjugate base), e.g. CH<sub>3</sub>COOH / CH<sub>3</sub>COONa.</p>
 <ul>
@@ -1501,7 +1501,7 @@ S2Data.add({
 S2Data.add({
   id: "5f", group: 5, y2: true, title: "Lattice energy and Born–Haber cycles",
   summary: "Lattice energy, Born–Haber cycles, factors affecting lattice energy, polarisation and enthalpies of solution.",
-  notes: `
+  notes: R`
 <h3>Definitions</h3>
 <table>
 <tr><th>Term</th><th>Definition</th></tr>
@@ -1556,7 +1556,7 @@ S2Data.add({
 S2Data.add({
   id: "5g", group: 5, y2: true, title: "Entropy and Gibbs energy",
   summary: "Entropy, total entropy change, Gibbs energy and feasibility, and links to K.",
-  notes: `
+  notes: R`
 <h3>Entropy, S</h3>
 <ul>
 <li>Entropy measures the <b>number of ways particles and their energy can be arranged</b>. Units: J K<sup>−1</sup> mol<sup>−1</sup>.</li>
@@ -1610,7 +1610,7 @@ S2Data.add({
 S2Data.add({
   id: "5h", group: 5, y2: true, title: "Electrode potentials and cells",
   summary: "Standard electrode potentials, the hydrogen electrode, cell EMF, feasibility and fuel cells.",
-  notes: `
+  notes: R`
 <h3>Half-cells and the standard hydrogen electrode</h3>
 <ul>
 <li>A <b>half-cell</b> contains an element in two oxidation states, e.g. Zn(s) in Zn<sup>2+</sup>(aq). Two half-cells joined by a <b>wire</b> (with a high-resistance voltmeter) and a <b>salt bridge</b> (filter paper soaked in saturated KNO<sub>3</sub>) make a cell.</li>
@@ -1665,7 +1665,7 @@ S2Data.add({
 S2Data.add({
   id: "5i", group: 5, y2: true, title: "Redox titrations",
   summary: "Combining half-equations, and titrations with manganate(VII) and with iodine/thiosulfate.",
-  notes: `
+  notes: R`
 <h3>Combining half-equations</h3>
 <p>Multiply so the electrons are equal, then add and cancel. In acid:</p>
 <p>MnO<sub>4</sub><sup>−</sup> + 8H<sup>+</sup> + 5e<sup>−</sup> → Mn<sup>2+</sup> + 4H<sub>2</sub>O and Fe<sup>2+</sup> → Fe<sup>3+</sup> + e<sup>−</sup> give:</p>
@@ -1714,7 +1714,7 @@ S2Data.add({
 S2Data.add({
   id: "5j", group: 5, y2: true, title: "Transition metals and complexes",
   summary: "Electron configurations, complex ions, ligands, shapes, isomerism and why complexes are coloured.",
-  notes: `
+  notes: R`
 <h3>What makes a transition metal</h3>
 <ul>
 <li>A <b>transition metal</b> is a d-block element that forms <b>one or more stable ions with an incompletely filled d-subshell</b>. Sc and Zn are d-block but not transition metals (Sc<sup>3+</sup> is 3d<sup>0</sup>; Zn<sup>2+</sup> is 3d<sup>10</sup>).</li>
@@ -1772,7 +1772,7 @@ S2Data.add({
 S2Data.add({
   id: "5k", group: 5, y2: true, title: "Transition metal reactions and catalysis",
   summary: "Ligand exchange, reactions with OH⁻ and NH₃, redox of Cr and V, and heterogeneous and homogeneous catalysis.",
-  notes: `
+  notes: R`
 <h3>Ligand exchange</h3>
 <ul>
 <li>[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> (blue) + 4Cl<sup>−</sup> (conc HCl) ⇌ [CuCl<sub>4</sub>]<sup>2−</sup> (yellow) + 6H<sub>2</sub>O. Coordination number and shape change (Cl<sup>−</sup> is larger).</li>
@@ -1832,7 +1832,7 @@ S2Data.add({
 S2Data.add({
   id: "6a", group: 6, y2: true, title: "Arenes",
   summary: "The structure of benzene, evidence for delocalisation, electrophilic substitution, and phenol.",
-  notes: `
+  notes: R`
 <h3>Structure of benzene</h3>
 <ul>
 <li>C<sub>6</sub>H<sub>6</sub>: a planar hexagon, bond angles 120°. Each carbon uses three electrons in σ bonds; the remaining p electrons overlap above and below the ring to form a <b>delocalised π system</b>.</li>
@@ -1889,7 +1889,7 @@ S2Data.add({
 S2Data.add({
   id: "6b", group: 6, y2: true, title: "Carbonyl compounds",
   summary: "Aldehydes and ketones: physical properties, oxidation tests, reduction, and nucleophilic addition of HCN.",
-  notes: `
+  notes: R`
 <h3>Structure and properties</h3>
 <ul>
 <li><b>Aldehydes</b>: C=O at the end of the chain (–CHO), named -al. <b>Ketones</b>: C=O in the chain, named -one.</li>
@@ -1940,7 +1940,7 @@ S2Data.add({
 S2Data.add({
   id: "6c", group: 6, y2: true, title: "Carboxylic acids and derivatives",
   summary: "Preparing and reacting carboxylic acids, esters, acyl chlorides and polyesters.",
-  notes: `
+  notes: R`
 <h3>Carboxylic acids</h3>
 <ul>
 <li>–COOH. Hydrogen bonding gives high boiling points; short chains are soluble in water. Weak acids.</li>
@@ -1998,7 +1998,7 @@ S2Data.add({
 S2Data.add({
   id: "6d", group: 6, y2: true, title: "Amines, amides and amino acids",
   summary: "Basicity and preparation of amines, amides, polyamides, and the chemistry of amino acids.",
-  notes: `
+  notes: R`
 <h3>Amines</h3>
 <ul>
 <li>Primary (RNH<sub>2</sub>), secondary (R<sub>2</sub>NH), tertiary (R<sub>3</sub>N). They act as <b>bases</b> and <b>nucleophiles</b> because of the lone pair on N.</li>
@@ -2056,7 +2056,7 @@ S2Data.add({
 S2Data.add({
   id: "6e", group: 6, y2: true, title: "Chirality",
   summary: "Chiral centres, enantiomers, optical activity, racemic mixtures and what they tell you about mechanisms.",
-  notes: `
+  notes: R`
 <h3>Optical isomerism</h3>
 <ul>
 <li>A <b>chiral centre</b> is a carbon atom with <b>four different groups</b> attached. Mark it with an asterisk (*).</li>
@@ -2104,7 +2104,7 @@ S2Data.add({
 S2Data.add({
   id: "6f", group: 6, y2: true, title: "Organic synthesis",
   summary: "Grignard reagents, multi-step synthesis routes, practical techniques and identifying functional groups.",
-  notes: `
+  notes: R`
 <h3>Grignard reagents</h3>
 <ul>
 <li>Made from a halogenoalkane and <b>magnesium in dry ether</b>: CH<sub>3</sub>CH<sub>2</sub>Br + Mg → CH<sub>3</sub>CH<sub>2</sub>MgBr. Water must be excluded (it destroys the reagent).</li>
@@ -2167,7 +2167,7 @@ S2Data.add({
 S2Data.add({
   id: "6g", group: 6, y2: true, title: "Chromatography and combined techniques",
   summary: "TLC, Rf values, gas and HPLC chromatography, and combining spectra to work out structures.",
-  notes: `
+  notes: R`
 <h3>Chromatography</h3>
 <p>All chromatography has a <b>stationary phase</b> and a <b>mobile phase</b>. Components separate because they have different <b>affinities</b> for the two phases (adsorption to the stationary phase, or solubility in it).</p>
 <h3>Thin-layer chromatography (TLC)</h3>
@@ -2219,7 +2219,7 @@ S2Data.add({
 S2Data.add({
   id: "6h", group: 6, y2: true, title: "NMR spectroscopy",
   summary: "¹³C and ¹H NMR: chemical shift, number of environments, integration, splitting and TMS.",
-  notes: `
+  notes: R`
 <h3>How NMR works</h3>
 <ul>
 <li>Nuclei with an odd mass number (<sup>1</sup>H, <sup>13</sup>C) have spin. In a strong magnetic field they absorb radio waves.</li>

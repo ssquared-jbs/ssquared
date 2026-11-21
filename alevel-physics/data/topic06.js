@@ -3,7 +3,7 @@
 S2Data.add({
   id: "6a", group: 6, y2: true, title: "Momentum and impulse",
   summary: "Momentum, Newton's second law in momentum form, impulse, conservation of momentum and collisions.",
-  notes: `
+  notes: R`
 <h3>Momentum</h3>
 <p>Momentum <b>p = mv</b> (kg m s<sup>−1</sup>), a vector.</p>
 <p>Newton's second law in general form: the resultant force equals the rate of change of momentum, <b>F = Δp/Δt</b>. For constant mass this gives F = ma.</p>
@@ -50,7 +50,7 @@ S2Data.add({
 S2Data.add({
   id: "6b", group: 6, y2: true, title: "Circular motion",
   summary: "Angular displacement and speed, centripetal acceleration and force, and circular motion problems.",
-  notes: `
+  notes: R`
 <h3>Describing circular motion</h3>
 <ul>
 <li><b>Radian</b>: the angle subtended at the centre by an arc equal to the radius. 2π rad = 360°.</li>
@@ -94,7 +94,7 @@ S2Data.add({
 S2Data.add({
   id: "7a", group: 7, y2: true, title: "Electric fields",
   summary: "Field strength, Coulomb's law, radial and uniform fields, electric potential and equipotentials.",
-  notes: `
+  notes: R`
 <h3>Electric field strength</h3>
 <p>An electric field is a region where a charged particle experiences a force. <b>E = F/Q</b> (N C<sup>−1</sup>). Field lines go from + to −.</p>
 <h3>Radial fields (point charges)</h3>
@@ -140,7 +140,7 @@ S2Data.add({
 S2Data.add({
   id: "7b", group: 7, y2: true, title: "Capacitors",
   summary: "Capacitance, energy stored, capacitors in circuits, and charging and discharging with exponential equations.",
-  notes: `
+  notes: R`
 <h3>Capacitance</h3>
 <p>A capacitor stores charge on two plates separated by an insulator. <b>C = Q/V</b> (farads, F).</p>
 <ul>
@@ -187,7 +187,7 @@ S2Data.add({
 S2Data.add({
   id: "7c", group: 7, y2: true, title: "Magnetic fields and forces",
   summary: "Magnetic flux density, the force on a current-carrying wire and on moving charges, and Fleming's left-hand rule.",
-  notes: `
+  notes: R`
 <h3>Magnetic flux density</h3>
 <p>Magnetic flux density B is measured in tesla (T). Flux <b>Φ = BA</b> (webers, Wb) for a field perpendicular to area A. Flux linkage = NΦ.</p>
 <h3>Force on a current-carrying wire</h3>
@@ -230,7 +230,7 @@ S2Data.add({
 S2Data.add({
   id: "7d", group: 7, y2: true, title: "Electromagnetic induction",
   summary: "Faraday's and Lenz's laws, induced emf, generators and transformers.",
-  notes: `
+  notes: R`
 <h3>Induced emf</h3>
 <p>An emf is induced when there is a change of flux linkage, for example when a conductor cuts magnetic field lines or the field through a coil changes.</p>
 <div class="box box-key"><span class="box-title">Faraday's law and Lenz's law</span>ε = −d(NΦ)/dt. The size of the induced emf equals the rate of change of flux linkage (Faraday). The minus sign means the induced emf acts to <b>oppose</b> the change that causes it (Lenz).</div>

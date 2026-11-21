@@ -1,4 +1,5 @@
 /* A-level Chemistry² — subject settings. Loaded before the topic files. */
+window.R = String.raw; /* lets data files write LaTeX with single backslashes */
 window.SUBJECT = {
   slug: "alevel-chemistry",
   keyPrefix: "achem",
@@ -7,6 +8,7 @@ window.SUBJECT = {
   subjectWord: "A-level Chemistry",
   course: "Edexcel A level Chemistry (9CH0)",
   intro: "Every topic of Pearson Edexcel A level Chemistry (9CH0), from atomic structure to NMR:",
+  math: true,
   extrasGroup: 99,
   groups: {
     1: { name: "Atomic structure and the Periodic Table", sub: "Mass spectrometry, electron configurations, ionisation energies, periodicity" },

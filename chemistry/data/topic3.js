@@ -3,7 +3,7 @@
 CHEM.add({
   id: "3a", group: 3, title: "Energetics",
   summary: "Exothermic and endothermic reactions, calorimetry, ΔH and bond energies.",
-  notes: `
+  notes: R`
 <h3>Exothermic and endothermic</h3>
 <table>
 <tr><th></th><th>Exothermic</th><th>Endothermic</th></tr>
@@ -64,7 +64,7 @@ Q = 100 × 4.2 × 6.5 = 2730 J = 2.73 kJ.<br>ΔH = −2.73 ÷ 0.050 = <b>−54.6
 CHEM.add({
   id: "3b", group: 3, title: "Rates of reaction",
   summary: "Measuring rate, factors that affect it, collision theory and catalysts.",
-  notes: `
+  notes: R`
 <h3>Measuring rate</h3>
 <ul>
 <li>Rate = amount of reactant used or product formed ÷ time.</li>
@@ -119,7 +119,7 @@ CHEM.add({
 CHEM.add({
   id: "3c", group: 3, title: "Reversible reactions and equilibria",
   summary: "Reversible reactions, dynamic equilibrium and how conditions shift the position.",
-  notes: `
+  notes: R`
 <h3>Reversible reactions</h3>
 <p>Some reactions can go both ways. The symbol is <b>⇌</b>.</p>
 <div class="eq">CuSO<sub>4</sub>·5H<sub>2</sub>O (blue) ⇌ CuSO<sub>4</sub> (white) + 5H<sub>2</sub>O</div>

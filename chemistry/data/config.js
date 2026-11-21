@@ -1,4 +1,5 @@
 /* Chemistry² — subject settings. Loaded before the topic and exam files. */
+window.R = String.raw; /* lets data files write LaTeX with single backslashes */
 window.SUBJECT = {
   slug: "chemistry",
   keyPrefix: "chem",
@@ -7,6 +8,7 @@ window.SUBJECT = {
   subjectWord: "GCSE Chemistry",
   course: "Edexcel IGCSE and GCSE Chemistry",
   intro: "Every topic of Edexcel International GCSE Chemistry (4CH1) plus the extra Edexcel GCSE (1CH0) content:",
+  math: true,
   extrasGroup: 5,
   groups: {
     1: { name: "Principles of chemistry", sub: "States of matter, atoms, bonding, moles and electrolysis" },

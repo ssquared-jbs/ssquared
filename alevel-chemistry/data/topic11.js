@@ -3,7 +3,7 @@
 S2Data.add({
   id: "11a", group: 11, y2: true, title: "Equilibrium II: Kc and Kp",
   summary: "Calculating Kc from equilibrium amounts, partial pressures and Kp, and how temperature affects K.",
-  notes: `
+  notes: R`
 <h3>Calculating K<sub>c</sub></h3>
 <p>Use an <b>ICE table</b>: Initial moles, Change, Equilibrium moles. Then divide by the volume to get concentrations.</p>
 <p><b>Example</b>: 1.00 mol of ethanoic acid and 1.00 mol of ethanol reach equilibrium in volume V. 0.67 mol of ester has formed.</p>
@@ -53,7 +53,7 @@ S2Data.add({
 S2Data.add({
   id: "12a", group: 12, y2: true, title: "Acids, bases and pH",
   summary: "Brønsted–Lowry acids and bases, pH of strong and weak acids, Ka, pKa and Kw.",
-  notes: `
+  notes: R`
 <h3>Brønsted–Lowry theory</h3>
 <ul>
 <li>An <b>acid</b> is a <b>proton donor</b>; a <b>base</b> is a <b>proton acceptor</b>.</li>
@@ -109,7 +109,7 @@ S2Data.add({
 S2Data.add({
   id: "12b", group: 12, y2: true, title: "Buffers, titration curves and indicators",
   summary: "How buffers work and their pH, pH curves for different acid–base pairs, and choosing an indicator.",
-  notes: `
+  notes: R`
 <h3>Buffers</h3>
 <p>A <b>buffer</b> resists changes in pH when small amounts of acid or alkali are added. An <b>acidic buffer</b> is a weak acid plus its salt (conjugate base), e.g. CH<sub>3</sub>COOH / CH<sub>3</sub>COONa.</p>
 <ul>
@@ -169,7 +169,7 @@ S2Data.add({
 S2Data.add({
   id: "13a", group: 13, y2: true, title: "Lattice energy and Born–Haber cycles",
   summary: "Lattice energy, Born–Haber cycles, factors affecting lattice energy, polarisation and enthalpies of solution.",
-  notes: `
+  notes: R`
 <h3>Definitions</h3>
 <table>
 <tr><th>Term</th><th>Definition</th></tr>
@@ -224,7 +224,7 @@ S2Data.add({
 S2Data.add({
   id: "13b", group: 13, y2: true, title: "Entropy and Gibbs energy",
   summary: "Entropy, total entropy change, Gibbs energy and feasibility, and links to K.",
-  notes: `
+  notes: R`
 <h3>Entropy, S</h3>
 <ul>
 <li>Entropy measures the <b>number of ways particles and their energy can be arranged</b>. Units: J K<sup>−1</sup> mol<sup>−1</sup>.</li>

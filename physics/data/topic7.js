@@ -3,7 +3,7 @@
 S2Data.add({
   id: "7a", group: 7, title: "Radioactivity",
   summary: "Atoms and isotopes, alpha, beta and gamma radiation, nuclear equations, half-life, uses and dangers.",
-  notes: `
+  notes: R`
 <h3>Atoms and isotopes</h3>
 <ul>
 <li>A nucleus contains protons and neutrons, with electrons around it.</li>
@@ -77,7 +77,7 @@ S2Data.add({
 S2Data.add({
   id: "7b", group: 7, title: "Fission and fusion", paper2: true,
   summary: "Nuclear fission, chain reactions, nuclear reactors and nuclear fusion in stars.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This subtopic is Paper 2 only</span></div>
 <h3>Nuclear fission</h3>
 <ul>

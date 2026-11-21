@@ -1,4 +1,5 @@
 /* A-level Physics² — subject settings. Loaded before the topic files. */
+window.R = String.raw; /* lets data files write LaTeX with single backslashes */
 window.SUBJECT = {
   slug: "alevel-physics",
   keyPrefix: "aphys",
@@ -7,6 +8,7 @@ window.SUBJECT = {
   subjectWord: "A-level Physics",
   course: "Edexcel A level Physics (9PH0)",
   intro: "Every topic of Pearson Edexcel A level Physics (9PH0), from mechanics to oscillations:",
+  math: true,
   extrasGroup: 99,
   groups: {
     1: { name: "Working as a physicist", sub: "SI units, uncertainties and graphs" },

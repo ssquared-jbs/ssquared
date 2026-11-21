@@ -3,7 +3,7 @@
 S2Data.add({
   id: "8a", group: 8, y2: true, title: "Accelerators and detectors",
   summary: "Rutherford scattering, linear accelerators, cyclotrons, particle detectors and E = mc².",
-  notes: `
+  notes: R`
 <h3>Probing the atom</h3>
 <p>Rutherford's alpha-scattering experiment: most alphas passed straight through gold foil; a few were deflected through large angles. Conclusion: the atom is mostly empty space with a tiny, dense, positively charged <b>nucleus</b>.</p>
 <p>To probe smaller structures you need shorter de Broglie wavelengths, so higher-energy particles. High-energy electron scattering revealed quarks inside protons.</p>
@@ -49,7 +49,7 @@ S2Data.add({
 S2Data.add({
   id: "8b", group: 8, y2: true, title: "The standard model",
   summary: "Quarks, leptons, hadrons, antiparticles and conservation laws in particle interactions.",
-  notes: `
+  notes: R`
 <h3>Fundamental particles</h3>
 <table>
 <tr><th>Quarks</th><th>Charge</th></tr>
@@ -101,7 +101,7 @@ S2Data.add({
 S2Data.add({
   id: "9a", group: 9, y2: true, title: "Thermal energy",
   summary: "Internal energy, specific heat capacity, specific latent heat and absolute zero.",
-  notes: `
+  notes: R`
 <h3>Internal energy and temperature</h3>
 <ul>
 <li><b>Internal energy</b> = the sum of the randomly distributed kinetic and potential energies of the molecules.</li>
@@ -142,7 +142,7 @@ S2Data.add({
 S2Data.add({
   id: "9b", group: 9, y2: true, title: "Ideal gases and kinetic theory",
   summary: "The gas laws, the ideal gas equation, kinetic theory and molecular kinetic energy.",
-  notes: `
+  notes: R`
 <h3>Gas laws</h3>
 <ul>
 <li><b>Boyle's law</b>: pV = constant (constant T).</li>
@@ -185,7 +185,7 @@ S2Data.add({
 S2Data.add({
   id: "10a", group: 10, y2: true, title: "Stars and the universe",
   summary: "Black-body radiation, Stefan–Boltzmann and Wien's laws, the HR diagram, distances, redshift and Hubble's law.",
-  notes: `
+  notes: R`
 <h3>Black-body radiation</h3>
 <ul>
 <li>A black body absorbs all radiation that falls on it; stars approximate black bodies.</li>
@@ -237,7 +237,7 @@ S2Data.add({
 S2Data.add({
   id: "11a", group: 11, y2: true, title: "Radioactive decay",
   summary: "Alpha, beta and gamma, decay equations, background radiation, activity, the decay constant and half-life.",
-  notes: `
+  notes: R`
 <h3>Types of radiation</h3>
 <table>
 <tr><th></th><th>Nature</th><th>Ionising</th><th>Stopped by</th></tr>
@@ -282,7 +282,7 @@ S2Data.add({
 S2Data.add({
   id: "11b", group: 11, y2: true, title: "Binding energy, fission and fusion",
   summary: "Mass deficit, binding energy per nucleon, and energy released in fission and fusion.",
-  notes: `
+  notes: R`
 <h3>Mass deficit and binding energy</h3>
 <ul>
 <li>The mass of a nucleus is <b>less</b> than the total mass of its separate protons and neutrons. The difference is the <b>mass deficit</b>.</li>
@@ -324,7 +324,7 @@ S2Data.add({
 S2Data.add({
   id: "12a", group: 12, y2: true, title: "Gravitational fields",
   summary: "Newton's law of gravitation, field strength, gravitational potential and orbits.",
-  notes: `
+  notes: R`
 <h3>Newton's law of gravitation</h3>
 <div class="box box-key"><span class="box-title">F = Gm<sub>1</sub>m<sub>2</sub>/r<sup>2</sup></span>G = 6.67 × 10<sup>−11</sup> N m<sup>2</sup> kg<sup>−2</sup>. Gravity is always attractive. r is measured between centres.</div>
 <h3>Field strength and potential</h3>
@@ -370,7 +370,7 @@ S2Data.add({
 S2Data.add({
   id: "13a", group: 13, y2: true, title: "Simple harmonic motion",
   summary: "Conditions for SHM, displacement, velocity and acceleration equations, and mass–spring and pendulum systems.",
-  notes: `
+  notes: R`
 <h3>What is SHM?</h3>
 <div class="box box-key"><span class="box-title">a = −ω<sup>2</sup>x</span>Acceleration is proportional to displacement from equilibrium and always directed towards it. ω = 2πf = 2π/T.</div>
 <h3>Equations</h3>
@@ -416,7 +416,7 @@ S2Data.add({
 S2Data.add({
   id: "13b", group: 13, y2: true, title: "Damping and resonance",
   summary: "Free and forced oscillations, damping, resonance and its uses and problems.",
-  notes: `
+  notes: R`
 <h3>Free and forced oscillations</h3>
 <ul>
 <li><b>Free oscillation</b>: no external driving force; oscillates at its <b>natural frequency</b> f<sub>0</sub>.</li>

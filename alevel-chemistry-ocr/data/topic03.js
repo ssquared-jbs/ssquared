@@ -3,7 +3,7 @@
 S2Data.add({
   id: "3i", group: 3, y1: true, title: "Qualitative analysis",
   summary: "Tests for carbonate, sulfate, halide and ammonium ions, and why the order of tests matters.",
-  notes: `
+  notes: R`
 <h3>Tests for anions</h3>
 <table>
 <tr><th>Ion</th><th>Test</th><th>Positive result</th></tr>

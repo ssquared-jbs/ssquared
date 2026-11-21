@@ -3,7 +3,7 @@
 S2Data.add({
   id: "1a", group: 1, y1: true, title: "Units, uncertainties and graphs",
   summary: "SI base units, prefixes, estimation, uncertainties and getting physics from straight-line graphs.",
-  notes: `
+  notes: R`
 <h3>SI base units</h3>
 <table>
 <tr><th>Quantity</th><th>Unit</th></tr>
@@ -61,7 +61,7 @@ S2Data.add({
 S2Data.add({
   id: "2a", group: 2, y1: true, title: "Motion and projectiles",
   summary: "Displacement–time and velocity–time graphs, the suvat equations and projectile motion.",
-  notes: `
+  notes: R`
 <h3>Motion graphs</h3>
 <ul>
 <li><b>Displacement–time</b>: gradient = velocity.</li>
@@ -110,7 +110,7 @@ S2Data.add({
 S2Data.add({
   id: "2b", group: 2, y1: true, title: "Forces, Newton's laws and moments",
   summary: "Free-body diagrams, Newton's three laws, terminal velocity, moments and centre of gravity.",
-  notes: `
+  notes: R`
 <h3>Newton's laws</h3>
 <ol>
 <li><b>First law</b>: an object stays at rest or moves at constant velocity unless a resultant force acts on it.</li>
@@ -159,7 +159,7 @@ S2Data.add({
 S2Data.add({
   id: "2c", group: 2, y1: true, title: "Work, energy and power",
   summary: "Work done, kinetic and gravitational potential energy, conservation of energy, power and efficiency.",
-  notes: `
+  notes: R`
 <h3>Work done</h3>
 <p><b>Work done = force × distance moved in the direction of the force</b>: W = FΔs. If the force is at angle θ to the motion, W = FΔs cos θ. Unit: joule (J). Work done = energy transferred.</p>
 <h3>Kinetic and potential energy</h3>

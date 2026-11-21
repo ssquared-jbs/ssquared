@@ -3,7 +3,7 @@
 S2Data.add({
   id: "3a", group: 3, y1: true, title: "Oxidation numbers and redox equations",
   summary: "Assigning oxidation numbers, naming with Roman numerals, half-equations and disproportionation.",
-  notes: `
+  notes: R`
 <h3>Oxidation and reduction</h3>
 <ul>
 <li><b>Oxidation</b>: loss of electrons, or an <b>increase</b> in oxidation number.</li>
@@ -66,7 +66,7 @@ S2Data.add({
 S2Data.add({
   id: "4a", group: 4, y1: true, title: "Groups 1 and 2",
   summary: "Trends in Group 2 reactivity, solubility, thermal stability of carbonates and nitrates, and flame tests.",
-  notes: `
+  notes: R`
 <h3>Group 2 trends</h3>
 <ul>
 <li><b>First ionisation energy decreases</b> down the group (more shells, more shielding).</li>
@@ -126,7 +126,7 @@ S2Data.add({
 S2Data.add({
   id: "4b", group: 4, y1: true, title: "Group 7: the halogens",
   summary: "Trends, displacement, disproportionation, halide reactions with sulfuric acid, and halide tests.",
-  notes: `
+  notes: R`
 <h3>Trends down Group 7</h3>
 <ul>
 <li>F<sub>2</sub> pale yellow gas · Cl<sub>2</sub> green gas · Br<sub>2</sub> red-brown liquid · I<sub>2</sub> grey-black solid (purple vapour).</li>
@@ -189,7 +189,7 @@ S2Data.add({
 S2Data.add({
   id: "5a", group: 5, y1: true, title: "Moles, gases and solutions",
   summary: "The mole, empirical and molecular formulae, ideal gas equation, molar volume and concentrations.",
-  notes: `
+  notes: R`
 <h3>The mole</h3>
 <ul>
 <li>One mole contains <b>6.02 × 10<sup>23</sup></b> particles (the Avogadro constant, L).</li>
@@ -241,7 +241,7 @@ S2Data.add({
 S2Data.add({
   id: "5b", group: 5, y1: true, title: "Yield, atom economy, titrations and errors",
   summary: "Percentage yield, atom economy, acid–base titration calculations and measurement uncertainty.",
-  notes: `
+  notes: R`
 <h3>Yield and atom economy</h3>
 <ul>
 <li><b>Percentage yield</b> = (actual yield ÷ theoretical yield) × 100.</li>

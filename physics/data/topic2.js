@@ -3,7 +3,7 @@
 S2Data.add({
   id: "2a", group: 2, title: "Mains electricity",
   summary: "Fuses, earthing, double insulation, a.c. and d.c., and electrical power.",
-  notes: `
+  notes: R`
 <h3>Units</h3>
 <p>Current: ampere (A). Voltage: volt (V). Resistance: ohm (Ω). Charge: coulomb (C). Energy: joule (J). Power: watt (W). Time: second (s).</p>
 <h3>Hazards of electricity</h3>
@@ -60,7 +60,7 @@ S2Data.add({
 S2Data.add({
   id: "2b", group: 2, title: "Circuits: current, voltage and resistance",
   summary: "Series and parallel circuits, V = IR, I–V graphs, LDRs, thermistors, charge and energy.",
-  notes: `
+  notes: R`
 <h3>Series and parallel</h3>
 <table>
 <tr><th></th><th>Series</th><th>Parallel</th></tr>
@@ -121,7 +121,7 @@ S2Data.add({
 S2Data.add({
   id: "2c", group: 2, title: "Electric charge", paper2: true,
   summary: "Static electricity, charging by friction, and its uses and dangers.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This subtopic is Paper 2 only</span></div>
 <h3>Charging by friction</h3>
 <ul>

@@ -3,7 +3,7 @@
 S2Data.add({
   id: "9a", group: 9, gcse: true, title: "Energy and matter extras",
   summary: "Specific latent heat, elastic potential energy, and upthrust in fluids.",
-  notes: `
+  notes: R`
 <div class="box box-key"><span class="box-title">Why this is here</span>These ideas are in Edexcel GCSE Physics (1PH0). International GCSE (4PH1) students can skip them, but they help with harder questions.</div>
 <h3>Specific latent heat</h3>
 <p>The energy needed to change the state of 1 kg of a substance <b>without changing its temperature</b>.</p>
@@ -44,7 +44,7 @@ S2Data.add({
 S2Data.add({
   id: "9b", group: 9, gcse: true, title: "Electricity and magnetism extras",
   summary: "P = I²R, the National Grid, magnetic flux density and F = BIL, and microphones.",
-  notes: `
+  notes: R`
 <div class="box box-key"><span class="box-title">Why this is here</span>These ideas are in Edexcel GCSE Physics (1PH0) but not the International GCSE.</div>
 <h3>Power and resistance</h3>
 <div class="eq">power = current<sup>2</sup> × resistance &nbsp;&nbsp; P = I<sup>2</sup> × R</div>
@@ -78,7 +78,7 @@ S2Data.add({
 S2Data.add({
   id: "9c", group: 9, gcse: true, title: "Waves and radiation extras",
   summary: "Lenses, black body radiation, ultrasound and seismic waves, and radiation dose.",
-  notes: `
+  notes: R`
 <div class="box box-key"><span class="box-title">Why this is here</span>These ideas are in Edexcel GCSE Physics (1PH0) but not the International GCSE.</div>
 <h3>Lenses</h3>
 <ul>

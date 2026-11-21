@@ -3,7 +3,7 @@
 S2Data.add({
   id: "8a", group: 8, title: "Motion in the universe",
   summary: "The Universe's structure, gravity, orbits and orbital speed.",
-  notes: `
+  notes: R`
 <h3>The Universe</h3>
 <ul>
 <li>The <b>Universe</b> is a vast collection of billions of <b>galaxies</b>.</li>
@@ -49,7 +49,7 @@ S2Data.add({
 S2Data.add({
   id: "8b", group: 8, title: "Stellar evolution", paper2: true,
   summary: "The life cycles of stars, star colours and the Hertzsprung–Russell diagram.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This subtopic is Paper 2 only</span></div>
 <h3>Star colour and temperature</h3>
 <p>A star's colour depends on its surface temperature. The hottest are <b>blue</b>, then white, yellow, orange, and the coolest are <b>red</b>.</p>
@@ -102,7 +102,7 @@ S2Data.add({
 S2Data.add({
   id: "8c", group: 8, title: "Cosmology", paper2: true,
   summary: "Red-shift, the expanding Universe, the Big Bang and the cosmic microwave background.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This subtopic is Paper 2 only</span></div>
 <h3>Red-shift</h3>
 <ul>

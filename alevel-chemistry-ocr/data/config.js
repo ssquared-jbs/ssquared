@@ -1,4 +1,5 @@
 /* A-level Chemistry A² (OCR) — subject settings. Loaded before the topic files. */
+window.R = String.raw; /* lets data files write LaTeX with single backslashes */
 window.SUBJECT = {
   slug: "alevel-chemistry-ocr",
   keyPrefix: "achemocr",
@@ -7,6 +8,7 @@ window.SUBJECT = {
   subjectWord: "A-level Chemistry A",
   course: "OCR A level Chemistry A (H432)",
   intro: "Every module of OCR A level Chemistry A (H432), from atoms to NMR:",
+  math: true,
   extrasGroup: 99,
   groups: {
     2: { name: "Foundations in chemistry", sub: "Atoms, amount of substance, redox, electrons and bonding" },

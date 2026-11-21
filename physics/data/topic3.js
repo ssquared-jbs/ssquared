@@ -3,7 +3,7 @@
 S2Data.add({
   id: "3a", group: 3, title: "Properties of waves",
   summary: "Transverse and longitudinal waves, wave equations, reflection, refraction and the Doppler effect.",
-  notes: `
+  notes: R`
 <h3>What waves do</h3>
 <p>Waves transfer <b>energy and information</b> without transferring matter.</p>
 <table>
@@ -57,7 +57,7 @@ S2Data.add({
 S2Data.add({
   id: "3b", group: 3, title: "The electromagnetic spectrum",
   summary: "The order of EM waves, their uses and their dangers.",
-  notes: `
+  notes: R`
 <h3>Properties</h3>
 <ul>
 <li>All EM waves are <b>transverse</b> and travel at the <b>same speed</b> in a vacuum: 3 × 10<sup>8</sup> m/s.</li>
@@ -112,7 +112,7 @@ S2Data.add({
 S2Data.add({
   id: "3c", group: 3, title: "Light and sound",
   summary: "Reflection, refraction, Snell's law, total internal reflection, optical fibres and sound.",
-  notes: `
+  notes: R`
 <h3>Reflection</h3>
 <p>Law of reflection: <b>angle of incidence = angle of reflection</b>, both measured from the <b>normal</b>. A plane mirror forms a virtual, upright image the same distance behind the mirror as the object is in front.</p>
 <h3>Refraction and Snell's law</h3>

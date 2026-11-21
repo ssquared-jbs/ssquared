@@ -3,7 +3,7 @@
 S2Data.add({
   id: "3a", group: 3, y1: true, title: "Current, resistance and resistivity",
   summary: "Charge carriers, drift velocity, Ohm's law, resistivity and I–V characteristics.",
-  notes: `
+  notes: R`
 <h3>Current and charge</h3>
 <ul>
 <li>Current is the rate of flow of charge: <b>I = ΔQ/Δt</b>. Unit: ampere (A) = C s<sup>−1</sup>.</li>
@@ -58,7 +58,7 @@ S2Data.add({
 S2Data.add({
   id: "3b", group: 3, y1: true, title: "Series, parallel and potential dividers",
   summary: "Kirchhoff's laws, combining resistors and using potential dividers with sensors.",
-  notes: `
+  notes: R`
 <h3>Kirchhoff's laws</h3>
 <ul>
 <li><b>First law</b> (conservation of charge): the total current into a junction equals the total current out.</li>
@@ -107,7 +107,7 @@ S2Data.add({
 S2Data.add({
   id: "3c", group: 3, y1: true, title: "EMF and internal resistance",
   summary: "EMF, terminal p.d., lost volts and finding internal resistance experimentally.",
-  notes: `
+  notes: R`
 <h3>EMF</h3>
 <p>The <b>emf (ε)</b> of a source is the energy transferred into electrical energy per unit charge: ε = W/Q. The p.d. is energy transferred <b>out</b> of electrical form per unit charge.</p>
 <h3>Internal resistance</h3>
@@ -152,7 +152,7 @@ S2Data.add({
 S2Data.add({
   id: "4a", group: 4, y1: true, title: "Fluids: density, upthrust and viscosity",
   summary: "Density, upthrust and Archimedes, laminar and turbulent flow, Stokes' law and the falling-ball method.",
-  notes: `
+  notes: R`
 <h3>Density and upthrust</h3>
 <ul>
 <li>Density ρ = m/V (kg m<sup>−3</sup>).</li>
@@ -202,7 +202,7 @@ S2Data.add({
 S2Data.add({
   id: "4b", group: 4, y1: true, title: "Solid materials: stress, strain and the Young modulus",
   summary: "Hooke's law, elastic and plastic deformation, stress–strain graphs and measuring the Young modulus.",
-  notes: `
+  notes: R`
 <h3>Hooke's law</h3>
 <p>The extension of a spring or wire is proportional to the force applied, up to the <b>limit of proportionality</b>: <b>ΔF = kΔx</b>, where k is the stiffness (N m<sup>−1</sup>).</p>
 <p>Elastic strain energy (area under a force–extension graph): <b>E<sub>el</sub> = ½FΔx</b> (for the linear region) = ½kΔx<sup>2</sup>.</p>

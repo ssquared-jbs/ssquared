@@ -3,7 +3,7 @@
 S2Data.add({
   id: "5a", group: 5, title: "Density and pressure",
   summary: "Density, pressure on surfaces and pressure in liquids.",
-  notes: `
+  notes: R`
 <h3>Density</h3>
 <div class="eq">density = mass ÷ volume &nbsp;&nbsp; ρ = m ÷ V</div>
 <p>Units: kg/m<sup>3</sup> or g/cm<sup>3</sup>. Water is 1000 kg/m<sup>3</sup> (1 g/cm<sup>3</sup>). Objects less dense than water float.</p>
@@ -47,7 +47,7 @@ S2Data.add({
 S2Data.add({
   id: "5b", group: 5, title: "Change of state and specific heat capacity",
   summary: "Particle models of solids, liquids and gases, heating curves and specific heat capacity.",
-  notes: `
+  notes: R`
 <h3>Particle model</h3>
 <ul>
 <li><b>Solid:</b> particles are close together in a regular pattern and vibrate about fixed positions.</li>
@@ -90,7 +90,7 @@ S2Data.add({
 S2Data.add({
   id: "5c", group: 5, title: "Ideal gas molecules",
   summary: "Brownian motion, gas pressure, absolute zero, the Kelvin scale and the gas laws.",
-  notes: `
+  notes: R`
 <h3>Gas molecules and pressure</h3>
 <ul>
 <li>Gas molecules move randomly at high speed. <b>Brownian motion</b> (smoke particles jiggling randomly under a microscope) is evidence: invisible air molecules hit them unevenly.</li>

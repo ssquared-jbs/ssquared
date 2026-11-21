@@ -1,4 +1,5 @@
 /* Physics² — subject settings. Loaded before the topic files. */
+window.R = String.raw; /* lets data files write LaTeX with single backslashes */
 window.SUBJECT = {
   slug: "physics",
   keyPrefix: "phys",
@@ -7,6 +8,7 @@ window.SUBJECT = {
   subjectWord: "GCSE Physics",
   course: "Edexcel IGCSE and GCSE Physics",
   intro: "Edexcel International GCSE Physics (4PH1) plus the extra Edexcel GCSE (1PH0) content:",
+  math: true,
   extrasGroup: 9,
   groups: {
     1: { name: "Forces and motion", sub: "Speed, acceleration, forces, momentum, moments and springs" },

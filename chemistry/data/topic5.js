@@ -3,7 +3,7 @@
 CHEM.add({
   id: "5a", group: 5, gcse: true, title: "Quantitative and analytical extras",
   summary: "Atom economy, limiting reactants, deducing equations from masses and flame photometry.",
-  notes: `
+  notes: R`
 <div class="box box-key"><span class="box-title">Why this is here</span>Edexcel GCSE (1CH0) includes these skills. IGCSE (4CH1) students can skip them, but they help with harder calculation questions.</div>
 <h3>Atom economy</h3>
 <div class="eq">atom economy = (M<sub>r</sub> of desired product ÷ total M<sub>r</sub> of all products) × 100</div>
@@ -47,7 +47,7 @@ CHEM.add({
 CHEM.add({
   id: "5b", group: 5, gcse: true, title: "Transition metals, alloys and corrosion",
   summary: "Properties of transition metals, common alloys, electroplating and corrosion.",
-  notes: `
+  notes: R`
 <h3>Transition metals</h3>
 <p>These are the central block of the Periodic Table, e.g. Fe, Cu, Cr, Ni, Mn.</p>
 <p>Compared with Group 1 metals, they have:</p>
@@ -105,7 +105,7 @@ CHEM.add({
 CHEM.add({
   id: "5c", group: 5, gcse: true, title: "The Haber process and fertilisers",
   summary: "Making ammonia, compromise conditions, NPK fertilisers and ammonium sulfate.",
-  notes: `
+  notes: R`
 <h3>The Haber process</h3>
 <div class="eq">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) ⇌ 2NH<sub>3</sub>(g) &nbsp; ΔH = −92 kJ/mol</div>
 <ul>
@@ -158,7 +158,7 @@ CHEM.add({
 CHEM.add({
   id: "5d", group: 5, gcse: true, title: "Chemical cells and fuel cells",
   summary: "Simple cells, the hydrogen–oxygen fuel cell, and its pros and cons.",
-  notes: `
+  notes: R`
 <h3>Chemical cells</h3>
 <ul>
 <li>A chemical cell produces a voltage from a chemical reaction, which happens when two different metals are in an electrolyte.</li>
@@ -198,7 +198,7 @@ CHEM.add({
 CHEM.add({
   id: "5e", group: 5, gcse: true, title: "Earth's atmosphere, climate and Group 0",
   summary: "How the atmosphere evolved, greenhouse gases, climate change and the noble gases.",
-  notes: `
+  notes: R`
 <h3>Evolution of the atmosphere</h3>
 <ol>
 <li>The <b>early atmosphere</b> came from volcanic activity. It was mainly <b>carbon dioxide</b> and <b>water vapour</b>, with little or no oxygen.</li>
@@ -247,7 +247,7 @@ CHEM.add({
 CHEM.add({
   id: "5f", group: 5, gcse: true, title: "Materials and nanoparticles",
   summary: "Ceramics, composites, polymers and metals compared; nanoparticles; natural polymers.",
-  notes: `
+  notes: R`
 <h3>Comparing materials</h3>
 <table>
 <tr><th>Material</th><th>Typical properties</th><th>Examples</th></tr>
@@ -296,7 +296,7 @@ CHEM.add({
 CHEM.add({
   id: "5g", group: 5, gcse: true, title: "Earth's resources and sustainability",
   summary: "Potable water, life-cycle assessments, recycling, phytomining and bioleaching.",
-  notes: `
+  notes: R`
 <h3>Potable (drinking) water</h3>
 <p>Potable water is safe to drink. It is <b>not pure</b>, because it contains dissolved substances, but it has low levels of salts and microbes.</p>
 <ol>

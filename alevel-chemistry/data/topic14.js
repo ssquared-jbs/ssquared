@@ -3,7 +3,7 @@
 S2Data.add({
   id: "14a", group: 14, y2: true, title: "Electrode potentials and cells",
   summary: "Standard electrode potentials, the hydrogen electrode, cell EMF, feasibility and fuel cells.",
-  notes: `
+  notes: R`
 <h3>Half-cells and the standard hydrogen electrode</h3>
 <ul>
 <li>A <b>half-cell</b> contains an element in two oxidation states, e.g. Zn(s) in Zn<sup>2+</sup>(aq). Two half-cells joined by a <b>wire</b> (with a high-resistance voltmeter) and a <b>salt bridge</b> (filter paper soaked in saturated KNO<sub>3</sub>) make a cell.</li>
@@ -58,7 +58,7 @@ S2Data.add({
 S2Data.add({
   id: "14b", group: 14, y2: true, title: "Redox titrations",
   summary: "Combining half-equations, and titrations with manganate(VII) and with iodine/thiosulfate.",
-  notes: `
+  notes: R`
 <h3>Combining half-equations</h3>
 <p>Multiply so the electrons are equal, then add and cancel. In acid:</p>
 <p>MnO<sub>4</sub><sup>−</sup> + 8H<sup>+</sup> + 5e<sup>−</sup> → Mn<sup>2+</sup> + 4H<sub>2</sub>O and Fe<sup>2+</sup> → Fe<sup>3+</sup> + e<sup>−</sup> give:</p>
@@ -107,7 +107,7 @@ S2Data.add({
 S2Data.add({
   id: "15a", group: 15, y2: true, title: "Transition metals and complexes",
   summary: "Electron configurations, complex ions, ligands, shapes, isomerism and why complexes are coloured.",
-  notes: `
+  notes: R`
 <h3>What makes a transition metal</h3>
 <ul>
 <li>A <b>transition metal</b> is a d-block element that forms <b>one or more stable ions with an incompletely filled d-subshell</b>. Sc and Zn are d-block but not transition metals (Sc<sup>3+</sup> is 3d<sup>0</sup>; Zn<sup>2+</sup> is 3d<sup>10</sup>).</li>
@@ -165,7 +165,7 @@ S2Data.add({
 S2Data.add({
   id: "15b", group: 15, y2: true, title: "Transition metal reactions and catalysis",
   summary: "Ligand exchange, reactions with OH⁻ and NH₃, redox of Cr and V, and heterogeneous and homogeneous catalysis.",
-  notes: `
+  notes: R`
 <h3>Ligand exchange</h3>
 <ul>
 <li>[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> (blue) + 4Cl<sup>−</sup> (conc HCl) ⇌ [CuCl<sub>4</sub>]<sup>2−</sup> (yellow) + 6H<sub>2</sub>O. Coordination number and shape change (Cl<sup>−</sup> is larger).</li>
@@ -225,7 +225,7 @@ S2Data.add({
 S2Data.add({
   id: "16a", group: 16, y2: true, title: "Rate equations and orders",
   summary: "Rate equations, orders, rate constants, half-life and finding orders from experiments and graphs.",
-  notes: `
+  notes: R`
 <h3>Rate equations</h3>
 <div class="box box-key"><span class="box-title">Rate = k[A]<sup>m</sup>[B]<sup>n</sup></span>m and n are the <b>orders</b> with respect to A and B (found by experiment, not from the equation). The <b>overall order</b> is m + n. k is the <b>rate constant</b>.</div>
 <ul>
@@ -279,7 +279,7 @@ S2Data.add({
 S2Data.add({
   id: "16b", group: 16, y2: true, title: "Mechanisms and the Arrhenius equation",
   summary: "Rate-determining step, linking rate equations to mechanisms, SN1 vs SN2, and finding Ea.",
-  notes: `
+  notes: R`
 <h3>Rate-determining step</h3>
 <ul>
 <li>The <b>rate-determining step</b> (RDS) is the <b>slowest step</b> in a mechanism.</li>

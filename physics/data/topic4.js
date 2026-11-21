@@ -3,7 +3,7 @@
 S2Data.add({
   id: "4a", group: 4, title: "Energy transfers",
   summary: "Energy stores, conservation of energy, efficiency, Sankey diagrams, conduction, convection and radiation.",
-  notes: `
+  notes: R`
 <h3>Energy stores</h3>
 <p>Energy is stored as: <b>chemical</b>, <b>kinetic</b>, <b>gravitational potential</b>, <b>elastic potential</b>, <b>thermal</b>, <b>magnetic</b>, <b>electrostatic</b> and <b>nuclear</b>.</p>
 <p>It is transferred between stores by <b>mechanical work</b> (forces), <b>electrical work</b> (currents), <b>heating</b> and <b>radiation</b> (light and sound).</p>
@@ -52,7 +52,7 @@ S2Data.add({
 S2Data.add({
   id: "4b", group: 4, title: "Work and power",
   summary: "Work done, gravitational potential energy, kinetic energy and power.",
-  notes: `
+  notes: R`
 <h3>Work</h3>
 <div class="eq">work done = force × distance moved in the direction of the force &nbsp;&nbsp; W = F × d</div>
 <p>Work done = energy transferred. Units: joules (J). 1 J = 1 N m.</p>
@@ -92,7 +92,7 @@ S2Data.add({
 S2Data.add({
   id: "4c", group: 4, title: "Energy resources and electricity generation",
   summary: "Renewable and non-renewable resources, how power stations work, and their advantages and disadvantages.",
-  notes: `
+  notes: R`
 <h3>Generating electricity in a power station</h3>
 <ol>
 <li>A fuel (coal, oil, gas or nuclear) heats water to make steam.</li>

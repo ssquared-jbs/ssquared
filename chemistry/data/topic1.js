@@ -3,7 +3,7 @@
 CHEM.add({
   id: "1a", group: 1, title: "States of matter",
   summary: "Solids, liquids and gases, changes of state, diffusion and solubility.",
-  notes: `
+  notes: R`
 <h3>The three states of matter</h3>
 <table>
 <tr><th></th><th>Solid</th><th>Liquid</th><th>Gas</th></tr>
@@ -74,7 +74,7 @@ CHEM.add({
 CHEM.add({
   id: "1b", group: 1, title: "Elements, compounds and mixtures",
   summary: "Pure substances, separation techniques and paper chromatography.",
-  notes: `
+  notes: R`
 <h3>Definitions</h3>
 <ul>
 <li><b>Element</b>: a substance made of only one type of atom. It can't be broken down chemically.</li>
@@ -141,7 +141,7 @@ CHEM.add({
 CHEM.add({
   id: "1c", group: 1, title: "Atomic structure",
   summary: "Protons, neutrons, electrons, isotopes and relative atomic mass.",
-  notes: `
+  notes: R`
 <h3>Atoms and molecules</h3>
 <ul>
 <li><b>Atom</b>: the smallest particle of an element that can take part in a chemical reaction.</li>
@@ -198,7 +198,7 @@ CHEM.add({
 CHEM.add({
   id: "1d", group: 1, title: "The Periodic Table",
   summary: "Groups, periods, electronic configuration, metals and non-metals.",
-  notes: `
+  notes: R`
 <h3>Layout</h3>
 <ul>
 <li>Elements are arranged in order of <b>atomic number</b>.</li>
@@ -252,7 +252,7 @@ CHEM.add({
 CHEM.add({
   id: "1e", group: 1, title: "Chemical formulae, equations and calculations",
   summary: "Balancing equations, moles, reacting masses, empirical formulae, yield and concentrations.",
-  notes: `
+  notes: R`
 <h3>Equations</h3>
 <ul>
 <li>Balance equations by changing the numbers <b>in front of</b> formulae, never the formulae themselves.</li>
@@ -333,7 +333,7 @@ Weigh a crucible and lid with magnesium ribbon inside. Heat strongly, lifting th
 CHEM.add({
   id: "1f", group: 1, title: "Ionic bonding",
   summary: "Forming ions, ionic formulae, dot-and-cross diagrams and giant ionic lattices.",
-  notes: `
+  notes: R`
 <h3>Forming ions</h3>
 <ul>
 <li>An <b>ion</b> is a charged particle formed when an atom loses or gains electrons.</li>
@@ -391,7 +391,7 @@ CHEM.add({
 CHEM.add({
   id: "1g", group: 1, title: "Covalent bonding",
   summary: "Shared electron pairs, simple molecules, giant covalent structures and fullerenes.",
-  notes: `
+  notes: R`
 <h3>Covalent bonds</h3>
 <p>A <b>covalent bond</b> is the strong electrostatic attraction between a <b>shared pair of electrons</b> and the nuclei of the bonded atoms. It forms between <b>non-metal</b> atoms.</p>
 <h4>Dot-and-cross molecules to know</h4>
@@ -455,7 +455,7 @@ CHEM.add({
 CHEM.add({
   id: "1h", group: 1, title: "Metallic bonding", paper2: true,
   summary: "Delocalised electrons and the properties of metals.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This whole subtopic is Paper 2 only</span>It can still come up in synoptic questions, so learn it.</div>
 <h3>The structure of metals</h3>
 <p>Metals form a giant lattice of <b>positive metal ions</b> surrounded by a "sea" of <b>delocalised electrons</b>.</p>
@@ -485,7 +485,7 @@ CHEM.add({
 CHEM.add({
   id: "1i", group: 1, title: "Electrolysis", paper2: true,
   summary: "Electrolysis of molten and aqueous compounds, products and half-equations.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This subtopic is Paper 2 only</span></div>
 <h3>Key ideas</h3>
 <ul>

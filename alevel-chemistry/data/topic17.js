@@ -3,7 +3,7 @@
 S2Data.add({
   id: "17a", group: 17, y2: true, title: "Chirality",
   summary: "Chiral centres, enantiomers, optical activity, racemic mixtures and what they tell you about mechanisms.",
-  notes: `
+  notes: R`
 <h3>Optical isomerism</h3>
 <ul>
 <li>A <b>chiral centre</b> is a carbon atom with <b>four different groups</b> attached. Mark it with an asterisk (*).</li>
@@ -51,7 +51,7 @@ S2Data.add({
 S2Data.add({
   id: "17b", group: 17, y2: true, title: "Carbonyl compounds",
   summary: "Aldehydes and ketones: physical properties, oxidation tests, reduction, and nucleophilic addition of HCN.",
-  notes: `
+  notes: R`
 <h3>Structure and properties</h3>
 <ul>
 <li><b>Aldehydes</b>: C=O at the end of the chain (–CHO), named -al. <b>Ketones</b>: C=O in the chain, named -one.</li>
@@ -102,7 +102,7 @@ S2Data.add({
 S2Data.add({
   id: "17c", group: 17, y2: true, title: "Carboxylic acids and derivatives",
   summary: "Preparing and reacting carboxylic acids, esters, acyl chlorides and polyesters.",
-  notes: `
+  notes: R`
 <h3>Carboxylic acids</h3>
 <ul>
 <li>–COOH. Hydrogen bonding gives high boiling points; short chains are soluble in water. Weak acids.</li>
@@ -160,7 +160,7 @@ S2Data.add({
 S2Data.add({
   id: "18a", group: 18, y2: true, title: "Arenes",
   summary: "The structure of benzene, evidence for delocalisation, electrophilic substitution, and phenol.",
-  notes: `
+  notes: R`
 <h3>Structure of benzene</h3>
 <ul>
 <li>C<sub>6</sub>H<sub>6</sub>: a planar hexagon, bond angles 120°. Each carbon uses three electrons in σ bonds; the remaining p electrons overlap above and below the ring to form a <b>delocalised π system</b>.</li>
@@ -217,7 +217,7 @@ S2Data.add({
 S2Data.add({
   id: "18b", group: 18, y2: true, title: "Amines, amides and amino acids",
   summary: "Basicity and preparation of amines, amides, polyamides, and the chemistry of amino acids.",
-  notes: `
+  notes: R`
 <h3>Amines</h3>
 <ul>
 <li>Primary (RNH<sub>2</sub>), secondary (R<sub>2</sub>NH), tertiary (R<sub>3</sub>N). They act as <b>bases</b> and <b>nucleophiles</b> because of the lone pair on N.</li>
@@ -275,7 +275,7 @@ S2Data.add({
 S2Data.add({
   id: "18c", group: 18, y2: true, title: "Organic synthesis",
   summary: "Grignard reagents, multi-step synthesis routes, practical techniques and identifying functional groups.",
-  notes: `
+  notes: R`
 <h3>Grignard reagents</h3>
 <ul>
 <li>Made from a halogenoalkane and <b>magnesium in dry ether</b>: CH<sub>3</sub>CH<sub>2</sub>Br + Mg → CH<sub>3</sub>CH<sub>2</sub>MgBr. Water must be excluded (it destroys the reagent).</li>
@@ -338,7 +338,7 @@ S2Data.add({
 S2Data.add({
   id: "19a", group: 19, y2: true, title: "NMR spectroscopy",
   summary: "¹³C and ¹H NMR: chemical shift, number of environments, integration, splitting and TMS.",
-  notes: `
+  notes: R`
 <h3>How NMR works</h3>
 <ul>
 <li>Nuclei with an odd mass number (<sup>1</sup>H, <sup>13</sup>C) have spin. In a strong magnetic field they absorb radio waves.</li>
@@ -396,7 +396,7 @@ S2Data.add({
 S2Data.add({
   id: "19b", group: 19, y2: true, title: "Chromatography and combined techniques",
   summary: "TLC, Rf values, gas and HPLC chromatography, and combining spectra to work out structures.",
-  notes: `
+  notes: R`
 <h3>Chromatography</h3>
 <p>All chromatography has a <b>stationary phase</b> and a <b>mobile phase</b>. Components separate because they have different <b>affinities</b> for the two phases (adsorption to the stationary phase, or solubility in it).</p>
 <h3>Thin-layer chromatography (TLC)</h3>

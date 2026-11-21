@@ -3,7 +3,7 @@
 CHEM.add({
   id: "2a", group: 2, title: "Group 1 (alkali metals)",
   summary: "Lithium, sodium and potassium: reactions with water and trends down the group.",
-  notes: `
+  notes: R`
 <h3>Properties</h3>
 <ul>
 <li>Soft metals that can be cut with a knife. They have low densities (Li, Na and K float on water) and low melting points.</li>
@@ -46,7 +46,7 @@ CHEM.add({
 CHEM.add({
   id: "2b", group: 2, title: "Group 7 (halogens)",
   summary: "Chlorine, bromine and iodine: physical trends and displacement reactions.",
-  notes: `
+  notes: R`
 <h3>Physical properties</h3>
 <table>
 <tr><th>Halogen</th><th>State at room temp</th><th>Colour</th></tr>
@@ -98,7 +98,7 @@ Chlorine gains electrons, so it is <b>reduced</b> and acts as the oxidising agen
 CHEM.add({
   id: "2c", group: 2, title: "Gases in the atmosphere",
   summary: "Composition of air, oxygen percentage, combustion, carbon dioxide and the greenhouse effect.",
-  notes: `
+  notes: R`
 <h3>Composition of dry air</h3>
 <table>
 <tr><th>Gas</th><th>Approximate %</th></tr>
@@ -154,7 +154,7 @@ CHEM.add({
 CHEM.add({
   id: "2d", group: 2, title: "Reactivity series",
   summary: "Order of metals, displacement, redox and rusting.",
-  notes: `
+  notes: R`
 <h3>The reactivity series</h3>
 <p style="font-size:1.1rem"><b>K &gt; Na &gt; Li &gt; Ca &gt; Mg &gt; Al &gt; (C) &gt; Zn &gt; Fe &gt; (H) &gt; Cu &gt; Ag &gt; Au</b></p>
 <p>Memory aid: "<i>Please Send Lions, Cats, Monkeys And Cute Zebras Into Hot Countries, Signing Gold</i>"</p>
@@ -220,7 +220,7 @@ Use three tubes with an iron nail in each:
 CHEM.add({
   id: "2e", group: 2, title: "Extraction and uses of metals",
   summary: "Ores, extraction by carbon and electrolysis, alloys and uses.",
-  notes: `
+  notes: R`
 <h3>Ores and extraction</h3>
 <ul>
 <li>Very unreactive metals like gold are found <b>uncombined</b> (native) in the Earth's crust.</li>
@@ -288,7 +288,7 @@ CHEM.add({
 CHEM.add({
   id: "2f", group: 2, title: "Acids, alkalis and titrations",
   summary: "Indicators, the pH scale, H⁺ and OH⁻ ions, and acid–alkali titrations.",
-  notes: `
+  notes: R`
 <h3>Indicators</h3>
 <table>
 <tr><th>Indicator</th><th>In acid</th><th>In alkali</th></tr>
@@ -347,7 +347,7 @@ mol HCl = 0.100 × 0.0200 = 0.00200. The ratio is 1:1, so mol NaOH = 0.00200.<br
 CHEM.add({
   id: "2g", group: 2, title: "Acids, bases and salt preparations",
   summary: "Reactions of acids, solubility rules and making soluble and insoluble salts.",
-  notes: `
+  notes: R`
 <h3>Reactions of acids</h3>
 <div class="eq">metal + acid → salt + hydrogen</div>
 <div class="eq">base (metal oxide/hydroxide) + acid → salt + water</div>
@@ -419,7 +419,7 @@ CHEM.add({
 CHEM.add({
   id: "2h", group: 2, title: "Chemical tests",
   summary: "Tests for gases, cations (flame tests and NaOH), anions and water.",
-  notes: `
+  notes: R`
 <h3>Tests for gases</h3>
 <table>
 <tr><th>Gas</th><th>Test</th><th>Positive result</th></tr>

@@ -3,7 +3,7 @@
 CHEM.add({
   id: "4a", group: 4, title: "Introduction to organic chemistry",
   summary: "Hydrocarbons, homologous series, types of formulae, naming and isomers.",
-  notes: `
+  notes: R`
 <h3>Key terms</h3>
 <ul>
 <li><b>Hydrocarbon</b>: a compound of <b>hydrogen and carbon only</b>.</li>
@@ -70,7 +70,7 @@ CHEM.add({
 CHEM.add({
   id: "4b", group: 4, title: "Crude oil",
   summary: "Fractional distillation, fractions and uses, combustion pollutants and cracking.",
-  notes: `
+  notes: R`
 <h3>Crude oil</h3>
 <p>Crude oil is a <b>mixture of hydrocarbons</b>, mostly alkanes, with different chain lengths. It is a finite (non-renewable) resource.</p>
 <h3>Fractional distillation</h3>
@@ -138,7 +138,7 @@ CHEM.add({
 CHEM.add({
   id: "4c", group: 4, title: "Alkanes",
   summary: "Saturated hydrocarbons, combustion and substitution with bromine.",
-  notes: `
+  notes: R`
 <h3>Alkanes</h3>
 <ul>
 <li>General formula <b>C<sub>n</sub>H<sub>2n+2</sub></b></li>
@@ -171,7 +171,7 @@ CHEM.add({
 CHEM.add({
   id: "4d", group: 4, title: "Alkenes",
   summary: "Unsaturated hydrocarbons, the C=C bond and the bromine water test.",
-  notes: `
+  notes: R`
 <h3>Alkenes</h3>
 <ul>
 <li>General formula <b>C<sub>n</sub>H<sub>2n</sub></b></li>
@@ -205,7 +205,7 @@ CHEM.add({
 CHEM.add({
   id: "4e", group: 4, title: "Alcohols", paper2: true,
   summary: "Ethanol: combustion, oxidation and manufacture by fermentation or hydration.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This subtopic is Paper 2 only</span></div>
 <h3>Alcohols</h3>
 <ul>
@@ -255,7 +255,7 @@ CHEM.add({
 CHEM.add({
   id: "4f", group: 4, title: "Carboxylic acids", paper2: true,
   summary: "The –COOH group, naming, and reactions as weak acids.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This subtopic is Paper 2 only</span></div>
 <h3>Carboxylic acids</h3>
 <ul>
@@ -290,7 +290,7 @@ CHEM.add({
 CHEM.add({
   id: "4g", group: 4, title: "Esters", paper2: true,
   summary: "Esterification, naming esters and their uses.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This subtopic is Paper 2 only</span></div>
 <h3>Esters</h3>
 <ul>
@@ -338,7 +338,7 @@ CHEM.add({
 CHEM.add({
   id: "4h", group: 4, title: "Synthetic polymers",
   summary: "Addition polymers, uses, disposal problems and condensation polymers.",
-  notes: `
+  notes: R`
 <h3>Addition polymerisation</h3>
 <ul>
 <li>Many small <b>monomers</b> containing C=C join to form a long-chain <b>polymer</b>. Nothing else is produced.</li>
