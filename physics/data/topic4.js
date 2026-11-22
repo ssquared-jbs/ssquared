@@ -84,7 +84,7 @@ S2Data.add({
     { q: "What is the KE of a 2 kg object moving at 3 m/s?", o: ["9 J", "6 J", "18 J", "3 J"], a: 0, e: R`\(\tfrac12 \times 2 \times 9\)` },
     { q: "A motor does 3000 J of work in 10 s. What is its power?", o: ["300 W", "30 000 W", "30 W", "3010 W"], a: 0, e: R`\(P = \dfrac{W}{t} = \dfrac{3000}{10} = 300\ \text{W}\).` },
     { q: "A car doubles its speed. Its kinetic energy…", o: ["Quadruples", "Doubles", "Halves", "Stays the same"], a: 0, e: R`\(\text{KE} = \tfrac12 mv^2\), so doubling \(v\) multiplies KE by \(2^2 = 4\).` },
-    { q: "A ball is dropped from 20 m. How fast is it going just before it lands (no air resistance, g = 10 N/kg)?", o: ["20 m/s", "200 m/s", "14 m/s", "400 m/s"], a: 0, e: R`\(v = \sqrt{(2 \times 10 \times 20) = √400\)` },
+    { q: "A ball is dropped from 20 m. How fast is it going just before it lands (no air resistance, g = 10 N/kg)?", o: ["20 m/s", "200 m/s", "14 m/s", "400 m/s"], a: 0, e: R`\(v = \sqrt{2gh} = \sqrt{2 \times 10 \times 20} = \sqrt{400} = 20\ \text{m/s}\).` },
     { q: "Which unit is the same as a joule?", o: ["N m", "N/m", "W/s", "kg m/s"], a: 0, e: R`Work = force × distance, so \(1\ \text{J} = 1\ \text{N m}\).` }
   ]
 });
