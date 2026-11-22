@@ -26,6 +26,7 @@
     "alevel-biology-a": { name: "A-level Biology A²", path: "alevel-biology-a/index.html", cls: "s2-alevel-biology", glyph: "ATP", course: "Edexcel A level Biology A (9BN0)", blurb: "Salters-Nuffield Biology A, all 8 topics, with step-by-step notes, quick checks and flashcards." },
     "alevel-biology-b": { name: "A-level Biology B²", path: "alevel-biology-b/index.html", cls: "s2-alevel-biology", glyph: "DNA", course: "Edexcel A level Biology B (9BI0)", blurb: "Biology B, all 10 topics, with step-by-step notes, quick checks and flashcards." },
     "alevel-psychology": { name: "A-level Psychology²", path: "alevel-psychology/index.html", cls: "s2-psych", glyph: "Ψ", course: "Edexcel A level (9PS0)", blurb: "Social, cognitive, biological and learning approaches, clinical psychology, options, methods and statistics." },
+    "alevel-economics": { name: "A-level Economics²", path: "alevel-economics/index.html", cls: "s2-econ", glyph: "AD/AS", course: "Edexcel A level (9EC0)", blurb: "Markets and market failure, the UK economy, business behaviour, labour markets and the global economy." },
     "alevel-cs": { name: "A-level Computer Science²", path: "alevel-cs/index.html", cls: "s2-cs", glyph: "{ }", course: "AQA A level (7517)", blurb: "Programming, algorithms, theory of computation, architecture, networking, databases and functional programming." },
     biology: { name: "Biology²", path: "biology/index.html", cls: "s2-biology", glyph: "DNA", course: "Edexcel IGCSE & GCSE", blurb: "Cells, the human body, plants, genetics and ecology, with key processes broken down." }
   };
@@ -47,7 +48,7 @@
       ["maths", "Maths", ["alevel-maths"]], ["further-maths", "Further Maths", []], ["biology", "Biology", [], [["bio-a", "Edexcel A, Salters-Nuffield (9BN0)", "alevel-biology-a"], ["bio-b", "Edexcel B (9BI0)", "alevel-biology-b"]]],
       ["chemistry", "Chemistry", ["alevel-chemistry"], [["edexcel", "Edexcel (9CH0)", "alevel-chemistry"], ["ocr-a", "OCR A (H432)", "alevel-chemistry-ocr"]]],
       ["physics", "Physics", ["alevel-physics"]],
-      ["psychology", "Psychology", ["alevel-psychology"]], ["economics", "Economics", []], ["business", "Business", []], ["computer-science", "Computer Science", ["alevel-cs"]],
+      ["psychology", "Psychology", ["alevel-psychology"]], ["economics", "Economics", ["alevel-economics"]], ["business", "Business", []], ["computer-science", "Computer Science", ["alevel-cs"]],
       ["english-lit", "English Literature", []], ["english-lang", "English Language", []], ["history", "History", []], ["geography", "Geography", []],
       ["politics", "Politics", []], ["sociology", "Sociology", []], ["law", "Law", []], ["rs", "Religious Studies / Philosophy", []],
       ["chinese", "Chinese", []], ["french", "French", []], ["spanish", "Spanish", []], ["german", "German", []],
