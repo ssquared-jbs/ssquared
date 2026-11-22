@@ -57,7 +57,7 @@ CHEM.exam("1g", [
   { t: "mcq", m: 1, q: "When water boils, which is broken or overcome?", o: ["Intermolecular forces", "O–H covalent bonds", "Ionic bonds", "Metallic bonds"], a: 0 },
   { t: "text", m: 2, q: "Compare the electrical conductivity of graphite and diamond, and explain the difference.", ms: ["Graphite conducts; diamond does not", "Graphite has delocalised electrons; in diamond all four outer electrons are used in bonds"], kw: [["graphite conducts", "diamond does not", "diamond doesn't"], ["delocalised", "all four", "all electrons"]] },
   { t: "mcq", m: 1, q: "Which element forms diatomic covalent molecules?", o: ["Nitrogen", "Neon", "Sodium", "Carbon (diamond)"], a: 0 },
-  { t: "num", m: 1, q: "How many covalent bonds are there in total in a molecule of ethane, C<sub>2</sub>H<sub>6</sub>?", ans: 7, ms: ["6 C–H + 1 C–C = 7"] },
+  { t: "num", m: 1, q: "How many covalent bonds are there in total in a molecule of ethane, C<sub>2</sub>H<sub>6</sub>?", ans: 7, ms: [R`6 C–H + 1 C–\(C = 7\)`] },
   { t: "mcq", m: 1, q: "Which statement about intermolecular forces is correct?", o: ["They are much weaker than covalent bonds", "They are stronger than covalent bonds", "They only exist in metals", "They hold atoms together inside a molecule"], a: 0 },
   { t: "mcq", m: 1, q: "A substance melts at 1610 °C, is hard and doesn't conduct even when molten. What is its structure?", o: ["Giant covalent", "Simple molecular", "Ionic", "Metallic"], a: 0 },
   { t: "mcq", m: 1, q: "A substance melts at −23 °C and doesn't conduct as a liquid. What is its structure?", o: ["Simple molecular", "Giant covalent", "Ionic", "Metallic"], a: 0 },

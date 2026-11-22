@@ -14,7 +14,7 @@ S2Data.add({
 <ul>
 <li><b>Gravitational force</b> keeps moons orbiting planets, planets orbiting the Sun, and artificial satellites orbiting Earth.</li>
 <li>Gravitational field strength (g) is different on different planets. On the Moon it is about 1.6 N/kg, compared with 10 N/kg on Earth.</li>
-<li>Weight W = mg, so your weight changes from planet to planet, but your mass doesn't.</li>
+<li>Weight \(W = mg\), so your weight changes from planet to planet, but your mass doesn't.</li>
 </ul>
 <table>
 <tr><th>Orbit</th><th>Shape</th></tr>
@@ -24,7 +24,7 @@ S2Data.add({
 </table>
 <h3>Orbital speed</h3>
 <div class="eq">\(\text{orbital speed} = \dfrac{2\pi \times \text{orbital radius}}{\text{time period}} \qquad v = \dfrac{2\pi r}{T}\)</div>
-<div class="box box-key"><span class="box-title">Worked example</span>The Moon orbits at r = 3.84 × 10<sup>8</sup> m with T = 27.3 days = 2.36 × 10<sup>6</sup> s.<br>v = 2π × 3.84 × 10<sup>8</sup> ÷ 2.36 × 10<sup>6</sup> ≈ <b>1020 m/s</b>.</div>
+<div class="box box-key"><span class="box-title">Worked example</span>The Moon orbits \(at r = 3.84 \times 10^{8}\ \text{m}\) with \(T = 27.3\) days = 2.36 × 10<sup>6</sup> s.<br>\(v = \dfrac{2 \pi \times 3.84 \times 10^{8}}{2.36 \times 10^{6}}\) ≈ <b>1020 m/s</b>.</div>
 `,
   flashcards: [
     ["Galaxy", "A collection of billions of stars"],
@@ -32,7 +32,7 @@ S2Data.add({
     ["What keeps planets in orbit?", "Gravitational force from the Sun"],
     ["Shape of a comet's orbit", "Very elliptical"],
     ["When does a comet move fastest?", "When it is closest to the Sun"],
-    ["Orbital speed equation", "v = 2πr ÷ T"],
+    ["Orbital speed equation", R`\(v = \dfrac{2 \pi r}{T}\)`],
     ["g on the Moon", "About 1.6 N/kg"],
     ["Does mass change on another planet?", "No: weight changes, mass doesn't"]
   ],
@@ -40,7 +40,7 @@ S2Data.add({
     { q: "What is a galaxy?", o: ["A collection of billions of stars", "A planet and its moons", "A single star", "A comet's tail"], a: 0, e: R`Our galaxy is the Milky Way.` },
     { q: "What keeps the Moon in orbit around the Earth?", o: ["Gravity", "Magnetism", "Air resistance", "Friction"], a: 0, e: R`Gravity provides the force towards the centre of the orbit.` },
     { q: "Where in its orbit is a comet fastest?", o: ["Closest to the Sun", "Furthest from the Sun", "Halfway", "Speed is constant"], a: 0, e: R`As it falls towards the Sun it gains speed; it is slowest furthest away.` },
-    { q: "A satellite orbits at r = 7000 km with T = 6000 s. What is its speed? (use π = 3.14)", o: ["7.3 km/s", "1.2 km/s", "0.86 km/s", "44 km/s"], a: 0, e: "2 × 3.14 × 7000 ÷ 6000 ≈ 7.3 km/s" },
+    { q: "A satellite orbits at r = 7000 km with T = 6000 s. What is its speed? (use π = 3.14)", o: ["7.3 km/s", "1.2 km/s", "0.86 km/s", "44 km/s"], a: 0, e: R`\(\dfrac{2 \times 3.14 \times 7000}{6000 \approx  7.3}\ \text{km}/\text{s}\)` },
     { q: "A 10 kg rock on the Moon (g = 1.6 N/kg) weighs…", o: ["16 N", "100 N", "10 kg", "1.6 N"], a: 0, e: R`\(W = mg = 10 \times 1.6 = 16\ \text{N}\).` },
     { q: "Which list is in order of size, smallest first?", o: ["Planet, star, galaxy, Universe", "Star, planet, galaxy, Universe", "Galaxy, star, planet, Universe", "Universe, galaxy, star, planet"], a: 0, e: R`A planet orbits a star; billions of stars make a galaxy; billions of galaxies make the Universe.` }
   ]
@@ -119,7 +119,7 @@ S2Data.add({
 <li><b>Red-shift</b> of galaxies: the Universe is expanding, so in the past it was much smaller.</li>
 <li><b>Cosmic microwave background radiation (CMB)</b>: microwave radiation reaching us evenly from all directions. It is left-over radiation from the early Universe, stretched to microwave wavelengths by the expansion. The Big Bang theory predicts it; the old Steady State theory can't explain it.</li>
 </ul>
-<div class="box box-key"><span class="box-title">Worked example</span>A line normally at 656 nm is observed at 663 nm. z = 7 ÷ 656 = 0.0107. v = z × c = 0.0107 × 3 × 10<sup>8</sup> ≈ <b>3.2 × 10<sup>6</sup> m/s</b> away from us.</div>
+<div class="box box-key"><span class="box-title">Worked example</span>A line normally at 656 nm is observed at 663 nm. \(z = \dfrac{7}{656} = 0.0107\). \(v = z \times c = 0.0107 \times 3 \times 10^{8}\) ≈ <b>3.2 × 10<sup>6</sup> m/s</b> away from us.</div>
 `,
   flashcards: [
     ["Red-shift", "Light from distant galaxies is shifted to longer wavelengths"],
@@ -134,7 +134,7 @@ S2Data.add({
     { q: "What does red-shift tell us about distant galaxies?", o: ["They are moving away from us", "They are moving towards us", "They are getting hotter", "They are red stars"], a: 0, e: R`Light from them is stretched to longer wavelengths.` },
     { q: "Which evidence supports the Big Bang but not the Steady State theory?", o: ["Cosmic microwave background radiation", "Stars shining", "Planets orbiting", "Gravity"], a: 0, e: R`The CMB is leftover radiation from the hot early Universe.` },
     { q: "Galaxy X has a bigger red-shift than galaxy Y. Galaxy X is…", o: ["Further away and moving faster", "Closer and slower", "The same distance", "Moving towards us"], a: 0, e: R`Bigger red-shift means faster recession, and faster galaxies are further away.` },
-    { q: "A galaxy has z = 0.02. How fast is it moving away? (c = 3 × 10⁸ m/s)", o: ["6 × 10⁶ m/s", "1.5 × 10¹⁰ m/s", "6 × 10⁸ m/s", "0.02 m/s"], a: 0, e: "v = zc" },
+    { q: "A galaxy has z = 0.02. How fast is it moving away? (c = 3 × 10⁸ m/s)", o: ["6 × 10⁶ m/s", "1.5 × 10¹⁰ m/s", "6 × 10⁸ m/s", "0.02 m/s"], a: 0, e: R`\(v = zc\)` },
     { q: "Why is the CMB now detected as microwaves?", o: ["Expansion stretched its wavelength", "It was always microwaves", "Stars emit it", "The Earth's atmosphere changes it"], a: 0, e: R`Space expanded, stretching the radiation's wavelength from high-energy light to microwaves.` },
     { q: "Roughly how old is the Universe?", o: ["13.8 billion years", "4.6 billion years", "6000 years", "100 billion years"], a: 0, e: R`That's found by working back from the rate of expansion.` }
   ]

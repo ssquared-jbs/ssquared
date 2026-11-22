@@ -26,7 +26,7 @@ S2Data.add({
 <p>A current in a resistor transfers energy to thermal energy (heating). This is useful in kettles and heaters, but wasteful in most other devices.</p>
 <div class="eq">\(\text{power} = \text{current} \times \text{voltage} \qquad P = I \times V\)</div>
 <div class="eq">\(\text{energy transferred} = \text{current} \times \text{voltage} \times \text{time} \qquad E = I \times V \times t\)</div>
-<div class="box box-key"><span class="box-title">Choosing a fuse</span>A 2300 W kettle on 230 V: I = P ÷ V = 2300 ÷ 230 = 10 A. Use a <b>13 A</b> fuse (common sizes: 3 A, 5 A, 13 A).</div>
+<div class="box box-key"><span class="box-title">Choosing a fuse</span>A 2300 W kettle on 230 V: \(I = \dfrac{P}{V} = \dfrac{2300}{230} = 10\ \text{A}\). Use a <b>13 A</b> fuse (common sizes: 3 A, 5 A, 13 A).</div>
 <h3>a.c. and d.c.</h3>
 <ul>
 <li><b>Direct current (d.c.)</b> flows in one direction only, e.g. from a cell or battery.</li>
@@ -47,10 +47,10 @@ S2Data.add({
     ["UK mains supply", "About 230 V a.c. at 50 Hz"]
   ],
   quiz: [
-    { q: "A 920 W toaster runs on 230 V. Which fuse should it have?", o: ["5 A", "3 A", "13 A", "1 A"], a: 0, e: "I = 920 ÷ 230 = 4 A, so the next size up is 5 A." },
+    { q: "A 920 W toaster runs on 230 V. Which fuse should it have?", o: ["5 A", "3 A", "13 A", "1 A"], a: 0, e: R`\(I = \dfrac{920}{230} = 4\ \text{A}\), so the next size up is 5 A.` },
     { q: "Why don't double-insulated appliances need an earth wire?", o: ["The case is plastic so it can't become live", "They use d.c.", "They have no fuse", "They use low current"], a: 0, e: R`With no metal case to touch, the outside can't become live, so no earth is needed.` },
     { q: "What is the colour of the neutral wire?", o: ["Blue", "Brown", "Green and yellow", "Red"], a: 0, e: R`Live is brown, neutral is blue, earth is green and yellow.` },
-    { q: "A 2 A current flows through a 12 V lamp for 60 s. How much energy is transferred?", o: ["1440 J", "24 J", "720 J", "6 J"], a: 0, e: "E = IVt = 2 × 12 × 60" },
+    { q: "A 2 A current flows through a 12 V lamp for 60 s. How much energy is transferred?", o: ["1440 J", "24 J", "720 J", "6 J"], a: 0, e: R`\(E = IVt = 2 \times 12 \times 60\)` },
     { q: "Which current changes direction many times a second?", o: ["Alternating current", "Direct current", "Static current", "Battery current"], a: 0, e: R`Mains is a.c.; a battery gives d.c., which flows one way.` },
     { q: "What happens when the live wire touches an earthed metal case?", o: ["A large current flows and the fuse melts", "The appliance works faster", "The neutral wire melts", "Nothing happens"], a: 0, e: R`The earth wire gives a low-resistance path, so the current surges and the fuse melts, cutting the supply.` },
     { q: "What is the power of a device that draws 5 A from a 230 V supply?", o: ["1150 W", "46 W", "235 W", "0.02 W"], a: 0, e: R`\(P = IV = 5 \times 230 = 1150\ \text{W}\).` }
@@ -66,7 +66,7 @@ S2Data.add({
 <tr><th></th><th>Series</th><th>Parallel</th></tr>
 <tr><td>Current</td><td>The same everywhere</td><td>Splits between branches; branch currents add up to the total</td></tr>
 <tr><td>Voltage</td><td>Shared between components</td><td>The same across each branch</td></tr>
-<tr><td>Total resistance</td><td>R = R<sub>1</sub> + R<sub>2</sub></td><td>Less than the smallest single resistor</td></tr>
+<tr><td>Total resistance</td><td>\(R = R_{1} + R_{2}\)</td><td>Less than the smallest single resistor</td></tr>
 <tr><td>If one lamp breaks</td><td>They all go off</td><td>The others stay on (used in house lighting)</td></tr>
 </table>
 <p>Measure current with an <b>ammeter in series</b>, and voltage with a <b>voltmeter in parallel</b>.</p>
@@ -89,7 +89,7 @@ S2Data.add({
 <li><b>Thermistor</b>: resistance <b>decreases</b> as temperature increases. Used in thermostats and fire alarms.</li>
 </ul>
 <div class="box box-prac"><span class="box-title">🔬 Practical: I–V characteristics</span>Set up the component in series with an ammeter and a variable resistor, with a voltmeter across the component. Change the variable resistor to get a range of readings. Reverse the connections for negative values. Plot current against voltage.</div>
-<div class="box box-key"><span class="box-title">Worked example</span>A 6 V battery drives 0.3 A through a resistor. R = V ÷ I = 6 ÷ 0.3 = <b>20 Ω</b>. Charge in 2 minutes: Q = 0.3 × 120 = <b>36 C</b>.</div>
+<div class="box box-key"><span class="box-title">Worked example</span>A 6 V battery drives 0.3 A through a resistor. \(R = \dfrac{V}{I} = \dfrac{6}{0.3}\) = <b>20 Ω</b>. Charge in 2 minutes: \(Q = 0.3 \times 120\) = <b>36 C</b>.</div>
 `,
   flashcards: [
     ["Current in a series circuit", "The same everywhere"],
@@ -109,11 +109,11 @@ S2Data.add({
   quiz: [
     { q: "A 12 V supply drives 2 A through a resistor. What is the resistance?", o: ["6 Ω", "24 Ω", "0.17 Ω", "14 Ω"], a: 0, e: R`\(R = \dfrac{V}{I}\)` },
     { q: "Resistors of 4 Ω and 6 Ω are in series. What is the total resistance?", o: ["10 Ω", "2.4 Ω", "24 Ω", "2 Ω"], a: 0, e: R`In series, add the resistances: \(4 + 6 = 10\ \Omega\).` },
-    { q: "A current of 0.5 A flows for 40 s. How much charge flows?", o: ["20 C", "80 C", "0.0125 C", "40.5 C"], a: 0, e: "Q = It" },
+    { q: "A current of 0.5 A flows for 40 s. How much charge flows?", o: ["20 C", "80 C", "0.0125 C", "40.5 C"], a: 0, e: R`\(Q = It\)` },
     { q: "What happens to the resistance of a thermistor when it gets hotter?", o: ["It decreases", "It increases", "It stays the same", "It becomes infinite"], a: 0, e: R`More free electrons are released as it warms, so current flows more easily.` },
     { q: "Which component lets current flow in one direction only?", o: ["Diode", "LDR", "Thermistor", "Fuse"], a: 0, e: R`A diode has a very high resistance in the reverse direction.` },
     { q: "In a parallel circuit the branch currents are 0.2 A and 0.3 A. What is the total current?", o: ["0.5 A", "0.1 A", "0.06 A", "0.25 A"], a: 0, e: R`Branch currents add up to the supply current: \(0.2 + 0.3 = 0.5\ \text{A}\).` },
-    { q: "How much energy is transferred when 5 C passes through a 9 V battery?", o: ["45 J", "1.8 J", "14 J", "0.56 J"], a: 0, e: "E = QV" },
+    { q: "How much energy is transferred when 5 C passes through a 9 V battery?", o: ["45 J", "1.8 J", "14 J", "0.56 J"], a: 0, e: R`\(E = QV\)` },
     { q: "Why does a filament lamp's resistance increase as the current increases?", o: ["The filament gets hotter", "The voltage falls", "Electrons move faster with less resistance", "It becomes a diode"], a: 0, e: R`Hotter ions vibrate more, so electrons collide with them more often.` }
   ]
 });

@@ -239,7 +239,7 @@ CHEM.add({
     ["Electrical test for metal vs non-metal", "Metals conduct electricity; most non-metals don't (graphite is an exception)"]
   ],
   quiz: [
-    { q: "What is the electronic configuration of chlorine (Z = 17)?", o: ["2.8.7", "2.8.8", "2.7.8", "2.8.6"], a: 0, e: R`Fill shells of 2, 8, 8: 17 = 2 + 8 + 7.` },
+    { q: "What is the electronic configuration of chlorine (Z = 17)?", o: ["2.8.7", "2.8.8", "2.7.8", "2.8.6"], a: 0, e: R`Fill shells of 2, 8, 8: \(17 = 2 + 8 + 7.\)` },
     { q: "An element is 2.8.3. Which group and period is it in?", o: ["Group 3, period 3", "Group 3, period 2", "Group 2, period 3", "Group 8, period 3"], a: 0, e: "Aluminium: 3 shells, 3 outer electrons." },
     { q: "Sulfur dioxide dissolves in water to give an acidic solution. What does this suggest about sulfur?", o: ["It is a non-metal", "It is a metal", "It is a noble gas", "It is an alkali metal"], a: 0, e: "Non-metal oxides are often acidic." },
     { q: "Why do elements in the same group react similarly?", o: ["They have the same number of outer electrons", "They have the same mass number", "They have the same number of shells", "They have the same number of neutrons"], a: 0, e: R`Reactions involve the outer electrons, so the same number means similar reactions.` },
@@ -441,7 +441,7 @@ CHEM.add({
     ["Lone pairs on O in H<sub>2</sub>O", "2"]
   ],
   quiz: [
-    { q: "How many shared pairs of electrons are in a CO<sub>2</sub> molecule?", o: ["4", "2", "3", "6"], a: 0, e: "Two C=O double bonds = 4 shared pairs." },
+    { q: "How many shared pairs of electrons are in a CO<sub>2</sub> molecule?", o: ["4", "2", "3", "6"], a: 0, e: R`\(Two C = O\) double bonds = 4 shared pairs.` },
     { q: "Why does diamond have a very high melting point?", o: ["Many strong covalent bonds must be broken", "Strong intermolecular forces", "Strong ionic bonds", "Delocalised electrons"], a: 0, e: R`Every atom is covalently bonded in a giant structure, so a lot of energy is needed.` },
     { q: "Why does graphite conduct electricity?", o: ["Delocalised electrons move along the layers", "It contains ions", "Layers slide over each other", "It is a metal"], a: 0, e: R`Each carbon bonds to 3 others, leaving one delocalised electron per atom.` },
     { q: "Which molecule contains a triple bond?", o: ["N<sub>2</sub>", "O<sub>2</sub>", "Cl<sub>2</sub>", "CH<sub>4</sub>"], a: 0, e: R`N≡N: each nitrogen shares three pairs of electrons.` },

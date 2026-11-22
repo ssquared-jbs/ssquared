@@ -22,11 +22,11 @@ S2Data.add({
 <li>It increases with depth and with the density of the fluid. That's why dams are thicker at the bottom.</li>
 </ul>
 <div class="eq">\(\text{pressure difference} = \text{height} \times \text{density} \times g \qquad p = h \times \rho \times g\)</div>
-<div class="box box-key"><span class="box-title">Worked example</span>The extra pressure 5 m under water: p = 5 × 1000 × 10 = <b>50 000 Pa</b>.</div>
+<div class="box box-key"><span class="box-title">Worked example</span>The extra pressure 5 m under water: \(p = 5 \times 1000 \times 10\) = <b>50 000 Pa</b>.</div>
 `,
   flashcards: [
     ["Density equation", R`\(\rho = \dfrac{m}{V}\)`],
-    ["Density of water", R`1000 kg/m<sup>3</sup> (1 g/cm<sup>3</sup>)`],
+    ["Density of water", R`\(1000\ \text{kg/m}^{3}\) (\(1\ \text{g/cm}^{3}\))`],
     ["How do you find the volume of an irregular solid?", "Displacement: measure the rise in water level"],
     ["Pressure equation", R`\(p = \dfrac{F}{A}\)`],
     ["Unit of pressure", "Pascal (Pa) = N/m<sup>2</sup>"],
@@ -66,7 +66,7 @@ S2Data.add({
 <p>Specific heat capacity is the energy needed to raise the temperature of 1 kg of a substance by 1 °C.</p>
 <div class="eq">\(\Delta Q = m \times c \times \Delta T\)</div>
 <p>ΔQ in J, m in kg, c in J/kg °C, ΔT in °C. Water has a high specific heat capacity of 4200 J/kg °C.</p>
-<p><span class="tag tag-p">Practical</span> <b>Find the specific heat capacity of a material</b>: heat a known mass (e.g. a 1 kg aluminium block) with an electrical heater. Measure the energy supplied with a joulemeter (or E = IVt) and the temperature rise with a thermometer. Wrap the block in insulation to reduce heat loss. Then c = ΔQ ÷ (m × ΔT).</p></div>
+<p><span class="tag tag-p">Practical</span> <b>Find the specific heat capacity of a material</b>: heat a known mass (e.g. a 1 kg aluminium block) with an electrical heater. Measure the energy supplied with a joulemeter (or E = IVt) and the temperature rise with a thermometer. Wrap the block in insulation to reduce heat loss. Then \(c = \dfrac{\Delta Q}{m \times \Delta T}\).</p></div>
 `,
   flashcards: [
     ["Particles in a solid", "Close, regular pattern, vibrate about fixed positions"],
@@ -100,7 +100,7 @@ S2Data.add({
 <h3>Absolute zero and the Kelvin scale</h3>
 <ul>
 <li><b>Absolute zero</b> is −273 °C (0 K): the temperature at which molecules have the least possible kinetic energy.</li>
-<li>Convert: K = °C + 273 and °C = K − 273.</li>
+<li>Convert: K = °C + 273 and °\(C = K - 273\).</li>
 <li>The average kinetic energy of gas molecules is proportional to the Kelvin temperature.</li>
 </ul>
 <div class="box box-c"><span class="box-title">Paper 2 only: the gas laws</span>
@@ -108,7 +108,7 @@ S2Data.add({
 <div class="eq">at constant volume: \(\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}\)</div>
 <div class="eq">at constant temperature: \(p_1 V_1 = p_2 V_2\)</div>
 <p>Squashing a gas into a smaller volume means more collisions per second with the walls, so the pressure increases.</p></div>
-<div class="box box-key"><span class="box-title">Worked example</span>A gas at 100 kPa is heated from 27 °C to 127 °C at constant volume. T<sub>1</sub> = 300 K and T<sub>2</sub> = 400 K. p<sub>2</sub> = 100 × 400 ÷ 300 = <b>133 kPa</b>.</div>
+<div class="box box-key"><span class="box-title">Worked example</span>A gas at 100 kPa is heated from 27 °C to 127 °C at constant volume. \(T_{1} = 300\ \text{K}\) and \(T_{2} = 400\ \text{K}\). \(p_{2} = \dfrac{100 \times 400}{300}\) = <b>133 kPa</b>.</div>
 `,
   flashcards: [
     ["What causes gas pressure?", "Molecules colliding with the container walls"],

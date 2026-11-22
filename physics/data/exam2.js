@@ -40,7 +40,7 @@ S2Data.exam("2b", [
   { t: "num", m: 2, q: "A current of 2.0 A flows for 5 minutes. How much charge flows?", ans: 600, unit: "C", ms: [R`5 min = 300 s (1)`, R`\(2.0 \times 300 = 600\ \text{C}\) (1)`] },
   { t: "num", m: 2, q: "Calculate the energy transferred when 20 C flows through a p.d. of 9.0 V.", ans: 180, unit: "J", ms: [R`\(E = Q \times V\) (1)`, R`\(20 \times 9.0 = 180\ \text{J}\) (1)`] },
   { t: "num", m: 2, q: "Resistors of 4 Ω, 6 Ω and 10 Ω are in series. What is the total resistance?", ans: 20, unit: "Ω", ms: [R`\(4 + 6 + 10\) (1)`, R`\(= 20\ \Omega\) (1)`] },
-  { t: "num", m: 3, q: "A 6.0 V battery is connected to 2 Ω and 4 Ω resistors in series. Find the current and the p.d. across the 4 Ω resistor. Enter the p.d.", ans: 4, unit: "V", ms: [R`Total R = 6 Ω (1)`, R`\(I = \dfrac{6.0}{6} = 1.0\ \text{A}\) (1)`, R`\(V = 1.0 \times 4 = 4.0\ \text{V}\) (1)`] },
+  { t: "num", m: 3, q: "A 6.0 V battery is connected to 2 Ω and 4 Ω resistors in series. Find the current and the p.d. across the 4 Ω resistor. Enter the p.d.", ans: 4, unit: "V", ms: [R`Total \(R = 6\) Ω (1)`, R`\(I = \dfrac{6.0}{6} = 1.0\ \text{A}\) (1)`, R`\(V = 1.0 \times 4 = 4.0\ \text{V}\) (1)`] },
   { t: "mcq", m: 1, q: "In a series circuit, the current is…", o: ["The same everywhere", "Shared between components", "Largest at the battery only", "Zero at the end"], a: 0 },
   { t: "mcq", m: 1, q: "In a parallel circuit, the p.d. across each branch is…", o: ["The same as the supply", "Shared equally", "Zero", "Always half"], a: 0 },
   { t: "num", m: 2, q: "In a parallel circuit, branch currents are 0.3 A and 0.5 A. What is the current from the supply?", ans: 0.8, unit: "A", ms: [R`Currents add in parallel (1)`, R`\(0.3 + 0.5 = 0.8\ \text{A}\) (1)`] },

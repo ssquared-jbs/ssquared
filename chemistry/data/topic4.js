@@ -193,7 +193,7 @@ CHEM.add({
     ["Two isomers of butene", "But-1-ene and but-2-ene"]
   ],
   quiz: [
-    { q: "Which turns bromine water colourless?", o: ["Propene", "Propane", "Methane", "Ethane"], a: 0, e: R`Alkenes have a C=C bond that bromine adds across.` },
+    { q: "Which turns bromine water colourless?", o: ["Propene", "Propane", "Methane", "Ethane"], a: 0, e: R`Alkenes have \(a C = C\) bond that bromine adds across.` },
     { q: "What is the formula of butene?", o: ["C<sub>4</sub>H<sub>8</sub>", "C<sub>4</sub>H<sub>10</sub>", "C<sub>4</sub>H<sub>6</sub>", "C<sub>3</sub>H<sub>6</sub>"], a: 0, e: R`Alkenes are C<sub>n</sub>H<sub>2n</sub>; with \(n = 4\): C<sub>4</sub>H<sub>8</sub>.` },
     { q: "Ethene + bromine is what type of reaction?", o: ["Addition", "Substitution", "Combustion", "Neutralisation"], a: 0, e: R`Bromine adds across the double bond to form one product.` },
     { q: "What colour change shows an alkene is present?", o: ["Orange → colourless", "Colourless → orange", "Blue → green", "Purple → colourless"], a: 0, e: R`Orange bromine water is decolourised by an alkene.` },

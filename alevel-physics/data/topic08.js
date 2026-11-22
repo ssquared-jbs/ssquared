@@ -10,8 +10,8 @@ S2Data.add({
 <h3>Accelerators</h3>
 <ul>
 <li><b>Linear accelerator (linac)</b>: charged particles pass through a series of drift tubes connected to an alternating p.d. They accelerate across each gap. Tubes get longer because particles go faster, so each crossing takes the same time.</li>
-<li><b>Cyclotron</b>: two D-shaped electrodes ("dees") in a uniform magnetic field with an alternating p.d. between them. The field bends particles into semicircles; they accelerate each time they cross the gap. The radius increases as they speed up (r = p/BQ), but the time per semicircle stays the same (non-relativistic).</li>
-<li>Cyclotron frequency: f = BQ/2πm.</li>
+<li><b>Cyclotron</b>: two D-shaped electrodes ("dees") in a uniform magnetic field with an alternating p.d. between them. The field bends particles into semicircles; they accelerate each time they cross the gap. The radius increases as they speed up \((r = p/BQ)\), but the time per semicircle stays the same (non-relativistic).</li>
+<li>Cyclotron frequency: \(f = BQ/2 \pi m\).</li>
 </ul>
 <h3>Detectors</h3>
 <ul>
@@ -20,7 +20,7 @@ S2Data.add({
 <li>Neutral particles leave no track; their presence is deduced from conservation of momentum or from "V" shapes when they decay.</li>
 </ul>
 <h3>Mass and energy</h3>
-<div class="box box-key"><span class="box-title">ΔE = c<sup>2</sup>Δm</span>In collisions, kinetic energy can become the mass of new particles. Particle masses are often given in MeV/c<sup>2</sup> or GeV/c<sup>2</sup>.</div>
+<div class="box box-key"><span class="box-title">\(\Delta E = c^{2}\Delta m\)</span>In collisions, kinetic energy can become the mass of new particles. Particle masses are often given in MeV/c<sup>2</sup> or GeV/c<sup>2</sup>.</div>
 <p>1 MeV = 1.60 × 10<sup>−13</sup> J. Pair production: a photon of at least 2m<sub>e</sub>c<sup>2</sup> (1.02 MeV) can produce an electron–positron pair.</p>
 `,
   quiz: [
@@ -38,9 +38,9 @@ S2Data.add({
     ["Rutherford scattering conclusion", "Tiny, dense, positive nucleus; atom mostly empty space"],
     ["Linear accelerator", "Drift tubes + alternating p.d.; tubes lengthen as particles speed up"],
     ["Cyclotron", "Dees + magnetic field + alternating p.d.; spiral outwards"],
-    ["Cyclotron frequency", "f = BQ/2πm"],
+    ["Cyclotron frequency", R`\(f = BQ/2 \pi m\)`],
     ["Detector tracks", "Charged particles ionise; curvature gives charge sign and momentum"],
-    ["Mass–energy", "ΔE = c²Δm"],
+    ["Mass–energy", R`\(\Delta E = c^2\Delta m\)`],
     ["MeV to J", "1 MeV = 1.60 × 10⁻¹³ J"],
     ["Pair production threshold", "2mₑc² = 1.02 MeV"]
   ]
@@ -82,7 +82,7 @@ S2Data.add({
     { q: "In β⁻ decay at quark level…", o: ["d → u", "u → d", "s → u", "u → s"], a: 0, e: "" },
     { q: "Which is NOT always conserved?", o: ["Strangeness", "Charge", "Baryon number", "Lepton number"], a: 0, e: "" },
     { q: "Exchange particle for the weak force?", o: ["W and Z bosons", "Photon", "Gluon", "Higgs boson"], a: 0, e: "" },
-    { q: "Can p + p → p + n + π⁺ happen (charge check)?", o: ["Yes, charge is conserved", "No, charge isn't conserved", "No, baryon number isn't conserved", "Only with a neutrino"], a: 0, e: "+2 = +1 + 0 + 1." }
+    { q: "Can p + p → p + n + π⁺ happen (charge check)?", o: ["Yes, charge is conserved", "No, charge isn't conserved", "No, baryon number isn't conserved", "Only with a neutrino"], a: 0, e: R`\(+2 = +1 + 0 + 1\).` }
   ],
   flashcards: [
     ["Up-type quark charge", "+⅔e (u, c, t)"],
@@ -109,19 +109,19 @@ S2Data.add({
 <li><b>Absolute zero</b> (0 K = −273 °C) is the temperature at which molecules have minimum internal energy. T(K) = θ(°C) + 273.</li>
 </ul>
 <h3>Specific heat capacity</h3>
-<div class="box box-key"><span class="box-title">ΔE = mcΔθ</span>c = energy needed to raise 1 kg by 1 K (J kg<sup>−1</sup> K<sup>−1</sup>). Water: 4180 J kg<sup>−1</sup> K<sup>−1</sup>.</div>
-<p>Measuring c: heat a block with an electric heater, measuring V, I and t (E = VIt) and the temperature rise. Insulate to reduce heat loss. Plot θ against t: gradient = VI/mc.</p>
+<div class="box box-key"><span class="box-title">\(\Delta E = mc\Delta \theta\)</span>c = energy needed to raise 1 kg by 1 K (J kg<sup>−1</sup> K<sup>−1</sup>). Water: 4180 J kg<sup>−1</sup> K<sup>−1</sup>.</div>
+<p>Measuring c: heat a block with an electric heater, measuring V, I and \(t (E = VIt)\) and the temperature rise. Insulate to reduce heat loss. Plot θ against t: gradient = VI/mc.</p>
 <h3>Specific latent heat</h3>
-<div class="box box-key"><span class="box-title">ΔE = LΔm</span>L = energy to change the state of 1 kg without a temperature change (J kg<sup>−1</sup>). Water: L<sub>f</sub> = 3.34 × 10<sup>5</sup>, L<sub>v</sub> = 2.26 × 10<sup>6</sup> J kg<sup>−1</sup>.</div>
+<div class="box box-key"><span class="box-title">\(\Delta E = L\Delta m\)</span>L = energy to change the state of 1 kg without a temperature change (J kg<sup>−1</sup>). Water: \(L_{f} = 3.34 \times 10^{5}\), L<sub>v</sub> = 2.26 × 10<sup>6</sup> J kg<sup>−1</sup>.</div>
 <p>Vaporisation needs much more energy than fusion because molecules must be separated completely and work done against the atmosphere.</p>
-<p><b>Example</b>: energy to turn 0.50 kg of ice at 0 °C into water at 20 °C: 0.50 × 3.34 × 10<sup>5</sup> + 0.50 × 4180 × 20 = 167 000 + 41 800 = <b>2.1 × 10<sup>5</sup> J</b>.</p>
+<p><b>Example</b>: energy to turn 0.50 kg of ice at 0 °C into water at 20 °C: \(0.50 \times 3.34 \times 10^{5} + 0.50 \times 4180 \times 20 = 167\,000 + 41\,800\) = <b>2.1 × 10<sup>5</sup> J</b>.</p>
 `,
   quiz: [
     { q: "Internal energy is…", o: ["The sum of random KE and PE of molecules", "The total KE only", "The temperature", "Heat added"], a: 0, e: "" },
     { q: "Energy to heat 2.0 kg of water by 10 K?", o: ["83 600 J", "8360 J", "41 800 J", "4180 J"], a: 0, e: "" },
     { q: "During melting, temperature stays constant because energy increases…", o: ["Potential energy of molecules", "Kinetic energy of molecules", "Mass", "Pressure"], a: 0, e: "" },
     { q: "25 °C in kelvin?", o: ["298 K", "248 K", "25 K", "−248 K"], a: 0, e: "" },
-    { q: "Energy to melt 0.20 kg of ice at 0 °C? (L = 3.34 × 10⁵ J kg⁻¹)", o: ["6.7 × 10⁴ J", "3.3 × 10⁵ J", "1.7 × 10⁶ J", "6.7 × 10³ J"], a: 0, e: "" },
+    { q: "Energy to melt 0.20 kg of ice at 0 °C? (L = 3.34 × 10⁵ J kg⁻¹)", o: ["6.7 × 10⁴ J", "3.3 × 10⁵ J", "1.7 × 10⁶ J", R`\(6.7 \times 10^3\ \text{J}\)`], a: 0, e: "" },
     { q: "Why is L_v much larger than L_f for water?", o: ["Molecules must be separated completely", "Water is denser", "Steam is hotter", "Ice is a solid"], a: 0, e: "" },
     { q: "A 50 W heater runs for 200 s, raising 1.0 kg by 10 K. c = ?", o: ["1000 J kg⁻¹ K⁻¹", "100 J kg⁻¹ K⁻¹", "10 000 J kg⁻¹ K⁻¹", "4180 J kg⁻¹ K⁻¹"], a: 0, e: "" },
     { q: "Absolute zero is…", o: ["0 K, about −273 °C", "0 °C", "−100 °C", "273 K"], a: 0, e: "" },
@@ -129,13 +129,13 @@ S2Data.add({
   ],
   flashcards: [
     ["Internal energy", "Sum of random KE and PE of molecules"],
-    ["Specific heat capacity", "ΔE = mcΔθ"],
-    ["Specific latent heat", "ΔE = LΔm"],
+    ["Specific heat capacity", R`\(\Delta E = mc\Delta \theta\)`],
+    ["Specific latent heat", R`\(\Delta E = L\Delta m\)`],
     ["During a change of state", "PE increases; temperature (KE) constant"],
     ["Absolute zero", "0 K = −273 °C; minimum internal energy"],
-    ["Kelvin conversion", "T = θ + 273"],
+    ["Kelvin conversion", R`\(T = \theta + 273\)`],
     ["Water: c", "4180 J kg⁻¹ K⁻¹"],
-    ["Electrical heating energy", "E = VIt"]
+    ["Electrical heating energy", R`\(E = VIt\)`]
   ]
 });
 
@@ -148,23 +148,23 @@ S2Data.add({
 <li><b>Boyle's law</b>: pV = constant (constant T).</li>
 <li>Pressure law: p/T = constant (constant V). Charles' law: V/T = constant (constant p). Temperatures in <b>kelvin</b>.</li>
 </ul>
-<div class="box box-key"><span class="box-title">Ideal gas equation</span>pV = NkT (N molecules, k = 1.38 × 10<sup>−23</sup> J K<sup>−1</sup>) or pV = nRT (n moles, R = 8.31 J mol<sup>−1</sup> K<sup>−1</sup>)</div>
+<div class="box box-key"><span class="box-title">Ideal gas equation</span>\(pV = NkT (N\) molecules, k = 1.38 × 10<sup>−23</sup> J K<sup>−1</sup>) or pV = nRT (n moles, R = 8.31 J mol<sup>−1</sup> K<sup>−1</sup>)</div>
 <h3>Kinetic theory</h3>
 <p>Assumptions for an ideal gas: a large number of molecules in random motion; molecules have negligible volume; collisions are elastic; no forces between molecules except during collisions; collision time is negligible.</p>
 <p>Pressure arises because molecules collide with the walls, changing momentum: force = rate of change of momentum.</p>
-<div class="box box-key"><span class="box-title">pV = ⅓Nm&lt;c<sup>2</sup>&gt;</span>&lt;c<sup>2</sup>&gt; is the mean square speed. Combining with pV = NkT gives ½m&lt;c<sup>2</sup>&gt; = <b>3/2 kT</b>.</div>
+<div class="box box-key"><span class="box-title">pV = ⅓Nm&lt;c<sup>2</sup>&gt;</span>&lt;c<sup>2</sup>&gt; is the mean square speed. Combining with \(pV = NkT\) gives ½m&lt;c<sup>2</sup>&gt; = <b>3/2 kT</b>.</div>
 <ul>
 <li>Average molecular kinetic energy is proportional to absolute temperature.</li>
-<li>Root mean square speed c<sub>rms</sub> = √&lt;c<sup>2</sup>&gt;.</li>
+<li>Root mean square speed \(c_{rms} = √\)&lt;c<sup>2</sup>&gt;.</li>
 </ul>
 <p><b>Example</b>: mean KE of a gas molecule at 300 K = 1.5 × 1.38 × 10<sup>−23</sup> × 300 = <b>6.2 × 10<sup>−21</sup> J</b>.</p>
 `,
   quiz: [
-    { q: "Boyle's law states…", o: ["pV = constant at constant T", "p/T constant at constant V", "V/T constant", "pV = nR"], a: 0, e: "" },
+    { q: "Boyle's law states…", o: ["pV = constant at constant T", "p/T constant at constant V", "V/T constant", R`\(pV = nR\)`], a: 0, e: "" },
     { q: "Gas at 100 kPa, 2.0 m³ is compressed to 0.50 m³ at constant T. New pressure?", o: ["400 kPa", "25 kPa", "200 kPa", "50 kPa"], a: 0, e: "" },
     { q: "Number of moles in 0.024 m³ at 100 kPa and 289 K?", o: ["1.0 mol", "0.10 mol", "10 mol", "2.0 mol"], a: 0, e: "pV/RT." },
     { q: "Mean KE of a molecule depends only on…", o: ["Absolute temperature", "Pressure", "Volume", "Mass of gas"], a: 0, e: "" },
-    { q: "Doubling the kelvin temperature changes c_rms by…", o: ["× √2", "× 2", "× 4", "× ½"], a: 0, e: "" },
+    { q: "Doubling the kelvin temperature changes c_rms by…", o: [R`\(\times \sqrt{2}\)`, R`\(\times 2\)`, R`\(\times 4\)`, R`\(\times \tfrac12\)`], a: 0, e: "" },
     { q: "Which is an ideal gas assumption?", o: ["Collisions are elastic", "Molecules attract strongly", "Molecules have large volume", "Motion is ordered"], a: 0, e: "" },
     { q: "Boltzmann constant k = …", o: ["R/N_A", "N_A/R", "RN_A", "R"], a: 0, e: "" },
     { q: "Pressure in kinetic theory is caused by…", o: ["Molecules colliding with walls and changing momentum", "Gravity", "Intermolecular forces", "Heat"], a: 0, e: "" },
@@ -173,7 +173,7 @@ S2Data.add({
   flashcards: [
     ["Boyle's law", "pV = constant (constant T)"],
     ["Pressure law", "p/T = constant (constant V)"],
-    ["Ideal gas equation", "pV = NkT = nRT"],
+    ["Ideal gas equation", R`\(pV = NkT = nRT\)`],
     ["Kinetic theory equation", "pV = ⅓Nm<c²>"],
     ["Mean molecular KE", "½m<c²> = 3/2 kT"],
     ["Ideal gas assumptions", "Random motion, negligible volume, elastic collisions, no intermolecular forces"],
@@ -190,8 +190,8 @@ S2Data.add({
 <ul>
 <li>A black body absorbs all radiation that falls on it; stars approximate black bodies.</li>
 <li><b>Stefan–Boltzmann law</b>: L = σAT<sup>4</sup> = 4πr<sup>2</sup>σT<sup>4</sup> (σ = 5.67 × 10<sup>−8</sup> W m<sup>−2</sup> K<sup>−4</sup>).</li>
-<li><b>Wien's law</b>: λ<sub>max</sub>T = 2.90 × 10<sup>−3</sup> m K. Hotter stars peak at shorter wavelengths (bluer).</li>
-<li>Intensity at Earth: I = L/4πd<sup>2</sup>.</li>
+<li><b>Wien's law</b>: \(\lambda _{max}T = 2.90 \times 10^{-3}\ \text{m}\,\text{K}\). Hotter stars peak at shorter wavelengths (bluer).</li>
+<li>Intensity at Earth: \(I = L/4\pi d^{2}\).</li>
 </ul>
 <h3>The Hertzsprung–Russell diagram</h3>
 <p>Luminosity against surface temperature (temperature <b>decreasing</b> to the right). Main sequence runs diagonally; red giants and supergiants upper right; white dwarfs lower left.</p>
@@ -199,19 +199,19 @@ S2Data.add({
 <h3>Measuring distances</h3>
 <ul>
 <li><b>Trigonometric parallax</b>: measure the apparent shift of a nearby star against distant ones six months apart. d = 1 AU ÷ tan θ. 1 parsec = distance with a parallax angle of 1 arcsecond.</li>
-<li><b>Standard candles</b>: objects of known luminosity (Cepheid variables, type Ia supernovae). Measure I and use I = L/4πd<sup>2</sup>.</li>
+<li><b>Standard candles</b>: objects of known luminosity (Cepheid variables, type Ia supernovae). Measure I and use \(I = L/4\pi d^{2}\).</li>
 </ul>
 <h3>Redshift and the expanding universe</h3>
 <ul>
-<li>Redshift: z = Δλ/λ ≈ Δf/f ≈ v/c (for v ≪ c).</li>
-<li><b>Hubble's law</b>: v = H<sub>0</sub>d. Galaxies are receding, faster the further away they are, so the universe is expanding.</li>
+<li>Redshift: \(z = \Delta \lambda /\lambda\) ≈ Δf/f ≈ v/c (for v ≪ c).</li>
+<li><b>Hubble's law</b>: \(v = H_{0}d\). Galaxies are receding, faster the further away they are, so the universe is expanding.</li>
 <li>Age of the universe ≈ 1/H<sub>0</sub>. Uncertainty in H<sub>0</sub> comes from uncertainty in distances.</li>
 <li>Galaxy rotation curves suggest <b>dark matter</b>; the ultimate fate of the universe depends on its density.</li>
 </ul>
 `,
   quiz: [
     { q: "Wien's law: a star peaks at 500 nm. Surface temperature?", o: ["5800 K", "1450 K", "58 000 K", "580 K"], a: 0, e: "2.9 × 10⁻³ ÷ 5 × 10⁻⁷." },
-    { q: "Doubling a star's surface temperature (same radius) changes luminosity by…", o: ["× 16", "× 4", "× 2", "× 8"], a: 0, e: "" },
+    { q: "Doubling a star's surface temperature (same radius) changes luminosity by…", o: [R`\(\times 16\)`, R`\(\times 4\)`, R`\(\times 2\)`, R`\(\times 8\)`], a: 0, e: "" },
     { q: "On an HR diagram, temperature…", o: ["Decreases to the right", "Increases to the right", "Is on the y-axis", "Is constant"], a: 0, e: "" },
     { q: "Where are white dwarfs on the HR diagram?", o: ["Bottom left", "Top right", "Top left", "Bottom right"], a: 0, e: "" },
     { q: "A standard candle has…", o: ["Known luminosity", "Known temperature", "Known mass", "Known age"], a: 0, e: "" },
@@ -223,12 +223,12 @@ S2Data.add({
   flashcards: [
     ["Stefan–Boltzmann law", "L = 4πr²σT⁴"],
     ["Wien's law", "λmax T = 2.90 × 10⁻³ m K"],
-    ["Intensity at distance d", "I = L/4πd²"],
+    ["Intensity at distance d", R`\(I = L/4\pi d^2\)`],
     ["HR diagram axes", "Luminosity vs temperature (decreasing to the right)"],
     ["Parallax", "d = 1 AU / tan θ; 1 pc ↔ 1 arcsecond"],
     ["Standard candle", "Object of known luminosity (Cepheid, type Ia supernova)"],
-    ["Redshift", "z = Δλ/λ ≈ v/c"],
-    ["Hubble's law", "v = H₀d"],
+    ["Redshift", R`\(z = \Delta \lambda /\lambda \approx  v/c\)`],
+    ["Hubble's law", R`\(v = H_{0}d\)`],
     ["Age of the universe", "≈ 1/H₀"],
     ["Sun-like star fate", "Red giant → planetary nebula → white dwarf"]
   ]
@@ -250,11 +250,11 @@ S2Data.add({
 <h3>Decay is random and spontaneous</h3>
 <ul>
 <li>Random: you can't predict which nucleus decays next. Spontaneous: not affected by external conditions.</li>
-<li>Activity <b>A = λN</b> (becquerels, Bq). λ = decay constant: the probability a nucleus decays per unit time.</li>
+<li>Activity <b>\(A = \lambda N\)</b> (becquerels, Bq). λ = decay constant: the probability a nucleus decays per unit time.</li>
 </ul>
-<div class="box box-key"><span class="box-title">Exponential decay</span>N = N<sub>0</sub>e<sup>−λt</sup> &nbsp; A = A<sub>0</sub>e<sup>−λt</sup> &nbsp; t<sub>½</sub> = ln 2/λ</div>
+<div class="box box-key"><span class="box-title">Exponential decay</span>\(N = N_{0}e^{-\lambda t}\) &nbsp; \(A = A_{0}e^{-\lambda t}\) &nbsp; \(t_{\tfrac12} = \ln 2/\lambda\)</div>
 <p>A graph of ln A against t is a straight line of gradient −λ.</p>
-<p><b>Example</b>: a sample has t<sub>½</sub> = 8.0 days. λ = 0.693 ÷ (8 × 86 400) = 1.0 × 10<sup>−6</sup> s<sup>−1</sup>. After 24 days (3 half-lives), 1/8 remains.</p>
+<p><b>Example</b>: a sample has \(t_{\tfrac12} = 8.0\) days. \(\lambda = \dfrac{0.693}{8 \times 86\,400} = 1.0 \times 10^{-6}\ \text{s}^{-1}\). After 24 days (3 half-lives), 1/8 remains.</p>
 `,
   quiz: [
     { q: "Which radiation is most ionising?", o: ["Alpha", "Beta", "Gamma", "All equal"], a: 0, e: "" },
@@ -265,15 +265,15 @@ S2Data.add({
     { q: "After 4 half-lives, what fraction remains?", o: ["1/16", "1/4", "1/8", "1/32"], a: 0, e: "" },
     { q: "Radioactive decay is random, meaning…", o: ["You can't predict which nucleus decays next", "It speeds up when heated", "It depends on pressure", "All nuclei decay at once"], a: 0, e: "" },
     { q: "Why subtract background count?", o: ["To find the count due to the source alone", "To increase accuracy of time", "Because it's negative", "To find half-life directly"], a: 0, e: "" },
-    { q: "Gradient of ln A against t?", o: ["−λ", "λ", "t½", "A₀"], a: 0, e: "" }
+    { q: "Gradient of ln A against t?", o: [R`\(-\lambda\)`, "λ", "t½", "A₀"], a: 0, e: "" }
   ],
   flashcards: [
     ["Alpha particle", "Helium nucleus; strongly ionising; stopped by paper"],
     ["Beta-minus", "Fast electron; Z + 1; antineutrino emitted"],
     ["Gamma", "EM radiation; weakly ionising; reduced by thick lead"],
-    ["Activity", "A = λN (Bq)"],
+    ["Activity", R`\(A = \lambda N (Bq)\)`],
     ["Decay equation", "N = N₀e^(−λt)"],
-    ["Half-life", "t½ = ln 2/λ"],
+    ["Half-life", R`\(t\tfrac12 = \ln 2/\lambda\)`],
     ["Random and spontaneous", "Unpredictable; unaffected by external conditions"],
     ["Background radiation sources", "Radon, rocks, cosmic rays, medical"]
   ]
@@ -326,26 +326,26 @@ S2Data.add({
   summary: "Newton's law of gravitation, field strength, gravitational potential and orbits.",
   notes: R`
 <h3>Newton's law of gravitation</h3>
-<div class="box box-key"><span class="box-title">F = Gm<sub>1</sub>m<sub>2</sub>/r<sup>2</sup></span>G = 6.67 × 10<sup>−11</sup> N m<sup>2</sup> kg<sup>−2</sup>. Gravity is always attractive. r is measured between centres.</div>
+<div class="box box-key"><span class="box-title">\(F = Gm_{1}m_{2}/r^{2}\)</span>\(G = 6.67 \times 10^{-11}\ \text{N}\,\text{m}^{2}\,\text{kg}^{-2}\). Gravity is always attractive. r is measured between centres.</div>
 <h3>Field strength and potential</h3>
 <ul>
-<li>Gravitational field strength: <b>g = F/m</b> (N kg<sup>−1</sup>). For a point (or spherical) mass: <b>g = GM/r<sup>2</sup></b>. Near Earth's surface the field is roughly uniform.</li>
+<li>Gravitational field strength: <b>\(g = F/m\)</b> (N kg<sup>−1</sup>). For a point (or spherical) mass: <b>\(g = GM/r^{2}\)</b>. Near Earth's surface the field is roughly uniform.</li>
 <li>Gravitational potential: <b>V<sub>grav</sub> = −GM/r</b>. Zero at infinity, negative everywhere else, because work must be done to move a mass away.</li>
-<li>Work done moving mass m: ΔW = mΔV. g = −ΔV/Δr.</li>
+<li>Work done moving mass m: \(\Delta W = m\Delta V\). g = −ΔV/Δr.</li>
 </ul>
 <h3>Orbits</h3>
-<p>For a satellite in circular orbit, gravity provides the centripetal force: GMm/r<sup>2</sup> = mv<sup>2</sup>/r, so <b>v = √(GM/r)</b>. With v = 2πr/T: <b>T<sup>2</sup> = 4π<sup>2</sup>r<sup>3</sup>/GM</b> (T<sup>2</sup> ∝ r<sup>3</sup>, Kepler's third law).</p>
+<p>For a satellite in circular orbit, gravity provides the centripetal force: \(GMm/r^{2} = mv^{2}/r\), so <b>\(v = √\)(GM/r)</b>. With \(v = 2 \pi r/T\): <b>\(T^{2} = 4\pi ^{2}r^{3}/GM\)</b> (T<sup>2</sup> ∝ r<sup>3</sup>, Kepler's third law).</p>
 <p><b>Geostationary</b> satellites orbit above the equator with a period of 24 hours, staying above the same point. Used for communications.</p>
 <h3>Comparing fields</h3>
 <table>
 <tr><th>Gravitational</th><th>Electric</th></tr>
-<tr><td>F = Gm<sub>1</sub>m<sub>2</sub>/r<sup>2</sup></td><td>F = kQ<sub>1</sub>Q<sub>2</sub>/r<sup>2</sup></td></tr>
+<tr><td>\(F = Gm_{1}m_{2}/r^{2}\)</td><td>\(F = kQ_{1}Q_{2}/r^{2}\)</td></tr>
 <tr><td>Always attractive</td><td>Attractive or repulsive</td></tr>
-<tr><td>V = −GM/r</td><td>V = kQ/r</td></tr>
+<tr><td>V = −GM/r</td><td>\(V = kQ/r\)</td></tr>
 </table>
 `,
   quiz: [
-    { q: "Doubling the distance between two masses changes the force by…", o: ["× ¼", "× ½", "× 2", "× 4"], a: 0, e: "" },
+    { q: "Doubling the distance between two masses changes the force by…", o: ["× ¼", R`\(\times \tfrac12\)`, R`\(\times 2\)`, R`\(\times 4\)`], a: 0, e: "" },
     { q: "Gravitational potential at infinity is…", o: ["Zero", "Infinite", "Negative", "Positive maximum"], a: 0, e: "" },
     { q: "Gravitational potential is negative because…", o: ["Work must be done to move a mass to infinity", "Gravity repels", "Mass is negative", "g is negative"], a: 0, e: "" },
     { q: "Orbital speed of a satellite?", o: ["√(GM/r)", "GM/r", "√(GMr)", "GM/r²"], a: 0, e: "" },
@@ -356,12 +356,12 @@ S2Data.add({
     { q: "Gravitational field strength is…", o: ["Force per unit mass", "Mass per unit force", "Potential × r", "Energy per unit mass"], a: 0, e: "" }
   ],
   flashcards: [
-    ["Newton's law of gravitation", "F = Gm₁m₂/r²"],
-    ["Gravitational field strength", "g = F/m = GM/r²"],
+    ["Newton's law of gravitation", R`\(F = Gm_{1}m_{2}/r^2\)`],
+    ["Gravitational field strength", R`\(g = F/m = GM/r^2\)`],
     ["Gravitational potential", "V = −GM/r (zero at infinity)"],
-    ["Work done in a gravitational field", "ΔW = mΔV"],
-    ["Orbital speed", "v = √(GM/r)"],
-    ["Kepler's third law", "T² = 4π²r³/GM"],
+    ["Work done in a gravitational field", R`\(\Delta W = m\Delta V\)`],
+    ["Orbital speed", R`\(v = \sqrt{GM/r}\)`],
+    ["Kepler's third law", R`\(T^2 = 4\pi ^2r^3/GM\)`],
     ["Geostationary orbit", "24 h period, above the equator, same direction as Earth's rotation"],
     ["G", "6.67 × 10⁻¹¹ N m² kg⁻²"]
   ]
@@ -372,42 +372,42 @@ S2Data.add({
   summary: "Conditions for SHM, displacement, velocity and acceleration equations, and mass–spring and pendulum systems.",
   notes: R`
 <h3>What is SHM?</h3>
-<div class="box box-key"><span class="box-title">a = −ω<sup>2</sup>x</span>Acceleration is proportional to displacement from equilibrium and always directed towards it. ω = 2πf = 2π/T.</div>
+<div class="box box-key"><span class="box-title">a = −ω<sup>2</sup>x</span>Acceleration is proportional to displacement from equilibrium and always directed towards it. \(\omega = 2 \pi f = 2 \pi /T\).</div>
 <h3>Equations</h3>
 <ul>
 <li>Displacement: x = A cos ωt (released from maximum displacement).</li>
-<li>Velocity: v = −Aω sin ωt. Maximum speed v<sub>max</sub> = ωA, at equilibrium.</li>
-<li>Maximum acceleration a<sub>max</sub> = ω<sup>2</sup>A, at maximum displacement.</li>
+<li>Velocity: v = −Aω sin ωt. Maximum speed \(v_{max} = \omega A\), at equilibrium.</li>
+<li>Maximum acceleration \(a_{max} = \omega ^{2}A\), at maximum displacement.</li>
 <li>Velocity is 90° (π/2) out of phase with displacement; acceleration is in antiphase with displacement.</li>
 <li>The period of SHM is independent of amplitude (isochronous).</li>
 </ul>
 <h3>Common oscillators</h3>
 <table>
-<tr><td>Mass on a spring</td><td>T = 2π√(m/k)</td></tr>
-<tr><td>Simple pendulum (small angles)</td><td>T = 2π√(l/g)</td></tr>
+<tr><td>Mass on a spring</td><td>\(T = 2 \pi √\)(m/k)</td></tr>
+<tr><td>Simple pendulum (small angles)</td><td>\(T = 2 \pi √\)(l/g)</td></tr>
 </table>
 <h3>Energy in SHM</h3>
 <p>Energy transfers between kinetic and potential, with total energy constant (if undamped). Total energy ∝ A<sup>2</sup>. KE is maximum at equilibrium; PE is maximum at the extremes.</p>
-<p><b>Example</b>: a 0.50 kg mass on a spring of k = 200 N m<sup>−1</sup>. T = 2π√(0.5/200) = <b>0.31 s</b>. With amplitude 0.040 m, v<sub>max</sub> = (2π/0.314) × 0.040 = <b>0.80 m s<sup>−1</sup></b>.</p>
+<p><b>Example</b>: a 0.50 kg mass on a spring of k = 200 N m<sup>−1</sup>. \(T = 2 \pi √\)(0.5/200) = <b>0.31 s</b>. With amplitude 0.040 m, \(v_{max} = (2 \pi /0.314) \times 0.040\) = <b>0.80 m s<sup>−1</sup></b>.</p>
 `,
   quiz: [
-    { q: "The defining equation of SHM is…", o: ["a = −ω²x", "a = ω²x", "v = ωx", "x = ωt"], a: 0, e: "" },
+    { q: "The defining equation of SHM is…", o: [R`\(a = -\omega ^2x\)`, R`\(a = \omega ^2x\)`, R`\(v = \omega x\)`, R`\(x = \omega t\)`], a: 0, e: "" },
     { q: "Where is the speed maximum in SHM?", o: ["At equilibrium", "At maximum displacement", "Halfway", "It's constant"], a: 0, e: "" },
     { q: "Period of a 2.0 m pendulum (g = 9.81)?", o: ["2.8 s", "1.4 s", "0.45 s", "8.9 s"], a: 0, e: "" },
-    { q: "Increasing the mass on a spring by 4× changes T by…", o: ["× 2", "× 4", "× ½", "× 16"], a: 0, e: "" },
+    { q: "Increasing the mass on a spring by 4× changes T by…", o: [R`\(\times 2\)`, R`\(\times 4\)`, R`\(\times \tfrac12\)`, R`\(\times 16\)`], a: 0, e: "" },
     { q: "Maximum acceleration of SHM with A = 0.10 m and ω = 5.0 rad s⁻¹?", o: ["2.5 m s⁻²", "0.50 m s⁻²", "0.25 m s⁻²", "50 m s⁻²"], a: 0, e: "" },
     { q: "Acceleration and displacement in SHM are…", o: ["In antiphase", "In phase", "90° out of phase", "Unrelated"], a: 0, e: "" },
     { q: "The period of an ideal SHM oscillator depends on amplitude…", o: ["Not at all", "Strongly", "Linearly", "Only for springs"], a: 0, e: "" },
     { q: "Total energy of an SHM oscillator is proportional to…", o: ["A²", "A", "1/A", "√A"], a: 0, e: "" },
-    { q: "Maximum speed of SHM with A = 0.040 m and T = 0.50 s?", o: ["0.50 m s⁻¹", "0.080 m s⁻¹", "0.25 m s⁻¹", "1.0 m s⁻¹"], a: 0, e: "2π/0.5 × 0.04." }
+    { q: "Maximum speed of SHM with A = 0.040 m and T = 0.50 s?", o: ["0.50 m s⁻¹", "0.080 m s⁻¹", "0.25 m s⁻¹", "1.0 m s⁻¹"], a: 0, e: R`\(2 \pi /0.5 \times 0.04\).` }
   ],
   flashcards: [
     ["SHM condition", "a = −ω²x: acceleration ∝ displacement, towards equilibrium"],
-    ["Angular frequency", "ω = 2πf = 2π/T"],
-    ["Displacement", "x = A cos ωt"],
+    ["Angular frequency", R`\(\omega = 2 \pi f = 2 \pi /T\)`],
+    ["Displacement", R`\(x = A \cos \omega t\)`],
     ["Maximum speed", "v_max = ωA (at equilibrium)"],
     ["Maximum acceleration", "a_max = ω²A (at extremes)"],
-    ["Mass–spring period", "T = 2π√(m/k)"],
+    ["Mass–spring period", R`\(T = 2 \pi \sqrt{m/k}\)`],
     ["Pendulum period", "T = 2π√(l/g) (small angles)"],
     ["Energy in SHM", "Total ∝ A²; KE max at centre, PE max at extremes"]
   ]

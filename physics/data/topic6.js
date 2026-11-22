@@ -117,8 +117,8 @@ S2Data.add({
     ["Three ways to increase the induced voltage", "Move faster, stronger magnet, more turns"],
     ["What type of current does a generator produce?", "Alternating current"],
     ["Why do transformers need a.c.?", "Only a changing magnetic field induces a voltage in the secondary coil"],
-    ["Transformer turns equation", "V<sub>p</sub>/V<sub>s</sub> = N<sub>p</sub>/N<sub>s</sub>"],
-    ["Transformer power equation (100% efficient)", "V<sub>p</sub>I<sub>p</sub> = V<sub>s</sub>I<sub>s</sub>"],
+    ["Transformer turns equation", R`\(V_{p}/V_{s} = N_{p}/N_{s}\)`],
+    ["Transformer power equation (100% efficient)", R`\(V_{p}I_{p} = V_{s}I_{s}\)`],
     ["Why is electricity transmitted at high voltage?", "Lower current, so less energy is lost as heat in the cables"]
   ],
   quiz: [
@@ -127,6 +127,6 @@ S2Data.add({
     { q: "Why is electricity transmitted at very high voltages?", o: ["To reduce the current and energy losses", "To make it travel faster", "To increase the current", "To make it safer at home"], a: 0, e: R`For the same power \(P = IV\), higher \(V\) means lower \(I\), and heating losses depend on \(I^2R\).` },
     { q: "Which transformer reduces voltage?", o: ["Step-down", "Step-up", "Neither", "Both"], a: 0, e: R`A step-down transformer has fewer turns on the secondary coil.` },
     { q: "Which change would increase the voltage induced in a coil?", o: ["Moving the magnet faster", "Using fewer turns", "Using a weaker magnet", "Moving the magnet more slowly"], a: 0, e: R`A faster change in the magnetic field induces a bigger voltage.` },
-    { q: "A 100% efficient transformer steps 230 V down to 23 V. The primary current is 0.1 A. What is the secondary current?", o: ["1 A", "0.01 A", "10 A", "0.1 A"], a: 0, e: "230 × 0.1 = 23 × I<sub>s</sub>" }
+    { q: "A 100% efficient transformer steps 230 V down to 23 V. The primary current is 0.1 A. What is the secondary current?", o: ["1 A", "0.01 A", "10 A", "0.1 A"], a: 0, e: R`\(230 \times 0.1 = 23 \times I_{s}\)` }
   ]
 });

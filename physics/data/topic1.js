@@ -88,7 +88,7 @@ S2Data.add({
 </ol>
 <p>Opening a parachute increases the air resistance, so the skydiver decelerates to a new, lower terminal velocity.</p>
 <h3>Stopping distance</h3>
-<div class="eq">stopping distance = thinking distance + braking distance</div>
+<div class="eq">\(\text{stopping distance} = \text{thinking distance} + \text{braking distance}\)</div>
 <ul>
 <li><b>Thinking distance</b> increases with speed, tiredness, alcohol, drugs and distractions, because these increase reaction time.</li>
 <li><b>Braking distance</b> increases with speed, mass, worn brakes or tyres, and wet or icy roads.</li>
@@ -142,10 +142,10 @@ S2Data.add({
 </ul>
 `,
   flashcards: [
-    ["Equation for momentum", "p = m × v"],
+    ["Equation for momentum", R`\(p = m \times v\)`],
     ["Unit of momentum", "kg m/s"],
     ["Conservation of momentum", "Total momentum before = total momentum after (no external forces)"],
-    ["Force and momentum equation", "F = (mv − mu) ÷ t"],
+    ["Force and momentum equation", R`\(F = \dfrac{mv - mu}{t}\)`],
     ["How do crumple zones reduce injury?", "They increase the time for momentum to change, so the force is smaller"],
     ["Is momentum a vector or a scalar?", "Vector"]
   ],

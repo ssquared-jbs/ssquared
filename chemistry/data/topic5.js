@@ -98,7 +98,7 @@ CHEM.add({
     { q: "Which alloy is used for aircraft because it is light?", o: ["Magnalium", "Brass", "Bronze", "High-carbon steel"], a: 0, e: R`Magnalium is an alloy of aluminium and magnesium.` },
     { q: "What percentage of gold is in 18-carat gold?", o: ["75%", "18%", "100%", "50%"], a: 0, e: R`\(\dfrac{18}{24}\)` },
     { q: "Corrosion of a metal is…", o: ["Oxidation", "Reduction", "Neutralisation", "Decomposition"], a: 0, e: R`The metal loses electrons when it reacts with oxygen.` },
-    { q: "Nickel is used as a catalyst for…", o: ["Hydrogenation of vegetable oils", "The Haber process", "Fermentation", "Cracking"], a: 0, e: R`Nickel catalyses the addition of hydrogen to C=C bonds, making margarine.` }
+    { q: "Nickel is used as a catalyst for…", o: ["Hydrogenation of vegetable oils", "The Haber process", "Fermentation", "Cracking"], a: 0, e: R`Nickel catalyses the addition of hydrogen to \(C = C\) bonds, making margarine.` }
   ]
 });
 

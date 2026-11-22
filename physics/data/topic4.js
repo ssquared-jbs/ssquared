@@ -62,8 +62,8 @@ S2Data.add({
 <div class="eq">\(\text{kinetic energy} = \tfrac12 \times \text{mass} \times \text{speed}^2 \qquad \text{KE} = \tfrac12 mv^2\)</div>
 <p>Doubling the speed makes the kinetic energy <b>4 times</b> bigger.</p>
 <h3>Falling objects</h3>
-<p>If there is no air resistance, the GPE lost = the KE gained, so mgh = ½mv<sup>2</sup> and v = √(2gh).</p>
-<div class="box box-key"><span class="box-title">Worked example</span>A 2 kg ball falls 5 m. GPE lost = 2 × 10 × 5 = 100 J. Speed at the bottom: 100 = ½ × 2 × v<sup>2</sup>, so v<sup>2</sup> = 100 and v = <b>10 m/s</b>.</div>
+<p>If there is no air resistance, the GPE lost = the KE gained, so \(mgh = \tfrac12mv^{2}\) and \(v = √\)(2gh).</p>
+<div class="box box-key"><span class="box-title">Worked example</span>A 2 kg ball falls 5 m. GPE lost = 2 × 10 × 5 = 100 J. Speed at the bottom: \(100 = \tfrac12 \times 2 \times v^{2}\), so \(v^{2} = 100\) and v = <b>10 m/s</b>.</div>
 <h3>Power</h3>
 <div class="eq">\(\text{power} = \dfrac{\text{work done}}{\text{time taken}} \qquad P = \dfrac{W}{t}\)</div>
 <p>Power is the rate of transferring energy. Unit: watt (W). 1 W = 1 J/s.</p>
@@ -71,8 +71,8 @@ S2Data.add({
   flashcards: [
     ["Work done equation", R`\(W = F \times d\)`],
     ["Unit of work and energy", "Joule (J)"],
-    ["GPE equation", "GPE = m × g × h"],
-    ["Kinetic energy equation", "KE = ½ m v<sup>2</sup>"],
+    ["GPE equation", R`\(\text{GPE} = m \times g \times h\)`],
+    ["Kinetic energy equation", R`\(\text{KE} = \tfrac12 m v^{2}\)`],
     ["What happens to KE if speed doubles?", "It is 4 times bigger"],
     ["Power equation", R`\(P = \dfrac{W}{t}\)`],
     ["1 watt", "1 joule per second"],

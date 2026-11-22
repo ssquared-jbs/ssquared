@@ -87,7 +87,7 @@ S2Data.exam("8a", [
   { t: "mcq", m: 1, q: "How many planets are in our Solar System?", o: ["8", "9", "7", "10"], a: 0 },
   { t: "text", m: 1, q: "Why does a comet develop a tail near the Sun?", ms: ["Ice is heated and vaporises, releasing gas and dust pushed away from the Sun"], kw: [["heat", "vapor", "melt", "ice", "solar wind"]] },
   { t: "mcq", m: 1, q: "The time for one orbit is called the…", o: ["Orbital period", "Frequency", "Half-life", "Wavelength"], a: 0 },
-  { t: "num", m: 2, q: R`The Moon orbits at about 1000 m/s with radius 3.8 × 10<sup>8</sup> m. How long is its orbit in days? (π = 3.14; 1 day = 86 400 s)`, ans: 27.6, unit: "days", rel: 0.03, ms: [R`T = 2πr ÷ v = \(2.39 \times 10^{6}\) s (1)`, R`÷ 86 400 ≈ 27.6 days (1)`] },
+  { t: "num", m: 2, q: R`The Moon orbits at about 1000 m/s with radius 3.8 × 10<sup>8</sup> m. How long is its orbit in days? (π = 3.14; 1 day = 86 400 s)`, ans: 27.6, unit: "days", rel: 0.03, ms: [R`\(T = \dfrac{2 \pi r}{v}\) = \(2.39 \times 10^{6}\) s (1)`, R`\(\div 86\,400 \approx  27.6\ \text{days}\) (1)`] },
   { t: "mcq", m: 1, q: "Why is the weight of an astronaut less on the Moon?", o: ["The Moon's g is smaller", "Their mass decreases", "There's no air", "The Moon spins"], a: 0 },
   { t: "mcq", m: 1, q: "What is a dwarf planet?", o: ["Like a planet but hasn't cleared its orbit of other objects (e.g. Pluto)", "A small star", "A moon", "An asteroid belt"], a: 0 },
   { t: "mcq", m: 1, q: "What keeps the Moon in orbit around the Earth?", o: ["Earth's gravity", "The Sun's magnetism", "Tides", "Air resistance"], a: 0 },

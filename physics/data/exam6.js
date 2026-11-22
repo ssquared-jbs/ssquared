@@ -60,7 +60,7 @@ S2Data.exam("6b", [
   { t: "mcq", m: 1, q: "Which device uses the motor effect?", o: ["Loudspeaker", "Transformer", "Dynamo", "Microphone"], a: 0 },
   { t: "mcq", m: 1, q: "The magnetic field inside a long solenoid is…", o: ["Uniform", "Zero", "Circular", "Strongest at the ends only"], a: 0 },
   { t: "mcq", m: 1, q: "If the current in a straight wire increases, the magnetic field around it…", o: ["Gets stronger", "Gets weaker", "Reverses", "Disappears"], a: 0 },
-  { t: "num", m: 2, q: "A force of 0.60 N acts on a 0.30 m wire carrying 2.0 A. Calculate the magnetic flux density.", ans: 1, unit: "T", ms: [R`\(B = \dfrac{F}{I \times L}\) (1)`, R`0.60 ÷ 0.60 = 1.0 T (1)`] },
+  { t: "num", m: 2, q: "A force of 0.60 N acts on a 0.30 m wire carrying 2.0 A. Calculate the magnetic flux density.", ans: 1, unit: "T", ms: [R`\(B = \dfrac{F}{I \times L}\) (1)`, R`\(\dfrac{0.60}{0.60} = 1.0\ \text{T}\) (1)`] },
   { t: "mcq", m: 1, q: "Electromagnets are useful because they…", o: ["Can be switched on and off", "Never need power", "Are always permanent", "Are made of copper only"], a: 0 },
   { t: "text", m: 1, q: "Give one use of an electromagnet.", ms: ["Electric bell / relay / scrapyard crane / MRI / door lock"], kw: [["bell", "relay", "crane", "mri", "lock", "speaker", "motor"]] },
   { t: "mcq", m: 1, q: "What happens to the force on a wire if both the current and field are reversed?", o: ["It stays in the same direction", "It reverses", "It becomes zero", "It doubles"], a: 0 }

@@ -42,7 +42,7 @@ CHEM.exam("3b", [
   { t: "mcq", m: 1, q: "What is activation energy?", o: ["The minimum energy needed for colliding particles to react", "The energy released by a reaction", "The energy of the products", "The energy stored in a catalyst"], a: 0 },
   { t: "num", m: 1, q: "In the thiosulfate experiment, the cross disappears after 50 s. Calculate the rate as 1/time.", ans: 0.02, unit: "s⁻¹", ms: [R`1 ÷ 50 = \(0.020\ \text{s}^{-1}\)`] },
   { t: "num", m: 2, q: R`A reaction produces 60 cm<sup>3</sup> of gas in the first 30 s. Calculate the mean rate of reaction in cm<sup>3</sup>/s.`, ans: 2, unit: "cm³/s", ms: [R`Rate = 60 ÷ 30 (1)`, R`= \(2.0\ \text{cm}^{3}\)/s (1)`] },
-  { t: "num", m: 2, q: "A flask loses 1.32 g of mass in 120 s. Calculate the mean rate in g/s.", ans: 0.011, unit: "g/s", ms: [R`\(\dfrac{1.32}{120}\) (1)`, R`= 0.011 g/s (1)`] },
+  { t: "num", m: 2, q: "A flask loses 1.32 g of mass in 120 s. Calculate the mean rate in g/s.", ans: 0.011, unit: "g/s", ms: [R`\(\dfrac{1.32}{120}\) (1)`, R`\(= 0.011\ \text{g}/\text{s}\) (1)`] },
   { t: "mcq", m: 1, q: "Why does the mass of a flask of marble and acid decrease?", o: ["Carbon dioxide escapes", "The marble evaporates", "Water is lost", "The acid turns into a gas"], a: 0 },
   { t: "mcq", m: 1, q: "On a graph of volume of gas against time, why does the line become horizontal?", o: ["One reactant has been used up", "The catalyst has been used up", "The rate has increased", "The temperature has fallen"], a: 0 },
   { t: "mcq", m: 1, q: "Which change would NOT increase the rate of reaction between magnesium and acid?", o: ["Using a larger volume of the same acid", "Using more concentrated acid", "Using magnesium powder", "Warming the acid"], a: 0, e: "Volume doesn't change concentration." },

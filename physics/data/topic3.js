@@ -29,7 +29,7 @@ S2Data.add({
 </ul>
 <h3>The Doppler effect</h3>
 <p>When a wave source moves <b>towards</b> you, the waves are squashed: higher frequency, shorter wavelength. Moving <b>away</b>, they are stretched: lower frequency, longer wavelength. Example: an ambulance siren changes pitch as it passes.</p>
-<div class="box box-prac"><span class="box-title">🔬 Practical: measuring waves in a ripple tank</span>Use a strobe or photo to measure wavelength (measure across several waves and divide). Count waves passing a point in 10 s for frequency. Then v = fλ.</div>
+<div class="box box-prac"><span class="box-title">🔬 Practical: measuring waves in a ripple tank</span>Use a strobe or photo to measure wavelength (measure across several waves and divide). Count waves passing a point in 10 s for frequency. Then \(v = f\lambda\).</div>
 `,
   flashcards: [
     ["Transverse wave", "Vibrations at right angles to the direction of energy transfer"],
@@ -150,7 +150,7 @@ S2Data.add({
   ],
   quiz: [
     { q: "A ray hits a mirror at 35° to the normal. What is the angle of reflection?", o: ["35°", "55°", "70°", "145°"], a: 0, e: R`Angle of incidence = angle of reflection, both measured from the normal.` },
-    { q: "Light enters glass at i = 30°, r = 19.5°. What is the refractive index? (sin 30° = 0.5, sin 19.5° = 0.33)", o: ["1.5", "0.67", "1.0", "2.0"], a: 0, e: "0.5 ÷ 0.33 ≈ 1.5" },
+    { q: "Light enters glass at i = 30°, r = 19.5°. What is the refractive index? (sin 30° = 0.5, sin 19.5° = 0.33)", o: ["1.5", "0.67", "1.0", "2.0"], a: 0, e: R`\(\dfrac{0.5}{0.33 \approx  1.5}\)` },
     { q: "Glass has n = 1.5. What is the sine of its critical angle?", o: ["0.67", "1.5", "0.5", "0.15"], a: 0, e: R`\(\sin c = \dfrac{1}{1.5}\)` },
     { q: "Which device uses total internal reflection?", o: ["An optical fibre", "A plane mirror", "A loudspeaker", "A fuse"], a: 0, e: R`Light reflects totally inside the fibre when it hits the edge at more than the critical angle.` },
     { q: "Which frequency can a human hear?", o: ["2000 Hz", "5 Hz", "50 000 Hz", "100 000 Hz"], a: 0, e: R`The human hearing range is about 20 Hz to 20 000 Hz.` },
