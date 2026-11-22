@@ -9,7 +9,7 @@ S2Data.add({
 <p>It is transferred between stores by <b>mechanical work</b> (forces), <b>electrical work</b> (currents), <b>heating</b> and <b>radiation</b> (light and sound).</p>
 <h3>Conservation of energy</h3>
 <p>Energy can't be created or destroyed. It can only be transferred from one store to another. The total stays the same, but some is usually <b>wasted</b>, often as thermal energy in the surroundings.</p>
-<div class="eq">efficiency = useful energy output ÷ total energy input × 100%</div>
+<div class="eq">\(\text{efficiency} = \dfrac{\text{useful energy output}}{\text{total energy input}} \times 100\%\)</div>
 <p>Efficiency can also be calculated with power. No device is 100% efficient.</p>
 <h3>Sankey diagrams</h3>
 <p>Arrow widths are drawn to scale. The input is on the left, the useful output goes straight on, and the wasted energy bends away. The useful and wasted widths add up to the input.</p>
@@ -39,13 +39,13 @@ S2Data.add({
     ["Why are trapped-air materials good insulators?", "Air is a poor conductor and can't convect when trapped"]
   ],
   quiz: [
-    { q: "A motor uses 500 J and gives 350 J of useful kinetic energy. What is its efficiency?", o: ["70%", "30%", "1.4%", "143%"], a: 0, e: "350 ÷ 500 × 100" },
-    { q: "How does energy travel through a vacuum?", o: ["Radiation", "Conduction", "Convection", "It can't"], a: 0, e: "" },
-    { q: "Why does warm air rise?", o: ["It expands and becomes less dense", "It becomes heavier", "Particles stop moving", "It contracts"], a: 0, e: "" },
-    { q: "Which surface emits infrared best?", o: ["Matt black", "Shiny silver", "Gloss white", "Shiny white"], a: 0, e: "" },
-    { q: "Why are metals good conductors of heat?", o: ["They have free electrons that carry energy", "They have no particles", "They are dense", "They convect"], a: 0, e: "" },
-    { q: "In a vacuum flask, what does the vacuum prevent?", o: ["Conduction and convection", "Radiation only", "Evaporation only", "All heat transfer"], a: 0, e: "" },
-    { q: "A light bulb takes in 60 J and gives out 6 J of light. How much energy is wasted?", o: ["54 J", "66 J", "10 J", "6 J"], a: 0, e: "" }
+    { q: "A motor uses 500 J and gives 350 J of useful kinetic energy. What is its efficiency?", o: ["70%", "30%", "1.4%", "143%"], a: 0, e: R`\(\dfrac{350}{500 \times 100}\)` },
+    { q: "How does energy travel through a vacuum?", o: ["Radiation", "Conduction", "Convection", "It can't"], a: 0, e: R`Conduction and convection need particles; infrared radiation doesn't.` },
+    { q: "Why does warm air rise?", o: ["It expands and becomes less dense", "It becomes heavier", "Particles stop moving", "It contracts"], a: 0, e: R`Warm air expands, so its density falls and denser cool air sinks below it.` },
+    { q: "Which surface emits infrared best?", o: ["Matt black", "Shiny silver", "Gloss white", "Shiny white"], a: 0, e: R`Matt black surfaces are the best emitters and absorbers of infrared.` },
+    { q: "Why are metals good conductors of heat?", o: ["They have free electrons that carry energy", "They have no particles", "They are dense", "They convect"], a: 0, e: R`Free electrons move through the metal and carry energy quickly.` },
+    { q: "In a vacuum flask, what does the vacuum prevent?", o: ["Conduction and convection", "Radiation only", "Evaporation only", "All heat transfer"], a: 0, e: R`Both need particles; the vacuum has none.` },
+    { q: "A light bulb takes in 60 J and gives out 6 J of light. How much energy is wasted?", o: ["54 J", "66 J", "10 J", "6 J"], a: 0, e: R`Wasted energy \(= 60 - 6 = 54\ \text{J}\).` }
   ]
 });
 
@@ -54,38 +54,38 @@ S2Data.add({
   summary: "Work done, gravitational potential energy, kinetic energy and power.",
   notes: R`
 <h3>Work</h3>
-<div class="eq">work done = force × distance moved in the direction of the force &nbsp;&nbsp; W = F × d</div>
+<div class="eq">\(\text{work done} = \text{force} \times \text{distance moved in the direction of the force} \qquad W = F \times d\)</div>
 <p>Work done = energy transferred. Units: joules (J). 1 J = 1 N m.</p>
 <h3>Gravitational potential energy</h3>
-<div class="eq">GPE = mass × g × height &nbsp;&nbsp; GPE = m × g × h</div>
+<div class="eq">\(\text{GPE} = \text{mass} \times g \times \text{height} \qquad \text{GPE} = m \times g \times h\)</div>
 <h3>Kinetic energy</h3>
-<div class="eq">kinetic energy = ½ × mass × speed<sup>2</sup> &nbsp;&nbsp; KE = ½ m v<sup>2</sup></div>
+<div class="eq">\(\text{kinetic energy} = \tfrac12 \times \text{mass} \times \text{speed}^2 \qquad \text{KE} = \tfrac12 mv^2\)</div>
 <p>Doubling the speed makes the kinetic energy <b>4 times</b> bigger.</p>
 <h3>Falling objects</h3>
 <p>If there is no air resistance, the GPE lost = the KE gained, so mgh = ½mv<sup>2</sup> and v = √(2gh).</p>
 <div class="box box-key"><span class="box-title">Worked example</span>A 2 kg ball falls 5 m. GPE lost = 2 × 10 × 5 = 100 J. Speed at the bottom: 100 = ½ × 2 × v<sup>2</sup>, so v<sup>2</sup> = 100 and v = <b>10 m/s</b>.</div>
 <h3>Power</h3>
-<div class="eq">power = work done ÷ time taken &nbsp;&nbsp; P = W ÷ t</div>
+<div class="eq">\(\text{power} = \dfrac{\text{work done}}{\text{time taken}} \qquad P = \dfrac{W}{t}\)</div>
 <p>Power is the rate of transferring energy. Unit: watt (W). 1 W = 1 J/s.</p>
 `,
   flashcards: [
-    ["Work done equation", "W = F × d"],
+    ["Work done equation", R`\(W = F \times d\)`],
     ["Unit of work and energy", "Joule (J)"],
     ["GPE equation", "GPE = m × g × h"],
     ["Kinetic energy equation", "KE = ½ m v<sup>2</sup>"],
     ["What happens to KE if speed doubles?", "It is 4 times bigger"],
-    ["Power equation", "P = W ÷ t"],
+    ["Power equation", R`\(P = \dfrac{W}{t}\)`],
     ["1 watt", "1 joule per second"],
     ["Falling object energy change (no air resistance)", "GPE lost = KE gained"]
   ],
   quiz: [
-    { q: "A 50 N force pushes a box 4 m. How much work is done?", o: ["200 J", "12.5 J", "54 J", "46 J"], a: 0, e: "" },
-    { q: "What is the GPE gained by a 60 kg climber rising 10 m? (g = 10 N/kg)", o: ["6000 J", "600 J", "70 J", "60 000 J"], a: 0, e: "" },
-    { q: "What is the KE of a 2 kg object moving at 3 m/s?", o: ["9 J", "6 J", "18 J", "3 J"], a: 0, e: "½ × 2 × 9" },
-    { q: "A motor does 3000 J of work in 10 s. What is its power?", o: ["300 W", "30 000 W", "30 W", "3010 W"], a: 0, e: "" },
-    { q: "A car doubles its speed. Its kinetic energy…", o: ["Quadruples", "Doubles", "Halves", "Stays the same"], a: 0, e: "" },
-    { q: "A ball is dropped from 20 m. How fast is it going just before it lands (no air resistance, g = 10 N/kg)?", o: ["20 m/s", "200 m/s", "14 m/s", "400 m/s"], a: 0, e: "v = √(2 × 10 × 20) = √400" },
-    { q: "Which unit is the same as a joule?", o: ["N m", "N/m", "W/s", "kg m/s"], a: 0, e: "" }
+    { q: "A 50 N force pushes a box 4 m. How much work is done?", o: ["200 J", "12.5 J", "54 J", "46 J"], a: 0, e: R`\(W = Fd = 50 \times 4 = 200\ \text{J}\).` },
+    { q: "What is the GPE gained by a 60 kg climber rising 10 m? (g = 10 N/kg)", o: ["6000 J", "600 J", "70 J", "60 000 J"], a: 0, e: R`\(\text{GPE} = mgh = 60 \times 10 \times 10 = 6000\ \text{J}\).` },
+    { q: "What is the KE of a 2 kg object moving at 3 m/s?", o: ["9 J", "6 J", "18 J", "3 J"], a: 0, e: R`\(\tfrac12 \times 2 \times 9\)` },
+    { q: "A motor does 3000 J of work in 10 s. What is its power?", o: ["300 W", "30 000 W", "30 W", "3010 W"], a: 0, e: R`\(P = \dfrac{W}{t} = \dfrac{3000}{10} = 300\ \text{W}\).` },
+    { q: "A car doubles its speed. Its kinetic energy…", o: ["Quadruples", "Doubles", "Halves", "Stays the same"], a: 0, e: R`\(\text{KE} = \tfrac12 mv^2\), so doubling \(v\) multiplies KE by \(2^2 = 4\).` },
+    { q: "A ball is dropped from 20 m. How fast is it going just before it lands (no air resistance, g = 10 N/kg)?", o: ["20 m/s", "200 m/s", "14 m/s", "400 m/s"], a: 0, e: R`\(v = \sqrt{(2 \times 10 \times 20) = √400\)` },
+    { q: "Which unit is the same as a joule?", o: ["N m", "N/m", "W/s", "kg m/s"], a: 0, e: R`Work = force × distance, so \(1\ \text{J} = 1\ \text{N m}\).` }
   ]
 });
 
@@ -124,11 +124,11 @@ S2Data.add({
     ["Which resources don't use steam to turn the turbine?", "Wind, hydroelectric, tidal and wave"]
   ],
   quiz: [
-    { q: "What turns the generator in a coal-fired power station?", o: ["A turbine driven by steam", "Wind", "The coal directly", "Water falling"], a: 0, e: "" },
-    { q: "Which resource is non-renewable?", o: ["Natural gas", "Solar", "Wind", "Tidal"], a: 0, e: "" },
-    { q: "Which is a disadvantage of solar cells?", o: ["They don't produce electricity at night", "They release CO<sub>2</sub>", "They produce radioactive waste", "They need fuel"], a: 0, e: "" },
-    { q: "Why is tidal power more reliable than wind power?", o: ["Tides are predictable", "Tides are stronger", "It works in deserts", "It uses steam"], a: 0, e: "" },
-    { q: "Which pollutant from burning coal causes acid rain?", o: ["Sulfur dioxide", "Carbon dioxide", "Water vapour", "Nitrogen"], a: 0, e: "" },
-    { q: "Which resource floods valleys?", o: ["Hydroelectric", "Wind", "Solar", "Nuclear"], a: 0, e: "" }
+    { q: "What turns the generator in a coal-fired power station?", o: ["A turbine driven by steam", "Wind", "The coal directly", "Water falling"], a: 0, e: R`Burning fuel boils water; steam turns the turbine, which turns the generator.` },
+    { q: "Which resource is non-renewable?", o: ["Natural gas", "Solar", "Wind", "Tidal"], a: 0, e: R`Gas, oil, coal and nuclear fuel will run out.` },
+    { q: "Which is a disadvantage of solar cells?", o: ["They don't produce electricity at night", "They release CO<sub>2</sub>", "They produce radioactive waste", "They need fuel"], a: 0, e: R`No sunlight means no output, and it's lower on cloudy days.` },
+    { q: "Why is tidal power more reliable than wind power?", o: ["Tides are predictable", "Tides are stronger", "It works in deserts", "It uses steam"], a: 0, e: R`Tide times are known years ahead; wind is variable.` },
+    { q: "Which pollutant from burning coal causes acid rain?", o: ["Sulfur dioxide", "Carbon dioxide", "Water vapour", "Nitrogen"], a: 0, e: R`Sulfur dioxide dissolves in rain to make it acidic.` },
+    { q: "Which resource floods valleys?", o: ["Hydroelectric", "Wind", "Solar", "Nuclear"], a: 0, e: R`A dam stores water in a reservoir, flooding the land behind it.` }
   ]
 });

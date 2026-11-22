@@ -7,14 +7,14 @@ S2Data.add({
 <div class="box box-key"><span class="box-title">Why this is here</span>These ideas are in Edexcel GCSE Physics (1PH0). International GCSE (4PH1) students can skip them, but they help with harder questions.</div>
 <h3>Specific latent heat</h3>
 <p>The energy needed to change the state of 1 kg of a substance <b>without changing its temperature</b>.</p>
-<div class="eq">energy = mass × specific latent heat &nbsp;&nbsp; E = m × L</div>
+<div class="eq">\(\text{energy} = \text{mass} \times \text{specific latent heat} \qquad E = m \times L\)</div>
 <ul>
 <li><b>Latent heat of fusion</b>: solid ↔ liquid. For water it is about 334 000 J/kg.</li>
 <li><b>Latent heat of vaporisation</b>: liquid ↔ gas. For water it is about 2 260 000 J/kg.</li>
 </ul>
 <h3>Elastic potential energy</h3>
-<div class="eq">energy stored = ½ × spring constant × extension<sup>2</sup> &nbsp;&nbsp; E = ½ k x<sup>2</sup></div>
-<div class="eq">force = spring constant × extension &nbsp;&nbsp; F = k × x</div>
+<div class="eq">\(\text{energy stored} = \tfrac12 \times \text{spring constant} \times \text{extension}^{2} \qquad E = \tfrac12 k x^{2}\)</div>
+<div class="eq">\(\text{force} = \text{spring constant} \times \text{extension} \qquad F = k \times x\)</div>
 <p>The spring constant k (N/m) is the gradient of a force–extension graph. The area under the graph is the energy stored.</p>
 <h3>Upthrust and floating</h3>
 <ul>
@@ -25,19 +25,19 @@ S2Data.add({
 `,
   flashcards: [
     ["Specific latent heat", "Energy to change the state of 1 kg without a temperature change"],
-    ["Latent heat equation", "E = m × L"],
+    ["Latent heat equation", R`\(E = m \times L\)`],
     ["Latent heat of fusion vs vaporisation", "Fusion: solid ↔ liquid. Vaporisation: liquid ↔ gas"],
-    ["Elastic potential energy equation", "E = ½ k x<sup>2</sup>"],
+    ["Elastic potential energy equation", R`\(E = \tfrac12 k x^{2}\)`],
     ["Spring constant from a graph", "Gradient of the force–extension graph"],
     ["Upthrust", "The upward force from a fluid, equal to the weight of fluid displaced"],
     ["When does an object float?", "When upthrust equals its weight (it is less dense than the fluid)"]
   ],
   quiz: [
-    { q: "How much energy melts 2 kg of ice? (L = 334 000 J/kg)", o: ["668 000 J", "167 000 J", "334 000 J", "2 kJ"], a: 0, e: "" },
-    { q: "A spring with k = 200 N/m is stretched 0.1 m. How much energy does it store?", o: ["1 J", "20 J", "10 J", "2 J"], a: 0, e: "½ × 200 × 0.01" },
-    { q: "What causes upthrust?", o: ["Greater pressure at the bottom of an object than at the top", "Gravity", "Friction", "Air resistance only"], a: 0, e: "" },
-    { q: "A 40 N force stretches a spring 0.2 m. What is k?", o: ["200 N/m", "8 N/m", "0.005 N/m", "40 N/m"], a: 0, e: "" },
-    { q: "Why does temperature stay constant while water boils?", o: ["Energy is used to break bonds between particles (latent heat)", "No energy is added", "The water cools", "It is a chemical change"], a: 0, e: "" }
+    { q: "How much energy melts 2 kg of ice? (L = 334 000 J/kg)", o: ["668 000 J", "167 000 J", "334 000 J", "2 kJ"], a: 0, e: R`\(E = mL = 2 \times 334\,000 = 668\,000\ \text{J}\).` },
+    { q: "A spring with k = 200 N/m is stretched 0.1 m. How much energy does it store?", o: ["1 J", "20 J", "10 J", "2 J"], a: 0, e: R`\(\tfrac12 \times 200 \times 0.01\)` },
+    { q: "What causes upthrust?", o: ["Greater pressure at the bottom of an object than at the top", "Gravity", "Friction", "Air resistance only"], a: 0, e: R`Pressure increases with depth, so the push up on the bottom is bigger than the push down on the top.` },
+    { q: "A 40 N force stretches a spring 0.2 m. What is k?", o: ["200 N/m", "8 N/m", "0.005 N/m", "40 N/m"], a: 0, e: R`\(k = \dfrac{F}{x} = \dfrac{40}{0.2} = 200\ \text{N/m}\).` },
+    { q: "Why does temperature stay constant while water boils?", o: ["Energy is used to break bonds between particles (latent heat)", "No energy is added", "The water cools", "It is a chemical change"], a: 0, e: R`The energy goes into separating the particles, not into raising the temperature.` }
   ]
 });
 
@@ -47,10 +47,10 @@ S2Data.add({
   notes: R`
 <div class="box box-key"><span class="box-title">Why this is here</span>These ideas are in Edexcel GCSE Physics (1PH0) but not the International GCSE.</div>
 <h3>Power and resistance</h3>
-<div class="eq">power = current<sup>2</sup> × resistance &nbsp;&nbsp; P = I<sup>2</sup> × R</div>
+<div class="eq">\(\text{power} = \text{current}^{2} \times \text{resistance} \qquad P = I^{2} \times R\)</div>
 <p>Heating in a cable depends on I<sup>2</sup>, so <b>halving the current cuts the heating loss to a quarter</b>. That's why the <b>National Grid</b> uses step-up transformers to transmit at very high voltages (up to 400 kV) and low current, then steps down to 230 V for homes.</p>
 <h3>Magnetic flux density and force</h3>
-<div class="eq">force = magnetic flux density × current × length &nbsp;&nbsp; F = B × I × l</div>
+<div class="eq">\(\text{force} = \text{magnetic flux density} \times \text{current} \times \text{length} \qquad F = B \times I \times l\)</div>
 <ul>
 <li>B is magnetic flux density, in tesla (T). This applies when the wire is at 90° to the field.</li>
 </ul>
@@ -60,18 +60,18 @@ S2Data.add({
 <p>The Earth has a magnetic field. A compass needle (a small magnet) lines up with it, which is evidence that the Earth's core is magnetic.</p>
 `,
   flashcards: [
-    ["Power with current and resistance", "P = I<sup>2</sup> × R"],
+    ["Power with current and resistance", R`\(P = I^{2} \times R\)`],
     ["Why does the National Grid use high voltage?", "Lower current means much less heating loss (P = I<sup>2</sup>R)"],
-    ["Force on a wire in a field", "F = B × I × l"],
+    ["Force on a wire in a field", R`\(F = B \times I \times l\)`],
     ["Unit of magnetic flux density", "Tesla (T)"],
     ["How does a microphone work?", "A vibrating diaphragm moves a coil in a magnetic field, inducing a current"]
   ],
   quiz: [
-    { q: "A 3 A current flows through a 5 Ω cable. How much power is wasted as heat?", o: ["45 W", "15 W", "75 W", "1.7 W"], a: 0, e: "3² × 5" },
-    { q: "If the current in a cable is halved, the heating loss becomes…", o: ["A quarter", "Half", "Double", "The same"], a: 0, e: "" },
-    { q: "A 0.5 m wire carrying 2 A sits at 90° to a 0.4 T field. What is the force?", o: ["0.4 N", "4 N", "1.6 N", "0.1 N"], a: 0, e: "0.4 × 2 × 0.5" },
-    { q: "Which device turns sound into an electrical signal?", o: ["Microphone", "Loudspeaker", "Transformer", "Motor"], a: 0, e: "" },
-    { q: "What is the UK domestic mains voltage after the National Grid steps it down?", o: ["230 V", "400 000 V", "12 V", "50 V"], a: 0, e: "" }
+    { q: "A 3 A current flows through a 5 Ω cable. How much power is wasted as heat?", o: ["45 W", "15 W", "75 W", "1.7 W"], a: 0, e: R`\(3^2 \times 5\)` },
+    { q: "If the current in a cable is halved, the heating loss becomes…", o: ["A quarter", "Half", "Double", "The same"], a: 0, e: R`Power loss \(= I^2R\): halving \(I\) gives \(\left(\tfrac12\right)^2 = \tfrac14\) of the loss.` },
+    { q: "A 0.5 m wire carrying 2 A sits at 90° to a 0.4 T field. What is the force?", o: ["0.4 N", "4 N", "1.6 N", "0.1 N"], a: 0, e: R`\(0.4 \times 2 \times 0.5\)` },
+    { q: "Which device turns sound into an electrical signal?", o: ["Microphone", "Loudspeaker", "Transformer", "Motor"], a: 0, e: R`Sound waves move a diaphragm and coil in a magnetic field, inducing a voltage.` },
+    { q: "What is the UK domestic mains voltage after the National Grid steps it down?", o: ["230 V", "400 000 V", "12 V", "50 V"], a: 0, e: R`Step-down transformers bring it to 230 V for homes.` }
   ]
 });
 
@@ -112,10 +112,10 @@ S2Data.add({
     ["Unit of radiation dose", "Sievert (Sv)"]
   ],
   quiz: [
-    { q: "Which lens is used to correct short sight?", o: ["Diverging (concave)", "Converging (convex)", "Plane glass", "Prism"], a: 0, e: "" },
-    { q: "Which seismic waves can't travel through liquids?", o: ["S-waves", "P-waves", "Both", "Neither"], a: 0, e: "" },
-    { q: "Ultrasound has a frequency above…", o: ["20 kHz", "20 Hz", "200 Hz", "2 kHz"], a: 0, e: "" },
-    { q: "As an object gets hotter, the radiation it emits…", o: ["Increases and shifts to shorter wavelengths", "Decreases", "Shifts to longer wavelengths", "Stays the same"], a: 0, e: "" },
+    { q: "Which lens is used to correct short sight?", o: ["Diverging (concave)", "Converging (convex)", "Plane glass", "Prism"], a: 0, e: R`A diverging lens spreads the light so it focuses further back, on the retina.` },
+    { q: "Which seismic waves can't travel through liquids?", o: ["S-waves", "P-waves", "Both", "Neither"], a: 0, e: R`S-waves are transverse and can't travel through liquid, which is how we know the outer core is liquid.` },
+    { q: "Ultrasound has a frequency above…", o: ["20 kHz", "20 Hz", "200 Hz", "2 kHz"], a: 0, e: R`Humans can't hear above about 20 kHz.` },
+    { q: "As an object gets hotter, the radiation it emits…", o: ["Increases and shifts to shorter wavelengths", "Decreases", "Shifts to longer wavelengths", "Stays the same"], a: 0, e: R`Hotter objects emit more radiation, and its peak moves to shorter wavelengths.` },
     { q: "An ultrasound echo returns after 0.0002 s in tissue (v = 1500 m/s). How deep is the boundary?", o: ["0.15 m", "0.3 m", "0.6 m", "1.5 m"], a: 0, e: "Distance = 1500 × 0.0002 ÷ 2" }
   ]
 });

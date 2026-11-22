@@ -23,7 +23,7 @@ S2Data.add({
 <tr><td>Comets around the Sun</td><td>Very <b>elliptical</b>: they speed up near the Sun and slow down far away</td></tr>
 </table>
 <h3>Orbital speed</h3>
-<div class="eq">orbital speed = 2 × π × orbital radius ÷ time period &nbsp;&nbsp; v = 2πr ÷ T</div>
+<div class="eq">\(\text{orbital speed} = \dfrac{2\pi \times \text{orbital radius}}{\text{time period}} \qquad v = \dfrac{2\pi r}{T}\)</div>
 <div class="box box-key"><span class="box-title">Worked example</span>The Moon orbits at r = 3.84 × 10<sup>8</sup> m with T = 27.3 days = 2.36 × 10<sup>6</sup> s.<br>v = 2π × 3.84 × 10<sup>8</sup> ÷ 2.36 × 10<sup>6</sup> ≈ <b>1020 m/s</b>.</div>
 `,
   flashcards: [
@@ -37,12 +37,12 @@ S2Data.add({
     ["Does mass change on another planet?", "No: weight changes, mass doesn't"]
   ],
   quiz: [
-    { q: "What is a galaxy?", o: ["A collection of billions of stars", "A planet and its moons", "A single star", "A comet's tail"], a: 0, e: "" },
-    { q: "What keeps the Moon in orbit around the Earth?", o: ["Gravity", "Magnetism", "Air resistance", "Friction"], a: 0, e: "" },
-    { q: "Where in its orbit is a comet fastest?", o: ["Closest to the Sun", "Furthest from the Sun", "Halfway", "Speed is constant"], a: 0, e: "" },
+    { q: "What is a galaxy?", o: ["A collection of billions of stars", "A planet and its moons", "A single star", "A comet's tail"], a: 0, e: R`Our galaxy is the Milky Way.` },
+    { q: "What keeps the Moon in orbit around the Earth?", o: ["Gravity", "Magnetism", "Air resistance", "Friction"], a: 0, e: R`Gravity provides the force towards the centre of the orbit.` },
+    { q: "Where in its orbit is a comet fastest?", o: ["Closest to the Sun", "Furthest from the Sun", "Halfway", "Speed is constant"], a: 0, e: R`As it falls towards the Sun it gains speed; it is slowest furthest away.` },
     { q: "A satellite orbits at r = 7000 km with T = 6000 s. What is its speed? (use π = 3.14)", o: ["7.3 km/s", "1.2 km/s", "0.86 km/s", "44 km/s"], a: 0, e: "2 × 3.14 × 7000 ÷ 6000 ≈ 7.3 km/s" },
-    { q: "A 10 kg rock on the Moon (g = 1.6 N/kg) weighs…", o: ["16 N", "100 N", "10 kg", "1.6 N"], a: 0, e: "" },
-    { q: "Which list is in order of size, smallest first?", o: ["Planet, star, galaxy, Universe", "Star, planet, galaxy, Universe", "Galaxy, star, planet, Universe", "Universe, galaxy, star, planet"], a: 0, e: "" }
+    { q: "A 10 kg rock on the Moon (g = 1.6 N/kg) weighs…", o: ["16 N", "100 N", "10 kg", "1.6 N"], a: 0, e: R`\(W = mg = 10 \times 1.6 = 16\ \text{N}\).` },
+    { q: "Which list is in order of size, smallest first?", o: ["Planet, star, galaxy, Universe", "Star, planet, galaxy, Universe", "Galaxy, star, planet, Universe", "Universe, galaxy, star, planet"], a: 0, e: R`A planet orbits a star; billions of stars make a galaxy; billions of galaxies make the Universe.` }
   ]
 });
 
@@ -90,11 +90,11 @@ S2Data.add({
     ["Where are white dwarfs on an HR diagram?", "Bottom left: hot but dim"]
   ],
   quiz: [
-    { q: "What does a Sun-sized star become after the red giant stage?", o: ["White dwarf", "Black hole", "Neutron star", "Supernova"], a: 0, e: "" },
-    { q: "What is the hottest star colour?", o: ["Blue", "Red", "Yellow", "Orange"], a: 0, e: "" },
-    { q: "Why doesn't a main sequence star collapse?", o: ["Pressure from fusion balances gravity", "It has no gravity", "It is solid", "It is cooling"], a: 0, e: "" },
-    { q: "On an HR diagram, where are red giants?", o: ["Top right", "Bottom left", "Bottom right", "Middle of the main sequence"], a: 0, e: "" },
-    { q: "What can be left after a supernova of a very massive star?", o: ["A black hole", "A white dwarf", "A red giant", "A nebula only"], a: 0, e: "" },
+    { q: "What does a Sun-sized star become after the red giant stage?", o: ["White dwarf", "Black hole", "Neutron star", "Supernova"], a: 0, e: R`The outer layers drift off and the hot core is left as a white dwarf.` },
+    { q: "What is the hottest star colour?", o: ["Blue", "Red", "Yellow", "Orange"], a: 0, e: R`Colour depends on surface temperature: blue is hottest, red is coolest.` },
+    { q: "Why doesn't a main sequence star collapse?", o: ["Pressure from fusion balances gravity", "It has no gravity", "It is solid", "It is cooling"], a: 0, e: R`Outward pressure from fusion balances the inward pull of gravity.` },
+    { q: "On an HR diagram, where are red giants?", o: ["Top right", "Bottom left", "Bottom right", "Middle of the main sequence"], a: 0, e: R`They're cool (right) but very luminous (top).` },
+    { q: "What can be left after a supernova of a very massive star?", o: ["A black hole", "A white dwarf", "A red giant", "A nebula only"], a: 0, e: R`If the core is massive enough, nothing stops it collapsing to a black hole.` },
     { q: "Star A has absolute magnitude −5, star B +5. Which is brighter?", o: ["Star A", "Star B", "They are equal", "You can't tell"], a: 0, e: "Lower numbers mean brighter." }
   ]
 });
@@ -110,8 +110,8 @@ S2Data.add({
 <li>This is the Doppler effect: the galaxies are <b>moving away</b> from us.</li>
 <li><b>Further</b> galaxies have a <b>bigger red-shift</b>, so they are moving away faster. This means the Universe is <b>expanding</b>.</li>
 </ul>
-<div class="eq">red-shift z = change in wavelength ÷ reference wavelength = velocity of galaxy ÷ speed of light</div>
-<div class="eq">z = Δλ ÷ λ<sub>0</sub> = v ÷ c</div>
+<div class="eq">\(\text{red-shift z} = \dfrac{\text{change in wavelength}}{\text{reference wavelength}} = \dfrac{\text{velocity of galaxy}}{\text{speed of light}}\)</div>
+<div class="eq">\(z = \dfrac{\Delta \lambda}{\lambda _{0}} = \dfrac{v}{c}\)</div>
 <h3>The Big Bang theory</h3>
 <p>The Universe began about 13.8 billion years ago from a very small, very hot, very dense region, and has been expanding ever since.</p>
 <h3>Evidence</h3>
@@ -125,17 +125,17 @@ S2Data.add({
     ["Red-shift", "Light from distant galaxies is shifted to longer wavelengths"],
     ["What does red-shift show?", "Galaxies are moving away from us: the Universe is expanding"],
     ["Link between distance and red-shift", "More distant galaxies have bigger red-shifts (moving away faster)"],
-    ["Red-shift equation", "z = Δλ/λ<sub>0</sub> = v/c"],
+    ["Red-shift equation", R`\(z = \Delta \lambda /\lambda _{0} = v/c\)`],
     ["Big Bang theory", "The Universe began from a tiny, hot, dense region and has been expanding since"],
     ["CMB", "Cosmic microwave background: left-over radiation from the early Universe, from every direction"],
     ["Two pieces of evidence for the Big Bang", "Red-shift of galaxies and the CMB"]
   ],
   quiz: [
-    { q: "What does red-shift tell us about distant galaxies?", o: ["They are moving away from us", "They are moving towards us", "They are getting hotter", "They are red stars"], a: 0, e: "" },
-    { q: "Which evidence supports the Big Bang but not the Steady State theory?", o: ["Cosmic microwave background radiation", "Stars shining", "Planets orbiting", "Gravity"], a: 0, e: "" },
-    { q: "Galaxy X has a bigger red-shift than galaxy Y. Galaxy X is…", o: ["Further away and moving faster", "Closer and slower", "The same distance", "Moving towards us"], a: 0, e: "" },
+    { q: "What does red-shift tell us about distant galaxies?", o: ["They are moving away from us", "They are moving towards us", "They are getting hotter", "They are red stars"], a: 0, e: R`Light from them is stretched to longer wavelengths.` },
+    { q: "Which evidence supports the Big Bang but not the Steady State theory?", o: ["Cosmic microwave background radiation", "Stars shining", "Planets orbiting", "Gravity"], a: 0, e: R`The CMB is leftover radiation from the hot early Universe.` },
+    { q: "Galaxy X has a bigger red-shift than galaxy Y. Galaxy X is…", o: ["Further away and moving faster", "Closer and slower", "The same distance", "Moving towards us"], a: 0, e: R`Bigger red-shift means faster recession, and faster galaxies are further away.` },
     { q: "A galaxy has z = 0.02. How fast is it moving away? (c = 3 × 10⁸ m/s)", o: ["6 × 10⁶ m/s", "1.5 × 10¹⁰ m/s", "6 × 10⁸ m/s", "0.02 m/s"], a: 0, e: "v = zc" },
-    { q: "Why is the CMB now detected as microwaves?", o: ["Expansion stretched its wavelength", "It was always microwaves", "Stars emit it", "The Earth's atmosphere changes it"], a: 0, e: "" },
-    { q: "Roughly how old is the Universe?", o: ["13.8 billion years", "4.6 billion years", "6000 years", "100 billion years"], a: 0, e: "" }
+    { q: "Why is the CMB now detected as microwaves?", o: ["Expansion stretched its wavelength", "It was always microwaves", "Stars emit it", "The Earth's atmosphere changes it"], a: 0, e: R`Space expanded, stretching the radiation's wavelength from high-energy light to microwaves.` },
+    { q: "Roughly how old is the Universe?", o: ["13.8 billion years", "4.6 billion years", "6000 years", "100 billion years"], a: 0, e: R`That's found by working back from the rate of expansion.` }
   ]
 });

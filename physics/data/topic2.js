@@ -24,8 +24,8 @@ S2Data.add({
 </table>
 <h3>Heating effect and power</h3>
 <p>A current in a resistor transfers energy to thermal energy (heating). This is useful in kettles and heaters, but wasteful in most other devices.</p>
-<div class="eq">power = current × voltage &nbsp;&nbsp; P = I × V</div>
-<div class="eq">energy transferred = current × voltage × time &nbsp;&nbsp; E = I × V × t</div>
+<div class="eq">\(\text{power} = \text{current} \times \text{voltage} \qquad P = I \times V\)</div>
+<div class="eq">\(\text{energy transferred} = \text{current} \times \text{voltage} \times \text{time} \qquad E = I \times V \times t\)</div>
 <div class="box box-key"><span class="box-title">Choosing a fuse</span>A 2300 W kettle on 230 V: I = P ÷ V = 2300 ÷ 230 = 10 A. Use a <b>13 A</b> fuse (common sizes: 3 A, 5 A, 13 A).</div>
 <h3>a.c. and d.c.</h3>
 <ul>
@@ -41,19 +41,19 @@ S2Data.add({
     ["Colour of the live wire", "Brown"],
     ["Colour of the neutral wire", "Blue"],
     ["Colour of the earth wire", "Green and yellow"],
-    ["Equation for electrical power", "P = I × V"],
-    ["Equation for energy transferred", "E = I × V × t"],
+    ["Equation for electrical power", R`\(P = I \times V\)`],
+    ["Equation for energy transferred", R`\(E = I \times V \times t\)`],
     ["a.c. vs d.c.", "a.c. changes direction repeatedly; d.c. flows one way only"],
     ["UK mains supply", "About 230 V a.c. at 50 Hz"]
   ],
   quiz: [
     { q: "A 920 W toaster runs on 230 V. Which fuse should it have?", o: ["5 A", "3 A", "13 A", "1 A"], a: 0, e: "I = 920 ÷ 230 = 4 A, so the next size up is 5 A." },
-    { q: "Why don't double-insulated appliances need an earth wire?", o: ["The case is plastic so it can't become live", "They use d.c.", "They have no fuse", "They use low current"], a: 0, e: "" },
-    { q: "What is the colour of the neutral wire?", o: ["Blue", "Brown", "Green and yellow", "Red"], a: 0, e: "" },
+    { q: "Why don't double-insulated appliances need an earth wire?", o: ["The case is plastic so it can't become live", "They use d.c.", "They have no fuse", "They use low current"], a: 0, e: R`With no metal case to touch, the outside can't become live, so no earth is needed.` },
+    { q: "What is the colour of the neutral wire?", o: ["Blue", "Brown", "Green and yellow", "Red"], a: 0, e: R`Live is brown, neutral is blue, earth is green and yellow.` },
     { q: "A 2 A current flows through a 12 V lamp for 60 s. How much energy is transferred?", o: ["1440 J", "24 J", "720 J", "6 J"], a: 0, e: "E = IVt = 2 × 12 × 60" },
-    { q: "Which current changes direction many times a second?", o: ["Alternating current", "Direct current", "Static current", "Battery current"], a: 0, e: "" },
-    { q: "What happens when the live wire touches an earthed metal case?", o: ["A large current flows and the fuse melts", "The appliance works faster", "The neutral wire melts", "Nothing happens"], a: 0, e: "" },
-    { q: "What is the power of a device that draws 5 A from a 230 V supply?", o: ["1150 W", "46 W", "235 W", "0.02 W"], a: 0, e: "" }
+    { q: "Which current changes direction many times a second?", o: ["Alternating current", "Direct current", "Static current", "Battery current"], a: 0, e: R`Mains is a.c.; a battery gives d.c., which flows one way.` },
+    { q: "What happens when the live wire touches an earthed metal case?", o: ["A large current flows and the fuse melts", "The appliance works faster", "The neutral wire melts", "Nothing happens"], a: 0, e: R`The earth wire gives a low-resistance path, so the current surges and the fuse melts, cutting the supply.` },
+    { q: "What is the power of a device that draws 5 A from a 230 V supply?", o: ["1150 W", "46 W", "235 W", "0.02 W"], a: 0, e: R`\(P = IV = 5 \times 230 = 1150\ \text{W}\).` }
   ]
 });
 
@@ -75,11 +75,11 @@ S2Data.add({
 <li>Current is the rate of flow of charge. In metals the charge carriers are <b>electrons</b>.</li>
 <li>Conventional current flows from + to −. Electrons flow the other way.</li>
 </ul>
-<div class="eq">charge = current × time &nbsp;&nbsp; Q = I × t</div>
-<div class="eq">energy transferred = charge × voltage &nbsp;&nbsp; E = Q × V</div>
+<div class="eq">\(\text{charge} = \text{current} \times \text{time} \qquad Q = I \times t\)</div>
+<div class="eq">\(\text{energy transferred} = \text{charge} \times \text{voltage} \qquad E = Q \times V\)</div>
 <p>Voltage is the energy transferred per unit charge: 1 V = 1 J/C.</p>
 <h3>Resistance</h3>
-<div class="eq">voltage = current × resistance &nbsp;&nbsp; V = I × R</div>
+<div class="eq">\(\text{voltage} = \text{current} \times \text{resistance} \qquad V = I \times R\)</div>
 <ul>
 <li>Adding resistance reduces the current.</li>
 <li><b>Fixed resistor</b> at constant temperature: the I–V graph is a straight line through the origin (current ∝ voltage).</li>
@@ -97,9 +97,9 @@ S2Data.add({
     ["Total resistance of resistors in series", "R = R<sub>1</sub> + R<sub>2</sub> + …"],
     ["How is an ammeter connected?", "In series"],
     ["How is a voltmeter connected?", "In parallel across the component"],
-    ["Charge equation", "Q = I × t"],
-    ["Energy, charge and voltage", "E = Q × V"],
-    ["Ohm's law equation", "V = I × R"],
+    ["Charge equation", R`\(Q = I \times t\)`],
+    ["Energy, charge and voltage", R`\(E = Q \times V\)`],
+    ["Ohm's law equation", R`\(V = I \times R\)`],
     ["Why does a filament lamp's I–V graph curve?", "The filament heats up, so its resistance increases"],
     ["What does a diode do?", "Lets current flow in one direction only"],
     ["LDR resistance in bright light", "Low"],
@@ -107,14 +107,14 @@ S2Data.add({
     ["Why are house lights wired in parallel?", "Each gets the full voltage and can be switched independently; one failing doesn't affect the others"]
   ],
   quiz: [
-    { q: "A 12 V supply drives 2 A through a resistor. What is the resistance?", o: ["6 Ω", "24 Ω", "0.17 Ω", "14 Ω"], a: 0, e: "R = V ÷ I" },
-    { q: "Resistors of 4 Ω and 6 Ω are in series. What is the total resistance?", o: ["10 Ω", "2.4 Ω", "24 Ω", "2 Ω"], a: 0, e: "" },
+    { q: "A 12 V supply drives 2 A through a resistor. What is the resistance?", o: ["6 Ω", "24 Ω", "0.17 Ω", "14 Ω"], a: 0, e: R`\(R = \dfrac{V}{I}\)` },
+    { q: "Resistors of 4 Ω and 6 Ω are in series. What is the total resistance?", o: ["10 Ω", "2.4 Ω", "24 Ω", "2 Ω"], a: 0, e: R`In series, add the resistances: \(4 + 6 = 10\ \Omega\).` },
     { q: "A current of 0.5 A flows for 40 s. How much charge flows?", o: ["20 C", "80 C", "0.0125 C", "40.5 C"], a: 0, e: "Q = It" },
-    { q: "What happens to the resistance of a thermistor when it gets hotter?", o: ["It decreases", "It increases", "It stays the same", "It becomes infinite"], a: 0, e: "" },
-    { q: "Which component lets current flow in one direction only?", o: ["Diode", "LDR", "Thermistor", "Fuse"], a: 0, e: "" },
-    { q: "In a parallel circuit the branch currents are 0.2 A and 0.3 A. What is the total current?", o: ["0.5 A", "0.1 A", "0.06 A", "0.25 A"], a: 0, e: "" },
+    { q: "What happens to the resistance of a thermistor when it gets hotter?", o: ["It decreases", "It increases", "It stays the same", "It becomes infinite"], a: 0, e: R`More free electrons are released as it warms, so current flows more easily.` },
+    { q: "Which component lets current flow in one direction only?", o: ["Diode", "LDR", "Thermistor", "Fuse"], a: 0, e: R`A diode has a very high resistance in the reverse direction.` },
+    { q: "In a parallel circuit the branch currents are 0.2 A and 0.3 A. What is the total current?", o: ["0.5 A", "0.1 A", "0.06 A", "0.25 A"], a: 0, e: R`Branch currents add up to the supply current: \(0.2 + 0.3 = 0.5\ \text{A}\).` },
     { q: "How much energy is transferred when 5 C passes through a 9 V battery?", o: ["45 J", "1.8 J", "14 J", "0.56 J"], a: 0, e: "E = QV" },
-    { q: "Why does a filament lamp's resistance increase as the current increases?", o: ["The filament gets hotter", "The voltage falls", "Electrons move faster with less resistance", "It becomes a diode"], a: 0, e: "" }
+    { q: "Why does a filament lamp's resistance increase as the current increases?", o: ["The filament gets hotter", "The voltage falls", "Electrons move faster with less resistance", "It becomes a diode"], a: 0, e: R`Hotter ions vibrate more, so electrons collide with them more often.` }
   ]
 });
 
@@ -157,10 +157,10 @@ S2Data.add({
     ["Uses of electrostatics", "Inkjet printers, photocopiers, paint spraying"]
   ],
   quiz: [
-    { q: "A polythene rod is rubbed with a cloth and becomes negative. What happened?", o: ["Electrons moved from the cloth to the rod", "Protons moved from the rod to the cloth", "Electrons moved from the rod to the cloth", "Protons moved to the rod"], a: 0, e: "" },
-    { q: "Two charged rods repel. What can you say?", o: ["They have the same type of charge", "They have opposite charges", "One is uncharged", "They are both conductors"], a: 0, e: "" },
-    { q: "Why can't a metal rod held in your hand be charged by rubbing?", o: ["Charge flows through the metal and you to earth", "Metals have no electrons", "Metals only gain protons", "Metals are insulators"], a: 0, e: "" },
-    { q: "Why does electrostatic paint spraying waste less paint?", o: ["The charged droplets are attracted to the object", "The paint is thicker", "The droplets are uncharged", "It uses magnets"], a: 0, e: "" },
-    { q: "Which particle has a negative charge?", o: ["Electron", "Proton", "Neutron", "Nucleus"], a: 0, e: "" }
+    { q: "A polythene rod is rubbed with a cloth and becomes negative. What happened?", o: ["Electrons moved from the cloth to the rod", "Protons moved from the rod to the cloth", "Electrons moved from the rod to the cloth", "Protons moved to the rod"], a: 0, e: R`Only electrons move. The rod gains electrons, so it becomes negative; the cloth becomes positive.` },
+    { q: "Two charged rods repel. What can you say?", o: ["They have the same type of charge", "They have opposite charges", "One is uncharged", "They are both conductors"], a: 0, e: R`Like charges repel; opposite charges attract.` },
+    { q: "Why can't a metal rod held in your hand be charged by rubbing?", o: ["Charge flows through the metal and you to earth", "Metals have no electrons", "Metals only gain protons", "Metals are insulators"], a: 0, e: R`Metal is a conductor, so any charge flows away through you to earth.` },
+    { q: "Why does electrostatic paint spraying waste less paint?", o: ["The charged droplets are attracted to the object", "The paint is thicker", "The droplets are uncharged", "It uses magnets"], a: 0, e: R`The object is given the opposite charge, so the droplets are pulled onto it, even round the back.` },
+    { q: "Which particle has a negative charge?", o: ["Electron", "Proton", "Neutron", "Nucleus"], a: 0, e: R`Protons are positive and neutrons have no charge.` }
   ]
 });
