@@ -26,7 +26,7 @@ S2Data.exam("1b", [
   { t: "text", m: 1, q: "State what is meant by an orbital.", ms: ["A region around the nucleus that can hold up to two electrons with opposite spins"], kw: [["two electrons", "2 electrons"]] },
   { t: "text", m: 2, q: "Explain why helium has a higher first ionisation energy than hydrogen.", ms: ["Helium has two protons (greater nuclear charge)", "The electron is in the same shell (1s) with very little extra shielding"], kw: [["two protons", "2 protons", "nuclear charge", "more protons"], ["same shell", "1s", "shield"]] },
   { t: "num", m: 1, q: "How many unpaired electrons are in a ground-state iron atom (Fe)?", ans: 4, tol: 0, ms: ["3d<sup>6</sup>: one pair and four unpaired electrons"] },
-  { t: "num", m: 1, q: "How many electrons are in p orbitals in a chlorine atom?", ans: 11, tol: 0, ms: ["2p<sup>6</sup> + 3p<sup>5</sup> = 11"] },
+  { t: "num", m: 1, q: "How many electrons are in p orbitals in a chlorine atom?", ans: 11, tol: 0, ms: [R`\(2p^{6} + 3p^{5} = 11\)`] },
   { t: "num", m: 1, q: "How many unpaired electrons are in a ground-state nitrogen atom?", ans: 3, tol: 0, ms: ["2p<sup>3</sup>: each p orbital singly occupied"] },
   { t: "mcq", m: 1, q: "In which block of the Periodic Table is selenium (Se)?", o: ["p block", "s block", "d block", "f block"], a: 0 },
   { t: "mcq", m: 1, q: "The first ionisation energies of the Period 3 elements Na to Ar show a dip at Al and at S. What do these dips show?", o: ["Sub-shells exist", "The atoms are larger", "Nuclear charge decreases", "Shells are full"], a: 0 },

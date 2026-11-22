@@ -44,15 +44,15 @@ S2Data.add({
 <div class="box box-key"><span class="box-title">Hazards and risks</span>A <b>hazard</b> is something that could cause harm (e.g. flammable, toxic). A <b>risk</b> is the chance of harm, reduced by control measures such as using a fume cupboard, water bath instead of a flame, or smaller quantities.</div>
 `,
   quiz: [
-    { q: "Name CH₃CH(CH₃)CH₂CH₃.", o: ["2-methylbutane", "3-methylbutane", "pentane", "2-ethylpropane"], a: 0, e: "" },
-    { q: "Why does but-2-ene show E/Z isomerism?", o: ["Restricted rotation about C=C and two different groups on each carbon", "It has a chiral carbon", "It has a ring", "Free rotation about C=C"], a: 0, e: "" },
-    { q: "Propanal and propanone are…", o: ["Functional group isomers", "Chain isomers", "Position isomers", "E/Z isomers"], a: 0, e: "" },
-    { q: "Homolytic fission produces…", o: ["Radicals", "Ions", "Nucleophiles only", "Electrophiles only"], a: 0, e: "" },
-    { q: "A nucleophile is…", o: ["An electron-pair donor", "An electron-pair acceptor", "A radical", "A proton"], a: 0, e: "" },
-    { q: "In E/Z naming, priority is decided by…", o: ["Atomic number of the attached atom", "Mass of the whole group", "Number of hydrogens", "Bond length"], a: 0, e: "" },
-    { q: "1-bromobut-2-ene: highest priority groups on opposite sides. Isomer?", o: ["E", "Z", "cis", "Neither"], a: 0, e: "" },
+    { q: "Name CH₃CH(CH₃)CH₂CH₃.", o: ["2-methylbutane", "3-methylbutane", "pentane", "2-ethylpropane"], a: 0, e: R`The longest chain has 4 carbons, with a methyl group on carbon 2.` },
+    { q: "Why does but-2-ene show E/Z isomerism?", o: ["Restricted rotation about C=C and two different groups on each carbon", "It has a chiral carbon", "It has a ring", "Free rotation about C=C"], a: 0, e: R`There's no rotation about C=C, and each carbon has two different groups.` },
+    { q: "Propanal and propanone are…", o: ["Functional group isomers", "Chain isomers", "Position isomers", "E/Z isomers"], a: 0, e: R`Same molecular formula, C₃H₆O, but an aldehyde versus a ketone.` },
+    { q: "Homolytic fission produces…", o: ["Radicals", "Ions", "Nucleophiles only", "Electrophiles only"], a: 0, e: R`Each atom takes one electron from the bond.` },
+    { q: "A nucleophile is…", o: ["An electron-pair donor", "An electron-pair acceptor", "A radical", "A proton"], a: 0, e: R`Nucleophiles are attracted to δ+ carbon atoms.` },
+    { q: "In E/Z naming, priority is decided by…", o: ["Atomic number of the attached atom", "Mass of the whole group", "Number of hydrogens", "Bond length"], a: 0, e: R`The Cahn–Ingold–Prelog rules: higher atomic number means higher priority.` },
+    { q: "1-bromobut-2-ene: highest priority groups on opposite sides. Isomer?", o: ["E", "Z", "cis", "Neither"], a: 0, e: R`E (entgegen) means the higher priorities are on opposite sides.` },
     { q: "Which is a correct IUPAC name?", o: ["2,3-dichloropentane", "2-chloro-3-chloropentane", "3,4-dichloropentane", "dichloro-2,3-pentane"], a: 0, e: "Lowest numbers; di- prefix." },
-    { q: "A curly arrow represents…", o: ["Movement of a pair of electrons", "Movement of an atom", "A single electron", "A bond breaking homolytically"], a: 0, e: "" }
+    { q: "A curly arrow represents…", o: ["Movement of a pair of electrons", "Movement of an atom", "A single electron", "A bond breaking homolytically"], a: 0, e: R`Arrows start at a lone pair or bond and end where the pair goes.` }
   ],
   flashcards: [
     ["Homologous series", "Same general formula and functional group; each member differs by CH₂; trend in physical properties"],
@@ -97,14 +97,14 @@ S2Data.add({
 <p>Further substitution gives a mixture (CH<sub>2</sub>Cl<sub>2</sub>, CHCl<sub>3</sub>, CCl<sub>4</sub>), so it's not a good way to make one pure product.</p>
 `,
   quiz: [
-    { q: "Initiation step for chlorination of methane?", o: ["Cl₂ → 2Cl•", "CH₄ → CH₃• + H•", "Cl• + CH₄ → CH₃Cl + H•", "Cl• + Cl• → Cl₂"], a: 0, e: "" },
-    { q: "Which is a propagation step?", o: ["CH₃• + Cl₂ → CH₃Cl + Cl•", "Cl₂ → 2Cl•", "CH₃• + Cl• → CH₃Cl", "2CH₃• → C₂H₆"], a: 0, e: "" },
-    { q: "Why is ethane found in the products of methane chlorination?", o: ["Termination: two CH₃• radicals join", "Cracking", "Propagation", "Impurities"], a: 0, e: "" },
-    { q: "What does reforming do?", o: ["Converts straight chains into branched and cyclic hydrocarbons", "Breaks long chains", "Removes sulfur", "Separates fractions"], a: 0, e: "" },
-    { q: "How are NOx formed in engines?", o: ["N₂ and O₂ react at high temperature", "From fuel impurities", "Incomplete combustion", "From catalytic converters"], a: 0, e: "" },
-    { q: "Catalytic converters contain…", o: ["Platinum and rhodium", "Iron", "Zeolites", "Nickel"], a: 0, e: "" },
-    { q: "Why is free-radical substitution a poor way to make CH₃Cl?", o: ["Further substitution gives a mixture of products", "Too slow", "Needs a catalyst", "Gives only CCl₄"], a: 0, e: "" },
-    { q: "Why is CO dangerous?", o: ["Binds to haemoglobin, reducing oxygen transport", "Causes acid rain", "Greenhouse gas only", "Forms soot"], a: 0, e: "" }
+    { q: "Initiation step for chlorination of methane?", o: ["Cl₂ → 2Cl•", "CH₄ → CH₃• + H•", "Cl• + CH₄ → CH₃Cl + H•", "Cl• + Cl• → Cl₂"], a: 0, e: R`UV light splits the Cl–Cl bond homolytically.` },
+    { q: "Which is a propagation step?", o: ["CH₃• + Cl₂ → CH₃Cl + Cl•", "Cl₂ → 2Cl•", "CH₃• + Cl• → CH₃Cl", "2CH₃• → C₂H₆"], a: 0, e: R`A radical reacts and produces another radical, so the chain continues.` },
+    { q: "Why is ethane found in the products of methane chlorination?", o: ["Termination: two CH₃• radicals join", "Cracking", "Propagation", "Impurities"], a: 0, e: R`Two methyl radicals combine to form C₂H₆.` },
+    { q: "What does reforming do?", o: ["Converts straight chains into branched and cyclic hydrocarbons", "Breaks long chains", "Removes sulfur", "Separates fractions"], a: 0, e: R`Branched and cyclic alkanes burn more smoothly in engines (higher octane).` },
+    { q: "How are NOx formed in engines?", o: ["N₂ and O₂ react at high temperature", "From fuel impurities", "Incomplete combustion", "From catalytic converters"], a: 0, e: R`Engine temperatures are high enough for nitrogen to react with oxygen.` },
+    { q: "Catalytic converters contain…", o: ["Platinum and rhodium", "Iron", "Zeolites", "Nickel"], a: 0, e: R`These metals catalyse the removal of CO, NOx and unburnt hydrocarbons.` },
+    { q: "Why is free-radical substitution a poor way to make CH₃Cl?", o: ["Further substitution gives a mixture of products", "Too slow", "Needs a catalyst", "Gives only CCl₄"], a: 0, e: R`Cl• radicals can substitute more H atoms, giving CH₂Cl₂, CHCl₃ and CCl₄.` },
+    { q: "Why is CO dangerous?", o: ["Binds to haemoglobin, reducing oxygen transport", "Causes acid rain", "Greenhouse gas only", "Forms soot"], a: 0, e: R`CO binds more strongly than oxygen to haemoglobin.` }
   ],
   flashcards: [
     ["Cracking", "Breaking long-chain alkanes into shorter alkanes + alkenes (zeolite catalyst)"],
@@ -151,15 +151,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Test for an alkene?", o: ["Bromine water: orange → colourless", "Limewater turns milky", "Acidified dichromate: orange → green", "Silver nitrate"], a: 0, e: "" },
+    { q: "Test for an alkene?", o: ["Bromine water: orange → colourless", "Limewater turns milky", "Acidified dichromate: orange → green", "Silver nitrate"], a: 0, e: R`Electrophilic addition across C=C decolourises bromine water.` },
     { q: "Major product of propene + HBr?", o: ["2-bromopropane", "1-bromopropane", "1,2-dibromopropane", "propane"], a: 0, e: "Via the more stable secondary carbocation." },
-    { q: "Which carbocation is most stable?", o: ["Tertiary", "Secondary", "Primary", "Methyl"], a: 0, e: "" },
-    { q: "Conditions for hydrogenation of alkenes?", o: ["Ni catalyst, about 150 °C", "UV light", "Phosphoric acid, 300 °C", "Aqueous NaOH"], a: 0, e: "" },
-    { q: "What type of mechanism is alkene + HBr?", o: ["Electrophilic addition", "Nucleophilic substitution", "Free-radical substitution", "Elimination"], a: 0, e: "" },
-    { q: "In alkene + HBr, the first curly arrow goes from…", o: ["The C=C π bond to Hδ+", "Br⁻ to C", "H to the C=C", "The C–H bond"], a: 0, e: "" },
-    { q: "Why is a π bond more reactive than a σ bond?", o: ["Electron density is exposed above and below; weaker", "It's stronger", "It's ionic", "It has fewer electrons"], a: 0, e: "" },
-    { q: "Product of ethene with acidified KMnO₄?", o: ["Ethane-1,2-diol", "Ethanol", "Ethanoic acid", "Ethane"], a: 0, e: "" },
-    { q: "Why is burning PVC a problem?", o: ["Releases HCl and other toxic gases", "It doesn't burn", "It produces only water", "It's biodegradable"], a: 0, e: "" }
+    { q: "Which carbocation is most stable?", o: ["Tertiary", "Secondary", "Primary", "Methyl"], a: 0, e: R`Three alkyl groups push electron density towards the positive carbon.` },
+    { q: "Conditions for hydrogenation of alkenes?", o: ["Ni catalyst, about 150 °C", "UV light", "Phosphoric acid, 300 °C", "Aqueous NaOH"], a: 0, e: R`Hydrogen adds across C=C to make an alkane.` },
+    { q: "What type of mechanism is alkene + HBr?", o: ["Electrophilic addition", "Nucleophilic substitution", "Free-radical substitution", "Elimination"], a: 0, e: R`The π electrons attack the δ+ hydrogen of HBr.` },
+    { q: "In alkene + HBr, the first curly arrow goes from…", o: ["The C=C π bond to Hδ+", "Br⁻ to C", "H to the C=C", "The C–H bond"], a: 0, e: R`Electrons in the π bond attack Hδ+, forming a carbocation.` },
+    { q: "Why is a π bond more reactive than a σ bond?", o: ["Electron density is exposed above and below; weaker", "It's stronger", "It's ionic", "It has fewer electrons"], a: 0, e: R`π electron density is more exposed and the bond is weaker, so it attracts electrophiles.` },
+    { q: "Product of ethene with acidified KMnO₄?", o: ["Ethane-1,2-diol", "Ethanol", "Ethanoic acid", "Ethane"], a: 0, e: R`The alkene is oxidised; the purple colour goes colourless.` },
+    { q: "Why is burning PVC a problem?", o: ["Releases HCl and other toxic gases", "It doesn't burn", "It produces only water", "It's biodegradable"], a: 0, e: R`HCl is acidic and toxic, and dioxins can form.` }
   ],
   flashcards: [
     ["C=C double bond", "One σ bond + one π bond (sideways p overlap)"],
@@ -205,14 +205,14 @@ S2Data.add({
 `,
   quiz: [
     { q: "Which halogenoalkane hydrolyses fastest?", o: ["1-iodobutane", "1-bromobutane", "1-chlorobutane", "1-fluorobutane"], a: 0, e: "C–I is the weakest bond." },
-    { q: "What controls the rate of hydrolysis of halogenoalkanes?", o: ["C–X bond enthalpy", "C–X bond polarity", "Chain length", "Size of the nucleophile"], a: 0, e: "" },
-    { q: "Conditions to make an alkene from a halogenoalkane?", o: ["KOH in ethanol, heat under reflux", "Aqueous NaOH, warm", "KCN in ethanol", "Excess NH₃"], a: 0, e: "" },
+    { q: "What controls the rate of hydrolysis of halogenoalkanes?", o: ["C–X bond enthalpy", "C–X bond polarity", "Chain length", "Size of the nucleophile"], a: 0, e: R`The weaker C–I bond breaks fastest; C–F is slowest.` },
+    { q: "Conditions to make an alkene from a halogenoalkane?", o: ["KOH in ethanol, heat under reflux", "Aqueous NaOH, warm", "KCN in ethanol", "Excess NH₃"], a: 0, e: R`Ethanol as solvent with heat favours elimination over substitution.` },
     { q: "Product of 1-bromopropane + KCN in ethanol?", o: ["Butanenitrile", "Propanenitrile", "Propan-1-ol", "Propene"], a: 0, e: "Chain gains a carbon." },
-    { q: "In nucleophilic substitution, the nucleophile attacks…", o: ["The δ+ carbon", "The halogen", "A hydrogen", "The C=C"], a: 0, e: "" },
-    { q: "2-bromo-2-methylpropane is a…", o: ["Tertiary halogenoalkane", "Primary", "Secondary", "Quaternary"], a: 0, e: "" },
-    { q: "In elimination, OH⁻ acts as a…", o: ["Base", "Nucleophile", "Electrophile", "Radical"], a: 0, e: "" },
-    { q: "Why does excess ammonia give mainly the primary amine?", o: ["Reduces further substitution of the amine", "Makes it faster", "Prevents elimination", "Neutralises HBr only"], a: 0, e: "" },
-    { q: "How do CFCs damage the ozone layer?", o: ["UV releases Cl• radicals that catalyse O₃ breakdown", "They absorb all UV", "They react with N₂", "They form acid rain"], a: 0, e: "" }
+    { q: "In nucleophilic substitution, the nucleophile attacks…", o: ["The δ+ carbon", "The halogen", "A hydrogen", "The C=C"], a: 0, e: R`Electronegative halogen leaves the carbon δ+.` },
+    { q: "2-bromo-2-methylpropane is a…", o: ["Tertiary halogenoalkane", "Primary", "Secondary", "Quaternary"], a: 0, e: R`The carbon bonded to Br is attached to three other carbons.` },
+    { q: "In elimination, OH⁻ acts as a…", o: ["Base", "Nucleophile", "Electrophile", "Radical"], a: 0, e: R`OH⁻ removes an H⁺ from the carbon next to C–X.` },
+    { q: "Why does excess ammonia give mainly the primary amine?", o: ["Reduces further substitution of the amine", "Makes it faster", "Prevents elimination", "Neutralises HBr only"], a: 0, e: R`An excess makes the halogenoalkane more likely to meet ammonia than the amine product.` },
+    { q: "How do CFCs damage the ozone layer?", o: ["UV releases Cl• radicals that catalyse O₃ breakdown", "They absorb all UV", "They react with N₂", "They form acid rain"], a: 0, e: R`Cl• + O<sub>3</sub> → ClO• + O<sub>2</sub>; ClO• + O<sub>3</sub> → 2O<sub>2</sub> + Cl•. The chlorine radical is regenerated.` }
   ],
   flashcards: [
     ["Primary / secondary / tertiary halogenoalkane", "C–X carbon bonded to 1 / 2 / 3 other carbons"],
@@ -261,14 +261,14 @@ S2Data.add({
 `,
   quiz: [
     { q: "Product of oxidising propan-2-ol?", o: ["Propanone", "Propanal", "Propanoic acid", "Propene"], a: 0, e: "Secondary → ketone." },
-    { q: "How do you get an aldehyde from a primary alcohol?", o: ["Distil off as it forms", "Reflux with excess oxidant", "Use a tertiary alcohol", "Add PCl₅"], a: 0, e: "" },
-    { q: "Colour change of acidified dichromate when it oxidises an alcohol?", o: ["Orange → green", "Purple → colourless", "Green → orange", "Colourless → brown"], a: 0, e: "" },
+    { q: "How do you get an aldehyde from a primary alcohol?", o: ["Distil off as it forms", "Reflux with excess oxidant", "Use a tertiary alcohol", "Add PCl₅"], a: 0, e: R`Removing it before it's oxidised further to the carboxylic acid.` },
+    { q: "Colour change of acidified dichromate when it oxidises an alcohol?", o: ["Orange → green", "Purple → colourless", "Green → orange", "Colourless → brown"], a: 0, e: R`Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> (orange) is reduced to Cr<sup>3+</sup> (green).` },
     { q: "Which alcohol is not oxidised by acidified dichromate?", o: ["2-methylpropan-2-ol", "Ethanol", "Propan-2-ol", "Butan-1-ol"], a: 0, e: "Tertiary." },
-    { q: "Test for an –OH group using PCl₅?", o: ["Misty fumes of HCl", "Orange to green", "Squeaky pop", "White precipitate"], a: 0, e: "" },
-    { q: "Why heat under reflux?", o: ["Volatile substances condense and return, allowing long heating", "To remove the product", "To dry the product", "To cool the reaction"], a: 0, e: "" },
-    { q: "What does anhydrous MgSO₄ do?", o: ["Removes water (drying agent)", "Removes acid", "Catalyses", "Oxidises"], a: 0, e: "" },
-    { q: "Dehydrating ethanol gives…", o: ["Ethene", "Ethanal", "Ethanoic acid", "Ethane"], a: 0, e: "" },
-    { q: "Why wash an organic product with NaHCO₃ solution?", o: ["To remove acidic impurities", "To dry it", "To oxidise it", "To make it denser"], a: 0, e: "" }
+    { q: "Test for an –OH group using PCl₅?", o: ["Misty fumes of HCl", "Orange to green", "Squeaky pop", "White precipitate"], a: 0, e: R`PCl₅ replaces –OH with –Cl, releasing HCl gas.` },
+    { q: "Why heat under reflux?", o: ["Volatile substances condense and return, allowing long heating", "To remove the product", "To dry the product", "To cool the reaction"], a: 0, e: R`Reactants don't boil away during long heating.` },
+    { q: "What does anhydrous MgSO₄ do?", o: ["Removes water (drying agent)", "Removes acid", "Catalyses", "Oxidises"], a: 0, e: R`It absorbs water from the organic liquid.` },
+    { q: "Dehydrating ethanol gives…", o: ["Ethene", "Ethanal", "Ethanoic acid", "Ethane"], a: 0, e: R`Concentrated H<sub>3</sub>PO<sub>4</sub> or H<sub>2</sub>SO<sub>4</sub> removes water: C<sub>2</sub>H<sub>5</sub>OH → C<sub>2</sub>H<sub>4</sub> + H<sub>2</sub>O.` },
+    { q: "Why wash an organic product with NaHCO₃ solution?", o: ["To remove acidic impurities", "To dry it", "To oxidise it", "To make it denser"], a: 0, e: R`NaHCO<sub>3</sub> neutralises the acid, releasing CO<sub>2</sub>.` }
   ],
   flashcards: [
     ["Oxidising agent for alcohols", "Acidified K₂Cr₂O₇: orange → green"],
@@ -311,14 +311,14 @@ S2Data.add({
 <p>The <b>fingerprint region</b> (below about 1500 cm<sup>−1</sup>) is unique to each compound: match against a database to identify it. IR can also monitor reactions, e.g. the oxidation of an alcohol (O–H disappears, C=O appears), and measure CO<sub>2</sub> and other greenhouse gases, which absorb IR.</p>
 `,
   quiz: [
-    { q: "A broad absorption at 3300 cm⁻¹ and none at 1700 cm⁻¹ suggests…", o: ["An alcohol", "A ketone", "A carboxylic acid", "An alkane"], a: 0, e: "" },
-    { q: "A very broad absorption 3300–2500 plus a strong peak at 1710 cm⁻¹ suggests…", o: ["A carboxylic acid", "An alcohol", "An aldehyde", "An ester"], a: 0, e: "" },
-    { q: "Peak at m/z 15 corresponds to…", o: ["CH₃⁺", "C₂H₅⁺", "CHO⁺", "OH⁺"], a: 0, e: "" },
-    { q: "Which peak gives Mr?", o: ["The molecular ion peak (highest m/z, ignoring M+1)", "The tallest peak", "The first peak", "The M+1 peak"], a: 0, e: "" },
-    { q: "A compound shows M and M+2 peaks in a 1 : 1 ratio. It contains…", o: ["Bromine", "Chlorine", "Iodine", "Fluorine"], a: 0, e: "" },
-    { q: "What happens when a bond absorbs IR radiation?", o: ["It vibrates more (stretches/bends)", "It breaks", "It ionises", "It emits light"], a: 0, e: "" },
-    { q: "Why is the fingerprint region useful?", o: ["Pattern unique to each compound; matched against a database", "Shows the Mr", "Identifies the halogen", "Shows O–H only"], a: 0, e: "" },
-    { q: "Which fragment helps tell propan-1-ol from propan-2-ol?", o: ["m/z 31 (CH₂OH⁺) in propan-1-ol", "m/z 15 in both", "M⁺ at 60", "m/z 43 only"], a: 0, e: "" }
+    { q: "A broad absorption at 3300 cm⁻¹ and none at 1700 cm⁻¹ suggests…", o: ["An alcohol", "A ketone", "A carboxylic acid", "An alkane"], a: 0, e: R`O–H (alcohol) with no C=O.` },
+    { q: "A very broad absorption 3300–2500 plus a strong peak at 1710 cm⁻¹ suggests…", o: ["A carboxylic acid", "An alcohol", "An aldehyde", "An ester"], a: 0, e: R`The very broad O–H of an acid plus a C=O stretch.` },
+    { q: "Peak at m/z 15 corresponds to…", o: ["CH₃⁺", "C₂H₅⁺", "CHO⁺", "OH⁺"], a: 0, e: R`\(12 + 3 \times 1 = 15\).` },
+    { q: "Which peak gives Mr?", o: ["The molecular ion peak (highest m/z, ignoring M+1)", "The tallest peak", "The first peak", "The M+1 peak"], a: 0, e: R`It's the unfragmented molecule ion.` },
+    { q: "A compound shows M and M+2 peaks in a 1 : 1 ratio. It contains…", o: ["Bromine", "Chlorine", "Iodine", "Fluorine"], a: 0, e: R`\({}^{79}\)Br and \({}^{81}\)Br are about 50 : 50.` },
+    { q: "What happens when a bond absorbs IR radiation?", o: ["It vibrates more (stretches/bends)", "It breaks", "It ionises", "It emits light"], a: 0, e: R`Absorbed energy increases the vibration of polar bonds.` },
+    { q: "Why is the fingerprint region useful?", o: ["Pattern unique to each compound; matched against a database", "Shows the Mr", "Identifies the halogen", "Shows O–H only"], a: 0, e: R`Below about 1500 cm⁻¹ the pattern is unique to each compound.` },
+    { q: "Which fragment helps tell propan-1-ol from propan-2-ol?", o: ["m/z 31 (CH₂OH⁺) in propan-1-ol", "m/z 15 in both", "M⁺ at 60", "m/z 43 only"], a: 0, e: R`Only propan-1-ol has a CH₂OH end, which breaks off as the m/z 31 fragment.` }
   ],
   flashcards: [
     ["Molecular ion peak", "Highest m/z (excluding M+1); gives Mr"],

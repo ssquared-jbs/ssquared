@@ -39,15 +39,15 @@ S2Data.add({
 <p>Cl<sub>2</sub> + 2NaOH → NaCl + NaClO + H<sub>2</sub>O (cold, dilute): Cl goes from 0 to −1 and to +1.</p>
 `,
   quiz: [
-    { q: "What is the oxidation number of S in H₂SO₄?", o: ["+6", "+4", "−2", "+2"], a: 0, e: "2(+1) + x + 4(−2) = 0" },
-    { q: "Oxidation number of Cr in Cr₂O₇²⁻?", o: ["+6", "+7", "+3", "+12"], a: 0, e: "2x − 14 = −2" },
+    { q: "What is the oxidation number of S in H₂SO₄?", o: ["+6", "+4", "−2", "+2"], a: 0, e: R`\(2(+1) + x + 4(-2) = 0\)` },
+    { q: "Oxidation number of Cr in Cr₂O₇²⁻?", o: ["+6", "+7", "+3", "+12"], a: 0, e: R`\(2x - 14 = -2\)` },
     { q: "Oxidation number of O in H₂O₂?", o: ["−1", "−2", "0", "+1"], a: 0, e: "Peroxide." },
     { q: "Oxidation number of H in NaH?", o: ["−1", "+1", "0", "+2"], a: 0, e: "Metal hydride." },
-    { q: "What does an oxidising agent do?", o: ["Accepts electrons and is reduced", "Donates electrons", "Is oxidised", "Increases its oxidation number"], a: 0, e: "" },
+    { q: "What does an oxidising agent do?", o: ["Accepts electrons and is reduced", "Donates electrons", "Is oxidised", "Increases its oxidation number"], a: 0, e: R`It takes electrons from another species, which is oxidised.` },
     { q: "Name NaClO₃.", o: ["Sodium chlorate(V)", "Sodium chlorate(III)", "Sodium chlorate(VII)", "Sodium chloride"], a: 0, e: "Cl is +5." },
     { q: "How many electrons in: MnO₄⁻ + 8H⁺ + ne⁻ → Mn²⁺ + 4H₂O?", o: ["5", "3", "7", "2"], a: 0, e: "+7 → +2" },
-    { q: "Cl₂ + 2NaOH → NaCl + NaClO + H₂O is an example of…", o: ["Disproportionation", "Neutralisation only", "Displacement", "Decomposition"], a: 0, e: "" },
-    { q: "Oxidation number of N in NH₄⁺?", o: ["−3", "+3", "+5", "−4"], a: 0, e: "x + 4 = +1" }
+    { q: "Cl₂ + 2NaOH → NaCl + NaClO + H₂O is an example of…", o: ["Disproportionation", "Neutralisation only", "Displacement", "Decomposition"], a: 0, e: R`Chlorine (0) is both oxidised to +1 in ClO⁻ and reduced to −1 in Cl⁻.` },
+    { q: "Oxidation number of N in NH₄⁺?", o: ["−3", "+3", "+5", "−4"], a: 0, e: R`\(x + 4 = +1\)` }
   ],
   flashcards: [
     ["Oxidation (2 definitions)", "Loss of electrons; increase in oxidation number"],
@@ -100,14 +100,14 @@ S2Data.add({
 `,
   quiz: [
     { q: "How does reactivity change down Group 2?", o: ["Increases", "Decreases", "No trend", "Increases then decreases"], a: 0, e: "Ionisation energies fall." },
-    { q: "Which Group 2 hydroxide is most soluble?", o: ["Ba(OH)₂", "Mg(OH)₂", "Ca(OH)₂", "Sr(OH)₂"], a: 0, e: "" },
-    { q: "Which Group 2 sulfate is least soluble?", o: ["BaSO₄", "MgSO₄", "CaSO₄", "SrSO₄"], a: 0, e: "" },
-    { q: "Why does MgCO₃ decompose at a lower temperature than BaCO₃?", o: ["Mg²⁺ is smaller, more polarising", "Mg²⁺ is larger", "BaCO₃ has stronger London forces", "Mg is less reactive"], a: 0, e: "" },
-    { q: "Products of heating magnesium nitrate?", o: ["MgO, NO₂ and O₂", "MgNO₂ and O₂", "Mg and NO₂", "MgO and N₂"], a: 0, e: "" },
-    { q: "Products of heating sodium nitrate?", o: ["NaNO₂ and O₂", "Na₂O, NO₂ and O₂", "Na and NO₂", "No reaction"], a: 0, e: "" },
-    { q: "What colour flame does strontium give?", o: ["Crimson red", "Apple green", "Lilac", "Yellow"], a: 0, e: "" },
-    { q: "What does Mg form with steam?", o: ["MgO and H₂", "Mg(OH)₂ and H₂", "MgO₂", "MgH₂"], a: 0, e: "" },
-    { q: "Why are flame colours produced?", o: ["Excited electrons fall back, emitting light of particular energies", "Metals burn", "Ions absorb all light", "Electrons are lost"], a: 0, e: "" }
+    { q: "Which Group 2 hydroxide is most soluble?", o: ["Ba(OH)₂", "Mg(OH)₂", "Ca(OH)₂", "Sr(OH)₂"], a: 0, e: R`Hydroxide solubility increases down Group 2.` },
+    { q: "Which Group 2 sulfate is least soluble?", o: ["BaSO₄", "MgSO₄", "CaSO₄", "SrSO₄"], a: 0, e: R`Sulfate solubility decreases down Group 2.` },
+    { q: "Why does MgCO₃ decompose at a lower temperature than BaCO₃?", o: ["Mg²⁺ is smaller, more polarising", "Mg²⁺ is larger", "BaCO₃ has stronger London forces", "Mg is less reactive"], a: 0, e: R`The smaller, more charge-dense Mg<sup>2+</sup> distorts the carbonate ion's electron cloud more, weakening it.` },
+    { q: "Products of heating magnesium nitrate?", o: ["MgO, NO₂ and O₂", "MgNO₂ and O₂", "Mg and NO₂", "MgO and N₂"], a: 0, e: R`2Mg(NO<sub>3</sub>)<sub>2</sub> → 2MgO + 4NO<sub>2</sub> + O<sub>2</sub>.` },
+    { q: "Products of heating sodium nitrate?", o: ["NaNO₂ and O₂", "Na₂O, NO₂ and O₂", "Na and NO₂", "No reaction"], a: 0, e: R`Group 1 nitrates (except Li) only lose oxygen: 2NaNO<sub>3</sub> → 2NaNO<sub>2</sub> + O<sub>2</sub>.` },
+    { q: "What colour flame does strontium give?", o: ["Crimson red", "Apple green", "Lilac", "Yellow"], a: 0, e: R`Li red, Na yellow, K lilac, Ca brick-red, Sr crimson, Ba green.` },
+    { q: "What does Mg form with steam?", o: ["MgO and H₂", "Mg(OH)₂ and H₂", "MgO₂", "MgH₂"], a: 0, e: R`Mg + H<sub>2</sub>O(g) → MgO + H<sub>2</sub>.` },
+    { q: "Why are flame colours produced?", o: ["Excited electrons fall back, emitting light of particular energies", "Metals burn", "Ions absorb all light", "Electrons are lost"], a: 0, e: R`The energy of each photon matches the gap between energy levels, so it has a particular colour.` }
   ],
   flashcards: [
     ["Group 2 + water", "M + 2H₂O → M(OH)₂ + H₂"],
@@ -162,15 +162,15 @@ S2Data.add({
 <p>Hydrogen halides are very soluble, forming acids; HCl fumes form white smoke with NH<sub>3</sub>: NH<sub>3</sub> + HCl → NH<sub>4</sub>Cl.</p>
 `,
   quiz: [
-    { q: "How does oxidising power change down Group 7?", o: ["Decreases", "Increases", "Stays the same", "Increases then decreases"], a: 0, e: "" },
-    { q: "Which halide ion is the strongest reducing agent?", o: ["I⁻", "Br⁻", "Cl⁻", "F⁻"], a: 0, e: "" },
+    { q: "How does oxidising power change down Group 7?", o: ["Decreases", "Increases", "Stays the same", "Increases then decreases"], a: 0, e: R`Atoms are larger and more shielded, so they gain electrons less easily.` },
+    { q: "Which halide ion is the strongest reducing agent?", o: ["I⁻", "Br⁻", "Cl⁻", "F⁻"], a: 0, e: R`I<sup>−</sup> is the largest, so its outer electron is lost most easily.` },
     { q: "NaCl + conc H₂SO₄ gives…", o: ["HCl only", "Cl₂ and SO₂", "HCl and H₂S", "No reaction"], a: 0, e: "Cl⁻ is too weak a reducing agent to reduce sulfuric acid." },
-    { q: "Which gas with a rotten-egg smell forms from NaI and conc H₂SO₄?", o: ["H₂S", "SO₂", "HI", "I₂"], a: 0, e: "" },
-    { q: "Silver bromide precipitate is…", o: ["Cream, soluble in conc NH₃ only", "White, soluble in dilute NH₃", "Yellow, insoluble", "Black"], a: 0, e: "" },
-    { q: "Why is dilute HNO₃ added before AgNO₃?", o: ["To remove carbonate ions that would give a false precipitate", "To oxidise the halide", "To make silver ions", "To dissolve the precipitate"], a: 0, e: "" },
-    { q: "Products of Cl₂ with cold dilute NaOH?", o: ["NaCl, NaClO, H₂O", "NaCl, NaClO₃, H₂O", "HCl, HClO", "NaCl and O₂"], a: 0, e: "" },
-    { q: "Iodine dissolved in cyclohexane is…", o: ["Purple", "Orange", "Brown", "Colourless"], a: 0, e: "" },
-    { q: "Why do halogen boiling points increase down the group?", o: ["More electrons → stronger London forces", "Stronger covalent bonds", "Hydrogen bonding", "More polar"], a: 0, e: "" }
+    { q: "Which gas with a rotten-egg smell forms from NaI and conc H₂SO₄?", o: ["H₂S", "SO₂", "HI", "I₂"], a: 0, e: R`I<sup>−</sup> reduces sulfur from +6 all the way to −2 in H<sub>2</sub>S.` },
+    { q: "Silver bromide precipitate is…", o: ["Cream, soluble in conc NH₃ only", "White, soluble in dilute NH₃", "Yellow, insoluble", "Black"], a: 0, e: R`AgCl is white (dilute NH₃), AgBr cream (conc NH₃) and AgI yellow (insoluble).` },
+    { q: "Why is dilute HNO₃ added before AgNO₃?", o: ["To remove carbonate ions that would give a false precipitate", "To oxidise the halide", "To make silver ions", "To dissolve the precipitate"], a: 0, e: R`Carbonate (or hydroxide) would form a silver precipitate too.` },
+    { q: "Products of Cl₂ with cold dilute NaOH?", o: ["NaCl, NaClO, H₂O", "NaCl, NaClO₃, H₂O", "HCl, HClO", "NaCl and O₂"], a: 0, e: R`This is disproportionation at room temperature, making bleach.` },
+    { q: "Iodine dissolved in cyclohexane is…", o: ["Purple", "Orange", "Brown", "Colourless"], a: 0, e: R`Iodine is brown in water but purple in non-polar solvents.` },
+    { q: "Why do halogen boiling points increase down the group?", o: ["More electrons → stronger London forces", "Stronger covalent bonds", "Hydrogen bonding", "More polar"], a: 0, e: R`Larger molecules have more electrons, so they have stronger temporary dipoles.` }
   ],
   flashcards: [
     ["Halogen oxidising power trend", "Decreases down the group"],
@@ -193,35 +193,35 @@ S2Data.add({
 <h3>The mole</h3>
 <ul>
 <li>One mole contains <b>6.02 × 10<sup>23</sup></b> particles (the Avogadro constant, L).</li>
-<li><b>n = m ÷ M</b> (moles = mass ÷ molar mass).</li>
-<li>Number of particles = n × L.</li>
+<li>\(n = \dfrac{m}{M}\) (moles = mass ÷ molar mass).</li>
+<li>Number of particles \(= n \times L\), where \(L = 6.02 \times 10^{23}\ \text{mol}^{-1}\).</li>
 </ul>
 <h3>Empirical and molecular formulae</h3>
 <ol><li>Divide mass (or %) of each element by its A<sub>r</sub>.</li><li>Divide by the smallest value.</li><li>Convert to whole numbers.</li></ol>
-<p>Molecular formula = empirical formula × (M<sub>r</sub> ÷ empirical formula mass).</p>
+<p>Molecular formula = empirical formula \(\times \dfrac{M_r}{\text{empirical formula mass}}\).</p>
 <h3>Gases</h3>
 <ul>
 <li>At RTP, 1 mol of any gas occupies <b>24.0 dm<sup>3</sup></b> (24 000 cm<sup>3</sup>).</li>
-<li><b>Ideal gas equation</b>: <b>pV = nRT</b>, with p in Pa, V in m<sup>3</sup>, T in K, R = 8.31 J mol<sup>−1</sup> K<sup>−1</sup>.</li>
+<li><b>Ideal gas equation</b>: \(pV = nRT\), with \(p\) in Pa, \(V\) in m³, \(T\) in K and \(R = 8.31\ \text{J mol}^{-1}\,\text{K}^{-1}\).</li>
 <li>Conversions: 1 dm<sup>3</sup> = 10<sup>−3</sup> m<sup>3</sup>; 1 cm<sup>3</sup> = 10<sup>−6</sup> m<sup>3</sup>; kPa × 1000 = Pa; °C + 273 = K.</li>
 </ul>
 <div class="box box-key"><span class="box-title">Worked example</span>Find M<sub>r</sub> of a gas: 0.50 g occupies 400 cm<sup>3</sup> at 100 kPa and 300 K.<br>n = pV/RT = (100 000 × 400 × 10<sup>−6</sup>) ÷ (8.31 × 300) = 0.0160 mol<br>M<sub>r</sub> = 0.50 ÷ 0.0160 = <b>31.2</b></div>
 <h3>Solutions</h3>
 <ul>
-<li>Concentration (mol dm<sup>−3</sup>) = n ÷ V (dm<sup>3</sup>). In g dm<sup>−3</sup> = mol dm<sup>−3</sup> × M.</li>
-<li><b>ppm</b> = (mass of solute ÷ mass of solution) × 10<sup>6</sup>. Used for very dilute solutions, e.g. pollutants.</li>
+<li>\(c = \dfrac{n}{V}\) (mol dm<sup>−3</sup>, with \(V\) in dm<sup>3</sup>). In g dm<sup>−3</sup> = mol dm<sup>−3</sup> × M.</li>
+<li>\(\text{ppm} = \dfrac{\text{mass of solute}}{\text{mass of solution}} \times 10^6\). Used for very dilute solutions, e.g. pollutants.</li>
 <li>Ionic equations and state symbols: write only the species that react; spectator ions are left out.</li>
 </ul>
 `,
   quiz: [
-    { q: "How many moles in 4.4 g of CO₂?", o: ["0.10", "0.20", "1.0", "0.44"], a: 0, e: "4.4 ÷ 44" },
-    { q: "Volume of 0.25 mol of gas at RTP?", o: ["6.0 dm³", "24 dm³", "0.25 dm³", "96 dm³"], a: 0, e: "" },
-    { q: "In pV = nRT, V must be in…", o: ["m³", "dm³", "cm³", "litres"], a: 0, e: "" },
+    { q: "How many moles in 4.4 g of CO₂?", o: ["0.10", "0.20", "1.0", "0.44"], a: 0, e: R`\(\dfrac{4.4}{44}\)` },
+    { q: "Volume of 0.25 mol of gas at RTP?", o: ["6.0 dm³", "24 dm³", "0.25 dm³", "96 dm³"], a: 0, e: R`\(0.25 \times 24.0 = 6.0\ \text{dm}^3\).` },
+    { q: "In pV = nRT, V must be in…", o: ["m³", "dm³", "cm³", "litres"], a: 0, e: R`SI units: \(p\) in Pa, \(V\) in m³, \(T\) in K.` },
     { q: "Convert 250 cm³ to m³.", o: ["2.5 × 10⁻⁴", "2.5 × 10⁻³", "0.25", "2.5 × 10⁻⁶"], a: 0, e: "× 10⁻⁶" },
     { q: "Empirical formula of a compound with 40% C, 6.7% H, 53.3% O?", o: ["CH₂O", "C₂H₄O", "CHO", "CH₂O₂"], a: 0, e: "3.33 : 6.7 : 3.33 → 1 : 2 : 1" },
-    { q: "Moles in 25.0 cm³ of 0.200 mol dm⁻³ solution?", o: ["5.00 × 10⁻³", "5.00", "0.0500", "8.00 × 10⁻³"], a: 0, e: "" },
-    { q: "Number of molecules in 0.5 mol of water?", o: ["3.01 × 10²³", "6.02 × 10²³", "1.20 × 10²⁴", "9.0"], a: 0, e: "" },
-    { q: "Value and units of R?", o: ["8.31 J mol⁻¹ K⁻¹", "24 dm³ mol⁻¹", "6.02 × 10²³ mol⁻¹", "8.31 kJ mol⁻¹"], a: 0, e: "" },
+    { q: "Moles in 25.0 cm³ of 0.200 mol dm⁻³ solution?", o: ["5.00 × 10⁻³", "5.00", "0.0500", "8.00 × 10⁻³"], a: 0, e: R`\(n = cV = 0.200 \times 0.0250 = 5.00 \times 10^{-3}\ \text{mol}\).` },
+    { q: "Number of molecules in 0.5 mol of water?", o: ["3.01 × 10²³", "6.02 × 10²³", "1.20 × 10²⁴", "9.0"], a: 0, e: R`\(0.5 \times 6.02 \times 10^{23} = 3.01 \times 10^{23}\).` },
+    { q: "Value and units of R?", o: ["8.31 J mol⁻¹ K⁻¹", "24 dm³ mol⁻¹", "6.02 × 10²³ mol⁻¹", "8.31 kJ mol⁻¹"], a: 0, e: R`It's the gas constant in pV = nRT.` },
     { q: "A pollutant is 0.002 g in 1000 g of water. Concentration in ppm?", o: ["2 ppm", "0.002 ppm", "20 ppm", "200 ppm"], a: 0, e: "0.002/1000 × 10⁶" }
   ],
   flashcards: [
@@ -244,8 +244,8 @@ S2Data.add({
   notes: R`
 <h3>Yield and atom economy</h3>
 <ul>
-<li><b>Percentage yield</b> = (actual yield ÷ theoretical yield) × 100.</li>
-<li><b>Atom economy</b> = (M<sub>r</sub> of desired product ÷ total M<sub>r</sub> of all products) × 100.</li>
+<li>\(\text{percentage yield} = \dfrac{\text{actual yield}}{\text{theoretical yield}} \times 100\)</li>
+<li>\(\text{atom economy} = \dfrac{M_r \text{ of desired product}}{\text{total } M_r \text{ of all products}} \times 100\)</li>
 <li>Addition reactions have 100% atom economy. High atom economy means less waste, which is better for sustainability and cost.</li>
 </ul>
 <h3>Titrations</h3>
@@ -256,7 +256,7 @@ S2Data.add({
 <div class="box box-key"><span class="box-title">Back titration</span>Used when a substance is insoluble or reacts slowly (e.g. CaCO<sub>3</sub> in an antacid): add a known excess of acid, then titrate the leftover acid with alkali. Moles that reacted = moles added − moles left over.</div>
 <h3>Measurement uncertainty</h3>
 <ul>
-<li><b>Percentage uncertainty</b> = (uncertainty ÷ measured value) × 100.</li>
+<li>\(\text{percentage uncertainty} = \dfrac{\text{uncertainty}}{\text{measured value}} \times 100\)</li>
 <li>A burette has ±0.05 cm<sup>3</sup> per reading, so a titre (two readings) has ±0.10 cm<sup>3</sup>.</li>
 <li>For a mass from two readings (by difference), double the balance uncertainty.</li>
 <li>To reduce percentage uncertainty: use larger quantities (e.g. bigger titres, larger masses).</li>
@@ -265,13 +265,13 @@ S2Data.add({
 `,
   quiz: [
     { q: "Atom economy of an addition reaction is…", o: ["100%", "50%", "Depends on yield", "0%"], a: 0, e: "Only one product." },
-    { q: "Percentage yield if 4.0 g is obtained from a theoretical 5.0 g?", o: ["80%", "125%", "20%", "40%"], a: 0, e: "" },
-    { q: "A titre of 25.00 cm³ (±0.10 cm³). Percentage uncertainty?", o: ["0.4%", "0.2%", "4%", "0.1%"], a: 0, e: "0.10/25.00 × 100" },
-    { q: "When is a back titration used?", o: ["When the substance is insoluble or reacts slowly", "For strong acids", "When there is no indicator", "To avoid using a burette"], a: 0, e: "" },
-    { q: "Atom economy for CaCO₃ → CaO + CO₂ if CaO is wanted? (Mr: CaO 56, CO₂ 44)", o: ["56%", "44%", "100%", "78%"], a: 0, e: "" },
-    { q: "How can percentage uncertainty in a titre be reduced?", o: ["Use more dilute titrant so the titre is larger", "Use a measuring cylinder", "Read to 0.5 cm³", "Use more indicator"], a: 0, e: "" },
-    { q: "Repeating an experiment reduces…", o: ["Random errors", "Systematic errors", "Atom economy", "Yield"], a: 0, e: "" },
-    { q: "25.0 cm³ of 0.100 mol dm⁻³ NaOH needs 20.0 cm³ of HCl. [HCl]?", o: ["0.125 mol dm⁻³", "0.080 mol dm⁻³", "0.100 mol dm⁻³", "0.250 mol dm⁻³"], a: 0, e: "" }
+    { q: "Percentage yield if 4.0 g is obtained from a theoretical 5.0 g?", o: ["80%", "125%", "20%", "40%"], a: 0, e: R`\(\dfrac{4.0}{5.0} \times 100 = 80\%\).` },
+    { q: "A titre of 25.00 cm³ (±0.10 cm³). Percentage uncertainty?", o: ["0.4%", "0.2%", "4%", "0.1%"], a: 0, e: R`\(0.10/25.00 \times 100\)` },
+    { q: "When is a back titration used?", o: ["When the substance is insoluble or reacts slowly", "For strong acids", "When there is no indicator", "To avoid using a burette"], a: 0, e: R`Add a known excess of reagent, then titrate what's left over.` },
+    { q: "Atom economy for CaCO₃ → CaO + CO₂ if CaO is wanted? (Mr: CaO 56, CO₂ 44)", o: ["56%", "44%", "100%", "78%"], a: 0, e: R`\(\dfrac{56}{56 + 44} \times 100 = 56\%\).` },
+    { q: "How can percentage uncertainty in a titre be reduced?", o: ["Use more dilute titrant so the titre is larger", "Use a measuring cylinder", "Read to 0.5 cm³", "Use more indicator"], a: 0, e: R`A larger titre means the fixed reading uncertainty is a smaller percentage.` },
+    { q: "Repeating an experiment reduces…", o: ["Random errors", "Systematic errors", "Atom economy", "Yield"], a: 0, e: R`Averaging reduces the effect of random variation; systematic errors remain.` },
+    { q: "25.0 cm³ of 0.100 mol dm⁻³ NaOH needs 20.0 cm³ of HCl. [HCl]?", o: ["0.125 mol dm⁻³", "0.080 mol dm⁻³", "0.100 mol dm⁻³", "0.250 mol dm⁻³"], a: 0, e: R`Moles NaOH \(= 0.100 \times 0.0250 = 2.50 \times 10^{-3}\); \(\dfrac{2.50 \times 10^{-3}}{0.0200} = 0.125\ \text{mol dm}^{-3}\).` }
   ],
   flashcards: [
     ["Percentage yield", "Actual ÷ theoretical × 100"],

@@ -173,7 +173,7 @@ CHEM.exam("5f", [
   { t: "mcq", m: 1, q: "Which property makes polymers good for packaging?", o: ["Low density and flexible", "High melting point", "Good electrical conductor", "Brittle"], a: 0 },
   { t: "text", m: 2, q: "Explain why carbon-fibre composites are used for racing bikes.", ms: ["Very strong", "with low density (light)"], kw: [["strong"], ["light", "low density"]] },
   { t: "text", m: 1, q: "What is a nanoparticle?", ms: ["A particle 1–100 nm in size (a few hundred atoms)"], kw: [["1", "100", "nm", "nanometre"]] },
-  { t: "num", m: 1, q: "How many nanometres are in 1 metre? Enter as e.g. 1e9.", ans: 1e9, ms: [R`1 nm = \(1 \times 10^{-9}\) m`] },
+  { t: "num", m: 1, q: "How many nanometres are in 1 metre? Enter as e.g. 1e9.", ans: 1e9, ms: [R`1 nm = 1 × 10<sup>−9</sup> m`] },
   { t: "text", m: 2, q: "Explain why nanoparticles can be more effective catalysts than larger particles.", ms: ["Much higher surface area to volume ratio", "so more particles exposed to react"], kw: [["surface area"], ["more", "exposed", "react", "collision"]] },
   { t: "num", m: 2, q: "A cube has sides of 2 nm. Calculate its surface area : volume ratio (give the value of SA ÷ V).", ans: 3, unit: "nm⁻¹", ms: [R`\(SA = 6 \times 4 = 24\ \text{nm}^{2}\); \(V = 8\ \text{nm}^{3}\) (1)`, R`\(\dfrac{24}{8} = 3\) (1)`] },
   { t: "mcq", m: 1, q: "If a cube's side gets 10 times smaller, its surface area : volume ratio…", o: ["Increases 10 times", "Decreases 10 times", "Increases 100 times", "Stays the same"], a: 0 },
