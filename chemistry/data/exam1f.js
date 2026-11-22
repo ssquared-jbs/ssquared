@@ -17,7 +17,7 @@ CHEM.exam("1f", [
   { t: "text", m: 3, q: "Explain why solid sodium chloride does not conduct electricity, but molten sodium chloride does.", ms: ["Conduction needs charged particles that can move", "In the solid, ions are held in fixed positions in the lattice", "When molten, the ions are free to move"], kw: [["move", "mobile"], ["fixed", "held"], ["free to move", "molten"]] },
   { t: "mcq", m: 1, q: "Which compound is ionic?", o: ["Potassium bromide", "Carbon dioxide", "Methane", "Water"], a: 0 },
   { t: "mcq", m: 1, q: "What is the electronic configuration of an O<sup>2−</sup> ion?", o: ["2.8", "2.6", "2.8.2", "2.4"], a: 0 },
-  { t: "num", m: 1, q: "How many electrons does a Ca<sup>2+</sup> ion have? (Z = 20)", ans: 18, ms: ["20 − 2 = 18"] },
+  { t: "num", m: 1, q: "How many electrons does a Ca<sup>2+</sup> ion have? (Z = 20)", ans: 18, ms: [R`\(20 - 2 = 18\)`] },
   { t: "mcq", m: 1, q: "Which ion has the formula NH<sub>4</sub><sup>+</sup>?", o: ["Ammonium", "Ammonia", "Nitrate", "Nitride"], a: 0 },
   { t: "mcq", m: 1, q: "What is the name of the ion SO<sub>4</sub><sup>2−</sup>?", o: ["Sulfate", "Sulfide", "Sulfite", "Sulfur"], a: 0 },
   { t: "text", m: 1, q: "What does the ending '-ide' tell you about a compound such as sodium sulfide?", ms: ["It contains only the two elements named (no oxygen)"], kw: [["two elements", "only", "no oxygen"]] },

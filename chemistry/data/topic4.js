@@ -57,13 +57,13 @@ CHEM.add({
     ["Substitution reaction", "An atom or group is replaced by another"]
   ],
   quiz: [
-    { q: "What is the molecular formula of propane?", o: ["C<sub>3</sub>H<sub>8</sub>", "C<sub>3</sub>H<sub>6</sub>", "C<sub>3</sub>H<sub>7</sub>OH", "C<sub>4</sub>H<sub>10</sub>"], a: 0, e: "" },
-    { q: "Butane and 2-methylpropane are…", o: ["Structural isomers", "Different homologous series", "Alkenes", "Polymers"], a: 0, e: "" },
-    { q: "What is the empirical formula of C<sub>4</sub>H<sub>10</sub>?", o: ["C<sub>2</sub>H<sub>5</sub>", "CH<sub>2</sub>", "C<sub>4</sub>H<sub>10</sub>", "CH<sub>3</sub>"], a: 0, e: "" },
+    { q: "What is the molecular formula of propane?", o: ["C<sub>3</sub>H<sub>8</sub>", "C<sub>3</sub>H<sub>6</sub>", "C<sub>3</sub>H<sub>7</sub>OH", "C<sub>4</sub>H<sub>10</sub>"], a: 0, e: R`Alkanes are C<sub>n</sub>H<sub>2n+2</sub>; with \(n = 3\): C<sub>3</sub>H<sub>8</sub>.` },
+    { q: "Butane and 2-methylpropane are…", o: ["Structural isomers", "Different homologous series", "Alkenes", "Polymers"], a: 0, e: R`Both are C<sub>4</sub>H<sub>10</sub> but with different structures.` },
+    { q: "What is the empirical formula of C<sub>4</sub>H<sub>10</sub>?", o: ["C<sub>2</sub>H<sub>5</sub>", "CH<sub>2</sub>", "C<sub>4</sub>H<sub>10</sub>", "CH<sub>3</sub>"], a: 0, e: R`Divide by 2: C<sub>2</sub>H<sub>5</sub>.` },
     { q: "Which is NOT true of a homologous series?", o: ["Members have identical boiling points", "Same general formula", "Similar chemical properties", "Same functional group"], a: 0, e: "Boiling points show a trend." },
-    { q: "What is the functional group of an alcohol?", o: ["–OH", "C=C", "–COOH", "–COO–"], a: 0, e: "" },
-    { q: "Ethene + bromine → dibromoethane is what type of reaction?", o: ["Addition", "Substitution", "Combustion", "Cracking"], a: 0, e: "" },
-    { q: "Consecutive members of a homologous series differ by…", o: ["CH<sub>2</sub>", "CH<sub>3</sub>", "C<sub>2</sub>H<sub>4</sub>", "H<sub>2</sub>"], a: 0, e: "" }
+    { q: "What is the functional group of an alcohol?", o: ["–OH", "C=C", "–COOH", "–COO–"], a: 0, e: R`The hydroxyl group defines an alcohol.` },
+    { q: "Ethene + bromine → dibromoethane is what type of reaction?", o: ["Addition", "Substitution", "Combustion", "Cracking"], a: 0, e: R`Two molecules join to make one product.` },
+    { q: "Consecutive members of a homologous series differ by…", o: ["CH<sub>2</sub>", "CH<sub>3</sub>", "C<sub>2</sub>H<sub>4</sub>", "H<sub>2</sub>"], a: 0, e: R`Each member has one more CH<sub>2</sub> unit.` }
   ]
 });
 
@@ -124,14 +124,14 @@ CHEM.add({
     ["Why crack?", "Supply of long chains exceeds demand; short chains (petrol) and alkenes (for polymers) are more useful"]
   ],
   quiz: [
-    { q: "Which fraction has the highest boiling point?", o: ["Bitumen", "Refinery gases", "Gasoline", "Kerosene"], a: 0, e: "" },
-    { q: "Which fraction is used as aircraft fuel?", o: ["Kerosene", "Diesel", "Fuel oil", "Bitumen"], a: 0, e: "" },
-    { q: "Why does carbon monoxide form in a faulty boiler?", o: ["Incomplete combustion from a lack of oxygen", "Too much oxygen", "Sulfur impurities", "High pressure"], a: 0, e: "" },
-    { q: "Why is CO dangerous?", o: ["It reduces the blood's ability to carry oxygen", "It causes acid rain", "It is a greenhouse gas", "It is flammable"], a: 0, e: "" },
+    { q: "Which fraction has the highest boiling point?", o: ["Bitumen", "Refinery gases", "Gasoline", "Kerosene"], a: 0, e: R`Bitumen has the longest chains and the strongest intermolecular forces.` },
+    { q: "Which fraction is used as aircraft fuel?", o: ["Kerosene", "Diesel", "Fuel oil", "Bitumen"], a: 0, e: R`Kerosene is jet fuel; petrol is for cars; diesel for lorries.` },
+    { q: "Why does carbon monoxide form in a faulty boiler?", o: ["Incomplete combustion from a lack of oxygen", "Too much oxygen", "Sulfur impurities", "High pressure"], a: 0, e: R`Without enough oxygen, carbon is only partly oxidised.` },
+    { q: "Why is CO dangerous?", o: ["It reduces the blood's ability to carry oxygen", "It causes acid rain", "It is a greenhouse gas", "It is flammable"], a: 0, e: R`It binds to haemoglobin in place of oxygen.` },
     { q: "Complete the cracking equation: C<sub>12</sub>H<sub>26</sub> → C<sub>8</sub>H<sub>18</sub> + ?", o: ["2C<sub>2</sub>H<sub>4</sub>", "C<sub>4</sub>H<sub>10</sub>", "C<sub>2</sub>H<sub>6</sub>", "C<sub>4</sub>H<sub>6</sub>"], a: 0, e: "C<sub>4</sub>H<sub>8</sub> remains, which is 2 × C<sub>2</sub>H<sub>4</sub>." },
-    { q: "Which catalyst is used in cracking?", o: ["Silica or alumina", "Iron", "Nickel", "Yeast"], a: 0, e: "" },
-    { q: "Fractions at the top of the column are…", o: ["Short-chain, low boiling point, easily ignited", "Long-chain and viscous", "Dark in colour", "Solids"], a: 0, e: "" },
-    { q: "Where do oxides of nitrogen in car exhausts come from?", o: ["Nitrogen and oxygen from the air reacting at high temperature", "Nitrogen in petrol", "Incomplete combustion", "The catalytic converter"], a: 0, e: "" }
+    { q: "Which catalyst is used in cracking?", o: ["Silica or alumina", "Iron", "Nickel", "Yeast"], a: 0, e: R`A hot catalyst of silica or alumina breaks long chains.` },
+    { q: "Fractions at the top of the column are…", o: ["Short-chain, low boiling point, easily ignited", "Long-chain and viscous", "Dark in colour", "Solids"], a: 0, e: R`Small molecules have weak intermolecular forces, so they boil low and rise highest.` },
+    { q: "Where do oxides of nitrogen in car exhausts come from?", o: ["Nitrogen and oxygen from the air reacting at high temperature", "Nitrogen in petrol", "Incomplete combustion", "The catalytic converter"], a: 0, e: R`The engine is hot enough for N<sub>2</sub> and O<sub>2</sub> from the air to react.` }
   ]
 });
 
@@ -161,10 +161,10 @@ CHEM.add({
   ],
   quiz: [
     { q: "Which is an alkane?", o: ["C<sub>5</sub>H<sub>12</sub>", "C<sub>5</sub>H<sub>10</sub>", "C<sub>2</sub>H<sub>4</sub>", "C<sub>3</sub>H<sub>6</sub>"], a: 0, e: "It fits C<sub>n</sub>H<sub>2n+2</sub>." },
-    { q: "What condition is needed for methane to react with bromine?", o: ["UV light", "A nickel catalyst", "Concentrated H<sub>2</sub>SO<sub>4</sub>", "Yeast"], a: 0, e: "" },
-    { q: "Methane + bromine is what type of reaction?", o: ["Substitution", "Addition", "Polymerisation", "Cracking"], a: 0, e: "" },
-    { q: "Ethane + Br<sub>2</sub> (UV) → C<sub>2</sub>H<sub>5</sub>Br + ?", o: ["HBr", "H<sub>2</sub>", "Br<sub>2</sub>", "H<sub>2</sub>O"], a: 0, e: "" },
-    { q: "Why are alkanes described as saturated?", o: ["They only have single C–C bonds", "They are full of water", "They have a C=C bond", "They dissolve in water"], a: 0, e: "" }
+    { q: "What condition is needed for methane to react with bromine?", o: ["UV light", "A nickel catalyst", "Concentrated H<sub>2</sub>SO<sub>4</sub>", "Yeast"], a: 0, e: R`Ultraviolet light provides the energy to start the reaction.` },
+    { q: "Methane + bromine is what type of reaction?", o: ["Substitution", "Addition", "Polymerisation", "Cracking"], a: 0, e: R`A hydrogen atom is replaced by a bromine atom.` },
+    { q: "Ethane + Br<sub>2</sub> (UV) → C<sub>2</sub>H<sub>5</sub>Br + ?", o: ["HBr", "H<sub>2</sub>", "Br<sub>2</sub>", "H<sub>2</sub>O"], a: 0, e: R`The H atom that's replaced joins the other Br to form HBr.` },
+    { q: "Why are alkanes described as saturated?", o: ["They only have single C–C bonds", "They are full of water", "They have a C=C bond", "They dissolve in water"], a: 0, e: R`Every carbon has the maximum number of hydrogens bonded.` }
   ]
 });
 
@@ -193,12 +193,12 @@ CHEM.add({
     ["Two isomers of butene", "But-1-ene and but-2-ene"]
   ],
   quiz: [
-    { q: "Which turns bromine water colourless?", o: ["Propene", "Propane", "Methane", "Ethane"], a: 0, e: "" },
-    { q: "What is the formula of butene?", o: ["C<sub>4</sub>H<sub>8</sub>", "C<sub>4</sub>H<sub>10</sub>", "C<sub>4</sub>H<sub>6</sub>", "C<sub>3</sub>H<sub>6</sub>"], a: 0, e: "" },
-    { q: "Ethene + bromine is what type of reaction?", o: ["Addition", "Substitution", "Combustion", "Neutralisation"], a: 0, e: "" },
-    { q: "What colour change shows an alkene is present?", o: ["Orange → colourless", "Colourless → orange", "Blue → green", "Purple → colourless"], a: 0, e: "" },
-    { q: "What does 'unsaturated' mean?", o: ["Contains a C=C double bond", "Contains only single bonds", "Contains oxygen", "Is a polymer"], a: 0, e: "" },
-    { q: "What is the product of propene + Br<sub>2</sub>?", o: ["1,2-dibromopropane", "Bromopropane + HBr", "Propanol", "Poly(propene)"], a: 0, e: "" }
+    { q: "Which turns bromine water colourless?", o: ["Propene", "Propane", "Methane", "Ethane"], a: 0, e: R`Alkenes have a C=C bond that bromine adds across.` },
+    { q: "What is the formula of butene?", o: ["C<sub>4</sub>H<sub>8</sub>", "C<sub>4</sub>H<sub>10</sub>", "C<sub>4</sub>H<sub>6</sub>", "C<sub>3</sub>H<sub>6</sub>"], a: 0, e: R`Alkenes are C<sub>n</sub>H<sub>2n</sub>; with \(n = 4\): C<sub>4</sub>H<sub>8</sub>.` },
+    { q: "Ethene + bromine is what type of reaction?", o: ["Addition", "Substitution", "Combustion", "Neutralisation"], a: 0, e: R`Bromine adds across the double bond to form one product.` },
+    { q: "What colour change shows an alkene is present?", o: ["Orange → colourless", "Colourless → orange", "Blue → green", "Purple → colourless"], a: 0, e: R`Orange bromine water is decolourised by an alkene.` },
+    { q: "What does 'unsaturated' mean?", o: ["Contains a C=C double bond", "Contains only single bonds", "Contains oxygen", "Is a polymer"], a: 0, e: R`Unsaturated compounds can still add more atoms across the double bond.` },
+    { q: "What is the product of propene + Br<sub>2</sub>?", o: ["1,2-dibromopropane", "Bromopropane + HBr", "Propanol", "Poly(propene)"], a: 0, e: R`A Br atom adds to each carbon of the double bond, on carbons 1 and 2.` }
   ]
 });
 
@@ -242,13 +242,13 @@ CHEM.add({
     ["Why exclude air in fermentation?", "Oxygen would oxidise ethanol to ethanoic acid"]
   ],
   quiz: [
-    { q: "Which catalyst is used for the hydration of ethene?", o: ["Phosphoric acid", "Yeast", "Iron", "Silica"], a: 0, e: "" },
-    { q: "Why is fermentation kept at about 30 °C?", o: ["Higher temperatures denature the yeast enzymes", "Ethanol boils at 30 °C", "So the reaction is exothermic", "To kill bacteria"], a: 0, e: "" },
-    { q: "What colour change happens when ethanol is oxidised by acidified potassium dichromate(VI)?", o: ["Orange → green", "Green → orange", "Purple → colourless", "Blue → white"], a: 0, e: "" },
-    { q: "Which is an advantage of hydration over fermentation?", o: ["Pure product made quickly", "Renewable raw material", "Low temperature", "Uses yeast"], a: 0, e: "" },
-    { q: "What is the product when ethanol is oxidised?", o: ["Ethanoic acid", "Ethene", "Ethyl ethanoate", "Ethane"], a: 0, e: "" },
-    { q: "How many moles of O<sub>2</sub> are needed to burn 1 mol of ethanol completely?", o: ["3", "2", "3.5", "1"], a: 0, e: "" },
-    { q: "Why is air excluded during fermentation?", o: ["To stop ethanol being oxidised to ethanoic acid", "To keep it cool", "To speed up yeast", "To remove CO<sub>2</sub>"], a: 0, e: "" }
+    { q: "Which catalyst is used for the hydration of ethene?", o: ["Phosphoric acid", "Yeast", "Iron", "Silica"], a: 0, e: R`Ethene + steam → ethanol, at 300 °C, 60–70 atm with a phosphoric acid catalyst.` },
+    { q: "Why is fermentation kept at about 30 °C?", o: ["Higher temperatures denature the yeast enzymes", "Ethanol boils at 30 °C", "So the reaction is exothermic", "To kill bacteria"], a: 0, e: R`Too hot denatures the enzymes; too cold is too slow.` },
+    { q: "What colour change happens when ethanol is oxidised by acidified potassium dichromate(VI)?", o: ["Orange → green", "Green → orange", "Purple → colourless", "Blue → white"], a: 0, e: R`Dichromate(VI) is reduced as the ethanol is oxidised.` },
+    { q: "Which is an advantage of hydration over fermentation?", o: ["Pure product made quickly", "Renewable raw material", "Low temperature", "Uses yeast"], a: 0, e: R`It's continuous, fast and gives nearly pure ethanol, but uses crude oil.` },
+    { q: "What is the product when ethanol is oxidised?", o: ["Ethanoic acid", "Ethene", "Ethyl ethanoate", "Ethane"], a: 0, e: R`Oxidation turns the alcohol group into a carboxylic acid.` },
+    { q: "How many moles of O<sub>2</sub> are needed to burn 1 mol of ethanol completely?", o: ["3", "2", "3.5", "1"], a: 0, e: R`C<sub>2</sub>H<sub>5</sub>OH + 3O<sub>2</sub> → 2CO<sub>2</sub> + 3H<sub>2</sub>O.` },
+    { q: "Why is air excluded during fermentation?", o: ["To stop ethanol being oxidised to ethanoic acid", "To keep it cool", "To speed up yeast", "To remove CO<sub>2</sub>"], a: 0, e: R`Air lets bacteria oxidise the ethanol to vinegar.` }
   ]
 });
 
@@ -280,10 +280,10 @@ CHEM.add({
   ],
   quiz: [
     { q: "What is the formula of propanoic acid?", o: ["C<sub>2</sub>H<sub>5</sub>COOH", "C<sub>3</sub>H<sub>7</sub>COOH", "CH<sub>3</sub>COOH", "C<sub>3</sub>H<sub>7</sub>OH"], a: 0, e: "3 carbons in total, including the COOH carbon." },
-    { q: "Ethanoic acid + calcium carbonate produces…", o: ["Calcium ethanoate, water and CO<sub>2</sub>", "Calcium ethanoate and hydrogen", "Ethyl ethanoate", "Calcium hydroxide"], a: 0, e: "" },
-    { q: "Vinegar contains…", o: ["Ethanoic acid", "Methanoic acid", "Ethanol", "Hydrochloric acid"], a: 0, e: "" },
-    { q: "What is the salt formed from ethanoic acid and sodium hydroxide?", o: ["Sodium ethanoate", "Sodium ethanol", "Ethyl sodium", "Sodium carbonate"], a: 0, e: "" },
-    { q: "Why does ethanoic acid react more slowly with Mg than HCl of the same concentration does?", o: ["It is a weak acid with fewer H<sup>+</sup> ions", "It is a strong acid", "It has no H<sup>+</sup>", "Mg is unreactive"], a: 0, e: "" }
+    { q: "Ethanoic acid + calcium carbonate produces…", o: ["Calcium ethanoate, water and CO<sub>2</sub>", "Calcium ethanoate and hydrogen", "Ethyl ethanoate", "Calcium hydroxide"], a: 0, e: R`Acid + carbonate → salt + water + carbon dioxide.` },
+    { q: "Vinegar contains…", o: ["Ethanoic acid", "Methanoic acid", "Ethanol", "Hydrochloric acid"], a: 0, e: R`Vinegar is a dilute solution of ethanoic acid.` },
+    { q: "What is the salt formed from ethanoic acid and sodium hydroxide?", o: ["Sodium ethanoate", "Sodium ethanol", "Ethyl sodium", "Sodium carbonate"], a: 0, e: R`Ethanoic acid gives ethanoate salts.` },
+    { q: "Why does ethanoic acid react more slowly with Mg than HCl of the same concentration does?", o: ["It is a weak acid with fewer H<sup>+</sup> ions", "It is a strong acid", "It has no H<sup>+</sup>", "Mg is unreactive"], a: 0, e: R`Weak acids only partly ionise, so there's a lower H<sup>+</sup> concentration.` }
   ]
 });
 
@@ -328,10 +328,10 @@ CHEM.add({
   ],
   quiz: [
     { q: "Which ester forms from propanol and methanoic acid?", o: ["Propyl methanoate", "Methyl propanoate", "Propyl propanoate", "Methyl methanoate"], a: 0, e: "Alcohol → -yl first; acid → -oate second." },
-    { q: "What is the catalyst for esterification?", o: ["Concentrated sulfuric acid", "Yeast", "Phosphoric acid", "Nickel"], a: 0, e: "" },
-    { q: "Esters are used in…", o: ["Perfumes and flavourings", "Fuels for ships", "Fertilisers", "Road surfaces"], a: 0, e: "" },
-    { q: "What is the other product of esterification?", o: ["Water", "Hydrogen", "Carbon dioxide", "Oxygen"], a: 0, e: "" },
-    { q: "Which is ethyl ethanoate?", o: ["CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub>", "C<sub>2</sub>H<sub>5</sub>COOCH<sub>3</sub>", "CH<sub>3</sub>COOH", "C<sub>2</sub>H<sub>5</sub>OH"], a: 0, e: "" }
+    { q: "What is the catalyst for esterification?", o: ["Concentrated sulfuric acid", "Yeast", "Phosphoric acid", "Nickel"], a: 0, e: R`Concentrated H<sub>2</sub>SO<sub>4</sub> speeds up the reaction.` },
+    { q: "Esters are used in…", o: ["Perfumes and flavourings", "Fuels for ships", "Fertilisers", "Road surfaces"], a: 0, e: R`Esters are volatile with fruity smells.` },
+    { q: "What is the other product of esterification?", o: ["Water", "Hydrogen", "Carbon dioxide", "Oxygen"], a: 0, e: R`Alcohol + carboxylic acid → ester + water.` },
+    { q: "Which is ethyl ethanoate?", o: ["CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub>", "C<sub>2</sub>H<sub>5</sub>COOCH<sub>3</sub>", "CH<sub>3</sub>COOH", "C<sub>2</sub>H<sub>5</sub>OH"], a: 0, e: R`It's made from ethanoic acid and ethanol.` }
   ]
 });
 
@@ -380,12 +380,12 @@ CHEM.add({
     ["Biopolyesters", "Biodegradable polyesters"]
   ],
   quiz: [
-    { q: "Which monomer makes poly(propene)?", o: ["CH<sub>2</sub>=CHCH<sub>3</sub>", "CH<sub>2</sub>=CH<sub>2</sub>", "CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub>", "CH<sub>2</sub>=CHCl"], a: 0, e: "" },
-    { q: "Why are poly(alkenes) non-biodegradable?", o: ["They are unreactive (inert)", "They contain C=C bonds", "They are soluble", "They are ionic"], a: 0, e: "" },
-    { q: "Which toxic gas can form when PVC burns?", o: ["Hydrogen chloride", "Chlorine dioxide", "Ammonia", "Methane"], a: 0, e: "" },
-    { q: "What else forms in condensation polymerisation to make a polyester?", o: ["Water", "Hydrogen", "Carbon dioxide", "Nothing"], a: 0, e: "" },
-    { q: "A polyester is made from…", o: ["A diol and a dicarboxylic acid", "Ethene", "Two alkenes", "An alcohol and an alkane"], a: 0, e: "" },
-    { q: "Which polymer is used for non-stick pans?", o: ["PTFE", "PVC", "Poly(ethene)", "Poly(propene)"], a: 0, e: "" },
-    { q: "In addition polymerisation, which bond breaks in the monomer?", o: ["The C=C double bond", "A C–H bond", "An O–H bond", "No bonds break"], a: 0, e: "" }
+    { q: "Which monomer makes poly(propene)?", o: ["CH<sub>2</sub>=CHCH<sub>3</sub>", "CH<sub>2</sub>=CH<sub>2</sub>", "CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub>", "CH<sub>2</sub>=CHCl"], a: 0, e: R`Propene is CH<sub>2</sub>=CHCH<sub>3</sub>.` },
+    { q: "Why are poly(alkenes) non-biodegradable?", o: ["They are unreactive (inert)", "They contain C=C bonds", "They are soluble", "They are ionic"], a: 0, e: R`Their strong C–C and C–H bonds aren't broken down by microbes.` },
+    { q: "Which toxic gas can form when PVC burns?", o: ["Hydrogen chloride", "Chlorine dioxide", "Ammonia", "Methane"], a: 0, e: R`PVC contains chlorine.` },
+    { q: "What else forms in condensation polymerisation to make a polyester?", o: ["Water", "Hydrogen", "Carbon dioxide", "Nothing"], a: 0, e: R`Each link releases a small molecule, here water.` },
+    { q: "A polyester is made from…", o: ["A diol and a dicarboxylic acid", "Ethene", "Two alkenes", "An alcohol and an alkane"], a: 0, e: R`Two different monomers each have two functional groups.` },
+    { q: "Which polymer is used for non-stick pans?", o: ["PTFE", "PVC", "Poly(ethene)", "Poly(propene)"], a: 0, e: R`PTFE is non-stick and unreactive.` },
+    { q: "In addition polymerisation, which bond breaks in the monomer?", o: ["The C=C double bond", "A C–H bond", "An O–H bond", "No bonds break"], a: 0, e: R`The double bond opens up so the monomers can link into a chain.` }
   ]
 });

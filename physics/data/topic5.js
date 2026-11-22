@@ -26,7 +26,7 @@ S2Data.add({
 `,
   flashcards: [
     ["Density equation", R`\(\rho = \dfrac{m}{V}\)`],
-    ["Density of water", R`\(1000\ \text{kg/m}^{3}\) (\(1\ \text{g/cm}^{3}\))`],
+    ["Density of water", R`1000 kg/m<sup>3</sup> (1 g/cm<sup>3</sup>)`],
     ["How do you find the volume of an irregular solid?", "Displacement: measure the rise in water level"],
     ["Pressure equation", R`\(p = \dfrac{F}{A}\)`],
     ["Unit of pressure", "Pascal (Pa) = N/m<sup>2</sup>"],

@@ -17,7 +17,7 @@ CHEM.exam("2a", [
   { t: "mcq", m: 1, q: "Which product forms when lithium reacts with water?", o: ["Lithium hydroxide", "Lithium oxide only", "Lithium chloride", "Lithium carbonate"], a: 0 },
   { t: "mcq", m: 1, q: "Which describes the trend in reactivity going down Group 1?", o: ["Increases", "Decreases", "Stays the same", "Increases then decreases"], a: 0 },
   { t: "mcq", m: 1, q: "Group 1 metals are called alkali metals because…", o: ["They react with water to form alkaline solutions", "They are found in alkalis", "They neutralise bases", "They are very dense"], a: 0 },
-  { t: "num", m: 2, q: "2.3 g of sodium reacts with excess water. What mass of hydrogen is produced? (A<sub>r</sub>: Na = 23, H = 1)", ans: 0.1, unit: "g", ms: ["2.3 ÷ 23 = 0.10 mol Na; ratio 2Na : 1H<sub>2</sub> → 0.050 mol H<sub>2</sub> (1)", "0.050 × 2 = 0.10 g (1)"] },
+  { t: "num", m: 2, q: "2.3 g of sodium reacts with excess water. What mass of hydrogen is produced? (A<sub>r</sub>: Na = 23, H = 1)", ans: 0.1, unit: "g", ms: [R`2.3 ÷ 23 = 0.10 mol Na; ratio 2Na : 1H<sub>2</sub> → 0.050 mol H<sub>2</sub> (1)`, R`\(0.050 \times 2 = 0.10\ \text{g}\) (1)`] },
   { t: "mcq", m: 1, q: "Which is the most dense of these Group 1 metals?", o: ["Caesium", "Lithium", "Sodium", "Potassium"], a: 0 },
   { t: "text", m: 1, q: "Why does lithium float on water?", ms: ["It is less dense than water"], kw: [["less dense", "low density", "lower density"]] },
   { t: "mcq", m: 1, q: "What is the formula of potassium hydroxide?", o: ["KOH", "K(OH)<sub>2</sub>", "K<sub>2</sub>OH", "KO"], a: 0 },
@@ -62,7 +62,7 @@ CHEM.exam("2b", [
   { t: "text", m: 2, q: "In terms of electrons, explain why chlorine is more reactive than bromine.", ms: ["Chlorine's outer shell is closer to the nucleus / less shielding", "so it attracts an extra electron more strongly"], kw: [["closer", "fewer shells", "less shielding", "smaller"], ["attract", "gain", "more easily"]] },
   { t: "mcq", m: 1, q: "Which is a use of chlorine?", o: ["Water treatment", "Filling balloons", "Food packaging gas", "Making steel"], a: 0 },
   { t: "mcq", m: 1, q: "Which halide is formed when bromine reacts with potassium?", o: ["Potassium bromide", "Potassium bromate", "Bromine potassium", "Potassium bromine"], a: 0 },
-  { t: "num", m: 2, q: "What mass of sodium chloride forms when 7.1 g of chlorine reacts completely with sodium? (A<sub>r</sub>: Na = 23, Cl = 35.5)", ans: 11.7, unit: "g", ms: ["7.1 ÷ 71 = 0.10 mol Cl<sub>2</sub> → 0.20 mol NaCl (1)", "0.20 × 58.5 = 11.7 g (1)"] },
+  { t: "num", m: 2, q: "What mass of sodium chloride forms when 7.1 g of chlorine reacts completely with sodium? (A<sub>r</sub>: Na = 23, Cl = 35.5)", ans: 11.7, unit: "g", ms: [R`7.1 ÷ 71 = 0.10 mol Cl<sub>2</sub> → 0.20 mol NaCl (1)`, R`\(0.20 \times 58.5 = 11.7\ \text{g}\) (1)`] },
   { t: "mcq", m: 1, q: "Why should chlorine experiments be done in a fume cupboard?", o: ["It is toxic", "It is flammable", "It is explosive", "It is radioactive"], a: 0 }
 ]);
 
@@ -72,8 +72,8 @@ CHEM.exam("2c", [
   { t: "mcq", m: 1, q: "Which gas makes up about 0.9% of dry air?", o: ["Argon", "Carbon dioxide", "Neon", "Hydrogen"], a: 0 },
   { t: "mcq", m: 1, q: "Approximately what percentage of dry air is carbon dioxide?", o: ["0.04%", "4%", "1%", "21%"], a: 0 },
   { t: "text", m: 3, q: "Describe an experiment using copper to find the percentage of oxygen in air.", ms: ["Pass a known volume of air (e.g. 100 cm<sup>3</sup>) back and forth over heated copper using gas syringes", "Copper reacts with the oxygen (turns black)", "Measure the final volume when cool; the decrease is the oxygen"], kw: [["syringe", "pass", "known volume"], ["heat", "react", "black"], ["decrease", "final volume", "difference", "reduction"]] },
-  { t: "num", m: 2, q: "100 cm<sup>3</sup> of air is passed over hot copper. The final volume is 79 cm<sup>3</sup>. Calculate the percentage of oxygen.", ans: 21, unit: "%", ms: ["100 − 79 = 21 cm<sup>3</sup> (1)", "21 ÷ 100 × 100 = 21% (1)"] },
-  { t: "num", m: 2, q: "A test tube contains 50 cm<sup>3</sup> of air and some damp iron wool. After a week the water level rose by 10 cm<sup>3</sup>. Calculate the percentage of oxygen.", ans: 20, unit: "%", ms: ["10 ÷ 50 (1)", "× 100 = 20% (1)"] },
+  { t: "num", m: 2, q: R`100 cm<sup>3</sup> of air is passed over hot copper. The final volume is 79 cm<sup>3</sup>. Calculate the percentage of oxygen.`, ans: 21, unit: "%", ms: [R`\(100 - 79 = 21\ \text{cm}^{3}\) (1)`, R`\(\dfrac{21}{100} \times 100 = 21\%\) (1)`] },
+  { t: "num", m: 2, q: R`A test tube contains 50 cm<sup>3</sup> of air and some damp iron wool. After a week the water level rose by 10 cm<sup>3</sup>. Calculate the percentage of oxygen.`, ans: 20, unit: "%", ms: [R`\(\dfrac{10}{50}\) (1)`, R`\(\times 100 = 20\%\) (1)`] },
   { t: "text", m: 2, q: "Explain why the volume must be measured after the apparatus has cooled.", ms: ["Gases expand when hot", "so a hot reading would be too high"], kw: [["expand"], ["too high", "inaccurate", "larger"]] },
   { t: "mcq", m: 1, q: "What colour change is seen when copper reacts with oxygen?", o: ["Pink/brown to black", "Black to pink", "White to blue", "Grey to white"], a: 0 },
   { t: "text", m: 2, q: "Describe what is seen when magnesium burns in oxygen and name the product.", ms: ["Bright white flame / light", "Magnesium oxide (white powder)"], kw: [["bright", "white flame", "white light"], ["magnesium oxide"]] },
@@ -95,7 +95,7 @@ CHEM.exam("2c", [
   { t: "text", m: 2, q: "Write a balanced equation for magnesium burning in oxygen.", ms: ["2Mg + O<sub>2</sub> → 2MgO", "formulae (1), balanced (1)"], kw: [["mgo"], ["2mg"]] },
   { t: "mcq", m: 1, q: "What is the purpose of the damp iron wool in the 'rusting' oxygen experiment?", o: ["It removes oxygen from the trapped air", "It adds oxygen", "It produces hydrogen", "It absorbs nitrogen"], a: 0 },
   { t: "mcq", m: 1, q: "Which gas would be left mostly after oxygen is removed from air?", o: ["Nitrogen", "Argon", "Carbon dioxide", "Hydrogen"], a: 0 },
-  { t: "num", m: 2, q: "Calculate the volume of oxygen in 250 cm<sup>3</sup> of air, using 21%.", ans: 52.5, unit: "cm³", ms: ["250 × 21 ÷ 100 (1)", "= 52.5 cm<sup>3</sup> (1)"] },
+  { t: "num", m: 2, q: R`Calculate the volume of oxygen in 250 cm<sup>3</sup> of air, using 21%.`, ans: 52.5, unit: "cm³", ms: [R`\(\dfrac{250 \times 21}{100}\) (1)`, R`\(= 52.5\ \text{cm}^{3}\) (1)`] },
   { t: "mcq", m: 1, q: "Which oxide forms an acidic solution in water?", o: ["Carbon dioxide", "Sodium oxide", "Magnesium oxide", "Calcium oxide"], a: 0 }
 ]);
 
@@ -119,7 +119,7 @@ CHEM.exam("2d", [
   { t: "text", m: 2, q: "Explain why painting doesn't protect iron once it's scratched, but galvanising does.", ms: ["Paint only acts as a barrier; once scratched, water/oxygen reach the iron", "Zinc still protects sacrificially because it's more reactive"], kw: [["barrier", "reach", "exposed"], ["more reactive", "sacrificial"]] },
   { t: "mcq", m: 1, q: "Which metal is the most reactive?", o: ["Potassium", "Calcium", "Magnesium", "Zinc"], a: 0 },
   { t: "mcq", m: 1, q: "Where would carbon and hydrogen go in the reactivity series?", o: ["Carbon between Al and Zn; hydrogen between Fe and Cu", "Both above potassium", "Both below copper", "Carbon below copper; hydrogen above sodium"], a: 0 },
-  { t: "num", m: 1, q: "In a temperature-change displacement experiment, the temperature rose from 21.0 °C to 35.5 °C. What is the temperature rise in °C?", ans: 14.5, unit: "°C", ms: ["35.5 − 21.0 = 14.5 °C"] },
+  { t: "num", m: 1, q: "In a temperature-change displacement experiment, the temperature rose from 21.0 °C to 35.5 °C. What is the temperature rise in °C?", ans: 14.5, unit: "°C", ms: [R`\(35.5 - 21.0 = 14.5\ ^\circ\text{C}\)`] },
   { t: "text", m: 2, q: "Explain why a bigger temperature rise is seen when magnesium is added to copper sulfate than when iron is.", ms: ["Magnesium is further above copper than iron is / more reactive", "so the reaction releases more energy"], kw: [["more reactive", "further", "bigger difference"], ["energy", "exothermic", "heat"]] },
   { t: "mcq", m: 1, q: "Silver nitrate solution is added to copper. What forms?", o: ["Silver crystals and a blue solution", "No reaction", "Copper crystals", "A white precipitate only"], a: 0 },
   { t: "text", m: 2, q: "Write a balanced equation for iron reacting with copper(II) sulfate.", ms: ["Fe + CuSO<sub>4</sub> → FeSO<sub>4</sub> + Cu", "formulae (1), balanced (1)"], kw: [["feso4"], ["cu"]] },

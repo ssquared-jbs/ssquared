@@ -21,11 +21,11 @@ CHEM.add({
 <h3>Calorimetry</h3>
 <div class="box box-prac"><span class="box-title">🔬 Practical: measure temperature changes in reactions</span>
 Do the reaction in a polystyrene cup with a lid, for insulation. This works for displacement, dissolving, neutralisation and combustion (use a spirit burner heating a copper can of water). Record the starting and highest (or lowest) temperature.</div>
-<div class="eq">Q = m × c × ΔT</div>
+<div class="eq">\(Q = m \times c \times \Delta T\)</div>
 <ul>
 <li>Q = heat energy (J); m = mass of the <b>water or solution</b> (g), where 1 cm<sup>3</sup> ≈ 1 g; c = 4.2 J/g/°C; ΔT = temperature change (°C)</li>
 </ul>
-<div class="eq">ΔH = −Q ÷ moles &nbsp; (convert J → kJ by ÷ 1000)</div>
+<div class="eq">\(\Delta H = -\dfrac{Q}{\text{moles}}\) &nbsp; (convert J to kJ by dividing by 1000)</div>
 <div class="box box-key"><span class="box-title">Worked example</span>50 cm<sup>3</sup> of HCl is mixed with 50 cm<sup>3</sup> of NaOH, and 0.050 mol of water forms. The temperature rises by 6.5 °C.<br>
 Q = 100 × 4.2 × 6.5 = 2730 J = 2.73 kJ.<br>ΔH = −2.73 ÷ 0.050 = <b>−54.6 kJ/mol</b></div>
 <p>Values are usually less exothermic than the true value because heat is lost to the surroundings and combustion is incomplete.</p>
@@ -34,7 +34,7 @@ Q = 100 × 4.2 × 6.5 = 2730 J = 2.73 kJ.<br>ΔH = −2.73 ÷ 0.050 = <b>−54.6
 <li><b>Breaking</b> bonds is <b>endothermic</b>, because it takes in energy. <b>Making</b> bonds is <b>exothermic</b>, because it releases energy.</li>
 <li>If more energy is released making bonds than is taken in breaking them, the reaction is exothermic.</li>
 </ul>
-<div class="eq">ΔH = Σ(bonds broken) − Σ(bonds made)</div>
+<div class="eq">\(\Delta H = \sum(\text{bonds broken}) - \sum(\text{bonds made})\)</div>
 <p>Example: H<sub>2</sub> + Cl<sub>2</sub> → 2HCl, with H–H 436, Cl–Cl 242, H–Cl 431 kJ/mol.<br>Broken = 436 + 242 = 678. Made = 2 × 431 = 862. ΔH = 678 − 862 = <b>−184 kJ/mol</b></p></div>
 `,
   flashcards: [
@@ -50,14 +50,14 @@ Q = 100 × 4.2 × 6.5 = 2730 J = 2.73 kJ.<br>ΔH = −2.73 ÷ 0.050 = <b>−54.6
     ["Exothermic energy level diagram", "Products lower in energy than reactants"]
   ],
   quiz: [
-    { q: "The temperature falls during a reaction. What kind of reaction is it?", o: ["Endothermic", "Exothermic", "Neutralisation", "Combustion"], a: 0, e: "" },
-    { q: "What sign does ΔH have for an exothermic reaction?", o: ["Negative", "Positive", "Zero", "It depends"], a: 0, e: "" },
-    { q: "50 g of water is heated by 10 °C. What is Q? (c = 4.2 J/g/°C)", o: ["2100 J", "210 J", "500 J", "21 000 J"], a: 0, e: "50 × 4.2 × 10" },
+    { q: "The temperature falls during a reaction. What kind of reaction is it?", o: ["Endothermic", "Exothermic", "Neutralisation", "Combustion"], a: 0, e: R`Energy is taken in from the surroundings, so they cool.` },
+    { q: "What sign does ΔH have for an exothermic reaction?", o: ["Negative", "Positive", "Zero", "It depends"], a: 0, e: R`Energy is released, so the products have less energy than the reactants.` },
+    { q: "50 g of water is heated by 10 °C. What is Q? (c = 4.2 J/g/°C)", o: ["2100 J", "210 J", "500 J", "21 000 J"], a: 0, e: R`\(50 \times 4.2 \times 10\)` },
     { q: "Burning 0.01 mol of fuel releases 4.2 kJ. What is ΔH?", o: ["−420 kJ/mol", "+420 kJ/mol", "−42 kJ/mol", "−0.042 kJ/mol"], a: 0, e: "4.2 ÷ 0.01 = 420, and it is exothermic." },
-    { q: "Why is breaking bonds endothermic?", o: ["Energy is needed to overcome the attraction between atoms", "Energy is released", "Bonds are weak", "Heat is lost"], a: 0, e: "" },
-    { q: "Bonds broken = 2000 kJ, bonds made = 2500 kJ. What is ΔH?", o: ["−500 kJ/mol", "+500 kJ/mol", "+4500 kJ/mol", "−4500 kJ/mol"], a: 0, e: "2000 − 2500" },
-    { q: "Why is a polystyrene cup used in calorimetry?", o: ["It is a good insulator and reduces heat loss", "It conducts heat well", "It doesn't react with acid", "It is cheap"], a: 0, e: "" },
-    { q: "Which is endothermic?", o: ["Thermal decomposition of calcium carbonate", "Combustion of methane", "Neutralisation", "Magnesium + acid"], a: 0, e: "" }
+    { q: "Why is breaking bonds endothermic?", o: ["Energy is needed to overcome the attraction between atoms", "Energy is released", "Bonds are weak", "Heat is lost"], a: 0, e: R`Bonds hold atoms together, so pulling them apart needs energy.` },
+    { q: "Bonds broken = 2000 kJ, bonds made = 2500 kJ. What is ΔH?", o: ["−500 kJ/mol", "+500 kJ/mol", "+4500 kJ/mol", "−4500 kJ/mol"], a: 0, e: R`\(2000 - 2500\)` },
+    { q: "Why is a polystyrene cup used in calorimetry?", o: ["It is a good insulator and reduces heat loss", "It conducts heat well", "It doesn't react with acid", "It is cheap"], a: 0, e: R`Less heat is lost, so the temperature change is more accurate.` },
+    { q: "Which is endothermic?", o: ["Thermal decomposition of calcium carbonate", "Combustion of methane", "Neutralisation", "Magnesium + acid"], a: 0, e: R`Heat must be supplied continuously to break it down.` }
   ]
 });
 
@@ -106,13 +106,13 @@ CHEM.add({
     ["Does a catalyst change ΔH?", "No, it only lowers the activation energy"]
   ],
   quiz: [
-    { q: "Why do marble chips react faster with HCl when crushed into powder?", o: ["Larger surface area gives more frequent collisions", "Higher activation energy", "Particles have more energy", "The acid is more concentrated"], a: 0, e: "" },
-    { q: "How does a catalyst work?", o: ["It provides a pathway with lower activation energy", "It gives particles more energy", "It increases concentration", "It changes ΔH"], a: 0, e: "" },
-    { q: "In the thiosulfate experiment, the cross disappears in 40 s. What is the rate (1/t)?", o: ["0.025 s<sup>−1</sup>", "40 s<sup>−1</sup>", "0.4 s<sup>−1</sup>", "2.5 s<sup>−1</sup>"], a: 0, e: "1 ÷ 40 = 0.025" },
-    { q: "Why does raising the temperature increase rate the most?", o: ["More collisions have energy ≥ activation energy", "Particles get bigger", "Activation energy decreases", "Concentration increases"], a: 0, e: "" },
-    { q: "A mass-loss graph levels off. Why?", o: ["A reactant has been used up", "The catalyst has run out", "The temperature has dropped", "The rate has increased"], a: 0, e: "" },
+    { q: "Why do marble chips react faster with HCl when crushed into powder?", o: ["Larger surface area gives more frequent collisions", "Higher activation energy", "Particles have more energy", "The acid is more concentrated"], a: 0, e: R`More particles are exposed, so there are more collisions per second.` },
+    { q: "How does a catalyst work?", o: ["It provides a pathway with lower activation energy", "It gives particles more energy", "It increases concentration", "It changes ΔH"], a: 0, e: R`More particles then have enough energy to react, and the catalyst isn't used up.` },
+    { q: "In the thiosulfate experiment, the cross disappears in 40 s. What is the rate (1/t)?", o: [R`0.025 s<sup>−1</sup>`, R`40 s<sup>−1</sup>`, R`0.4 s<sup>−1</sup>`, R`2.5 s<sup>−1</sup>`], a: 0, e: R`\(\dfrac{1}{40} = 0.025\)` },
+    { q: "Why does raising the temperature increase rate the most?", o: ["More collisions have energy ≥ activation energy", "Particles get bigger", "Activation energy decreases", "Concentration increases"], a: 0, e: R`Particles collide more often and a larger fraction of collisions succeed.` },
+    { q: "A mass-loss graph levels off. Why?", o: ["A reactant has been used up", "The catalyst has run out", "The temperature has dropped", "The rate has increased"], a: 0, e: R`No more product (gas) forms once one reactant runs out.` },
     { q: "Which change does NOT increase the rate of a reaction between gases?", o: ["Increasing the volume of the container", "Increasing pressure", "Adding a catalyst", "Increasing temperature"], a: 0, e: "A bigger volume means lower concentration." },
-    { q: "Which would you measure to follow the decomposition of H<sub>2</sub>O<sub>2</sub>?", o: ["Volume of O<sub>2</sub> collected over time", "Mass of MnO<sub>2</sub>", "Temperature only", "Colour change"], a: 0, e: "" }
+    { q: "Which would you measure to follow the decomposition of H<sub>2</sub>O<sub>2</sub>?", o: ["Volume of O<sub>2</sub> collected over time", "Mass of MnO<sub>2</sub>", "Temperature only", "Colour change"], a: 0, e: R`2H<sub>2</sub>O<sub>2</sub> → 2H<sub>2</sub>O + O<sub>2</sub>: collect the oxygen in a gas syringe.` }
   ]
 });
 
@@ -160,11 +160,11 @@ CHEM.add({
     ["Why must the system be closed for equilibrium?", "So that no reactants or products can escape"]
   ],
   quiz: [
-    { q: "At dynamic equilibrium…", o: ["The forward and backward rates are equal", "The reaction has stopped", "The concentrations of reactants and products are equal", "Only the forward reaction happens"], a: 0, e: "" },
+    { q: "At dynamic equilibrium…", o: ["The forward and backward rates are equal", "The reaction has stopped", "The concentrations of reactants and products are equal", "Only the forward reaction happens"], a: 0, e: R`Reactions continue in both directions, so concentrations stay constant.` },
     { q: "2SO<sub>2</sub>(g) + O<sub>2</sub>(g) ⇌ 2SO<sub>3</sub>(g). What does increasing pressure do?", o: ["Shifts it right (fewer moles of gas)", "Shifts it left", "No effect", "Stops the reaction"], a: 0, e: "3 mol of gas → 2 mol." },
     { q: "A forward reaction is exothermic. What happens when the temperature is raised?", o: ["Equilibrium shifts left", "Equilibrium shifts right", "No change", "The yield increases"], a: 0, e: "It shifts in the endothermic (backward) direction." },
-    { q: "What does a catalyst do to an equilibrium mixture?", o: ["Equilibrium is reached faster, with the same position", "Shifts it right", "Shifts it left", "Increases the yield"], a: 0, e: "" },
-    { q: "What do you see when water is added to anhydrous copper(II) sulfate?", o: ["White → blue, and it gets hot", "Blue → white", "No change", "Pink → blue"], a: 0, e: "" },
+    { q: "What does a catalyst do to an equilibrium mixture?", o: ["Equilibrium is reached faster, with the same position", "Shifts it right", "Shifts it left", "Increases the yield"], a: 0, e: R`A catalyst speeds up both directions equally.` },
+    { q: "What do you see when water is added to anhydrous copper(II) sulfate?", o: ["White → blue, and it gets hot", "Blue → white", "No change", "Pink → blue"], a: 0, e: R`Water rejoins the anhydrous salt, and the reverse reaction is exothermic.` },
     { q: "H<sub>2</sub>(g) + I<sub>2</sub>(g) ⇌ 2HI(g). What does changing the pressure do?", o: ["No effect on the position", "Shifts it right", "Shifts it left", "Stops the reaction"], a: 0, e: "There are 2 mol of gas on each side." }
   ]
 });

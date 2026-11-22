@@ -4,7 +4,7 @@ CHEM.exam("4a", [
   { t: "mcq", m: 1, q: "What is a hydrocarbon?", o: ["A compound of hydrogen and carbon only", "A compound containing carbon, hydrogen and oxygen", "A mixture of hydrogen and carbon", "Any compound containing carbon"], a: 0, e: "It must be a compound, and contain only these two elements." },
   { t: "text", m: 3, q: "State three features of a homologous series.", ms: ["Same general formula", "Same functional group / similar chemical properties", "Each member differs from the next by CH<sub>2</sub>", "Trend (gradual change) in physical properties, e.g. boiling point"], kw: [["general formula"], ["functional group", "similar chemical", "same chemical"], ["ch2", "ch₂"], ["trend", "gradual", "increase in boiling", "boiling point"]] },
   { t: "mcq", m: 1, q: "What is the general formula of the alkanes?", o: ["C<sub>n</sub>H<sub>2n+2</sub>", "C<sub>n</sub>H<sub>2n</sub>", "C<sub>n</sub>H<sub>2n−2</sub>", "C<sub>n</sub>H<sub>2n+1</sub>OH"], a: 0 },
-  { t: "num", m: 1, q: "Calculate the relative formula mass (M<sub>r</sub>) of pentane, C<sub>5</sub>H<sub>12</sub>. (C = 12, H = 1)", ans: 72, ms: ["5 × 12 + 12 × 1 = 72"] },
+  { t: "num", m: 1, q: "Calculate the relative formula mass (M<sub>r</sub>) of pentane, C<sub>5</sub>H<sub>12</sub>. (C = 12, H = 1)", ans: 72, ms: [R`\(5 \times 12 + 12 \times 1 = 72\)`] },
   { t: "draw", m: 1, q: "Draw the displayed formula of methane.", mol: "C", ms: ["One C with four single bonds to H"] },
   { t: "draw", m: 1, q: "Draw the displayed formula of ethane.", mol: "CC", ms: ["C–C single bond; each C has three H"] },
   { t: "draw", m: 2, q: "Draw the displayed formula of propane.", mol: "CCC", ms: ["Three carbons in a chain with single bonds (1)", "All 8 hydrogens shown (1)"] },
@@ -21,7 +21,7 @@ CHEM.exam("4a", [
   { t: "mcq", m: 1, q: "Ethene reacts with bromine to form 1,2-dibromoethane. What type of reaction is this?", o: ["Addition", "Substitution", "Combustion", "Cracking"], a: 0 },
   { t: "mcq", m: 1, q: "Methane reacts with bromine in UV light. What type of reaction is this?", o: ["Substitution", "Addition", "Polymerisation", "Neutralisation"], a: 0 },
   { t: "text", m: 2, q: "Explain why the boiling points of alkanes increase as the chain gets longer.", ms: ["Larger molecules / higher M<sub>r</sub> have stronger intermolecular forces", "so more energy is needed to overcome them"], kw: [["intermolecular", "forces between molecules"], ["more energy", "more heat"]] },
-  { t: "num", m: 1, q: "How many hydrogen atoms are in an alkane molecule with 8 carbon atoms?", ans: 18, ms: ["2n + 2 = 2(8) + 2 = 18"] },
+  { t: "num", m: 1, q: "How many hydrogen atoms are in an alkane molecule with 8 carbon atoms?", ans: 18, ms: [R`\(2n + 2 = 2(8) + 2 = 18\)`] },
   { t: "mcq", m: 1, q: "Which pair of compounds are structural isomers?", o: ["But-1-ene and but-2-ene", "Ethane and ethene", "Propane and butane", "Ethanol and ethanoic acid"], a: 0, e: "Both are C<sub>4</sub>H<sub>8</sub>." },
   { t: "draw", m: 2, q: "Draw the displayed formula of but-1-ene.", mol: "C=CCC", hint: "The double bond starts at carbon 1.", ms: ["Four-carbon chain with C=C between C1 and C2 (1)", "All 8 H shown correctly (1)"] },
   { t: "draw", m: 2, q: "Draw the displayed formula of but-2-ene.", mol: "CC=CC", hint: "The double bond is between carbons 2 and 3.", ms: ["Four-carbon chain with C=C between C2 and C3 (1)", "All 8 H shown correctly (1)"] },
@@ -29,7 +29,7 @@ CHEM.exam("4a", [
   { t: "num", m: 1, q: "What is the relative formula mass of the empirical formula of butene, C<sub>4</sub>H<sub>8</sub>?", ans: 14, ms: ["Empirical formula CH<sub>2</sub> = 12 + 2 = 14"] },
   { t: "mcq", m: 1, q: "Which of these is NOT a hydrocarbon?", o: ["Ethanol", "Ethane", "Ethene", "Propene"], a: 0, e: "Ethanol contains oxygen." },
   { t: "text", m: 2, q: "State the difference between a displayed formula and a structural formula.", ms: ["A displayed formula shows every atom and every bond", "A structural formula shows how atoms are arranged/grouped without showing all bonds (e.g. CH<sub>3</sub>CH<sub>3</sub>)"], kw: [["every bond", "all bonds", "all the bonds", "each bond"], ["without", "groups", "ch3", "doesn't show", "does not show", "not all"]] },
-  { t: "num", m: 2, q: "Calculate the percentage by mass of carbon in ethane, C<sub>2</sub>H<sub>6</sub>. (C = 12, H = 1)", ans: 80, unit: "%", ms: ["M<sub>r</sub> = 30 (1)", "24 ÷ 30 × 100 = 80% (1)"] },
+  { t: "num", m: 2, q: "Calculate the percentage by mass of carbon in ethane, C<sub>2</sub>H<sub>6</sub>. (C = 12, H = 1)", ans: 80, unit: "%", ms: [R`\(M_{r} = 30\) (1)`, R`\(\dfrac{24}{30} \times 100 = 80\%\) (1)`] },
   { t: "mcq", m: 1, q: "Consecutive members of a homologous series differ by…", o: ["CH<sub>2</sub>", "CH<sub>3</sub>", "C<sub>2</sub>H<sub>4</sub>", "H<sub>2</sub>"], a: 0 }
 ]);
 
@@ -57,13 +57,13 @@ CHEM.exam("4b", [
   { t: "mcq", m: 1, q: "Which test shows that the products of cracking include an alkene?", o: ["Bromine water turns from orange to colourless", "Limewater turns milky", "A glowing splint relights", "Damp red litmus turns blue"], a: 0 },
   { t: "num", m: 1, q: "How many moles of oxygen are needed to burn one mole of propane completely? C<sub>3</sub>H<sub>8</sub> + ?O<sub>2</sub> → 3CO<sub>2</sub> + 4H<sub>2</sub>O", ans: 5, ms: ["6 + 4 = 10 O atoms = 5 O<sub>2</sub>"] },
   { t: "num", m: 2, q: "Calculate the mass of carbon dioxide formed when 8.0 g of methane burns completely. CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O (C = 12, H = 1, O = 16)", ans: 22, unit: "g", ms: ["Moles CH<sub>4</sub> = 8.0 ÷ 16 = 0.50 (1)", "Mass CO<sub>2</sub> = 0.50 × 44 = 22 g (1)"] },
-  { t: "num", m: 2, q: "0.50 mol of propane burns completely. What volume of carbon dioxide forms at room temperature and pressure? (1 mol of gas = 24 dm<sup>3</sup>)", ans: 36, unit: "dm³", ms: ["1 mol propane → 3 mol CO<sub>2</sub>, so 1.5 mol CO<sub>2</sub> (1)", "1.5 × 24 = 36 dm<sup>3</sup> (1)"] },
+  { t: "num", m: 2, q: R`0.50 mol of propane burns completely. What volume of carbon dioxide forms at room temperature and pressure? (1 mol of gas = 24 dm<sup>3</sup>)`, ans: 36, unit: "dm³", ms: [R`1 mol propane → 3 mol CO<sub>2</sub>, so 1.5 mol CO<sub>2</sub> (1)`, R`\(1.5 \times 24 = 36\ \text{dm}^{3}\) (1)`] },
   { t: "mcq", m: 1, q: "Going up the fractionating column, the fractions…", o: ["Have lower boiling points and are easier to ignite", "Have higher boiling points", "Become darker and more viscous", "Contain longer chains"], a: 0 },
   { t: "text", m: 2, q: "Explain why different fractions condense at different heights in the column.", ms: ["Fractions have different boiling points (different chain lengths)", "Each fraction condenses where the temperature falls below its boiling point"], kw: [["boiling point"], ["temperature", "cooler", "below"]] },
   { t: "mcq", m: 1, q: "Which equation shows incomplete combustion?", o: ["2CH<sub>4</sub> + 3O<sub>2</sub> → 2CO + 4H<sub>2</sub>O", "CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O", "C + O<sub>2</sub> → CO<sub>2</sub>", "2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O"], a: 0 },
   { t: "text", m: 2, q: "Give two problems caused by acid rain.", ms: ["Damages/corrodes buildings, statues or metal structures", "Makes lakes/rivers acidic, killing fish or aquatic life", "Damages trees/plants or soil"], kw: [["building", "statue", "limestone", "metal", "corrode"], ["lake", "river", "fish", "aquatic"], ["tree", "plant", "forest", "soil"]] },
   { t: "mcq", m: 1, q: "Why is crude oil described as a finite resource?", o: ["It is being used up much faster than it forms, so it will run out", "It can be made quickly in factories", "It is renewable", "It is found everywhere"], a: 0 },
-  { t: "num", m: 1, q: "Calculate the relative formula mass of octane, C<sub>8</sub>H<sub>18</sub>. (C = 12, H = 1)", ans: 114, ms: ["8 × 12 + 18 = 114"] }
+  { t: "num", m: 1, q: "Calculate the relative formula mass of octane, C<sub>8</sub>H<sub>18</sub>. (C = 12, H = 1)", ans: 114, ms: [R`\(8 \times 12 + 18 = 114\)`] }
 ]);
 
 CHEM.exam("4c", [
@@ -77,13 +77,13 @@ CHEM.exam("4c", [
   { t: "draw", m: 2, q: "Methane reacts with bromine in UV light. Draw the displayed formula of the organic product formed when one hydrogen atom is substituted.", mol: "CBr", ms: ["Bromomethane, CH<sub>3</sub>Br (2)"] },
   { t: "draw", m: 2, q: "Further substitution can occur. Draw the displayed formula of dibromomethane, CH<sub>2</sub>Br<sub>2</sub>.", mol: "BrCBr", ms: ["One C with two Br and two H (2)"] },
   { t: "mcq", m: 1, q: "What is the inorganic product when methane reacts with bromine?", o: ["Hydrogen bromide", "Hydrogen", "Water", "Bromine water"], a: 0 },
-  { t: "num", m: 1, q: "Calculate the relative formula mass of bromomethane, CH<sub>3</sub>Br. (C = 12, H = 1, Br = 80)", ans: 95, ms: ["12 + 3 + 80 = 95"] },
+  { t: "num", m: 1, q: "Calculate the relative formula mass of bromomethane, CH<sub>3</sub>Br. (C = 12, H = 1, Br = 80)", ans: 95, ms: [R`\(12 + 3 + 80 = 95\)`] },
   { t: "mcq", m: 1, q: "What type of reaction happens between an alkane and a halogen?", o: ["Substitution", "Addition", "Neutralisation", "Displacement"], a: 0 },
   { t: "text", m: 1, q: "Bromine water is shaken with hexane in the dark. What do you observe?", ms: ["Stays orange / no colour change"], kw: [["orange", "no change", "no colour change", "doesn't change", "does not change", "remains"]] },
   { t: "draw", m: 2, q: "Ethane reacts with chlorine in UV light to form chloroethane. Draw the displayed formula of chloroethane.", mol: "CCCl", ms: ["C–C with one Cl (1)", "Five H shown (1)"] },
   { t: "num", m: 1, q: "An alkane has M<sub>r</sub> = 58. How many carbon atoms does it have? (C = 12, H = 1)", ans: 4, ms: ["14n + 2 = 58, so n = 4 (C<sub>4</sub>H<sub>10</sub>)"] },
   { t: "mcq", m: 1, q: "What is the molecular formula of hexane?", o: ["C<sub>6</sub>H<sub>14</sub>", "C<sub>6</sub>H<sub>12</sub>", "C<sub>6</sub>H<sub>10</sub>", "C<sub>6</sub>H<sub>6</sub>"], a: 0 },
-  { t: "num", m: 1, q: "How many moles of oxygen are needed to burn one mole of ethane completely? 2C<sub>2</sub>H<sub>6</sub> + 7O<sub>2</sub> → 4CO<sub>2</sub> + 6H<sub>2</sub>O", ans: 3.5, ms: ["7 ÷ 2 = 3.5"] },
+  { t: "num", m: 1, q: "How many moles of oxygen are needed to burn one mole of ethane completely? 2C<sub>2</sub>H<sub>6</sub> + 7O<sub>2</sub> → 4CO<sub>2</sub> + 6H<sub>2</sub>O", ans: 3.5, ms: [R`\(\dfrac{7}{2} = 3.5\)`] },
   { t: "mcq", m: 1, q: "How many structural isomers does C<sub>5</sub>H<sub>12</sub> have?", o: ["3", "2", "4", "5"], a: 0, e: "Pentane, 2-methylbutane and 2,2-dimethylpropane." },
   { t: "text", m: 2, q: "Explain why butane and 2-methylpropane are structural isomers.", ms: ["Both have the molecular formula C<sub>4</sub>H<sub>10</sub>", "but their atoms are arranged differently (straight chain vs branched)"], kw: [["c4h10", "same molecular formula", "same formula"], ["different", "branch"]] },
   { t: "mcq", m: 1, q: "Which statement about alkanes is correct?", o: ["They are generally unreactive apart from combustion", "They decolourise bromine water", "They contain a C=C bond", "They form polymers easily"], a: 0 },
@@ -93,7 +93,7 @@ CHEM.exam("4c", [
   { t: "draw", m: 2, q: "Draw the displayed formula of 2-bromopropane.", mol: "CC(Br)C", hint: "Bromine on the middle carbon.", ms: ["Three-carbon chain with Br on carbon 2 (1)", "Seven H shown (1)"] },
   { t: "draw", m: 2, q: "Draw the displayed formula of 1-bromopropane.", mol: "CCCBr", hint: "Bromine on an end carbon.", ms: ["Three-carbon chain with Br on carbon 1 (1)", "Seven H shown (1)"] },
   { t: "mcq", m: 1, q: "Why are alkanes used as fuels?", o: ["They release a lot of energy when they burn", "They are very reactive with water", "They are unsaturated", "They are solids"], a: 0 },
-  { t: "num", m: 2, q: "A hydrocarbon contains 82.8% carbon by mass. Find the ratio C : H in its empirical formula as C : H = 1 : x. What is x? (2 d.p. working, answer to 1 d.p.)", ans: 2.5, rel: 0.03, ms: ["C: 82.8 ÷ 12 = 6.9; H: 17.2 ÷ 1 = 17.2 (1)", "17.2 ÷ 6.9 = 2.5, so empirical formula C<sub>2</sub>H<sub>5</sub> (1)"] },
+  { t: "num", m: 2, q: "A hydrocarbon contains 82.8% carbon by mass. Find the ratio C : H in its empirical formula as C : H = 1 : x. What is x? (2 d.p. working, answer to 1 d.p.)", ans: 2.5, rel: 0.03, ms: [R`C: 82.8 ÷ 12 = 6.9; H: \(\dfrac{17.2}{1} = 17.2\) (1)`, R`17.2 ÷ 6.9 = 2.5, so empirical formula C<sub>2</sub>H<sub>5</sub> (1)`] },
   { t: "mcq", m: 1, q: "The empirical formula of a hydrocarbon is C<sub>2</sub>H<sub>5</sub> and its M<sub>r</sub> is 58. What is its molecular formula?", o: ["C<sub>4</sub>H<sub>10</sub>", "C<sub>2</sub>H<sub>5</sub>", "C<sub>6</sub>H<sub>15</sub>", "C<sub>3</sub>H<sub>8</sub>"], a: 0 },
   { t: "text", m: 2, q: "Explain why a substitution reaction can produce a mixture of products when methane reacts with excess bromine.", ms: ["More than one hydrogen can be replaced / further substitution happens", "giving CH<sub>2</sub>Br<sub>2</sub>, CHBr<sub>3</sub> and CBr<sub>4</sub> as well as CH<sub>3</sub>Br"], kw: [["more than one", "further", "again", "multiple", "each hydrogen"], ["ch2br2", "chbr3", "cbr4", "dibromo", "tribromo"]] },
   { t: "mcq", m: 1, q: "Which formula is NOT an alkane?", o: ["C<sub>4</sub>H<sub>8</sub>", "C<sub>3</sub>H<sub>8</sub>", "C<sub>7</sub>H<sub>16</sub>", "CH<sub>4</sub>"], a: 0 }
@@ -111,8 +111,8 @@ CHEM.exam("4d", [
   { t: "mcq", m: 1, q: "Which compound decolourises bromine water?", o: ["Butene", "Butane", "Propane", "Methane"], a: 0 },
   { t: "text", m: 2, q: "Explain why alkenes are more reactive than alkanes.", ms: ["Alkenes have a C=C double bond", "which can open up so other atoms add on (addition reactions)"], kw: [["double"], ["open", "add", "break"]] },
   { t: "mcq", m: 1, q: "What type of reaction is ethene + bromine?", o: ["Addition", "Substitution", "Combustion", "Thermal decomposition"], a: 0 },
-  { t: "num", m: 1, q: "How many hydrogen atoms are in a molecule of the alkene with 6 carbon atoms?", ans: 12, ms: ["C<sub>n</sub>H<sub>2n</sub>: 2 × 6 = 12"] },
-  { t: "num", m: 2, q: "Calculate the percentage by mass of carbon in ethene, C<sub>2</sub>H<sub>4</sub>. Give your answer to 1 decimal place. (C = 12, H = 1)", ans: 85.7, rel: 0.005, unit: "%", ms: ["M<sub>r</sub> = 28 (1)", "24 ÷ 28 × 100 = 85.7% (1)"] },
+  { t: "num", m: 1, q: "How many hydrogen atoms are in a molecule of the alkene with 6 carbon atoms?", ans: 12, ms: [R`C<sub>n</sub>H<sub>2n</sub>: \(2 \times 6 = 12\)`] },
+  { t: "num", m: 2, q: "Calculate the percentage by mass of carbon in ethene, C<sub>2</sub>H<sub>4</sub>. Give your answer to 1 decimal place. (C = 12, H = 1)", ans: 85.7, rel: 0.005, unit: "%", ms: [R`\(M_{r} = 28\) (1)`, R`\(\dfrac{24}{28} \times 100 = 85.7\%\) (1)`] },
   { t: "mcq", m: 1, q: "Which is an isomer of but-1-ene?", o: ["But-2-ene", "Butane", "Propene", "Butan-1-ol"], a: 0 },
   { t: "draw", m: 2, q: "Draw the displayed formula of methylpropene, (CH<sub>3</sub>)<sub>2</sub>C=CH<sub>2</sub>, a branched isomer of butene.", mol: "C=C(C)C", hint: "The carbon at one end of the double bond carries two CH<sub>3</sub> groups.", ms: ["C=C with two CH<sub>3</sub> on one carbon (1)", "All 8 H (1)"] },
   { t: "draw", m: 2, q: "Draw any alkene with the formula C<sub>4</sub>H<sub>8</sub>.", mol: ["C=CCC", "CC=CC", "C=C(C)C"], ms: ["But-1-ene, but-2-ene or methylpropene (2)"] },
@@ -123,11 +123,11 @@ CHEM.exam("4d", [
   { t: "draw", m: 2, q: "Draw the displayed formula of chloroethene, the monomer used to make PVC.", mol: "C=CCl", ms: ["C=C double bond (1)", "One Cl and three H (1)"] },
   { t: "mcq", m: 1, q: "Which molecular formula could be an alkene?", o: ["C<sub>3</sub>H<sub>6</sub>", "C<sub>3</sub>H<sub>8</sub>", "C<sub>4</sub>H<sub>10</sub>", "C<sub>2</sub>H<sub>6</sub>"], a: 0 },
   { t: "text", m: 2, q: "Write a balanced equation for the complete combustion of ethene.", ms: ["C<sub>2</sub>H<sub>4</sub> + 3O<sub>2</sub>", "→ 2CO<sub>2</sub> + 2H<sub>2</sub>O"], kw: [["3o2", "3 o2"], ["2co2", "2h2o"]] },
-  { t: "num", m: 1, q: "How many moles of oxygen are needed to burn 1 mole of propene completely? 2C<sub>3</sub>H<sub>6</sub> + 9O<sub>2</sub> → 6CO<sub>2</sub> + 6H<sub>2</sub>O", ans: 4.5, ms: ["9 ÷ 2 = 4.5"] },
+  { t: "num", m: 1, q: "How many moles of oxygen are needed to burn 1 mole of propene completely? 2C<sub>3</sub>H<sub>6</sub> + 9O<sub>2</sub> → 6CO<sub>2</sub> + 6H<sub>2</sub>O", ans: 4.5, ms: [R`\(\dfrac{9}{2} = 4.5\)`] },
   { t: "mcq", m: 1, q: "Which statement about ethene is correct?", o: ["It can be used to make poly(ethene)", "It is saturated", "It has the formula C<sub>2</sub>H<sub>6</sub>", "It reacts with bromine only in UV light"], a: 0 },
   { t: "draw", m: 2, q: "Draw the displayed formula of but-2-ene.", mol: "CC=CC", ms: ["C=C between C2 and C3 (1)", "All 8 H (1)"] },
   { t: "text", m: 2, q: "Bromine water was added to the products of cracking and it turned colourless. What can you conclude, and why?", ms: ["An alkene was produced", "because alkenes have a C=C bond that reacts with bromine (decolourising it)"], kw: [["alkene"], ["double", "c=c", "unsaturated"]] },
   { t: "mcq", m: 1, q: "What is the empirical formula of every alkene?", o: ["CH<sub>2</sub>", "CH<sub>3</sub>", "CH", "C<sub>2</sub>H<sub>4</sub>"], a: 0 },
-  { t: "num", m: 1, q: "What is the M<sub>r</sub> of 1,2-dibromoethane, C<sub>2</sub>H<sub>4</sub>Br<sub>2</sub>? (C = 12, H = 1, Br = 80)", ans: 188, ms: ["24 + 4 + 160 = 188"] },
+  { t: "num", m: 1, q: "What is the M<sub>r</sub> of 1,2-dibromoethane, C<sub>2</sub>H<sub>4</sub>Br<sub>2</sub>? (C = 12, H = 1, Br = 80)", ans: 188, ms: [R`\(24 + 4 + 160 = 188\)`] },
   { t: "mcq", m: 1, q: "Which pair will react together at room temperature without UV light?", o: ["Propene and bromine", "Propane and bromine", "Methane and chlorine", "Ethane and bromine water"], a: 0 }
 ]);
