@@ -24,15 +24,15 @@ S2Data.add({
 <p>1 MeV = 1.60 × 10<sup>−13</sup> J. Pair production: a photon of at least 2m<sub>e</sub>c<sup>2</sup> (1.02 MeV) can produce an electron–positron pair.</p>
 `,
   quiz: [
-    { q: "Rutherford scattering showed that…", o: ["The nucleus is small, dense and positive", "Electrons orbit in shells", "Protons contain quarks", "Atoms are solid"], a: 0, e: "" },
-    { q: "Why do linac drift tubes get longer?", o: ["Particles speed up, so they need equal times per tube", "To slow particles", "To bend the beam", "To increase charge"], a: 0, e: "" },
-    { q: "What provides the circular path in a cyclotron?", o: ["A magnetic field", "The alternating p.d.", "Gravity", "An electric field only"], a: 0, e: "" },
-    { q: "In a detector, a particle curves more tightly when it has…", o: ["Less momentum", "More momentum", "No charge", "More mass at the same speed"], a: 0, e: "" },
-    { q: "Why do neutral particles leave no tracks?", o: ["They don't ionise the detector material", "They are too fast", "They are too heavy", "They decay instantly"], a: 0, e: "" },
-    { q: "Energy equivalent of 1.0 × 10⁻³⁰ kg?", o: ["9.0 × 10⁻¹⁴ J", "3.0 × 10⁻²² J", "9.0 × 10¹³ J", "1.0 × 10⁻³⁰ J"], a: 0, e: "" },
-    { q: "1 MeV in joules?", o: ["1.60 × 10⁻¹³ J", "1.60 × 10⁻¹⁹ J", "1.60 × 10⁻¹⁶ J", "1.60 × 10⁻¹⁰ J"], a: 0, e: "" },
-    { q: "Why are higher energies needed to probe smaller structures?", o: ["Shorter de Broglie wavelength", "More charge", "Larger mass", "Slower particles"], a: 0, e: "" },
-    { q: "Minimum photon energy for electron–positron pair production?", o: ["1.02 MeV", "0.511 MeV", "938 MeV", "13.6 eV"], a: 0, e: "" }
+    { q: "Rutherford scattering showed that…", o: ["The nucleus is small, dense and positive", "Electrons orbit in shells", "Protons contain quarks", "Atoms are solid"], a: 0, e: R`Most alpha particles passed straight through; a few were deflected through large angles.` },
+    { q: "Why do linac drift tubes get longer?", o: ["Particles speed up, so they need equal times per tube", "To slow particles", "To bend the beam", "To increase charge"], a: 0, e: R`They travel further each half-cycle, so the tubes must be longer to keep timing in step.` },
+    { q: "What provides the circular path in a cyclotron?", o: ["A magnetic field", "The alternating p.d.", "Gravity", "An electric field only"], a: 0, e: R`The magnetic force \(Bqv\) acts as the centripetal force.` },
+    { q: "In a detector, a particle curves more tightly when it has…", o: ["Less momentum", "More momentum", "No charge", "More mass at the same speed"], a: 0, e: R`\(r = \dfrac{p}{Bq}\): smaller momentum means a smaller radius.` },
+    { q: "Why do neutral particles leave no tracks?", o: ["They don't ionise the detector material", "They are too fast", "They are too heavy", "They decay instantly"], a: 0, e: R`Tracks are made by ionisation, which needs charge.` },
+    { q: "Energy equivalent of 1.0 × 10⁻³⁰ kg?", o: ["9.0 × 10⁻¹⁴ J", "3.0 × 10⁻²² J", "9.0 × 10¹³ J", "1.0 × 10⁻³⁰ J"], a: 0, e: R`\(E = mc^2 = 1.0 \times 10^{-30} \times (3.0 \times 10^8)^2 = 9.0 \times 10^{-14}\ \text{J}\).` },
+    { q: "1 MeV in joules?", o: ["1.60 × 10⁻¹³ J", "1.60 × 10⁻¹⁹ J", "1.60 × 10⁻¹⁶ J", "1.60 × 10⁻¹⁰ J"], a: 0, e: R`\(10^6 \times 1.60 \times 10^{-19}\ \text{J}\).` },
+    { q: "Why are higher energies needed to probe smaller structures?", o: ["Shorter de Broglie wavelength", "More charge", "Larger mass", "Slower particles"], a: 0, e: R`\(\lambda = \dfrac hp\): resolving small detail needs a small wavelength, so large momentum.` },
+    { q: "Minimum photon energy for electron–positron pair production?", o: ["1.02 MeV", "0.511 MeV", "938 MeV", "13.6 eV"], a: 0, e: R`The photon must supply the rest energy of two particles: \(2 \times 0.511\ \text{MeV}\).` }
   ],
   flashcards: [
     ["Rutherford scattering conclusion", "Tiny, dense, positive nucleus; atom mostly empty space"],
@@ -74,14 +74,14 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Quark composition of a proton?", o: ["uud", "udd", "uuu", "ud̄"], a: 0, e: "" },
-    { q: "Charge of a strange quark?", o: ["−⅓e", "+⅔e", "+⅓e", "−⅔e"], a: 0, e: "" },
-    { q: "A meson is made of…", o: ["A quark and an antiquark", "Three quarks", "Two leptons", "Three antiquarks"], a: 0, e: "" },
-    { q: "Which is a lepton?", o: ["Muon", "Proton", "Pion", "Neutron"], a: 0, e: "" },
-    { q: "Baryon number of a quark?", o: ["⅓", "1", "0", "−1"], a: 0, e: "" },
-    { q: "In β⁻ decay at quark level…", o: ["d → u", "u → d", "s → u", "u → s"], a: 0, e: "" },
-    { q: "Which is NOT always conserved?", o: ["Strangeness", "Charge", "Baryon number", "Lepton number"], a: 0, e: "" },
-    { q: "Exchange particle for the weak force?", o: ["W and Z bosons", "Photon", "Gluon", "Higgs boson"], a: 0, e: "" },
+    { q: "Quark composition of a proton?", o: ["uud", "udd", "uuu", "ud̄"], a: 0, e: R`\(\tfrac23 + \tfrac23 - \tfrac13 = +1\).` },
+    { q: "Charge of a strange quark?", o: ["−⅓e", "+⅔e", "+⅓e", "−⅔e"], a: 0, e: R`Strange quarks have the same charge as down quarks.` },
+    { q: "A meson is made of…", o: ["A quark and an antiquark", "Three quarks", "Two leptons", "Three antiquarks"], a: 0, e: R`Baryons are three quarks; mesons are quark plus antiquark.` },
+    { q: "Which is a lepton?", o: ["Muon", "Proton", "Pion", "Neutron"], a: 0, e: R`Leptons are electrons, muons, taus and their neutrinos.` },
+    { q: "Baryon number of a quark?", o: ["⅓", "1", "0", "−1"], a: 0, e: R`Three quarks make one baryon, so each has \(B = \tfrac13\).` },
+    { q: "In β⁻ decay at quark level…", o: ["d → u", "u → d", "s → u", "u → s"], a: 0, e: R`A down quark changes to an up quark, emitting a W⁻ boson.` },
+    { q: "Which is NOT always conserved?", o: ["Strangeness", "Charge", "Baryon number", "Lepton number"], a: 0, e: R`Strangeness can change in weak interactions.` },
+    { q: "Exchange particle for the weak force?", o: ["W and Z bosons", "Photon", "Gluon", "Higgs boson"], a: 0, e: R`W bosons are charged; the Z is neutral.` },
     { q: "Can p + p → p + n + π⁺ happen (charge check)?", o: ["Yes, charge is conserved", "No, charge isn't conserved", "No, baryon number isn't conserved", "Only with a neutrino"], a: 0, e: R`\(+2 = +1 + 0 + 1\).` }
   ],
   flashcards: [
@@ -117,15 +117,15 @@ S2Data.add({
 <p><b>Example</b>: energy to turn 0.50 kg of ice at 0 °C into water at 20 °C: \(0.50 \times 3.34 \times 10^{5} + 0.50 \times 4180 \times 20 = 167\,000 + 41\,800\) = <b>2.1 × 10<sup>5</sup> J</b>.</p>
 `,
   quiz: [
-    { q: "Internal energy is…", o: ["The sum of random KE and PE of molecules", "The total KE only", "The temperature", "Heat added"], a: 0, e: "" },
-    { q: "Energy to heat 2.0 kg of water by 10 K?", o: ["83 600 J", "8360 J", "41 800 J", "4180 J"], a: 0, e: "" },
-    { q: "During melting, temperature stays constant because energy increases…", o: ["Potential energy of molecules", "Kinetic energy of molecules", "Mass", "Pressure"], a: 0, e: "" },
-    { q: "25 °C in kelvin?", o: ["298 K", "248 K", "25 K", "−248 K"], a: 0, e: "" },
-    { q: "Energy to melt 0.20 kg of ice at 0 °C? (L = 3.34 × 10⁵ J kg⁻¹)", o: ["6.7 × 10⁴ J", "3.3 × 10⁵ J", "1.7 × 10⁶ J", R`\(6.7 \times 10^3\ \text{J}\)`], a: 0, e: "" },
-    { q: "Why is L_v much larger than L_f for water?", o: ["Molecules must be separated completely", "Water is denser", "Steam is hotter", "Ice is a solid"], a: 0, e: "" },
-    { q: "A 50 W heater runs for 200 s, raising 1.0 kg by 10 K. c = ?", o: ["1000 J kg⁻¹ K⁻¹", "100 J kg⁻¹ K⁻¹", "10 000 J kg⁻¹ K⁻¹", "4180 J kg⁻¹ K⁻¹"], a: 0, e: "" },
-    { q: "Absolute zero is…", o: ["0 K, about −273 °C", "0 °C", "−100 °C", "273 K"], a: 0, e: "" },
-    { q: "Why insulate the block when measuring c?", o: ["To reduce heat loss to surroundings", "To make it heat faster", "To change c", "To measure mass"], a: 0, e: "" }
+    { q: "Internal energy is…", o: ["The sum of random KE and PE of molecules", "The total KE only", "The temperature", "Heat added"], a: 0, e: R`Internal energy is the total kinetic and potential energy of all the molecules.` },
+    { q: "Energy to heat 2.0 kg of water by 10 K?", o: ["83 600 J", "8360 J", "41 800 J", "4180 J"], a: 0, e: R`\(Q = mc\Delta\theta = 2.0 \times 4180 \times 10 = 83\,600\ \text{J}\).` },
+    { q: "During melting, temperature stays constant because energy increases…", o: ["Potential energy of molecules", "Kinetic energy of molecules", "Mass", "Pressure"], a: 0, e: R`Bonds are being broken, raising potential energy, not kinetic energy.` },
+    { q: "25 °C in kelvin?", o: ["298 K", "248 K", "25 K", "−248 K"], a: 0, e: R`\(25 + 273 = 298\ \text{K}\).` },
+    { q: "Energy to melt 0.20 kg of ice at 0 °C? (L = 3.34 × 10⁵ J kg⁻¹)", o: ["6.7 × 10⁴ J", "3.3 × 10⁵ J", "1.7 × 10⁶ J", R`\(6.7 \times 10^3\ \text{J}\)`], a: 0, e: R`\(Q = mL = 0.20 \times 3.34 \times 10^5 = 6.7 \times 10^4\ \text{J}\).` },
+    { q: "Why is L_v much larger than L_f for water?", o: ["Molecules must be separated completely", "Water is denser", "Steam is hotter", "Ice is a solid"], a: 0, e: R`Boiling separates molecules completely; melting only loosens them.` },
+    { q: "A 50 W heater runs for 200 s, raising 1.0 kg by 10 K. c = ?", o: ["1000 J kg⁻¹ K⁻¹", "100 J kg⁻¹ K⁻¹", "10 000 J kg⁻¹ K⁻¹", "4180 J kg⁻¹ K⁻¹"], a: 0, e: R`\(c = \dfrac{Pt}{m\Delta\theta} = \dfrac{50 \times 200}{1.0 \times 10} = 1000\ \text{J kg}^{-1}\,\text{K}^{-1}\).` },
+    { q: "Absolute zero is…", o: ["0 K, about −273 °C", "0 °C", "−100 °C", "273 K"], a: 0, e: R`At 0 K the molecules have the least possible energy.` },
+    { q: "Why insulate the block when measuring c?", o: ["To reduce heat loss to surroundings", "To make it heat faster", "To change c", "To measure mass"], a: 0, e: R`Heat loss would make the calculated \(c\) too large.` }
   ],
   flashcards: [
     ["Internal energy", "Sum of random KE and PE of molecules"],
@@ -160,15 +160,15 @@ S2Data.add({
 <p><b>Example</b>: mean KE of a gas molecule at 300 K = 1.5 × 1.38 × 10<sup>−23</sup> × 300 = <b>6.2 × 10<sup>−21</sup> J</b>.</p>
 `,
   quiz: [
-    { q: "Boyle's law states…", o: ["pV = constant at constant T", "p/T constant at constant V", "V/T constant", R`\(pV = nR\)`], a: 0, e: "" },
-    { q: "Gas at 100 kPa, 2.0 m³ is compressed to 0.50 m³ at constant T. New pressure?", o: ["400 kPa", "25 kPa", "200 kPa", "50 kPa"], a: 0, e: "" },
+    { q: "Boyle's law states…", o: ["pV = constant at constant T", "p/T constant at constant V", "V/T constant", R`\(pV = nR\)`], a: 0, e: R`For a fixed mass of gas at constant temperature.` },
+    { q: "Gas at 100 kPa, 2.0 m³ is compressed to 0.50 m³ at constant T. New pressure?", o: ["400 kPa", "25 kPa", "200 kPa", "50 kPa"], a: 0, e: R`\(p_2 = \dfrac{p_1V_1}{V_2} = \dfrac{100 \times 2.0}{0.50} = 400\ \text{kPa}\).` },
     { q: "Number of moles in 0.024 m³ at 100 kPa and 289 K?", o: ["1.0 mol", "0.10 mol", "10 mol", "2.0 mol"], a: 0, e: "pV/RT." },
-    { q: "Mean KE of a molecule depends only on…", o: ["Absolute temperature", "Pressure", "Volume", "Mass of gas"], a: 0, e: "" },
-    { q: "Doubling the kelvin temperature changes c_rms by…", o: [R`\(\times \sqrt{2}\)`, R`\(\times 2\)`, R`\(\times 4\)`, R`\(\times \tfrac12\)`], a: 0, e: "" },
-    { q: "Which is an ideal gas assumption?", o: ["Collisions are elastic", "Molecules attract strongly", "Molecules have large volume", "Motion is ordered"], a: 0, e: "" },
-    { q: "Boltzmann constant k = …", o: ["R/N_A", "N_A/R", "RN_A", "R"], a: 0, e: "" },
-    { q: "Pressure in kinetic theory is caused by…", o: ["Molecules colliding with walls and changing momentum", "Gravity", "Intermolecular forces", "Heat"], a: 0, e: "" },
-    { q: "Mean KE per molecule at 300 K?", o: ["6.2 × 10⁻²¹ J", "4.1 × 10⁻²¹ J", "3740 J", "1.2 × 10⁻²⁰ J"], a: 0, e: "" }
+    { q: "Mean KE of a molecule depends only on…", o: ["Absolute temperature", "Pressure", "Volume", "Mass of gas"], a: 0, e: R`\(\tfrac12 m\overline{c^2} = \tfrac32 kT\).` },
+    { q: "Doubling the kelvin temperature changes c_rms by…", o: [R`\(\times \sqrt{2}\)`, R`\(\times 2\)`, R`\(\times 4\)`, R`\(\times \tfrac12\)`], a: 0, e: R`\(c_{\text{rms}} \propto \sqrt T\), so it goes up by \(\sqrt2\).` },
+    { q: "Which is an ideal gas assumption?", o: ["Collisions are elastic", "Molecules attract strongly", "Molecules have large volume", "Motion is ordered"], a: 0, e: R`Others: negligible molecule volume, no intermolecular forces, random motion.` },
+    { q: "Boltzmann constant k = …", o: ["R/N_A", "N_A/R", "RN_A", "R"], a: 0, e: R`\(k = \dfrac{R}{N_A} = 1.38 \times 10^{-23}\ \text{J K}^{-1}\).` },
+    { q: "Pressure in kinetic theory is caused by…", o: ["Molecules colliding with walls and changing momentum", "Gravity", "Intermolecular forces", "Heat"], a: 0, e: R`Each collision changes the molecule's momentum, so it exerts a force on the wall.` },
+    { q: "Mean KE per molecule at 300 K?", o: ["6.2 × 10⁻²¹ J", "4.1 × 10⁻²¹ J", "3740 J", "1.2 × 10⁻²⁰ J"], a: 0, e: R`\(\tfrac32 kT = 1.5 \times 1.38 \times 10^{-23} \times 300 = 6.2 \times 10^{-21}\ \text{J}\).` }
   ],
   flashcards: [
     ["Boyle's law", "pV = constant (constant T)"],
@@ -211,14 +211,14 @@ S2Data.add({
 `,
   quiz: [
     { q: "Wien's law: a star peaks at 500 nm. Surface temperature?", o: ["5800 K", "1450 K", "58 000 K", "580 K"], a: 0, e: "2.9 × 10⁻³ ÷ 5 × 10⁻⁷." },
-    { q: "Doubling a star's surface temperature (same radius) changes luminosity by…", o: [R`\(\times 16\)`, R`\(\times 4\)`, R`\(\times 2\)`, R`\(\times 8\)`], a: 0, e: "" },
-    { q: "On an HR diagram, temperature…", o: ["Decreases to the right", "Increases to the right", "Is on the y-axis", "Is constant"], a: 0, e: "" },
-    { q: "Where are white dwarfs on the HR diagram?", o: ["Bottom left", "Top right", "Top left", "Bottom right"], a: 0, e: "" },
-    { q: "A standard candle has…", o: ["Known luminosity", "Known temperature", "Known mass", "Known age"], a: 0, e: "" },
-    { q: "A galaxy has z = 0.010. Recession velocity?", o: ["3.0 × 10⁶ m s⁻¹", "3.0 × 10⁸ m s⁻¹", "3.0 × 10⁴ m s⁻¹", "0.010 m s⁻¹"], a: 0, e: "" },
-    { q: "Hubble's law shows…", o: ["The universe is expanding", "Stars are cooling", "Galaxies are approaching", "Light slows down"], a: 0, e: "" },
-    { q: "Age of the universe ≈ …", o: ["1/H₀", "H₀", "H₀/c", "c/H₀"], a: 0, e: "" },
-    { q: "Parallax works only for…", o: ["Nearby stars", "Distant galaxies", "The Sun", "Supernovae"], a: 0, e: "" }
+    { q: "Doubling a star's surface temperature (same radius) changes luminosity by…", o: [R`\(\times 16\)`, R`\(\times 4\)`, R`\(\times 2\)`, R`\(\times 8\)`], a: 0, e: R`\(L = 4\pi r^2\sigma T^4\): \(2^4 = 16\).` },
+    { q: "On an HR diagram, temperature…", o: ["Decreases to the right", "Increases to the right", "Is on the y-axis", "Is constant"], a: 0, e: R`The temperature axis runs backwards: hot on the left.` },
+    { q: "Where are white dwarfs on the HR diagram?", o: ["Bottom left", "Top right", "Top left", "Bottom right"], a: 0, e: R`They're hot but small, so they have low luminosity.` },
+    { q: "A standard candle has…", o: ["Known luminosity", "Known temperature", "Known mass", "Known age"], a: 0, e: R`Comparing known luminosity with measured intensity gives the distance.` },
+    { q: "A galaxy has z = 0.010. Recession velocity?", o: ["3.0 × 10⁶ m s⁻¹", "3.0 × 10⁸ m s⁻¹", "3.0 × 10⁴ m s⁻¹", "0.010 m s⁻¹"], a: 0, e: R`\(v = zc = 0.010 \times 3.0 \times 10^8 = 3.0 \times 10^6\ \text{m s}^{-1}\).` },
+    { q: "Hubble's law shows…", o: ["The universe is expanding", "Stars are cooling", "Galaxies are approaching", "Light slows down"], a: 0, e: R`\(v = H_0 d\): more distant galaxies recede faster.` },
+    { q: "Age of the universe ≈ …", o: ["1/H₀", "H₀", "H₀/c", "c/H₀"], a: 0, e: R`Time \(= \dfrac{d}{v} = \dfrac{1}{H_0}\).` },
+    { q: "Parallax works only for…", o: ["Nearby stars", "Distant galaxies", "The Sun", "Supernovae"], a: 0, e: R`Further stars have parallax angles too small to measure.` }
   ],
   flashcards: [
     ["Stefan–Boltzmann law", "L = 4πr²σT⁴"],
@@ -257,15 +257,15 @@ S2Data.add({
 <p><b>Example</b>: a sample has \(t_{\tfrac12} = 8.0\) days. \(\lambda = \dfrac{0.693}{8 \times 86\,400} = 1.0 \times 10^{-6}\ \text{s}^{-1}\). After 24 days (3 half-lives), 1/8 remains.</p>
 `,
   quiz: [
-    { q: "Which radiation is most ionising?", o: ["Alpha", "Beta", "Gamma", "All equal"], a: 0, e: "" },
-    { q: "²³⁸U undergoes alpha decay. Product mass number?", o: ["234", "236", "238", "242"], a: 0, e: "" },
-    { q: "In β⁻ decay, the proton number…", o: ["Increases by 1", "Decreases by 1", "Decreases by 2", "Stays the same"], a: 0, e: "" },
-    { q: "Activity equals…", o: ["λN", "N/λ", "λ/N", "N₀e^λt"], a: 0, e: "" },
-    { q: "Half-life in terms of λ?", o: ["ln 2/λ", "λ ln 2", "1/λ", "2/λ"], a: 0, e: "" },
-    { q: "After 4 half-lives, what fraction remains?", o: ["1/16", "1/4", "1/8", "1/32"], a: 0, e: "" },
-    { q: "Radioactive decay is random, meaning…", o: ["You can't predict which nucleus decays next", "It speeds up when heated", "It depends on pressure", "All nuclei decay at once"], a: 0, e: "" },
-    { q: "Why subtract background count?", o: ["To find the count due to the source alone", "To increase accuracy of time", "Because it's negative", "To find half-life directly"], a: 0, e: "" },
-    { q: "Gradient of ln A against t?", o: [R`\(-\lambda\)`, "λ", "t½", "A₀"], a: 0, e: "" }
+    { q: "Which radiation is most ionising?", o: ["Alpha", "Beta", "Gamma", "All equal"], a: 0, e: R`Alpha is large and doubly charged, so it ionises strongly.` },
+    { q: "²³⁸U undergoes alpha decay. Product mass number?", o: ["234", "236", "238", "242"], a: 0, e: R`Alpha removes 4 from \(A\): \(238 - 4 = 234\).` },
+    { q: "In β⁻ decay, the proton number…", o: ["Increases by 1", "Decreases by 1", "Decreases by 2", "Stays the same"], a: 0, e: R`A neutron becomes a proton, so Z rises by 1.` },
+    { q: "Activity equals…", o: ["λN", "N/λ", "λ/N", "N₀e^λt"], a: 0, e: R`\(A = \lambda N\).` },
+    { q: "Half-life in terms of λ?", o: ["ln 2/λ", "λ ln 2", "1/λ", "2/λ"], a: 0, e: R`\(t_{1/2} = \dfrac{\ln 2}{\lambda}\).` },
+    { q: "After 4 half-lives, what fraction remains?", o: ["1/16", "1/4", "1/8", "1/32"], a: 0, e: R`\(\left(\tfrac12\right)^4 = \tfrac1{16}\).` },
+    { q: "Radioactive decay is random, meaning…", o: ["You can't predict which nucleus decays next", "It speeds up when heated", "It depends on pressure", "All nuclei decay at once"], a: 0, e: R`Each nucleus has a fixed probability of decaying per second.` },
+    { q: "Why subtract background count?", o: ["To find the count due to the source alone", "To increase accuracy of time", "Because it's negative", "To find half-life directly"], a: 0, e: R`Background radiation is always present.` },
+    { q: "Gradient of ln A against t?", o: [R`\(-\lambda\)`, "λ", "t½", "A₀"], a: 0, e: R`\(\ln A = \ln A_0 - \lambda t\).` }
   ],
   flashcards: [
     ["Alpha particle", "Helium nucleus; strongly ionising; stopped by paper"],
@@ -299,15 +299,15 @@ S2Data.add({
 <p><b>Example</b>: a fusion reaction has a mass defect of 0.0189 u. Energy = 0.0189 × 931.5 = <b>17.6 MeV</b>.</p>
 `,
   quiz: [
-    { q: "Binding energy is…", o: ["Energy to separate a nucleus into nucleons", "Energy holding electrons", "Kinetic energy of nucleons", "Energy released by gamma"], a: 0, e: "" },
-    { q: "Which nucleus is most stable?", o: ["Iron-56", "Uranium-235", "Hydrogen-1", "Helium-3"], a: 0, e: "" },
-    { q: "1 u is equivalent to…", o: ["931.5 MeV", "1.66 MeV", "938 GeV", "0.511 MeV"], a: 0, e: "" },
-    { q: "Why does fusion need high temperatures?", o: ["To overcome electrostatic repulsion between nuclei", "To split nuclei", "To produce neutrons", "To slow nuclei"], a: 0, e: "" },
-    { q: "Mass defect 0.010 u. Energy released?", o: ["9.3 MeV", "0.93 MeV", "93 MeV", "1.66 MeV"], a: 0, e: "" },
-    { q: "Fission releases energy because the products have…", o: ["Higher binding energy per nucleon", "Lower binding energy per nucleon", "More mass", "More protons"], a: 0, e: "" },
-    { q: "What sustains a fission chain reaction?", o: ["Neutrons released by each fission", "Electrons", "Gamma rays", "Protons"], a: 0, e: "" },
-    { q: "The mass of a nucleus is ___ the mass of its separate nucleons.", o: ["Less than", "Greater than", "Equal to", "Twice"], a: 0, e: "" },
-    { q: "Peak of the binding energy per nucleon curve is about…", o: ["8.8 MeV", "1 MeV", "200 MeV", "931 MeV"], a: 0, e: "" }
+    { q: "Binding energy is…", o: ["Energy to separate a nucleus into nucleons", "Energy holding electrons", "Kinetic energy of nucleons", "Energy released by gamma"], a: 0, e: R`It also equals the mass defect × c².` },
+    { q: "Which nucleus is most stable?", o: ["Iron-56", "Uranium-235", "Hydrogen-1", "Helium-3"], a: 0, e: R`Iron-56 has the highest binding energy per nucleon.` },
+    { q: "1 u is equivalent to…", o: ["931.5 MeV", "1.66 MeV", "938 GeV", "0.511 MeV"], a: 0, e: R`\(1\ \text{u} \times c^2 = 931.5\ \text{MeV}\).` },
+    { q: "Why does fusion need high temperatures?", o: ["To overcome electrostatic repulsion between nuclei", "To split nuclei", "To produce neutrons", "To slow nuclei"], a: 0, e: R`Nuclei need huge kinetic energy to get close enough for the strong force to act.` },
+    { q: "Mass defect 0.010 u. Energy released?", o: ["9.3 MeV", "0.93 MeV", "93 MeV", "1.66 MeV"], a: 0, e: R`\(0.010 \times 931.5 = 9.3\ \text{MeV}\).` },
+    { q: "Fission releases energy because the products have…", o: ["Higher binding energy per nucleon", "Lower binding energy per nucleon", "More mass", "More protons"], a: 0, e: R`Moving towards iron increases binding energy per nucleon, releasing energy.` },
+    { q: "What sustains a fission chain reaction?", o: ["Neutrons released by each fission", "Electrons", "Gamma rays", "Protons"], a: 0, e: R`Each fission releases 2 or 3 neutrons that can cause further fissions.` },
+    { q: "The mass of a nucleus is ___ the mass of its separate nucleons.", o: ["Less than", "Greater than", "Equal to", "Twice"], a: 0, e: R`Some mass was converted to binding energy when the nucleus formed.` },
+    { q: "Peak of the binding energy per nucleon curve is about…", o: ["8.8 MeV", "1 MeV", "200 MeV", "931 MeV"], a: 0, e: R`It peaks near iron at about 8.8 MeV per nucleon.` }
   ],
   flashcards: [
     ["Mass deficit", "Mass of nucleons − mass of nucleus"],
@@ -345,15 +345,15 @@ S2Data.add({
 </table>
 `,
   quiz: [
-    { q: "Doubling the distance between two masses changes the force by…", o: ["× ¼", R`\(\times \tfrac12\)`, R`\(\times 2\)`, R`\(\times 4\)`], a: 0, e: "" },
-    { q: "Gravitational potential at infinity is…", o: ["Zero", "Infinite", "Negative", "Positive maximum"], a: 0, e: "" },
-    { q: "Gravitational potential is negative because…", o: ["Work must be done to move a mass to infinity", "Gravity repels", "Mass is negative", "g is negative"], a: 0, e: "" },
-    { q: "Orbital speed of a satellite?", o: ["√(GM/r)", "GM/r", "√(GMr)", "GM/r²"], a: 0, e: "" },
-    { q: "In Kepler's third law, T² ∝ …", o: ["r³", "r²", "r", "1/r"], a: 0, e: "" },
-    { q: "A geostationary satellite has a period of…", o: ["24 hours", "90 minutes", "1 year", "12 hours"], a: 0, e: "" },
-    { q: "g at Earth's surface is 9.81 N kg⁻¹. At twice Earth's radius from the centre?", o: ["2.45 N kg⁻¹", "4.9 N kg⁻¹", "9.81 N kg⁻¹", "19.6 N kg⁻¹"], a: 0, e: "" },
-    { q: "Which is unique to gravitational fields?", o: ["Always attractive", "Inverse square law", "Radial field", "Field lines"], a: 0, e: "" },
-    { q: "Gravitational field strength is…", o: ["Force per unit mass", "Mass per unit force", "Potential × r", "Energy per unit mass"], a: 0, e: "" }
+    { q: "Doubling the distance between two masses changes the force by…", o: ["× ¼", R`\(\times \tfrac12\)`, R`\(\times 2\)`, R`\(\times 4\)`], a: 0, e: R`\(F = \dfrac{GMm}{r^2} \propto \dfrac1{r^2}\).` },
+    { q: "Gravitational potential at infinity is…", o: ["Zero", "Infinite", "Negative", "Positive maximum"], a: 0, e: R`Potential is defined to be zero infinitely far away.` },
+    { q: "Gravitational potential is negative because…", o: ["Work must be done to move a mass to infinity", "Gravity repels", "Mass is negative", "g is negative"], a: 0, e: R`Gravity is attractive, so energy must be added to escape to zero.` },
+    { q: "Orbital speed of a satellite?", o: ["√(GM/r)", "GM/r", "√(GMr)", "GM/r²"], a: 0, e: R`\(\dfrac{GMm}{r^2} = \dfrac{mv^2}{r}\), so \(v = \sqrt{\dfrac{GM}{r}}\).` },
+    { q: "In Kepler's third law, T² ∝ …", o: ["r³", "r²", "r", "1/r"], a: 0, e: R`\(T^2 = \dfrac{4\pi^2}{GM}r^3\).` },
+    { q: "A geostationary satellite has a period of…", o: ["24 hours", "90 minutes", "1 year", "12 hours"], a: 0, e: R`It matches the Earth's rotation, so it stays above one point.` },
+    { q: "g at Earth's surface is 9.81 N kg⁻¹. At twice Earth's radius from the centre?", o: ["2.45 N kg⁻¹", "4.9 N kg⁻¹", "9.81 N kg⁻¹", "19.6 N kg⁻¹"], a: 0, e: R`\(g \propto \dfrac1{r^2}\): \(\dfrac{9.81}{4} = 2.45\ \text{N kg}^{-1}\).` },
+    { q: "Which is unique to gravitational fields?", o: ["Always attractive", "Inverse square law", "Radial field", "Field lines"], a: 0, e: R`Electric fields can repel; gravity only attracts.` },
+    { q: "Gravitational field strength is…", o: ["Force per unit mass", "Mass per unit force", "Potential × r", "Energy per unit mass"], a: 0, e: R`\(g = \dfrac Fm\).` }
   ],
   flashcards: [
     ["Newton's law of gravitation", R`\(F = Gm_{1}m_{2}/r^2\)`],
@@ -391,14 +391,14 @@ S2Data.add({
 <p><b>Example</b>: a 0.50 kg mass on a spring of k = 200 N m<sup>−1</sup>. \(T = 2 \pi √\)(0.5/200) = <b>0.31 s</b>. With amplitude 0.040 m, \(v_{max} = (2 \pi /0.314) \times 0.040\) = <b>0.80 m s<sup>−1</sup></b>.</p>
 `,
   quiz: [
-    { q: "The defining equation of SHM is…", o: [R`\(a = -\omega ^2x\)`, R`\(a = \omega ^2x\)`, R`\(v = \omega x\)`, R`\(x = \omega t\)`], a: 0, e: "" },
-    { q: "Where is the speed maximum in SHM?", o: ["At equilibrium", "At maximum displacement", "Halfway", "It's constant"], a: 0, e: "" },
-    { q: "Period of a 2.0 m pendulum (g = 9.81)?", o: ["2.8 s", "1.4 s", "0.45 s", "8.9 s"], a: 0, e: "" },
-    { q: "Increasing the mass on a spring by 4× changes T by…", o: [R`\(\times 2\)`, R`\(\times 4\)`, R`\(\times \tfrac12\)`, R`\(\times 16\)`], a: 0, e: "" },
-    { q: "Maximum acceleration of SHM with A = 0.10 m and ω = 5.0 rad s⁻¹?", o: ["2.5 m s⁻²", "0.50 m s⁻²", "0.25 m s⁻²", "50 m s⁻²"], a: 0, e: "" },
-    { q: "Acceleration and displacement in SHM are…", o: ["In antiphase", "In phase", "90° out of phase", "Unrelated"], a: 0, e: "" },
-    { q: "The period of an ideal SHM oscillator depends on amplitude…", o: ["Not at all", "Strongly", "Linearly", "Only for springs"], a: 0, e: "" },
-    { q: "Total energy of an SHM oscillator is proportional to…", o: ["A²", "A", "1/A", "√A"], a: 0, e: "" },
+    { q: "The defining equation of SHM is…", o: [R`\(a = -\omega ^2x\)`, R`\(a = \omega ^2x\)`, R`\(v = \omega x\)`, R`\(x = \omega t\)`], a: 0, e: R`Acceleration is proportional to displacement and directed towards equilibrium.` },
+    { q: "Where is the speed maximum in SHM?", o: ["At equilibrium", "At maximum displacement", "Halfway", "It's constant"], a: 0, e: R`All the energy is kinetic there.` },
+    { q: "Period of a 2.0 m pendulum (g = 9.81)?", o: ["2.8 s", "1.4 s", "0.45 s", "8.9 s"], a: 0, e: R`\(T = 2\pi\sqrt{\dfrac Lg} = 2\pi\sqrt{\dfrac{2.0}{9.81}} = 2.8\ \text{s}\).` },
+    { q: "Increasing the mass on a spring by 4× changes T by…", o: [R`\(\times 2\)`, R`\(\times 4\)`, R`\(\times \tfrac12\)`, R`\(\times 16\)`], a: 0, e: R`\(T = 2\pi\sqrt{\dfrac mk}\): \(\sqrt4 = 2\).` },
+    { q: "Maximum acceleration of SHM with A = 0.10 m and ω = 5.0 rad s⁻¹?", o: ["2.5 m s⁻²", "0.50 m s⁻²", "0.25 m s⁻²", "50 m s⁻²"], a: 0, e: R`\(a_{\max} = \omega^2 A = 25 \times 0.10 = 2.5\ \text{m s}^{-2}\).` },
+    { q: "Acceleration and displacement in SHM are…", o: ["In antiphase", "In phase", "90° out of phase", "Unrelated"], a: 0, e: R`\(a = -\omega^2 x\): the minus sign means opposite directions.` },
+    { q: "The period of an ideal SHM oscillator depends on amplitude…", o: ["Not at all", "Strongly", "Linearly", "Only for springs"], a: 0, e: R`The period is isochronous: independent of amplitude.` },
+    { q: "Total energy of an SHM oscillator is proportional to…", o: ["A²", "A", "1/A", "√A"], a: 0, e: R`\(E = \tfrac12 m\omega^2 A^2\).` },
     { q: "Maximum speed of SHM with A = 0.040 m and T = 0.50 s?", o: ["0.50 m s⁻¹", "0.080 m s⁻¹", "0.25 m s⁻¹", "1.0 m s⁻¹"], a: 0, e: R`\(2 \pi /0.5 \times 0.04\).` }
   ],
   flashcards: [
@@ -440,15 +440,15 @@ S2Data.add({
 <p>Buildings in earthquake zones use dampers (e.g. tuned mass dampers) and design natural frequencies away from typical seismic frequencies.</p>
 `,
   quiz: [
-    { q: "A free oscillation occurs at…", o: ["The natural frequency", "The driving frequency", "Any frequency", "Zero frequency"], a: 0, e: "" },
-    { q: "Resonance happens when…", o: ["Driving frequency = natural frequency", "Damping is maximum", "Amplitude is zero", "There's no driving force"], a: 0, e: "" },
-    { q: "Critical damping…", o: ["Returns to equilibrium fastest without oscillating", "Oscillates many times", "Never returns", "Increases amplitude"], a: 0, e: "" },
-    { q: "Increasing damping makes the resonance peak…", o: ["Lower and broader", "Higher and sharper", "Unchanged", "Disappear at once"], a: 0, e: "" },
-    { q: "Which uses resonance usefully?", o: ["MRI scanner", "Car suspension", "Earthquake damper", "Shock absorber"], a: 0, e: "" },
-    { q: "Car suspension is designed to be…", o: ["Critically damped", "Undamped", "Lightly damped", "Resonant"], a: 0, e: "" },
-    { q: "Damping causes…", o: ["Energy loss and decreasing amplitude", "Increasing frequency", "Increasing amplitude", "Resonance"], a: 0, e: "" },
-    { q: "In a forced oscillation, the system vibrates at…", o: ["The driving frequency", "Its natural frequency always", "Twice the driving frequency", "Zero"], a: 0, e: "" },
-    { q: "How can resonance damage in a bridge be prevented?", o: ["Adding dampers", "Making it lighter only", "Increasing driving force", "Removing supports"], a: 0, e: "" }
+    { q: "A free oscillation occurs at…", o: ["The natural frequency", "The driving frequency", "Any frequency", "Zero frequency"], a: 0, e: R`With no driving force, it oscillates at its own natural frequency.` },
+    { q: "Resonance happens when…", o: ["Driving frequency = natural frequency", "Damping is maximum", "Amplitude is zero", "There's no driving force"], a: 0, e: R`Energy transfer is greatest, so amplitude is largest.` },
+    { q: "Critical damping…", o: ["Returns to equilibrium fastest without oscillating", "Oscillates many times", "Never returns", "Increases amplitude"], a: 0, e: R`Light damping oscillates; heavy damping returns slowly.` },
+    { q: "Increasing damping makes the resonance peak…", o: ["Lower and broader", "Higher and sharper", "Unchanged", "Disappear at once"], a: 0, e: R`The peak falls in height and widens, and shifts slightly lower in frequency.` },
+    { q: "Which uses resonance usefully?", o: ["MRI scanner", "Car suspension", "Earthquake damper", "Shock absorber"], a: 0, e: R`Hydrogen nuclei resonate with radio waves in a magnetic field.` },
+    { q: "Car suspension is designed to be…", o: ["Critically damped", "Undamped", "Lightly damped", "Resonant"], a: 0, e: R`The car returns to level quickly without bouncing.` },
+    { q: "Damping causes…", o: ["Energy loss and decreasing amplitude", "Increasing frequency", "Increasing amplitude", "Resonance"], a: 0, e: R`Energy is transferred to the surroundings, often as heat.` },
+    { q: "In a forced oscillation, the system vibrates at…", o: ["The driving frequency", "Its natural frequency always", "Twice the driving frequency", "Zero"], a: 0, e: R`After settling, it follows the driver.` },
+    { q: "How can resonance damage in a bridge be prevented?", o: ["Adding dampers", "Making it lighter only", "Increasing driving force", "Removing supports"], a: 0, e: R`Dampers absorb energy and reduce the resonant amplitude.` }
   ],
   flashcards: [
     ["Free oscillation", "Oscillates at natural frequency; no driving force"],

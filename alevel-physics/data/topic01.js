@@ -34,15 +34,15 @@ S2Data.add({
 <div class="box box-key"><span class="box-title">Straight-line graphs</span>Rearrange into \(y = mx + c\). For example, for \(v^{2} = u^{2} + 2as\), plotting v<sup>2</sup> against s gives gradient 2a and intercept u<sup>2</sup>. For a power \(law y = kx^{n}\), plot log y against log x: the gradient is n.</div>
 `,
   quiz: [
-    { q: "Which is an SI base unit?", o: ["Ampere", "Newton", "Volt", "Joule"], a: 0, e: "" },
-    { q: "Express the joule in base units.", o: ["kg m² s⁻²", "kg m s⁻²", "kg m² s⁻¹", "kg m⁻¹ s⁻²"], a: 0, e: "" },
-    { q: "Which is a vector?", o: ["Momentum", "Speed", "Energy", "Mass"], a: 0, e: "" },
+    { q: "Which is an SI base unit?", o: ["Ampere", "Newton", "Volt", "Joule"], a: 0, e: R`The seven base units are kg, m, s, A, K, mol and cd. The others are derived.` },
+    { q: "Express the joule in base units.", o: ["kg m² s⁻²", "kg m s⁻²", "kg m² s⁻¹", "kg m⁻¹ s⁻²"], a: 0, e: R`\(\text{J} = \text{N m} = (\text{kg m s}^{-2}) \times \text{m} = \text{kg m}^2\,\text{s}^{-2}\).` },
+    { q: "Which is a vector?", o: ["Momentum", "Speed", "Energy", "Mass"], a: 0, e: R`\(p = mv\) has direction because velocity does.` },
     { q: "A force of 20 N acts at 30° above the horizontal. Its vertical component is…", o: ["10 N", "17.3 N", "20 N", "11.5 N"], a: 0, e: "20 sin 30°." },
     { q: "Length 2.0 ± 0.1 m, width 1.0 ± 0.1 m. % uncertainty in area?", o: ["15%", "10%", "5%", "0.2%"], a: 0, e: "5% + 10%." },
-    { q: "Radius has 2% uncertainty. % uncertainty in the area πr²?", o: ["4%", "2%", "1%", "8%"], a: 0, e: "" },
-    { q: "Which error is reduced by repeating readings?", o: ["Random", "Systematic", "Zero error", "Calibration error"], a: 0, e: "" },
-    { q: "To find n in y = kxⁿ, plot…", o: ["log y against log x", "y against x", "y against xⁿ", "log y against x"], a: 0, e: "" },
-    { q: "1 GHz equals…", o: ["10⁹ Hz", "10⁶ Hz", "10¹² Hz", "10³ Hz"], a: 0, e: "" }
+    { q: "Radius has 2% uncertainty. % uncertainty in the area πr²?", o: ["4%", "2%", "1%", "8%"], a: 0, e: R`Squaring doubles the percentage uncertainty: \(2 \times 2\% = 4\%\). (\(\pi\) has none.)` },
+    { q: "Which error is reduced by repeating readings?", o: ["Random", "Systematic", "Zero error", "Calibration error"], a: 0, e: R`Averaging repeats reduces random error; systematic error stays.` },
+    { q: "To find n in y = kxⁿ, plot…", o: ["log y against log x", "y against x", "y against xⁿ", "log y against x"], a: 0, e: R`\(\log y = n\log x + \log k\), a straight line with gradient \(n\).` },
+    { q: "1 GHz equals…", o: ["10⁹ Hz", "10⁶ Hz", "10¹² Hz", "10³ Hz"], a: 0, e: R`Giga = \(10^9\).` }
   ],
   flashcards: [
     ["Six SI base units (in this spec)", "kg, m, s, A, K, mol"],
@@ -84,15 +84,15 @@ S2Data.add({
 <p>Drop a ball through light gates or use an electromagnet and timer. Measure t for several heights h, then plot h against t<sup>2</sup>: gradient = g/2. Sources of error: reaction time (if timed by hand), air resistance, delay in the magnet releasing.</p>
 `,
   quiz: [
-    { q: "What does the area under a velocity–time graph represent?", o: ["Displacement", "Acceleration", "Velocity", "Force"], a: 0, e: "" },
-    { q: "A car accelerates from 10 to 30 m s⁻¹ in 4.0 s. Acceleration?", o: ["5.0 m s⁻²", "7.5 m s⁻²", "10 m s⁻²", "2.5 m s⁻²"], a: 0, e: "" },
+    { q: "What does the area under a velocity–time graph represent?", o: ["Displacement", "Acceleration", "Velocity", "Force"], a: 0, e: R`Area = velocity × time = displacement.` },
+    { q: "A car accelerates from 10 to 30 m s⁻¹ in 4.0 s. Acceleration?", o: ["5.0 m s⁻²", "7.5 m s⁻²", "10 m s⁻²", "2.5 m s⁻²"], a: 0, e: R`\(a = \dfrac{30 - 10}{4.0} = 5.0\ \text{m s}^{-2}\).` },
     { q: "An object falls from rest for 3.0 s. Distance fallen (g = 9.81)?", o: ["44 m", "29 m", "88 m", "15 m"], a: 0, e: R`\(\tfrac12 \times 9.81 \times 9\).` },
-    { q: "For a projectile (no air resistance), which stays constant?", o: ["Horizontal velocity", "Vertical velocity", "Speed", "Height"], a: 0, e: "" },
-    { q: "At the top of its path, a projectile's vertical velocity is…", o: ["Zero", "Maximum", "Equal to horizontal velocity", "g"], a: 0, e: "" },
-    { q: "Which suvat equation has no t?", o: [R`\(v^2 = u^2 + 2as\)`, R`\(v = u + at\)`, R`\(s = ut + \tfrac12at^2\)`, R`\(s = \tfrac12(u + v)t\)`], a: 0, e: "" },
-    { q: "A ball is thrown at 20 m s⁻¹ at 30° above horizontal. Initial vertical velocity?", o: ["10 m s⁻¹", "17.3 m s⁻¹", "20 m s⁻¹", "11.5 m s⁻¹"], a: 0, e: "" },
-    { q: "Gradient of a displacement–time graph gives…", o: ["Velocity", "Acceleration", "Distance", "Force"], a: 0, e: "" },
-    { q: "Plotting h against t² for a falling object gives gradient…", o: ["g/2", "g", "2g", "1/g"], a: 0, e: "" }
+    { q: "For a projectile (no air resistance), which stays constant?", o: ["Horizontal velocity", "Vertical velocity", "Speed", "Height"], a: 0, e: R`No horizontal force acts, so horizontal velocity doesn't change.` },
+    { q: "At the top of its path, a projectile's vertical velocity is…", o: ["Zero", "Maximum", "Equal to horizontal velocity", "g"], a: 0, e: R`It momentarily stops rising before falling; horizontal velocity continues.` },
+    { q: "Which suvat equation has no t?", o: [R`\(v^2 = u^2 + 2as\)`, R`\(v = u + at\)`, R`\(s = ut + \tfrac12at^2\)`, R`\(s = \tfrac12(u + v)t\)`], a: 0, e: R`\(v^2 = u^2 + 2as\) links \(v, u, a, s\) without \(t\).` },
+    { q: "A ball is thrown at 20 m s⁻¹ at 30° above horizontal. Initial vertical velocity?", o: ["10 m s⁻¹", "17.3 m s⁻¹", "20 m s⁻¹", "11.5 m s⁻¹"], a: 0, e: R`\(u_y = 20\sin 30^\circ = 10\ \text{m s}^{-1}\).` },
+    { q: "Gradient of a displacement–time graph gives…", o: ["Velocity", "Acceleration", "Distance", "Force"], a: 0, e: R`Rate of change of displacement is velocity.` },
+    { q: "Plotting h against t² for a falling object gives gradient…", o: ["g/2", "g", "2g", "1/g"], a: 0, e: R`From rest, \(h = \tfrac12 g t^2\), so plotting \(h\) against \(t^2\) gives gradient \(\frac g2\).` }
   ],
   flashcards: [
     ["Gradient of s–t graph", "Velocity"],
@@ -133,15 +133,15 @@ S2Data.add({
 <p><b>Example</b>: a uniform 2.0 m plank of weight 100 N rests on a pivot 0.5 m from one end. What force at that end balances it? Weight acts 0.5 m beyond the pivot: \(F \times 0.5 = 100 \times 0.5\), so F = <b>100 N</b>.</p>
 `,
   quiz: [
-    { q: "Newton's first law says an object…", o: ["Keeps constant velocity unless a resultant force acts", "Always slows down", "Accelerates with constant force always", "Exerts an equal force back"], a: 0, e: "" },
-    { q: "A 2.0 kg mass has a resultant force of 10 N. Acceleration?", o: ["5.0 m s⁻²", "20 m s⁻²", "0.2 m s⁻²", "12 m s⁻²"], a: 0, e: "" },
-    { q: "A Newton's third law pair of forces…", o: ["Act on different objects and are the same type", "Act on the same object", "Are different types", "Always cancel out"], a: 0, e: "" },
-    { q: "Component of weight down a slope at angle θ?", o: ["mg sin θ", "mg cos θ", "mg tan θ", "mg"], a: 0, e: "" },
-    { q: "At terminal velocity, the resultant force is…", o: ["Zero", "Equal to weight", "Maximum", "Equal to drag"], a: 0, e: "" },
-    { q: "A 30 N force acts 0.40 m from a pivot (perpendicular). Moment?", o: ["12 N m", "75 N m", "30 N m", "7.5 N m"], a: 0, e: "" },
-    { q: "For equilibrium, an object needs…", o: ["No resultant force and no resultant moment", "Only no resultant force", "Only balanced moments", "To be at rest"], a: 0, e: "" },
-    { q: "Centre of gravity is…", o: ["The point where the weight appears to act", "Always at the base", "Where the mass is largest", "The pivot"], a: 0, e: "" },
-    { q: "Weight of a 65 kg person (g = 9.81)?", o: ["638 N", "65 N", "6.6 N", "650 kg"], a: 0, e: "" }
+    { q: "Newton's first law says an object…", o: ["Keeps constant velocity unless a resultant force acts", "Always slows down", "Accelerates with constant force always", "Exerts an equal force back"], a: 0, e: R`No resultant force means no change in velocity.` },
+    { q: "A 2.0 kg mass has a resultant force of 10 N. Acceleration?", o: ["5.0 m s⁻²", "20 m s⁻²", "0.2 m s⁻²", "12 m s⁻²"], a: 0, e: R`\(a = \dfrac{F}{m} = \dfrac{10}{2.0} = 5.0\ \text{m s}^{-2}\).` },
+    { q: "A Newton's third law pair of forces…", o: ["Act on different objects and are the same type", "Act on the same object", "Are different types", "Always cancel out"], a: 0, e: R`Third-law pairs are equal, opposite, the same type and act on different bodies.` },
+    { q: "Component of weight down a slope at angle θ?", o: ["mg sin θ", "mg cos θ", "mg tan θ", "mg"], a: 0, e: R`Resolve along the slope: \(mg\sin\theta\); perpendicular: \(mg\cos\theta\).` },
+    { q: "At terminal velocity, the resultant force is…", o: ["Zero", "Equal to weight", "Maximum", "Equal to drag"], a: 0, e: R`Drag balances weight, so there's no acceleration.` },
+    { q: "A 30 N force acts 0.40 m from a pivot (perpendicular). Moment?", o: ["12 N m", "75 N m", "30 N m", "7.5 N m"], a: 0, e: R`\(30 \times 0.40 = 12\ \text{N m}\).` },
+    { q: "For equilibrium, an object needs…", o: ["No resultant force and no resultant moment", "Only no resultant force", "Only balanced moments", "To be at rest"], a: 0, e: R`Then it neither accelerates nor starts to rotate.` },
+    { q: "Centre of gravity is…", o: ["The point where the weight appears to act", "Always at the base", "Where the mass is largest", "The pivot"], a: 0, e: R`For a uniform object it's at the geometric centre.` },
+    { q: "Weight of a 65 kg person (g = 9.81)?", o: ["638 N", "65 N", "6.6 N", "650 kg"], a: 0, e: R`\(W = mg = 65 \times 9.81 = 638\ \text{N}\).` }
   ],
   flashcards: [
     ["Newton's first law", "Constant velocity (or rest) unless a resultant force acts"],
@@ -175,15 +175,15 @@ S2Data.add({
 <p><b>Example</b>: a motor lifts a 50 kg load 6.0 m in 12 s. Useful power = 50 × 9.81 × 6.0 ÷ 12 = 245 W. If the input power is 400 W, efficiency = 245 ÷ 400 = <b>61%</b>.</p>
 `,
   quiz: [
-    { q: "A 50 N force pushes a box 4.0 m in the force's direction. Work done?", o: ["200 J", "12.5 J", "54 J", "0.08 J"], a: 0, e: "" },
+    { q: "A 50 N force pushes a box 4.0 m in the force's direction. Work done?", o: ["200 J", "12.5 J", "54 J", "0.08 J"], a: 0, e: R`\(W = Fs = 50 \times 4.0 = 200\ \text{J}\).` },
     { q: "A force of 10 N at 60° to the motion moves an object 5.0 m. Work done?", o: ["25 J", "50 J", "43 J", "10 J"], a: 0, e: R`\(10 \times 5 \times \cos 60^\circ\).` },
-    { q: "KE of a 2.0 kg mass at 3.0 m s⁻¹?", o: ["9.0 J", "6.0 J", "18 J", "3.0 J"], a: 0, e: "" },
-    { q: "GPE gained by a 10 kg mass raised 2.0 m?", o: ["196 J", "20 J", "98 J", "49 J"], a: 0, e: "" },
+    { q: "KE of a 2.0 kg mass at 3.0 m s⁻¹?", o: ["9.0 J", "6.0 J", "18 J", "3.0 J"], a: 0, e: R`\(E_k = \tfrac12 mv^2 = \tfrac12 \times 2.0 \times 3.0^2 = 9.0\ \text{J}\).` },
+    { q: "GPE gained by a 10 kg mass raised 2.0 m?", o: ["196 J", "20 J", "98 J", "49 J"], a: 0, e: R`\(\Delta E_p = mg\Delta h = 10 \times 9.81 \times 2.0 = 196\ \text{J}\).` },
     { q: "Speed after falling 5.0 m from rest (no drag)?", o: ["9.9 m s⁻¹", "49 m s⁻¹", "7.0 m s⁻¹", "98 m s⁻¹"], a: 0, e: R`\(\sqrt{2 \times 9.81 \times 5}\).` },
     { q: "A car's engine provides 2000 N at 25 m s⁻¹. Power?", o: ["50 kW", "80 W", "2.0 kW", "12.5 kW"], a: 0, e: R`\(P = Fv\).` },
-    { q: "Efficiency of a device with 300 J input and 240 J useful output?", o: ["80%", "125%", "60%", "20%"], a: 0, e: "" },
-    { q: "Unit of power?", o: ["Watt", "Joule", "Newton", "Volt"], a: 0, e: "" },
-    { q: "Doubling speed changes kinetic energy by a factor of…", o: ["4", "2", "8", "½"], a: 0, e: "" }
+    { q: "Efficiency of a device with 300 J input and 240 J useful output?", o: ["80%", "125%", "60%", "20%"], a: 0, e: R`\(\dfrac{240}{300} \times 100 = 80\%\).` },
+    { q: "Unit of power?", o: ["Watt", "Joule", "Newton", "Volt"], a: 0, e: R`\(1\ \text{W} = 1\ \text{J s}^{-1}\).` },
+    { q: "Doubling speed changes kinetic energy by a factor of…", o: ["4", "2", "8", "½"], a: 0, e: R`\(E_k \propto v^2\), so doubling \(v\) gives \(2^2 = 4\) times.` }
   ],
   flashcards: [
     ["Work done", "W = FΔs (force × distance in direction of force)"],

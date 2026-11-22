@@ -30,15 +30,15 @@ S2Data.add({
 <p>Speed of a transverse wave on a string: <b>\(v = √\)(T/μ)</b>, where T is the tension and μ is the mass per unit length.</p>
 `,
   quiz: [
-    { q: "A wave has frequency 50 Hz and wavelength 4.0 m. Speed?", o: ["200 m s⁻¹", "12.5 m s⁻¹", "0.08 m s⁻¹", "54 m s⁻¹"], a: 0, e: "" },
-    { q: "Which wave can be polarised?", o: ["Light", "Sound in air", "Ultrasound", "P-waves"], a: 0, e: "" },
-    { q: "Points half a wavelength apart are…", o: ["In antiphase", "In phase", "90° out of phase", "Unrelated"], a: 0, e: "" },
-    { q: "Phase difference for a path difference of λ/4?", o: ["π/2 rad", "π rad", "2π rad", "π/4 rad"], a: 0, e: "" },
-    { q: "Sound is…", o: ["Longitudinal", "Transverse", "Electromagnetic", "Polarisable"], a: 0, e: "" },
-    { q: "Why do polarising sunglasses reduce glare?", o: ["Reflected light is partly polarised", "They absorb all light", "They refract light", "They diffract light"], a: 0, e: "" },
-    { q: "Period of a 250 Hz wave?", o: ["4.0 ms", "0.25 s", "250 s", "40 ms"], a: 0, e: "" },
-    { q: "Speed of a wave on a string depends on…", o: ["Tension and mass per unit length", "Amplitude only", "Frequency only", "Colour"], a: 0, e: "" },
-    { q: "Polarisation is evidence that light is…", o: ["Transverse", "Longitudinal", "A particle", "Slow"], a: 0, e: "" }
+    { q: "A wave has frequency 50 Hz and wavelength 4.0 m. Speed?", o: ["200 m s⁻¹", "12.5 m s⁻¹", "0.08 m s⁻¹", "54 m s⁻¹"], a: 0, e: R`\(v = f\lambda = 50 \times 4.0 = 200\ \text{m s}^{-1}\).` },
+    { q: "Which wave can be polarised?", o: ["Light", "Sound in air", "Ultrasound", "P-waves"], a: 0, e: R`Only transverse waves can be polarised.` },
+    { q: "Points half a wavelength apart are…", o: ["In antiphase", "In phase", "90° out of phase", "Unrelated"], a: 0, e: R`Half a wavelength is a phase difference of \(\pi\).` },
+    { q: "Phase difference for a path difference of λ/4?", o: ["π/2 rad", "π rad", "2π rad", "π/4 rad"], a: 0, e: R`\(\phi = \dfrac{2\pi \times \text{path difference}}{\lambda} = \dfrac{2\pi}{4} = \dfrac\pi2\).` },
+    { q: "Sound is…", o: ["Longitudinal", "Transverse", "Electromagnetic", "Polarisable"], a: 0, e: R`Its oscillations are parallel to the direction of travel.` },
+    { q: "Why do polarising sunglasses reduce glare?", o: ["Reflected light is partly polarised", "They absorb all light", "They refract light", "They diffract light"], a: 0, e: R`Polaroid blocks the horizontally polarised component of reflected light.` },
+    { q: "Period of a 250 Hz wave?", o: ["4.0 ms", "0.25 s", "250 s", "40 ms"], a: 0, e: R`\(T = \dfrac1f = \dfrac{1}{250} = 4.0 \times 10^{-3}\ \text{s}\).` },
+    { q: "Speed of a wave on a string depends on…", o: ["Tension and mass per unit length", "Amplitude only", "Frequency only", "Colour"], a: 0, e: R`\(v = \sqrt{\dfrac{T}{\mu}}\).` },
+    { q: "Polarisation is evidence that light is…", o: ["Transverse", "Longitudinal", "A particle", "Slow"], a: 0, e: R`Longitudinal waves can't be polarised.` }
   ],
   flashcards: [
     ["Wave equation", R`\(v = f\lambda\)`],
@@ -86,15 +86,15 @@ S2Data.add({
 <p>Measuring the speed of sound: use a resonance tube or a microwave/sound reflector to find nodes; distance between nodes = λ/2, then \(v = f\lambda\).</p>
 `,
   quiz: [
-    { q: "The distance between adjacent nodes is…", o: ["λ/2", "λ", "λ/4", "2λ"], a: 0, e: "" },
-    { q: "Coherent sources have…", o: ["Same frequency and constant phase difference", "Same amplitude only", "Different frequencies", "No phase relationship"], a: 0, e: "" },
-    { q: "A string 0.80 m long vibrates in its fundamental mode. Wavelength?", o: ["1.6 m", "0.80 m", "0.40 m", "3.2 m"], a: 0, e: "" },
-    { q: "Which is true of a stationary wave?", o: ["No energy is transferred along it", "All points have the same amplitude", "Phase varies continuously", "It needs only one wave"], a: 0, e: "" },
-    { q: "Fundamental frequency 110 Hz. Frequency of the third harmonic (string)?", o: ["330 Hz", "220 Hz", "36.7 Hz", "440 Hz"], a: 0, e: "" },
-    { q: "Increasing the tension in a string makes the fundamental frequency…", o: ["Higher", "Lower", "Unchanged", "Zero"], a: 0, e: "" },
-    { q: "In a pipe closed at one end, the fundamental has L = …", o: ["λ/4", "λ/2", "λ", "2λ"], a: 0, e: "" },
-    { q: "Points on either side of a node are…", o: ["In antiphase", "In phase", "90° out of phase", "At antinodes"], a: 0, e: "" },
-    { q: "Two waves meeting in antiphase with equal amplitude give…", o: ["Zero displacement", "Double amplitude", "A stationary wave", "Polarisation"], a: 0, e: "" }
+    { q: "The distance between adjacent nodes is…", o: ["λ/2", "λ", "λ/4", "2λ"], a: 0, e: R`Nodes are half a wavelength apart.` },
+    { q: "Coherent sources have…", o: ["Same frequency and constant phase difference", "Same amplitude only", "Different frequencies", "No phase relationship"], a: 0, e: R`This gives a steady interference pattern.` },
+    { q: "A string 0.80 m long vibrates in its fundamental mode. Wavelength?", o: ["1.6 m", "0.80 m", "0.40 m", "3.2 m"], a: 0, e: R`Fundamental: \(L = \dfrac\lambda2\), so \(\lambda = 2 \times 0.80 = 1.6\ \text{m}\).` },
+    { q: "Which is true of a stationary wave?", o: ["No energy is transferred along it", "All points have the same amplitude", "Phase varies continuously", "It needs only one wave"], a: 0, e: R`Energy is stored, not transferred, in a stationary wave.` },
+    { q: "Fundamental frequency 110 Hz. Frequency of the third harmonic (string)?", o: ["330 Hz", "220 Hz", "36.7 Hz", "440 Hz"], a: 0, e: R`\(3 \times 110 = 330\ \text{Hz}\).` },
+    { q: "Increasing the tension in a string makes the fundamental frequency…", o: ["Higher", "Lower", "Unchanged", "Zero"], a: 0, e: R`Higher tension means higher wave speed; \(f = \dfrac{v}{2L}\) rises.` },
+    { q: "In a pipe closed at one end, the fundamental has L = …", o: ["λ/4", "λ/2", "λ", "2λ"], a: 0, e: R`One node at the closed end and one antinode at the open end.` },
+    { q: "Points on either side of a node are…", o: ["In antiphase", "In phase", "90° out of phase", "At antinodes"], a: 0, e: R`Points in adjacent loops move in opposite directions.` },
+    { q: "Two waves meeting in antiphase with equal amplitude give…", o: ["Zero displacement", "Double amplitude", "A stationary wave", "Polarisation"], a: 0, e: R`Destructive interference: the displacements cancel.` }
   ],
   flashcards: [
     ["Principle of superposition", "Resultant displacement = vector sum of individual displacements"],
@@ -134,15 +134,15 @@ S2Data.add({
 <p><b>Example</b>: an object 30 cm from a lens of focal length 10 cm. \(1/v = 1/10 - 1/30 = 2/30\), so v = <b>15 cm</b> (real, inverted), \(m = 0.5\).</p>
 `,
   quiz: [
-    { q: "Light travels at 2.0 × 10⁸ m s⁻¹ in a glass. Refractive index?", o: ["1.5", "0.67", "2.0", "6.0"], a: 0, e: "" },
+    { q: "Light travels at 2.0 × 10⁸ m s⁻¹ in a glass. Refractive index?", o: ["1.5", "0.67", "2.0", "6.0"], a: 0, e: R`\(n = \dfrac cv = \dfrac{3.0 \times 10^8}{2.0 \times 10^8} = 1.5\).` },
     { q: "Critical angle for glass of n = 1.50 (to air)?", o: ["41.8°", "48.6°", "33.7°", "90°"], a: 0, e: R`\(\sin C = 1/1.5\).` },
-    { q: "TIR can only happen when light goes from…", o: ["Higher to lower refractive index", "Lower to higher", "Air to glass", "Any medium"], a: 0, e: "" },
-    { q: "Light enters glass (n = 1.5) at 30° in air. Angle of refraction?", o: ["19.5°", "48.6°", "30°", "45°"], a: 0, e: "" },
-    { q: "Power of a converging lens of focal length 25 cm?", o: ["+4.0 D", "+0.04 D", "−4.0 D", "+25 D"], a: 0, e: "" },
-    { q: "Why do optical fibres have a cladding?", o: ["Protects core and prevents signal crossover", "Increases speed of light", "Makes TIR impossible", "Adds colour"], a: 0, e: "" },
-    { q: "Object 20 cm from a lens of f = 10 cm. Image distance?", o: ["20 cm", "10 cm", "6.7 cm", "−20 cm"], a: 0, e: "" },
-    { q: "Modal dispersion is reduced by…", o: ["A narrower core", "A wider core", "White light", "Thicker cladding only"], a: 0, e: "" },
-    { q: "A virtual image…", o: ["Can't be projected onto a screen", "Is always inverted", "Has positive v", "Only forms with mirrors"], a: 0, e: "" }
+    { q: "TIR can only happen when light goes from…", o: ["Higher to lower refractive index", "Lower to higher", "Air to glass", "Any medium"], a: 0, e: R`Light must be slowing down and bending away, towards a less dense medium.` },
+    { q: "Light enters glass (n = 1.5) at 30° in air. Angle of refraction?", o: ["19.5°", "48.6°", "30°", "45°"], a: 0, e: R`\(\sin r = \dfrac{\sin 30^\circ}{1.5} = 0.333\), so \(r = 19.5^\circ\).` },
+    { q: "Power of a converging lens of focal length 25 cm?", o: ["+4.0 D", "+0.04 D", "−4.0 D", "+25 D"], a: 0, e: R`\(P = \dfrac1f = \dfrac{1}{0.25} = +4.0\ \text{D}\).` },
+    { q: "Why do optical fibres have a cladding?", o: ["Protects core and prevents signal crossover", "Increases speed of light", "Makes TIR impossible", "Adds colour"], a: 0, e: R`It keeps the core clean and stops light leaking between fibres.` },
+    { q: "Object 20 cm from a lens of f = 10 cm. Image distance?", o: ["20 cm", "10 cm", "6.7 cm", "−20 cm"], a: 0, e: R`\(\dfrac1v = \dfrac1f - \dfrac1u = \dfrac1{10} - \dfrac1{20}\), so \(v = 20\) cm.` },
+    { q: "Modal dispersion is reduced by…", o: ["A narrower core", "A wider core", "White light", "Thicker cladding only"], a: 0, e: R`Fewer possible paths means less spreading of the pulse.` },
+    { q: "A virtual image…", o: ["Can't be projected onto a screen", "Is always inverted", "Has positive v", "Only forms with mirrors"], a: 0, e: R`The rays only appear to come from it; they don't meet there.` }
   ],
   flashcards: [
     ["Refractive index", R`\(n = c/v\)`],
@@ -182,15 +182,15 @@ S2Data.add({
 <p>Increasing the accelerating voltage makes electrons faster, so λ is shorter and the rings get smaller.</p>
 `,
   quiz: [
-    { q: "Diffraction is greatest when the gap is…", o: ["About the same as the wavelength", "Much larger than λ", "Much smaller than the wave amplitude", "Zero"], a: 0, e: "" },
-    { q: "A grating has 500 lines per mm. Slit spacing d?", o: ["2.0 × 10⁻⁶ m", "5.0 × 10⁻⁴ m", "2.0 × 10⁻³ m", "500 m"], a: 0, e: "" },
+    { q: "Diffraction is greatest when the gap is…", o: ["About the same as the wavelength", "Much larger than λ", "Much smaller than the wave amplitude", "Zero"], a: 0, e: R`Spreading is most noticeable when the gap is similar to the wavelength.` },
+    { q: "A grating has 500 lines per mm. Slit spacing d?", o: ["2.0 × 10⁻⁶ m", "5.0 × 10⁻⁴ m", "2.0 × 10⁻³ m", "500 m"], a: 0, e: R`\(d = \dfrac{1}{500\,000\ \text{m}^{-1}} = 2.0 \times 10^{-6}\ \text{m}\).` },
     { q: "nλ = d sin θ; d = 2.0 × 10⁻⁶ m, λ = 500 nm. Highest order?", o: ["4", "2", "5", "3"], a: 0, e: R`\(d/\lambda = 4\).` },
-    { q: "Condition for a bright fringe?", o: ["Path difference = nλ", "Path difference = (n + ½)λ", "Same amplitude", "Antiphase"], a: 0, e: "" },
-    { q: "Electron diffraction shows that electrons…", o: ["Have wave properties", "Have charge", "Have mass", "Are particles only"], a: 0, e: "" },
-    { q: "Increasing the speed of electrons makes their de Broglie wavelength…", o: ["Shorter", "Longer", "Unchanged", "Zero"], a: 0, e: "" },
-    { q: "de Broglie wavelength of an electron with momentum 6.63 × 10⁻²⁴ kg m s⁻¹?", o: ["1.0 × 10⁻¹⁰ m", "1.0 × 10⁻⁹ m", "1.0 × 10⁻¹⁴ m", "6.6 m"], a: 0, e: "" },
-    { q: "In white-light grating spectra, which colour is deviated most?", o: ["Red", "Blue", "Green", "All equally"], a: 0, e: "" },
-    { q: "Young's double-slit fringe spacing w ≈ …", o: ["λD/s", "λs/D", "sD/λ", "λ/sD"], a: 0, e: "" }
+    { q: "Condition for a bright fringe?", o: ["Path difference = nλ", "Path difference = (n + ½)λ", "Same amplitude", "Antiphase"], a: 0, e: R`Waves arrive in phase when the path difference is a whole number of wavelengths.` },
+    { q: "Electron diffraction shows that electrons…", o: ["Have wave properties", "Have charge", "Have mass", "Are particles only"], a: 0, e: R`Diffraction is a wave behaviour.` },
+    { q: "Increasing the speed of electrons makes their de Broglie wavelength…", o: ["Shorter", "Longer", "Unchanged", "Zero"], a: 0, e: R`\(\lambda = \dfrac hp = \dfrac{h}{mv}\): faster means shorter.` },
+    { q: "de Broglie wavelength of an electron with momentum 6.63 × 10⁻²⁴ kg m s⁻¹?", o: ["1.0 × 10⁻¹⁰ m", "1.0 × 10⁻⁹ m", "1.0 × 10⁻¹⁴ m", "6.6 m"], a: 0, e: R`\(\lambda = \dfrac hp = \dfrac{6.63 \times 10^{-34}}{6.63 \times 10^{-24}} = 1.0 \times 10^{-10}\ \text{m}\).` },
+    { q: "In white-light grating spectra, which colour is deviated most?", o: ["Red", "Blue", "Green", "All equally"], a: 0, e: R`\(d\sin\theta = n\lambda\): longest wavelength (red) gives the largest \(\theta\).` },
+    { q: "Young's double-slit fringe spacing w ≈ …", o: ["λD/s", "λs/D", "sD/λ", "λ/sD"], a: 0, e: R`\(w = \dfrac{\lambda D}{s}\).` }
   ],
   flashcards: [
     ["Diffraction", "Spreading of waves through a gap or around an obstacle"],
@@ -234,14 +234,14 @@ S2Data.add({
 <p>Intensity I = P/A (W m<sup>−2</sup>). For a point source, \(I = P/4\pi r^{2}\).</p>
 `,
   quiz: [
-    { q: "Energy of a photon of frequency 5.0 × 10¹⁴ Hz?", o: ["3.3 × 10⁻¹⁹ J", "3.3 × 10⁻²⁰ J", "7.5 × 10⁴⁸ J", "1.3 × 10⁻⁴⁸ J"], a: 0, e: "" },
-    { q: "Increasing the intensity of light above threshold increases…", o: ["The number of photoelectrons per second", "Their maximum KE", "The work function", "The threshold frequency"], a: 0, e: "" },
+    { q: "Energy of a photon of frequency 5.0 × 10¹⁴ Hz?", o: ["3.3 × 10⁻¹⁹ J", "3.3 × 10⁻²⁰ J", "7.5 × 10⁴⁸ J", "1.3 × 10⁻⁴⁸ J"], a: 0, e: R`\(E = hf = 6.63 \times 10^{-34} \times 5.0 \times 10^{14} = 3.3 \times 10^{-19}\ \text{J}\).` },
+    { q: "Increasing the intensity of light above threshold increases…", o: ["The number of photoelectrons per second", "Their maximum KE", "The work function", "The threshold frequency"], a: 0, e: R`More photons per second release more electrons, but not faster ones.` },
     { q: "Work function φ = 2.0 eV. Threshold frequency?", o: ["4.8 × 10¹⁴ Hz", "3.0 × 10¹⁴ Hz", "2.0 × 10¹⁵ Hz", "1.6 × 10¹⁴ Hz"], a: 0, e: "3.2 × 10⁻¹⁹ ÷ 6.63 × 10⁻³⁴." },
-    { q: "Gradient of a graph of max KE against frequency?", o: ["h", "φ", "e", "c"], a: 0, e: "" },
-    { q: "1 eV in joules?", o: ["1.60 × 10⁻¹⁹ J", "9.11 × 10⁻³¹ J", "6.63 × 10⁻³⁴ J", "1 J"], a: 0, e: "" },
-    { q: "An electron drops from −3.4 eV to −13.6 eV. Photon energy?", o: ["10.2 eV", "17.0 eV", "3.4 eV", "13.6 eV"], a: 0, e: "" },
-    { q: "Why does wave theory fail to explain the photoelectric effect?", o: ["It predicts emission at any frequency given enough intensity", "It predicts no emission at all", "It explains everything", "It ignores electrons"], a: 0, e: "" },
-    { q: "Line spectra are evidence for…", o: ["Discrete energy levels", "Wave-particle duality only", "Continuous energies", "Polarisation"], a: 0, e: "" },
+    { q: "Gradient of a graph of max KE against frequency?", o: ["h", "φ", "e", "c"], a: 0, e: R`\(E_{k,\max} = hf - \phi\): gradient \(h\), intercept \(-\phi\).` },
+    { q: "1 eV in joules?", o: ["1.60 × 10⁻¹⁹ J", "9.11 × 10⁻³¹ J", "6.63 × 10⁻³⁴ J", "1 J"], a: 0, e: R`The charge of an electron times 1 volt.` },
+    { q: "An electron drops from −3.4 eV to −13.6 eV. Photon energy?", o: ["10.2 eV", "17.0 eV", "3.4 eV", "13.6 eV"], a: 0, e: R`\(-3.4 - (-13.6) = 10.2\ \text{eV}\).` },
+    { q: "Why does wave theory fail to explain the photoelectric effect?", o: ["It predicts emission at any frequency given enough intensity", "It predicts no emission at all", "It explains everything", "It ignores electrons"], a: 0, e: R`In fact, nothing is emitted below the threshold frequency.` },
+    { q: "Line spectra are evidence for…", o: ["Discrete energy levels", "Wave-particle duality only", "Continuous energies", "Polarisation"], a: 0, e: R`Each line is a photon from a transition between fixed levels.` },
     { q: "Intensity 2.0 m from a 100 W point source?", o: ["2.0 W m⁻²", "25 W m⁻²", "8.0 W m⁻²", "50 W m⁻²"], a: 0, e: R`\(\dfrac{100}{4\pi \times 4}\).` }
   ],
   flashcards: [

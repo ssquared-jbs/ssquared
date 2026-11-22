@@ -25,15 +25,15 @@ S2Data.add({
 <p>Resolve momenta into perpendicular components; momentum is conserved in each direction separately.</p>
 `,
   quiz: [
-    { q: "Momentum of a 1500 kg car at 20 m s⁻¹?", o: ["30 000 kg m s⁻¹", "75 kg m s⁻¹", "300 000 kg m s⁻¹", "1520 kg m s⁻¹"], a: 0, e: "" },
-    { q: "Impulse equals…", o: ["Change in momentum", "Force × distance", "Change in kinetic energy", "Mass × acceleration × distance"], a: 0, e: "" },
+    { q: "Momentum of a 1500 kg car at 20 m s⁻¹?", o: ["30 000 kg m s⁻¹", "75 kg m s⁻¹", "300 000 kg m s⁻¹", "1520 kg m s⁻¹"], a: 0, e: R`\(p = mv = 1500 \times 20 = 30\,000\ \text{kg m s}^{-1}\).` },
+    { q: "Impulse equals…", o: ["Change in momentum", "Force × distance", "Change in kinetic energy", "Mass × acceleration × distance"], a: 0, e: R`Impulse \(= F\Delta t = \Delta p\).` },
     { q: "A 0.15 kg ball hits a wall at 20 m s⁻¹ and rebounds at 20 m s⁻¹. Change in momentum?", o: ["6.0 kg m s⁻¹", "0", "3.0 kg m s⁻¹", "40 kg m s⁻¹"], a: 0, e: R`\(0.15 \times 40\).` },
-    { q: "In an elastic collision, which is conserved?", o: ["Momentum and kinetic energy", "Momentum only", "KE only", "Neither"], a: 0, e: "" },
-    { q: "Why do airbags reduce injury?", o: ["Increase time for the momentum change, reducing force", "Reduce the momentum change", "Increase the force", "Absorb all the momentum"], a: 0, e: "" },
-    { q: "A 3.0 kg gun fires a 0.010 kg bullet at 300 m s⁻¹. Recoil speed?", o: ["1.0 m s⁻¹", "3.0 m s⁻¹", "0.10 m s⁻¹", "100 m s⁻¹"], a: 0, e: "" },
-    { q: "Area under a force–time graph gives…", o: ["Impulse", "Work done", "Power", "Acceleration"], a: 0, e: "" },
-    { q: "Kinetic energy in terms of momentum?", o: ["p²/2m", "p/2m", "2mp²", "mp²/2"], a: 0, e: "" },
-    { q: "Momentum is conserved when…", o: ["No external resultant force acts", "The collision is elastic", "Objects stick together", "Friction is large"], a: 0, e: "" }
+    { q: "In an elastic collision, which is conserved?", o: ["Momentum and kinetic energy", "Momentum only", "KE only", "Neither"], a: 0, e: R`In an inelastic collision only momentum is conserved.` },
+    { q: "Why do airbags reduce injury?", o: ["Increase time for the momentum change, reducing force", "Reduce the momentum change", "Increase the force", "Absorb all the momentum"], a: 0, e: R`\(F = \dfrac{\Delta p}{\Delta t}\): a longer time means a smaller force.` },
+    { q: "A 3.0 kg gun fires a 0.010 kg bullet at 300 m s⁻¹. Recoil speed?", o: ["1.0 m s⁻¹", "3.0 m s⁻¹", "0.10 m s⁻¹", "100 m s⁻¹"], a: 0, e: R`\(0.010 \times 300 = 3.0\ \text{kg m s}^{-1}\); \(v = \dfrac{3.0}{3.0} = 1.0\ \text{m s}^{-1}\).` },
+    { q: "Area under a force–time graph gives…", o: ["Impulse", "Work done", "Power", "Acceleration"], a: 0, e: R`\(\int F\,dt = \Delta p\).` },
+    { q: "Kinetic energy in terms of momentum?", o: ["p²/2m", "p/2m", "2mp²", "mp²/2"], a: 0, e: R`\(E_k = \tfrac12 mv^2 = \dfrac{(mv)^2}{2m} = \dfrac{p^2}{2m}\).` },
+    { q: "Momentum is conserved when…", o: ["No external resultant force acts", "The collision is elastic", "Objects stick together", "Friction is large"], a: 0, e: R`That's the condition for conservation of momentum.` }
   ],
   flashcards: [
     ["Momentum", "p = mv (vector)"],
@@ -69,15 +69,15 @@ S2Data.add({
 <p><b>Example</b>: a 0.20 kg ball on a 0.50 m string makes 2.0 revolutions per second horizontally. ω = 4π = 12.6 rad s<sup>−1</sup>; \(F = 0.20 \times 12.6\)<sup>2</sup> × 0.50 = <b>15.8 N</b>.</p>
 `,
   quiz: [
-    { q: "How many radians in one full turn?", o: ["2π", "π", "360", "π/2"], a: 0, e: "" },
+    { q: "How many radians in one full turn?", o: ["2π", "π", "360", "π/2"], a: 0, e: R`\(360^\circ = 2\pi\) rad.` },
     { q: "Angular velocity of something with period 4.0 s?", o: ["1.57 rad s⁻¹", "0.25 rad s⁻¹", "25.1 rad s⁻¹", "6.28 rad s⁻¹"], a: 0, e: R`\(\dfrac{2 \pi}{4}\).` },
-    { q: "Centripetal acceleration points…", o: ["Towards the centre", "Away from the centre", "Along the tangent", "Upwards"], a: 0, e: "" },
-    { q: "A 1000 kg car takes a 50 m radius bend at 10 m s⁻¹. Centripetal force?", o: ["2000 N", "200 N", "20 000 N", "500 N"], a: 0, e: "" },
-    { q: "What provides the centripetal force for a car on a flat bend?", o: ["Friction", "Weight", "Engine force", "Air resistance"], a: 0, e: "" },
-    { q: "Why does centripetal force do no work?", o: ["It's perpendicular to the velocity", "It's too small", "The object is stationary", "It cancels out"], a: 0, e: "" },
-    { q: "Minimum speed at the top of a vertical loop of radius r?", o: ["√(gr)", "gr", "√(2gr)", "g/r"], a: 0, e: "" },
-    { q: "v = ωr. For ω = 5.0 rad s⁻¹ and r = 0.40 m, v = ?", o: ["2.0 m s⁻¹", "12.5 m s⁻¹", "0.08 m s⁻¹", "5.4 m s⁻¹"], a: 0, e: "" },
-    { q: "At the bottom of a vertical circle, the reaction force is…", o: ["Greater than the weight", "Less than the weight", "Equal to the weight", "Zero"], a: 0, e: "" }
+    { q: "Centripetal acceleration points…", o: ["Towards the centre", "Away from the centre", "Along the tangent", "Upwards"], a: 0, e: R`It's always directed towards the centre of the circle.` },
+    { q: "A 1000 kg car takes a 50 m radius bend at 10 m s⁻¹. Centripetal force?", o: ["2000 N", "200 N", "20 000 N", "500 N"], a: 0, e: R`\(F = \dfrac{mv^2}{r} = \dfrac{1000 \times 100}{50} = 2000\ \text{N}\).` },
+    { q: "What provides the centripetal force for a car on a flat bend?", o: ["Friction", "Weight", "Engine force", "Air resistance"], a: 0, e: R`Sideways friction between tyres and road pulls the car inwards.` },
+    { q: "Why does centripetal force do no work?", o: ["It's perpendicular to the velocity", "It's too small", "The object is stationary", "It cancels out"], a: 0, e: R`\(W = Fs\cos 90^\circ = 0\): speed stays constant.` },
+    { q: "Minimum speed at the top of a vertical loop of radius r?", o: ["√(gr)", "gr", "√(2gr)", "g/r"], a: 0, e: R`At the top, gravity alone gives the centripetal force: \(mg = \dfrac{mv^2}{r}\), so \(v = \sqrt{gr}\).` },
+    { q: "v = ωr. For ω = 5.0 rad s⁻¹ and r = 0.40 m, v = ?", o: ["2.0 m s⁻¹", "12.5 m s⁻¹", "0.08 m s⁻¹", "5.4 m s⁻¹"], a: 0, e: R`\(v = \omega r = 5.0 \times 0.40 = 2.0\ \text{m s}^{-1}\).` },
+    { q: "At the bottom of a vertical circle, the reaction force is…", o: ["Greater than the weight", "Less than the weight", "Equal to the weight", "Zero"], a: 0, e: R`\(R - mg = \dfrac{mv^2}{r}\), so \(R > mg\).` }
   ],
   flashcards: [
     ["Radian", "Angle where arc length = radius; 2π rad = 360°"],
@@ -115,15 +115,15 @@ S2Data.add({
 <p>Energy gained moving through a p.d.: \(W = QV\). E = −ΔV/Δr (field strength is the potential gradient).</p>
 `,
   quiz: [
-    { q: "Electric field strength is defined as…", o: ["Force per unit positive charge", "Charge per unit area", "Potential × distance", "Energy per unit charge"], a: 0, e: "" },
-    { q: "Field strength between plates 2.0 cm apart with 500 V across them?", o: ["2.5 × 10⁴ V m⁻¹", "250 V m⁻¹", "1.0 × 10⁴ V m⁻¹", "10 V m⁻¹"], a: 0, e: "" },
-    { q: "Doubling the distance from a point charge changes E by…", o: ["× ¼", R`\(\times \tfrac12\)`, R`\(\times 2\)`, R`\(\times 4\)`], a: 0, e: "" },
-    { q: "Electric potential due to a point charge varies as…", o: ["1/r", "1/r²", "r", "r²"], a: 0, e: "" },
-    { q: "Equipotentials are…", o: ["Perpendicular to field lines", "Parallel to field lines", "Always circular", "Where E = 0"], a: 0, e: "" },
-    { q: "Work done moving 2.0 μC through 100 V?", o: ["2.0 × 10⁻⁴ J", "50 J", "200 J", "2.0 × 10⁻⁸ J"], a: 0, e: "" },
-    { q: "Path of an electron entering a uniform field at 90°?", o: ["Parabola", "Circle", "Straight line", "Spiral"], a: 0, e: "" },
-    { q: "In Coulomb's law, k = …", o: ["1/4πε₀", "4πε₀", "ε₀", "1/ε₀"], a: 0, e: "" },
-    { q: "Field lines point…", o: ["From positive to negative", "From negative to positive", "Along equipotentials", "In circles"], a: 0, e: "" }
+    { q: "Electric field strength is defined as…", o: ["Force per unit positive charge", "Charge per unit area", "Potential × distance", "Energy per unit charge"], a: 0, e: R`\(E = \dfrac FQ\), in \(\text{N C}^{-1}\).` },
+    { q: "Field strength between plates 2.0 cm apart with 500 V across them?", o: ["2.5 × 10⁴ V m⁻¹", "250 V m⁻¹", "1.0 × 10⁴ V m⁻¹", "10 V m⁻¹"], a: 0, e: R`\(E = \dfrac Vd = \dfrac{500}{0.020} = 2.5 \times 10^4\ \text{V m}^{-1}\).` },
+    { q: "Doubling the distance from a point charge changes E by…", o: ["× ¼", R`\(\times \tfrac12\)`, R`\(\times 2\)`, R`\(\times 4\)`], a: 0, e: R`\(E = \dfrac{kQ}{r^2}\): doubling \(r\) divides \(E\) by 4.` },
+    { q: "Electric potential due to a point charge varies as…", o: ["1/r", "1/r²", "r", "r²"], a: 0, e: R`\(V = \dfrac{kQ}{r}\), so \(V \propto \dfrac1r\).` },
+    { q: "Equipotentials are…", o: ["Perpendicular to field lines", "Parallel to field lines", "Always circular", "Where E = 0"], a: 0, e: R`No work is done moving along an equipotential, so it must be at right angles to the field.` },
+    { q: "Work done moving 2.0 μC through 100 V?", o: ["2.0 × 10⁻⁴ J", "50 J", "200 J", "2.0 × 10⁻⁸ J"], a: 0, e: R`\(W = QV = 2.0 \times 10^{-6} \times 100 = 2.0 \times 10^{-4}\ \text{J}\).` },
+    { q: "Path of an electron entering a uniform field at 90°?", o: ["Parabola", "Circle", "Straight line", "Spiral"], a: 0, e: R`Constant velocity across the field and constant acceleration along it give a parabola, like a projectile.` },
+    { q: "In Coulomb's law, k = …", o: ["1/4πε₀", "4πε₀", "ε₀", "1/ε₀"], a: 0, e: R`\(F = \dfrac{Q_1Q_2}{4\pi\varepsilon_0 r^2}\).` },
+    { q: "Field lines point…", o: ["From positive to negative", "From negative to positive", "Along equipotentials", "In circles"], a: 0, e: R`They show the direction a positive test charge would move.` }
   ],
   flashcards: [
     ["Electric field strength", R`\(E = F/Q\)`],
@@ -161,15 +161,15 @@ S2Data.add({
 <p><b>Example</b>: 470 μF through 10 kΩ: \(\tau = 4.7\ \text{s}\). After 4.7 s, a 12 V capacitor is at 12 × 0.37 = <b>4.4 V</b>.</p>
 `,
   quiz: [
-    { q: "A 220 μF capacitor is charged to 9.0 V. Charge stored?", o: ["1.98 × 10⁻³ C", "24.4 μC", "41 C", "2.0 × 10⁻⁴ C"], a: 0, e: "" },
+    { q: "A 220 μF capacitor is charged to 9.0 V. Charge stored?", o: ["1.98 × 10⁻³ C", "24.4 μC", "41 C", "2.0 × 10⁻⁴ C"], a: 0, e: R`\(Q = CV = 220 \times 10^{-6} \times 9.0 = 1.98 \times 10^{-3}\ \text{C}\).` },
     { q: "Energy stored by 100 μF at 20 V?", o: ["0.020 J", "0.0020 J", "2.0 J", "0.040 J"], a: 0, e: "½ × 10⁻⁴ × 400." },
-    { q: "Time constant of 100 μF and 50 kΩ?", o: ["5.0 s", "0.50 s", "50 s", "2.0 s"], a: 0, e: "" },
-    { q: "After one time constant of discharge, V is about…", o: ["37% of V₀", "63% of V₀", "50% of V₀", "0"], a: 0, e: "" },
-    { q: "Total capacitance of 10 μF and 20 μF in parallel?", o: ["30 μF", "6.7 μF", "200 μF", "15 μF"], a: 0, e: "" },
-    { q: "Total capacitance of 10 μF and 10 μF in series?", o: ["5 μF", "20 μF", "10 μF", "100 μF"], a: 0, e: "" },
-    { q: "A graph of ln V against t during discharge has gradient…", o: [R`\(-1/RC\)`, R`\(-RC\)`, "RC", "V₀"], a: 0, e: "" },
-    { q: "During charging, the current…", o: ["Decreases exponentially", "Increases exponentially", "Stays constant", "Increases linearly"], a: 0, e: "" },
-    { q: "Half-life of discharge in terms of RC?", o: ["0.69RC", "RC", "2RC", "0.37RC"], a: 0, e: "" }
+    { q: "Time constant of 100 μF and 50 kΩ?", o: ["5.0 s", "0.50 s", "50 s", "2.0 s"], a: 0, e: R`\(\tau = RC = 50 \times 10^3 \times 100 \times 10^{-6} = 5.0\ \text{s}\).` },
+    { q: "After one time constant of discharge, V is about…", o: ["37% of V₀", "63% of V₀", "50% of V₀", "0"], a: 0, e: R`\(V = V_0 e^{-1} = 0.37V_0\).` },
+    { q: "Total capacitance of 10 μF and 20 μF in parallel?", o: ["30 μF", "6.7 μF", "200 μF", "15 μF"], a: 0, e: R`Parallel capacitors add: \(10 + 20 = 30\ \mu\text{F}\).` },
+    { q: "Total capacitance of 10 μF and 10 μF in series?", o: ["5 μF", "20 μF", "10 μF", "100 μF"], a: 0, e: R`Series: \(\dfrac1C = \dfrac1{10} + \dfrac1{10}\), so \(C = 5\ \mu\text{F}\).` },
+    { q: "A graph of ln V against t during discharge has gradient…", o: [R`\(-1/RC\)`, R`\(-RC\)`, "RC", "V₀"], a: 0, e: R`\(\ln V = \ln V_0 - \dfrac{t}{RC}\): a straight line with gradient \(-\dfrac1{RC}\).` },
+    { q: "During charging, the current…", o: ["Decreases exponentially", "Increases exponentially", "Stays constant", "Increases linearly"], a: 0, e: R`As the capacitor charges, the p.d. across the resistor falls, so the current falls.` },
+    { q: "Half-life of discharge in terms of RC?", o: ["0.69RC", "RC", "2RC", "0.37RC"], a: 0, e: R`\(t_{1/2} = RC\ln 2 \approx 0.69RC\).` }
   ],
   flashcards: [
     ["Capacitance", "C = Q/V (farads)"],
@@ -205,15 +205,15 @@ S2Data.add({
 <p>Place a current-carrying wire across a magnet on a top-pan balance. The change in reading × g gives F; plot F against I: gradient = Bl.</p>
 `,
   quiz: [
-    { q: "Force on a 0.20 m wire carrying 3.0 A at 90° to a 0.50 T field?", o: ["0.30 N", "3.0 N", "0.033 N", "1.2 N"], a: 0, e: "" },
-    { q: "When is the force on a current-carrying wire zero?", o: ["When the wire is parallel to the field", "When perpendicular", "Always", "When the current is large"], a: 0, e: "" },
-    { q: "In Fleming's left-hand rule, the second finger represents…", o: ["Current", "Field", "Motion", "Voltage"], a: 0, e: "" },
-    { q: "Why does a charged particle move in a circle in a uniform magnetic field?", o: ["The force is always perpendicular to its velocity", "The field is circular", "It has constant acceleration in one direction", "It loses energy"], a: 0, e: "" },
-    { q: "Radius of the circular path?", o: [R`\(r = mv/Bq\)`, R`\(r = Bq/mv\)`, R`\(r = mBq/v\)`, R`\(r = v/Bqm\)`], a: 0, e: "" },
-    { q: "Doubling a particle's speed changes its radius by…", o: [R`\(\times 2\)`, R`\(\times 4\)`, R`\(\times \tfrac12\)`, "No change"], a: 0, e: "" },
-    { q: "Unit of magnetic flux density?", o: ["Tesla", "Weber", "Henry", "Farad"], a: 0, e: "" },
-    { q: "Magnetic flux through 0.020 m² in a 0.40 T perpendicular field?", o: ["8.0 × 10⁻³ Wb", "20 Wb", "0.42 Wb", "0.050 Wb"], a: 0, e: "" },
-    { q: "Force on an electron (1.6 × 10⁻¹⁹ C) at 2.0 × 10⁶ m s⁻¹ perpendicular to 0.10 T?", o: ["3.2 × 10⁻¹⁴ N", "3.2 × 10⁻¹² N", "1.6 × 10⁻¹⁴ N", "6.4 × 10⁻¹³ N"], a: 0, e: "" }
+    { q: "Force on a 0.20 m wire carrying 3.0 A at 90° to a 0.50 T field?", o: ["0.30 N", "3.0 N", "0.033 N", "1.2 N"], a: 0, e: R`\(F = BIl = 0.50 \times 3.0 \times 0.20 = 0.30\ \text{N}\).` },
+    { q: "When is the force on a current-carrying wire zero?", o: ["When the wire is parallel to the field", "When perpendicular", "Always", "When the current is large"], a: 0, e: R`\(F = BIl\sin\theta\) and \(\sin 0^\circ = 0\).` },
+    { q: "In Fleming's left-hand rule, the second finger represents…", o: ["Current", "Field", "Motion", "Voltage"], a: 0, e: R`First finger: field. Second finger: current. Thumb: motion (force).` },
+    { q: "Why does a charged particle move in a circle in a uniform magnetic field?", o: ["The force is always perpendicular to its velocity", "The field is circular", "It has constant acceleration in one direction", "It loses energy"], a: 0, e: R`A force perpendicular to motion changes direction but not speed.` },
+    { q: "Radius of the circular path?", o: [R`\(r = mv/Bq\)`, R`\(r = Bq/mv\)`, R`\(r = mBq/v\)`, R`\(r = v/Bqm\)`], a: 0, e: R`\(Bqv = \dfrac{mv^2}{r}\), so \(r = \dfrac{mv}{Bq}\).` },
+    { q: "Doubling a particle's speed changes its radius by…", o: [R`\(\times 2\)`, R`\(\times 4\)`, R`\(\times \tfrac12\)`, "No change"], a: 0, e: R`\(r \propto v\).` },
+    { q: "Unit of magnetic flux density?", o: ["Tesla", "Weber", "Henry", "Farad"], a: 0, e: R`\(1\ \text{T} = 1\ \text{N A}^{-1}\,\text{m}^{-1}\).` },
+    { q: "Magnetic flux through 0.020 m² in a 0.40 T perpendicular field?", o: ["8.0 × 10⁻³ Wb", "20 Wb", "0.42 Wb", "0.050 Wb"], a: 0, e: R`\(\Phi = BA = 0.40 \times 0.020 = 8.0 \times 10^{-3}\ \text{Wb}\).` },
+    { q: "Force on an electron (1.6 × 10⁻¹⁹ C) at 2.0 × 10⁶ m s⁻¹ perpendicular to 0.10 T?", o: ["3.2 × 10⁻¹⁴ N", "3.2 × 10⁻¹² N", "1.6 × 10⁻¹⁴ N", "6.4 × 10⁻¹³ N"], a: 0, e: R`\(F = Bqv = 0.10 \times 1.6 \times 10^{-19} \times 2.0 \times 10^6 = 3.2 \times 10^{-14}\ \text{N}\).` }
   ],
   flashcards: [
     ["Magnetic flux", R`\(\Phi = BA (Wb)\)`],
@@ -251,15 +251,15 @@ S2Data.add({
 <p><b>Example</b>: a magnet changes the flux through a 200-turn coil by 3.0 mWb in 0.10 s. \(\varepsilon = \dfrac{200 \times 3.0 \times 10^{-3}}{0.10}\) = <b>6.0 V</b>.</p>
 `,
   quiz: [
-    { q: "Faraday's law: induced emf equals…", o: ["Rate of change of flux linkage", "Flux linkage", "Flux density × area", "Current × resistance"], a: 0, e: "" },
-    { q: "Lenz's law is a consequence of conservation of…", o: ["Energy", "Charge", "Momentum", "Mass"], a: 0, e: "" },
-    { q: "Flux through a 500-turn coil changes by 2.0 mWb in 0.050 s. emf?", o: ["20 V", "0.020 V", "50 V", "0.20 V"], a: 0, e: "" },
-    { q: "A 0.50 m rod moves at 4.0 m s⁻¹ perpendicular to a 0.20 T field. emf?", o: ["0.40 V", "10 V", "0.10 V", "1.6 V"], a: 0, e: "" },
-    { q: "A transformer has 100 primary turns and 2000 secondary turns. 12 V in. Output?", o: ["240 V", "0.6 V", "12 V", "24 V"], a: 0, e: "" },
-    { q: "Why are transformer cores laminated?", o: ["To reduce eddy currents", "To increase flux", "To make them lighter", "To increase resistance of coils"], a: 0, e: "" },
-    { q: "Peak emf of a rotating coil?", o: ["BANω", "BAN", "BAω", "BANω²"], a: 0, e: "" },
-    { q: "Why is electricity transmitted at high voltage?", o: ["Lower current means lower I²R losses", "It travels faster", "It's safer", "It increases power"], a: 0, e: "" },
-    { q: "Which rule gives the direction of induced current in a generator?", o: ["Fleming's right-hand rule", "Fleming's left-hand rule", "Right-hand grip rule", "Lenz's law only"], a: 0, e: "" }
+    { q: "Faraday's law: induced emf equals…", o: ["Rate of change of flux linkage", "Flux linkage", "Flux density × area", "Current × resistance"], a: 0, e: R`\(\varepsilon = -\dfrac{\Delta(N\Phi)}{\Delta t}\).` },
+    { q: "Lenz's law is a consequence of conservation of…", o: ["Energy", "Charge", "Momentum", "Mass"], a: 0, e: R`The induced current opposes the change; otherwise you'd get energy for free.` },
+    { q: "Flux through a 500-turn coil changes by 2.0 mWb in 0.050 s. emf?", o: ["20 V", "0.020 V", "50 V", "0.20 V"], a: 0, e: R`\(\varepsilon = \dfrac{500 \times 2.0 \times 10^{-3}}{0.050} = 20\ \text{V}\).` },
+    { q: "A 0.50 m rod moves at 4.0 m s⁻¹ perpendicular to a 0.20 T field. emf?", o: ["0.40 V", "10 V", "0.10 V", "1.6 V"], a: 0, e: R`\(\varepsilon = Blv = 0.20 \times 0.50 \times 4.0 = 0.40\ \text{V}\).` },
+    { q: "A transformer has 100 primary turns and 2000 secondary turns. 12 V in. Output?", o: ["240 V", "0.6 V", "12 V", "24 V"], a: 0, e: R`\(V_s = V_p \times \dfrac{N_s}{N_p} = 12 \times 20 = 240\ \text{V}\).` },
+    { q: "Why are transformer cores laminated?", o: ["To reduce eddy currents", "To increase flux", "To make them lighter", "To increase resistance of coils"], a: 0, e: R`Insulated layers stop large circulating currents that waste energy as heat.` },
+    { q: "Peak emf of a rotating coil?", o: ["BANω", "BAN", "BAω", "BANω²"], a: 0, e: R`\(\varepsilon = BAN\omega\sin\omega t\), with peak \(BAN\omega\).` },
+    { q: "Why is electricity transmitted at high voltage?", o: ["Lower current means lower I²R losses", "It travels faster", "It's safer", "It increases power"], a: 0, e: R`For the same power, higher \(V\) means lower \(I\); losses \(= I^2R\).` },
+    { q: "Which rule gives the direction of induced current in a generator?", o: ["Fleming's right-hand rule", "Fleming's left-hand rule", "Right-hand grip rule", "Lenz's law only"], a: 0, e: R`Right hand for generators (dynamo), left hand for motors.` }
   ],
   flashcards: [
     ["When is emf induced?", "When flux linkage changes"],
