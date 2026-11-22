@@ -3,7 +3,7 @@
 S2Data.add({
   id: "2a", group: 2, y1: true, title: "Atoms, isotopes and mass spectrometry",
   summary: "Subatomic particles, isotopes, relative masses and how a mass spectrometer works.",
-  notes: `
+  notes: R`
 <h3>Subatomic particles</h3>
 <table>
 <tr><th>Particle</th><th>Relative mass</th><th>Relative charge</th><th>Where</th></tr>
@@ -29,7 +29,7 @@ S2Data.add({
 <ol>
 <li><b>Ionisation</b>: the sample is vaporised and ionised, either by <b>electron impact</b> (high-energy electrons knock an electron off: X(g) → X<sup>+</sup>(g) + e<sup>−</sup>) or by <b>electrospray</b> (dissolved sample sprayed through a charged needle so molecules gain a proton: X + H<sup>+</sup> → XH<sup>+</sup>).</li>
 <li><b>Acceleration</b>: an electric field gives all the ions the same kinetic energy.</li>
-<li><b>Ion drift</b>: ions travel through the flight tube. Since KE = ½mv<sup>2</sup>, lighter ions move faster and arrive first.</li>
+<li><b>Ion drift</b>: ions travel through the flight tube. Since \(E_k = \tfrac12 mv^2\), lighter ions move faster and arrive first.</li>
 <li><b>Detection</b>: ions hit the detector, gain electrons, and create a current proportional to their abundance.</li>
 </ol>
 <p>The spectrum shows <b>m/z</b> (mass ÷ charge) against relative abundance. For a 1+ ion, m/z equals the mass.</p>
@@ -40,15 +40,15 @@ S2Data.add({
 <div class="box box-key"><span class="box-title">Uses</span>Identifying elements on space probes, testing for drugs in athletes, and measuring isotope ratios for dating.</div>
 `,
   quiz: [
-    { q: "What is the relative charge and mass of a neutron?", o: ["0 and 1", "+1 and 1", "−1 and 1/1836", "0 and 1/1836"], a: 0, e: "" },
+    { q: "What is the relative charge and mass of a neutron?", o: ["0 and 1", "+1 and 1", "−1 and 1/1836", "0 and 1/1836"], a: 0, e: R`Neutrons are neutral, with the same relative mass as a proton.` },
     { q: "Why do isotopes of an element react in the same way?", o: ["Same electron configuration", "Same number of neutrons", "Same mass", "Same nuclear charge only"], a: 0, e: "Chemical reactions involve electrons." },
-    { q: "Ar is defined relative to…", o: ["1/12 of the mass of a carbon-12 atom", "The mass of a hydrogen atom", "The mass of a proton", "1/16 of an oxygen atom"], a: 0, e: "" },
+    { q: "Ar is defined relative to…", o: ["1/12 of the mass of a carbon-12 atom", "The mass of a hydrogen atom", "The mass of a proton", "1/16 of an oxygen atom"], a: 0, e: R`Relative masses use carbon-12 as the standard: one-twelfth of its mass is 1 u.` },
     { q: "In a time-of-flight mass spectrometer, which ions reach the detector first?", o: ["Lightest ions (lowest m/z)", "Heaviest ions", "Most abundant ions", "Ions with no charge"], a: 0, e: "All ions have the same KE, so lighter ones are faster." },
     { q: "In electrospray ionisation, a molecule X forms…", o: ["XH⁺", "X⁺", "X⁻", "X²⁺"], a: 0, e: "It gains a proton." },
-    { q: "Calculate Ar of an element: 90% mass 20, 10% mass 22.", o: ["20.2", "21.0", "20.0", "21.8"], a: 0, e: "(20 × 90 + 22 × 10) ÷ 100 = 20.2" },
+    { q: "Calculate Ar of an element: 90% mass 20, 10% mass 22.", o: ["20.2", "21.0", "20.0", "21.8"], a: 0, e: R`\(\dfrac{20 \times 90 + 22 \times 10}{100} = 20.2\)` },
     { q: "Chlorine (75% ³⁵Cl, 25% ³⁷Cl) forms Cl₂. What is the ratio of peaks at m/z 70 : 72 : 74?", o: ["9 : 6 : 1", "3 : 1 : 0", "1 : 2 : 1", "3 : 2 : 1"], a: 0, e: "¾×¾ : 2×¾×¼ : ¼×¼ = 9 : 6 : 1" },
-    { q: "What does the molecular ion peak of an organic compound tell you?", o: ["Its relative molecular mass", "Its structure", "Its boiling point", "Its functional group"], a: 0, e: "" },
-    { q: "Why does the detector produce a current?", o: ["Ions gain electrons from it", "Ions lose protons", "Ions emit light", "Ions are neutralised by OH⁻"], a: 0, e: "" }
+    { q: "What does the molecular ion peak of an organic compound tell you?", o: ["Its relative molecular mass", "Its structure", "Its boiling point", "Its functional group"], a: 0, e: R`The M⁺ peak at the highest m/z (ignoring M+1) gives Mr.` },
+    { q: "Why does the detector produce a current?", o: ["Ions gain electrons from it", "Ions lose protons", "Ions emit light", "Ions are neutralised by OH⁻"], a: 0, e: R`Positive ions arriving at the detector gain electrons; the current is proportional to the number of ions.` }
   ],
   flashcards: [
     ["Relative atomic mass (Ar)", "Weighted mean mass of an atom of an element compared with 1/12 of the mass of a carbon-12 atom"],
@@ -68,39 +68,39 @@ S2Data.add({
 S2Data.add({
   id: "2b", group: 2, y1: true, title: "Moles, gases and solutions",
   summary: "The mole, empirical and molecular formulae, ideal gas equation, molar volume and concentrations.",
-  notes: `
+  notes: R`
 <h3>The mole</h3>
 <ul>
 <li>One mole contains <b>6.02 × 10<sup>23</sup></b> particles (the Avogadro constant, L).</li>
-<li><b>n = m ÷ M</b> (moles = mass ÷ molar mass).</li>
-<li>Number of particles = n × L.</li>
+<li>\(n = \dfrac{m}{M}\) (moles = mass ÷ molar mass).</li>
+<li>Number of particles \(= n \times L\), where \(L = 6.02 \times 10^{23}\ \text{mol}^{-1}\).</li>
 </ul>
 <h3>Empirical and molecular formulae</h3>
 <ol><li>Divide mass (or %) of each element by its A<sub>r</sub>.</li><li>Divide by the smallest value.</li><li>Convert to whole numbers.</li></ol>
-<p>Molecular formula = empirical formula × (M<sub>r</sub> ÷ empirical formula mass).</p>
+<p>Molecular formula = empirical formula \(\times \dfrac{M_r}{\text{empirical formula mass}}\).</p>
 <h3>Gases</h3>
 <ul>
 <li>At RTP, 1 mol of any gas occupies <b>24.0 dm<sup>3</sup></b> (24 000 cm<sup>3</sup>).</li>
-<li><b>Ideal gas equation</b>: <b>pV = nRT</b>, with p in Pa, V in m<sup>3</sup>, T in K, R = 8.31 J mol<sup>−1</sup> K<sup>−1</sup>.</li>
+<li><b>Ideal gas equation</b>: \(pV = nRT\), with \(p\) in Pa, \(V\) in m³, \(T\) in K and \(R = 8.31\ \text{J mol}^{-1}\,\text{K}^{-1}\).</li>
 <li>Conversions: 1 dm<sup>3</sup> = 10<sup>−3</sup> m<sup>3</sup>; 1 cm<sup>3</sup> = 10<sup>−6</sup> m<sup>3</sup>; kPa × 1000 = Pa; °C + 273 = K.</li>
 </ul>
 <div class="box box-key"><span class="box-title">Worked example</span>Find M<sub>r</sub> of a gas: 0.50 g occupies 400 cm<sup>3</sup> at 100 kPa and 300 K.<br>n = pV/RT = (100 000 × 400 × 10<sup>−6</sup>) ÷ (8.31 × 300) = 0.0160 mol<br>M<sub>r</sub> = 0.50 ÷ 0.0160 = <b>31.2</b></div>
 <h3>Solutions</h3>
 <ul>
-<li>Concentration (mol dm<sup>−3</sup>) = n ÷ V (dm<sup>3</sup>). In g dm<sup>−3</sup> = mol dm<sup>−3</sup> × M.</li>
-<li><b>ppm</b> = (mass of solute ÷ mass of solution) × 10<sup>6</sup>. Used for very dilute solutions, e.g. pollutants.</li>
+<li>\(c = \dfrac{n}{V}\) (mol dm<sup>−3</sup>, with \(V\) in dm<sup>3</sup>). In g dm<sup>−3</sup> = mol dm<sup>−3</sup> × M.</li>
+<li>\(\text{ppm} = \dfrac{\text{mass of solute}}{\text{mass of solution}} \times 10^6\). Used for very dilute solutions, e.g. pollutants.</li>
 <li>Ionic equations and state symbols: write only the species that react; spectator ions are left out.</li>
 </ul>
 `,
   quiz: [
-    { q: "How many moles in 4.4 g of CO₂?", o: ["0.10", "0.20", "1.0", "0.44"], a: 0, e: "4.4 ÷ 44" },
-    { q: "Volume of 0.25 mol of gas at RTP?", o: ["6.0 dm³", "24 dm³", "0.25 dm³", "96 dm³"], a: 0, e: "" },
-    { q: "In pV = nRT, V must be in…", o: ["m³", "dm³", "cm³", "litres"], a: 0, e: "" },
+    { q: "How many moles in 4.4 g of CO₂?", o: ["0.10", "0.20", "1.0", "0.44"], a: 0, e: R`\(\dfrac{4.4}{44}\)` },
+    { q: "Volume of 0.25 mol of gas at RTP?", o: ["6.0 dm³", "24 dm³", "0.25 dm³", "96 dm³"], a: 0, e: R`\(0.25 \times 24.0 = 6.0\ \text{dm}^3\).` },
+    { q: "In pV = nRT, V must be in…", o: ["m³", "dm³", "cm³", "litres"], a: 0, e: R`SI units: \(p\) in Pa, \(V\) in m³, \(T\) in K.` },
     { q: "Convert 250 cm³ to m³.", o: ["2.5 × 10⁻⁴", "2.5 × 10⁻³", "0.25", "2.5 × 10⁻⁶"], a: 0, e: "× 10⁻⁶" },
     { q: "Empirical formula of a compound with 40% C, 6.7% H, 53.3% O?", o: ["CH₂O", "C₂H₄O", "CHO", "CH₂O₂"], a: 0, e: "3.33 : 6.7 : 3.33 → 1 : 2 : 1" },
-    { q: "Moles in 25.0 cm³ of 0.200 mol dm⁻³ solution?", o: ["5.00 × 10⁻³", "5.00", "0.0500", "8.00 × 10⁻³"], a: 0, e: "" },
-    { q: "Number of molecules in 0.5 mol of water?", o: ["3.01 × 10²³", "6.02 × 10²³", "1.20 × 10²⁴", "9.0"], a: 0, e: "" },
-    { q: "Value and units of R?", o: ["8.31 J mol⁻¹ K⁻¹", "24 dm³ mol⁻¹", "6.02 × 10²³ mol⁻¹", "8.31 kJ mol⁻¹"], a: 0, e: "" },
+    { q: "Moles in 25.0 cm³ of 0.200 mol dm⁻³ solution?", o: ["5.00 × 10⁻³", "5.00", "0.0500", "8.00 × 10⁻³"], a: 0, e: R`\(n = cV = 0.200 \times 0.0250 = 5.00 \times 10^{-3}\ \text{mol}\).` },
+    { q: "Number of molecules in 0.5 mol of water?", o: ["3.01 × 10²³", "6.02 × 10²³", "1.20 × 10²⁴", "9.0"], a: 0, e: R`\(0.5 \times 6.02 \times 10^{23} = 3.01 \times 10^{23}\).` },
+    { q: "Value and units of R?", o: ["8.31 J mol⁻¹ K⁻¹", "24 dm³ mol⁻¹", "6.02 × 10²³ mol⁻¹", "8.31 kJ mol⁻¹"], a: 0, e: R`It's the gas constant in pV = nRT.` },
     { q: "A pollutant is 0.002 g in 1000 g of water. Concentration in ppm?", o: ["2 ppm", "0.002 ppm", "20 ppm", "200 ppm"], a: 0, e: "0.002/1000 × 10⁶" }
   ],
   flashcards: [
@@ -120,11 +120,11 @@ S2Data.add({
 S2Data.add({
   id: "2c", group: 2, y1: true, title: "Yield, atom economy, titrations and errors",
   summary: "Percentage yield, atom economy, acid–base titration calculations and measurement uncertainty.",
-  notes: `
+  notes: R`
 <h3>Yield and atom economy</h3>
 <ul>
-<li><b>Percentage yield</b> = (actual yield ÷ theoretical yield) × 100.</li>
-<li><b>Atom economy</b> = (M<sub>r</sub> of desired product ÷ total M<sub>r</sub> of all products) × 100.</li>
+<li>\(\text{percentage yield} = \dfrac{\text{actual yield}}{\text{theoretical yield}} \times 100\)</li>
+<li>\(\text{atom economy} = \dfrac{M_r \text{ of desired product}}{\text{total } M_r \text{ of all products}} \times 100\)</li>
 <li>Addition reactions have 100% atom economy. High atom economy means less waste, which is better for sustainability and cost.</li>
 </ul>
 <h3>Titrations</h3>
@@ -135,7 +135,7 @@ S2Data.add({
 <div class="box box-key"><span class="box-title">Back titration</span>Used when a substance is insoluble or reacts slowly (e.g. CaCO<sub>3</sub> in an antacid): add a known excess of acid, then titrate the leftover acid with alkali. Moles that reacted = moles added − moles left over.</div>
 <h3>Measurement uncertainty</h3>
 <ul>
-<li><b>Percentage uncertainty</b> = (uncertainty ÷ measured value) × 100.</li>
+<li>\(\text{percentage uncertainty} = \dfrac{\text{uncertainty}}{\text{measured value}} \times 100\)</li>
 <li>A burette has ±0.05 cm<sup>3</sup> per reading, so a titre (two readings) has ±0.10 cm<sup>3</sup>.</li>
 <li>For a mass from two readings (by difference), double the balance uncertainty.</li>
 <li>To reduce percentage uncertainty: use larger quantities (e.g. bigger titres, larger masses).</li>
@@ -144,13 +144,13 @@ S2Data.add({
 `,
   quiz: [
     { q: "Atom economy of an addition reaction is…", o: ["100%", "50%", "Depends on yield", "0%"], a: 0, e: "Only one product." },
-    { q: "Percentage yield if 4.0 g is obtained from a theoretical 5.0 g?", o: ["80%", "125%", "20%", "40%"], a: 0, e: "" },
-    { q: "A titre of 25.00 cm³ (±0.10 cm³). Percentage uncertainty?", o: ["0.4%", "0.2%", "4%", "0.1%"], a: 0, e: "0.10/25.00 × 100" },
-    { q: "When is a back titration used?", o: ["When the substance is insoluble or reacts slowly", "For strong acids", "When there is no indicator", "To avoid using a burette"], a: 0, e: "" },
-    { q: "Atom economy for CaCO₃ → CaO + CO₂ if CaO is wanted? (Mr: CaO 56, CO₂ 44)", o: ["56%", "44%", "100%", "78%"], a: 0, e: "" },
-    { q: "How can percentage uncertainty in a titre be reduced?", o: ["Use more dilute titrant so the titre is larger", "Use a measuring cylinder", "Read to 0.5 cm³", "Use more indicator"], a: 0, e: "" },
-    { q: "Repeating an experiment reduces…", o: ["Random errors", "Systematic errors", "Atom economy", "Yield"], a: 0, e: "" },
-    { q: "25.0 cm³ of 0.100 mol dm⁻³ NaOH needs 20.0 cm³ of HCl. [HCl]?", o: ["0.125 mol dm⁻³", "0.080 mol dm⁻³", "0.100 mol dm⁻³", "0.250 mol dm⁻³"], a: 0, e: "" }
+    { q: "Percentage yield if 4.0 g is obtained from a theoretical 5.0 g?", o: ["80%", "125%", "20%", "40%"], a: 0, e: R`\(\dfrac{4.0}{5.0} \times 100 = 80\%\).` },
+    { q: "A titre of 25.00 cm³ (±0.10 cm³). Percentage uncertainty?", o: ["0.4%", "0.2%", "4%", "0.1%"], a: 0, e: R`\(0.10/25.00 \times 100\)` },
+    { q: "When is a back titration used?", o: ["When the substance is insoluble or reacts slowly", "For strong acids", "When there is no indicator", "To avoid using a burette"], a: 0, e: R`Add a known excess of reagent, then titrate what's left over.` },
+    { q: "Atom economy for CaCO₃ → CaO + CO₂ if CaO is wanted? (Mr: CaO 56, CO₂ 44)", o: ["56%", "44%", "100%", "78%"], a: 0, e: R`\(\dfrac{56}{56 + 44} \times 100 = 56\%\).` },
+    { q: "How can percentage uncertainty in a titre be reduced?", o: ["Use more dilute titrant so the titre is larger", "Use a measuring cylinder", "Read to 0.5 cm³", "Use more indicator"], a: 0, e: R`A larger titre means the fixed reading uncertainty is a smaller percentage.` },
+    { q: "Repeating an experiment reduces…", o: ["Random errors", "Systematic errors", "Atom economy", "Yield"], a: 0, e: R`Averaging reduces the effect of random variation; systematic errors remain.` },
+    { q: "25.0 cm³ of 0.100 mol dm⁻³ NaOH needs 20.0 cm³ of HCl. [HCl]?", o: ["0.125 mol dm⁻³", "0.080 mol dm⁻³", "0.100 mol dm⁻³", "0.250 mol dm⁻³"], a: 0, e: R`Moles NaOH \(= 0.100 \times 0.0250 = 2.50 \times 10^{-3}\); \(\dfrac{2.50 \times 10^{-3}}{0.0200} = 0.125\ \text{mol dm}^{-3}\).` }
   ],
   flashcards: [
     ["Percentage yield", "Actual ÷ theoretical × 100"],
@@ -167,7 +167,7 @@ S2Data.add({
 S2Data.add({
   id: "2d", group: 2, y1: true, title: "Oxidation numbers and redox equations",
   summary: "Assigning oxidation numbers, naming with Roman numerals, half-equations and disproportionation.",
-  notes: `
+  notes: R`
 <h3>Oxidation and reduction</h3>
 <ul>
 <li><b>Oxidation</b>: loss of electrons, or an <b>increase</b> in oxidation number.</li>
@@ -203,15 +203,15 @@ S2Data.add({
 <p>Cl<sub>2</sub> + 2NaOH → NaCl + NaClO + H<sub>2</sub>O (cold, dilute): Cl goes from 0 to −1 and to +1.</p>
 `,
   quiz: [
-    { q: "What is the oxidation number of S in H₂SO₄?", o: ["+6", "+4", "−2", "+2"], a: 0, e: "2(+1) + x + 4(−2) = 0" },
-    { q: "Oxidation number of Cr in Cr₂O₇²⁻?", o: ["+6", "+7", "+3", "+12"], a: 0, e: "2x − 14 = −2" },
+    { q: "What is the oxidation number of S in H₂SO₄?", o: ["+6", "+4", "−2", "+2"], a: 0, e: R`\(2(+1) + x + 4(-2) = 0\)` },
+    { q: "Oxidation number of Cr in Cr₂O₇²⁻?", o: ["+6", "+7", "+3", "+12"], a: 0, e: R`\(2x - 14 = -2\)` },
     { q: "Oxidation number of O in H₂O₂?", o: ["−1", "−2", "0", "+1"], a: 0, e: "Peroxide." },
     { q: "Oxidation number of H in NaH?", o: ["−1", "+1", "0", "+2"], a: 0, e: "Metal hydride." },
-    { q: "What does an oxidising agent do?", o: ["Accepts electrons and is reduced", "Donates electrons", "Is oxidised", "Increases its oxidation number"], a: 0, e: "" },
+    { q: "What does an oxidising agent do?", o: ["Accepts electrons and is reduced", "Donates electrons", "Is oxidised", "Increases its oxidation number"], a: 0, e: R`It takes electrons from another species, which is oxidised.` },
     { q: "Name NaClO₃.", o: ["Sodium chlorate(V)", "Sodium chlorate(III)", "Sodium chlorate(VII)", "Sodium chloride"], a: 0, e: "Cl is +5." },
     { q: "How many electrons in: MnO₄⁻ + 8H⁺ + ne⁻ → Mn²⁺ + 4H₂O?", o: ["5", "3", "7", "2"], a: 0, e: "+7 → +2" },
-    { q: "Cl₂ + 2NaOH → NaCl + NaClO + H₂O is an example of…", o: ["Disproportionation", "Neutralisation only", "Displacement", "Decomposition"], a: 0, e: "" },
-    { q: "Oxidation number of N in NH₄⁺?", o: ["−3", "+3", "+5", "−4"], a: 0, e: "x + 4 = +1" }
+    { q: "Cl₂ + 2NaOH → NaCl + NaClO + H₂O is an example of…", o: ["Disproportionation", "Neutralisation only", "Displacement", "Decomposition"], a: 0, e: R`Chlorine (0) is both oxidised to +1 in ClO⁻ and reduced to −1 in Cl⁻.` },
+    { q: "Oxidation number of N in NH₄⁺?", o: ["−3", "+3", "+5", "−4"], a: 0, e: R`\(x + 4 = +1\)` }
   ],
   flashcards: [
     ["Oxidation (2 definitions)", "Loss of electrons; increase in oxidation number"],
@@ -230,7 +230,7 @@ S2Data.add({
 S2Data.add({
   id: "2e", group: 2, y1: true, title: "Electron configurations and ionisation energies",
   summary: "Shells, sub-shells and orbitals; spdf notation; ionisation energy trends as evidence for structure.",
-  notes: `
+  notes: R`
 <h3>Shells, sub-shells and orbitals</h3>
 <ul>
 <li>Electrons occupy <b>orbitals</b>: regions that can hold up to <b>two electrons with opposite spins</b>.</li>
@@ -271,12 +271,12 @@ S2Data.add({
   quiz: [
     { q: "What is the electron configuration of Cr?", o: ["[Ar] 3d⁵ 4s¹", "[Ar] 3d⁴ 4s²", "[Ar] 3d⁶", "[Ar] 4s² 4p⁴"], a: 0, e: "A half-filled d sub-shell is more stable." },
     { q: "What is the configuration of Fe³⁺?", o: ["[Ar] 3d⁵", "[Ar] 3d³ 4s²", "[Ar] 3d⁶ 4s²", "[Ar] 3d⁴ 4s¹"], a: 0, e: "4s electrons are lost first." },
-    { q: "How many electrons can a p sub-shell hold?", o: ["6", "2", "10", "14"], a: 0, e: "" },
+    { q: "How many electrons can a p sub-shell hold?", o: ["6", "2", "10", "14"], a: 0, e: R`Three p orbitals with two electrons each: 6.` },
     { q: "Which equation represents the first ionisation energy of magnesium?", o: ["Mg(g) → Mg⁺(g) + e⁻", "Mg(s) → Mg⁺(g) + e⁻", "Mg(g) → Mg²⁺(g) + 2e⁻", "Mg(g) + e⁻ → Mg⁻(g)"], a: 0, e: "Gaseous atoms, one electron removed." },
-    { q: "Why is the first IE of Al lower than Mg?", o: ["Al's outer electron is in a higher-energy 3p orbital", "Al has fewer protons", "Al's outer electron is paired", "Al is a metal"], a: 0, e: "" },
-    { q: "Why is the first IE of S lower than P?", o: ["Electron removed from a paired 3p orbital; repulsion", "S has fewer protons", "S's electron is in 3s", "S is bigger"], a: 0, e: "" },
+    { q: "Why is the first IE of Al lower than Mg?", o: ["Al's outer electron is in a higher-energy 3p orbital", "Al has fewer protons", "Al's outer electron is paired", "Al is a metal"], a: 0, e: R`The 3p electron is higher in energy and slightly shielded by the 3s electrons, so it's easier to remove.` },
+    { q: "Why is the first IE of S lower than P?", o: ["Electron removed from a paired 3p orbital; repulsion", "S has fewer protons", "S's electron is in 3s", "S is bigger"], a: 0, e: R`In S, the electron comes from a paired 3p orbital; repulsion between the pair makes it easier to remove.` },
     { q: "Successive IEs (kJ/mol): 578, 1817, 2745, 11 577. Which group?", o: ["Group 3", "Group 2", "Group 4", "Group 1"], a: 0, e: "Big jump after the 3rd." },
-    { q: "Why does first IE decrease down a group?", o: ["Outer electron further from nucleus and more shielded", "Nuclear charge decreases", "Fewer shells", "Electrons are paired"], a: 0, e: "" },
+    { q: "Why does first IE decrease down a group?", o: ["Outer electron further from nucleus and more shielded", "Nuclear charge decreases", "Fewer shells", "Electrons are paired"], a: 0, e: R`More shells means more distance and shielding, outweighing the extra nuclear charge.` },
     { q: "Which block is bromine in?", o: ["p", "s", "d", "f"], a: 0, e: "Its outer electrons are in 4p." }
   ],
   flashcards: [
@@ -297,7 +297,7 @@ S2Data.add({
 S2Data.add({
   id: "2f", group: 2, y1: true, title: "Ionic bonding",
   summary: "Ionic bonds, ion sizes, polarisation and the properties of ionic lattices.",
-  notes: `
+  notes: R`
 <h3>Ionic bonding</h3>
 <div class="box box-key"><span class="box-title">Definition</span>Ionic bonding is the <b>strong electrostatic attraction between oppositely charged ions</b> in a lattice.</div>
 <ul>
@@ -328,12 +328,12 @@ S2Data.add({
   quiz: [
     { q: "Which has the highest melting point?", o: ["MgO", "NaCl", "KCl", "NaBr"], a: 0, e: "Higher charges (2+, 2−) and small ions." },
     { q: "Which ion is smallest?", o: ["Al³⁺", "Mg²⁺", "Na⁺", "F⁻"], a: 0, e: "Isoelectronic: highest nuclear charge pulls electrons closest." },
-    { q: "Why is Cl⁻ larger than a Cl atom?", o: ["Extra electron increases repulsion", "It has more protons", "It has an extra shell", "It's more polarised"], a: 0, e: "" },
+    { q: "Why is Cl⁻ larger than a Cl atom?", o: ["Extra electron increases repulsion", "It has more protons", "It has an extra shell", "It's more polarised"], a: 0, e: R`The same nuclear charge holds 18 electrons instead of 17, and there's more repulsion, so it's larger.` },
     { q: "Which cation has the greatest polarising power?", o: ["Al³⁺", "Na⁺", "K⁺", "Cs⁺"], a: 0, e: "Small and highly charged." },
     { q: "Which anion is most easily polarised?", o: ["I⁻", "F⁻", "Cl⁻", "O²⁻"], a: 0, e: "Largest electron cloud." },
-    { q: "What is evidence for the existence of ions?", o: ["Migration of coloured ions in electrolysis", "High boiling point", "Insolubility", "Malleability"], a: 0, e: "" },
-    { q: "Why are ionic compounds brittle?", o: ["Shifting layers brings like charges together, which repel", "Weak bonds", "Delocalised electrons", "Hydrogen bonding"], a: 0, e: "" },
-    { q: "Ions with the same electron configuration are called…", o: ["Isoelectronic", "Isotopic", "Isomeric", "Isotonic"], a: 0, e: "" }
+    { q: "What is evidence for the existence of ions?", o: ["Migration of coloured ions in electrolysis", "High boiling point", "Insolubility", "Malleability"], a: 0, e: R`Coloured ions such as MnO₄⁻ or Cu²⁺ move to the oppositely charged electrode.` },
+    { q: "Why are ionic compounds brittle?", o: ["Shifting layers brings like charges together, which repel", "Weak bonds", "Delocalised electrons", "Hydrogen bonding"], a: 0, e: R`A small displacement lines up like charges, which repel and split the crystal.` },
+    { q: "Ions with the same electron configuration are called…", o: ["Isoelectronic", "Isotopic", "Isomeric", "Isotonic"], a: 0, e: R`E.g. Na<sup>+</sup>, Mg<sup>2+</sup> and F<sup>−</sup> all have the configuration of Ne.` }
   ],
   flashcards: [
     ["Ionic bonding", "Strong electrostatic attraction between oppositely charged ions"],
@@ -351,7 +351,7 @@ S2Data.add({
 S2Data.add({
   id: "2g", group: 2, y1: true, title: "Covalent bonds and shapes of molecules",
   summary: "Covalent and dative bonds, σ and π bonds, and electron-pair repulsion theory.",
-  notes: `
+  notes: R`
 <h3>Covalent bonds</h3>
 <div class="box box-key"><span class="box-title">Definition</span>A covalent bond is the <b>strong electrostatic attraction between two nuclei and a shared pair of electrons</b> between them.</div>
 <ul>
@@ -380,13 +380,13 @@ S2Data.add({
   quiz: [
     { q: "What is the shape of NH₃?", o: ["Pyramidal, 107°", "Trigonal planar, 120°", "Tetrahedral, 109.5°", "Bent, 104.5°"], a: 0, e: "3 bonding pairs + 1 lone pair." },
     { q: "What is the bond angle in H₂O?", o: ["104.5°", "107°", "109.5°", "120°"], a: 0, e: "Two lone pairs." },
-    { q: "Shape of SF₆?", o: ["Octahedral", "Trigonal bipyramidal", "Square planar", "Tetrahedral"], a: 0, e: "" },
-    { q: "Why are lone pairs said to repel more than bonding pairs?", o: ["They are closer to the central atom", "They have more electrons", "They are π bonds", "They are charged"], a: 0, e: "" },
-    { q: "A C=C double bond is made of…", o: ["One σ and one π bond", "Two σ bonds", "Two π bonds", "One dative bond"], a: 0, e: "" },
+    { q: "Shape of SF₆?", o: ["Octahedral", "Trigonal bipyramidal", "Square planar", "Tetrahedral"], a: 0, e: R`6 bonding pairs and no lone pairs give 90° angles.` },
+    { q: "Why are lone pairs said to repel more than bonding pairs?", o: ["They are closer to the central atom", "They have more electrons", "They are π bonds", "They are charged"], a: 0, e: R`Lone pairs are held closer to the nucleus, so they take up more space.` },
+    { q: "A C=C double bond is made of…", o: ["One σ and one π bond", "Two σ bonds", "Two π bonds", "One dative bond"], a: 0, e: R`Head-on overlap gives the σ bond; sideways p-orbital overlap gives the π bond.` },
     { q: "Which species contains a dative bond?", o: ["NH₄⁺", "CH₄", "H₂O", "Cl₂"], a: 0, e: "N's lone pair bonds to H⁺." },
     { q: "Shape of XeF₄?", o: ["Square planar", "Tetrahedral", "Octahedral", "See-saw"], a: 0, e: "4 bonding + 2 lone pairs." },
-    { q: "Shape and angle of BF₃?", o: ["Trigonal planar, 120°", "Pyramidal, 107°", "Tetrahedral, 109.5°", "Linear, 180°"], a: 0, e: "" },
-    { q: "Why is a π bond weaker than a σ bond?", o: ["Sideways overlap is less effective", "It has more electrons", "It's longer", "It's ionic"], a: 0, e: "" }
+    { q: "Shape and angle of BF₃?", o: ["Trigonal planar, 120°", "Pyramidal, 107°", "Tetrahedral, 109.5°", "Linear, 180°"], a: 0, e: R`3 bonding pairs and no lone pairs.` },
+    { q: "Why is a π bond weaker than a σ bond?", o: ["Sideways overlap is less effective", "It has more electrons", "It's longer", "It's ionic"], a: 0, e: R`The p orbitals overlap less, so the π bond is weaker and more reactive.` }
   ],
   flashcards: [
     ["Covalent bond", "Electrostatic attraction between two nuclei and a shared pair of electrons"],
@@ -407,7 +407,7 @@ S2Data.add({
 S2Data.add({
   id: "2h", group: 2, y1: true, title: "Electronegativity, polarity and intermolecular forces",
   summary: "Polar bonds and molecules, London forces, permanent dipoles and hydrogen bonding.",
-  notes: `
+  notes: R`
 <h3>Electronegativity</h3>
 <p><b>Electronegativity</b> is the ability of an atom to attract the bonding electrons in a covalent bond. It increases across a period and up a group. Fluorine is the most electronegative element (Pauling value 4.0).</p>
 <ul>
@@ -440,14 +440,14 @@ S2Data.add({
 `,
   quiz: [
     { q: "Which molecule is non-polar despite having polar bonds?", o: ["CO₂", "H₂O", "NH₃", "HCl"], a: 0, e: "Linear: the dipoles cancel." },
-    { q: "Which intermolecular force exists between all molecules?", o: ["London forces", "Hydrogen bonds", "Permanent dipoles", "Ionic bonds"], a: 0, e: "" },
+    { q: "Which intermolecular force exists between all molecules?", o: ["London forces", "Hydrogen bonds", "Permanent dipoles", "Ionic bonds"], a: 0, e: R`London forces arise from temporary dipoles in any molecule.` },
     { q: "Why does pentane boil higher than 2,2-dimethylpropane?", o: ["More surface contact, stronger London forces", "Pentane has hydrogen bonds", "Pentane is polar", "Pentane has more electrons"], a: 0, e: "They're isomers: same electrons, different shape." },
-    { q: "Hydrogen bonding needs H bonded to…", o: ["N, O or F", "C or Cl", "Any non-metal", "S or P"], a: 0, e: "" },
-    { q: "Why is ice less dense than liquid water?", o: ["Hydrogen bonds hold molecules in an open lattice", "Ice has fewer molecules", "London forces are stronger", "Ice is ionic"], a: 0, e: "" },
+    { q: "Hydrogen bonding needs H bonded to…", o: ["N, O or F", "C or Cl", "Any non-metal", "S or P"], a: 0, e: R`Only these atoms are electronegative and small enough.` },
+    { q: "Why is ice less dense than liquid water?", o: ["Hydrogen bonds hold molecules in an open lattice", "Ice has fewer molecules", "London forces are stronger", "Ice is ionic"], a: 0, e: R`The hydrogen-bonded lattice holds molecules further apart than in the liquid.` },
     { q: "Which has the highest boiling point?", o: ["H₂O", "H₂S", "H₂Se", "H₂Te"], a: 0, e: "Hydrogen bonding." },
-    { q: "Electronegativity is…", o: ["The ability of an atom to attract bonding electrons in a covalent bond", "The energy to remove an electron", "The charge on an ion", "Energy released gaining an electron"], a: 0, e: "" },
-    { q: "Why is CCl₄ non-polar?", o: ["Tetrahedral shape cancels the dipoles", "C–Cl bonds aren't polar", "It has lone pairs", "It's ionic"], a: 0, e: "" },
-    { q: "Why does butan-1-ol dissolve less in water than ethanol?", o: ["Longer non-polar chain", "It can't hydrogen bond", "It's ionic", "It's more polar"], a: 0, e: "" }
+    { q: "Electronegativity is…", o: ["The ability of an atom to attract bonding electrons in a covalent bond", "The energy to remove an electron", "The charge on an ion", "Energy released gaining an electron"], a: 0, e: R`It increases across a period and up a group; fluorine is the highest.` },
+    { q: "Why is CCl₄ non-polar?", o: ["Tetrahedral shape cancels the dipoles", "C–Cl bonds aren't polar", "It has lone pairs", "It's ionic"], a: 0, e: R`The C–Cl bonds are polar, but the symmetrical shape means the dipoles cancel.` },
+    { q: "Why does butan-1-ol dissolve less in water than ethanol?", o: ["Longer non-polar chain", "It can't hydrogen bond", "It's ionic", "It's more polar"], a: 0, e: R`The longer hydrocarbon chain can't form hydrogen bonds with water.` }
   ],
   flashcards: [
     ["Electronegativity", "Ability of an atom to attract the bonding electrons in a covalent bond"],
@@ -466,7 +466,7 @@ S2Data.add({
 S2Data.add({
   id: "3a", group: 3, y1: true, title: "Periodicity",
   summary: "Trends across Period 3 in atomic radius, ionisation energy, melting point and structure.",
-  notes: `
+  notes: R`
 <h3>The Periodic Table</h3>
 <ul>
 <li>Elements are arranged in order of <b>atomic number</b>. Elements in the same <b>group</b> have the same outer electron configuration, so similar reactions.</li>
@@ -492,13 +492,13 @@ S2Data.add({
 `,
   quiz: [
     { q: "Which Period 3 element has the highest melting point?", o: ["Silicon", "Aluminium", "Sulfur", "Sodium"], a: 0, e: "Giant covalent structure." },
-    { q: "Why does atomic radius decrease across Period 3?", o: ["Nuclear charge increases with similar shielding", "More shells are added", "Electrons are lost", "Shielding increases a lot"], a: 0, e: "" },
-    { q: "Why is the melting point of Al higher than Na?", o: ["Al³⁺ has a higher charge and more delocalised electrons", "Al is covalent", "Al has London forces", "Al is larger"], a: 0, e: "" },
-    { q: "Why does S₈ have a higher melting point than P₄?", o: ["S₈ has more electrons, so stronger London forces", "S₈ is giant covalent", "S₈ is ionic", "P₄ has hydrogen bonds"], a: 0, e: "" },
-    { q: "Which has a monatomic structure?", o: ["Argon", "Chlorine", "Silicon", "Phosphorus"], a: 0, e: "" },
-    { q: "Why is there a big drop in first IE from Ne to Na?", o: ["Na's outer electron is in a new shell, further away and more shielded", "Na has fewer protons", "Na's electron is paired", "Ne is a metal"], a: 0, e: "" },
-    { q: "What is periodicity?", o: ["A repeating pattern of properties across periods", "Elements in the same group", "Radioactive decay", "The number of shells"], a: 0, e: "" },
-    { q: "What forces exist between Cl₂ molecules?", o: ["London forces", "Hydrogen bonds", "Ionic bonds", "Metallic bonds"], a: 0, e: "" }
+    { q: "Why does atomic radius decrease across Period 3?", o: ["Nuclear charge increases with similar shielding", "More shells are added", "Electrons are lost", "Shielding increases a lot"], a: 0, e: R`More protons pull the same shell in more strongly.` },
+    { q: "Why is the melting point of Al higher than Na?", o: ["Al³⁺ has a higher charge and more delocalised electrons", "Al is covalent", "Al has London forces", "Al is larger"], a: 0, e: R`Al<sup>3+</sup> has a smaller radius and contributes 3 delocalised electrons, giving stronger metallic bonding.` },
+    { q: "Why does S₈ have a higher melting point than P₄?", o: ["S₈ has more electrons, so stronger London forces", "S₈ is giant covalent", "S₈ is ionic", "P₄ has hydrogen bonds"], a: 0, e: R`S<sub>8</sub> has more electrons than P<sub>4</sub>, so its London forces are stronger.` },
+    { q: "Which has a monatomic structure?", o: ["Argon", "Chlorine", "Silicon", "Phosphorus"], a: 0, e: R`Noble gases exist as single atoms.` },
+    { q: "Why is there a big drop in first IE from Ne to Na?", o: ["Na's outer electron is in a new shell, further away and more shielded", "Na has fewer protons", "Na's electron is paired", "Ne is a metal"], a: 0, e: R`The new 3s shell is further from the nucleus and better shielded.` },
+    { q: "What is periodicity?", o: ["A repeating pattern of properties across periods", "Elements in the same group", "Radioactive decay", "The number of shells"], a: 0, e: R`Properties repeat as each new period is filled.` },
+    { q: "What forces exist between Cl₂ molecules?", o: ["London forces", "Hydrogen bonds", "Ionic bonds", "Metallic bonds"], a: 0, e: R`Cl<sub>2</sub> is non-polar, so only London (instantaneous dipole) forces act.` }
   ],
   flashcards: [
     ["Atomic radius across a period", "Decreases: more protons, same shell, similar shielding → electrons pulled closer"],
@@ -515,7 +515,7 @@ S2Data.add({
 S2Data.add({
   id: "3b", group: 3, y1: true, title: "Metallic bonding and structures",
   summary: "Metallic bonding and comparing giant ionic, giant covalent, metallic and molecular structures.",
-  notes: `
+  notes: R`
 <h3>Metallic bonding</h3>
 <div class="box box-key"><span class="box-title">Definition</span>Metallic bonding is the <b>strong electrostatic attraction between a lattice of positive metal ions and a sea of delocalised electrons</b>.</div>
 <ul>
@@ -544,14 +544,14 @@ S2Data.add({
 <p>Iodine forms a simple molecular lattice: I<sub>2</sub> molecules held by London forces. It sublimes on gentle heating.</p>
 `,
   quiz: [
-    { q: "Why does magnesium have a higher melting point than sodium?", o: ["Mg²⁺ has more charge and more delocalised electrons per ion", "Mg is covalent", "Mg ions are bigger", "Mg has London forces"], a: 0, e: "" },
-    { q: "Which structure conducts electricity as a solid?", o: ["Metallic", "Giant ionic", "Simple molecular", "Diamond"], a: 0, e: "" },
-    { q: "Why is graphite soft?", o: ["Weak London forces between layers", "Weak covalent bonds", "It's ionic", "It has free ions"], a: 0, e: "" },
-    { q: "In graphite, each carbon is bonded to…", o: ["3 others", "4 others", "2 others", "6 others"], a: 0, e: "" },
-    { q: "Which substance is a giant covalent lattice?", o: ["SiO₂", "I₂", "NaCl", "CO₂"], a: 0, e: "" },
-    { q: "A solid melts at 801 °C and conducts only when molten. Its structure is…", o: ["Giant ionic", "Metallic", "Giant covalent", "Simple molecular"], a: 0, e: "" },
-    { q: "What holds I₂ molecules together in solid iodine?", o: ["London forces", "Covalent bonds", "Ionic bonds", "Hydrogen bonds"], a: 0, e: "" },
-    { q: "Why are metals malleable?", o: ["Layers slide while delocalised electrons hold the lattice together", "Ions repel", "Bonds are weak", "They're molecular"], a: 0, e: "" }
+    { q: "Why does magnesium have a higher melting point than sodium?", o: ["Mg²⁺ has more charge and more delocalised electrons per ion", "Mg is covalent", "Mg ions are bigger", "Mg has London forces"], a: 0, e: R`Each Mg<sup>2+</sup> contributes 2 electrons and has a higher charge density.` },
+    { q: "Which structure conducts electricity as a solid?", o: ["Metallic", "Giant ionic", "Simple molecular", "Diamond"], a: 0, e: R`Delocalised electrons can move through the solid.` },
+    { q: "Why is graphite soft?", o: ["Weak London forces between layers", "Weak covalent bonds", "It's ionic", "It has free ions"], a: 0, e: R`The layers can slide past each other because the forces between them are weak.` },
+    { q: "In graphite, each carbon is bonded to…", o: ["3 others", "4 others", "2 others", "6 others"], a: 0, e: R`The fourth electron of each carbon is delocalised.` },
+    { q: "Which substance is a giant covalent lattice?", o: ["SiO₂", "I₂", "NaCl", "CO₂"], a: 0, e: R`Each Si bonds to 4 O atoms in a giant network.` },
+    { q: "A solid melts at 801 °C and conducts only when molten. Its structure is…", o: ["Giant ionic", "Metallic", "Giant covalent", "Simple molecular"], a: 0, e: R`A high melting point, and conducting only when the ions are free to move, means ionic.` },
+    { q: "What holds I₂ molecules together in solid iodine?", o: ["London forces", "Covalent bonds", "Ionic bonds", "Hydrogen bonds"], a: 0, e: R`I<sub>2</sub> molecules are non-polar; London forces are fairly strong because there are many electrons.` },
+    { q: "Why are metals malleable?", o: ["Layers slide while delocalised electrons hold the lattice together", "Ions repel", "Bonds are weak", "They're molecular"], a: 0, e: R`The delocalised electrons keep bonding the ions as the layers move.` }
   ],
   flashcards: [
     ["Metallic bonding", "Electrostatic attraction between positive metal ions and delocalised electrons"],
@@ -568,7 +568,7 @@ S2Data.add({
 S2Data.add({
   id: "3c", group: 3, y1: true, title: "Groups 1 and 2",
   summary: "Trends in Group 2 reactivity, solubility, thermal stability of carbonates and nitrates, and flame tests.",
-  notes: `
+  notes: R`
 <h3>Group 2 trends</h3>
 <ul>
 <li><b>First ionisation energy decreases</b> down the group (more shells, more shielding).</li>
@@ -602,14 +602,14 @@ S2Data.add({
 `,
   quiz: [
     { q: "How does reactivity change down Group 2?", o: ["Increases", "Decreases", "No trend", "Increases then decreases"], a: 0, e: "Ionisation energies fall." },
-    { q: "Which Group 2 hydroxide is most soluble?", o: ["Ba(OH)₂", "Mg(OH)₂", "Ca(OH)₂", "Sr(OH)₂"], a: 0, e: "" },
-    { q: "Which Group 2 sulfate is least soluble?", o: ["BaSO₄", "MgSO₄", "CaSO₄", "SrSO₄"], a: 0, e: "" },
-    { q: "Why does MgCO₃ decompose at a lower temperature than BaCO₃?", o: ["Mg²⁺ is smaller, more polarising", "Mg²⁺ is larger", "BaCO₃ has stronger London forces", "Mg is less reactive"], a: 0, e: "" },
-    { q: "Products of heating magnesium nitrate?", o: ["MgO, NO₂ and O₂", "MgNO₂ and O₂", "Mg and NO₂", "MgO and N₂"], a: 0, e: "" },
-    { q: "Products of heating sodium nitrate?", o: ["NaNO₂ and O₂", "Na₂O, NO₂ and O₂", "Na and NO₂", "No reaction"], a: 0, e: "" },
-    { q: "What colour flame does strontium give?", o: ["Crimson red", "Apple green", "Lilac", "Yellow"], a: 0, e: "" },
-    { q: "What does Mg form with steam?", o: ["MgO and H₂", "Mg(OH)₂ and H₂", "MgO₂", "MgH₂"], a: 0, e: "" },
-    { q: "Why are flame colours produced?", o: ["Excited electrons fall back, emitting light of particular energies", "Metals burn", "Ions absorb all light", "Electrons are lost"], a: 0, e: "" }
+    { q: "Which Group 2 hydroxide is most soluble?", o: ["Ba(OH)₂", "Mg(OH)₂", "Ca(OH)₂", "Sr(OH)₂"], a: 0, e: R`Hydroxide solubility increases down Group 2.` },
+    { q: "Which Group 2 sulfate is least soluble?", o: ["BaSO₄", "MgSO₄", "CaSO₄", "SrSO₄"], a: 0, e: R`Sulfate solubility decreases down Group 2.` },
+    { q: "Why does MgCO₃ decompose at a lower temperature than BaCO₃?", o: ["Mg²⁺ is smaller, more polarising", "Mg²⁺ is larger", "BaCO₃ has stronger London forces", "Mg is less reactive"], a: 0, e: R`The smaller, more charge-dense Mg<sup>2+</sup> distorts the carbonate ion's electron cloud more, weakening it.` },
+    { q: "Products of heating magnesium nitrate?", o: ["MgO, NO₂ and O₂", "MgNO₂ and O₂", "Mg and NO₂", "MgO and N₂"], a: 0, e: R`2Mg(NO<sub>3</sub>)<sub>2</sub> → 2MgO + 4NO<sub>2</sub> + O<sub>2</sub>.` },
+    { q: "Products of heating sodium nitrate?", o: ["NaNO₂ and O₂", "Na₂O, NO₂ and O₂", "Na and NO₂", "No reaction"], a: 0, e: R`Group 1 nitrates (except Li) only lose oxygen: 2NaNO<sub>3</sub> → 2NaNO<sub>2</sub> + O<sub>2</sub>.` },
+    { q: "What colour flame does strontium give?", o: ["Crimson red", "Apple green", "Lilac", "Yellow"], a: 0, e: R`Li red, Na yellow, K lilac, Ca brick-red, Sr crimson, Ba green.` },
+    { q: "What does Mg form with steam?", o: ["MgO and H₂", "Mg(OH)₂ and H₂", "MgO₂", "MgH₂"], a: 0, e: R`Mg + H<sub>2</sub>O(g) → MgO + H<sub>2</sub>.` },
+    { q: "Why are flame colours produced?", o: ["Excited electrons fall back, emitting light of particular energies", "Metals burn", "Ions absorb all light", "Electrons are lost"], a: 0, e: R`The energy of each photon matches the gap between energy levels, so it has a particular colour.` }
   ],
   flashcards: [
     ["Group 2 + water", "M + 2H₂O → M(OH)₂ + H₂"],
@@ -628,7 +628,7 @@ S2Data.add({
 S2Data.add({
   id: "3d", group: 3, y1: true, title: "Group 7: the halogens",
   summary: "Trends, displacement, disproportionation, halide reactions with sulfuric acid, and halide tests.",
-  notes: `
+  notes: R`
 <h3>Trends down Group 7</h3>
 <ul>
 <li>F<sub>2</sub> pale yellow gas · Cl<sub>2</sub> green gas · Br<sub>2</sub> red-brown liquid · I<sub>2</sub> grey-black solid (purple vapour).</li>
@@ -664,15 +664,15 @@ S2Data.add({
 <p>Hydrogen halides are very soluble, forming acids; HCl fumes form white smoke with NH<sub>3</sub>: NH<sub>3</sub> + HCl → NH<sub>4</sub>Cl.</p>
 `,
   quiz: [
-    { q: "How does oxidising power change down Group 7?", o: ["Decreases", "Increases", "Stays the same", "Increases then decreases"], a: 0, e: "" },
-    { q: "Which halide ion is the strongest reducing agent?", o: ["I⁻", "Br⁻", "Cl⁻", "F⁻"], a: 0, e: "" },
+    { q: "How does oxidising power change down Group 7?", o: ["Decreases", "Increases", "Stays the same", "Increases then decreases"], a: 0, e: R`Atoms are larger and more shielded, so they gain electrons less easily.` },
+    { q: "Which halide ion is the strongest reducing agent?", o: ["I⁻", "Br⁻", "Cl⁻", "F⁻"], a: 0, e: R`I<sup>−</sup> is the largest, so its outer electron is lost most easily.` },
     { q: "NaCl + conc H₂SO₄ gives…", o: ["HCl only", "Cl₂ and SO₂", "HCl and H₂S", "No reaction"], a: 0, e: "Cl⁻ is too weak a reducing agent to reduce sulfuric acid." },
-    { q: "Which gas with a rotten-egg smell forms from NaI and conc H₂SO₄?", o: ["H₂S", "SO₂", "HI", "I₂"], a: 0, e: "" },
-    { q: "Silver bromide precipitate is…", o: ["Cream, soluble in conc NH₃ only", "White, soluble in dilute NH₃", "Yellow, insoluble", "Black"], a: 0, e: "" },
-    { q: "Why is dilute HNO₃ added before AgNO₃?", o: ["To remove carbonate ions that would give a false precipitate", "To oxidise the halide", "To make silver ions", "To dissolve the precipitate"], a: 0, e: "" },
-    { q: "Products of Cl₂ with cold dilute NaOH?", o: ["NaCl, NaClO, H₂O", "NaCl, NaClO₃, H₂O", "HCl, HClO", "NaCl and O₂"], a: 0, e: "" },
-    { q: "Iodine dissolved in cyclohexane is…", o: ["Purple", "Orange", "Brown", "Colourless"], a: 0, e: "" },
-    { q: "Why do halogen boiling points increase down the group?", o: ["More electrons → stronger London forces", "Stronger covalent bonds", "Hydrogen bonding", "More polar"], a: 0, e: "" }
+    { q: "Which gas with a rotten-egg smell forms from NaI and conc H₂SO₄?", o: ["H₂S", "SO₂", "HI", "I₂"], a: 0, e: R`I<sup>−</sup> reduces sulfur from +6 all the way to −2 in H<sub>2</sub>S.` },
+    { q: "Silver bromide precipitate is…", o: ["Cream, soluble in conc NH₃ only", "White, soluble in dilute NH₃", "Yellow, insoluble", "Black"], a: 0, e: R`AgCl is white (dilute NH₃), AgBr cream (conc NH₃) and AgI yellow (insoluble).` },
+    { q: "Why is dilute HNO₃ added before AgNO₃?", o: ["To remove carbonate ions that would give a false precipitate", "To oxidise the halide", "To make silver ions", "To dissolve the precipitate"], a: 0, e: R`Carbonate (or hydroxide) would form a silver precipitate too.` },
+    { q: "Products of Cl₂ with cold dilute NaOH?", o: ["NaCl, NaClO, H₂O", "NaCl, NaClO₃, H₂O", "HCl, HClO", "NaCl and O₂"], a: 0, e: R`This is disproportionation at room temperature, making bleach.` },
+    { q: "Iodine dissolved in cyclohexane is…", o: ["Purple", "Orange", "Brown", "Colourless"], a: 0, e: R`Iodine is brown in water but purple in non-polar solvents.` },
+    { q: "Why do halogen boiling points increase down the group?", o: ["More electrons → stronger London forces", "Stronger covalent bonds", "Hydrogen bonding", "More polar"], a: 0, e: R`Larger molecules have more electrons, so they have stronger temporary dipoles.` }
   ],
   flashcards: [
     ["Halogen oxidising power trend", "Decreases down the group"],
@@ -691,7 +691,7 @@ S2Data.add({
 S2Data.add({
   id: "3e", group: 3, y1: true, title: "Enthalpy changes and calorimetry",
   summary: "Standard conditions, the key enthalpy definitions, and measuring ΔH with Q = mcΔT.",
-  notes: `
+  notes: R`
 <h3>Enthalpy basics</h3>
 <ul>
 <li><b>Enthalpy change, ΔH</b>: the heat energy change at constant pressure. <b>Exothermic</b>: ΔH negative (surroundings get hotter). <b>Endothermic</b>: ΔH positive.</li>
@@ -720,14 +720,14 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Definition of standard enthalpy of formation?", o: ["Enthalpy change when 1 mol of a compound forms from its elements in their standard states", "Enthalpy change when 1 mol burns completely", "Energy to break 1 mol of bonds", "Enthalpy change forming 1 mol of water"], a: 0, e: "" },
-    { q: "Standard pressure is…", o: ["100 kPa", "101 kPa only", "1 kPa", "1000 kPa"], a: 0, e: "" },
-    { q: "25 cm³ of solution warms by 4.0 °C. Q = ?", o: ["418 J", "100 J", "4180 J", "41.8 J"], a: 0, e: "25 × 4.18 × 4.0" },
+    { q: "Definition of standard enthalpy of formation?", o: ["Enthalpy change when 1 mol of a compound forms from its elements in their standard states", "Enthalpy change when 1 mol burns completely", "Energy to break 1 mol of bonds", "Enthalpy change forming 1 mol of water"], a: 0, e: R`Standard states are at 100 kPa and a stated temperature (usually 298 K).` },
+    { q: "Standard pressure is…", o: ["100 kPa", "101 kPa only", "1 kPa", "1000 kPa"], a: 0, e: R`Standard conditions: 100 kPa (and usually 298 K).` },
+    { q: "25 cm³ of solution warms by 4.0 °C. Q = ?", o: ["418 J", "100 J", "4180 J", "41.8 J"], a: 0, e: R`\(25 \times 4.18 \times 4.0\)` },
     { q: "Q = 2.09 kJ released by 0.0250 mol of reactant. ΔH = ?", o: ["−83.6 kJ mol⁻¹", "+83.6 kJ mol⁻¹", "−52.3 kJ mol⁻¹", "−0.0523 kJ mol⁻¹"], a: 0, e: "2.09 ÷ 0.025 = 83.6; exothermic." },
-    { q: "Main reason a measured enthalpy of combustion is less exothermic than the data book?", o: ["Heat lost to surroundings", "Too much fuel", "Thermometer too accurate", "Water evaporating from the can only"], a: 0, e: "" },
-    { q: "In Q = mcΔT, m is the mass of…", o: ["The water/solution being heated", "The fuel burned", "The reactants in moles", "The calorimeter only"], a: 0, e: "" },
+    { q: "Main reason a measured enthalpy of combustion is less exothermic than the data book?", o: ["Heat lost to surroundings", "Too much fuel", "Thermometer too accurate", "Water evaporating from the can only"], a: 0, e: R`Lost heat makes the measured temperature rise smaller.` },
+    { q: "In Q = mcΔT, m is the mass of…", o: ["The water/solution being heated", "The fuel burned", "The reactants in moles", "The calorimeter only"], a: 0, e: R`Use the mass of liquid that changed temperature, not the fuel.` },
     { q: "ΔfH of O₂(g) is…", o: ["0", "−286 kJ mol⁻¹", "+498 kJ mol⁻¹", "Depends on temperature only"], a: 0, e: "Element in its standard state." },
-    { q: "Why extrapolate a cooling curve?", o: ["To estimate the maximum temperature change allowing for heat loss", "To find the mass", "To find c", "To make the graph look neat"], a: 0, e: "" }
+    { q: "Why extrapolate a cooling curve?", o: ["To estimate the maximum temperature change allowing for heat loss", "To find the mass", "To find c", "To make the graph look neat"], a: 0, e: R`Heat is lost while mixing; extrapolating back gives the change at the moment of mixing.` }
   ],
   flashcards: [
     ["Exothermic", "ΔH negative; heat released to surroundings"],
@@ -745,7 +745,7 @@ S2Data.add({
 S2Data.add({
   id: "3f", group: 3, y1: true, title: "Hess's law and bond enthalpies",
   summary: "Using cycles with formation and combustion data, and calculating ΔH from mean bond enthalpies.",
-  notes: `
+  notes: R`
 <h3>Hess's law</h3>
 <p>The enthalpy change for a reaction is <b>independent of the route</b> taken, provided the start and end conditions are the same. So you can find enthalpy changes you can't measure directly.</p>
 <h3>Using formation data</h3>
@@ -766,14 +766,14 @@ S2Data.add({
 <p>Values differ from Hess's law (formation) values because mean bond enthalpies are averages, and because bond enthalpy calculations assume everything is gaseous.</p>
 `,
   quiz: [
-    { q: "Hess's law states that…", o: ["ΔH is independent of the route taken", "Energy is always released", "ΔH depends on the catalyst", "Bonds break exothermically"], a: 0, e: "" },
-    { q: "4NH₃ + 5O₂ → 4NO + 6H₂O(g). ΔfH: NH₃ −46, NO +90, H₂O(g) −242 kJ mol⁻¹. ΔrH = ?", o: ["−908 kJ mol⁻¹", "+908 kJ mol⁻¹", "−1268 kJ mol⁻¹", "−286 kJ mol⁻¹"], a: 0, e: "(4×90 + 6×−242) − (4×−46) = 360 − 1452 + 184 = −908." },
-    { q: "Bond breaking is…", o: ["Endothermic", "Exothermic", "Neither", "Depends on the bond"], a: 0, e: "" },
-    { q: "Broken bonds total 2648 kJ, made bonds total 3466 kJ. ΔH = ?", o: ["−818 kJ mol⁻¹", "+818 kJ mol⁻¹", "+6114 kJ mol⁻¹", "−6114 kJ mol⁻¹"], a: 0, e: "" },
-    { q: "Why do bond enthalpy calculations give approximate values?", o: ["Mean bond enthalpies are averages over many compounds", "Bonds don't really break", "Hess's law is wrong", "They use liquids"], a: 0, e: "" },
-    { q: "Using combustion data: ΔrH = ?", o: ["ΣΔcH(reactants) − ΣΔcH(products)", "ΣΔcH(products) − ΣΔcH(reactants)", "ΣΔcH(all)", "Bonds broken − bonds made"], a: 0, e: "" },
-    { q: "H–H 436, Cl–Cl 243, H–Cl 432. ΔH for H₂ + Cl₂ → 2HCl?", o: ["−185 kJ mol⁻¹", "+185 kJ mol⁻¹", "+247 kJ mol⁻¹", "−864 kJ mol⁻¹"], a: 0, e: "" },
-    { q: "Bond enthalpy is defined for bonds in the…", o: ["Gaseous state", "Liquid state", "Solid state", "Aqueous state"], a: 0, e: "" }
+    { q: "Hess's law states that…", o: ["ΔH is independent of the route taken", "Energy is always released", "ΔH depends on the catalyst", "Bonds break exothermically"], a: 0, e: R`Energy is conserved, so the route doesn't matter.` },
+    { q: "4NH₃ + 5O₂ → 4NO + 6H₂O(g). ΔfH: NH₃ −46, NO +90, H₂O(g) −242 kJ mol⁻¹. ΔrH = ?", o: ["−908 kJ mol⁻¹", "+908 kJ mol⁻¹", "−1268 kJ mol⁻¹", "−286 kJ mol⁻¹"], a: 0, e: R`\((4\times90 + 6\times-242) - (4\times-46) = 360 - 1452 + 184 = -908\).` },
+    { q: "Bond breaking is…", o: ["Endothermic", "Exothermic", "Neither", "Depends on the bond"], a: 0, e: R`Energy is needed to separate atoms.` },
+    { q: "Broken bonds total 2648 kJ, made bonds total 3466 kJ. ΔH = ?", o: ["−818 kJ mol⁻¹", "+818 kJ mol⁻¹", "+6114 kJ mol⁻¹", "−6114 kJ mol⁻¹"], a: 0, e: R`\(\Delta H = 2648 - 3466 = -818\ \text{kJ mol}^{-1}\).` },
+    { q: "Why do bond enthalpy calculations give approximate values?", o: ["Mean bond enthalpies are averages over many compounds", "Bonds don't really break", "Hess's law is wrong", "They use liquids"], a: 0, e: R`The actual bond strength varies with the molecule.` },
+    { q: "Using combustion data: ΔrH = ?", o: ["ΣΔcH(reactants) − ΣΔcH(products)", "ΣΔcH(products) − ΣΔcH(reactants)", "ΣΔcH(all)", "Bonds broken − bonds made"], a: 0, e: R`Combustion goes 'down' to CO₂ and H₂O, so it's reactants minus products.` },
+    { q: "H–H 436, Cl–Cl 243, H–Cl 432. ΔH for H₂ + Cl₂ → 2HCl?", o: ["−185 kJ mol⁻¹", "+185 kJ mol⁻¹", "+247 kJ mol⁻¹", "−864 kJ mol⁻¹"], a: 0, e: R`\((436 + 243) - 2(432) = 679 - 864 = -185\ \text{kJ mol}^{-1}\).` },
+    { q: "Bond enthalpy is defined for bonds in the…", o: ["Gaseous state", "Liquid state", "Solid state", "Aqueous state"], a: 0, e: R`Bond enthalpies are defined for gaseous molecules.` }
   ],
   flashcards: [
     ["Hess's law", "ΔH is independent of the route, given the same start and end conditions"],
@@ -789,7 +789,7 @@ S2Data.add({
 S2Data.add({
   id: "3g", group: 3, y1: true, title: "Reaction rates",
   summary: "Collision theory, factors affecting rate, Maxwell–Boltzmann distributions, catalysts and measuring rates.",
-  notes: `
+  notes: R`
 <h3>Collision theory</h3>
 <p>For a reaction, particles must <b>collide</b> with <b>energy ≥ the activation energy</b> (E<sub>a</sub>) and in the correct <b>orientation</b>. The rate depends on the <b>frequency of successful collisions</b>.</p>
 <ul>
@@ -815,14 +815,14 @@ S2Data.add({
 <p>Rate = change in amount (or concentration) ÷ time. Methods: gas volume in a syringe, mass loss on a balance, colour change (colorimeter), or time for a precipitate to hide a cross. On a graph, the rate at a moment is the <b>gradient of the tangent</b>.</p>
 `,
   quiz: [
-    { q: "Why does increasing temperature greatly increase rate?", o: ["A much greater proportion of molecules have energy ≥ Ea", "Ea decreases", "More molecules are made", "Collisions become gentler"], a: 0, e: "" },
-    { q: "On a Maxwell–Boltzmann curve, higher temperature makes the peak…", o: ["Lower and further right", "Higher and further left", "Higher and further right", "Unchanged"], a: 0, e: "" },
-    { q: "How does a catalyst speed up a reaction?", o: ["Provides an alternative route with lower Ea", "Raises the temperature", "Increases collision energy", "Shifts the equilibrium"], a: 0, e: "" },
-    { q: "Why doesn't the M–B curve touch the x-axis at high energy?", o: ["There's no maximum energy a molecule can have", "All molecules have high energy", "It's a mistake", "Ea is infinite"], a: 0, e: "" },
-    { q: "Iron in the Haber process is a…", o: ["Heterogeneous catalyst", "Homogeneous catalyst", "Reactant", "Inhibitor"], a: 0, e: "" },
-    { q: "How do you find the rate at a particular time from a concentration–time graph?", o: ["Gradient of the tangent at that time", "Area under the curve", "y-intercept", "Final value ÷ time"], a: 0, e: "" },
-    { q: "What does the area under an M–B curve represent?", o: ["Total number of molecules", "Activation energy", "Rate", "Enthalpy change"], a: 0, e: "" },
-    { q: "A catalyst changes the M–B distribution by…", o: ["Not changing the curve, but moving Ea to the left", "Moving the peak right", "Adding more molecules", "Flattening the curve"], a: 0, e: "" }
+    { q: "Why does increasing temperature greatly increase rate?", o: ["A much greater proportion of molecules have energy ≥ Ea", "Ea decreases", "More molecules are made", "Collisions become gentler"], a: 0, e: R`Molecules collide more often and a much bigger fraction have enough energy.` },
+    { q: "On a Maxwell–Boltzmann curve, higher temperature makes the peak…", o: ["Lower and further right", "Higher and further left", "Higher and further right", "Unchanged"], a: 0, e: R`The area stays the same: the curve flattens and the peak moves to higher energy.` },
+    { q: "How does a catalyst speed up a reaction?", o: ["Provides an alternative route with lower Ea", "Raises the temperature", "Increases collision energy", "Shifts the equilibrium"], a: 0, e: R`More molecules then have energy above the lower activation energy.` },
+    { q: "Why doesn't the M–B curve touch the x-axis at high energy?", o: ["There's no maximum energy a molecule can have", "All molecules have high energy", "It's a mistake", "Ea is infinite"], a: 0, e: R`The curve approaches the axis but never reaches it.` },
+    { q: "Iron in the Haber process is a…", o: ["Heterogeneous catalyst", "Homogeneous catalyst", "Reactant", "Inhibitor"], a: 0, e: R`Heterogeneous means in a different phase from the reactants (solid iron, gaseous reactants).` },
+    { q: "How do you find the rate at a particular time from a concentration–time graph?", o: ["Gradient of the tangent at that time", "Area under the curve", "y-intercept", "Final value ÷ time"], a: 0, e: R`The gradient of the tangent gives the instantaneous rate.` },
+    { q: "What does the area under an M–B curve represent?", o: ["Total number of molecules", "Activation energy", "Rate", "Enthalpy change"], a: 0, e: R`Changing temperature doesn't change the area, since the number of molecules is fixed.` },
+    { q: "A catalyst changes the M–B distribution by…", o: ["Not changing the curve, but moving Ea to the left", "Moving the peak right", "Adding more molecules", "Flattening the curve"], a: 0, e: R`The energy distribution is unchanged; only the activation energy is lowered.` }
   ],
   flashcards: [
     ["Collision theory", "Collide with E ≥ Ea in the correct orientation"],
@@ -839,7 +839,7 @@ S2Data.add({
 S2Data.add({
   id: "3h", group: 3, y1: true, title: "Chemical equilibrium",
   summary: "Dynamic equilibrium, writing Kc expressions, Le Chatelier's principle and industrial compromises.",
-  notes: `
+  notes: R`
 <h3>Dynamic equilibrium</h3>
 <p>In a <b>closed system</b>, a reversible reaction reaches equilibrium when the <b>forward and backward rates are equal</b> and the <b>concentrations stay constant</b> (not necessarily equal).</p>
 <h3>The equilibrium constant K<sub>c</sub></h3>
@@ -848,7 +848,7 @@ S2Data.add({
 <ul>
 <li>Square brackets mean concentration in mol dm<sup>−3</sup> at equilibrium.</li>
 <li><b>Homogeneous</b> equilibria: everything in the same phase. <b>Heterogeneous</b>: different phases. Leave <b>solids</b> (and liquids in excess, like water as solvent) <b>out</b> of K<sub>c</sub>.</li>
-<li>Work out units by cancelling, e.g. N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>: K<sub>c</sub> = [NH<sub>3</sub>]<sup>2</sup>/([N<sub>2</sub>][H<sub>2</sub>]<sup>3</sup>), units mol<sup>−2</sup> dm<sup>6</sup>.</li>
+<li>Work out units by cancelling, e.g. N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>: \(K_c = \dfrac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}\), units \(\text{mol}^{-2}\,\text{dm}^6\).</li>
 <li>A large K<sub>c</sub> means the equilibrium lies to the right (mostly products).</li>
 </ul>
 <h3>Le Chatelier's principle</h3>
@@ -866,15 +866,15 @@ S2Data.add({
 <p>The same thinking applies to making ethanol by hydration of ethene and methanol from CO and H<sub>2</sub>.</p>
 `,
   quiz: [
-    { q: "At dynamic equilibrium…", o: ["Forward and backward rates are equal; concentrations are constant", "Concentrations are equal", "The reaction has stopped", "Only products are present"], a: 0, e: "" },
-    { q: "Kc for H₂ + I₂ ⇌ 2HI?", o: ["[HI]² / ([H₂][I₂])", "[H₂][I₂] / [HI]²", "2[HI] / ([H₂][I₂])", "[HI] / ([H₂][I₂])"], a: 0, e: "" },
-    { q: "Which changes the value of Kc?", o: ["Temperature", "Pressure", "Concentration", "Catalyst"], a: 0, e: "" },
-    { q: "Forward reaction exothermic; temperature raised. Kc…", o: ["Decreases", "Increases", "Stays the same", "Becomes zero"], a: 0, e: "" },
+    { q: "At dynamic equilibrium…", o: ["Forward and backward rates are equal; concentrations are constant", "Concentrations are equal", "The reaction has stopped", "Only products are present"], a: 0, e: R`Both reactions continue, but there's no overall change in concentration.` },
+    { q: "Kc for H₂ + I₂ ⇌ 2HI?", o: ["[HI]² / ([H₂][I₂])", "[H₂][I₂] / [HI]²", "2[HI] / ([H₂][I₂])", "[HI] / ([H₂][I₂])"], a: 0, e: R`\(K_c = \dfrac{[\text{HI}]^2}{[\text{H}_2][\text{I}_2]}\): products over reactants, raised to their coefficients.` },
+    { q: "Which changes the value of Kc?", o: ["Temperature", "Pressure", "Concentration", "Catalyst"], a: 0, e: R`Concentration, pressure and catalysts don't change K.` },
+    { q: "Forward reaction exothermic; temperature raised. Kc…", o: ["Decreases", "Increases", "Stays the same", "Becomes zero"], a: 0, e: R`The equilibrium shifts in the endothermic (backward) direction, so K falls.` },
     { q: "Increasing pressure for 2SO₂ + O₂ ⇌ 2SO₃ shifts equilibrium…", o: ["Right", "Left", "No change", "Depends on the catalyst"], a: 0, e: "3 gas moles → 2." },
-    { q: "Units of Kc for N₂ + 3H₂ ⇌ 2NH₃?", o: ["mol⁻² dm⁶", "mol² dm⁻⁶", "No units", "mol dm⁻³"], a: 0, e: "" },
-    { q: "Effect of a catalyst on equilibrium?", o: ["No shift; equilibrium is reached faster", "Shifts right", "Shifts left", "Increases Kc"], a: 0, e: "" },
+    { q: "Units of Kc for N₂ + 3H₂ ⇌ 2NH₃?", o: ["mol⁻² dm⁶", "mol² dm⁻⁶", "No units", "mol dm⁻³"], a: 0, e: R`\(\dfrac{\text{mol}^2\,\text{dm}^{-6}}{\text{mol}\,\text{dm}^{-3} \times \text{mol}^3\,\text{dm}^{-9}} = \text{mol}^{-2}\,\text{dm}^6\).` },
+    { q: "Effect of a catalyst on equilibrium?", o: ["No shift; equilibrium is reached faster", "Shifts right", "Shifts left", "Increases Kc"], a: 0, e: R`A catalyst speeds up the forward and backward reactions equally.` },
     { q: "In CaCO₃(s) ⇌ CaO(s) + CO₂(g), Kc = ?", o: ["[CO₂]", "[CaO][CO₂]/[CaCO₃]", "[CaCO₃]/[CO₂]", "1"], a: 0, e: "Solids are left out." },
-    { q: "Why is 450 °C used in the Haber process?", o: ["Compromise between acceptable rate and yield", "Highest yield", "Iron melts lower", "Cheapest possible temperature"], a: 0, e: "" }
+    { q: "Why is 450 °C used in the Haber process?", o: ["Compromise between acceptable rate and yield", "Highest yield", "Iron melts lower", "Cheapest possible temperature"], a: 0, e: R`A lower temperature gives a higher yield but is too slow.` }
   ],
   flashcards: [
     ["Dynamic equilibrium", "Closed system; rates equal; concentrations constant"],
@@ -892,7 +892,7 @@ S2Data.add({
 S2Data.add({
   id: "4a", group: 4, y1: true, title: "Introduction to organic chemistry",
   summary: "Formulae, IUPAC naming, functional groups, structural and E/Z isomerism, reaction types and hazards.",
-  notes: `
+  notes: R`
 <h3>Types of formula</h3>
 <table>
 <tr><th>Formula</th><th>Butan-1-ol example</th></tr>
@@ -933,15 +933,15 @@ S2Data.add({
 <div class="box box-key"><span class="box-title">Hazards and risks</span>A <b>hazard</b> is something that could cause harm (e.g. flammable, toxic). A <b>risk</b> is the chance of harm, reduced by control measures such as using a fume cupboard, water bath instead of a flame, or smaller quantities.</div>
 `,
   quiz: [
-    { q: "Name CH₃CH(CH₃)CH₂CH₃.", o: ["2-methylbutane", "3-methylbutane", "pentane", "2-ethylpropane"], a: 0, e: "" },
-    { q: "Why does but-2-ene show E/Z isomerism?", o: ["Restricted rotation about C=C and two different groups on each carbon", "It has a chiral carbon", "It has a ring", "Free rotation about C=C"], a: 0, e: "" },
-    { q: "Propanal and propanone are…", o: ["Functional group isomers", "Chain isomers", "Position isomers", "E/Z isomers"], a: 0, e: "" },
-    { q: "Homolytic fission produces…", o: ["Radicals", "Ions", "Nucleophiles only", "Electrophiles only"], a: 0, e: "" },
-    { q: "A nucleophile is…", o: ["An electron-pair donor", "An electron-pair acceptor", "A radical", "A proton"], a: 0, e: "" },
-    { q: "In E/Z naming, priority is decided by…", o: ["Atomic number of the attached atom", "Mass of the whole group", "Number of hydrogens", "Bond length"], a: 0, e: "" },
-    { q: "1-bromobut-2-ene: highest priority groups on opposite sides. Isomer?", o: ["E", "Z", "cis", "Neither"], a: 0, e: "" },
+    { q: "Name CH₃CH(CH₃)CH₂CH₃.", o: ["2-methylbutane", "3-methylbutane", "pentane", "2-ethylpropane"], a: 0, e: R`The longest chain has 4 carbons, with a methyl group on carbon 2.` },
+    { q: "Why does but-2-ene show E/Z isomerism?", o: ["Restricted rotation about C=C and two different groups on each carbon", "It has a chiral carbon", "It has a ring", "Free rotation about C=C"], a: 0, e: R`There's no rotation about C=C, and each carbon has two different groups.` },
+    { q: "Propanal and propanone are…", o: ["Functional group isomers", "Chain isomers", "Position isomers", "E/Z isomers"], a: 0, e: R`Same molecular formula, C₃H₆O, but an aldehyde versus a ketone.` },
+    { q: "Homolytic fission produces…", o: ["Radicals", "Ions", "Nucleophiles only", "Electrophiles only"], a: 0, e: R`Each atom takes one electron from the bond.` },
+    { q: "A nucleophile is…", o: ["An electron-pair donor", "An electron-pair acceptor", "A radical", "A proton"], a: 0, e: R`Nucleophiles are attracted to δ+ carbon atoms.` },
+    { q: "In E/Z naming, priority is decided by…", o: ["Atomic number of the attached atom", "Mass of the whole group", "Number of hydrogens", "Bond length"], a: 0, e: R`The Cahn–Ingold–Prelog rules: higher atomic number means higher priority.` },
+    { q: "1-bromobut-2-ene: highest priority groups on opposite sides. Isomer?", o: ["E", "Z", "cis", "Neither"], a: 0, e: R`E (entgegen) means the higher priorities are on opposite sides.` },
     { q: "Which is a correct IUPAC name?", o: ["2,3-dichloropentane", "2-chloro-3-chloropentane", "3,4-dichloropentane", "dichloro-2,3-pentane"], a: 0, e: "Lowest numbers; di- prefix." },
-    { q: "A curly arrow represents…", o: ["Movement of a pair of electrons", "Movement of an atom", "A single electron", "A bond breaking homolytically"], a: 0, e: "" }
+    { q: "A curly arrow represents…", o: ["Movement of a pair of electrons", "Movement of an atom", "A single electron", "A bond breaking homolytically"], a: 0, e: R`Arrows start at a lone pair or bond and end where the pair goes.` }
   ],
   flashcards: [
     ["Homologous series", "Same general formula and functional group; each member differs by CH₂; trend in physical properties"],
@@ -961,7 +961,7 @@ S2Data.add({
 S2Data.add({
   id: "4b", group: 4, y1: true, title: "Alkanes",
   summary: "Fuels, combustion and pollution, cracking and reforming, and free-radical substitution.",
-  notes: `
+  notes: R`
 <h3>Alkanes as fuels</h3>
 <ul>
 <li>Saturated hydrocarbons, C<sub>n</sub>H<sub>2n+2</sub>, obtained from crude oil by <b>fractional distillation</b>.</li>
@@ -986,14 +986,14 @@ S2Data.add({
 <p>Further substitution gives a mixture (CH<sub>2</sub>Cl<sub>2</sub>, CHCl<sub>3</sub>, CCl<sub>4</sub>), so it's not a good way to make one pure product.</p>
 `,
   quiz: [
-    { q: "Initiation step for chlorination of methane?", o: ["Cl₂ → 2Cl•", "CH₄ → CH₃• + H•", "Cl• + CH₄ → CH₃Cl + H•", "Cl• + Cl• → Cl₂"], a: 0, e: "" },
-    { q: "Which is a propagation step?", o: ["CH₃• + Cl₂ → CH₃Cl + Cl•", "Cl₂ → 2Cl•", "CH₃• + Cl• → CH₃Cl", "2CH₃• → C₂H₆"], a: 0, e: "" },
-    { q: "Why is ethane found in the products of methane chlorination?", o: ["Termination: two CH₃• radicals join", "Cracking", "Propagation", "Impurities"], a: 0, e: "" },
-    { q: "What does reforming do?", o: ["Converts straight chains into branched and cyclic hydrocarbons", "Breaks long chains", "Removes sulfur", "Separates fractions"], a: 0, e: "" },
-    { q: "How are NOx formed in engines?", o: ["N₂ and O₂ react at high temperature", "From fuel impurities", "Incomplete combustion", "From catalytic converters"], a: 0, e: "" },
-    { q: "Catalytic converters contain…", o: ["Platinum and rhodium", "Iron", "Zeolites", "Nickel"], a: 0, e: "" },
-    { q: "Why is free-radical substitution a poor way to make CH₃Cl?", o: ["Further substitution gives a mixture of products", "Too slow", "Needs a catalyst", "Gives only CCl₄"], a: 0, e: "" },
-    { q: "Why is CO dangerous?", o: ["Binds to haemoglobin, reducing oxygen transport", "Causes acid rain", "Greenhouse gas only", "Forms soot"], a: 0, e: "" }
+    { q: "Initiation step for chlorination of methane?", o: ["Cl₂ → 2Cl•", "CH₄ → CH₃• + H•", "Cl• + CH₄ → CH₃Cl + H•", "Cl• + Cl• → Cl₂"], a: 0, e: R`UV light splits the Cl–Cl bond homolytically.` },
+    { q: "Which is a propagation step?", o: ["CH₃• + Cl₂ → CH₃Cl + Cl•", "Cl₂ → 2Cl•", "CH₃• + Cl• → CH₃Cl", "2CH₃• → C₂H₆"], a: 0, e: R`A radical reacts and produces another radical, so the chain continues.` },
+    { q: "Why is ethane found in the products of methane chlorination?", o: ["Termination: two CH₃• radicals join", "Cracking", "Propagation", "Impurities"], a: 0, e: R`Two methyl radicals combine to form C₂H₆.` },
+    { q: "What does reforming do?", o: ["Converts straight chains into branched and cyclic hydrocarbons", "Breaks long chains", "Removes sulfur", "Separates fractions"], a: 0, e: R`Branched and cyclic alkanes burn more smoothly in engines (higher octane).` },
+    { q: "How are NOx formed in engines?", o: ["N₂ and O₂ react at high temperature", "From fuel impurities", "Incomplete combustion", "From catalytic converters"], a: 0, e: R`Engine temperatures are high enough for nitrogen to react with oxygen.` },
+    { q: "Catalytic converters contain…", o: ["Platinum and rhodium", "Iron", "Zeolites", "Nickel"], a: 0, e: R`These metals catalyse the removal of CO, NOx and unburnt hydrocarbons.` },
+    { q: "Why is free-radical substitution a poor way to make CH₃Cl?", o: ["Further substitution gives a mixture of products", "Too slow", "Needs a catalyst", "Gives only CCl₄"], a: 0, e: R`Cl• radicals can substitute more H atoms, giving CH₂Cl₂, CHCl₃ and CCl₄.` },
+    { q: "Why is CO dangerous?", o: ["Binds to haemoglobin, reducing oxygen transport", "Causes acid rain", "Greenhouse gas only", "Forms soot"], a: 0, e: R`CO binds more strongly than oxygen to haemoglobin.` }
   ],
   flashcards: [
     ["Cracking", "Breaking long-chain alkanes into shorter alkanes + alkenes (zeolite catalyst)"],
@@ -1011,7 +1011,7 @@ S2Data.add({
 S2Data.add({
   id: "4c", group: 4, y1: true, title: "Alkenes",
   summary: "The C=C bond, electrophilic addition, Markovnikov's rule, test for alkenes and addition polymers.",
-  notes: `
+  notes: R`
 <h3>Structure</h3>
 <p>Alkenes (C<sub>n</sub>H<sub>2n</sub>) are <b>unsaturated</b>. The C=C has a σ bond and a <b>π bond</b>, formed by sideways overlap of p orbitals. The π bond is a region of high electron density above and below the plane, and is weaker than the σ bond, making alkenes reactive. Bond angles around C=C are about 120° (trigonal planar).</p>
 <h3>Addition reactions</h3>
@@ -1040,15 +1040,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Test for an alkene?", o: ["Bromine water: orange → colourless", "Limewater turns milky", "Acidified dichromate: orange → green", "Silver nitrate"], a: 0, e: "" },
+    { q: "Test for an alkene?", o: ["Bromine water: orange → colourless", "Limewater turns milky", "Acidified dichromate: orange → green", "Silver nitrate"], a: 0, e: R`Electrophilic addition across C=C decolourises bromine water.` },
     { q: "Major product of propene + HBr?", o: ["2-bromopropane", "1-bromopropane", "1,2-dibromopropane", "propane"], a: 0, e: "Via the more stable secondary carbocation." },
-    { q: "Which carbocation is most stable?", o: ["Tertiary", "Secondary", "Primary", "Methyl"], a: 0, e: "" },
-    { q: "Conditions for hydrogenation of alkenes?", o: ["Ni catalyst, about 150 °C", "UV light", "Phosphoric acid, 300 °C", "Aqueous NaOH"], a: 0, e: "" },
-    { q: "What type of mechanism is alkene + HBr?", o: ["Electrophilic addition", "Nucleophilic substitution", "Free-radical substitution", "Elimination"], a: 0, e: "" },
-    { q: "In alkene + HBr, the first curly arrow goes from…", o: ["The C=C π bond to Hδ+", "Br⁻ to C", "H to the C=C", "The C–H bond"], a: 0, e: "" },
-    { q: "Why is a π bond more reactive than a σ bond?", o: ["Electron density is exposed above and below; weaker", "It's stronger", "It's ionic", "It has fewer electrons"], a: 0, e: "" },
-    { q: "Product of ethene with acidified KMnO₄?", o: ["Ethane-1,2-diol", "Ethanol", "Ethanoic acid", "Ethane"], a: 0, e: "" },
-    { q: "Why is burning PVC a problem?", o: ["Releases HCl and other toxic gases", "It doesn't burn", "It produces only water", "It's biodegradable"], a: 0, e: "" }
+    { q: "Which carbocation is most stable?", o: ["Tertiary", "Secondary", "Primary", "Methyl"], a: 0, e: R`Three alkyl groups push electron density towards the positive carbon.` },
+    { q: "Conditions for hydrogenation of alkenes?", o: ["Ni catalyst, about 150 °C", "UV light", "Phosphoric acid, 300 °C", "Aqueous NaOH"], a: 0, e: R`Hydrogen adds across C=C to make an alkane.` },
+    { q: "What type of mechanism is alkene + HBr?", o: ["Electrophilic addition", "Nucleophilic substitution", "Free-radical substitution", "Elimination"], a: 0, e: R`The π electrons attack the δ+ hydrogen of HBr.` },
+    { q: "In alkene + HBr, the first curly arrow goes from…", o: ["The C=C π bond to Hδ+", "Br⁻ to C", "H to the C=C", "The C–H bond"], a: 0, e: R`Electrons in the π bond attack Hδ+, forming a carbocation.` },
+    { q: "Why is a π bond more reactive than a σ bond?", o: ["Electron density is exposed above and below; weaker", "It's stronger", "It's ionic", "It has fewer electrons"], a: 0, e: R`π electron density is more exposed and the bond is weaker, so it attracts electrophiles.` },
+    { q: "Product of ethene with acidified KMnO₄?", o: ["Ethane-1,2-diol", "Ethanol", "Ethanoic acid", "Ethane"], a: 0, e: R`The alkene is oxidised; the purple colour goes colourless.` },
+    { q: "Why is burning PVC a problem?", o: ["Releases HCl and other toxic gases", "It doesn't burn", "It produces only water", "It's biodegradable"], a: 0, e: R`HCl is acidic and toxic, and dioxins can form.` }
   ],
   flashcards: [
     ["C=C double bond", "One σ bond + one π bond (sideways p overlap)"],
@@ -1067,7 +1067,7 @@ S2Data.add({
 S2Data.add({
   id: "4d", group: 4, y1: true, title: "Alcohols",
   summary: "Classification, combustion, oxidation with dichromate, halogenation, dehydration and practical techniques.",
-  notes: `
+  notes: R`
 <h3>Classification</h3>
 <p><b>Primary</b> (C–OH carbon attached to one carbon), <b>secondary</b> (two), <b>tertiary</b> (three).</p>
 <h3>Reactions</h3>
@@ -1097,14 +1097,14 @@ S2Data.add({
 `,
   quiz: [
     { q: "Product of oxidising propan-2-ol?", o: ["Propanone", "Propanal", "Propanoic acid", "Propene"], a: 0, e: "Secondary → ketone." },
-    { q: "How do you get an aldehyde from a primary alcohol?", o: ["Distil off as it forms", "Reflux with excess oxidant", "Use a tertiary alcohol", "Add PCl₅"], a: 0, e: "" },
-    { q: "Colour change of acidified dichromate when it oxidises an alcohol?", o: ["Orange → green", "Purple → colourless", "Green → orange", "Colourless → brown"], a: 0, e: "" },
+    { q: "How do you get an aldehyde from a primary alcohol?", o: ["Distil off as it forms", "Reflux with excess oxidant", "Use a tertiary alcohol", "Add PCl₅"], a: 0, e: R`Removing it before it's oxidised further to the carboxylic acid.` },
+    { q: "Colour change of acidified dichromate when it oxidises an alcohol?", o: ["Orange → green", "Purple → colourless", "Green → orange", "Colourless → brown"], a: 0, e: R`Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> (orange) is reduced to Cr<sup>3+</sup> (green).` },
     { q: "Which alcohol is not oxidised by acidified dichromate?", o: ["2-methylpropan-2-ol", "Ethanol", "Propan-2-ol", "Butan-1-ol"], a: 0, e: "Tertiary." },
-    { q: "Test for an –OH group using PCl₅?", o: ["Misty fumes of HCl", "Orange to green", "Squeaky pop", "White precipitate"], a: 0, e: "" },
-    { q: "Why heat under reflux?", o: ["Volatile substances condense and return, allowing long heating", "To remove the product", "To dry the product", "To cool the reaction"], a: 0, e: "" },
-    { q: "What does anhydrous MgSO₄ do?", o: ["Removes water (drying agent)", "Removes acid", "Catalyses", "Oxidises"], a: 0, e: "" },
-    { q: "Dehydrating ethanol gives…", o: ["Ethene", "Ethanal", "Ethanoic acid", "Ethane"], a: 0, e: "" },
-    { q: "Why wash an organic product with NaHCO₃ solution?", o: ["To remove acidic impurities", "To dry it", "To oxidise it", "To make it denser"], a: 0, e: "" }
+    { q: "Test for an –OH group using PCl₅?", o: ["Misty fumes of HCl", "Orange to green", "Squeaky pop", "White precipitate"], a: 0, e: R`PCl₅ replaces –OH with –Cl, releasing HCl gas.` },
+    { q: "Why heat under reflux?", o: ["Volatile substances condense and return, allowing long heating", "To remove the product", "To dry the product", "To cool the reaction"], a: 0, e: R`Reactants don't boil away during long heating.` },
+    { q: "What does anhydrous MgSO₄ do?", o: ["Removes water (drying agent)", "Removes acid", "Catalyses", "Oxidises"], a: 0, e: R`It absorbs water from the organic liquid.` },
+    { q: "Dehydrating ethanol gives…", o: ["Ethene", "Ethanal", "Ethanoic acid", "Ethane"], a: 0, e: R`Concentrated H<sub>3</sub>PO<sub>4</sub> or H<sub>2</sub>SO<sub>4</sub> removes water: C<sub>2</sub>H<sub>5</sub>OH → C<sub>2</sub>H<sub>4</sub> + H<sub>2</sub>O.` },
+    { q: "Why wash an organic product with NaHCO₃ solution?", o: ["To remove acidic impurities", "To dry it", "To oxidise it", "To make it denser"], a: 0, e: R`NaHCO<sub>3</sub> neutralises the acid, releasing CO<sub>2</sub>.` }
   ],
   flashcards: [
     ["Oxidising agent for alcohols", "Acidified K₂Cr₂O₇: orange → green"],
@@ -1123,7 +1123,7 @@ S2Data.add({
 S2Data.add({
   id: "4e", group: 4, y1: true, title: "Halogenoalkanes",
   summary: "Classification, nucleophilic substitution and elimination, and rates of hydrolysis.",
-  notes: `
+  notes: R`
 <h3>Classification</h3>
 <p><b>Primary</b>: the C–X carbon is bonded to one other carbon. <b>Secondary</b>: two. <b>Tertiary</b>: three.</p>
 <h3>Reactivity</h3>
@@ -1150,14 +1150,14 @@ S2Data.add({
 `,
   quiz: [
     { q: "Which halogenoalkane hydrolyses fastest?", o: ["1-iodobutane", "1-bromobutane", "1-chlorobutane", "1-fluorobutane"], a: 0, e: "C–I is the weakest bond." },
-    { q: "What controls the rate of hydrolysis of halogenoalkanes?", o: ["C–X bond enthalpy", "C–X bond polarity", "Chain length", "Size of the nucleophile"], a: 0, e: "" },
-    { q: "Conditions to make an alkene from a halogenoalkane?", o: ["KOH in ethanol, heat under reflux", "Aqueous NaOH, warm", "KCN in ethanol", "Excess NH₃"], a: 0, e: "" },
+    { q: "What controls the rate of hydrolysis of halogenoalkanes?", o: ["C–X bond enthalpy", "C–X bond polarity", "Chain length", "Size of the nucleophile"], a: 0, e: R`The weaker C–I bond breaks fastest; C–F is slowest.` },
+    { q: "Conditions to make an alkene from a halogenoalkane?", o: ["KOH in ethanol, heat under reflux", "Aqueous NaOH, warm", "KCN in ethanol", "Excess NH₃"], a: 0, e: R`Ethanol as solvent with heat favours elimination over substitution.` },
     { q: "Product of 1-bromopropane + KCN in ethanol?", o: ["Butanenitrile", "Propanenitrile", "Propan-1-ol", "Propene"], a: 0, e: "Chain gains a carbon." },
-    { q: "In nucleophilic substitution, the nucleophile attacks…", o: ["The δ+ carbon", "The halogen", "A hydrogen", "The C=C"], a: 0, e: "" },
-    { q: "2-bromo-2-methylpropane is a…", o: ["Tertiary halogenoalkane", "Primary", "Secondary", "Quaternary"], a: 0, e: "" },
-    { q: "In elimination, OH⁻ acts as a…", o: ["Base", "Nucleophile", "Electrophile", "Radical"], a: 0, e: "" },
-    { q: "Why does excess ammonia give mainly the primary amine?", o: ["Reduces further substitution of the amine", "Makes it faster", "Prevents elimination", "Neutralises HBr only"], a: 0, e: "" },
-    { q: "How do CFCs damage the ozone layer?", o: ["UV releases Cl• radicals that catalyse O₃ breakdown", "They absorb all UV", "They react with N₂", "They form acid rain"], a: 0, e: "" }
+    { q: "In nucleophilic substitution, the nucleophile attacks…", o: ["The δ+ carbon", "The halogen", "A hydrogen", "The C=C"], a: 0, e: R`Electronegative halogen leaves the carbon δ+.` },
+    { q: "2-bromo-2-methylpropane is a…", o: ["Tertiary halogenoalkane", "Primary", "Secondary", "Quaternary"], a: 0, e: R`The carbon bonded to Br is attached to three other carbons.` },
+    { q: "In elimination, OH⁻ acts as a…", o: ["Base", "Nucleophile", "Electrophile", "Radical"], a: 0, e: R`OH⁻ removes an H⁺ from the carbon next to C–X.` },
+    { q: "Why does excess ammonia give mainly the primary amine?", o: ["Reduces further substitution of the amine", "Makes it faster", "Prevents elimination", "Neutralises HBr only"], a: 0, e: R`An excess makes the halogenoalkane more likely to meet ammonia than the amine product.` },
+    { q: "How do CFCs damage the ozone layer?", o: ["UV releases Cl• radicals that catalyse O₃ breakdown", "They absorb all UV", "They react with N₂", "They form acid rain"], a: 0, e: R`Cl• + O<sub>3</sub> → ClO• + O<sub>2</sub>; ClO• + O<sub>3</sub> → 2O<sub>2</sub> + Cl•. The chlorine radical is regenerated.` }
   ],
   flashcards: [
     ["Primary / secondary / tertiary halogenoalkane", "C–X carbon bonded to 1 / 2 / 3 other carbons"],
@@ -1176,7 +1176,7 @@ S2Data.add({
 S2Data.add({
   id: "4f", group: 4, y1: true, title: "Mass spectrometry and infrared spectroscopy",
   summary: "Using molecular ion and fragment peaks, and identifying bonds from IR absorptions.",
-  notes: `
+  notes: R`
 <h3>Mass spectrometry of organic compounds</h3>
 <ul>
 <li>The <b>molecular ion</b> M<sup>+</sup> peak at the highest m/z gives the M<sub>r</sub>. A small <b>M+1</b> peak comes from <sup>13</sup>C.</li>
@@ -1200,14 +1200,14 @@ S2Data.add({
 <p>The <b>fingerprint region</b> (below about 1500 cm<sup>−1</sup>) is unique to each compound: match against a database to identify it. IR can also monitor reactions, e.g. the oxidation of an alcohol (O–H disappears, C=O appears), and measure CO<sub>2</sub> and other greenhouse gases, which absorb IR.</p>
 `,
   quiz: [
-    { q: "A broad absorption at 3300 cm⁻¹ and none at 1700 cm⁻¹ suggests…", o: ["An alcohol", "A ketone", "A carboxylic acid", "An alkane"], a: 0, e: "" },
-    { q: "A very broad absorption 3300–2500 plus a strong peak at 1710 cm⁻¹ suggests…", o: ["A carboxylic acid", "An alcohol", "An aldehyde", "An ester"], a: 0, e: "" },
-    { q: "Peak at m/z 15 corresponds to…", o: ["CH₃⁺", "C₂H₅⁺", "CHO⁺", "OH⁺"], a: 0, e: "" },
-    { q: "Which peak gives Mr?", o: ["The molecular ion peak (highest m/z, ignoring M+1)", "The tallest peak", "The first peak", "The M+1 peak"], a: 0, e: "" },
-    { q: "A compound shows M and M+2 peaks in a 1 : 1 ratio. It contains…", o: ["Bromine", "Chlorine", "Iodine", "Fluorine"], a: 0, e: "" },
-    { q: "What happens when a bond absorbs IR radiation?", o: ["It vibrates more (stretches/bends)", "It breaks", "It ionises", "It emits light"], a: 0, e: "" },
-    { q: "Why is the fingerprint region useful?", o: ["Pattern unique to each compound; matched against a database", "Shows the Mr", "Identifies the halogen", "Shows O–H only"], a: 0, e: "" },
-    { q: "Which fragment helps tell propan-1-ol from propan-2-ol?", o: ["m/z 31 (CH₂OH⁺) in propan-1-ol", "m/z 15 in both", "M⁺ at 60", "m/z 43 only"], a: 0, e: "" }
+    { q: "A broad absorption at 3300 cm⁻¹ and none at 1700 cm⁻¹ suggests…", o: ["An alcohol", "A ketone", "A carboxylic acid", "An alkane"], a: 0, e: R`O–H (alcohol) with no C=O.` },
+    { q: "A very broad absorption 3300–2500 plus a strong peak at 1710 cm⁻¹ suggests…", o: ["A carboxylic acid", "An alcohol", "An aldehyde", "An ester"], a: 0, e: R`The very broad O–H of an acid plus a C=O stretch.` },
+    { q: "Peak at m/z 15 corresponds to…", o: ["CH₃⁺", "C₂H₅⁺", "CHO⁺", "OH⁺"], a: 0, e: R`\(12 + 3 \times 1 = 15\).` },
+    { q: "Which peak gives Mr?", o: ["The molecular ion peak (highest m/z, ignoring M+1)", "The tallest peak", "The first peak", "The M+1 peak"], a: 0, e: R`It's the unfragmented molecule ion.` },
+    { q: "A compound shows M and M+2 peaks in a 1 : 1 ratio. It contains…", o: ["Bromine", "Chlorine", "Iodine", "Fluorine"], a: 0, e: R`\({}^{79}\)Br and \({}^{81}\)Br are about 50 : 50.` },
+    { q: "What happens when a bond absorbs IR radiation?", o: ["It vibrates more (stretches/bends)", "It breaks", "It ionises", "It emits light"], a: 0, e: R`Absorbed energy increases the vibration of polar bonds.` },
+    { q: "Why is the fingerprint region useful?", o: ["Pattern unique to each compound; matched against a database", "Shows the Mr", "Identifies the halogen", "Shows O–H only"], a: 0, e: R`Below about 1500 cm⁻¹ the pattern is unique to each compound.` },
+    { q: "Which fragment helps tell propan-1-ol from propan-2-ol?", o: ["m/z 31 (CH₂OH⁺) in propan-1-ol", "m/z 15 in both", "M⁺ at 60", "m/z 43 only"], a: 0, e: R`Only propan-1-ol has a CH₂OH end, which breaks off as the m/z 31 fragment.` }
   ],
   flashcards: [
     ["Molecular ion peak", "Highest m/z (excluding M+1); gives Mr"],
@@ -1226,7 +1226,7 @@ S2Data.add({
 S2Data.add({
   id: "5a", group: 5, y2: true, title: "Rate equations and orders",
   summary: "Rate equations, orders, rate constants, half-life and finding orders from experiments and graphs.",
-  notes: `
+  notes: R`
 <h3>Rate equations</h3>
 <div class="box box-key"><span class="box-title">Rate = k[A]<sup>m</sup>[B]<sup>n</sup></span>m and n are the <b>orders</b> with respect to A and B (found by experiment, not from the equation). The <b>overall order</b> is m + n. k is the <b>rate constant</b>.</div>
 <ul>
@@ -1254,15 +1254,15 @@ S2Data.add({
 <p>Iodine clock example: H<sub>2</sub>O<sub>2</sub> + 2I<sup>−</sup> + 2H<sup>+</sup> → I<sub>2</sub> + 2H<sub>2</sub>O, with a fixed small amount of thiosulfate and starch; time how long until the blue-black colour appears.</p>
 `,
   quiz: [
-    { q: "Rate = k[A]²[B]. Overall order?", o: ["3", "2", "1", "0"], a: 0, e: "" },
-    { q: "Doubling [A] quadruples the rate. Order with respect to A?", o: ["2", "1", "0", "4"], a: 0, e: "" },
-    { q: "Units of k for a second-order reaction?", o: ["dm³ mol⁻¹ s⁻¹", "s⁻¹", "mol dm⁻³ s⁻¹", "dm⁶ mol⁻² s⁻¹"], a: 0, e: "" },
-    { q: "A concentration–time graph is a straight line. Order?", o: ["Zero", "First", "Second", "Third"], a: 0, e: "" },
-    { q: "Constant half-life indicates…", o: ["First order", "Zero order", "Second order", "No reaction"], a: 0, e: "" },
-    { q: "t½ = 20 s for a first-order reaction. k = ?", o: ["0.0347 s⁻¹", "13.9 s⁻¹", "0.05 s⁻¹", "28.9 s⁻¹"], a: 0, e: "0.693 ÷ 20." },
-    { q: "In a clock reaction, the initial rate is proportional to…", o: ["1 / time", "time", "time²", "log time"], a: 0, e: "" },
-    { q: "Rate–concentration graph: straight line through the origin. Order?", o: ["First", "Zero", "Second", "Can't tell"], a: 0, e: "" },
-    { q: "Exp 1: [A] 0.1, [B] 0.1, rate 2×10⁻⁴. Exp 2: [A] 0.2, [B] 0.1, rate 4×10⁻⁴. Exp 3: [A] 0.1, [B] 0.2, rate 2×10⁻⁴. Rate equation?", o: ["Rate = k[A]", "Rate = k[A][B]", "Rate = k[B]", "Rate = k[A]²"], a: 0, e: "" }
+    { q: "Rate = k[A]²[B]. Overall order?", o: ["3", "2", "1", "0"], a: 0, e: R`Add the powers: \(2 + 1 = 3\).` },
+    { q: "Doubling [A] quadruples the rate. Order with respect to A?", o: ["2", "1", "0", "4"], a: 0, e: R`\(2^2 = 4\).` },
+    { q: "Units of k for a second-order reaction?", o: ["dm³ mol⁻¹ s⁻¹", "s⁻¹", "mol dm⁻³ s⁻¹", "dm⁶ mol⁻² s⁻¹"], a: 0, e: R`\(\dfrac{\text{mol dm}^{-3}\,\text{s}^{-1}}{(\text{mol dm}^{-3})^2} = \text{dm}^3\,\text{mol}^{-1}\,\text{s}^{-1}\).` },
+    { q: "A concentration–time graph is a straight line. Order?", o: ["Zero", "First", "Second", "Third"], a: 0, e: R`The rate stays constant as concentration falls.` },
+    { q: "Constant half-life indicates…", o: ["First order", "Zero order", "Second order", "No reaction"], a: 0, e: R`A first-order reaction has a constant half-life.` },
+    { q: "t½ = 20 s for a first-order reaction. k = ?", o: ["0.0347 s⁻¹", "13.9 s⁻¹", "0.05 s⁻¹", "28.9 s⁻¹"], a: 0, e: R`\(\dfrac{0.693}{20}\).` },
+    { q: "In a clock reaction, the initial rate is proportional to…", o: ["1 / time", "time", "time²", "log time"], a: 0, e: R`A faster reaction reaches the visible change sooner.` },
+    { q: "Rate–concentration graph: straight line through the origin. Order?", o: ["First", "Zero", "Second", "Can't tell"], a: 0, e: R`Rate \(\propto [A]\).` },
+    { q: "Exp 1: [A] 0.1, [B] 0.1, rate 2×10⁻⁴. Exp 2: [A] 0.2, [B] 0.1, rate 4×10⁻⁴. Exp 3: [A] 0.1, [B] 0.2, rate 2×10⁻⁴. Rate equation?", o: ["Rate = k[A]", "Rate = k[A][B]", "Rate = k[B]", "Rate = k[A]²"], a: 0, e: R`Doubling [A] doubles the rate (first order); doubling [B] changes nothing (zero order).` }
   ],
   flashcards: [
     ["Rate equation", "Rate = k[A]^m[B]^n; orders found experimentally"],
@@ -1280,7 +1280,7 @@ S2Data.add({
 S2Data.add({
   id: "5b", group: 5, y2: true, title: "Mechanisms and the Arrhenius equation",
   summary: "Rate-determining step, linking rate equations to mechanisms, SN1 vs SN2, and finding Ea.",
-  notes: `
+  notes: R`
 <h3>Rate-determining step</h3>
 <ul>
 <li>The <b>rate-determining step</b> (RDS) is the <b>slowest step</b> in a mechanism.</li>
@@ -1300,25 +1300,25 @@ S2Data.add({
 <h3>Propanone and iodine</h3>
 <p>CH<sub>3</sub>COCH<sub>3</sub> + I<sub>2</sub> → CH<sub>3</sub>COCH<sub>2</sub>I + HI (acid catalysed). Rate = k[CH<sub>3</sub>COCH<sub>3</sub>][H<sup>+</sup>]: zero order in I<sub>2</sub>, so iodine reacts after the RDS. Follow it with a colorimeter or by titrating quenched samples.</p>
 <h3>Arrhenius equation</h3>
-<div class="box box-key"><span class="box-title">k = Ae<sup>−Ea/RT</sup></span>ln k = −E<sub>a</sub>/R × (1/T) + ln A</div>
+<div class="box box-key"><span class="box-title">The Arrhenius equation</span>\(k = Ae^{-E_a/RT} \qquad \ln k = -\dfrac{E_a}{R} \times \dfrac1T + \ln A\)</div>
 <ul>
 <li>Plot <b>ln k against 1/T</b>: straight line, gradient = <b>−E<sub>a</sub>/R</b>, intercept = ln A. R = 8.31 J mol<sup>−1</sup> K<sup>−1</sup>.</li>
-<li>So E<sub>a</sub> = −gradient × 8.31 (in J mol<sup>−1</sup>).</li>
+<li>So \(E_a = -\text{gradient} \times 8.31\) (in J mol<sup>−1</sup>).</li>
 <li>Rate ∝ 1/time, so ln(1/t) can be used in place of ln k.</li>
 <li>A is the pre-exponential factor (related to collision frequency and orientation).</li>
 </ul>
 <p><b>Example</b>: gradient = −6500 K. E<sub>a</sub> = 6500 × 8.31 = 54 000 J mol<sup>−1</sup> = <b>54.0 kJ mol<sup>−1</sup></b>.</p>
 `,
   quiz: [
-    { q: "The rate-determining step is…", o: ["The slowest step", "The fastest step", "The first step always", "The last step"], a: 0, e: "" },
-    { q: "Rate = k[A]. Reaction A + B → C. B reacts…", o: ["After the RDS", "In the RDS", "Not at all", "Before A"], a: 0, e: "" },
+    { q: "The rate-determining step is…", o: ["The slowest step", "The fastest step", "The first step always", "The last step"], a: 0, e: R`The overall rate can't be faster than the slowest step.` },
+    { q: "Rate = k[A]. Reaction A + B → C. B reacts…", o: ["After the RDS", "In the RDS", "Not at all", "Before A"], a: 0, e: R`Species not in the rate equation react after the rate-determining step.` },
     { q: "Rate equation for 2-bromo-2-methylpropane + OH⁻?", o: ["Rate = k[RBr]", "Rate = k[RBr][OH⁻]", "Rate = k[OH⁻]", "Rate = k[RBr]²"], a: 0, e: "SN1." },
-    { q: "SN1 on a chiral halogenoalkane gives…", o: ["A racemic mixture", "One enantiomer", "No product", "An alkene only"], a: 0, e: "" },
-    { q: "Graph for Arrhenius analysis?", o: ["ln k against 1/T", "k against T", "ln k against T", "1/k against T"], a: 0, e: "" },
-    { q: "Gradient of ln k vs 1/T is −8000 K. Ea = ?", o: ["66.5 kJ mol⁻¹", "8.0 kJ mol⁻¹", "962 kJ mol⁻¹", "0.96 kJ mol⁻¹"], a: 0, e: "8000 × 8.31 = 66 480 J." },
-    { q: "Iodination of propanone: order with respect to I₂?", o: ["Zero", "First", "Second", "Half"], a: 0, e: "" },
-    { q: "Why do tertiary halogenoalkanes react by SN1?", o: ["Stable tertiary carbocation; steric hindrance blocks SN2", "They're primary", "No carbocation forms", "They have no Cδ+"], a: 0, e: "" },
-    { q: "In ln k = −Ea/RT + ln A, the intercept is…", o: ["ln A", "−Ea/R", "R", "Ea"], a: 0, e: "" }
+    { q: "SN1 on a chiral halogenoalkane gives…", o: ["A racemic mixture", "One enantiomer", "No product", "An alkene only"], a: 0, e: R`The planar carbocation is attacked equally from both sides.` },
+    { q: "Graph for Arrhenius analysis?", o: ["ln k against 1/T", "k against T", "ln k against T", "1/k against T"], a: 0, e: R`\(\ln k = -\dfrac{E_a}{R} \cdot \dfrac1T + \ln A\): gradient \(-\dfrac{E_a}{R}\).` },
+    { q: "Gradient of ln k vs 1/T is −8000 K. Ea = ?", o: ["66.5 kJ mol⁻¹", "8.0 kJ mol⁻¹", "962 kJ mol⁻¹", "0.96 kJ mol⁻¹"], a: 0, e: R`\(8000 \times 8.31 = 66\,480\ \text{J}\).` },
+    { q: "Iodination of propanone: order with respect to I₂?", o: ["Zero", "First", "Second", "Half"], a: 0, e: R`Iodine isn't involved in the rate-determining step.` },
+    { q: "Why do tertiary halogenoalkanes react by SN1?", o: ["Stable tertiary carbocation; steric hindrance blocks SN2", "They're primary", "No carbocation forms", "They have no Cδ+"], a: 0, e: R`Three alkyl groups stabilise the carbocation and block backside attack.` },
+    { q: "In ln k = −Ea/RT + ln A, the intercept is…", o: ["ln A", "−Ea/R", "R", "Ea"], a: 0, e: R`Comparing with \(y = mx + c\): the intercept is \(\ln A\).` }
   ],
   flashcards: [
     ["Rate-determining step", "Slowest step; species in it appear in the rate equation"],
@@ -1335,7 +1335,7 @@ S2Data.add({
 S2Data.add({
   id: "5c", group: 5, y2: true, title: "Equilibrium constants: Kc and Kp",
   summary: "Calculating Kc from equilibrium amounts, partial pressures and Kp, and how temperature affects K.",
-  notes: `
+  notes: R`
 <h3>Calculating K<sub>c</sub></h3>
 <p>Use an <b>ICE table</b>: Initial moles, Change, Equilibrium moles. Then divide by the volume to get concentrations.</p>
 <p><b>Example</b>: 1.00 mol of ethanoic acid and 1.00 mol of ethanol reach equilibrium in volume V. 0.67 mol of ester has formed.</p>
@@ -1348,8 +1348,8 @@ S2Data.add({
 <p>K<sub>c</sub> = (0.67/V)(0.67/V) ÷ ((0.33/V)(0.33/V)) = <b>4.1</b> (V cancels; no units).</p>
 <h3>Partial pressures and K<sub>p</sub></h3>
 <ul>
-<li><b>Mole fraction</b>: x<sub>A</sub> = moles of A ÷ total moles of gas.</li>
-<li><b>Partial pressure</b>: p<sub>A</sub> = x<sub>A</sub> × total pressure. Partial pressures add up to the total pressure.</li>
+<li><b>Mole fraction</b>: \(x_A = \dfrac{\text{moles of A}}{\text{total moles of gas}}\).</li>
+<li><b>Partial pressure</b>: \(p_A = x_A \times p_{\text{total}}\). Partial pressures add up to the total pressure.</li>
 <li>For aA + bB ⇌ cC + dD (gases): <b>K<sub>p</sub> = p<sub>C</sub><sup>c</sup> p<sub>D</sub><sup>d</sup> ÷ (p<sub>A</sub><sup>a</sup> p<sub>B</sub><sup>b</sup>)</b>, units from atm or kPa.</li>
 <li>Heterogeneous K<sub>p</sub>: include only the gases.</li>
 </ul>
@@ -1357,17 +1357,17 @@ S2Data.add({
 <h3>What changes K</h3>
 <div class="box box-key"><span class="box-title">Only temperature</span>For an <b>exothermic</b> forward reaction, increasing temperature <b>decreases</b> K. For an <b>endothermic</b> forward reaction, K <b>increases</b>. Changing concentration or pressure doesn't change K: the system shifts until the ratio equals K again. Catalysts don't affect K.</div>
 <p>When pressure increases on N<sub>2</sub>O<sub>4</sub> ⇌ 2NO<sub>2</sub>, the quotient briefly becomes larger than K<sub>p</sub>, so the equilibrium shifts left until the quotient equals K<sub>p</sub> again.</p>
-<p>K links to entropy: ΔS<sub>total</sub> = R ln K, so a large K means a large positive ΔS<sub>total</sub> (see 13b).</p>
+<p>K links to entropy: \(\Delta S_{\text{total}} = R\ln K\), so a large K means a large positive ΔS<sub>total</sub> (see 13b).</p>
 `,
   quiz: [
-    { q: "Mole fraction of A if 0.25 mol A in 1.00 mol gas?", o: ["0.25", "0.75", "4", "0.5"], a: 0, e: "" },
-    { q: "Total pressure 200 kPa, xA = 0.30. pA = ?", o: ["60 kPa", "30 kPa", "140 kPa", "667 kPa"], a: 0, e: "" },
-    { q: "Kp for 2SO₂ + O₂ ⇌ 2SO₃?", o: ["p(SO₃)² / (p(SO₂)² p(O₂))", "p(SO₂)² p(O₂) / p(SO₃)²", "2p(SO₃)/(2p(SO₂) p(O₂))", "p(SO₃)/(p(SO₂) p(O₂))"], a: 0, e: "" },
-    { q: "Units of Kp for N₂O₄ ⇌ 2NO₂, pressures in kPa?", o: ["kPa", "kPa⁻¹", "kPa²", "None"], a: 0, e: "" },
-    { q: "Forward reaction endothermic. Increasing temperature makes K…", o: ["Increase", "Decrease", "Stay the same", "Zero"], a: 0, e: "" },
-    { q: "Why does increasing pressure not change Kp?", o: ["Equilibrium shifts until the ratio equals Kp again", "Kp has no units", "Pressure has no effect on gases", "Kp depends on catalyst only"], a: 0, e: "" },
+    { q: "Mole fraction of A if 0.25 mol A in 1.00 mol gas?", o: ["0.25", "0.75", "4", "0.5"], a: 0, e: R`\(x_A = \dfrac{0.25}{1.00} = 0.25\).` },
+    { q: "Total pressure 200 kPa, xA = 0.30. pA = ?", o: ["60 kPa", "30 kPa", "140 kPa", "667 kPa"], a: 0, e: R`\(p_A = x_A \times p_{\text{total}} = 0.30 \times 200 = 60\ \text{kPa}\).` },
+    { q: "Kp for 2SO₂ + O₂ ⇌ 2SO₃?", o: ["p(SO₃)² / (p(SO₂)² p(O₂))", "p(SO₂)² p(O₂) / p(SO₃)²", "2p(SO₃)/(2p(SO₂) p(O₂))", "p(SO₃)/(p(SO₂) p(O₂))"], a: 0, e: R`Products over reactants, with partial pressures raised to their coefficients.` },
+    { q: "Units of Kp for N₂O₄ ⇌ 2NO₂, pressures in kPa?", o: ["kPa", "kPa⁻¹", "kPa²", "None"], a: 0, e: R`\(\dfrac{\text{kPa}^2}{\text{kPa}} = \text{kPa}\).` },
+    { q: "Forward reaction endothermic. Increasing temperature makes K…", o: ["Increase", "Decrease", "Stay the same", "Zero"], a: 0, e: R`Equilibrium shifts in the endothermic (forward) direction, so K rises.` },
+    { q: "Why does increasing pressure not change Kp?", o: ["Equilibrium shifts until the ratio equals Kp again", "Kp has no units", "Pressure has no effect on gases", "Kp depends on catalyst only"], a: 0, e: R`Only temperature changes K.` },
     { q: "H₂ + I₂ ⇌ 2HI: equilibrium moles H₂ 0.10, I₂ 0.10, HI 0.80. Kc = ?", o: ["64", "8", "80", "0.016"], a: 0, e: "0.64 ÷ 0.01; volumes cancel." },
-    { q: "In Kp for CaCO₃(s) ⇌ CaO(s) + CO₂(g)…", o: ["Kp = p(CO₂)", "Kp includes CaO", "Kp = 1/p(CO₂)", "Kp can't be written"], a: 0, e: "" },
+    { q: "In Kp for CaCO₃(s) ⇌ CaO(s) + CO₂(g)…", o: ["Kp = p(CO₂)", "Kp includes CaO", "Kp = 1/p(CO₂)", "Kp can't be written"], a: 0, e: R`Solids are left out of Kp.` },
     { q: "Start: 2.0 mol PCl₅; at equilibrium 0.50 mol PCl₃ formed. Moles of PCl₅ left?", o: ["1.5", "0.5", "2.0", "1.0"], a: 0, e: "PCl₅ ⇌ PCl₃ + Cl₂." }
   ],
   flashcards: [
@@ -1385,7 +1385,7 @@ S2Data.add({
 S2Data.add({
   id: "5d", group: 5, y2: true, title: "Acids, bases and pH",
   summary: "Brønsted–Lowry acids and bases, pH of strong and weak acids, Ka, pKa and Kw.",
-  notes: `
+  notes: R`
 <h3>Brønsted–Lowry theory</h3>
 <ul>
 <li>An <b>acid</b> is a <b>proton donor</b>; a <b>base</b> is a <b>proton acceptor</b>.</li>
@@ -1393,13 +1393,13 @@ S2Data.add({
 <li><b>Strong</b> acids dissociate fully; <b>weak</b> acids partially. Strength ≠ concentration.</li>
 </ul>
 <h3>pH</h3>
-<div class="box box-key"><span class="box-title">pH</span>pH = −log<sub>10</sub>[H<sup>+</sup>] &nbsp;&nbsp; [H<sup>+</sup>] = 10<sup>−pH</sup></div>
+<div class="box box-key"><span class="box-title">pH</span>\(\text{pH} = -\log_{10}[\text{H}^+] \qquad [\text{H}^+] = 10^{-\text{pH}}\)</div>
 <ul>
 <li><b>Strong monoprotic acid</b>: [H<sup>+</sup>] = [acid]. 0.010 mol dm<sup>−3</sup> HCl → pH 2.00.</li>
 <li>A tenfold dilution of a strong acid raises the pH by 1.</li>
 </ul>
 <h3>Weak acids and K<sub>a</sub></h3>
-<p>HA ⇌ H<sup>+</sup> + A<sup>−</sup>, so <b>K<sub>a</sub> = [H<sup>+</sup>][A<sup>−</sup>] ÷ [HA]</b>; <b>pK<sub>a</sub> = −log K<sub>a</sub></b>. Larger K<sub>a</sub> (smaller pK<sub>a</sub>) = stronger acid.</p>
+<p>HA ⇌ H<sup>+</sup> + A<sup>−</sup>, so \(K_a = \dfrac{[\text{H}^+][\text{A}^-]}{[\text{HA}]}\); \(\text{p}K_a = -\log K_a\). Larger K<sub>a</sub> (smaller pK<sub>a</sub>) = stronger acid.</p>
 <p>Assumptions: [H<sup>+</sup>] = [A<sup>−</sup>] (ignoring H<sup>+</sup> from water), and [HA]<sub>eq</sub> ≈ [HA]<sub>initial</sub> (dissociation is small). So <b>[H<sup>+</sup>] = √(K<sub>a</sub> × [HA])</b>.</p>
 <p><b>Example</b>: 0.10 mol dm<sup>−3</sup> ethanoic acid, K<sub>a</sub> = 1.7 × 10<sup>−5</sup>. [H<sup>+</sup>] = √(1.7 × 10<sup>−6</sup>) = 1.30 × 10<sup>−3</sup>. pH = <b>2.89</b>.</p>
 <p>The assumptions break down for stronger weak acids or very dilute solutions.</p>
@@ -1408,21 +1408,21 @@ S2Data.add({
 <li><b>K<sub>w</sub> = [H<sup>+</sup>][OH<sup>−</sup>] = 1.00 × 10<sup>−14</sup> mol<sup>2</sup> dm<sup>−6</sup></b> at 298 K.</li>
 <li>Pure water: [H<sup>+</sup>] = [OH<sup>−</sup>], so it is <b>neutral at any temperature</b>, even though its pH changes (ionisation is endothermic, so K<sub>w</sub> rises with temperature and pH falls).</li>
 <li><b>Strong base</b>: [OH<sup>−</sup>] = [base] (× 2 for Ba(OH)<sub>2</sub>); [H<sup>+</sup>] = K<sub>w</sub>/[OH<sup>−</sup>]. 0.10 mol dm<sup>−3</sup> NaOH → [H<sup>+</sup>] = 10<sup>−13</sup>, pH 13.00.</li>
-<li>pK<sub>w</sub> = 14 = pH + pOH at 298 K.</li>
+<li>\(\text{p}K_w = \text{pH} + \text{pOH} = 14\) at 298 K.</li>
 </ul>
 <h3>Mixtures of strong acid and base</h3>
 <p>Work out moles of H<sup>+</sup> and OH<sup>−</sup>, subtract, divide the excess by the <b>total volume</b>, then find pH.</p>
 `,
   quiz: [
-    { q: "pH of 0.050 mol dm⁻³ HCl?", o: ["1.30", "0.05", "2.00", "12.70"], a: 0, e: "" },
+    { q: "pH of 0.050 mol dm⁻³ HCl?", o: ["1.30", "0.05", "2.00", "12.70"], a: 0, e: R`\(\text{pH} = -\log 0.050 = 1.30\) (strong acid, fully dissociated).` },
     { q: "pH of 0.020 mol dm⁻³ NaOH at 298 K?", o: ["12.30", "1.70", "13.00", "11.70"], a: 0, e: "[H⁺] = 10⁻¹⁴ ÷ 0.020 = 5 × 10⁻¹³." },
     { q: "0.10 mol dm⁻³ HA, Ka = 1.0 × 10⁻⁵. pH = ?", o: ["3.00", "5.00", "1.00", "2.50"], a: 0, e: "√(10⁻⁶) = 10⁻³." },
-    { q: "Conjugate base of H₂SO₄?", o: ["HSO₄⁻", "SO₄²⁻", "H₃SO₄⁺", "H₂O"], a: 0, e: "" },
+    { q: "Conjugate base of H₂SO₄?", o: ["HSO₄⁻", "SO₄²⁻", "H₃SO₄⁺", "H₂O"], a: 0, e: R`Removing one H<sup>+</sup> gives HSO<sub>4</sub><sup>−</sup>.` },
     { q: "Which acid is strongest?", o: ["pKa 2.9", "pKa 4.8", "pKa 9.2", "pKa 15.7"], a: 0, e: "Lowest pKa." },
-    { q: "Why is pure water at 50 °C still neutral even though pH < 7?", o: ["[H⁺] = [OH⁻]", "pH is wrong at high temperature", "Kw falls", "It contains acid"], a: 0, e: "" },
-    { q: "Assumption in the weak acid pH calculation?", o: ["[HA] at equilibrium ≈ initial [HA]", "Full dissociation", "[H⁺] = Ka", "[A⁻] = 0"], a: 0, e: "" },
-    { q: "pH 3.40. [H⁺] = ?", o: ["3.98 × 10⁻⁴", "2.51 × 10⁻³", "3.40 × 10⁻³", "1.00 × 10⁻³"], a: 0, e: "" },
-    { q: "Dilute a strong acid by a factor of 100. pH…", o: ["Rises by 2", "Falls by 2", "Rises by 100", "Unchanged"], a: 0, e: "" }
+    { q: "Why is pure water at 50 °C still neutral even though pH < 7?", o: ["[H⁺] = [OH⁻]", "pH is wrong at high temperature", "Kw falls", "It contains acid"], a: 0, e: R`\(K_w\) rises with temperature, but \([\text{H}^+]\) still equals \([\text{OH}^-]\).` },
+    { q: "Assumption in the weak acid pH calculation?", o: ["[HA] at equilibrium ≈ initial [HA]", "Full dissociation", "[H⁺] = Ka", "[A⁻] = 0"], a: 0, e: R`Weak acids dissociate only slightly, so [HA] hardly changes.` },
+    { q: "pH 3.40. [H⁺] = ?", o: ["3.98 × 10⁻⁴", "2.51 × 10⁻³", "3.40 × 10⁻³", "1.00 × 10⁻³"], a: 0, e: R`\([\text{H}^+] = 10^{-3.40} = 3.98 \times 10^{-4}\ \text{mol dm}^{-3}\).` },
+    { q: "Dilute a strong acid by a factor of 100. pH…", o: ["Rises by 2", "Falls by 2", "Rises by 100", "Unchanged"], a: 0, e: R`\([\text{H}^+]\) falls by \(10^2\), so the pH rises by \(\log 100 = 2\).` }
   ],
   flashcards: [
     ["Brønsted–Lowry acid / base", "Proton donor / proton acceptor"],
@@ -1441,7 +1441,7 @@ S2Data.add({
 S2Data.add({
   id: "5e", group: 5, y2: true, title: "Buffers, titration curves and indicators",
   summary: "How buffers work and their pH, pH curves for different acid–base pairs, and choosing an indicator.",
-  notes: `
+  notes: R`
 <h3>Buffers</h3>
 <p>A <b>buffer</b> resists changes in pH when small amounts of acid or alkali are added. An <b>acidic buffer</b> is a weak acid plus its salt (conjugate base), e.g. CH<sub>3</sub>COOH / CH<sub>3</sub>COONa.</p>
 <ul>
@@ -1474,15 +1474,15 @@ S2Data.add({
 <p>Strong acid + strong base: about −57 kJ mol<sup>−1</sup>, since it's always H<sup>+</sup> + OH<sup>−</sup> → H<sub>2</sub>O. With a weak acid, it's <b>less exothermic</b> because energy is used to fully dissociate the acid.</p>
 `,
   quiz: [
-    { q: "What is a buffer?", o: ["A solution that resists pH change on adding small amounts of acid or alkali", "A solution of pH 7", "A strong acid and strong base", "An indicator"], a: 0, e: "" },
+    { q: "What is a buffer?", o: ["A solution that resists pH change on adding small amounts of acid or alkali", "A solution of pH 7", "A strong acid and strong base", "An indicator"], a: 0, e: R`Buffers keep the pH nearly constant.` },
     { q: "Buffer: [HA] = 0.20, [A⁻] = 0.10, Ka = 1.8 × 10⁻⁵. pH = ?", o: ["4.44", "4.74", "5.04", "2.87"], a: 0, e: "[H⁺] = 3.6 × 10⁻⁵." },
-    { q: "When acid is added to an ethanoate buffer…", o: ["H⁺ combines with CH₃COO⁻ to form CH₃COOH", "Na⁺ reacts with it", "Water dissociates", "pH falls sharply"], a: 0, e: "" },
+    { q: "When acid is added to an ethanoate buffer…", o: ["H⁺ combines with CH₃COO⁻ to form CH₃COOH", "Na⁺ reacts with it", "Water dissociates", "pH falls sharply"], a: 0, e: R`The added H⁺ is removed by the large reservoir of ethanoate ions.` },
     { q: "Indicator for ethanoic acid titrated with NaOH?", o: ["Phenolphthalein", "Methyl orange", "Either", "Neither"], a: 0, e: "Vertical section ~7–11." },
-    { q: "At half-equivalence in a weak acid–strong base titration…", o: ["pH = pKa", "pH = 7", "pH = 14", "[H⁺] = 0"], a: 0, e: "" },
-    { q: "Equivalence point pH for weak acid–strong base?", o: ["Above 7", "Exactly 7", "Below 7", "Exactly 14"], a: 0, e: "" },
-    { q: "Why is ΔneutH for ethanoic acid less exothermic than for HCl?", o: ["Energy is needed to fully dissociate the weak acid", "Fewer moles of water form", "Ethanoic acid is more concentrated", "It's endothermic"], a: 0, e: "" },
-    { q: "Equal moles of HA and A⁻; pKa 4.76. pH = ?", o: ["4.76", "7.00", "9.24", "2.38"], a: 0, e: "" },
-    { q: "Why can't you use an indicator for a weak acid–weak base titration?", o: ["No sharp vertical section", "pH is always 7", "Indicators react with weak bases", "It's too slow"], a: 0, e: "" }
+    { q: "At half-equivalence in a weak acid–strong base titration…", o: ["pH = pKa", "pH = 7", "pH = 14", "[H⁺] = 0"], a: 0, e: R`When \([\text{HA}] = [\text{A}^-]\), \(K_a = [\text{H}^+]\), so pH \(= \text{p}K_a\).` },
+    { q: "Equivalence point pH for weak acid–strong base?", o: ["Above 7", "Exactly 7", "Below 7", "Exactly 14"], a: 0, e: R`The salt formed (A⁻) is basic.` },
+    { q: "Why is ΔneutH for ethanoic acid less exothermic than for HCl?", o: ["Energy is needed to fully dissociate the weak acid", "Fewer moles of water form", "Ethanoic acid is more concentrated", "It's endothermic"], a: 0, e: R`Some energy is used to dissociate the weak acid before neutralisation.` },
+    { q: "Equal moles of HA and A⁻; pKa 4.76. pH = ?", o: ["4.76", "7.00", "9.24", "2.38"], a: 0, e: R`\(\text{pH} = \text{p}K_a + \log\dfrac{[\text{A}^-]}{[\text{HA}]} = 4.76 + \log 1\).` },
+    { q: "Why can't you use an indicator for a weak acid–weak base titration?", o: ["No sharp vertical section", "pH is always 7", "Indicators react with weak bases", "It's too slow"], a: 0, e: R`The pH changes gradually, so no indicator changes sharply at equivalence.` }
   ],
   flashcards: [
     ["Acidic buffer", "Weak acid + its conjugate base (salt)"],
@@ -1501,7 +1501,7 @@ S2Data.add({
 S2Data.add({
   id: "5f", group: 5, y2: true, title: "Lattice energy and Born–Haber cycles",
   summary: "Lattice energy, Born–Haber cycles, factors affecting lattice energy, polarisation and enthalpies of solution.",
-  notes: `
+  notes: R`
 <h3>Definitions</h3>
 <table>
 <tr><th>Term</th><th>Definition</th></tr>
@@ -1511,7 +1511,7 @@ S2Data.add({
 <tr><td>First electron affinity</td><td>1 mol of gaseous atoms gains 1 mol of electrons → 1 mol of gaseous 1− ions (exothermic). The second is endothermic (repulsion).</td></tr>
 </table>
 <h3>Born–Haber cycle for NaCl</h3>
-<p>Δ<sub>f</sub>H = Δ<sub>at</sub>H(Na) + IE<sub>1</sub>(Na) + Δ<sub>at</sub>H(Cl) + EA<sub>1</sub>(Cl) + Δ<sub>LE</sub>H</p>
+<p>\(\Delta_f H = \Delta_{at}H(\text{Na}) + IE_1(\text{Na}) + \Delta_{at}H(\text{Cl}) + EA_1(\text{Cl}) + \Delta_{LE}H\)</p>
 <p>−411 = 107 + 496 + 122 + (−349) + Δ<sub>LE</sub>H → Δ<sub>LE</sub>H = <b>−787 kJ mol<sup>−1</sup></b>.</p>
 <p>Draw the cycle with endothermic steps going up and exothermic steps going down. For MgCl<sub>2</sub>, include IE<sub>1</sub> + IE<sub>2</sub> of Mg and <b>2 ×</b> atomisation and electron affinity of Cl.</p>
 <h3>Factors affecting lattice energy</h3>
@@ -1530,15 +1530,15 @@ S2Data.add({
 <p>e.g. NaCl: −(−787) + (−406) + (−378) = <b>+3 kJ mol<sup>−1</sup></b>.</p>
 `,
   quiz: [
-    { q: "Lattice energy is defined as the enthalpy change when…", o: ["1 mol of ionic solid forms from gaseous ions", "1 mol of solid forms from elements", "1 mol of ions is hydrated", "1 mol of atoms ionises"], a: 0, e: "" },
+    { q: "Lattice energy is defined as the enthalpy change when…", o: ["1 mol of ionic solid forms from gaseous ions", "1 mol of solid forms from elements", "1 mol of ions is hydrated", "1 mol of atoms ionises"], a: 0, e: R`Lattice energy is always exothermic.` },
     { q: "Which has the most exothermic lattice energy?", o: ["MgO", "NaCl", "KBr", "CaO"], a: 0, e: "Small, highly charged ions." },
-    { q: "Why is the second electron affinity of O endothermic?", o: ["Adding an electron to a negative ion requires overcoming repulsion", "Oxygen is a metal", "It's always exothermic", "Shielding"], a: 0, e: "" },
-    { q: "ΔfH −411, ΔatH(Na) +107, IE +496, ΔatH(Cl) +122, EA −349. ΔLEH = ?", o: ["−787 kJ mol⁻¹", "+787 kJ mol⁻¹", "−411 kJ mol⁻¹", "−1485 kJ mol⁻¹"], a: 0, e: "" },
-    { q: "Experimental lattice energy much more exothermic than theoretical means…", o: ["Covalent character from polarisation", "Purely ionic", "An error in the cycle", "Larger ions"], a: 0, e: "" },
+    { q: "Why is the second electron affinity of O endothermic?", o: ["Adding an electron to a negative ion requires overcoming repulsion", "Oxygen is a metal", "It's always exothermic", "Shielding"], a: 0, e: R`Forcing an electron onto O⁻ needs energy.` },
+    { q: "ΔfH −411, ΔatH(Na) +107, IE +496, ΔatH(Cl) +122, EA −349. ΔLEH = ?", o: ["−787 kJ mol⁻¹", "+787 kJ mol⁻¹", "−411 kJ mol⁻¹", "−1485 kJ mol⁻¹"], a: 0, e: R`\(\Delta_{LE}H = -411 - (107 + 496 + 122 - 349) = -787\ \text{kJ mol}^{-1}\).` },
+    { q: "Experimental lattice energy much more exothermic than theoretical means…", o: ["Covalent character from polarisation", "Purely ionic", "An error in the cycle", "Larger ions"], a: 0, e: R`The ionic model assumes perfect spheres; polarisation adds covalent character.` },
     { q: "Which cation is most polarising?", o: ["Al³⁺", "Na⁺", "K⁺", "Mg²⁺"], a: 0, e: "Smallest, highest charge." },
-    { q: "ΔsolH = ?", o: ["−ΔLEH + ΣΔhydH", "ΔLEH + ΣΔhydH", "ΔLEH − ΣΔhydH", "ΣΔhydH − ΔfH"], a: 0, e: "" },
+    { q: "ΔsolH = ?", o: ["−ΔLEH + ΣΔhydH", "ΔLEH + ΣΔhydH", "ΔLEH − ΣΔhydH", "ΣΔhydH − ΔfH"], a: 0, e: R`Break the lattice (\(-\Delta_{LE}H\)), then hydrate the gaseous ions.` },
     { q: "Which ion has the most exothermic hydration enthalpy?", o: ["Li⁺", "Na⁺", "K⁺", "Rb⁺"], a: 0, e: "Smallest." },
-    { q: "In a Born–Haber cycle for MgCl₂, the chlorine atomisation enthalpy is…", o: ["Multiplied by 2", "Halved", "Used once", "Left out"], a: 0, e: "" }
+    { q: "In a Born–Haber cycle for MgCl₂, the chlorine atomisation enthalpy is…", o: ["Multiplied by 2", "Halved", "Used once", "Left out"], a: 0, e: R`MgCl<sub>2</sub> needs 2 mol of gaseous Cl atoms.` }
   ],
   flashcards: [
     ["Lattice energy", "1 mol ionic solid formed from gaseous ions (exothermic)"],
@@ -1556,7 +1556,7 @@ S2Data.add({
 S2Data.add({
   id: "5g", group: 5, y2: true, title: "Entropy and Gibbs energy",
   summary: "Entropy, total entropy change, Gibbs energy and feasibility, and links to K.",
-  notes: `
+  notes: R`
 <h3>Entropy, S</h3>
 <ul>
 <li>Entropy measures the <b>number of ways particles and their energy can be arranged</b>. Units: J K<sup>−1</sup> mol<sup>−1</sup>.</li>
@@ -1564,10 +1564,10 @@ S2Data.add({
 <li>All substances have positive entropy above 0 K.</li>
 </ul>
 <h3>Entropy changes</h3>
-<div class="box box-key"><span class="box-title">Entropy equations</span>ΔS<sub>system</sub> = ΣS(products) − ΣS(reactants)<br>ΔS<sub>surroundings</sub> = −ΔH ÷ T &nbsp; (ΔH in <b>J</b> mol<sup>−1</sup>)<br>ΔS<sub>total</sub> = ΔS<sub>system</sub> + ΔS<sub>surroundings</sub></div>
+<div class="box box-key"><span class="box-title">Entropy equations</span>\(\Delta S_{\text{system}} = \sum S(\text{products}) - \sum S(\text{reactants})\)<br>\(\Delta S_{\text{surroundings}} = -\dfrac{\Delta H}{T}\) &nbsp; (\(\Delta H\) in <b>J</b> mol<sup>−1</sup>)<br>\(\Delta S_{\text{total}} = \Delta S_{\text{system}} + \Delta S_{\text{surroundings}}\)</div>
 <p>A reaction is <b>feasible</b> (thermodynamically possible) if <b>ΔS<sub>total</sub> &gt; 0</b>.</p>
 <h3>Gibbs energy</h3>
-<div class="box box-key"><span class="box-title">ΔG = ΔH − TΔS<sub>system</sub></span>Feasible when <b>ΔG ≤ 0</b> (kJ mol<sup>−1</sup>, so convert ΔS to kJ K<sup>−1</sup> mol<sup>−1</sup> by ÷ 1000).</div>
+<div class="box box-key"><span class="box-title">Gibbs free energy</span>\(\Delta G = \Delta H - T\Delta S_{\text{system}}\). Feasible when \(\Delta G \le 0\) (kJ mol<sup>−1</sup>, so convert ΔS to kJ K<sup>−1</sup> mol<sup>−1</sup> by ÷ 1000).</div>
 <table>
 <tr><th>ΔH</th><th>ΔS</th><th>Feasible?</th></tr>
 <tr><td>−</td><td>+</td><td>Always</td></tr>
@@ -1580,19 +1580,19 @@ S2Data.add({
 <h3>Feasibility vs rate, and links to K</h3>
 <ul>
 <li>A feasible reaction may not happen because of a <b>high activation energy</b>: it's <b>kinetically inert</b> (e.g. diamond → graphite).</li>
-<li><b>ΔG = −RT ln K</b>. A negative ΔG means K &gt; 1. Similarly ΔS<sub>total</sub> = R ln K.</li>
+<li>\(\Delta G = -RT\ln K\). A negative \(\Delta G\) means \(K > 1\). Similarly \(\Delta S_{\text{total}} = R\ln K\).</li>
 </ul>
 `,
   quiz: [
-    { q: "Which has the highest entropy?", o: ["1 mol of steam", "1 mol of water", "1 mol of ice", "All equal"], a: 0, e: "" },
-    { q: "ΔH = −100 kJ mol⁻¹, T = 298 K. ΔS_surroundings = ?", o: ["+336 J K⁻¹ mol⁻¹", "−336 J K⁻¹ mol⁻¹", "+0.336 J K⁻¹ mol⁻¹", "−29.8 J K⁻¹ mol⁻¹"], a: 0, e: "−(−100 000)/298." },
-    { q: "A reaction is feasible when…", o: ["ΔG ≤ 0", "ΔG > 0", "ΔH > 0", "ΔS_total < 0"], a: 0, e: "" },
-    { q: "ΔH +, ΔS +. Feasible…", o: ["At high temperatures", "Always", "Never", "At low temperatures"], a: 0, e: "" },
-    { q: "ΔH = +50 kJ mol⁻¹, ΔS = +100 J K⁻¹ mol⁻¹. Minimum T for feasibility?", o: ["500 K", "0.5 K", "5000 K", "50 K"], a: 0, e: "50 ÷ 0.100." },
-    { q: "Why might a feasible reaction not occur?", o: ["High activation energy (kinetically inert)", "ΔG is negative", "ΔS is positive", "K is large"], a: 0, e: "" },
-    { q: "ΔG = −RT ln K. If ΔG is very negative, K is…", o: ["Very large", "Very small", "1", "Negative"], a: 0, e: "" },
+    { q: "Which has the highest entropy?", o: ["1 mol of steam", "1 mol of water", "1 mol of ice", "All equal"], a: 0, e: R`Gases are most disordered.` },
+    { q: "ΔH = −100 kJ mol⁻¹, T = 298 K. ΔS_surroundings = ?", o: ["+336 J K⁻¹ mol⁻¹", "−336 J K⁻¹ mol⁻¹", "+0.336 J K⁻¹ mol⁻¹", "−29.8 J K⁻¹ mol⁻¹"], a: 0, e: R`\(-(-100\,000)/298\).` },
+    { q: "A reaction is feasible when…", o: ["ΔG ≤ 0", "ΔG > 0", "ΔH > 0", "ΔS_total < 0"], a: 0, e: R`\(\Delta G = \Delta H - T\Delta S\).` },
+    { q: "ΔH +, ΔS +. Feasible…", o: ["At high temperatures", "Always", "Never", "At low temperatures"], a: 0, e: R`\(\Delta G = \Delta H - T\Delta S\) becomes negative once \(T\Delta S > \Delta H\).` },
+    { q: "ΔH = +50 kJ mol⁻¹, ΔS = +100 J K⁻¹ mol⁻¹. Minimum T for feasibility?", o: ["500 K", "0.5 K", "5000 K", "50 K"], a: 0, e: R`\(\dfrac{50}{0.100}\).` },
+    { q: "Why might a feasible reaction not occur?", o: ["High activation energy (kinetically inert)", "ΔG is negative", "ΔS is positive", "K is large"], a: 0, e: R`Thermodynamics says whether it can happen, not how fast.` },
+    { q: "ΔG = −RT ln K. If ΔG is very negative, K is…", o: ["Very large", "Very small", "1", "Negative"], a: 0, e: R`\(K = e^{-\Delta G/RT}\): very negative \(\Delta G\) gives a huge \(K\).` },
     { q: "Sign of ΔS_system for N₂ + 3H₂ → 2NH₃?", o: ["Negative", "Positive", "Zero", "Can't tell"], a: 0, e: "4 gas moles → 2." },
-    { q: "ΔG at 298 K: ΔH −92 kJ mol⁻¹, ΔS −199 J K⁻¹ mol⁻¹?", o: ["−32.7 kJ mol⁻¹", "+32.7 kJ mol⁻¹", "−151 kJ mol⁻¹", "+59 kJ mol⁻¹"], a: 0, e: "−92 − 298(−0.199)." }
+    { q: "ΔG at 298 K: ΔH −92 kJ mol⁻¹, ΔS −199 J K⁻¹ mol⁻¹?", o: ["−32.7 kJ mol⁻¹", "+32.7 kJ mol⁻¹", "−151 kJ mol⁻¹", "+59 kJ mol⁻¹"], a: 0, e: R`\(-92 - 298(-0.199)\).` }
   ],
   flashcards: [
     ["Entropy", "Number of ways particles and energy can be arranged (J K⁻¹ mol⁻¹)"],
@@ -1610,7 +1610,7 @@ S2Data.add({
 S2Data.add({
   id: "5h", group: 5, y2: true, title: "Electrode potentials and cells",
   summary: "Standard electrode potentials, the hydrogen electrode, cell EMF, feasibility and fuel cells.",
-  notes: `
+  notes: R`
 <h3>Half-cells and the standard hydrogen electrode</h3>
 <ul>
 <li>A <b>half-cell</b> contains an element in two oxidation states, e.g. Zn(s) in Zn<sup>2+</sup>(aq). Two half-cells joined by a <b>wire</b> (with a high-resistance voltmeter) and a <b>salt bridge</b> (filter paper soaked in saturated KNO<sub>3</sub>) make a cell.</li>
@@ -1623,7 +1623,7 @@ S2Data.add({
 <ul>
 <li>Half-equations are written as <b>reductions</b>. More positive E<sup>⦵</sup> = better <b>oxidising agent</b> (more readily reduced). More negative = better reducing agent.</li>
 <li><b>E<sup>⦵</sup><sub>cell</sub> = E<sup>⦵</sup>(right, reduction) − E<sup>⦵</sup>(left, oxidation)</b>, or E(more positive) − E(less positive).</li>
-<li>Cell diagram: Zn(s) | Zn<sup>2+</sup>(aq) ‖ Cu<sup>2+</sup>(aq) | Cu(s), E<sub>cell</sub> = +0.34 − (−0.76) = <b>+1.10 V</b>. The oxidised form goes next to the salt bridge (‖).</li>
+<li>Cell diagram: Zn(s) | Zn<sup>2+</sup>(aq) ‖ Cu<sup>2+</sup>(aq) | Cu(s), \(E_{\text{cell}} = +0.34 - (-0.76) = +1.10\ \text{V}\). The oxidised form goes next to the salt bridge (‖).</li>
 <li>A reaction is <b>feasible if E<sup>⦵</sup><sub>cell</sub> is positive</b>. Rule of thumb: the more positive half-cell goes forward (reduction), the less positive goes backwards.</li>
 </ul>
 <h3>Limits of predictions</h3>
@@ -1639,15 +1639,15 @@ S2Data.add({
 <p>Ethanol fuel cells can be used in breathalysers: the current is proportional to the ethanol concentration.</p>
 `,
   quiz: [
-    { q: "E⦵(Cu²⁺/Cu) +0.34 V, E⦵(Zn²⁺/Zn) −0.76 V. E⦵cell = ?", o: ["+1.10 V", "−1.10 V", "+0.42 V", "−0.42 V"], a: 0, e: "" },
+    { q: "E⦵(Cu²⁺/Cu) +0.34 V, E⦵(Zn²⁺/Zn) −0.76 V. E⦵cell = ?", o: ["+1.10 V", "−1.10 V", "+0.42 V", "−0.42 V"], a: 0, e: R`\(E^\ominus_{\text{cell}} = E_{\text{right}} - E_{\text{left}} = 0.34 - (-0.76) = +1.10\ \text{V}\).` },
     { q: "Which is the strongest oxidising agent? Cl₂/Cl⁻ +1.36, Br₂/Br⁻ +1.09, I₂/I⁻ +0.54", o: ["Cl₂", "Br₂", "I₂", "I⁻"], a: 0, e: "Most positive E⦵." },
-    { q: "Why use KNO₃ in a salt bridge?", o: ["It doesn't react with or precipitate the ions", "It's an oxidising agent", "It conducts electrons", "It's cheap only"], a: 0, e: "" },
-    { q: "In the SHE, the electrode is made of…", o: ["Platinum", "Copper", "Carbon", "Hydrogen"], a: 0, e: "" },
-    { q: "A reaction is feasible when E⦵cell is…", o: ["Positive", "Negative", "Zero", "Above 1 V"], a: 0, e: "" },
-    { q: "Why might a reaction with positive E⦵cell not happen?", o: ["High activation energy", "ΔG is positive", "Too many electrons", "It's endothermic"], a: 0, e: "" },
-    { q: "Increasing [Cu²⁺] in a Cu²⁺/Cu half-cell makes E…", o: ["More positive", "More negative", "Unchanged", "Zero"], a: 0, e: "" },
-    { q: "Half-equation at the positive electrode of an alkaline H₂/O₂ fuel cell?", o: ["O₂ + 2H₂O + 4e⁻ → 4OH⁻", "H₂ + 2OH⁻ → 2H₂O + 2e⁻", "2H⁺ + 2e⁻ → H₂", "4OH⁻ → O₂ + 2H₂O + 4e⁻"], a: 0, e: "" },
-    { q: "In a cell diagram, || represents…", o: ["The salt bridge", "A phase boundary", "The wire", "The voltmeter"], a: 0, e: "" }
+    { q: "Why use KNO₃ in a salt bridge?", o: ["It doesn't react with or precipitate the ions", "It's an oxidising agent", "It conducts electrons", "It's cheap only"], a: 0, e: R`KNO₃ is unreactive with the ions in each half-cell.` },
+    { q: "In the SHE, the electrode is made of…", o: ["Platinum", "Copper", "Carbon", "Hydrogen"], a: 0, e: R`Platinum is inert and conducts; it's coated in platinum black.` },
+    { q: "A reaction is feasible when E⦵cell is…", o: ["Positive", "Negative", "Zero", "Above 1 V"], a: 0, e: R`A positive \(E^\ominus_{\text{cell}}\) means \(\Delta G\) is negative.` },
+    { q: "Why might a reaction with positive E⦵cell not happen?", o: ["High activation energy", "ΔG is positive", "Too many electrons", "It's endothermic"], a: 0, e: R`Kinetic barriers can stop a thermodynamically feasible reaction.` },
+    { q: "Increasing [Cu²⁺] in a Cu²⁺/Cu half-cell makes E…", o: ["More positive", "More negative", "Unchanged", "Zero"], a: 0, e: R`The equilibrium Cu²⁺ + 2e⁻ ⇌ Cu shifts right, so E is more positive.` },
+    { q: "Half-equation at the positive electrode of an alkaline H₂/O₂ fuel cell?", o: ["O₂ + 2H₂O + 4e⁻ → 4OH⁻", "H₂ + 2OH⁻ → 2H₂O + 2e⁻", "2H⁺ + 2e⁻ → H₂", "4OH⁻ → O₂ + 2H₂O + 4e⁻"], a: 0, e: R`Oxygen is reduced at the positive electrode.` },
+    { q: "In a cell diagram, || represents…", o: ["The salt bridge", "A phase boundary", "The wire", "The voltmeter"], a: 0, e: R`A single line is a phase boundary; a double line is the salt bridge.` }
   ],
   flashcards: [
     ["Standard electrode potential", "EMF of a half-cell vs SHE under standard conditions"],
@@ -1665,7 +1665,7 @@ S2Data.add({
 S2Data.add({
   id: "5i", group: 5, y2: true, title: "Redox titrations",
   summary: "Combining half-equations, and titrations with manganate(VII) and with iodine/thiosulfate.",
-  notes: `
+  notes: R`
 <h3>Combining half-equations</h3>
 <p>Multiply so the electrons are equal, then add and cancel. In acid:</p>
 <p>MnO<sub>4</sub><sup>−</sup> + 8H<sup>+</sup> + 5e<sup>−</sup> → Mn<sup>2+</sup> + 4H<sub>2</sub>O and Fe<sup>2+</sup> → Fe<sup>3+</sup> + e<sup>−</sup> give:</p>
@@ -1686,18 +1686,18 @@ S2Data.add({
 <li>e.g. 2Cu<sup>2+</sup> + 4I<sup>−</sup> → 2CuI + I<sub>2</sub>, so 2Cu<sup>2+</sup> ≡ I<sub>2</sub> ≡ 2S<sub>2</sub>O<sub>3</sub><sup>2−</sup>: Cu<sup>2+</sup> : S<sub>2</sub>O<sub>3</sub><sup>2−</sup> = 1 : 1.</li>
 </ul>
 <h3>Uncertainty</h3>
-<p>% uncertainty = (uncertainty ÷ value) × 100. A burette reading is ±0.05 cm<sup>3</sup>, so a titre (two readings) is ±0.10 cm<sup>3</sup>.</p>
+<p>\(\%\ \text{uncertainty} = \dfrac{\text{uncertainty}}{\text{value}} \times 100\). A burette reading is ±0.05 cm<sup>3</sup>, so a titre (two readings) is ±0.10 cm<sup>3</sup>.</p>
 `,
   quiz: [
-    { q: "Mole ratio MnO₄⁻ : Fe²⁺ in acidic solution?", o: ["1 : 5", "1 : 1", "5 : 1", "2 : 5"], a: 0, e: "" },
-    { q: "End point of a KMnO₄ titration?", o: ["First permanent pale pink", "Colourless", "Blue-black disappears", "Orange to green"], a: 0, e: "" },
-    { q: "Why not acidify manganate(VII) titrations with HCl?", o: ["Cl⁻ is oxidised to Cl₂", "HCl is too weak", "It precipitates Mn", "It reduces Fe³⁺"], a: 0, e: "" },
-    { q: "Ratio S₂O₃²⁻ : I₂?", o: ["2 : 1", "1 : 1", "1 : 2", "4 : 1"], a: 0, e: "" },
-    { q: "When should starch be added in an iodine titration?", o: ["Near the end point, when pale yellow", "At the start", "After the end point", "Never"], a: 0, e: "" },
+    { q: "Mole ratio MnO₄⁻ : Fe²⁺ in acidic solution?", o: ["1 : 5", "1 : 1", "5 : 1", "2 : 5"], a: 0, e: R`MnO<sub>4</sub><sup>−</sup> gains 5 electrons; each Fe<sup>2+</sup> loses 1.` },
+    { q: "End point of a KMnO₄ titration?", o: ["First permanent pale pink", "Colourless", "Blue-black disappears", "Orange to green"], a: 0, e: R`The first excess drop of MnO₄⁻ isn't decolourised.` },
+    { q: "Why not acidify manganate(VII) titrations with HCl?", o: ["Cl⁻ is oxidised to Cl₂", "HCl is too weak", "It precipitates Mn", "It reduces Fe³⁺"], a: 0, e: R`Manganate(VII) would oxidise chloride, giving a false titre.` },
+    { q: "Ratio S₂O₃²⁻ : I₂?", o: ["2 : 1", "1 : 1", "1 : 2", "4 : 1"], a: 0, e: R`I<sub>2</sub> + 2S<sub>2</sub>O<sub>3</sub><sup>2−</sup> → 2I<sup>−</sup> + S<sub>4</sub>O<sub>6</sub><sup>2−</sup>.` },
+    { q: "When should starch be added in an iodine titration?", o: ["Near the end point, when pale yellow", "At the start", "After the end point", "Never"], a: 0, e: R`Too early and the starch–iodine complex forms irreversibly.` },
     { q: "21.60 cm³ of 0.0100 mol dm⁻³ MnO₄⁻ reacts with Fe²⁺. Moles of Fe²⁺?", o: ["1.08 × 10⁻³", "2.16 × 10⁻⁴", "4.32 × 10⁻⁵", "1.08 × 10⁻⁴"], a: 0, e: "2.16 × 10⁻⁴ × 5." },
-    { q: "Cu²⁺ with excess KI then thiosulfate. Cu²⁺ : S₂O₃²⁻ = ?", o: ["1 : 1", "1 : 2", "2 : 1", "1 : 4"], a: 0, e: "" },
-    { q: "Percentage uncertainty in a 25.00 cm³ titre (±0.10 cm³)?", o: ["0.40%", "0.20%", "4.0%", "0.10%"], a: 0, e: "" },
-    { q: "Why read the top of the meniscus with KMnO₄?", o: ["Solution is too dark to see the bottom", "It's the rule for all titrations", "Higher accuracy", "It's colourless"], a: 0, e: "" }
+    { q: "Cu²⁺ with excess KI then thiosulfate. Cu²⁺ : S₂O₃²⁻ = ?", o: ["1 : 1", "1 : 2", "2 : 1", "1 : 4"], a: 0, e: R`2Cu<sup>2+</sup> gives 1 I<sub>2</sub>, which needs 2 S<sub>2</sub>O<sub>3</sub><sup>2−</sup>.` },
+    { q: "Percentage uncertainty in a 25.00 cm³ titre (±0.10 cm³)?", o: ["0.40%", "0.20%", "4.0%", "0.10%"], a: 0, e: R`Two readings of ±0.05: \(\dfrac{0.10}{25.00} \times 100 = 0.40\%\).` },
+    { q: "Why read the top of the meniscus with KMnO₄?", o: ["Solution is too dark to see the bottom", "It's the rule for all titrations", "Higher accuracy", "It's colourless"], a: 0, e: R`Manganate(VII) is intensely purple.` }
   ],
   flashcards: [
     ["MnO₄⁻ half-equation", "MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O"],
@@ -1714,7 +1714,7 @@ S2Data.add({
 S2Data.add({
   id: "5j", group: 5, y2: true, title: "Transition metals and complexes",
   summary: "Electron configurations, complex ions, ligands, shapes, isomerism and why complexes are coloured.",
-  notes: `
+  notes: R`
 <h3>What makes a transition metal</h3>
 <ul>
 <li>A <b>transition metal</b> is a d-block element that forms <b>one or more stable ions with an incompletely filled d-subshell</b>. Sc and Zn are d-block but not transition metals (Sc<sup>3+</sup> is 3d<sup>0</sup>; Zn<sup>2+</sup> is 3d<sup>10</sup>).</li>
@@ -1745,15 +1745,15 @@ S2Data.add({
 <p>Colour depends on the metal, its oxidation state, the ligand and the coordination number. No colour if there are no d-electrons (d<sup>0</sup>) or a full d-subshell (d<sup>10</sup>), because no d–d transitions are possible.</p>
 `,
   quiz: [
-    { q: "Why is zinc not a transition metal?", o: ["Zn²⁺ has a full 3d subshell", "It's not in the d-block", "It has no electrons in 4s", "It forms no compounds"], a: 0, e: "" },
-    { q: "Electron configuration of Fe³⁺?", o: ["[Ar]3d⁵", "[Ar]3d³4s²", "[Ar]3d⁶", "[Ar]3d⁴4s¹"], a: 0, e: "" },
-    { q: "Shape of [CuCl₄]²⁻?", o: ["Tetrahedral", "Octahedral", "Square planar", "Linear"], a: 0, e: "" },
-    { q: "EDTA⁴⁻ is a…", o: ["Hexadentate ligand", "Bidentate ligand", "Monodentate ligand", "Central ion"], a: 0, e: "" },
-    { q: "Why are transition metal complexes coloured?", o: ["d-orbitals split; electrons absorb visible light to move up; complementary colour seen", "They emit light", "s electrons are promoted", "They reflect all light"], a: 0, e: "" },
-    { q: "How does cisplatin work?", o: ["Binds to DNA in cancer cells, preventing replication", "Kills all cells", "Acts as a catalyst", "Releases chlorine gas"], a: 0, e: "" },
-    { q: "Why is CO toxic?", o: ["It binds to haem iron more strongly than O₂", "It's acidic", "It oxidises iron", "It breaks DNA"], a: 0, e: "" },
-    { q: "Which complex shows optical isomerism?", o: ["[Ni(en)₃]²⁺", "[Cu(H₂O)₆]²⁺", "[Ag(NH₃)₂]⁺", "[CuCl₄]²⁻"], a: 0, e: "" },
-    { q: "Coordination number of [Co(en)₂Cl₂]⁺?", o: ["6", "4", "2", "3"], a: 0, e: "2 × 2 + 2." }
+    { q: "Why is zinc not a transition metal?", o: ["Zn²⁺ has a full 3d subshell", "It's not in the d-block", "It has no electrons in 4s", "It forms no compounds"], a: 0, e: R`A transition metal must form at least one stable ion with an incomplete d subshell.` },
+    { q: "Electron configuration of Fe³⁺?", o: ["[Ar]3d⁵", "[Ar]3d³4s²", "[Ar]3d⁶", "[Ar]3d⁴4s¹"], a: 0, e: R`Fe is [Ar]3d<sup>6</sup>4s<sup>2</sup>; it loses the 4s electrons first, then one 3d.` },
+    { q: "Shape of [CuCl₄]²⁻?", o: ["Tetrahedral", "Octahedral", "Square planar", "Linear"], a: 0, e: R`Large Cl⁻ ligands mean only 4 fit around the ion.` },
+    { q: "EDTA⁴⁻ is a…", o: ["Hexadentate ligand", "Bidentate ligand", "Monodentate ligand", "Central ion"], a: 0, e: R`It forms 6 coordinate bonds.` },
+    { q: "Why are transition metal complexes coloured?", o: ["d-orbitals split; electrons absorb visible light to move up; complementary colour seen", "They emit light", "s electrons are promoted", "They reflect all light"], a: 0, e: R`Light of energy \(\Delta E = hf\) is absorbed; we see the remaining colours.` },
+    { q: "How does cisplatin work?", o: ["Binds to DNA in cancer cells, preventing replication", "Kills all cells", "Acts as a catalyst", "Releases chlorine gas"], a: 0, e: R`It cross-links DNA strands, stopping the cell dividing.` },
+    { q: "Why is CO toxic?", o: ["It binds to haem iron more strongly than O₂", "It's acidic", "It oxidises iron", "It breaks DNA"], a: 0, e: R`The binding is effectively irreversible, so less oxygen is carried.` },
+    { q: "Which complex shows optical isomerism?", o: ["[Ni(en)₃]²⁺", "[Cu(H₂O)₆]²⁺", "[Ag(NH₃)₂]⁺", "[CuCl₄]²⁻"], a: 0, e: R`Three bidentate ligands make non-superimposable mirror images.` },
+    { q: "Coordination number of [Co(en)₂Cl₂]⁺?", o: ["6", "4", "2", "3"], a: 0, e: R`\(2 \times 2 + 2\).` }
   ],
   flashcards: [
     ["Transition metal", "Forms stable ion(s) with an incompletely filled d-subshell"],
@@ -1772,7 +1772,7 @@ S2Data.add({
 S2Data.add({
   id: "5k", group: 5, y2: true, title: "Transition metal reactions and catalysis",
   summary: "Ligand exchange, reactions with OH⁻ and NH₃, redox of Cr and V, and heterogeneous and homogeneous catalysis.",
-  notes: `
+  notes: R`
 <h3>Ligand exchange</h3>
 <ul>
 <li>[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> (blue) + 4Cl<sup>−</sup> (conc HCl) ⇌ [CuCl<sub>4</sub>]<sup>2−</sup> (yellow) + 6H<sub>2</sub>O. Coordination number and shape change (Cl<sup>−</sup> is larger).</li>
@@ -1805,15 +1805,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Colour of [CuCl₄]²⁻?", o: ["Yellow", "Deep blue", "Pink", "Green"], a: 0, e: "" },
-    { q: "Excess NH₃ added to Cu²⁺(aq) gives…", o: ["A deep blue solution", "A blue precipitate", "A yellow solution", "No change"], a: 0, e: "" },
-    { q: "Why is the chelate effect favourable?", o: ["More particles form, so entropy increases", "Bonds are stronger only", "ΔH is very negative", "Fewer particles form"], a: 0, e: "" },
-    { q: "Which hydroxide is amphoteric?", o: ["Cr(OH)₃", "Fe(OH)₃", "Cu(OH)₂", "Fe(OH)₂"], a: 0, e: "" },
-    { q: "Colour of V³⁺(aq)?", o: ["Green", "Violet", "Blue", "Yellow"], a: 0, e: "" },
-    { q: "Why is S₂O₈²⁻ + I⁻ slow without a catalyst?", o: ["Two negative ions repel", "It's endothermic", "Ea is zero", "Iodine is a solid"], a: 0, e: "" },
-    { q: "Why does Fe(OH)₂ precipitate turn brown in air?", o: ["Oxidised to Fe(OH)₃", "Reduced to Fe", "Dissolves", "Reacts with N₂"], a: 0, e: "" },
-    { q: "In heterogeneous catalysis, why must adsorption not be too strong?", o: ["Products wouldn't desorb", "Reactants wouldn't bond", "The catalyst would melt", "It would be homogeneous"], a: 0, e: "" },
-    { q: "Autocatalysis means…", o: ["A product catalyses the reaction", "The catalyst is used up", "No catalyst is needed", "A reactant inhibits it"], a: 0, e: "" }
+    { q: "Colour of [CuCl₄]²⁻?", o: ["Yellow", "Deep blue", "Pink", "Green"], a: 0, e: R`Chloride ligands make copper complexes yellow (or green when mixed with blue).` },
+    { q: "Excess NH₃ added to Cu²⁺(aq) gives…", o: ["A deep blue solution", "A blue precipitate", "A yellow solution", "No change"], a: 0, e: R`[Cu(NH<sub>3</sub>)<sub>4</sub>(H<sub>2</sub>O)<sub>2</sub>]<sup>2+</sup> is deep blue.` },
+    { q: "Why is the chelate effect favourable?", o: ["More particles form, so entropy increases", "Bonds are stronger only", "ΔH is very negative", "Fewer particles form"], a: 0, e: R`Replacing monodentate ligands with fewer multidentate ones increases the number of particles.` },
+    { q: "Which hydroxide is amphoteric?", o: ["Cr(OH)₃", "Fe(OH)₃", "Cu(OH)₂", "Fe(OH)₂"], a: 0, e: R`It dissolves in both acid and excess alkali.` },
+    { q: "Colour of V³⁺(aq)?", o: ["Green", "Violet", "Blue", "Yellow"], a: 0, e: R`V⁵⁺ is yellow, V⁴⁺ blue, V³⁺ green and V²⁺ violet.` },
+    { q: "Why is S₂O₈²⁻ + I⁻ slow without a catalyst?", o: ["Two negative ions repel", "It's endothermic", "Ea is zero", "Iodine is a solid"], a: 0, e: R`Negative ions repel, giving a high activation energy; Fe²⁺/Fe³⁺ catalyses the reaction.` },
+    { q: "Why does Fe(OH)₂ precipitate turn brown in air?", o: ["Oxidised to Fe(OH)₃", "Reduced to Fe", "Dissolves", "Reacts with N₂"], a: 0, e: R`Iron(II) is oxidised by oxygen to iron(III).` },
+    { q: "In heterogeneous catalysis, why must adsorption not be too strong?", o: ["Products wouldn't desorb", "Reactants wouldn't bond", "The catalyst would melt", "It would be homogeneous"], a: 0, e: R`Too strong and the product stays stuck to the catalyst surface.` },
+    { q: "Autocatalysis means…", o: ["A product catalyses the reaction", "The catalyst is used up", "No catalyst is needed", "A reactant inhibits it"], a: 0, e: R`The rate increases as product builds up, e.g. Mn²⁺ in manganate titrations.` }
   ],
   flashcards: [
     ["[Cu(H₂O)₆]²⁺ + conc HCl", "→ [CuCl₄]²⁻, yellow, tetrahedral"],
@@ -1832,7 +1832,7 @@ S2Data.add({
 S2Data.add({
   id: "6a", group: 6, y2: true, title: "Arenes",
   summary: "The structure of benzene, evidence for delocalisation, electrophilic substitution, and phenol.",
-  notes: `
+  notes: R`
 <h3>Structure of benzene</h3>
 <ul>
 <li>C<sub>6</sub>H<sub>6</sub>: a planar hexagon, bond angles 120°. Each carbon uses three electrons in σ bonds; the remaining p electrons overlap above and below the ring to form a <b>delocalised π system</b>.</li>
@@ -1862,15 +1862,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Evidence that benzene isn't Kekulé's structure?", o: ["All C–C bonds are the same length", "It's a liquid", "It has 6 carbons", "It burns"], a: 0, e: "" },
-    { q: "Why doesn't benzene decolourise bromine water?", o: ["Addition would break the stable delocalised ring", "It has no electrons", "It's saturated", "Bromine is too weak a nucleophile"], a: 0, e: "" },
-    { q: "Electrophile in nitration of benzene?", o: ["NO₂⁺", "NO₃⁻", "HNO₃", "H⁺"], a: 0, e: "" },
-    { q: "Catalyst for Friedel–Crafts acylation?", o: ["AlCl₃", "FeCl₂", "Ni", "H₃PO₄"], a: 0, e: "" },
-    { q: "Why is phenol more reactive than benzene with bromine?", o: ["O lone pair delocalises into the ring, raising electron density", "Phenol is a strong acid", "Benzene is ionic", "Phenol has no ring"], a: 0, e: "" },
-    { q: "Benzene + ethanoyl chloride, AlCl₃ gives…", o: ["Phenylethanone", "Ethylbenzene", "Benzoic acid", "Chlorobenzene"], a: 0, e: "" },
-    { q: "Benzene's enthalpy of hydrogenation is less exothermic than predicted because…", o: ["Delocalisation makes it more stable", "It has fewer bonds", "It's a gas", "It has 3 double bonds"], a: 0, e: "" },
-    { q: "Why is nitration kept below 55 °C?", o: ["To avoid multiple substitution", "To prevent boiling the catalyst", "To increase rate", "To favour addition"], a: 0, e: "" },
-    { q: "Product of phenol + bromine water?", o: ["2,4,6-tribromophenol (white ppt)", "Bromobenzene", "1,2-dibromocyclohexane", "No reaction"], a: 0, e: "" }
+    { q: "Evidence that benzene isn't Kekulé's structure?", o: ["All C–C bonds are the same length", "It's a liquid", "It has 6 carbons", "It burns"], a: 0, e: R`X-ray diffraction shows all bonds are intermediate between single and double.` },
+    { q: "Why doesn't benzene decolourise bromine water?", o: ["Addition would break the stable delocalised ring", "It has no electrons", "It's saturated", "Bromine is too weak a nucleophile"], a: 0, e: R`Substitution keeps the stable delocalised ring intact.` },
+    { q: "Electrophile in nitration of benzene?", o: ["NO₂⁺", "NO₃⁻", "HNO₃", "H⁺"], a: 0, e: R`Formed from conc HNO<sub>3</sub> + conc H<sub>2</sub>SO<sub>4</sub>.` },
+    { q: "Catalyst for Friedel–Crafts acylation?", o: ["AlCl₃", "FeCl₂", "Ni", "H₃PO₄"], a: 0, e: R`A halogen carrier forms the electrophile RCO⁺.` },
+    { q: "Why is phenol more reactive than benzene with bromine?", o: ["O lone pair delocalises into the ring, raising electron density", "Phenol is a strong acid", "Benzene is ionic", "Phenol has no ring"], a: 0, e: R`Higher electron density lets bromine be polarised without a catalyst.` },
+    { q: "Benzene + ethanoyl chloride, AlCl₃ gives…", o: ["Phenylethanone", "Ethylbenzene", "Benzoic acid", "Chlorobenzene"], a: 0, e: R`Friedel–Crafts acylation adds the CH₃CO group.` },
+    { q: "Benzene's enthalpy of hydrogenation is less exothermic than predicted because…", o: ["Delocalisation makes it more stable", "It has fewer bonds", "It's a gas", "It has 3 double bonds"], a: 0, e: R`It's about 150 kJ mol⁻¹ more stable than Kekulé's structure.` },
+    { q: "Why is nitration kept below 55 °C?", o: ["To avoid multiple substitution", "To prevent boiling the catalyst", "To increase rate", "To favour addition"], a: 0, e: R`Higher temperatures give dinitro products.` },
+    { q: "Product of phenol + bromine water?", o: ["2,4,6-tribromophenol (white ppt)", "Bromobenzene", "1,2-dibromocyclohexane", "No reaction"], a: 0, e: R`Three Br atoms substitute at the 2, 4 and 6 positions.` }
   ],
   flashcards: [
     ["Benzene structure", "Planar ring; delocalised π electrons above and below"],
@@ -1889,7 +1889,7 @@ S2Data.add({
 S2Data.add({
   id: "6b", group: 6, y2: true, title: "Carbonyl compounds",
   summary: "Aldehydes and ketones: physical properties, oxidation tests, reduction, and nucleophilic addition of HCN.",
-  notes: `
+  notes: R`
 <h3>Structure and properties</h3>
 <ul>
 <li><b>Aldehydes</b>: C=O at the end of the chain (–CHO), named -al. <b>Ketones</b>: C=O in the chain, named -one.</li>
@@ -1914,15 +1914,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Tollens' reagent gives a silver mirror with…", o: ["Aldehydes", "Ketones", "Both", "Neither"], a: 0, e: "" },
-    { q: "Fehling's positive result?", o: ["Blue → red precipitate", "Orange → green", "Silver mirror", "Yellow precipitate"], a: 0, e: "" },
-    { q: "2,4-DNPH gives an orange precipitate with…", o: ["Aldehydes and ketones", "Aldehydes only", "Alcohols", "Carboxylic acids"], a: 0, e: "" },
+    { q: "Tollens' reagent gives a silver mirror with…", o: ["Aldehydes", "Ketones", "Both", "Neither"], a: 0, e: R`The aldehyde is oxidised and Ag⁺ is reduced to silver.` },
+    { q: "Fehling's positive result?", o: ["Blue → red precipitate", "Orange → green", "Silver mirror", "Yellow precipitate"], a: 0, e: R`Cu²⁺ is reduced to Cu₂O (red) by an aldehyde.` },
+    { q: "2,4-DNPH gives an orange precipitate with…", o: ["Aldehydes and ketones", "Aldehydes only", "Alcohols", "Carboxylic acids"], a: 0, e: R`It reacts with the C=O group.` },
     { q: "Which gives a positive iodoform test?", o: ["Propanone", "Pentan-3-one", "Methanal", "Propanal"], a: 0, e: "CH₃CO–." },
-    { q: "Reduction of butanone with LiAlH₄ gives…", o: ["Butan-2-ol", "Butan-1-ol", "Butanoic acid", "Butane"], a: 0, e: "" },
-    { q: "In nucleophilic addition of HCN, the nucleophile is…", o: ["CN⁻", "H⁺", "HCN", "OH⁻"], a: 0, e: "" },
-    { q: "Product of propanone + HCN?", o: ["2-hydroxy-2-methylpropanenitrile", "2-hydroxypropanenitrile", "Propanenitrile", "Butanenitrile"], a: 0, e: "" },
-    { q: "Why do carbonyls have lower boiling points than alcohols of similar Mr?", o: ["No hydrogen bonding between carbonyl molecules", "They're ionic", "Larger London forces", "They're gases"], a: 0, e: "" },
-    { q: "How is a 2,4-DNPH derivative used to identify a carbonyl?", o: ["Recrystallise and measure melting point; compare with data", "Measure its mass", "Burn it", "Dissolve it in water"], a: 0, e: "" }
+    { q: "Reduction of butanone with LiAlH₄ gives…", o: ["Butan-2-ol", "Butan-1-ol", "Butanoic acid", "Butane"], a: 0, e: R`Reducing a ketone gives a secondary alcohol.` },
+    { q: "In nucleophilic addition of HCN, the nucleophile is…", o: ["CN⁻", "H⁺", "HCN", "OH⁻"], a: 0, e: R`CN⁻ attacks the δ+ carbonyl carbon.` },
+    { q: "Product of propanone + HCN?", o: ["2-hydroxy-2-methylpropanenitrile", "2-hydroxypropanenitrile", "Propanenitrile", "Butanenitrile"], a: 0, e: R`CN adds to the carbonyl carbon and OH forms on it.` },
+    { q: "Why do carbonyls have lower boiling points than alcohols of similar Mr?", o: ["No hydrogen bonding between carbonyl molecules", "They're ionic", "Larger London forces", "They're gases"], a: 0, e: R`Carbonyls lack an O–H, so they can't hydrogen bond with each other.` },
+    { q: "How is a 2,4-DNPH derivative used to identify a carbonyl?", o: ["Recrystallise and measure melting point; compare with data", "Measure its mass", "Burn it", "Dissolve it in water"], a: 0, e: R`Each derivative has a characteristic melting point.` }
   ],
   flashcards: [
     ["Aldehyde vs ketone", "–CHO at chain end vs C=O within chain"],
@@ -1940,7 +1940,7 @@ S2Data.add({
 S2Data.add({
   id: "6c", group: 6, y2: true, title: "Carboxylic acids and derivatives",
   summary: "Preparing and reacting carboxylic acids, esters, acyl chlorides and polyesters.",
-  notes: `
+  notes: R`
 <h3>Carboxylic acids</h3>
 <ul>
 <li>–COOH. Hydrogen bonding gives high boiling points; short chains are soluble in water. Weak acids.</li>
@@ -1971,15 +1971,15 @@ S2Data.add({
 <p><b>Condensation polymers</b> form from a <b>dicarboxylic acid</b> (or diacyl chloride) and a <b>diol</b>, losing H<sub>2</sub>O (or HCl) for each ester link. e.g. Terylene (PET) from benzene-1,4-dicarboxylic acid and ethane-1,2-diol. Polyesters are biodegradable by hydrolysis of the ester links.</p>
 `,
   quiz: [
-    { q: "Test for a carboxylic acid?", o: ["Add Na₂CO₃: fizzing, CO₂ turns limewater milky", "Tollens' reagent", "2,4-DNPH", "Bromine water"], a: 0, e: "" },
-    { q: "Name CH₃CH₂COOCH₃.", o: ["Methyl propanoate", "Propyl methanoate", "Ethyl ethanoate", "Methyl ethanoate"], a: 0, e: "" },
-    { q: "Catalyst for esterification?", o: ["Concentrated H₂SO₄", "Nickel", "NaOH", "Platinum"], a: 0, e: "" },
-    { q: "Why does alkaline hydrolysis of an ester go to completion?", o: ["The carboxylate ion doesn't react with the alcohol", "It's faster", "NaOH is a catalyst", "It's exothermic"], a: 0, e: "" },
-    { q: "Ethanoyl chloride + ethanol gives…", o: ["Ethyl ethanoate + HCl", "Ethanoic acid", "Ethanamide", "Ethene"], a: 0, e: "" },
-    { q: "Ethanoyl chloride + ammonia gives…", o: ["Ethanamide", "Ethylamine", "Ethanoic acid", "Ethanenitrile"], a: 0, e: "" },
-    { q: "Mechanism type for acyl chloride + water?", o: ["Addition–elimination", "Electrophilic addition", "Free-radical substitution", "SN1"], a: 0, e: "" },
-    { q: "Which pair makes a polyester?", o: ["Diol + dicarboxylic acid", "Diamine + dicarboxylic acid", "Alkene + alkene", "Amino acids"], a: 0, e: "" },
-    { q: "Hydrolysing propanenitrile with dilute acid gives…", o: ["Propanoic acid", "Propanamine", "Propan-1-ol", "Ethanoic acid"], a: 0, e: "" }
+    { q: "Test for a carboxylic acid?", o: ["Add Na₂CO₃: fizzing, CO₂ turns limewater milky", "Tollens' reagent", "2,4-DNPH", "Bromine water"], a: 0, e: R`Acids react with carbonates: 2RCOOH + Na<sub>2</sub>CO<sub>3</sub> → 2RCOONa + H<sub>2</sub>O + CO<sub>2</sub>.` },
+    { q: "Name CH₃CH₂COOCH₃.", o: ["Methyl propanoate", "Propyl methanoate", "Ethyl ethanoate", "Methyl ethanoate"], a: 0, e: R`From methanol and propanoic acid.` },
+    { q: "Catalyst for esterification?", o: ["Concentrated H₂SO₄", "Nickel", "NaOH", "Platinum"], a: 0, e: R`It speeds up the reaction and removes water.` },
+    { q: "Why does alkaline hydrolysis of an ester go to completion?", o: ["The carboxylate ion doesn't react with the alcohol", "It's faster", "NaOH is a catalyst", "It's exothermic"], a: 0, e: R`It's irreversible because the salt can't re-form the ester.` },
+    { q: "Ethanoyl chloride + ethanol gives…", o: ["Ethyl ethanoate + HCl", "Ethanoic acid", "Ethanamide", "Ethene"], a: 0, e: R`Acylation of the alcohol gives an ester and fumes of HCl.` },
+    { q: "Ethanoyl chloride + ammonia gives…", o: ["Ethanamide", "Ethylamine", "Ethanoic acid", "Ethanenitrile"], a: 0, e: R`Acylation of ammonia gives an amide.` },
+    { q: "Mechanism type for acyl chloride + water?", o: ["Addition–elimination", "Electrophilic addition", "Free-radical substitution", "SN1"], a: 0, e: R`Nucleophilic addition, then elimination of HCl.` },
+    { q: "Which pair makes a polyester?", o: ["Diol + dicarboxylic acid", "Diamine + dicarboxylic acid", "Alkene + alkene", "Amino acids"], a: 0, e: R`Condensation polymerisation eliminates water.` },
+    { q: "Hydrolysing propanenitrile with dilute acid gives…", o: ["Propanoic acid", "Propanamine", "Propan-1-ol", "Ethanoic acid"], a: 0, e: R`The C≡N is hydrolysed to COOH.` }
   ],
   flashcards: [
     ["Making carboxylic acids", "Oxidise 1° alcohol/aldehyde (reflux) or hydrolyse nitrile"],
@@ -1998,7 +1998,7 @@ S2Data.add({
 S2Data.add({
   id: "6d", group: 6, y2: true, title: "Amines, amides and amino acids",
   summary: "Basicity and preparation of amines, amides, polyamides, and the chemistry of amino acids.",
-  notes: `
+  notes: R`
 <h3>Amines</h3>
 <ul>
 <li>Primary (RNH<sub>2</sub>), secondary (R<sub>2</sub>NH), tertiary (R<sub>3</sub>N). They act as <b>bases</b> and <b>nucleophiles</b> because of the lone pair on N.</li>
@@ -2029,15 +2029,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Why is ethylamine a stronger base than ammonia?", o: ["Ethyl group pushes electron density onto N", "It's larger", "It has more hydrogens", "It's an acid"], a: 0, e: "" },
-    { q: "Why is phenylamine a weaker base than ammonia?", o: ["N lone pair is delocalised into the ring", "Benzene is acidic", "It's insoluble", "N has no lone pair"], a: 0, e: "" },
-    { q: "Reagents to make phenylamine from nitrobenzene?", o: ["Tin and conc HCl, reflux, then NaOH", "LiAlH₄ only", "NH₃", "H₂SO₄"], a: 0, e: "" },
-    { q: "Which pair makes a polyamide?", o: ["Diamine + dicarboxylic acid", "Diol + diacid", "Two alkenes", "Diol + diamine"], a: 0, e: "" },
-    { q: "A zwitterion has…", o: ["Both a positive and a negative charge", "No charge anywhere", "Two positive charges", "Only a negative charge"], a: 0, e: "" },
-    { q: "Form of glycine in strong acid?", o: ["⁺H₃NCH₂COOH", "H₂NCH₂COO⁻", "⁺H₃NCH₂COO⁻", "H₂NCH₂COOH"], a: 0, e: "" },
-    { q: "Which amino acid is not chiral?", o: ["Glycine", "Alanine", "Serine", "Valine"], a: 0, e: "R = H." },
-    { q: "Why does reducing a nitrile give a purer amine than using a halogenoalkane and ammonia?", o: ["No further substitution products", "It's faster", "No reagents needed", "It gives a salt"], a: 0, e: "" },
-    { q: "Why are amino acids high-melting solids?", o: ["Zwitterions have strong ionic attractions", "Large London forces", "Covalent network", "Metallic bonding"], a: 0, e: "" }
+    { q: "Why is ethylamine a stronger base than ammonia?", o: ["Ethyl group pushes electron density onto N", "It's larger", "It has more hydrogens", "It's an acid"], a: 0, e: R`More electron density on N makes the lone pair more available.` },
+    { q: "Why is phenylamine a weaker base than ammonia?", o: ["N lone pair is delocalised into the ring", "Benzene is acidic", "It's insoluble", "N has no lone pair"], a: 0, e: R`The lone pair is less available to accept a proton.` },
+    { q: "Reagents to make phenylamine from nitrobenzene?", o: ["Tin and conc HCl, reflux, then NaOH", "LiAlH₄ only", "NH₃", "H₂SO₄"], a: 0, e: R`Reduction of NO₂ to NH₂; NaOH frees the amine from its salt.` },
+    { q: "Which pair makes a polyamide?", o: ["Diamine + dicarboxylic acid", "Diol + diacid", "Two alkenes", "Diol + diamine"], a: 0, e: R`Condensation forms amide links.` },
+    { q: "A zwitterion has…", o: ["Both a positive and a negative charge", "No charge anywhere", "Two positive charges", "Only a negative charge"], a: 0, e: R`E.g. H<sub>3</sub>N<sup>+</sup>CH<sub>2</sub>COO<sup>−</sup>.` },
+    { q: "Form of glycine in strong acid?", o: ["⁺H₃NCH₂COOH", "H₂NCH₂COO⁻", "⁺H₃NCH₂COO⁻", "H₂NCH₂COOH"], a: 0, e: R`In acid, the carboxylate is protonated.` },
+    { q: "Which amino acid is not chiral?", o: ["Glycine", "Alanine", "Serine", "Valine"], a: 0, e: R`\(R = H\).` },
+    { q: "Why does reducing a nitrile give a purer amine than using a halogenoalkane and ammonia?", o: ["No further substitution products", "It's faster", "No reagents needed", "It gives a salt"], a: 0, e: R`Reducing a nitrile gives only a primary amine.` },
+    { q: "Why are amino acids high-melting solids?", o: ["Zwitterions have strong ionic attractions", "Large London forces", "Covalent network", "Metallic bonding"], a: 0, e: R`Ionic attractions between zwitterions need lots of energy to overcome.` }
   ],
   flashcards: [
     ["Amine basicity order", "Ethylamine > ammonia > phenylamine"],
@@ -2056,7 +2056,7 @@ S2Data.add({
 S2Data.add({
   id: "6e", group: 6, y2: true, title: "Chirality",
   summary: "Chiral centres, enantiomers, optical activity, racemic mixtures and what they tell you about mechanisms.",
-  notes: `
+  notes: R`
 <h3>Optical isomerism</h3>
 <ul>
 <li>A <b>chiral centre</b> is a carbon atom with <b>four different groups</b> attached. Mark it with an asterisk (*).</li>
@@ -2080,14 +2080,14 @@ S2Data.add({
 <div class="box box-key"><span class="box-title">Drugs</span>Often only one enantiomer is active. Thalidomide's other enantiomer caused birth defects. Making a single enantiomer is expensive but reduces side effects and doses.</div>
 `,
   quiz: [
-    { q: "A chiral centre is a carbon with…", o: ["Four different groups attached", "A double bond", "Two identical groups", "A lone pair"], a: 0, e: "" },
-    { q: "Enantiomers are…", o: ["Non-superimposable mirror images", "Structural isomers", "E/Z isomers", "Identical molecules"], a: 0, e: "" },
-    { q: "A racemic mixture is optically inactive because…", o: ["Equal amounts of enantiomers rotate light equally in opposite directions", "It contains no chiral molecules", "It absorbs light", "It's a solid"], a: 0, e: "" },
+    { q: "A chiral centre is a carbon with…", o: ["Four different groups attached", "A double bond", "Two identical groups", "A lone pair"], a: 0, e: R`Four different groups mean no plane of symmetry.` },
+    { q: "Enantiomers are…", o: ["Non-superimposable mirror images", "Structural isomers", "E/Z isomers", "Identical molecules"], a: 0, e: R`They rotate plane-polarised light in opposite directions.` },
+    { q: "A racemic mixture is optically inactive because…", o: ["Equal amounts of enantiomers rotate light equally in opposite directions", "It contains no chiral molecules", "It absorbs light", "It's a solid"], a: 0, e: R`The rotations cancel.` },
     { q: "Which molecule is chiral?", o: ["Butan-2-ol", "Propan-2-ol", "Ethanol", "2-methylpropan-2-ol"], a: 0, e: "C2 has H, OH, CH₃, C₂H₅." },
     { q: "SN1 on a single enantiomer gives…", o: ["A racemic mixture", "A single enantiomer", "No product", "An achiral product always"], a: 0, e: "Planar carbocation." },
-    { q: "Ethanal + HCN gives an optically inactive product because…", o: ["The planar C=O is attacked equally from both sides", "The product is not chiral", "HCN is a weak acid", "No reaction occurs"], a: 0, e: "" },
-    { q: "Optical activity is measured with a…", o: ["Polarimeter", "Colorimeter", "pH meter", "Mass spectrometer"], a: 0, e: "" },
-    { q: "Why do drug companies aim to make single enantiomers?", o: ["Often only one is active; fewer side effects", "They're cheaper", "Racemates are unstable", "Legal requirement for all drugs"], a: 0, e: "" }
+    { q: "Ethanal + HCN gives an optically inactive product because…", o: ["The planar C=O is attacked equally from both sides", "The product is not chiral", "HCN is a weak acid", "No reaction occurs"], a: 0, e: R`Attack from either face gives a 50 : 50 racemic mixture.` },
+    { q: "Optical activity is measured with a…", o: ["Polarimeter", "Colorimeter", "pH meter", "Mass spectrometer"], a: 0, e: R`It measures the rotation of plane-polarised light.` },
+    { q: "Why do drug companies aim to make single enantiomers?", o: ["Often only one is active; fewer side effects", "They're cheaper", "Racemates are unstable", "Legal requirement for all drugs"], a: 0, e: R`The other enantiomer may be inactive or harmful.` }
   ],
   flashcards: [
     ["Chiral centre", "C with four different groups"],
@@ -2104,7 +2104,7 @@ S2Data.add({
 S2Data.add({
   id: "6f", group: 6, y2: true, title: "Organic synthesis",
   summary: "Grignard reagents, multi-step synthesis routes, practical techniques and identifying functional groups.",
-  notes: `
+  notes: R`
 <h3>Grignard reagents</h3>
 <ul>
 <li>Made from a halogenoalkane and <b>magnesium in dry ether</b>: CH<sub>3</sub>CH<sub>2</sub>Br + Mg → CH<sub>3</sub>CH<sub>2</sub>MgBr. Water must be excluded (it destroys the reagent).</li>
@@ -2142,15 +2142,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "How is a Grignard reagent made?", o: ["Halogenoalkane + Mg in dry ether", "Alcohol + Mg in water", "Alkene + MgO", "Halogenoalkane + MgSO₄"], a: 0, e: "" },
-    { q: "Grignard reagent + CO₂, then acid, gives…", o: ["A carboxylic acid", "An alcohol", "A ketone", "An ester"], a: 0, e: "" },
-    { q: "Grignard reagent + propanone gives…", o: ["A tertiary alcohol", "A primary alcohol", "A secondary alcohol", "An aldehyde"], a: 0, e: "" },
-    { q: "Two ways to add one carbon to a chain?", o: ["KCN substitution; Grignard + CO₂", "Oxidation; reduction", "Cracking; reforming", "Esterification; hydrolysis"], a: 0, e: "" },
-    { q: "Ethene → ethanoic acid, a sensible route?", o: ["Steam/H₃PO₄ → ethanol; then K₂Cr₂O₇/H₂SO₄ reflux", "HBr then KCN", "H₂/Ni then oxidise", "PCl₅ then water"], a: 0, e: "" },
-    { q: "In recrystallisation, why use the minimum amount of hot solvent?", o: ["So the product crystallises on cooling (maximum yield)", "To dissolve impurities", "To save money only", "To lower boiling point"], a: 0, e: "" },
-    { q: "An impure solid's melting point is…", o: ["Lower and over a wider range", "Higher and sharp", "Exactly the data-book value", "Unaffected"], a: 0, e: "" },
-    { q: "Why must Grignard reactions be dry?", o: ["Water destroys the Grignard reagent", "Water is a catalyst", "Mg reacts with ether", "To raise yield of HBr"], a: 0, e: "" },
-    { q: "Bromoethane → propanoic acid?", o: ["KCN in ethanol, then reflux with dilute acid", "NaOH then oxidise", "KOH in ethanol", "Mg then water"], a: 0, e: "" }
+    { q: "How is a Grignard reagent made?", o: ["Halogenoalkane + Mg in dry ether", "Alcohol + Mg in water", "Alkene + MgO", "Halogenoalkane + MgSO₄"], a: 0, e: R`Dry ether stops water destroying the reagent.` },
+    { q: "Grignard reagent + CO₂, then acid, gives…", o: ["A carboxylic acid", "An alcohol", "A ketone", "An ester"], a: 0, e: R`This adds one carbon as COOH.` },
+    { q: "Grignard reagent + propanone gives…", o: ["A tertiary alcohol", "A primary alcohol", "A secondary alcohol", "An aldehyde"], a: 0, e: R`Ketones give tertiary alcohols with Grignard reagents.` },
+    { q: "Two ways to add one carbon to a chain?", o: ["KCN substitution; Grignard + CO₂", "Oxidation; reduction", "Cracking; reforming", "Esterification; hydrolysis"], a: 0, e: R`Both add a carbon atom.` },
+    { q: "Ethene → ethanoic acid, a sensible route?", o: ["Steam/H₃PO₄ → ethanol; then K₂Cr₂O₇/H₂SO₄ reflux", "HBr then KCN", "H₂/Ni then oxidise", "PCl₅ then water"], a: 0, e: R`Hydration, then oxidation.` },
+    { q: "In recrystallisation, why use the minimum amount of hot solvent?", o: ["So the product crystallises on cooling (maximum yield)", "To dissolve impurities", "To save money only", "To lower boiling point"], a: 0, e: R`Excess solvent keeps product dissolved, lowering the yield.` },
+    { q: "An impure solid's melting point is…", o: ["Lower and over a wider range", "Higher and sharp", "Exactly the data-book value", "Unaffected"], a: 0, e: R`Impurities disrupt the lattice.` },
+    { q: "Why must Grignard reactions be dry?", o: ["Water destroys the Grignard reagent", "Water is a catalyst", "Mg reacts with ether", "To raise yield of HBr"], a: 0, e: R`R–MgX + H<sub>2</sub>O → RH + Mg(OH)X.` },
+    { q: "Bromoethane → propanoic acid?", o: ["KCN in ethanol, then reflux with dilute acid", "NaOH then oxidise", "KOH in ethanol", "Mg then water"], a: 0, e: R`Substitution gives a nitrile, which hydrolysis turns into the acid.` }
   ],
   flashcards: [
     ["Grignard preparation", "RX + Mg in dry ether → RMgX"],
@@ -2167,7 +2167,7 @@ S2Data.add({
 S2Data.add({
   id: "6g", group: 6, y2: true, title: "Chromatography and combined techniques",
   summary: "TLC, Rf values, gas and HPLC chromatography, and combining spectra to work out structures.",
-  notes: `
+  notes: R`
 <h3>Chromatography</h3>
 <p>All chromatography has a <b>stationary phase</b> and a <b>mobile phase</b>. Components separate because they have different <b>affinities</b> for the two phases (adsorption to the stationary phase, or solubility in it).</p>
 <h3>Thin-layer chromatography (TLC)</h3>
@@ -2195,14 +2195,14 @@ S2Data.add({
 <p>Explain each piece of evidence in your answer, then draw the final structure and check it fits everything.</p>
 `,
   quiz: [
-    { q: "Rf if spot moves 3.0 cm and solvent front 7.5 cm?", o: ["0.40", "2.5", "0.25", "4.5"], a: 0, e: "" },
-    { q: "Why draw the TLC baseline in pencil?", o: ["Pencil doesn't dissolve in the solvent", "It's cheaper", "Ink is more visible", "It reacts with silica"], a: 0, e: "" },
-    { q: "Mobile phase in gas chromatography?", o: ["Inert carrier gas, e.g. He", "Silica", "Water", "Liquid on solid support"], a: 0, e: "" },
-    { q: "In GC, what does retention time depend on?", o: ["How strongly the compound interacts with the stationary phase", "The colour", "The detector", "Peak area"], a: 0, e: "" },
-    { q: "How can colourless spots on TLC be seen?", o: ["UV light or iodine", "Bromine water", "A pH meter", "Heating to 500 °C"], a: 0, e: "" },
-    { q: "Why combine GC with mass spectrometry?", o: ["GC separates; MS identifies each component", "MS separates; GC identifies", "Both separate only", "To make it faster"], a: 0, e: "" },
-    { q: "In GC, peak area is proportional to…", o: ["The amount of that component", "Its Mr", "Its boiling point", "Retention time"], a: 0, e: "" },
-    { q: "Which technique best shows the number of carbon environments?", o: ["¹³C NMR", "IR", "TLC", "Elemental analysis"], a: 0, e: "" }
+    { q: "Rf if spot moves 3.0 cm and solvent front 7.5 cm?", o: ["0.40", "2.5", "0.25", "4.5"], a: 0, e: R`\(R_f = \dfrac{3.0}{7.5} = 0.40\).` },
+    { q: "Why draw the TLC baseline in pencil?", o: ["Pencil doesn't dissolve in the solvent", "It's cheaper", "Ink is more visible", "It reacts with silica"], a: 0, e: R`Ink would dissolve and move with the solvent.` },
+    { q: "Mobile phase in gas chromatography?", o: ["Inert carrier gas, e.g. He", "Silica", "Water", "Liquid on solid support"], a: 0, e: R`The carrier gas carries the sample through the column.` },
+    { q: "In GC, what does retention time depend on?", o: ["How strongly the compound interacts with the stationary phase", "The colour", "The detector", "Peak area"], a: 0, e: R`Stronger interaction means a longer retention time.` },
+    { q: "How can colourless spots on TLC be seen?", o: ["UV light or iodine", "Bromine water", "A pH meter", "Heating to 500 °C"], a: 0, e: R`Use a fluorescent plate under UV, or iodine vapour.` },
+    { q: "Why combine GC with mass spectrometry?", o: ["GC separates; MS identifies each component", "MS separates; GC identifies", "Both separate only", "To make it faster"], a: 0, e: R`The mass spectrum identifies each separated compound.` },
+    { q: "In GC, peak area is proportional to…", o: ["The amount of that component", "Its Mr", "Its boiling point", "Retention time"], a: 0, e: R`Peak area gives the relative amount.` },
+    { q: "Which technique best shows the number of carbon environments?", o: ["¹³C NMR", "IR", "TLC", "Elemental analysis"], a: 0, e: R`Each peak is one carbon environment.` }
   ],
   flashcards: [
     ["Basis of chromatography", "Different affinities for stationary and mobile phases"],
@@ -2219,7 +2219,7 @@ S2Data.add({
 S2Data.add({
   id: "6h", group: 6, y2: true, title: "NMR spectroscopy",
   summary: "¹³C and ¹H NMR: chemical shift, number of environments, integration, splitting and TMS.",
-  notes: `
+  notes: R`
 <h3>How NMR works</h3>
 <ul>
 <li>Nuclei with an odd mass number (<sup>1</sup>H, <sup>13</sup>C) have spin. In a strong magnetic field they absorb radio waves.</li>
@@ -2250,15 +2250,15 @@ S2Data.add({
 <p>MRI scanning uses <sup>1</sup>H NMR of water in body tissues.</p>
 `,
   quiz: [
-    { q: "Number of ¹³C environments in propanone?", o: ["2", "3", "1", "4"], a: 0, e: "" },
-    { q: "Why is TMS used in NMR?", o: ["Single peak at δ 0; inert, volatile, non-toxic", "It's a solvent", "It has no hydrogens", "It gives many peaks"], a: 0, e: "" },
-    { q: "A CH₂ next to a CH₃ appears as a…", o: ["Quartet", "Triplet", "Doublet", "Singlet"], a: 0, e: "n + 1 = 4." },
-    { q: "Why use CDCl₃ as the solvent?", o: ["No ¹H, so no solvent peak", "It's cheap", "It reacts with the sample", "It's a reference"], a: 0, e: "" },
-    { q: "How can you identify an –OH peak?", o: ["Add D₂O: it disappears", "It's always a quartet", "It's at δ 0", "It splits into 4"], a: 0, e: "" },
-    { q: "A peak at δ 9.8 suggests…", o: ["An aldehyde H", "An alkane CH₃", "An aromatic H", "TMS"], a: 0, e: "" },
-    { q: "¹H NMR of ethanal (CH₃CHO): peaks?", o: ["Doublet (3H) and quartet (1H)", "Two singlets", "Triplet and quartet", "One singlet"], a: 0, e: "" },
-    { q: "Integration in ¹H NMR tells you…", o: ["The ratio of hydrogens in each environment", "The number of carbons", "The Mr", "The bond type"], a: 0, e: "" },
-    { q: "Number of ¹H environments in methyl propanoate, CH₃CH₂COOCH₃?", o: ["3", "2", "4", "8"], a: 0, e: "" }
+    { q: "Number of ¹³C environments in propanone?", o: ["2", "3", "1", "4"], a: 0, e: R`The two CH₃ carbons are equivalent, plus the C=O carbon.` },
+    { q: "Why is TMS used in NMR?", o: ["Single peak at δ 0; inert, volatile, non-toxic", "It's a solvent", "It has no hydrogens", "It gives many peaks"], a: 0, e: R`TMS is the reference standard.` },
+    { q: "A CH₂ next to a CH₃ appears as a…", o: ["Quartet", "Triplet", "Doublet", "Singlet"], a: 0, e: R`\(n + 1 = 4\).` },
+    { q: "Why use CDCl₃ as the solvent?", o: ["No ¹H, so no solvent peak", "It's cheap", "It reacts with the sample", "It's a reference"], a: 0, e: R`Deuterium doesn't appear in ¹H NMR.` },
+    { q: "How can you identify an –OH peak?", o: ["Add D₂O: it disappears", "It's always a quartet", "It's at δ 0", "It splits into 4"], a: 0, e: R`O–H hydrogens exchange with deuterium.` },
+    { q: "A peak at δ 9.8 suggests…", o: ["An aldehyde H", "An alkane CH₃", "An aromatic H", "TMS"], a: 0, e: R`Aldehyde protons appear at δ 9–10.` },
+    { q: "¹H NMR of ethanal (CH₃CHO): peaks?", o: ["Doublet (3H) and quartet (1H)", "Two singlets", "Triplet and quartet", "One singlet"], a: 0, e: R`Using the \(n + 1\) rule: CH<sub>3</sub> next to 1 H gives a doublet; CHO next to 3 H gives a quartet.` },
+    { q: "Integration in ¹H NMR tells you…", o: ["The ratio of hydrogens in each environment", "The number of carbons", "The Mr", "The bond type"], a: 0, e: R`The area under each peak is proportional to the number of hydrogens.` },
+    { q: "Number of ¹H environments in methyl propanoate, CH₃CH₂COOCH₃?", o: ["3", "2", "4", "8"], a: 0, e: R`CH₃ (ethyl), CH₂ and OCH₃.` }
   ],
   flashcards: [
     ["Chemical shift δ", "Position of peak (ppm) relative to TMS; depends on environment"],

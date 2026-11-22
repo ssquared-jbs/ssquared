@@ -3,7 +3,7 @@
 CHEM.add({
   id: "2a", group: 2, title: "Group 1 (alkali metals)",
   summary: "Lithium, sodium and potassium: reactions with water and trends down the group.",
-  notes: `
+  notes: R`
 <h3>Properties</h3>
 <ul>
 <li>Soft metals that can be cut with a knife. They have low densities (Li, Na and K float on water) and low melting points.</li>
@@ -34,19 +34,19 @@ CHEM.add({
     ["Charge on Group 1 ions", "+1"]
   ],
   quiz: [
-    { q: "Which gas forms when sodium reacts with water?", o: ["Hydrogen", "Oxygen", "Carbon dioxide", "Chlorine"], a: 0, e: "" },
-    { q: "Which Group 1 metal reacts most vigorously with water?", o: ["Potassium", "Sodium", "Lithium", "They are all the same"], a: 0, e: "" },
-    { q: "Why does sodium melt into a ball on water?", o: ["The reaction is exothermic and sodium has a low melting point", "Sodium is dense", "Water is hot", "Hydrogen melts it"], a: 0, e: "" },
+    { q: "Which gas forms when sodium reacts with water?", o: ["Hydrogen", "Oxygen", "Carbon dioxide", "Chlorine"], a: 0, e: R`Metal + water → metal hydroxide + hydrogen.` },
+    { q: "Which Group 1 metal reacts most vigorously with water?", o: ["Potassium", "Sodium", "Lithium", "They are all the same"], a: 0, e: R`Reactivity increases down Group 1, and potassium is the lowest of these.` },
+    { q: "Why does sodium melt into a ball on water?", o: ["The reaction is exothermic and sodium has a low melting point", "Sodium is dense", "Water is hot", "Hydrogen melts it"], a: 0, e: R`The heat released melts the sodium.` },
     { q: "What colour does universal indicator turn after lithium reacts with water?", o: ["Blue/purple", "Red", "Green", "Yellow"], a: 0, e: "LiOH is an alkali." },
-    { q: "Why is caesium more reactive than sodium?", o: ["Its outer electron is further from the nucleus, so it is lost more easily", "It has more outer electrons", "It gains electrons more easily", "It is more dense"], a: 0, e: "" },
-    { q: "What is the formula of the product when lithium reacts with water (apart from H<sub>2</sub>)?", o: ["LiOH", "Li<sub>2</sub>O", "LiH", "Li(OH)<sub>2</sub>"], a: 0, e: "" }
+    { q: "Why is caesium more reactive than sodium?", o: ["Its outer electron is further from the nucleus, so it is lost more easily", "It has more outer electrons", "It gains electrons more easily", "It is more dense"], a: 0, e: R`With more shells and more shielding, the outer electron is held less strongly.` },
+    { q: "What is the formula of the product when lithium reacts with water (apart from H<sub>2</sub>)?", o: ["LiOH", "Li<sub>2</sub>O", "LiH", "Li(OH)<sub>2</sub>"], a: 0, e: R`2Li + 2H<sub>2</sub>O → 2LiOH + H<sub>2</sub>.` }
   ]
 });
 
 CHEM.add({
   id: "2b", group: 2, title: "Group 7 (halogens)",
   summary: "Chlorine, bromine and iodine: physical trends and displacement reactions.",
-  notes: `
+  notes: R`
 <h3>Physical properties</h3>
 <table>
 <tr><th>Halogen</th><th>State at room temp</th><th>Colour</th></tr>
@@ -86,19 +86,19 @@ Chlorine gains electrons, so it is <b>reduced</b> and acts as the oxidising agen
   ],
   quiz: [
     { q: "Which mixture reacts?", o: ["Chlorine + potassium bromide", "Iodine + potassium chloride", "Bromine + potassium chloride", "Iodine + potassium bromide"], a: 0, e: "A more reactive halogen displaces a less reactive one." },
-    { q: "What is the state of bromine at room temperature?", o: ["Liquid", "Gas", "Solid", "Plasma"], a: 0, e: "" },
+    { q: "What is the state of bromine at room temperature?", o: ["Liquid", "Gas", "Solid", "Plasma"], a: 0, e: R`Chlorine is a gas, bromine a red-brown liquid and iodine a grey solid.` },
     { q: "In Cl<sub>2</sub> + 2I<sup>−</sup> → 2Cl<sup>−</sup> + I<sub>2</sub>, what is oxidised?", o: ["Iodide ions", "Chlorine", "Chloride ions", "Nothing"], a: 0, e: "I<sup>−</sup> loses electrons." },
-    { q: "Predict the appearance of astatine at room temperature.", o: ["Black solid", "Yellow gas", "Colourless liquid", "Green gas"], a: 0, e: "" },
-    { q: "Why does reactivity decrease down Group 7?", o: ["It's harder to attract an extra electron into a shell further from the nucleus", "It's harder to lose electrons", "There are more outer electrons", "Molecules are smaller"], a: 0, e: "" },
+    { q: "Predict the appearance of astatine at room temperature.", o: ["Black solid", "Yellow gas", "Colourless liquid", "Green gas"], a: 0, e: R`Halogens get darker and have higher melting points down the group.` },
+    { q: "Why does reactivity decrease down Group 7?", o: ["It's harder to attract an extra electron into a shell further from the nucleus", "It's harder to lose electrons", "There are more outer electrons", "Molecules are smaller"], a: 0, e: R`The outer shell is further away and more shielded, so electrons are gained less easily.` },
     { q: "Bromine water is added to potassium iodide. What do you see?", o: ["It turns brown", "It turns colourless", "A white precipitate forms", "No change"], a: 0, e: "Iodine is displaced." },
-    { q: "Why don't the halogens conduct electricity?", o: ["They are simple molecules with no free electrons or ions", "They are metals", "They are ionic", "They are giant covalent"], a: 0, e: "" }
+    { q: "Why don't the halogens conduct electricity?", o: ["They are simple molecules with no free electrons or ions", "They are metals", "They are ionic", "They are giant covalent"], a: 0, e: R`Halogens are made of molecules with no charged particles free to move.` }
   ]
 });
 
 CHEM.add({
   id: "2c", group: 2, title: "Gases in the atmosphere",
   summary: "Composition of air, oxygen percentage, combustion, carbon dioxide and the greenhouse effect.",
-  notes: `
+  notes: R`
 <h3>Composition of dry air</h3>
 <table>
 <tr><th>Gas</th><th>Approximate %</th></tr>
@@ -141,20 +141,20 @@ CHEM.add({
     ["Effects of climate change", "Rising temperatures, melting ice caps, rising sea levels, extreme weather"]
   ],
   quiz: [
-    { q: "100 cm<sup>3</sup> of air is passed over hot copper. What volume of gas is left?", o: ["79 cm<sup>3</sup>", "21 cm<sup>3</sup>", "100 cm<sup>3</sup>", "50 cm<sup>3</sup>"], a: 0, e: "About 21% (oxygen) is used up." },
-    { q: "Which oxide gives an acidic solution?", o: ["Sulfur dioxide", "Magnesium oxide", "Sodium oxide", "Calcium oxide"], a: 0, e: "" },
-    { q: "What forms when copper(II) carbonate is heated?", o: ["Copper(II) oxide and carbon dioxide", "Copper and carbon dioxide", "Copper oxide and oxygen", "Copper and oxygen"], a: 0, e: "" },
-    { q: "What is the second most abundant gas in dry air?", o: ["Oxygen", "Argon", "Carbon dioxide", "Nitrogen"], a: 0, e: "" },
-    { q: "Why does the water level rise when iron wool rusts in a sealed tube of air?", o: ["Oxygen is used up", "Nitrogen dissolves", "Iron absorbs water", "CO<sub>2</sub> is made"], a: 0, e: "" },
-    { q: "What colour flame does magnesium burn with?", o: ["Bright white", "Lilac", "Blue", "Yellow"], a: 0, e: "" },
-    { q: "Which human activity adds most CO<sub>2</sub> to the atmosphere?", o: ["Burning fossil fuels", "Using solar panels", "Planting trees", "Recycling"], a: 0, e: "" }
+    { q: R`100 cm<sup>3</sup> of air is passed over hot copper. What volume of gas is left?`, o: [R`79 cm<sup>3</sup>`, R`21 cm<sup>3</sup>`, R`100 cm<sup>3</sup>`, R`50 cm<sup>3</sup>`], a: 0, e: "About 21% (oxygen) is used up." },
+    { q: "Which oxide gives an acidic solution?", o: ["Sulfur dioxide", "Magnesium oxide", "Sodium oxide", "Calcium oxide"], a: 0, e: R`Non-metal oxides are acidic; SO<sub>2</sub> forms sulfurous acid.` },
+    { q: "What forms when copper(II) carbonate is heated?", o: ["Copper(II) oxide and carbon dioxide", "Copper and carbon dioxide", "Copper oxide and oxygen", "Copper and oxygen"], a: 0, e: R`This is thermal decomposition: CuCO<sub>3</sub> → CuO + CO<sub>2</sub>.` },
+    { q: "What is the second most abundant gas in dry air?", o: ["Oxygen", "Argon", "Carbon dioxide", "Nitrogen"], a: 0, e: R`Air is about 78% nitrogen and 21% oxygen.` },
+    { q: "Why does the water level rise when iron wool rusts in a sealed tube of air?", o: ["Oxygen is used up", "Nitrogen dissolves", "Iron absorbs water", "CO<sub>2</sub> is made"], a: 0, e: R`Rusting uses oxygen, so water rises to fill its place (about 21%).` },
+    { q: "What colour flame does magnesium burn with?", o: ["Bright white", "Lilac", "Blue", "Yellow"], a: 0, e: R`Magnesium burns with a dazzling white flame to form MgO.` },
+    { q: "Which human activity adds most CO<sub>2</sub> to the atmosphere?", o: ["Burning fossil fuels", "Using solar panels", "Planting trees", "Recycling"], a: 0, e: R`Fossil fuels release carbon that was locked away for millions of years.` }
   ]
 });
 
 CHEM.add({
   id: "2d", group: 2, title: "Reactivity series",
   summary: "Order of metals, displacement, redox and rusting.",
-  notes: `
+  notes: R`
 <h3>The reactivity series</h3>
 <p style="font-size:1.1rem"><b>K &gt; Na &gt; Li &gt; Ca &gt; Mg &gt; Al &gt; (C) &gt; Zn &gt; Fe &gt; (H) &gt; Cu &gt; Ag &gt; Au</b></p>
 <p>Memory aid: "<i>Please Send Lions, Cats, Monkeys And Cute Zebras Into Hot Countries, Signing Gold</i>"</p>
@@ -208,11 +208,11 @@ Use three tubes with an iron nail in each:
   quiz: [
     { q: "Which metal displaces iron from iron(II) sulfate solution?", o: ["Zinc", "Copper", "Silver", "Gold"], a: 0, e: "Zinc is above iron in the reactivity series." },
     { q: "In Zn + CuO → ZnO + Cu, what is the reducing agent?", o: ["Zinc", "Copper(II) oxide", "Copper", "Zinc oxide"], a: 0, e: "Zinc gains oxygen, so it is oxidised and acts as the reducing agent." },
-    { q: "In which tube does a nail rust?", o: ["Water and air", "Boiled water under oil", "Dry air with calcium chloride", "A vacuum"], a: 0, e: "" },
-    { q: "Why does galvanised iron not rust even when scratched?", o: ["Zinc is more reactive and corrodes instead", "Zinc is a barrier that can't be broken", "Zinc is less reactive", "Iron becomes unreactive"], a: 0, e: "" },
-    { q: "Which metal does NOT react with dilute hydrochloric acid?", o: ["Copper", "Zinc", "Magnesium", "Iron"], a: 0, e: "" },
+    { q: "In which tube does a nail rust?", o: ["Water and air", "Boiled water under oil", "Dry air with calcium chloride", "A vacuum"], a: 0, e: R`Iron needs both oxygen and water to rust.` },
+    { q: "Why does galvanised iron not rust even when scratched?", o: ["Zinc is more reactive and corrodes instead", "Zinc is a barrier that can't be broken", "Zinc is less reactive", "Iron becomes unreactive"], a: 0, e: R`This is sacrificial protection: zinc loses electrons in preference to iron.` },
+    { q: "Which metal does NOT react with dilute hydrochloric acid?", o: ["Copper", "Zinc", "Magnesium", "Iron"], a: 0, e: R`Copper is below hydrogen in the reactivity series.` },
     { q: "Fe<sup>2+</sup> → Fe<sup>3+</sup> + e<sup>−</sup> is…", o: ["Oxidation", "Reduction", "Neutralisation", "Displacement"], a: 0, e: "Loss of electrons." },
-    { q: "What forms when magnesium reacts with steam?", o: ["Magnesium oxide and hydrogen", "Magnesium hydroxide and hydrogen", "Magnesium oxide and oxygen", "No reaction"], a: 0, e: "" },
+    { q: "What forms when magnesium reacts with steam?", o: ["Magnesium oxide and hydrogen", "Magnesium hydroxide and hydrogen", "Magnesium oxide and oxygen", "No reaction"], a: 0, e: R`Mg + H<sub>2</sub>O(g) → MgO + H<sub>2</sub>.` },
     { q: "Metal X reacts with dilute acid but doesn't displace zinc from ZnSO<sub>4</sub>. What could X be?", o: ["Iron", "Magnesium", "Copper", "Sodium"], a: 0, e: "It is above H but below Zn." }
   ]
 });
@@ -220,7 +220,7 @@ Use three tubes with an iron nail in each:
 CHEM.add({
   id: "2e", group: 2, title: "Extraction and uses of metals",
   summary: "Ores, extraction by carbon and electrolysis, alloys and uses.",
-  notes: `
+  notes: R`
 <h3>Ores and extraction</h3>
 <ul>
 <li>Very unreactive metals like gold are found <b>uncombined</b> (native) in the Earth's crust.</li>
@@ -275,12 +275,12 @@ CHEM.add({
   ],
   quiz: [
     { q: "Which metal must be extracted by electrolysis?", o: ["Aluminium", "Iron", "Copper", "Zinc"], a: 0, e: "Al is above carbon in the reactivity series." },
-    { q: "Why is cryolite used in aluminium extraction?", o: ["It lowers the melting point of the electrolyte", "It is the ore", "It is a catalyst", "It makes the anode"], a: 0, e: "" },
-    { q: "What is slag?", o: ["Calcium silicate", "Calcium carbonate", "Iron oxide", "Carbon monoxide"], a: 0, e: "" },
-    { q: "Why is copper used for electrical wires?", o: ["It is a good conductor and ductile", "It has a low density", "It is very reactive", "It is hard and brittle"], a: 0, e: "" },
-    { q: "Why are alloys harder than pure metals?", o: ["Different-sized atoms disrupt the layers", "They have stronger ionic bonds", "They contain no delocalised electrons", "They are covalent"], a: 0, e: "" },
+    { q: "Why is cryolite used in aluminium extraction?", o: ["It lowers the melting point of the electrolyte", "It is the ore", "It is a catalyst", "It makes the anode"], a: 0, e: R`Pure aluminium oxide melts above 2000 °C; cryolite saves a lot of energy.` },
+    { q: "What is slag?", o: ["Calcium silicate", "Calcium carbonate", "Iron oxide", "Carbon monoxide"], a: 0, e: R`Limestone removes sandy impurities: CaO + SiO<sub>2</sub> → CaSiO<sub>3</sub>.` },
+    { q: "Why is copper used for electrical wires?", o: ["It is a good conductor and ductile", "It has a low density", "It is very reactive", "It is hard and brittle"], a: 0, e: R`It conducts well and can be drawn into wires.` },
+    { q: "Why are alloys harder than pure metals?", o: ["Different-sized atoms disrupt the layers", "They have stronger ionic bonds", "They contain no delocalised electrons", "They are covalent"], a: 0, e: R`Layers can't slide as easily past the larger or smaller atoms.` },
     { q: "Which gas forms at the anode during aluminium extraction?", o: ["Oxygen", "Hydrogen", "Aluminium", "Chlorine"], a: 0, e: "It then reacts with the carbon anode to make CO<sub>2</sub>." },
-    { q: "Why is gold found as the element in the ground?", o: ["It is very unreactive", "It is very reactive", "It is extracted by electrolysis", "It is a non-metal"], a: 0, e: "" },
+    { q: "Why is gold found as the element in the ground?", o: ["It is very unreactive", "It is very reactive", "It is extracted by electrolysis", "It is a non-metal"], a: 0, e: R`Unreactive metals don't form compounds with other elements.` },
     { q: "In the blast furnace, Fe<sub>2</sub>O<sub>3</sub> is…", o: ["Reduced", "Oxidised", "Neutralised", "Decomposed"], a: 0, e: "It loses oxygen." }
   ]
 });
@@ -288,7 +288,7 @@ CHEM.add({
 CHEM.add({
   id: "2f", group: 2, title: "Acids, alkalis and titrations",
   summary: "Indicators, the pH scale, H⁺ and OH⁻ ions, and acid–alkali titrations.",
-  notes: `
+  notes: R`
 <h3>Indicators</h3>
 <table>
 <tr><th>Indicator</th><th>In acid</th><th>In alkali</th></tr>
@@ -329,25 +329,25 @@ mol HCl = 0.100 × 0.0200 = 0.00200. The ratio is 1:1, so mol NaOH = 0.00200.<br
     ["Alkali (definition)", "A source of hydroxide ions, OH<sup>−</sup>"],
     ["pH of a neutral solution", "7"],
     ["Ionic equation for neutralisation", "H<sup>+</sup> + OH<sup>−</sup> → H<sub>2</sub>O"],
-    ["Concordant titres", "Titres within 0.10 cm<sup>3</sup> of each other"],
-    ["Apparatus to measure 25.0 cm<sup>3</sup> of alkali accurately", "A pipette"],
+    ["Concordant titres", R`Titres within 0.10 cm<sup>3</sup> of each other`],
+    [R`Apparatus to measure 25.0 cm<sup>3</sup> of alkali accurately`, "A pipette"],
     ["Universal indicator colour at pH 1", "Red"]
   ],
   quiz: [
-    { q: "What colour is methyl orange in an alkali?", o: ["Yellow", "Red", "Pink", "Colourless"], a: 0, e: "" },
-    { q: "Which ion do all acids release in water?", o: ["H<sup>+</sup>", "OH<sup>−</sup>", "Cl<sup>−</sup>", "O<sup>2−</sup>"], a: 0, e: "" },
-    { q: "A solution has pH 13. What is it?", o: ["A strong alkali", "A weak acid", "Neutral", "A strong acid"], a: 0, e: "" },
-    { q: "Which piece of apparatus delivers a variable, accurately measured volume of acid in a titration?", o: ["Burette", "Pipette", "Measuring cylinder", "Beaker"], a: 0, e: "" },
-    { q: "20.0 cm<sup>3</sup> of 0.150 mol/dm<sup>3</sup> HCl neutralises 25.0 cm<sup>3</sup> of NaOH. What is the NaOH concentration?", o: ["0.120 mol/dm<sup>3</sup>", "0.188 mol/dm<sup>3</sup>", "0.150 mol/dm<sup>3</sup>", "0.00300 mol/dm<sup>3</sup>"], a: 0, e: "0.150 × 0.0200 = 0.00300 mol; ÷ 0.0250 = 0.120" },
-    { q: "Which titres are concordant?", o: ["22.45 and 22.50 cm<sup>3</sup>", "22.10 and 22.50 cm<sup>3</sup>", "21.00 and 22.00 cm<sup>3</sup>", "22.45 and 22.80 cm<sup>3</sup>"], a: 0, e: "They are within 0.10 cm<sup>3</sup>." },
-    { q: "What colour is phenolphthalein in acid?", o: ["Colourless", "Pink", "Red", "Yellow"], a: 0, e: "" }
+    { q: "What colour is methyl orange in an alkali?", o: ["Yellow", "Red", "Pink", "Colourless"], a: 0, e: R`Methyl orange is red in acid and yellow in alkali.` },
+    { q: "Which ion do all acids release in water?", o: ["H<sup>+</sup>", "OH<sup>−</sup>", "Cl<sup>−</sup>", "O<sup>2−</sup>"], a: 0, e: R`H<sup>+</sup> ions make a solution acidic.` },
+    { q: "A solution has pH 13. What is it?", o: ["A strong alkali", "A weak acid", "Neutral", "A strong acid"], a: 0, e: R`pH 13 to 14 means a strong alkali.` },
+    { q: "Which piece of apparatus delivers a variable, accurately measured volume of acid in a titration?", o: ["Burette", "Pipette", "Measuring cylinder", "Beaker"], a: 0, e: R`A burette lets you add acid drop by drop and read the volume.` },
+    { q: R`20.0 cm<sup>3</sup> of 0.150 mol/dm<sup>3</sup> HCl neutralises 25.0 cm<sup>3</sup> of NaOH. What is the NaOH concentration?`, o: [R`0.120 mol/dm<sup>3</sup>`, R`0.188 mol/dm<sup>3</sup>`, R`0.150 mol/dm<sup>3</sup>`, R`0.00300 mol/dm<sup>3</sup>`], a: 0, e: R`\(0.150 \times 0.0200 = 0.00300\ \text{mol}\); \(\div 0.0250 = 0.120\)` },
+    { q: "Which titres are concordant?", o: [R`22.45 and 22.50 cm<sup>3</sup>`, R`22.10 and 22.50 cm<sup>3</sup>`, R`21.00 and 22.00 cm<sup>3</sup>`, R`22.45 and 22.80 cm<sup>3</sup>`], a: 0, e: R`They are within \(0.10\ \text{cm}^{3}\).` },
+    { q: "What colour is phenolphthalein in acid?", o: ["Colourless", "Pink", "Red", "Yellow"], a: 0, e: R`Phenolphthalein is colourless in acid and pink in alkali.` }
   ]
 });
 
 CHEM.add({
   id: "2g", group: 2, title: "Acids, bases and salt preparations",
   summary: "Reactions of acids, solubility rules and making soluble and insoluble salts.",
-  notes: `
+  notes: R`
 <h3>Reactions of acids</h3>
 <div class="eq">metal + acid → salt + hydrogen</div>
 <div class="eq">base (metal oxide/hydroxide) + acid → salt + water</div>
@@ -405,21 +405,21 @@ CHEM.add({
     ["Salt formed from nitric acid", "A nitrate"]
   ],
   quiz: [
-    { q: "Which salt is insoluble in water?", o: ["Barium sulfate", "Sodium chloride", "Potassium nitrate", "Copper(II) sulfate"], a: 0, e: "" },
+    { q: "Which salt is insoluble in water?", o: ["Barium sulfate", "Sodium chloride", "Potassium nitrate", "Copper(II) sulfate"], a: 0, e: R`All sulfates are soluble except those of barium, calcium and lead.` },
     { q: "How should you make sodium chloride?", o: ["Titration of NaOH with HCl, then crystallise", "Excess Na metal + HCl, then filter", "Precipitation", "Heat NaOH"], a: 0, e: "Both reactants are soluble, and sodium is too reactive to add to acid safely." },
-    { q: "Why is excess copper(II) oxide added to the acid?", o: ["To make sure all the acid reacts", "To speed up evaporation", "To make the crystals bigger", "To act as a catalyst"], a: 0, e: "" },
-    { q: "Which two solutions could you mix to make silver chloride?", o: ["Silver nitrate and sodium chloride", "Silver chloride and water", "Silver and hydrochloric acid", "Silver nitrate and sodium nitrate"], a: 0, e: "" },
-    { q: "What are the products of calcium carbonate + hydrochloric acid?", o: ["Calcium chloride, water and carbon dioxide", "Calcium chloride and hydrogen", "Calcium oxide and water", "Calcium hydroxide and CO<sub>2</sub>"], a: 0, e: "" },
-    { q: "Why is the precipitate washed with distilled water?", o: ["To remove soluble impurities", "To dissolve it", "To cool it", "To make it react"], a: 0, e: "" },
-    { q: "Which acid would you use to make zinc nitrate?", o: ["Nitric acid", "Sulfuric acid", "Hydrochloric acid", "Ethanoic acid"], a: 0, e: "" },
-    { q: "In the reaction NH<sub>3</sub> + H<sup>+</sup> → NH<sub>4</sub><sup>+</sup>, ammonia acts as…", o: ["A base (proton acceptor)", "An acid (proton donor)", "An oxidising agent", "A catalyst"], a: 0, e: "" }
+    { q: "Why is excess copper(II) oxide added to the acid?", o: ["To make sure all the acid reacts", "To speed up evaporation", "To make the crystals bigger", "To act as a catalyst"], a: 0, e: R`Excess solid is easy to filter off, leaving no acid in the salt solution.` },
+    { q: "Which two solutions could you mix to make silver chloride?", o: ["Silver nitrate and sodium chloride", "Silver chloride and water", "Silver and hydrochloric acid", "Silver nitrate and sodium nitrate"], a: 0, e: R`Silver chloride is insoluble, so it precipitates out.` },
+    { q: "What are the products of calcium carbonate + hydrochloric acid?", o: ["Calcium chloride, water and carbon dioxide", "Calcium chloride and hydrogen", "Calcium oxide and water", "Calcium hydroxide and CO<sub>2</sub>"], a: 0, e: R`Acid + carbonate → salt + water + carbon dioxide.` },
+    { q: "Why is the precipitate washed with distilled water?", o: ["To remove soluble impurities", "To dissolve it", "To cool it", "To make it react"], a: 0, e: R`Washing rinses away the soluble ions left from the solution.` },
+    { q: "Which acid would you use to make zinc nitrate?", o: ["Nitric acid", "Sulfuric acid", "Hydrochloric acid", "Ethanoic acid"], a: 0, e: R`Nitric acid makes nitrates; sulfuric makes sulfates; hydrochloric makes chlorides.` },
+    { q: "In the reaction NH<sub>3</sub> + H<sup>+</sup> → NH<sub>4</sub><sup>+</sup>, ammonia acts as…", o: ["A base (proton acceptor)", "An acid (proton donor)", "An oxidising agent", "A catalyst"], a: 0, e: R`Ammonia accepts a proton (H<sup>+</sup>), so it's a base.` }
   ]
 });
 
 CHEM.add({
   id: "2h", group: 2, title: "Chemical tests",
   summary: "Tests for gases, cations (flame tests and NaOH), anions and water.",
-  notes: `
+  notes: R`
 <h3>Tests for gases</h3>
 <table>
 <tr><th>Gas</th><th>Test</th><th>Positive result</th></tr>
@@ -484,14 +484,14 @@ CHEM.add({
     ["Test for water", "Anhydrous copper(II) sulfate turns white → blue"]
   ],
   quiz: [
-    { q: "A solution gives a brown precipitate with NaOH(aq). Which ion is present?", o: ["Fe<sup>3+</sup>", "Fe<sup>2+</sup>", "Cu<sup>2+</sup>", "NH<sub>4</sub><sup>+</sup>"], a: 0, e: "" },
-    { q: "Which ion gives a lilac flame?", o: ["K<sup>+</sup>", "Na<sup>+</sup>", "Li<sup>+</sup>", "Ca<sup>2+</sup>"], a: 0, e: "" },
-    { q: "Adding acidified AgNO<sub>3</sub> gives a cream precipitate. Which ion is present?", o: ["Bromide", "Chloride", "Iodide", "Sulfate"], a: 0, e: "" },
-    { q: "Which gas turns damp red litmus blue?", o: ["Ammonia", "Chlorine", "Carbon dioxide", "Hydrogen"], a: 0, e: "" },
-    { q: "Why is dilute HCl added before barium chloride in the sulfate test?", o: ["To remove carbonate ions that would also give a precipitate", "To provide chloride ions", "To speed it up", "To dissolve the precipitate"], a: 0, e: "" },
+    { q: "A solution gives a brown precipitate with NaOH(aq). Which ion is present?", o: ["Fe<sup>3+</sup>", "Fe<sup>2+</sup>", "Cu<sup>2+</sup>", "NH<sub>4</sub><sup>+</sup>"], a: 0, e: R`Fe<sup>3+</sup> gives a brown precipitate of Fe(OH)<sub>3</sub>; Fe<sup>2+</sup> gives green.` },
+    { q: "Which ion gives a lilac flame?", o: ["K<sup>+</sup>", "Na<sup>+</sup>", "Li<sup>+</sup>", "Ca<sup>2+</sup>"], a: 0, e: R`Li red, Na yellow, K lilac, Ca orange-red, Cu blue-green.` },
+    { q: "Adding acidified AgNO<sub>3</sub> gives a cream precipitate. Which ion is present?", o: ["Bromide", "Chloride", "Iodide", "Sulfate"], a: 0, e: R`Chloride gives white, bromide cream and iodide yellow.` },
+    { q: "Which gas turns damp red litmus blue?", o: ["Ammonia", "Chlorine", "Carbon dioxide", "Hydrogen"], a: 0, e: R`Ammonia is the only common alkaline gas.` },
+    { q: "Why is dilute HCl added before barium chloride in the sulfate test?", o: ["To remove carbonate ions that would also give a precipitate", "To provide chloride ions", "To speed it up", "To dissolve the precipitate"], a: 0, e: R`Carbonate would form a white precipitate with barium too, giving a false positive.` },
     { q: "How can you show that a liquid is pure water?", o: ["It boils at exactly 100 °C", "It turns anhydrous copper sulfate blue", "It is colourless", "It has pH 7"], a: 0, e: "Copper sulfate only shows water is present, not that it is pure." },
-    { q: "Which test would identify NH<sub>4</sub><sup>+</sup> ions?", o: ["Warm with NaOH(aq) and test the gas with damp red litmus", "Flame test", "Add AgNO<sub>3</sub>", "Add BaCl<sub>2</sub>"], a: 0, e: "" },
-    { q: "What colour flame does Cu<sup>2+</sup> give?", o: ["Blue-green", "Red", "Yellow", "Lilac"], a: 0, e: "" },
-    { q: "Why is nitric acid (not HCl) used in the halide test?", o: ["HCl would add chloride ions", "Nitric acid is stronger", "HCl reacts with silver", "Nitric acid makes the precipitate whiter"], a: 0, e: "" }
+    { q: "Which test would identify NH<sub>4</sub><sup>+</sup> ions?", o: ["Warm with NaOH(aq) and test the gas with damp red litmus", "Flame test", "Add AgNO<sub>3</sub>", "Add BaCl<sub>2</sub>"], a: 0, e: R`NH<sub>4</sub><sup>+</sup> + OH<sup>−</sup> → NH<sub>3</sub> + H<sub>2</sub>O; ammonia turns damp red litmus blue.` },
+    { q: "What colour flame does Cu<sup>2+</sup> give?", o: ["Blue-green", "Red", "Yellow", "Lilac"], a: 0, e: R`Copper compounds give a blue-green flame.` },
+    { q: "Why is nitric acid (not HCl) used in the halide test?", o: ["HCl would add chloride ions", "Nitric acid is stronger", "HCl reacts with silver", "Nitric acid makes the precipitate whiter"], a: 0, e: R`Extra chloride ions would give a white precipitate whatever halide was present.` }
   ]
 });

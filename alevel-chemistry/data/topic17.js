@@ -3,7 +3,7 @@
 S2Data.add({
   id: "17a", group: 17, y2: true, title: "Chirality",
   summary: "Chiral centres, enantiomers, optical activity, racemic mixtures and what they tell you about mechanisms.",
-  notes: `
+  notes: R`
 <h3>Optical isomerism</h3>
 <ul>
 <li>A <b>chiral centre</b> is a carbon atom with <b>four different groups</b> attached. Mark it with an asterisk (*).</li>
@@ -27,14 +27,14 @@ S2Data.add({
 <div class="box box-key"><span class="box-title">Drugs</span>Often only one enantiomer is active. Thalidomide's other enantiomer caused birth defects. Making a single enantiomer is expensive but reduces side effects and doses.</div>
 `,
   quiz: [
-    { q: "A chiral centre is a carbon with…", o: ["Four different groups attached", "A double bond", "Two identical groups", "A lone pair"], a: 0, e: "" },
-    { q: "Enantiomers are…", o: ["Non-superimposable mirror images", "Structural isomers", "E/Z isomers", "Identical molecules"], a: 0, e: "" },
-    { q: "A racemic mixture is optically inactive because…", o: ["Equal amounts of enantiomers rotate light equally in opposite directions", "It contains no chiral molecules", "It absorbs light", "It's a solid"], a: 0, e: "" },
+    { q: "A chiral centre is a carbon with…", o: ["Four different groups attached", "A double bond", "Two identical groups", "A lone pair"], a: 0, e: R`Four different groups mean no plane of symmetry.` },
+    { q: "Enantiomers are…", o: ["Non-superimposable mirror images", "Structural isomers", "E/Z isomers", "Identical molecules"], a: 0, e: R`They rotate plane-polarised light in opposite directions.` },
+    { q: "A racemic mixture is optically inactive because…", o: ["Equal amounts of enantiomers rotate light equally in opposite directions", "It contains no chiral molecules", "It absorbs light", "It's a solid"], a: 0, e: R`The rotations cancel.` },
     { q: "Which molecule is chiral?", o: ["Butan-2-ol", "Propan-2-ol", "Ethanol", "2-methylpropan-2-ol"], a: 0, e: "C2 has H, OH, CH₃, C₂H₅." },
     { q: "SN1 on a single enantiomer gives…", o: ["A racemic mixture", "A single enantiomer", "No product", "An achiral product always"], a: 0, e: "Planar carbocation." },
-    { q: "Ethanal + HCN gives an optically inactive product because…", o: ["The planar C=O is attacked equally from both sides", "The product is not chiral", "HCN is a weak acid", "No reaction occurs"], a: 0, e: "" },
-    { q: "Optical activity is measured with a…", o: ["Polarimeter", "Colorimeter", "pH meter", "Mass spectrometer"], a: 0, e: "" },
-    { q: "Why do drug companies aim to make single enantiomers?", o: ["Often only one is active; fewer side effects", "They're cheaper", "Racemates are unstable", "Legal requirement for all drugs"], a: 0, e: "" }
+    { q: "Ethanal + HCN gives an optically inactive product because…", o: ["The planar C=O is attacked equally from both sides", "The product is not chiral", "HCN is a weak acid", "No reaction occurs"], a: 0, e: R`Attack from either face gives a 50 : 50 racemic mixture.` },
+    { q: "Optical activity is measured with a…", o: ["Polarimeter", "Colorimeter", "pH meter", "Mass spectrometer"], a: 0, e: R`It measures the rotation of plane-polarised light.` },
+    { q: "Why do drug companies aim to make single enantiomers?", o: ["Often only one is active; fewer side effects", "They're cheaper", "Racemates are unstable", "Legal requirement for all drugs"], a: 0, e: R`The other enantiomer may be inactive or harmful.` }
   ],
   flashcards: [
     ["Chiral centre", "C with four different groups"],
@@ -51,7 +51,7 @@ S2Data.add({
 S2Data.add({
   id: "17b", group: 17, y2: true, title: "Carbonyl compounds",
   summary: "Aldehydes and ketones: physical properties, oxidation tests, reduction, and nucleophilic addition of HCN.",
-  notes: `
+  notes: R`
 <h3>Structure and properties</h3>
 <ul>
 <li><b>Aldehydes</b>: C=O at the end of the chain (–CHO), named -al. <b>Ketones</b>: C=O in the chain, named -one.</li>
@@ -76,15 +76,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Tollens' reagent gives a silver mirror with…", o: ["Aldehydes", "Ketones", "Both", "Neither"], a: 0, e: "" },
-    { q: "Fehling's positive result?", o: ["Blue → red precipitate", "Orange → green", "Silver mirror", "Yellow precipitate"], a: 0, e: "" },
-    { q: "2,4-DNPH gives an orange precipitate with…", o: ["Aldehydes and ketones", "Aldehydes only", "Alcohols", "Carboxylic acids"], a: 0, e: "" },
+    { q: "Tollens' reagent gives a silver mirror with…", o: ["Aldehydes", "Ketones", "Both", "Neither"], a: 0, e: R`The aldehyde is oxidised and Ag⁺ is reduced to silver.` },
+    { q: "Fehling's positive result?", o: ["Blue → red precipitate", "Orange → green", "Silver mirror", "Yellow precipitate"], a: 0, e: R`Cu²⁺ is reduced to Cu₂O (red) by an aldehyde.` },
+    { q: "2,4-DNPH gives an orange precipitate with…", o: ["Aldehydes and ketones", "Aldehydes only", "Alcohols", "Carboxylic acids"], a: 0, e: R`It reacts with the C=O group.` },
     { q: "Which gives a positive iodoform test?", o: ["Propanone", "Pentan-3-one", "Methanal", "Propanal"], a: 0, e: "CH₃CO–." },
-    { q: "Reduction of butanone with LiAlH₄ gives…", o: ["Butan-2-ol", "Butan-1-ol", "Butanoic acid", "Butane"], a: 0, e: "" },
-    { q: "In nucleophilic addition of HCN, the nucleophile is…", o: ["CN⁻", "H⁺", "HCN", "OH⁻"], a: 0, e: "" },
-    { q: "Product of propanone + HCN?", o: ["2-hydroxy-2-methylpropanenitrile", "2-hydroxypropanenitrile", "Propanenitrile", "Butanenitrile"], a: 0, e: "" },
-    { q: "Why do carbonyls have lower boiling points than alcohols of similar Mr?", o: ["No hydrogen bonding between carbonyl molecules", "They're ionic", "Larger London forces", "They're gases"], a: 0, e: "" },
-    { q: "How is a 2,4-DNPH derivative used to identify a carbonyl?", o: ["Recrystallise and measure melting point; compare with data", "Measure its mass", "Burn it", "Dissolve it in water"], a: 0, e: "" }
+    { q: "Reduction of butanone with LiAlH₄ gives…", o: ["Butan-2-ol", "Butan-1-ol", "Butanoic acid", "Butane"], a: 0, e: R`Reducing a ketone gives a secondary alcohol.` },
+    { q: "In nucleophilic addition of HCN, the nucleophile is…", o: ["CN⁻", "H⁺", "HCN", "OH⁻"], a: 0, e: R`CN⁻ attacks the δ+ carbonyl carbon.` },
+    { q: "Product of propanone + HCN?", o: ["2-hydroxy-2-methylpropanenitrile", "2-hydroxypropanenitrile", "Propanenitrile", "Butanenitrile"], a: 0, e: R`CN adds to the carbonyl carbon and OH forms on it.` },
+    { q: "Why do carbonyls have lower boiling points than alcohols of similar Mr?", o: ["No hydrogen bonding between carbonyl molecules", "They're ionic", "Larger London forces", "They're gases"], a: 0, e: R`Carbonyls lack an O–H, so they can't hydrogen bond with each other.` },
+    { q: "How is a 2,4-DNPH derivative used to identify a carbonyl?", o: ["Recrystallise and measure melting point; compare with data", "Measure its mass", "Burn it", "Dissolve it in water"], a: 0, e: R`Each derivative has a characteristic melting point.` }
   ],
   flashcards: [
     ["Aldehyde vs ketone", "–CHO at chain end vs C=O within chain"],
@@ -102,7 +102,7 @@ S2Data.add({
 S2Data.add({
   id: "17c", group: 17, y2: true, title: "Carboxylic acids and derivatives",
   summary: "Preparing and reacting carboxylic acids, esters, acyl chlorides and polyesters.",
-  notes: `
+  notes: R`
 <h3>Carboxylic acids</h3>
 <ul>
 <li>–COOH. Hydrogen bonding gives high boiling points; short chains are soluble in water. Weak acids.</li>
@@ -133,15 +133,15 @@ S2Data.add({
 <p><b>Condensation polymers</b> form from a <b>dicarboxylic acid</b> (or diacyl chloride) and a <b>diol</b>, losing H<sub>2</sub>O (or HCl) for each ester link. e.g. Terylene (PET) from benzene-1,4-dicarboxylic acid and ethane-1,2-diol. Polyesters are biodegradable by hydrolysis of the ester links.</p>
 `,
   quiz: [
-    { q: "Test for a carboxylic acid?", o: ["Add Na₂CO₃: fizzing, CO₂ turns limewater milky", "Tollens' reagent", "2,4-DNPH", "Bromine water"], a: 0, e: "" },
-    { q: "Name CH₃CH₂COOCH₃.", o: ["Methyl propanoate", "Propyl methanoate", "Ethyl ethanoate", "Methyl ethanoate"], a: 0, e: "" },
-    { q: "Catalyst for esterification?", o: ["Concentrated H₂SO₄", "Nickel", "NaOH", "Platinum"], a: 0, e: "" },
-    { q: "Why does alkaline hydrolysis of an ester go to completion?", o: ["The carboxylate ion doesn't react with the alcohol", "It's faster", "NaOH is a catalyst", "It's exothermic"], a: 0, e: "" },
-    { q: "Ethanoyl chloride + ethanol gives…", o: ["Ethyl ethanoate + HCl", "Ethanoic acid", "Ethanamide", "Ethene"], a: 0, e: "" },
-    { q: "Ethanoyl chloride + ammonia gives…", o: ["Ethanamide", "Ethylamine", "Ethanoic acid", "Ethanenitrile"], a: 0, e: "" },
-    { q: "Mechanism type for acyl chloride + water?", o: ["Addition–elimination", "Electrophilic addition", "Free-radical substitution", "SN1"], a: 0, e: "" },
-    { q: "Which pair makes a polyester?", o: ["Diol + dicarboxylic acid", "Diamine + dicarboxylic acid", "Alkene + alkene", "Amino acids"], a: 0, e: "" },
-    { q: "Hydrolysing propanenitrile with dilute acid gives…", o: ["Propanoic acid", "Propanamine", "Propan-1-ol", "Ethanoic acid"], a: 0, e: "" }
+    { q: "Test for a carboxylic acid?", o: ["Add Na₂CO₃: fizzing, CO₂ turns limewater milky", "Tollens' reagent", "2,4-DNPH", "Bromine water"], a: 0, e: R`Acids react with carbonates: 2RCOOH + Na<sub>2</sub>CO<sub>3</sub> → 2RCOONa + H<sub>2</sub>O + CO<sub>2</sub>.` },
+    { q: "Name CH₃CH₂COOCH₃.", o: ["Methyl propanoate", "Propyl methanoate", "Ethyl ethanoate", "Methyl ethanoate"], a: 0, e: R`From methanol and propanoic acid.` },
+    { q: "Catalyst for esterification?", o: ["Concentrated H₂SO₄", "Nickel", "NaOH", "Platinum"], a: 0, e: R`It speeds up the reaction and removes water.` },
+    { q: "Why does alkaline hydrolysis of an ester go to completion?", o: ["The carboxylate ion doesn't react with the alcohol", "It's faster", "NaOH is a catalyst", "It's exothermic"], a: 0, e: R`It's irreversible because the salt can't re-form the ester.` },
+    { q: "Ethanoyl chloride + ethanol gives…", o: ["Ethyl ethanoate + HCl", "Ethanoic acid", "Ethanamide", "Ethene"], a: 0, e: R`Acylation of the alcohol gives an ester and fumes of HCl.` },
+    { q: "Ethanoyl chloride + ammonia gives…", o: ["Ethanamide", "Ethylamine", "Ethanoic acid", "Ethanenitrile"], a: 0, e: R`Acylation of ammonia gives an amide.` },
+    { q: "Mechanism type for acyl chloride + water?", o: ["Addition–elimination", "Electrophilic addition", "Free-radical substitution", "SN1"], a: 0, e: R`Nucleophilic addition, then elimination of HCl.` },
+    { q: "Which pair makes a polyester?", o: ["Diol + dicarboxylic acid", "Diamine + dicarboxylic acid", "Alkene + alkene", "Amino acids"], a: 0, e: R`Condensation polymerisation eliminates water.` },
+    { q: "Hydrolysing propanenitrile with dilute acid gives…", o: ["Propanoic acid", "Propanamine", "Propan-1-ol", "Ethanoic acid"], a: 0, e: R`The C≡N is hydrolysed to COOH.` }
   ],
   flashcards: [
     ["Making carboxylic acids", "Oxidise 1° alcohol/aldehyde (reflux) or hydrolyse nitrile"],
@@ -160,7 +160,7 @@ S2Data.add({
 S2Data.add({
   id: "18a", group: 18, y2: true, title: "Arenes",
   summary: "The structure of benzene, evidence for delocalisation, electrophilic substitution, and phenol.",
-  notes: `
+  notes: R`
 <h3>Structure of benzene</h3>
 <ul>
 <li>C<sub>6</sub>H<sub>6</sub>: a planar hexagon, bond angles 120°. Each carbon uses three electrons in σ bonds; the remaining p electrons overlap above and below the ring to form a <b>delocalised π system</b>.</li>
@@ -190,15 +190,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Evidence that benzene isn't Kekulé's structure?", o: ["All C–C bonds are the same length", "It's a liquid", "It has 6 carbons", "It burns"], a: 0, e: "" },
-    { q: "Why doesn't benzene decolourise bromine water?", o: ["Addition would break the stable delocalised ring", "It has no electrons", "It's saturated", "Bromine is too weak a nucleophile"], a: 0, e: "" },
-    { q: "Electrophile in nitration of benzene?", o: ["NO₂⁺", "NO₃⁻", "HNO₃", "H⁺"], a: 0, e: "" },
-    { q: "Catalyst for Friedel–Crafts acylation?", o: ["AlCl₃", "FeCl₂", "Ni", "H₃PO₄"], a: 0, e: "" },
-    { q: "Why is phenol more reactive than benzene with bromine?", o: ["O lone pair delocalises into the ring, raising electron density", "Phenol is a strong acid", "Benzene is ionic", "Phenol has no ring"], a: 0, e: "" },
-    { q: "Benzene + ethanoyl chloride, AlCl₃ gives…", o: ["Phenylethanone", "Ethylbenzene", "Benzoic acid", "Chlorobenzene"], a: 0, e: "" },
-    { q: "Benzene's enthalpy of hydrogenation is less exothermic than predicted because…", o: ["Delocalisation makes it more stable", "It has fewer bonds", "It's a gas", "It has 3 double bonds"], a: 0, e: "" },
-    { q: "Why is nitration kept below 55 °C?", o: ["To avoid multiple substitution", "To prevent boiling the catalyst", "To increase rate", "To favour addition"], a: 0, e: "" },
-    { q: "Product of phenol + bromine water?", o: ["2,4,6-tribromophenol (white ppt)", "Bromobenzene", "1,2-dibromocyclohexane", "No reaction"], a: 0, e: "" }
+    { q: "Evidence that benzene isn't Kekulé's structure?", o: ["All C–C bonds are the same length", "It's a liquid", "It has 6 carbons", "It burns"], a: 0, e: R`X-ray diffraction shows all bonds are intermediate between single and double.` },
+    { q: "Why doesn't benzene decolourise bromine water?", o: ["Addition would break the stable delocalised ring", "It has no electrons", "It's saturated", "Bromine is too weak a nucleophile"], a: 0, e: R`Substitution keeps the stable delocalised ring intact.` },
+    { q: "Electrophile in nitration of benzene?", o: ["NO₂⁺", "NO₃⁻", "HNO₃", "H⁺"], a: 0, e: R`Formed from conc HNO<sub>3</sub> + conc H<sub>2</sub>SO<sub>4</sub>.` },
+    { q: "Catalyst for Friedel–Crafts acylation?", o: ["AlCl₃", "FeCl₂", "Ni", "H₃PO₄"], a: 0, e: R`A halogen carrier forms the electrophile RCO⁺.` },
+    { q: "Why is phenol more reactive than benzene with bromine?", o: ["O lone pair delocalises into the ring, raising electron density", "Phenol is a strong acid", "Benzene is ionic", "Phenol has no ring"], a: 0, e: R`Higher electron density lets bromine be polarised without a catalyst.` },
+    { q: "Benzene + ethanoyl chloride, AlCl₃ gives…", o: ["Phenylethanone", "Ethylbenzene", "Benzoic acid", "Chlorobenzene"], a: 0, e: R`Friedel–Crafts acylation adds the CH₃CO group.` },
+    { q: "Benzene's enthalpy of hydrogenation is less exothermic than predicted because…", o: ["Delocalisation makes it more stable", "It has fewer bonds", "It's a gas", "It has 3 double bonds"], a: 0, e: R`It's about 150 kJ mol⁻¹ more stable than Kekulé's structure.` },
+    { q: "Why is nitration kept below 55 °C?", o: ["To avoid multiple substitution", "To prevent boiling the catalyst", "To increase rate", "To favour addition"], a: 0, e: R`Higher temperatures give dinitro products.` },
+    { q: "Product of phenol + bromine water?", o: ["2,4,6-tribromophenol (white ppt)", "Bromobenzene", "1,2-dibromocyclohexane", "No reaction"], a: 0, e: R`Three Br atoms substitute at the 2, 4 and 6 positions.` }
   ],
   flashcards: [
     ["Benzene structure", "Planar ring; delocalised π electrons above and below"],
@@ -217,7 +217,7 @@ S2Data.add({
 S2Data.add({
   id: "18b", group: 18, y2: true, title: "Amines, amides and amino acids",
   summary: "Basicity and preparation of amines, amides, polyamides, and the chemistry of amino acids.",
-  notes: `
+  notes: R`
 <h3>Amines</h3>
 <ul>
 <li>Primary (RNH<sub>2</sub>), secondary (R<sub>2</sub>NH), tertiary (R<sub>3</sub>N). They act as <b>bases</b> and <b>nucleophiles</b> because of the lone pair on N.</li>
@@ -248,15 +248,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Why is ethylamine a stronger base than ammonia?", o: ["Ethyl group pushes electron density onto N", "It's larger", "It has more hydrogens", "It's an acid"], a: 0, e: "" },
-    { q: "Why is phenylamine a weaker base than ammonia?", o: ["N lone pair is delocalised into the ring", "Benzene is acidic", "It's insoluble", "N has no lone pair"], a: 0, e: "" },
-    { q: "Reagents to make phenylamine from nitrobenzene?", o: ["Tin and conc HCl, reflux, then NaOH", "LiAlH₄ only", "NH₃", "H₂SO₄"], a: 0, e: "" },
-    { q: "Which pair makes a polyamide?", o: ["Diamine + dicarboxylic acid", "Diol + diacid", "Two alkenes", "Diol + diamine"], a: 0, e: "" },
-    { q: "A zwitterion has…", o: ["Both a positive and a negative charge", "No charge anywhere", "Two positive charges", "Only a negative charge"], a: 0, e: "" },
-    { q: "Form of glycine in strong acid?", o: ["⁺H₃NCH₂COOH", "H₂NCH₂COO⁻", "⁺H₃NCH₂COO⁻", "H₂NCH₂COOH"], a: 0, e: "" },
-    { q: "Which amino acid is not chiral?", o: ["Glycine", "Alanine", "Serine", "Valine"], a: 0, e: "R = H." },
-    { q: "Why does reducing a nitrile give a purer amine than using a halogenoalkane and ammonia?", o: ["No further substitution products", "It's faster", "No reagents needed", "It gives a salt"], a: 0, e: "" },
-    { q: "Why are amino acids high-melting solids?", o: ["Zwitterions have strong ionic attractions", "Large London forces", "Covalent network", "Metallic bonding"], a: 0, e: "" }
+    { q: "Why is ethylamine a stronger base than ammonia?", o: ["Ethyl group pushes electron density onto N", "It's larger", "It has more hydrogens", "It's an acid"], a: 0, e: R`More electron density on N makes the lone pair more available.` },
+    { q: "Why is phenylamine a weaker base than ammonia?", o: ["N lone pair is delocalised into the ring", "Benzene is acidic", "It's insoluble", "N has no lone pair"], a: 0, e: R`The lone pair is less available to accept a proton.` },
+    { q: "Reagents to make phenylamine from nitrobenzene?", o: ["Tin and conc HCl, reflux, then NaOH", "LiAlH₄ only", "NH₃", "H₂SO₄"], a: 0, e: R`Reduction of NO₂ to NH₂; NaOH frees the amine from its salt.` },
+    { q: "Which pair makes a polyamide?", o: ["Diamine + dicarboxylic acid", "Diol + diacid", "Two alkenes", "Diol + diamine"], a: 0, e: R`Condensation forms amide links.` },
+    { q: "A zwitterion has…", o: ["Both a positive and a negative charge", "No charge anywhere", "Two positive charges", "Only a negative charge"], a: 0, e: R`E.g. H<sub>3</sub>N<sup>+</sup>CH<sub>2</sub>COO<sup>−</sup>.` },
+    { q: "Form of glycine in strong acid?", o: ["⁺H₃NCH₂COOH", "H₂NCH₂COO⁻", "⁺H₃NCH₂COO⁻", "H₂NCH₂COOH"], a: 0, e: R`In acid, the carboxylate is protonated.` },
+    { q: "Which amino acid is not chiral?", o: ["Glycine", "Alanine", "Serine", "Valine"], a: 0, e: R`\(R = H\).` },
+    { q: "Why does reducing a nitrile give a purer amine than using a halogenoalkane and ammonia?", o: ["No further substitution products", "It's faster", "No reagents needed", "It gives a salt"], a: 0, e: R`Reducing a nitrile gives only a primary amine.` },
+    { q: "Why are amino acids high-melting solids?", o: ["Zwitterions have strong ionic attractions", "Large London forces", "Covalent network", "Metallic bonding"], a: 0, e: R`Ionic attractions between zwitterions need lots of energy to overcome.` }
   ],
   flashcards: [
     ["Amine basicity order", "Ethylamine > ammonia > phenylamine"],
@@ -275,7 +275,7 @@ S2Data.add({
 S2Data.add({
   id: "18c", group: 18, y2: true, title: "Organic synthesis",
   summary: "Grignard reagents, multi-step synthesis routes, practical techniques and identifying functional groups.",
-  notes: `
+  notes: R`
 <h3>Grignard reagents</h3>
 <ul>
 <li>Made from a halogenoalkane and <b>magnesium in dry ether</b>: CH<sub>3</sub>CH<sub>2</sub>Br + Mg → CH<sub>3</sub>CH<sub>2</sub>MgBr. Water must be excluded (it destroys the reagent).</li>
@@ -313,15 +313,15 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "How is a Grignard reagent made?", o: ["Halogenoalkane + Mg in dry ether", "Alcohol + Mg in water", "Alkene + MgO", "Halogenoalkane + MgSO₄"], a: 0, e: "" },
-    { q: "Grignard reagent + CO₂, then acid, gives…", o: ["A carboxylic acid", "An alcohol", "A ketone", "An ester"], a: 0, e: "" },
-    { q: "Grignard reagent + propanone gives…", o: ["A tertiary alcohol", "A primary alcohol", "A secondary alcohol", "An aldehyde"], a: 0, e: "" },
-    { q: "Two ways to add one carbon to a chain?", o: ["KCN substitution; Grignard + CO₂", "Oxidation; reduction", "Cracking; reforming", "Esterification; hydrolysis"], a: 0, e: "" },
-    { q: "Ethene → ethanoic acid, a sensible route?", o: ["Steam/H₃PO₄ → ethanol; then K₂Cr₂O₇/H₂SO₄ reflux", "HBr then KCN", "H₂/Ni then oxidise", "PCl₅ then water"], a: 0, e: "" },
-    { q: "In recrystallisation, why use the minimum amount of hot solvent?", o: ["So the product crystallises on cooling (maximum yield)", "To dissolve impurities", "To save money only", "To lower boiling point"], a: 0, e: "" },
-    { q: "An impure solid's melting point is…", o: ["Lower and over a wider range", "Higher and sharp", "Exactly the data-book value", "Unaffected"], a: 0, e: "" },
-    { q: "Why must Grignard reactions be dry?", o: ["Water destroys the Grignard reagent", "Water is a catalyst", "Mg reacts with ether", "To raise yield of HBr"], a: 0, e: "" },
-    { q: "Bromoethane → propanoic acid?", o: ["KCN in ethanol, then reflux with dilute acid", "NaOH then oxidise", "KOH in ethanol", "Mg then water"], a: 0, e: "" }
+    { q: "How is a Grignard reagent made?", o: ["Halogenoalkane + Mg in dry ether", "Alcohol + Mg in water", "Alkene + MgO", "Halogenoalkane + MgSO₄"], a: 0, e: R`Dry ether stops water destroying the reagent.` },
+    { q: "Grignard reagent + CO₂, then acid, gives…", o: ["A carboxylic acid", "An alcohol", "A ketone", "An ester"], a: 0, e: R`This adds one carbon as COOH.` },
+    { q: "Grignard reagent + propanone gives…", o: ["A tertiary alcohol", "A primary alcohol", "A secondary alcohol", "An aldehyde"], a: 0, e: R`Ketones give tertiary alcohols with Grignard reagents.` },
+    { q: "Two ways to add one carbon to a chain?", o: ["KCN substitution; Grignard + CO₂", "Oxidation; reduction", "Cracking; reforming", "Esterification; hydrolysis"], a: 0, e: R`Both add a carbon atom.` },
+    { q: "Ethene → ethanoic acid, a sensible route?", o: ["Steam/H₃PO₄ → ethanol; then K₂Cr₂O₇/H₂SO₄ reflux", "HBr then KCN", "H₂/Ni then oxidise", "PCl₅ then water"], a: 0, e: R`Hydration, then oxidation.` },
+    { q: "In recrystallisation, why use the minimum amount of hot solvent?", o: ["So the product crystallises on cooling (maximum yield)", "To dissolve impurities", "To save money only", "To lower boiling point"], a: 0, e: R`Excess solvent keeps product dissolved, lowering the yield.` },
+    { q: "An impure solid's melting point is…", o: ["Lower and over a wider range", "Higher and sharp", "Exactly the data-book value", "Unaffected"], a: 0, e: R`Impurities disrupt the lattice.` },
+    { q: "Why must Grignard reactions be dry?", o: ["Water destroys the Grignard reagent", "Water is a catalyst", "Mg reacts with ether", "To raise yield of HBr"], a: 0, e: R`R–MgX + H<sub>2</sub>O → RH + Mg(OH)X.` },
+    { q: "Bromoethane → propanoic acid?", o: ["KCN in ethanol, then reflux with dilute acid", "NaOH then oxidise", "KOH in ethanol", "Mg then water"], a: 0, e: R`Substitution gives a nitrile, which hydrolysis turns into the acid.` }
   ],
   flashcards: [
     ["Grignard preparation", "RX + Mg in dry ether → RMgX"],
@@ -338,7 +338,7 @@ S2Data.add({
 S2Data.add({
   id: "19a", group: 19, y2: true, title: "NMR spectroscopy",
   summary: "¹³C and ¹H NMR: chemical shift, number of environments, integration, splitting and TMS.",
-  notes: `
+  notes: R`
 <h3>How NMR works</h3>
 <ul>
 <li>Nuclei with an odd mass number (<sup>1</sup>H, <sup>13</sup>C) have spin. In a strong magnetic field they absorb radio waves.</li>
@@ -369,15 +369,15 @@ S2Data.add({
 <p>MRI scanning uses <sup>1</sup>H NMR of water in body tissues.</p>
 `,
   quiz: [
-    { q: "Number of ¹³C environments in propanone?", o: ["2", "3", "1", "4"], a: 0, e: "" },
-    { q: "Why is TMS used in NMR?", o: ["Single peak at δ 0; inert, volatile, non-toxic", "It's a solvent", "It has no hydrogens", "It gives many peaks"], a: 0, e: "" },
-    { q: "A CH₂ next to a CH₃ appears as a…", o: ["Quartet", "Triplet", "Doublet", "Singlet"], a: 0, e: "n + 1 = 4." },
-    { q: "Why use CDCl₃ as the solvent?", o: ["No ¹H, so no solvent peak", "It's cheap", "It reacts with the sample", "It's a reference"], a: 0, e: "" },
-    { q: "How can you identify an –OH peak?", o: ["Add D₂O: it disappears", "It's always a quartet", "It's at δ 0", "It splits into 4"], a: 0, e: "" },
-    { q: "A peak at δ 9.8 suggests…", o: ["An aldehyde H", "An alkane CH₃", "An aromatic H", "TMS"], a: 0, e: "" },
-    { q: "¹H NMR of ethanal (CH₃CHO): peaks?", o: ["Doublet (3H) and quartet (1H)", "Two singlets", "Triplet and quartet", "One singlet"], a: 0, e: "" },
-    { q: "Integration in ¹H NMR tells you…", o: ["The ratio of hydrogens in each environment", "The number of carbons", "The Mr", "The bond type"], a: 0, e: "" },
-    { q: "Number of ¹H environments in methyl propanoate, CH₃CH₂COOCH₃?", o: ["3", "2", "4", "8"], a: 0, e: "" }
+    { q: "Number of ¹³C environments in propanone?", o: ["2", "3", "1", "4"], a: 0, e: R`The two CH₃ carbons are equivalent, plus the C=O carbon.` },
+    { q: "Why is TMS used in NMR?", o: ["Single peak at δ 0; inert, volatile, non-toxic", "It's a solvent", "It has no hydrogens", "It gives many peaks"], a: 0, e: R`TMS is the reference standard.` },
+    { q: "A CH₂ next to a CH₃ appears as a…", o: ["Quartet", "Triplet", "Doublet", "Singlet"], a: 0, e: R`\(n + 1 = 4\).` },
+    { q: "Why use CDCl₃ as the solvent?", o: ["No ¹H, so no solvent peak", "It's cheap", "It reacts with the sample", "It's a reference"], a: 0, e: R`Deuterium doesn't appear in ¹H NMR.` },
+    { q: "How can you identify an –OH peak?", o: ["Add D₂O: it disappears", "It's always a quartet", "It's at δ 0", "It splits into 4"], a: 0, e: R`O–H hydrogens exchange with deuterium.` },
+    { q: "A peak at δ 9.8 suggests…", o: ["An aldehyde H", "An alkane CH₃", "An aromatic H", "TMS"], a: 0, e: R`Aldehyde protons appear at δ 9–10.` },
+    { q: "¹H NMR of ethanal (CH₃CHO): peaks?", o: ["Doublet (3H) and quartet (1H)", "Two singlets", "Triplet and quartet", "One singlet"], a: 0, e: R`Using the \(n + 1\) rule: CH<sub>3</sub> next to 1 H gives a doublet; CHO next to 3 H gives a quartet.` },
+    { q: "Integration in ¹H NMR tells you…", o: ["The ratio of hydrogens in each environment", "The number of carbons", "The Mr", "The bond type"], a: 0, e: R`The area under each peak is proportional to the number of hydrogens.` },
+    { q: "Number of ¹H environments in methyl propanoate, CH₃CH₂COOCH₃?", o: ["3", "2", "4", "8"], a: 0, e: R`CH₃ (ethyl), CH₂ and OCH₃.` }
   ],
   flashcards: [
     ["Chemical shift δ", "Position of peak (ppm) relative to TMS; depends on environment"],
@@ -396,7 +396,7 @@ S2Data.add({
 S2Data.add({
   id: "19b", group: 19, y2: true, title: "Chromatography and combined techniques",
   summary: "TLC, Rf values, gas and HPLC chromatography, and combining spectra to work out structures.",
-  notes: `
+  notes: R`
 <h3>Chromatography</h3>
 <p>All chromatography has a <b>stationary phase</b> and a <b>mobile phase</b>. Components separate because they have different <b>affinities</b> for the two phases (adsorption to the stationary phase, or solubility in it).</p>
 <h3>Thin-layer chromatography (TLC)</h3>
@@ -424,14 +424,14 @@ S2Data.add({
 <p>Explain each piece of evidence in your answer, then draw the final structure and check it fits everything.</p>
 `,
   quiz: [
-    { q: "Rf if spot moves 3.0 cm and solvent front 7.5 cm?", o: ["0.40", "2.5", "0.25", "4.5"], a: 0, e: "" },
-    { q: "Why draw the TLC baseline in pencil?", o: ["Pencil doesn't dissolve in the solvent", "It's cheaper", "Ink is more visible", "It reacts with silica"], a: 0, e: "" },
-    { q: "Mobile phase in gas chromatography?", o: ["Inert carrier gas, e.g. He", "Silica", "Water", "Liquid on solid support"], a: 0, e: "" },
-    { q: "In GC, what does retention time depend on?", o: ["How strongly the compound interacts with the stationary phase", "The colour", "The detector", "Peak area"], a: 0, e: "" },
-    { q: "How can colourless spots on TLC be seen?", o: ["UV light or iodine", "Bromine water", "A pH meter", "Heating to 500 °C"], a: 0, e: "" },
-    { q: "Why combine GC with mass spectrometry?", o: ["GC separates; MS identifies each component", "MS separates; GC identifies", "Both separate only", "To make it faster"], a: 0, e: "" },
-    { q: "In GC, peak area is proportional to…", o: ["The amount of that component", "Its Mr", "Its boiling point", "Retention time"], a: 0, e: "" },
-    { q: "Which technique best shows the number of carbon environments?", o: ["¹³C NMR", "IR", "TLC", "Elemental analysis"], a: 0, e: "" }
+    { q: "Rf if spot moves 3.0 cm and solvent front 7.5 cm?", o: ["0.40", "2.5", "0.25", "4.5"], a: 0, e: R`\(R_f = \dfrac{3.0}{7.5} = 0.40\).` },
+    { q: "Why draw the TLC baseline in pencil?", o: ["Pencil doesn't dissolve in the solvent", "It's cheaper", "Ink is more visible", "It reacts with silica"], a: 0, e: R`Ink would dissolve and move with the solvent.` },
+    { q: "Mobile phase in gas chromatography?", o: ["Inert carrier gas, e.g. He", "Silica", "Water", "Liquid on solid support"], a: 0, e: R`The carrier gas carries the sample through the column.` },
+    { q: "In GC, what does retention time depend on?", o: ["How strongly the compound interacts with the stationary phase", "The colour", "The detector", "Peak area"], a: 0, e: R`Stronger interaction means a longer retention time.` },
+    { q: "How can colourless spots on TLC be seen?", o: ["UV light or iodine", "Bromine water", "A pH meter", "Heating to 500 °C"], a: 0, e: R`Use a fluorescent plate under UV, or iodine vapour.` },
+    { q: "Why combine GC with mass spectrometry?", o: ["GC separates; MS identifies each component", "MS separates; GC identifies", "Both separate only", "To make it faster"], a: 0, e: R`The mass spectrum identifies each separated compound.` },
+    { q: "In GC, peak area is proportional to…", o: ["The amount of that component", "Its Mr", "Its boiling point", "Retention time"], a: 0, e: R`Peak area gives the relative amount.` },
+    { q: "Which technique best shows the number of carbon environments?", o: ["¹³C NMR", "IR", "TLC", "Elemental analysis"], a: 0, e: R`Each peak is one carbon environment.` }
   ],
   flashcards: [
     ["Basis of chromatography", "Different affinities for stationary and mobile phases"],

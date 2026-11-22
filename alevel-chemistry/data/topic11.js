@@ -3,7 +3,7 @@
 S2Data.add({
   id: "11a", group: 11, y2: true, title: "Equilibrium II: Kc and Kp",
   summary: "Calculating Kc from equilibrium amounts, partial pressures and Kp, and how temperature affects K.",
-  notes: `
+  notes: R`
 <h3>Calculating K<sub>c</sub></h3>
 <p>Use an <b>ICE table</b>: Initial moles, Change, Equilibrium moles. Then divide by the volume to get concentrations.</p>
 <p><b>Example</b>: 1.00 mol of ethanoic acid and 1.00 mol of ethanol reach equilibrium in volume V. 0.67 mol of ester has formed.</p>
@@ -16,8 +16,8 @@ S2Data.add({
 <p>K<sub>c</sub> = (0.67/V)(0.67/V) ÷ ((0.33/V)(0.33/V)) = <b>4.1</b> (V cancels; no units).</p>
 <h3>Partial pressures and K<sub>p</sub></h3>
 <ul>
-<li><b>Mole fraction</b>: x<sub>A</sub> = moles of A ÷ total moles of gas.</li>
-<li><b>Partial pressure</b>: p<sub>A</sub> = x<sub>A</sub> × total pressure. Partial pressures add up to the total pressure.</li>
+<li><b>Mole fraction</b>: \(x_A = \dfrac{\text{moles of A}}{\text{total moles of gas}}\).</li>
+<li><b>Partial pressure</b>: \(p_A = x_A \times p_{\text{total}}\). Partial pressures add up to the total pressure.</li>
 <li>For aA + bB ⇌ cC + dD (gases): <b>K<sub>p</sub> = p<sub>C</sub><sup>c</sup> p<sub>D</sub><sup>d</sup> ÷ (p<sub>A</sub><sup>a</sup> p<sub>B</sub><sup>b</sup>)</b>, units from atm or kPa.</li>
 <li>Heterogeneous K<sub>p</sub>: include only the gases.</li>
 </ul>
@@ -25,17 +25,17 @@ S2Data.add({
 <h3>What changes K</h3>
 <div class="box box-key"><span class="box-title">Only temperature</span>For an <b>exothermic</b> forward reaction, increasing temperature <b>decreases</b> K. For an <b>endothermic</b> forward reaction, K <b>increases</b>. Changing concentration or pressure doesn't change K: the system shifts until the ratio equals K again. Catalysts don't affect K.</div>
 <p>When pressure increases on N<sub>2</sub>O<sub>4</sub> ⇌ 2NO<sub>2</sub>, the quotient briefly becomes larger than K<sub>p</sub>, so the equilibrium shifts left until the quotient equals K<sub>p</sub> again.</p>
-<p>K links to entropy: ΔS<sub>total</sub> = R ln K, so a large K means a large positive ΔS<sub>total</sub> (see 13b).</p>
+<p>K links to entropy: \(\Delta S_{\text{total}} = R\ln K\), so a large K means a large positive ΔS<sub>total</sub> (see 13b).</p>
 `,
   quiz: [
-    { q: "Mole fraction of A if 0.25 mol A in 1.00 mol gas?", o: ["0.25", "0.75", "4", "0.5"], a: 0, e: "" },
-    { q: "Total pressure 200 kPa, xA = 0.30. pA = ?", o: ["60 kPa", "30 kPa", "140 kPa", "667 kPa"], a: 0, e: "" },
-    { q: "Kp for 2SO₂ + O₂ ⇌ 2SO₃?", o: ["p(SO₃)² / (p(SO₂)² p(O₂))", "p(SO₂)² p(O₂) / p(SO₃)²", "2p(SO₃)/(2p(SO₂) p(O₂))", "p(SO₃)/(p(SO₂) p(O₂))"], a: 0, e: "" },
-    { q: "Units of Kp for N₂O₄ ⇌ 2NO₂, pressures in kPa?", o: ["kPa", "kPa⁻¹", "kPa²", "None"], a: 0, e: "" },
-    { q: "Forward reaction endothermic. Increasing temperature makes K…", o: ["Increase", "Decrease", "Stay the same", "Zero"], a: 0, e: "" },
-    { q: "Why does increasing pressure not change Kp?", o: ["Equilibrium shifts until the ratio equals Kp again", "Kp has no units", "Pressure has no effect on gases", "Kp depends on catalyst only"], a: 0, e: "" },
+    { q: "Mole fraction of A if 0.25 mol A in 1.00 mol gas?", o: ["0.25", "0.75", "4", "0.5"], a: 0, e: R`\(x_A = \dfrac{0.25}{1.00} = 0.25\).` },
+    { q: "Total pressure 200 kPa, xA = 0.30. pA = ?", o: ["60 kPa", "30 kPa", "140 kPa", "667 kPa"], a: 0, e: R`\(p_A = x_A \times p_{\text{total}} = 0.30 \times 200 = 60\ \text{kPa}\).` },
+    { q: "Kp for 2SO₂ + O₂ ⇌ 2SO₃?", o: ["p(SO₃)² / (p(SO₂)² p(O₂))", "p(SO₂)² p(O₂) / p(SO₃)²", "2p(SO₃)/(2p(SO₂) p(O₂))", "p(SO₃)/(p(SO₂) p(O₂))"], a: 0, e: R`Products over reactants, with partial pressures raised to their coefficients.` },
+    { q: "Units of Kp for N₂O₄ ⇌ 2NO₂, pressures in kPa?", o: ["kPa", "kPa⁻¹", "kPa²", "None"], a: 0, e: R`\(\dfrac{\text{kPa}^2}{\text{kPa}} = \text{kPa}\).` },
+    { q: "Forward reaction endothermic. Increasing temperature makes K…", o: ["Increase", "Decrease", "Stay the same", "Zero"], a: 0, e: R`Equilibrium shifts in the endothermic (forward) direction, so K rises.` },
+    { q: "Why does increasing pressure not change Kp?", o: ["Equilibrium shifts until the ratio equals Kp again", "Kp has no units", "Pressure has no effect on gases", "Kp depends on catalyst only"], a: 0, e: R`Only temperature changes K.` },
     { q: "H₂ + I₂ ⇌ 2HI: equilibrium moles H₂ 0.10, I₂ 0.10, HI 0.80. Kc = ?", o: ["64", "8", "80", "0.016"], a: 0, e: "0.64 ÷ 0.01; volumes cancel." },
-    { q: "In Kp for CaCO₃(s) ⇌ CaO(s) + CO₂(g)…", o: ["Kp = p(CO₂)", "Kp includes CaO", "Kp = 1/p(CO₂)", "Kp can't be written"], a: 0, e: "" },
+    { q: "In Kp for CaCO₃(s) ⇌ CaO(s) + CO₂(g)…", o: ["Kp = p(CO₂)", "Kp includes CaO", "Kp = 1/p(CO₂)", "Kp can't be written"], a: 0, e: R`Solids are left out of Kp.` },
     { q: "Start: 2.0 mol PCl₅; at equilibrium 0.50 mol PCl₃ formed. Moles of PCl₅ left?", o: ["1.5", "0.5", "2.0", "1.0"], a: 0, e: "PCl₅ ⇌ PCl₃ + Cl₂." }
   ],
   flashcards: [
@@ -53,7 +53,7 @@ S2Data.add({
 S2Data.add({
   id: "12a", group: 12, y2: true, title: "Acids, bases and pH",
   summary: "Brønsted–Lowry acids and bases, pH of strong and weak acids, Ka, pKa and Kw.",
-  notes: `
+  notes: R`
 <h3>Brønsted–Lowry theory</h3>
 <ul>
 <li>An <b>acid</b> is a <b>proton donor</b>; a <b>base</b> is a <b>proton acceptor</b>.</li>
@@ -61,13 +61,13 @@ S2Data.add({
 <li><b>Strong</b> acids dissociate fully; <b>weak</b> acids partially. Strength ≠ concentration.</li>
 </ul>
 <h3>pH</h3>
-<div class="box box-key"><span class="box-title">pH</span>pH = −log<sub>10</sub>[H<sup>+</sup>] &nbsp;&nbsp; [H<sup>+</sup>] = 10<sup>−pH</sup></div>
+<div class="box box-key"><span class="box-title">pH</span>\(\text{pH} = -\log_{10}[\text{H}^+] \qquad [\text{H}^+] = 10^{-\text{pH}}\)</div>
 <ul>
 <li><b>Strong monoprotic acid</b>: [H<sup>+</sup>] = [acid]. 0.010 mol dm<sup>−3</sup> HCl → pH 2.00.</li>
 <li>A tenfold dilution of a strong acid raises the pH by 1.</li>
 </ul>
 <h3>Weak acids and K<sub>a</sub></h3>
-<p>HA ⇌ H<sup>+</sup> + A<sup>−</sup>, so <b>K<sub>a</sub> = [H<sup>+</sup>][A<sup>−</sup>] ÷ [HA]</b>; <b>pK<sub>a</sub> = −log K<sub>a</sub></b>. Larger K<sub>a</sub> (smaller pK<sub>a</sub>) = stronger acid.</p>
+<p>HA ⇌ H<sup>+</sup> + A<sup>−</sup>, so \(K_a = \dfrac{[\text{H}^+][\text{A}^-]}{[\text{HA}]}\); \(\text{p}K_a = -\log K_a\). Larger K<sub>a</sub> (smaller pK<sub>a</sub>) = stronger acid.</p>
 <p>Assumptions: [H<sup>+</sup>] = [A<sup>−</sup>] (ignoring H<sup>+</sup> from water), and [HA]<sub>eq</sub> ≈ [HA]<sub>initial</sub> (dissociation is small). So <b>[H<sup>+</sup>] = √(K<sub>a</sub> × [HA])</b>.</p>
 <p><b>Example</b>: 0.10 mol dm<sup>−3</sup> ethanoic acid, K<sub>a</sub> = 1.7 × 10<sup>−5</sup>. [H<sup>+</sup>] = √(1.7 × 10<sup>−6</sup>) = 1.30 × 10<sup>−3</sup>. pH = <b>2.89</b>.</p>
 <p>The assumptions break down for stronger weak acids or very dilute solutions.</p>
@@ -76,21 +76,21 @@ S2Data.add({
 <li><b>K<sub>w</sub> = [H<sup>+</sup>][OH<sup>−</sup>] = 1.00 × 10<sup>−14</sup> mol<sup>2</sup> dm<sup>−6</sup></b> at 298 K.</li>
 <li>Pure water: [H<sup>+</sup>] = [OH<sup>−</sup>], so it is <b>neutral at any temperature</b>, even though its pH changes (ionisation is endothermic, so K<sub>w</sub> rises with temperature and pH falls).</li>
 <li><b>Strong base</b>: [OH<sup>−</sup>] = [base] (× 2 for Ba(OH)<sub>2</sub>); [H<sup>+</sup>] = K<sub>w</sub>/[OH<sup>−</sup>]. 0.10 mol dm<sup>−3</sup> NaOH → [H<sup>+</sup>] = 10<sup>−13</sup>, pH 13.00.</li>
-<li>pK<sub>w</sub> = 14 = pH + pOH at 298 K.</li>
+<li>\(\text{p}K_w = \text{pH} + \text{pOH} = 14\) at 298 K.</li>
 </ul>
 <h3>Mixtures of strong acid and base</h3>
 <p>Work out moles of H<sup>+</sup> and OH<sup>−</sup>, subtract, divide the excess by the <b>total volume</b>, then find pH.</p>
 `,
   quiz: [
-    { q: "pH of 0.050 mol dm⁻³ HCl?", o: ["1.30", "0.05", "2.00", "12.70"], a: 0, e: "" },
+    { q: "pH of 0.050 mol dm⁻³ HCl?", o: ["1.30", "0.05", "2.00", "12.70"], a: 0, e: R`\(\text{pH} = -\log 0.050 = 1.30\) (strong acid, fully dissociated).` },
     { q: "pH of 0.020 mol dm⁻³ NaOH at 298 K?", o: ["12.30", "1.70", "13.00", "11.70"], a: 0, e: "[H⁺] = 10⁻¹⁴ ÷ 0.020 = 5 × 10⁻¹³." },
     { q: "0.10 mol dm⁻³ HA, Ka = 1.0 × 10⁻⁵. pH = ?", o: ["3.00", "5.00", "1.00", "2.50"], a: 0, e: "√(10⁻⁶) = 10⁻³." },
-    { q: "Conjugate base of H₂SO₄?", o: ["HSO₄⁻", "SO₄²⁻", "H₃SO₄⁺", "H₂O"], a: 0, e: "" },
+    { q: "Conjugate base of H₂SO₄?", o: ["HSO₄⁻", "SO₄²⁻", "H₃SO₄⁺", "H₂O"], a: 0, e: R`Removing one H<sup>+</sup> gives HSO<sub>4</sub><sup>−</sup>.` },
     { q: "Which acid is strongest?", o: ["pKa 2.9", "pKa 4.8", "pKa 9.2", "pKa 15.7"], a: 0, e: "Lowest pKa." },
-    { q: "Why is pure water at 50 °C still neutral even though pH < 7?", o: ["[H⁺] = [OH⁻]", "pH is wrong at high temperature", "Kw falls", "It contains acid"], a: 0, e: "" },
-    { q: "Assumption in the weak acid pH calculation?", o: ["[HA] at equilibrium ≈ initial [HA]", "Full dissociation", "[H⁺] = Ka", "[A⁻] = 0"], a: 0, e: "" },
-    { q: "pH 3.40. [H⁺] = ?", o: ["3.98 × 10⁻⁴", "2.51 × 10⁻³", "3.40 × 10⁻³", "1.00 × 10⁻³"], a: 0, e: "" },
-    { q: "Dilute a strong acid by a factor of 100. pH…", o: ["Rises by 2", "Falls by 2", "Rises by 100", "Unchanged"], a: 0, e: "" }
+    { q: "Why is pure water at 50 °C still neutral even though pH < 7?", o: ["[H⁺] = [OH⁻]", "pH is wrong at high temperature", "Kw falls", "It contains acid"], a: 0, e: R`\(K_w\) rises with temperature, but \([\text{H}^+]\) still equals \([\text{OH}^-]\).` },
+    { q: "Assumption in the weak acid pH calculation?", o: ["[HA] at equilibrium ≈ initial [HA]", "Full dissociation", "[H⁺] = Ka", "[A⁻] = 0"], a: 0, e: R`Weak acids dissociate only slightly, so [HA] hardly changes.` },
+    { q: "pH 3.40. [H⁺] = ?", o: ["3.98 × 10⁻⁴", "2.51 × 10⁻³", "3.40 × 10⁻³", "1.00 × 10⁻³"], a: 0, e: R`\([\text{H}^+] = 10^{-3.40} = 3.98 \times 10^{-4}\ \text{mol dm}^{-3}\).` },
+    { q: "Dilute a strong acid by a factor of 100. pH…", o: ["Rises by 2", "Falls by 2", "Rises by 100", "Unchanged"], a: 0, e: R`\([\text{H}^+]\) falls by \(10^2\), so the pH rises by \(\log 100 = 2\).` }
   ],
   flashcards: [
     ["Brønsted–Lowry acid / base", "Proton donor / proton acceptor"],
@@ -109,7 +109,7 @@ S2Data.add({
 S2Data.add({
   id: "12b", group: 12, y2: true, title: "Buffers, titration curves and indicators",
   summary: "How buffers work and their pH, pH curves for different acid–base pairs, and choosing an indicator.",
-  notes: `
+  notes: R`
 <h3>Buffers</h3>
 <p>A <b>buffer</b> resists changes in pH when small amounts of acid or alkali are added. An <b>acidic buffer</b> is a weak acid plus its salt (conjugate base), e.g. CH<sub>3</sub>COOH / CH<sub>3</sub>COONa.</p>
 <ul>
@@ -142,15 +142,15 @@ S2Data.add({
 <p>Strong acid + strong base: about −57 kJ mol<sup>−1</sup>, since it's always H<sup>+</sup> + OH<sup>−</sup> → H<sub>2</sub>O. With a weak acid, it's <b>less exothermic</b> because energy is used to fully dissociate the acid.</p>
 `,
   quiz: [
-    { q: "What is a buffer?", o: ["A solution that resists pH change on adding small amounts of acid or alkali", "A solution of pH 7", "A strong acid and strong base", "An indicator"], a: 0, e: "" },
+    { q: "What is a buffer?", o: ["A solution that resists pH change on adding small amounts of acid or alkali", "A solution of pH 7", "A strong acid and strong base", "An indicator"], a: 0, e: R`Buffers keep the pH nearly constant.` },
     { q: "Buffer: [HA] = 0.20, [A⁻] = 0.10, Ka = 1.8 × 10⁻⁵. pH = ?", o: ["4.44", "4.74", "5.04", "2.87"], a: 0, e: "[H⁺] = 3.6 × 10⁻⁵." },
-    { q: "When acid is added to an ethanoate buffer…", o: ["H⁺ combines with CH₃COO⁻ to form CH₃COOH", "Na⁺ reacts with it", "Water dissociates", "pH falls sharply"], a: 0, e: "" },
+    { q: "When acid is added to an ethanoate buffer…", o: ["H⁺ combines with CH₃COO⁻ to form CH₃COOH", "Na⁺ reacts with it", "Water dissociates", "pH falls sharply"], a: 0, e: R`The added H⁺ is removed by the large reservoir of ethanoate ions.` },
     { q: "Indicator for ethanoic acid titrated with NaOH?", o: ["Phenolphthalein", "Methyl orange", "Either", "Neither"], a: 0, e: "Vertical section ~7–11." },
-    { q: "At half-equivalence in a weak acid–strong base titration…", o: ["pH = pKa", "pH = 7", "pH = 14", "[H⁺] = 0"], a: 0, e: "" },
-    { q: "Equivalence point pH for weak acid–strong base?", o: ["Above 7", "Exactly 7", "Below 7", "Exactly 14"], a: 0, e: "" },
-    { q: "Why is ΔneutH for ethanoic acid less exothermic than for HCl?", o: ["Energy is needed to fully dissociate the weak acid", "Fewer moles of water form", "Ethanoic acid is more concentrated", "It's endothermic"], a: 0, e: "" },
-    { q: "Equal moles of HA and A⁻; pKa 4.76. pH = ?", o: ["4.76", "7.00", "9.24", "2.38"], a: 0, e: "" },
-    { q: "Why can't you use an indicator for a weak acid–weak base titration?", o: ["No sharp vertical section", "pH is always 7", "Indicators react with weak bases", "It's too slow"], a: 0, e: "" }
+    { q: "At half-equivalence in a weak acid–strong base titration…", o: ["pH = pKa", "pH = 7", "pH = 14", "[H⁺] = 0"], a: 0, e: R`When \([\text{HA}] = [\text{A}^-]\), \(K_a = [\text{H}^+]\), so pH \(= \text{p}K_a\).` },
+    { q: "Equivalence point pH for weak acid–strong base?", o: ["Above 7", "Exactly 7", "Below 7", "Exactly 14"], a: 0, e: R`The salt formed (A⁻) is basic.` },
+    { q: "Why is ΔneutH for ethanoic acid less exothermic than for HCl?", o: ["Energy is needed to fully dissociate the weak acid", "Fewer moles of water form", "Ethanoic acid is more concentrated", "It's endothermic"], a: 0, e: R`Some energy is used to dissociate the weak acid before neutralisation.` },
+    { q: "Equal moles of HA and A⁻; pKa 4.76. pH = ?", o: ["4.76", "7.00", "9.24", "2.38"], a: 0, e: R`\(\text{pH} = \text{p}K_a + \log\dfrac{[\text{A}^-]}{[\text{HA}]} = 4.76 + \log 1\).` },
+    { q: "Why can't you use an indicator for a weak acid–weak base titration?", o: ["No sharp vertical section", "pH is always 7", "Indicators react with weak bases", "It's too slow"], a: 0, e: R`The pH changes gradually, so no indicator changes sharply at equivalence.` }
   ],
   flashcards: [
     ["Acidic buffer", "Weak acid + its conjugate base (salt)"],
@@ -169,7 +169,7 @@ S2Data.add({
 S2Data.add({
   id: "13a", group: 13, y2: true, title: "Lattice energy and Born–Haber cycles",
   summary: "Lattice energy, Born–Haber cycles, factors affecting lattice energy, polarisation and enthalpies of solution.",
-  notes: `
+  notes: R`
 <h3>Definitions</h3>
 <table>
 <tr><th>Term</th><th>Definition</th></tr>
@@ -179,7 +179,7 @@ S2Data.add({
 <tr><td>First electron affinity</td><td>1 mol of gaseous atoms gains 1 mol of electrons → 1 mol of gaseous 1− ions (exothermic). The second is endothermic (repulsion).</td></tr>
 </table>
 <h3>Born–Haber cycle for NaCl</h3>
-<p>Δ<sub>f</sub>H = Δ<sub>at</sub>H(Na) + IE<sub>1</sub>(Na) + Δ<sub>at</sub>H(Cl) + EA<sub>1</sub>(Cl) + Δ<sub>LE</sub>H</p>
+<p>\(\Delta_f H = \Delta_{at}H(\text{Na}) + IE_1(\text{Na}) + \Delta_{at}H(\text{Cl}) + EA_1(\text{Cl}) + \Delta_{LE}H\)</p>
 <p>−411 = 107 + 496 + 122 + (−349) + Δ<sub>LE</sub>H → Δ<sub>LE</sub>H = <b>−787 kJ mol<sup>−1</sup></b>.</p>
 <p>Draw the cycle with endothermic steps going up and exothermic steps going down. For MgCl<sub>2</sub>, include IE<sub>1</sub> + IE<sub>2</sub> of Mg and <b>2 ×</b> atomisation and electron affinity of Cl.</p>
 <h3>Factors affecting lattice energy</h3>
@@ -198,15 +198,15 @@ S2Data.add({
 <p>e.g. NaCl: −(−787) + (−406) + (−378) = <b>+3 kJ mol<sup>−1</sup></b>.</p>
 `,
   quiz: [
-    { q: "Lattice energy is defined as the enthalpy change when…", o: ["1 mol of ionic solid forms from gaseous ions", "1 mol of solid forms from elements", "1 mol of ions is hydrated", "1 mol of atoms ionises"], a: 0, e: "" },
+    { q: "Lattice energy is defined as the enthalpy change when…", o: ["1 mol of ionic solid forms from gaseous ions", "1 mol of solid forms from elements", "1 mol of ions is hydrated", "1 mol of atoms ionises"], a: 0, e: R`Lattice energy is always exothermic.` },
     { q: "Which has the most exothermic lattice energy?", o: ["MgO", "NaCl", "KBr", "CaO"], a: 0, e: "Small, highly charged ions." },
-    { q: "Why is the second electron affinity of O endothermic?", o: ["Adding an electron to a negative ion requires overcoming repulsion", "Oxygen is a metal", "It's always exothermic", "Shielding"], a: 0, e: "" },
-    { q: "ΔfH −411, ΔatH(Na) +107, IE +496, ΔatH(Cl) +122, EA −349. ΔLEH = ?", o: ["−787 kJ mol⁻¹", "+787 kJ mol⁻¹", "−411 kJ mol⁻¹", "−1485 kJ mol⁻¹"], a: 0, e: "" },
-    { q: "Experimental lattice energy much more exothermic than theoretical means…", o: ["Covalent character from polarisation", "Purely ionic", "An error in the cycle", "Larger ions"], a: 0, e: "" },
+    { q: "Why is the second electron affinity of O endothermic?", o: ["Adding an electron to a negative ion requires overcoming repulsion", "Oxygen is a metal", "It's always exothermic", "Shielding"], a: 0, e: R`Forcing an electron onto O⁻ needs energy.` },
+    { q: "ΔfH −411, ΔatH(Na) +107, IE +496, ΔatH(Cl) +122, EA −349. ΔLEH = ?", o: ["−787 kJ mol⁻¹", "+787 kJ mol⁻¹", "−411 kJ mol⁻¹", "−1485 kJ mol⁻¹"], a: 0, e: R`\(\Delta_{LE}H = -411 - (107 + 496 + 122 - 349) = -787\ \text{kJ mol}^{-1}\).` },
+    { q: "Experimental lattice energy much more exothermic than theoretical means…", o: ["Covalent character from polarisation", "Purely ionic", "An error in the cycle", "Larger ions"], a: 0, e: R`The ionic model assumes perfect spheres; polarisation adds covalent character.` },
     { q: "Which cation is most polarising?", o: ["Al³⁺", "Na⁺", "K⁺", "Mg²⁺"], a: 0, e: "Smallest, highest charge." },
-    { q: "ΔsolH = ?", o: ["−ΔLEH + ΣΔhydH", "ΔLEH + ΣΔhydH", "ΔLEH − ΣΔhydH", "ΣΔhydH − ΔfH"], a: 0, e: "" },
+    { q: "ΔsolH = ?", o: ["−ΔLEH + ΣΔhydH", "ΔLEH + ΣΔhydH", "ΔLEH − ΣΔhydH", "ΣΔhydH − ΔfH"], a: 0, e: R`Break the lattice (\(-\Delta_{LE}H\)), then hydrate the gaseous ions.` },
     { q: "Which ion has the most exothermic hydration enthalpy?", o: ["Li⁺", "Na⁺", "K⁺", "Rb⁺"], a: 0, e: "Smallest." },
-    { q: "In a Born–Haber cycle for MgCl₂, the chlorine atomisation enthalpy is…", o: ["Multiplied by 2", "Halved", "Used once", "Left out"], a: 0, e: "" }
+    { q: "In a Born–Haber cycle for MgCl₂, the chlorine atomisation enthalpy is…", o: ["Multiplied by 2", "Halved", "Used once", "Left out"], a: 0, e: R`MgCl<sub>2</sub> needs 2 mol of gaseous Cl atoms.` }
   ],
   flashcards: [
     ["Lattice energy", "1 mol ionic solid formed from gaseous ions (exothermic)"],
@@ -224,7 +224,7 @@ S2Data.add({
 S2Data.add({
   id: "13b", group: 13, y2: true, title: "Entropy and Gibbs energy",
   summary: "Entropy, total entropy change, Gibbs energy and feasibility, and links to K.",
-  notes: `
+  notes: R`
 <h3>Entropy, S</h3>
 <ul>
 <li>Entropy measures the <b>number of ways particles and their energy can be arranged</b>. Units: J K<sup>−1</sup> mol<sup>−1</sup>.</li>
@@ -232,10 +232,10 @@ S2Data.add({
 <li>All substances have positive entropy above 0 K.</li>
 </ul>
 <h3>Entropy changes</h3>
-<div class="box box-key"><span class="box-title">Entropy equations</span>ΔS<sub>system</sub> = ΣS(products) − ΣS(reactants)<br>ΔS<sub>surroundings</sub> = −ΔH ÷ T &nbsp; (ΔH in <b>J</b> mol<sup>−1</sup>)<br>ΔS<sub>total</sub> = ΔS<sub>system</sub> + ΔS<sub>surroundings</sub></div>
+<div class="box box-key"><span class="box-title">Entropy equations</span>\(\Delta S_{\text{system}} = \sum S(\text{products}) - \sum S(\text{reactants})\)<br>\(\Delta S_{\text{surroundings}} = -\dfrac{\Delta H}{T}\) &nbsp; (\(\Delta H\) in <b>J</b> mol<sup>−1</sup>)<br>\(\Delta S_{\text{total}} = \Delta S_{\text{system}} + \Delta S_{\text{surroundings}}\)</div>
 <p>A reaction is <b>feasible</b> (thermodynamically possible) if <b>ΔS<sub>total</sub> &gt; 0</b>.</p>
 <h3>Gibbs energy</h3>
-<div class="box box-key"><span class="box-title">ΔG = ΔH − TΔS<sub>system</sub></span>Feasible when <b>ΔG ≤ 0</b> (kJ mol<sup>−1</sup>, so convert ΔS to kJ K<sup>−1</sup> mol<sup>−1</sup> by ÷ 1000).</div>
+<div class="box box-key"><span class="box-title">Gibbs free energy</span>\(\Delta G = \Delta H - T\Delta S_{\text{system}}\). Feasible when \(\Delta G \le 0\) (kJ mol<sup>−1</sup>, so convert ΔS to kJ K<sup>−1</sup> mol<sup>−1</sup> by ÷ 1000).</div>
 <table>
 <tr><th>ΔH</th><th>ΔS</th><th>Feasible?</th></tr>
 <tr><td>−</td><td>+</td><td>Always</td></tr>
@@ -248,19 +248,19 @@ S2Data.add({
 <h3>Feasibility vs rate, and links to K</h3>
 <ul>
 <li>A feasible reaction may not happen because of a <b>high activation energy</b>: it's <b>kinetically inert</b> (e.g. diamond → graphite).</li>
-<li><b>ΔG = −RT ln K</b>. A negative ΔG means K &gt; 1. Similarly ΔS<sub>total</sub> = R ln K.</li>
+<li>\(\Delta G = -RT\ln K\). A negative \(\Delta G\) means \(K > 1\). Similarly \(\Delta S_{\text{total}} = R\ln K\).</li>
 </ul>
 `,
   quiz: [
-    { q: "Which has the highest entropy?", o: ["1 mol of steam", "1 mol of water", "1 mol of ice", "All equal"], a: 0, e: "" },
-    { q: "ΔH = −100 kJ mol⁻¹, T = 298 K. ΔS_surroundings = ?", o: ["+336 J K⁻¹ mol⁻¹", "−336 J K⁻¹ mol⁻¹", "+0.336 J K⁻¹ mol⁻¹", "−29.8 J K⁻¹ mol⁻¹"], a: 0, e: "−(−100 000)/298." },
-    { q: "A reaction is feasible when…", o: ["ΔG ≤ 0", "ΔG > 0", "ΔH > 0", "ΔS_total < 0"], a: 0, e: "" },
-    { q: "ΔH +, ΔS +. Feasible…", o: ["At high temperatures", "Always", "Never", "At low temperatures"], a: 0, e: "" },
-    { q: "ΔH = +50 kJ mol⁻¹, ΔS = +100 J K⁻¹ mol⁻¹. Minimum T for feasibility?", o: ["500 K", "0.5 K", "5000 K", "50 K"], a: 0, e: "50 ÷ 0.100." },
-    { q: "Why might a feasible reaction not occur?", o: ["High activation energy (kinetically inert)", "ΔG is negative", "ΔS is positive", "K is large"], a: 0, e: "" },
-    { q: "ΔG = −RT ln K. If ΔG is very negative, K is…", o: ["Very large", "Very small", "1", "Negative"], a: 0, e: "" },
+    { q: "Which has the highest entropy?", o: ["1 mol of steam", "1 mol of water", "1 mol of ice", "All equal"], a: 0, e: R`Gases are most disordered.` },
+    { q: "ΔH = −100 kJ mol⁻¹, T = 298 K. ΔS_surroundings = ?", o: ["+336 J K⁻¹ mol⁻¹", "−336 J K⁻¹ mol⁻¹", "+0.336 J K⁻¹ mol⁻¹", "−29.8 J K⁻¹ mol⁻¹"], a: 0, e: R`\(-(-100\,000)/298\).` },
+    { q: "A reaction is feasible when…", o: ["ΔG ≤ 0", "ΔG > 0", "ΔH > 0", "ΔS_total < 0"], a: 0, e: R`\(\Delta G = \Delta H - T\Delta S\).` },
+    { q: "ΔH +, ΔS +. Feasible…", o: ["At high temperatures", "Always", "Never", "At low temperatures"], a: 0, e: R`\(\Delta G = \Delta H - T\Delta S\) becomes negative once \(T\Delta S > \Delta H\).` },
+    { q: "ΔH = +50 kJ mol⁻¹, ΔS = +100 J K⁻¹ mol⁻¹. Minimum T for feasibility?", o: ["500 K", "0.5 K", "5000 K", "50 K"], a: 0, e: R`\(\dfrac{50}{0.100}\).` },
+    { q: "Why might a feasible reaction not occur?", o: ["High activation energy (kinetically inert)", "ΔG is negative", "ΔS is positive", "K is large"], a: 0, e: R`Thermodynamics says whether it can happen, not how fast.` },
+    { q: "ΔG = −RT ln K. If ΔG is very negative, K is…", o: ["Very large", "Very small", "1", "Negative"], a: 0, e: R`\(K = e^{-\Delta G/RT}\): very negative \(\Delta G\) gives a huge \(K\).` },
     { q: "Sign of ΔS_system for N₂ + 3H₂ → 2NH₃?", o: ["Negative", "Positive", "Zero", "Can't tell"], a: 0, e: "4 gas moles → 2." },
-    { q: "ΔG at 298 K: ΔH −92 kJ mol⁻¹, ΔS −199 J K⁻¹ mol⁻¹?", o: ["−32.7 kJ mol⁻¹", "+32.7 kJ mol⁻¹", "−151 kJ mol⁻¹", "+59 kJ mol⁻¹"], a: 0, e: "−92 − 298(−0.199)." }
+    { q: "ΔG at 298 K: ΔH −92 kJ mol⁻¹, ΔS −199 J K⁻¹ mol⁻¹?", o: ["−32.7 kJ mol⁻¹", "+32.7 kJ mol⁻¹", "−151 kJ mol⁻¹", "+59 kJ mol⁻¹"], a: 0, e: R`\(-92 - 298(-0.199)\).` }
   ],
   flashcards: [
     ["Entropy", "Number of ways particles and energy can be arranged (J K⁻¹ mol⁻¹)"],

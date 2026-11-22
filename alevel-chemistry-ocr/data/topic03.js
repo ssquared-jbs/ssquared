@@ -3,7 +3,7 @@
 S2Data.add({
   id: "3i", group: 3, y1: true, title: "Qualitative analysis",
   summary: "Tests for carbonate, sulfate, halide and ammonium ions, and why the order of tests matters.",
-  notes: `
+  notes: R`
 <h3>Tests for anions</h3>
 <table>
 <tr><th>Ion</th><th>Test</th><th>Positive result</th></tr>
@@ -23,15 +23,15 @@ S2Data.add({
 <p>Add NaOH(aq) and warm: NH<sub>4</sub><sup>+</sup> + OH<sup>−</sup> → NH<sub>3</sub> + H<sub>2</sub>O. Ammonia turns damp red litmus <b>blue</b>.</p>
 `,
   quiz: [
-    { q: "Which test should be done first on an unknown solution?", o: ["Carbonate", "Sulfate", "Halide", "Ammonium"], a: 0, e: "" },
-    { q: "A white precipitate with Ba(NO₃)₂ shows…", o: ["Sulfate", "Chloride", "Carbonate (after acid)", "Ammonium"], a: 0, e: "" },
-    { q: "Why is dilute nitric acid used rather than hydrochloric acid?", o: ["HCl would add chloride ions", "HNO₃ is stronger", "HCl reacts with sulfate", "HNO₃ is cheaper"], a: 0, e: "" },
-    { q: "Silver bromide is…", o: ["Cream, soluble in concentrated NH₃", "White, soluble in dilute NH₃", "Yellow, insoluble", "Black"], a: 0, e: "" },
-    { q: "Which gas turns damp red litmus blue?", o: ["NH₃", "CO₂", "HCl", "SO₂"], a: 0, e: "" },
-    { q: "Why test for sulfate before halides?", o: ["Ag₂SO₄ can precipitate and give a false result", "Sulfate reacts with nitric acid", "Halides remove sulfate", "Barium reacts with halides"], a: 0, e: "" },
-    { q: "Carbonate ions are confirmed by…", o: ["Effervescence with acid; gas turns limewater milky", "White precipitate with AgNO₃", "Yellow flame", "Damp litmus turning blue"], a: 0, e: "" },
-    { q: "Ammonium ions are tested by adding…", o: ["NaOH and warming", "AgNO₃", "BaCl₂", "HNO₃"], a: 0, e: "" },
-    { q: "Why use Ba(NO₃)₂ rather than BaCl₂ before a halide test?", o: ["BaCl₂ adds chloride ions", "Ba(NO₃)₂ is more soluble in water only", "BaCl₂ reacts with carbonate", "BaCl₂ is toxic"], a: 0, e: "" }
+    { q: "Which test should be done first on an unknown solution?", o: ["Carbonate", "Sulfate", "Halide", "Ammonium"], a: 0, e: R`Carbonate would interfere with the sulfate and halide tests.` },
+    { q: "A white precipitate with Ba(NO₃)₂ shows…", o: ["Sulfate", "Chloride", "Carbonate (after acid)", "Ammonium"], a: 0, e: R`Barium sulfate is insoluble and white.` },
+    { q: "Why is dilute nitric acid used rather than hydrochloric acid?", o: ["HCl would add chloride ions", "HNO₃ is stronger", "HCl reacts with sulfate", "HNO₃ is cheaper"], a: 0, e: R`Extra chloride would give a false positive in the halide test.` },
+    { q: "Silver bromide is…", o: ["Cream, soluble in concentrated NH₃", "White, soluble in dilute NH₃", "Yellow, insoluble", "Black"], a: 0, e: R`AgCl is white, AgBr cream and AgI yellow.` },
+    { q: "Which gas turns damp red litmus blue?", o: ["NH₃", "CO₂", "HCl", "SO₂"], a: 0, e: R`Ammonia is the only common alkaline gas.` },
+    { q: "Why test for sulfate before halides?", o: ["Ag₂SO₄ can precipitate and give a false result", "Sulfate reacts with nitric acid", "Halides remove sulfate", "Barium reacts with halides"], a: 0, e: R`Silver sulfate is slightly soluble and could precipitate.` },
+    { q: "Carbonate ions are confirmed by…", o: ["Effervescence with acid; gas turns limewater milky", "White precipitate with AgNO₃", "Yellow flame", "Damp litmus turning blue"], a: 0, e: R`CO<sub>3</sub><sup>2−</sup> + 2H<sup>+</sup> → CO<sub>2</sub> + H<sub>2</sub>O.` },
+    { q: "Ammonium ions are tested by adding…", o: ["NaOH and warming", "AgNO₃", "BaCl₂", "HNO₃"], a: 0, e: R`Ammonia gas is released, which turns damp red litmus blue.` },
+    { q: "Why use Ba(NO₃)₂ rather than BaCl₂ before a halide test?", o: ["BaCl₂ adds chloride ions", "Ba(NO₃)₂ is more soluble in water only", "BaCl₂ reacts with carbonate", "BaCl₂ is toxic"], a: 0, e: R`Chloride ions would give a false positive halide test.` }
   ],
   flashcards: [
     ["Order of anion tests", "Carbonate → sulfate → halide"],

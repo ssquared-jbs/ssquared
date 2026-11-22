@@ -27,7 +27,7 @@ S2Data.exam("2a", [
   { t: "text", m: 2, q: "Explain why many ionic compounds dissolve in water.", ms: ["Water molecules are polar", "δ− oxygen attracts positive ions and δ+ hydrogen attracts negative ions, pulling them from the lattice (hydration)"], kw: [["polar", "δ", "delta"], ["attract", "hydrat", "surround"]] },
   { t: "mcq", m: 1, q: "Which formula is correct for iron(III) oxide?", o: ["Fe<sub>2</sub>O<sub>3</sub>", "FeO", "Fe<sub>3</sub>O<sub>2</sub>", "FeO<sub>3</sub>"], a: 0 },
   { t: "mcq", m: 1, q: "Which group of ions is arranged in order of increasing radius?", o: ["Mg<sup>2+</sup>, Na<sup>+</sup>, F<sup>−</sup>, O<sup>2−</sup>", "O<sup>2−</sup>, F<sup>−</sup>, Na<sup>+</sup>, Mg<sup>2+</sup>", "Na<sup>+</sup>, Mg<sup>2+</sup>, O<sup>2−</sup>, F<sup>−</sup>", "F<sup>−</sup>, O<sup>2−</sup>, Mg<sup>2+</sup>, Na<sup>+</sup>"], a: 0 },
-  { t: "num", m: 1, q: "How many electrons are in one sulfide ion, S<sup>2−</sup>?", ans: 18, tol: 0, ms: ["16 + 2 = 18"] },
+  { t: "num", m: 1, q: "How many electrons are in one sulfide ion, S<sup>2−</sup>?", ans: 18, tol: 0, ms: [R`\(16 + 2 = 18\)`] },
   { t: "num", m: 1, q: "How many ions are present in one formula unit of Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>?", ans: 5, tol: 0, ms: ["2 Al<sup>3+</sup> + 3 SO<sub>4</sub><sup>2−</sup> = 5"] },
   { t: "mcq", m: 1, q: "Which statement about ionic bonding is correct?", o: ["The bonding acts in all directions in the lattice", "It involves sharing electrons", "It only occurs between two ions", "It is weaker than London forces"], a: 0 },
   { t: "mcq", m: 1, q: "The polarising power of a cation is greatest when it is…", o: ["Small and highly charged", "Large and highly charged", "Small with a 1+ charge", "Large with a 1+ charge"], a: 0 }

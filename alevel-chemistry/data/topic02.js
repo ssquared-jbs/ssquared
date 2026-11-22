@@ -3,7 +3,7 @@
 S2Data.add({
   id: "2a", group: 2, y1: true, title: "Ionic bonding",
   summary: "Ionic bonds, ion sizes, polarisation and the properties of ionic lattices.",
-  notes: `
+  notes: R`
 <h3>Ionic bonding</h3>
 <div class="box box-key"><span class="box-title">Definition</span>Ionic bonding is the <b>strong electrostatic attraction between oppositely charged ions</b> in a lattice.</div>
 <ul>
@@ -34,12 +34,12 @@ S2Data.add({
   quiz: [
     { q: "Which has the highest melting point?", o: ["MgO", "NaCl", "KCl", "NaBr"], a: 0, e: "Higher charges (2+, 2−) and small ions." },
     { q: "Which ion is smallest?", o: ["Al³⁺", "Mg²⁺", "Na⁺", "F⁻"], a: 0, e: "Isoelectronic: highest nuclear charge pulls electrons closest." },
-    { q: "Why is Cl⁻ larger than a Cl atom?", o: ["Extra electron increases repulsion", "It has more protons", "It has an extra shell", "It's more polarised"], a: 0, e: "" },
+    { q: "Why is Cl⁻ larger than a Cl atom?", o: ["Extra electron increases repulsion", "It has more protons", "It has an extra shell", "It's more polarised"], a: 0, e: R`The same nuclear charge holds 18 electrons instead of 17, and there's more repulsion, so it's larger.` },
     { q: "Which cation has the greatest polarising power?", o: ["Al³⁺", "Na⁺", "K⁺", "Cs⁺"], a: 0, e: "Small and highly charged." },
     { q: "Which anion is most easily polarised?", o: ["I⁻", "F⁻", "Cl⁻", "O²⁻"], a: 0, e: "Largest electron cloud." },
-    { q: "What is evidence for the existence of ions?", o: ["Migration of coloured ions in electrolysis", "High boiling point", "Insolubility", "Malleability"], a: 0, e: "" },
-    { q: "Why are ionic compounds brittle?", o: ["Shifting layers brings like charges together, which repel", "Weak bonds", "Delocalised electrons", "Hydrogen bonding"], a: 0, e: "" },
-    { q: "Ions with the same electron configuration are called…", o: ["Isoelectronic", "Isotopic", "Isomeric", "Isotonic"], a: 0, e: "" }
+    { q: "What is evidence for the existence of ions?", o: ["Migration of coloured ions in electrolysis", "High boiling point", "Insolubility", "Malleability"], a: 0, e: R`Coloured ions such as MnO₄⁻ or Cu²⁺ move to the oppositely charged electrode.` },
+    { q: "Why are ionic compounds brittle?", o: ["Shifting layers brings like charges together, which repel", "Weak bonds", "Delocalised electrons", "Hydrogen bonding"], a: 0, e: R`A small displacement lines up like charges, which repel and split the crystal.` },
+    { q: "Ions with the same electron configuration are called…", o: ["Isoelectronic", "Isotopic", "Isomeric", "Isotonic"], a: 0, e: R`E.g. Na<sup>+</sup>, Mg<sup>2+</sup> and F<sup>−</sup> all have the configuration of Ne.` }
   ],
   flashcards: [
     ["Ionic bonding", "Strong electrostatic attraction between oppositely charged ions"],
@@ -57,7 +57,7 @@ S2Data.add({
 S2Data.add({
   id: "2b", group: 2, y1: true, title: "Covalent bonds and shapes of molecules",
   summary: "Covalent and dative bonds, σ and π bonds, and electron-pair repulsion theory.",
-  notes: `
+  notes: R`
 <h3>Covalent bonds</h3>
 <div class="box box-key"><span class="box-title">Definition</span>A covalent bond is the <b>strong electrostatic attraction between two nuclei and a shared pair of electrons</b> between them.</div>
 <ul>
@@ -86,13 +86,13 @@ S2Data.add({
   quiz: [
     { q: "What is the shape of NH₃?", o: ["Pyramidal, 107°", "Trigonal planar, 120°", "Tetrahedral, 109.5°", "Bent, 104.5°"], a: 0, e: "3 bonding pairs + 1 lone pair." },
     { q: "What is the bond angle in H₂O?", o: ["104.5°", "107°", "109.5°", "120°"], a: 0, e: "Two lone pairs." },
-    { q: "Shape of SF₆?", o: ["Octahedral", "Trigonal bipyramidal", "Square planar", "Tetrahedral"], a: 0, e: "" },
-    { q: "Why are lone pairs said to repel more than bonding pairs?", o: ["They are closer to the central atom", "They have more electrons", "They are π bonds", "They are charged"], a: 0, e: "" },
-    { q: "A C=C double bond is made of…", o: ["One σ and one π bond", "Two σ bonds", "Two π bonds", "One dative bond"], a: 0, e: "" },
+    { q: "Shape of SF₆?", o: ["Octahedral", "Trigonal bipyramidal", "Square planar", "Tetrahedral"], a: 0, e: R`6 bonding pairs and no lone pairs give 90° angles.` },
+    { q: "Why are lone pairs said to repel more than bonding pairs?", o: ["They are closer to the central atom", "They have more electrons", "They are π bonds", "They are charged"], a: 0, e: R`Lone pairs are held closer to the nucleus, so they take up more space.` },
+    { q: "A C=C double bond is made of…", o: ["One σ and one π bond", "Two σ bonds", "Two π bonds", "One dative bond"], a: 0, e: R`Head-on overlap gives the σ bond; sideways p-orbital overlap gives the π bond.` },
     { q: "Which species contains a dative bond?", o: ["NH₄⁺", "CH₄", "H₂O", "Cl₂"], a: 0, e: "N's lone pair bonds to H⁺." },
     { q: "Shape of XeF₄?", o: ["Square planar", "Tetrahedral", "Octahedral", "See-saw"], a: 0, e: "4 bonding + 2 lone pairs." },
-    { q: "Shape and angle of BF₃?", o: ["Trigonal planar, 120°", "Pyramidal, 107°", "Tetrahedral, 109.5°", "Linear, 180°"], a: 0, e: "" },
-    { q: "Why is a π bond weaker than a σ bond?", o: ["Sideways overlap is less effective", "It has more electrons", "It's longer", "It's ionic"], a: 0, e: "" }
+    { q: "Shape and angle of BF₃?", o: ["Trigonal planar, 120°", "Pyramidal, 107°", "Tetrahedral, 109.5°", "Linear, 180°"], a: 0, e: R`3 bonding pairs and no lone pairs.` },
+    { q: "Why is a π bond weaker than a σ bond?", o: ["Sideways overlap is less effective", "It has more electrons", "It's longer", "It's ionic"], a: 0, e: R`The p orbitals overlap less, so the π bond is weaker and more reactive.` }
   ],
   flashcards: [
     ["Covalent bond", "Electrostatic attraction between two nuclei and a shared pair of electrons"],
@@ -113,7 +113,7 @@ S2Data.add({
 S2Data.add({
   id: "2c", group: 2, y1: true, title: "Electronegativity, polarity and intermolecular forces",
   summary: "Polar bonds and molecules, London forces, permanent dipoles and hydrogen bonding.",
-  notes: `
+  notes: R`
 <h3>Electronegativity</h3>
 <p><b>Electronegativity</b> is the ability of an atom to attract the bonding electrons in a covalent bond. It increases across a period and up a group. Fluorine is the most electronegative element (Pauling value 4.0).</p>
 <ul>
@@ -146,14 +146,14 @@ S2Data.add({
 `,
   quiz: [
     { q: "Which molecule is non-polar despite having polar bonds?", o: ["CO₂", "H₂O", "NH₃", "HCl"], a: 0, e: "Linear: the dipoles cancel." },
-    { q: "Which intermolecular force exists between all molecules?", o: ["London forces", "Hydrogen bonds", "Permanent dipoles", "Ionic bonds"], a: 0, e: "" },
+    { q: "Which intermolecular force exists between all molecules?", o: ["London forces", "Hydrogen bonds", "Permanent dipoles", "Ionic bonds"], a: 0, e: R`London forces arise from temporary dipoles in any molecule.` },
     { q: "Why does pentane boil higher than 2,2-dimethylpropane?", o: ["More surface contact, stronger London forces", "Pentane has hydrogen bonds", "Pentane is polar", "Pentane has more electrons"], a: 0, e: "They're isomers: same electrons, different shape." },
-    { q: "Hydrogen bonding needs H bonded to…", o: ["N, O or F", "C or Cl", "Any non-metal", "S or P"], a: 0, e: "" },
-    { q: "Why is ice less dense than liquid water?", o: ["Hydrogen bonds hold molecules in an open lattice", "Ice has fewer molecules", "London forces are stronger", "Ice is ionic"], a: 0, e: "" },
+    { q: "Hydrogen bonding needs H bonded to…", o: ["N, O or F", "C or Cl", "Any non-metal", "S or P"], a: 0, e: R`Only these atoms are electronegative and small enough.` },
+    { q: "Why is ice less dense than liquid water?", o: ["Hydrogen bonds hold molecules in an open lattice", "Ice has fewer molecules", "London forces are stronger", "Ice is ionic"], a: 0, e: R`The hydrogen-bonded lattice holds molecules further apart than in the liquid.` },
     { q: "Which has the highest boiling point?", o: ["H₂O", "H₂S", "H₂Se", "H₂Te"], a: 0, e: "Hydrogen bonding." },
-    { q: "Electronegativity is…", o: ["The ability of an atom to attract bonding electrons in a covalent bond", "The energy to remove an electron", "The charge on an ion", "Energy released gaining an electron"], a: 0, e: "" },
-    { q: "Why is CCl₄ non-polar?", o: ["Tetrahedral shape cancels the dipoles", "C–Cl bonds aren't polar", "It has lone pairs", "It's ionic"], a: 0, e: "" },
-    { q: "Why does butan-1-ol dissolve less in water than ethanol?", o: ["Longer non-polar chain", "It can't hydrogen bond", "It's ionic", "It's more polar"], a: 0, e: "" }
+    { q: "Electronegativity is…", o: ["The ability of an atom to attract bonding electrons in a covalent bond", "The energy to remove an electron", "The charge on an ion", "Energy released gaining an electron"], a: 0, e: R`It increases across a period and up a group; fluorine is the highest.` },
+    { q: "Why is CCl₄ non-polar?", o: ["Tetrahedral shape cancels the dipoles", "C–Cl bonds aren't polar", "It has lone pairs", "It's ionic"], a: 0, e: R`The C–Cl bonds are polar, but the symmetrical shape means the dipoles cancel.` },
+    { q: "Why does butan-1-ol dissolve less in water than ethanol?", o: ["Longer non-polar chain", "It can't hydrogen bond", "It's ionic", "It's more polar"], a: 0, e: R`The longer hydrocarbon chain can't form hydrogen bonds with water.` }
   ],
   flashcards: [
     ["Electronegativity", "Ability of an atom to attract the bonding electrons in a covalent bond"],
@@ -172,7 +172,7 @@ S2Data.add({
 S2Data.add({
   id: "2d", group: 2, y1: true, title: "Metallic bonding and structures",
   summary: "Metallic bonding and comparing giant ionic, giant covalent, metallic and molecular structures.",
-  notes: `
+  notes: R`
 <h3>Metallic bonding</h3>
 <div class="box box-key"><span class="box-title">Definition</span>Metallic bonding is the <b>strong electrostatic attraction between a lattice of positive metal ions and a sea of delocalised electrons</b>.</div>
 <ul>
@@ -201,14 +201,14 @@ S2Data.add({
 <p>Iodine forms a simple molecular lattice: I<sub>2</sub> molecules held by London forces. It sublimes on gentle heating.</p>
 `,
   quiz: [
-    { q: "Why does magnesium have a higher melting point than sodium?", o: ["Mg²⁺ has more charge and more delocalised electrons per ion", "Mg is covalent", "Mg ions are bigger", "Mg has London forces"], a: 0, e: "" },
-    { q: "Which structure conducts electricity as a solid?", o: ["Metallic", "Giant ionic", "Simple molecular", "Diamond"], a: 0, e: "" },
-    { q: "Why is graphite soft?", o: ["Weak London forces between layers", "Weak covalent bonds", "It's ionic", "It has free ions"], a: 0, e: "" },
-    { q: "In graphite, each carbon is bonded to…", o: ["3 others", "4 others", "2 others", "6 others"], a: 0, e: "" },
-    { q: "Which substance is a giant covalent lattice?", o: ["SiO₂", "I₂", "NaCl", "CO₂"], a: 0, e: "" },
-    { q: "A solid melts at 801 °C and conducts only when molten. Its structure is…", o: ["Giant ionic", "Metallic", "Giant covalent", "Simple molecular"], a: 0, e: "" },
-    { q: "What holds I₂ molecules together in solid iodine?", o: ["London forces", "Covalent bonds", "Ionic bonds", "Hydrogen bonds"], a: 0, e: "" },
-    { q: "Why are metals malleable?", o: ["Layers slide while delocalised electrons hold the lattice together", "Ions repel", "Bonds are weak", "They're molecular"], a: 0, e: "" }
+    { q: "Why does magnesium have a higher melting point than sodium?", o: ["Mg²⁺ has more charge and more delocalised electrons per ion", "Mg is covalent", "Mg ions are bigger", "Mg has London forces"], a: 0, e: R`Each Mg<sup>2+</sup> contributes 2 electrons and has a higher charge density.` },
+    { q: "Which structure conducts electricity as a solid?", o: ["Metallic", "Giant ionic", "Simple molecular", "Diamond"], a: 0, e: R`Delocalised electrons can move through the solid.` },
+    { q: "Why is graphite soft?", o: ["Weak London forces between layers", "Weak covalent bonds", "It's ionic", "It has free ions"], a: 0, e: R`The layers can slide past each other because the forces between them are weak.` },
+    { q: "In graphite, each carbon is bonded to…", o: ["3 others", "4 others", "2 others", "6 others"], a: 0, e: R`The fourth electron of each carbon is delocalised.` },
+    { q: "Which substance is a giant covalent lattice?", o: ["SiO₂", "I₂", "NaCl", "CO₂"], a: 0, e: R`Each Si bonds to 4 O atoms in a giant network.` },
+    { q: "A solid melts at 801 °C and conducts only when molten. Its structure is…", o: ["Giant ionic", "Metallic", "Giant covalent", "Simple molecular"], a: 0, e: R`A high melting point, and conducting only when the ions are free to move, means ionic.` },
+    { q: "What holds I₂ molecules together in solid iodine?", o: ["London forces", "Covalent bonds", "Ionic bonds", "Hydrogen bonds"], a: 0, e: R`I<sub>2</sub> molecules are non-polar; London forces are fairly strong because there are many electrons.` },
+    { q: "Why are metals malleable?", o: ["Layers slide while delocalised electrons hold the lattice together", "Ions repel", "Bonds are weak", "They're molecular"], a: 0, e: R`The delocalised electrons keep bonding the ions as the layers move.` }
   ],
   flashcards: [
     ["Metallic bonding", "Electrostatic attraction between positive metal ions and delocalised electrons"],

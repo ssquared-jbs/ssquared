@@ -3,7 +3,7 @@
 S2Data.add({
   id: "6a", group: 6, title: "Magnetism",
   summary: "Magnetic poles, fields, magnetic materials and induced magnetism.",
-  notes: `
+  notes: R`
 <h3>Magnets</h3>
 <ul>
 <li>Magnets have a <b>north</b> and a <b>south</b> pole. <b>Like poles repel</b> and <b>unlike poles attract</b>.</li>
@@ -35,18 +35,18 @@ S2Data.add({
     ["Hard magnetic material", "Keeps its magnetism (e.g. steel)"]
   ],
   quiz: [
-    { q: "Which metal is magnetic?", o: ["Nickel", "Copper", "Aluminium", "Gold"], a: 0, e: "" },
-    { q: "Two north poles are brought together. They…", o: ["Repel", "Attract", "Do nothing", "Become south poles"], a: 0, e: "" },
+    { q: "Which metal is magnetic?", o: ["Nickel", "Copper", "Aluminium", "Gold"], a: 0, e: R`The magnetic metals are iron, nickel and cobalt (and steel).` },
+    { q: "Two north poles are brought together. They…", o: ["Repel", "Attract", "Do nothing", "Become south poles"], a: 0, e: R`Like poles repel; unlike poles attract.` },
     { q: "Which material is used for the core of an electromagnet?", o: ["Iron", "Steel", "Copper", "Plastic"], a: 0, e: "Soft iron loses its magnetism when the current is switched off." },
-    { q: "How can you show the shape of a magnetic field?", o: ["Plotting compass or iron filings", "Ammeter", "Thermometer", "Voltmeter"], a: 0, e: "" },
-    { q: "Field lines outside a bar magnet go…", o: ["From north to south", "From south to north", "In circles around the middle", "Nowhere"], a: 0, e: "" }
+    { q: "How can you show the shape of a magnetic field?", o: ["Plotting compass or iron filings", "Ammeter", "Thermometer", "Voltmeter"], a: 0, e: R`The compass needle lines up along the field lines.` },
+    { q: "Field lines outside a bar magnet go…", o: ["From north to south", "From south to north", "In circles around the middle", "Nowhere"], a: 0, e: R`Field lines point the way a north pole would move.` }
   ]
 });
 
 S2Data.add({
   id: "6b", group: 6, title: "Electromagnetism and the motor effect",
   summary: "Fields around wires and solenoids, electromagnets, the motor effect, motors and loudspeakers.",
-  notes: `
+  notes: R`
 <h3>Magnetic effect of a current</h3>
 <ul>
 <li>A current in a wire creates a circular magnetic field around it. The <b>right-hand grip rule</b> gives the direction: thumb along the current, fingers curl in the field direction.</li>
@@ -80,19 +80,19 @@ S2Data.add({
     ["How does a loudspeaker work?", "a.c. in a coil in a magnetic field makes the cone vibrate"]
   ],
   quiz: [
-    { q: "In Fleming's left-hand rule, the first finger shows…", o: ["Field", "Current", "Motion", "Voltage"], a: 0, e: "" },
+    { q: "In Fleming's left-hand rule, the first finger shows…", o: ["Field", "Current", "Motion", "Voltage"], a: 0, e: R`First finger: Field. SeCond finger: Current. ThuMb: Motion (force).` },
     { q: "Which change would NOT increase the speed of a d.c. motor?", o: ["Reversing the current", "Increasing the current", "Adding more turns", "Using a stronger magnet"], a: 0, e: "Reversing the current changes the direction, not the speed." },
-    { q: "Why is a split-ring commutator used?", o: ["To keep the coil rotating in one direction", "To increase the voltage", "To make a.c.", "To cool the motor"], a: 0, e: "" },
-    { q: "What shape is the field around a straight wire?", o: ["Circles around the wire", "Straight lines along the wire", "No field", "Like a bar magnet"], a: 0, e: "" },
-    { q: "How can you make an electromagnet weaker?", o: ["Reduce the current", "Add more turns", "Add an iron core", "Increase the voltage"], a: 0, e: "" },
-    { q: "Which device uses the motor effect to produce sound?", o: ["Loudspeaker", "Microphone", "Transformer", "Generator"], a: 0, e: "" }
+    { q: "Why is a split-ring commutator used?", o: ["To keep the coil rotating in one direction", "To increase the voltage", "To make a.c.", "To cool the motor"], a: 0, e: R`It reverses the current every half turn, so the force keeps turning the coil the same way.` },
+    { q: "What shape is the field around a straight wire?", o: ["Circles around the wire", "Straight lines along the wire", "No field", "Like a bar magnet"], a: 0, e: R`The field forms concentric circles; the right-hand grip rule gives the direction.` },
+    { q: "How can you make an electromagnet weaker?", o: ["Reduce the current", "Add more turns", "Add an iron core", "Increase the voltage"], a: 0, e: R`Less current (or fewer turns, or no iron core) gives a weaker field.` },
+    { q: "Which device uses the motor effect to produce sound?", o: ["Loudspeaker", "Microphone", "Transformer", "Generator"], a: 0, e: R`A varying current in the coil in a magnetic field makes the cone vibrate.` }
   ]
 });
 
 S2Data.add({
   id: "6c", group: 6, title: "Electromagnetic induction",
   summary: "Inducing a voltage, generators and transformers.",
-  notes: `
+  notes: R`
 <h3>Inducing a voltage</h3>
 <p>A voltage is <b>induced</b> in a conductor when it moves through a magnetic field, or when the field around it changes. If the circuit is complete, a current flows.</p>
 <ul>
@@ -108,8 +108,8 @@ S2Data.add({
 <li>Transformers only work with a.c.</li>
 <li><b>Step-up</b>: more turns on the secondary, so a higher output voltage. <b>Step-down</b>: fewer turns on the secondary.</li>
 </ul>
-<div class="eq">V<sub>p</sub> ÷ V<sub>s</sub> = N<sub>p</sub> ÷ N<sub>s</sub></div>
-<div class="eq">For a 100% efficient transformer: V<sub>p</sub> × I<sub>p</sub> = V<sub>s</sub> × I<sub>s</sub></div>
+<div class="eq">\(\dfrac{V_{p}}{V_{s}} = \dfrac{N_{p}}{N_{s}}\)</div>
+<div class="eq">for a 100% efficient transformer: \(V_p I_p = V_s I_s\)</div>
 <p><b>Why transmit at high voltage?</b> For the same power, a higher voltage means a <b>lower current</b>, so less energy is wasted heating the cables. Step-up transformers are used at power stations, and step-down transformers near homes.</p></div>
 `,
   flashcards: [
@@ -117,16 +117,16 @@ S2Data.add({
     ["Three ways to increase the induced voltage", "Move faster, stronger magnet, more turns"],
     ["What type of current does a generator produce?", "Alternating current"],
     ["Why do transformers need a.c.?", "Only a changing magnetic field induces a voltage in the secondary coil"],
-    ["Transformer turns equation", "V<sub>p</sub>/V<sub>s</sub> = N<sub>p</sub>/N<sub>s</sub>"],
-    ["Transformer power equation (100% efficient)", "V<sub>p</sub>I<sub>p</sub> = V<sub>s</sub>I<sub>s</sub>"],
+    ["Transformer turns equation", R`\(V_{p}/V_{s} = N_{p}/N_{s}\)`],
+    ["Transformer power equation (100% efficient)", R`\(V_{p}I_{p} = V_{s}I_{s}\)`],
     ["Why is electricity transmitted at high voltage?", "Lower current, so less energy is lost as heat in the cables"]
   ],
   quiz: [
-    { q: "A transformer has 100 primary turns and 2000 secondary turns. The input is 12 V. What is the output?", o: ["240 V", "0.6 V", "12 V", "2400 V"], a: 0, e: "12 × 2000 ÷ 100" },
-    { q: "What happens when a magnet is held still inside a coil?", o: ["No voltage is induced", "A large voltage is induced", "A d.c. current flows", "The coil heats up"], a: 0, e: "" },
-    { q: "Why is electricity transmitted at very high voltages?", o: ["To reduce the current and energy losses", "To make it travel faster", "To increase the current", "To make it safer at home"], a: 0, e: "" },
-    { q: "Which transformer reduces voltage?", o: ["Step-down", "Step-up", "Neither", "Both"], a: 0, e: "" },
-    { q: "Which change would increase the voltage induced in a coil?", o: ["Moving the magnet faster", "Using fewer turns", "Using a weaker magnet", "Moving the magnet more slowly"], a: 0, e: "" },
-    { q: "A 100% efficient transformer steps 230 V down to 23 V. The primary current is 0.1 A. What is the secondary current?", o: ["1 A", "0.01 A", "10 A", "0.1 A"], a: 0, e: "230 × 0.1 = 23 × I<sub>s</sub>" }
+    { q: "A transformer has 100 primary turns and 2000 secondary turns. The input is 12 V. What is the output?", o: ["240 V", "0.6 V", "12 V", "2400 V"], a: 0, e: R`\(\dfrac{12 \times 2000}{100}\)` },
+    { q: "What happens when a magnet is held still inside a coil?", o: ["No voltage is induced", "A large voltage is induced", "A d.c. current flows", "The coil heats up"], a: 0, e: R`A voltage is only induced when the field through the coil is changing.` },
+    { q: "Why is electricity transmitted at very high voltages?", o: ["To reduce the current and energy losses", "To make it travel faster", "To increase the current", "To make it safer at home"], a: 0, e: R`For the same power \(P = IV\), higher \(V\) means lower \(I\), and heating losses depend on \(I^2R\).` },
+    { q: "Which transformer reduces voltage?", o: ["Step-down", "Step-up", "Neither", "Both"], a: 0, e: R`A step-down transformer has fewer turns on the secondary coil.` },
+    { q: "Which change would increase the voltage induced in a coil?", o: ["Moving the magnet faster", "Using fewer turns", "Using a weaker magnet", "Moving the magnet more slowly"], a: 0, e: R`A faster change in the magnetic field induces a bigger voltage.` },
+    { q: "A 100% efficient transformer steps 230 V down to 23 V. The primary current is 0.1 A. What is the secondary current?", o: ["1 A", "0.01 A", "10 A", "0.1 A"], a: 0, e: R`\(230 \times 0.1 = 23 \times I_{s}\)` }
   ]
 });

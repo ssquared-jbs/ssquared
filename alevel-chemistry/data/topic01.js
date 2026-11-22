@@ -3,7 +3,7 @@
 S2Data.add({
   id: "1a", group: 1, y1: true, title: "Atoms, isotopes and mass spectrometry",
   summary: "Subatomic particles, isotopes, relative masses and how a mass spectrometer works.",
-  notes: `
+  notes: R`
 <h3>Subatomic particles</h3>
 <table>
 <tr><th>Particle</th><th>Relative mass</th><th>Relative charge</th><th>Where</th></tr>
@@ -29,7 +29,7 @@ S2Data.add({
 <ol>
 <li><b>Ionisation</b>: the sample is vaporised and ionised, either by <b>electron impact</b> (high-energy electrons knock an electron off: X(g) → X<sup>+</sup>(g) + e<sup>−</sup>) or by <b>electrospray</b> (dissolved sample sprayed through a charged needle so molecules gain a proton: X + H<sup>+</sup> → XH<sup>+</sup>).</li>
 <li><b>Acceleration</b>: an electric field gives all the ions the same kinetic energy.</li>
-<li><b>Ion drift</b>: ions travel through the flight tube. Since KE = ½mv<sup>2</sup>, lighter ions move faster and arrive first.</li>
+<li><b>Ion drift</b>: ions travel through the flight tube. Since \(E_k = \tfrac12 mv^2\), lighter ions move faster and arrive first.</li>
 <li><b>Detection</b>: ions hit the detector, gain electrons, and create a current proportional to their abundance.</li>
 </ol>
 <p>The spectrum shows <b>m/z</b> (mass ÷ charge) against relative abundance. For a 1+ ion, m/z equals the mass.</p>
@@ -40,15 +40,15 @@ S2Data.add({
 <div class="box box-key"><span class="box-title">Uses</span>Identifying elements on space probes, testing for drugs in athletes, and measuring isotope ratios for dating.</div>
 `,
   quiz: [
-    { q: "What is the relative charge and mass of a neutron?", o: ["0 and 1", "+1 and 1", "−1 and 1/1836", "0 and 1/1836"], a: 0, e: "" },
+    { q: "What is the relative charge and mass of a neutron?", o: ["0 and 1", "+1 and 1", "−1 and 1/1836", "0 and 1/1836"], a: 0, e: R`Neutrons are neutral, with the same relative mass as a proton.` },
     { q: "Why do isotopes of an element react in the same way?", o: ["Same electron configuration", "Same number of neutrons", "Same mass", "Same nuclear charge only"], a: 0, e: "Chemical reactions involve electrons." },
-    { q: "Ar is defined relative to…", o: ["1/12 of the mass of a carbon-12 atom", "The mass of a hydrogen atom", "The mass of a proton", "1/16 of an oxygen atom"], a: 0, e: "" },
+    { q: "Ar is defined relative to…", o: ["1/12 of the mass of a carbon-12 atom", "The mass of a hydrogen atom", "The mass of a proton", "1/16 of an oxygen atom"], a: 0, e: R`Relative masses use carbon-12 as the standard: one-twelfth of its mass is 1 u.` },
     { q: "In a time-of-flight mass spectrometer, which ions reach the detector first?", o: ["Lightest ions (lowest m/z)", "Heaviest ions", "Most abundant ions", "Ions with no charge"], a: 0, e: "All ions have the same KE, so lighter ones are faster." },
     { q: "In electrospray ionisation, a molecule X forms…", o: ["XH⁺", "X⁺", "X⁻", "X²⁺"], a: 0, e: "It gains a proton." },
-    { q: "Calculate Ar of an element: 90% mass 20, 10% mass 22.", o: ["20.2", "21.0", "20.0", "21.8"], a: 0, e: "(20 × 90 + 22 × 10) ÷ 100 = 20.2" },
+    { q: "Calculate Ar of an element: 90% mass 20, 10% mass 22.", o: ["20.2", "21.0", "20.0", "21.8"], a: 0, e: R`\(\dfrac{20 \times 90 + 22 \times 10}{100} = 20.2\)` },
     { q: "Chlorine (75% ³⁵Cl, 25% ³⁷Cl) forms Cl₂. What is the ratio of peaks at m/z 70 : 72 : 74?", o: ["9 : 6 : 1", "3 : 1 : 0", "1 : 2 : 1", "3 : 2 : 1"], a: 0, e: "¾×¾ : 2×¾×¼ : ¼×¼ = 9 : 6 : 1" },
-    { q: "What does the molecular ion peak of an organic compound tell you?", o: ["Its relative molecular mass", "Its structure", "Its boiling point", "Its functional group"], a: 0, e: "" },
-    { q: "Why does the detector produce a current?", o: ["Ions gain electrons from it", "Ions lose protons", "Ions emit light", "Ions are neutralised by OH⁻"], a: 0, e: "" }
+    { q: "What does the molecular ion peak of an organic compound tell you?", o: ["Its relative molecular mass", "Its structure", "Its boiling point", "Its functional group"], a: 0, e: R`The M⁺ peak at the highest m/z (ignoring M+1) gives Mr.` },
+    { q: "Why does the detector produce a current?", o: ["Ions gain electrons from it", "Ions lose protons", "Ions emit light", "Ions are neutralised by OH⁻"], a: 0, e: R`Positive ions arriving at the detector gain electrons; the current is proportional to the number of ions.` }
   ],
   flashcards: [
     ["Relative atomic mass (Ar)", "Weighted mean mass of an atom of an element compared with 1/12 of the mass of a carbon-12 atom"],
@@ -68,7 +68,7 @@ S2Data.add({
 S2Data.add({
   id: "1b", group: 1, y1: true, title: "Electron configurations and ionisation energies",
   summary: "Shells, sub-shells and orbitals; spdf notation; ionisation energy trends as evidence for structure.",
-  notes: `
+  notes: R`
 <h3>Shells, sub-shells and orbitals</h3>
 <ul>
 <li>Electrons occupy <b>orbitals</b>: regions that can hold up to <b>two electrons with opposite spins</b>.</li>
@@ -109,12 +109,12 @@ S2Data.add({
   quiz: [
     { q: "What is the electron configuration of Cr?", o: ["[Ar] 3d⁵ 4s¹", "[Ar] 3d⁴ 4s²", "[Ar] 3d⁶", "[Ar] 4s² 4p⁴"], a: 0, e: "A half-filled d sub-shell is more stable." },
     { q: "What is the configuration of Fe³⁺?", o: ["[Ar] 3d⁵", "[Ar] 3d³ 4s²", "[Ar] 3d⁶ 4s²", "[Ar] 3d⁴ 4s¹"], a: 0, e: "4s electrons are lost first." },
-    { q: "How many electrons can a p sub-shell hold?", o: ["6", "2", "10", "14"], a: 0, e: "" },
+    { q: "How many electrons can a p sub-shell hold?", o: ["6", "2", "10", "14"], a: 0, e: R`Three p orbitals with two electrons each: 6.` },
     { q: "Which equation represents the first ionisation energy of magnesium?", o: ["Mg(g) → Mg⁺(g) + e⁻", "Mg(s) → Mg⁺(g) + e⁻", "Mg(g) → Mg²⁺(g) + 2e⁻", "Mg(g) + e⁻ → Mg⁻(g)"], a: 0, e: "Gaseous atoms, one electron removed." },
-    { q: "Why is the first IE of Al lower than Mg?", o: ["Al's outer electron is in a higher-energy 3p orbital", "Al has fewer protons", "Al's outer electron is paired", "Al is a metal"], a: 0, e: "" },
-    { q: "Why is the first IE of S lower than P?", o: ["Electron removed from a paired 3p orbital; repulsion", "S has fewer protons", "S's electron is in 3s", "S is bigger"], a: 0, e: "" },
+    { q: "Why is the first IE of Al lower than Mg?", o: ["Al's outer electron is in a higher-energy 3p orbital", "Al has fewer protons", "Al's outer electron is paired", "Al is a metal"], a: 0, e: R`The 3p electron is higher in energy and slightly shielded by the 3s electrons, so it's easier to remove.` },
+    { q: "Why is the first IE of S lower than P?", o: ["Electron removed from a paired 3p orbital; repulsion", "S has fewer protons", "S's electron is in 3s", "S is bigger"], a: 0, e: R`In S, the electron comes from a paired 3p orbital; repulsion between the pair makes it easier to remove.` },
     { q: "Successive IEs (kJ/mol): 578, 1817, 2745, 11 577. Which group?", o: ["Group 3", "Group 2", "Group 4", "Group 1"], a: 0, e: "Big jump after the 3rd." },
-    { q: "Why does first IE decrease down a group?", o: ["Outer electron further from nucleus and more shielded", "Nuclear charge decreases", "Fewer shells", "Electrons are paired"], a: 0, e: "" },
+    { q: "Why does first IE decrease down a group?", o: ["Outer electron further from nucleus and more shielded", "Nuclear charge decreases", "Fewer shells", "Electrons are paired"], a: 0, e: R`More shells means more distance and shielding, outweighing the extra nuclear charge.` },
     { q: "Which block is bromine in?", o: ["p", "s", "d", "f"], a: 0, e: "Its outer electrons are in 4p." }
   ],
   flashcards: [
@@ -135,7 +135,7 @@ S2Data.add({
 S2Data.add({
   id: "1c", group: 1, y1: true, title: "Periodicity",
   summary: "Trends across Period 3 in atomic radius, ionisation energy, melting point and structure.",
-  notes: `
+  notes: R`
 <h3>The Periodic Table</h3>
 <ul>
 <li>Elements are arranged in order of <b>atomic number</b>. Elements in the same <b>group</b> have the same outer electron configuration, so similar reactions.</li>
@@ -161,13 +161,13 @@ S2Data.add({
 `,
   quiz: [
     { q: "Which Period 3 element has the highest melting point?", o: ["Silicon", "Aluminium", "Sulfur", "Sodium"], a: 0, e: "Giant covalent structure." },
-    { q: "Why does atomic radius decrease across Period 3?", o: ["Nuclear charge increases with similar shielding", "More shells are added", "Electrons are lost", "Shielding increases a lot"], a: 0, e: "" },
-    { q: "Why is the melting point of Al higher than Na?", o: ["Al³⁺ has a higher charge and more delocalised electrons", "Al is covalent", "Al has London forces", "Al is larger"], a: 0, e: "" },
-    { q: "Why does S₈ have a higher melting point than P₄?", o: ["S₈ has more electrons, so stronger London forces", "S₈ is giant covalent", "S₈ is ionic", "P₄ has hydrogen bonds"], a: 0, e: "" },
-    { q: "Which has a monatomic structure?", o: ["Argon", "Chlorine", "Silicon", "Phosphorus"], a: 0, e: "" },
-    { q: "Why is there a big drop in first IE from Ne to Na?", o: ["Na's outer electron is in a new shell, further away and more shielded", "Na has fewer protons", "Na's electron is paired", "Ne is a metal"], a: 0, e: "" },
-    { q: "What is periodicity?", o: ["A repeating pattern of properties across periods", "Elements in the same group", "Radioactive decay", "The number of shells"], a: 0, e: "" },
-    { q: "What forces exist between Cl₂ molecules?", o: ["London forces", "Hydrogen bonds", "Ionic bonds", "Metallic bonds"], a: 0, e: "" }
+    { q: "Why does atomic radius decrease across Period 3?", o: ["Nuclear charge increases with similar shielding", "More shells are added", "Electrons are lost", "Shielding increases a lot"], a: 0, e: R`More protons pull the same shell in more strongly.` },
+    { q: "Why is the melting point of Al higher than Na?", o: ["Al³⁺ has a higher charge and more delocalised electrons", "Al is covalent", "Al has London forces", "Al is larger"], a: 0, e: R`Al<sup>3+</sup> has a smaller radius and contributes 3 delocalised electrons, giving stronger metallic bonding.` },
+    { q: "Why does S₈ have a higher melting point than P₄?", o: ["S₈ has more electrons, so stronger London forces", "S₈ is giant covalent", "S₈ is ionic", "P₄ has hydrogen bonds"], a: 0, e: R`S<sub>8</sub> has more electrons than P<sub>4</sub>, so its London forces are stronger.` },
+    { q: "Which has a monatomic structure?", o: ["Argon", "Chlorine", "Silicon", "Phosphorus"], a: 0, e: R`Noble gases exist as single atoms.` },
+    { q: "Why is there a big drop in first IE from Ne to Na?", o: ["Na's outer electron is in a new shell, further away and more shielded", "Na has fewer protons", "Na's electron is paired", "Ne is a metal"], a: 0, e: R`The new 3s shell is further from the nucleus and better shielded.` },
+    { q: "What is periodicity?", o: ["A repeating pattern of properties across periods", "Elements in the same group", "Radioactive decay", "The number of shells"], a: 0, e: R`Properties repeat as each new period is filled.` },
+    { q: "What forces exist between Cl₂ molecules?", o: ["London forces", "Hydrogen bonds", "Ionic bonds", "Metallic bonds"], a: 0, e: R`Cl<sub>2</sub> is non-polar, so only London (instantaneous dipole) forces act.` }
   ],
   flashcards: [
     ["Atomic radius across a period", "Decreases: more protons, same shell, similar shielding → electrons pulled closer"],

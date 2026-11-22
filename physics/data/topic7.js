@@ -3,7 +3,7 @@
 S2Data.add({
   id: "7a", group: 7, title: "Radioactivity",
   summary: "Atoms and isotopes, alpha, beta and gamma radiation, nuclear equations, half-life, uses and dangers.",
-  notes: `
+  notes: R`
 <h3>Atoms and isotopes</h3>
 <ul>
 <li>A nucleus contains protons and neutrons, with electrons around it.</li>
@@ -55,7 +55,7 @@ S2Data.add({
     ["Gamma radiation", "An EM wave from the nucleus"],
     ["Most ionising radiation", "Alpha"],
     ["What stops beta?", "A few mm of aluminium"],
-    ["Effect of alpha decay on A and Z", "A − 4, Z − 2"],
+    ["Effect of alpha decay on A and Z", R`\(A - 4, Z - 2\)`],
     ["Effect of beta decay on A and Z", "A unchanged, Z + 1"],
     ["Half-life", "Time for half the unstable nuclei to decay (activity to halve)"],
     ["Unit of activity", "Becquerel (Bq) = 1 decay per second"],
@@ -63,13 +63,13 @@ S2Data.add({
     ["Main source of background radiation", "Radon gas from rocks"]
   ],
   quiz: [
-    { q: "Which radiation is stopped by paper?", o: ["Alpha", "Beta", "Gamma", "X-rays"], a: 0, e: "" },
-    { q: "A source has a half-life of 5 days. What fraction is left after 15 days?", o: ["1/8", "1/3", "1/4", "1/16"], a: 0, e: "3 half-lives: ½ × ½ × ½" },
-    { q: "U-238 (Z = 92) emits an alpha particle. What are the new A and Z?", o: ["234 and 90", "238 and 93", "234 and 92", "236 and 90"], a: 0, e: "" },
-    { q: "What happens in the nucleus during beta decay?", o: ["A neutron changes into a proton and an electron", "A proton is lost", "Two protons and two neutrons leave", "Nothing changes"], a: 0, e: "" },
-    { q: "Why are gamma emitters used as medical tracers?", o: ["Gamma passes out of the body and is weakly ionising", "Gamma is strongly ionising", "Gamma is stopped by skin", "Gamma has a long range in air only"], a: 0, e: "" },
-    { q: "Which is the biggest source of background radiation in the UK?", o: ["Radon gas", "Nuclear power", "Medical X-rays", "Mobile phones"], a: 0, e: "" },
-    { q: "Why is alpha most dangerous inside the body?", o: ["It is very ionising and all its energy is absorbed by nearby cells", "It is very penetrating", "It is an EM wave", "It lasts forever"], a: 0, e: "" },
+    { q: "Which radiation is stopped by paper?", o: ["Alpha", "Beta", "Gamma", "X-rays"], a: 0, e: R`Alpha is stopped by paper, beta by a few mm of aluminium, and gamma is reduced by thick lead.` },
+    { q: "A source has a half-life of 5 days. What fraction is left after 15 days?", o: ["1/8", "1/3", "1/4", "1/16"], a: 0, e: R`3 half-lives: \(\tfrac12 \times \tfrac12 \times \tfrac12\)` },
+    { q: "U-238 (Z = 92) emits an alpha particle. What are the new A and Z?", o: ["234 and 90", "238 and 93", "234 and 92", "236 and 90"], a: 0, e: R`An alpha particle is \({}^4_2\text{He}\): \(A\) falls by 4 to 234 and \(Z\) by 2 to 90.` },
+    { q: "What happens in the nucleus during beta decay?", o: ["A neutron changes into a proton and an electron", "A proton is lost", "Two protons and two neutrons leave", "Nothing changes"], a: 0, e: R`The electron leaves as the beta particle, so Z rises by 1 and A stays the same.` },
+    { q: "Why are gamma emitters used as medical tracers?", o: ["Gamma passes out of the body and is weakly ionising", "Gamma is strongly ionising", "Gamma is stopped by skin", "Gamma has a long range in air only"], a: 0, e: R`It can be detected outside the body and causes little ionisation inside.` },
+    { q: "Which is the biggest source of background radiation in the UK?", o: ["Radon gas", "Nuclear power", "Medical X-rays", "Mobile phones"], a: 0, e: R`Radon gas comes from rocks such as granite.` },
+    { q: "Why is alpha most dangerous inside the body?", o: ["It is very ionising and all its energy is absorbed by nearby cells", "It is very penetrating", "It is an EM wave", "It lasts forever"], a: 0, e: R`It can't penetrate skin from outside, but inside it damages the cells around it.` },
     { q: "Which radiation is used to monitor the thickness of paper?", o: ["Beta", "Alpha", "Gamma", "Visible light"], a: 0, e: "Alpha would be stopped completely; gamma would pass straight through." }
   ]
 });
@@ -77,7 +77,7 @@ S2Data.add({
 S2Data.add({
   id: "7b", group: 7, title: "Fission and fusion", paper2: true,
   summary: "Nuclear fission, chain reactions, nuclear reactors and nuclear fusion in stars.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This subtopic is Paper 2 only</span></div>
 <h3>Nuclear fission</h3>
 <ul>
@@ -115,11 +115,11 @@ S2Data.add({
     ["Where does fusion happen naturally?", "In stars"]
   ],
   quiz: [
-    { q: "What do control rods do in a reactor?", o: ["Absorb neutrons", "Slow neutrons down", "Carry heat away", "Contain the fuel"], a: 0, e: "" },
-    { q: "Why is a moderator needed?", o: ["To slow neutrons so they are absorbed by U-235", "To speed up neutrons", "To absorb gamma", "To cool the turbine"], a: 0, e: "" },
-    { q: "What is fusion?", o: ["Small nuclei joining together", "A large nucleus splitting", "Electrons joining nuclei", "Alpha decay"], a: 0, e: "" },
-    { q: "Why is fusion difficult on Earth?", o: ["It needs extremely high temperature and pressure", "There is no hydrogen", "It produces too much CO<sub>2</sub>", "It is too slow"], a: 0, e: "" },
-    { q: "How many neutrons are typically released when U-235 splits?", o: ["2 or 3", "0", "10", "100"], a: 0, e: "" },
-    { q: "What would happen if all the control rods were removed?", o: ["The chain reaction would speed up out of control", "The reactor would stop", "Nothing", "Fusion would start"], a: 0, e: "" }
+    { q: "What do control rods do in a reactor?", o: ["Absorb neutrons", "Slow neutrons down", "Carry heat away", "Contain the fuel"], a: 0, e: R`Fewer free neutrons means fewer fissions, so the reaction is controlled.` },
+    { q: "Why is a moderator needed?", o: ["To slow neutrons so they are absorbed by U-235", "To speed up neutrons", "To absorb gamma", "To cool the turbine"], a: 0, e: R`Slow (thermal) neutrons are more likely to be absorbed and cause fission.` },
+    { q: "What is fusion?", o: ["Small nuclei joining together", "A large nucleus splitting", "Electrons joining nuclei", "Alpha decay"], a: 0, e: R`Fusion joins light nuclei (e.g. hydrogen into helium), releasing energy.` },
+    { q: "Why is fusion difficult on Earth?", o: ["It needs extremely high temperature and pressure", "There is no hydrogen", "It produces too much CO<sub>2</sub>", "It is too slow"], a: 0, e: R`The positive nuclei repel, so they must collide very fast to fuse.` },
+    { q: "How many neutrons are typically released when U-235 splits?", o: ["2 or 3", "0", "10", "100"], a: 0, e: R`These neutrons can go on to split more nuclei in a chain reaction.` },
+    { q: "What would happen if all the control rods were removed?", o: ["The chain reaction would speed up out of control", "The reactor would stop", "Nothing", "Fusion would start"], a: 0, e: R`Nothing would absorb the spare neutrons, so the number of fissions would grow rapidly.` }
   ]
 });

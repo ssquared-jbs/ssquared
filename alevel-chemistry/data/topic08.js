@@ -3,7 +3,7 @@
 S2Data.add({
   id: "8a", group: 8, y1: true, title: "Enthalpy changes and calorimetry",
   summary: "Standard conditions, the key enthalpy definitions, and measuring ΔH with Q = mcΔT.",
-  notes: `
+  notes: R`
 <h3>Enthalpy basics</h3>
 <ul>
 <li><b>Enthalpy change, ΔH</b>: the heat energy change at constant pressure. <b>Exothermic</b>: ΔH negative (surroundings get hotter). <b>Endothermic</b>: ΔH positive.</li>
@@ -32,14 +32,14 @@ S2Data.add({
 </ul>
 `,
   quiz: [
-    { q: "Definition of standard enthalpy of formation?", o: ["Enthalpy change when 1 mol of a compound forms from its elements in their standard states", "Enthalpy change when 1 mol burns completely", "Energy to break 1 mol of bonds", "Enthalpy change forming 1 mol of water"], a: 0, e: "" },
-    { q: "Standard pressure is…", o: ["100 kPa", "101 kPa only", "1 kPa", "1000 kPa"], a: 0, e: "" },
-    { q: "25 cm³ of solution warms by 4.0 °C. Q = ?", o: ["418 J", "100 J", "4180 J", "41.8 J"], a: 0, e: "25 × 4.18 × 4.0" },
+    { q: "Definition of standard enthalpy of formation?", o: ["Enthalpy change when 1 mol of a compound forms from its elements in their standard states", "Enthalpy change when 1 mol burns completely", "Energy to break 1 mol of bonds", "Enthalpy change forming 1 mol of water"], a: 0, e: R`Standard states are at 100 kPa and a stated temperature (usually 298 K).` },
+    { q: "Standard pressure is…", o: ["100 kPa", "101 kPa only", "1 kPa", "1000 kPa"], a: 0, e: R`Standard conditions: 100 kPa (and usually 298 K).` },
+    { q: "25 cm³ of solution warms by 4.0 °C. Q = ?", o: ["418 J", "100 J", "4180 J", "41.8 J"], a: 0, e: R`\(25 \times 4.18 \times 4.0\)` },
     { q: "Q = 2.09 kJ released by 0.0250 mol of reactant. ΔH = ?", o: ["−83.6 kJ mol⁻¹", "+83.6 kJ mol⁻¹", "−52.3 kJ mol⁻¹", "−0.0523 kJ mol⁻¹"], a: 0, e: "2.09 ÷ 0.025 = 83.6; exothermic." },
-    { q: "Main reason a measured enthalpy of combustion is less exothermic than the data book?", o: ["Heat lost to surroundings", "Too much fuel", "Thermometer too accurate", "Water evaporating from the can only"], a: 0, e: "" },
-    { q: "In Q = mcΔT, m is the mass of…", o: ["The water/solution being heated", "The fuel burned", "The reactants in moles", "The calorimeter only"], a: 0, e: "" },
+    { q: "Main reason a measured enthalpy of combustion is less exothermic than the data book?", o: ["Heat lost to surroundings", "Too much fuel", "Thermometer too accurate", "Water evaporating from the can only"], a: 0, e: R`Lost heat makes the measured temperature rise smaller.` },
+    { q: "In Q = mcΔT, m is the mass of…", o: ["The water/solution being heated", "The fuel burned", "The reactants in moles", "The calorimeter only"], a: 0, e: R`Use the mass of liquid that changed temperature, not the fuel.` },
     { q: "ΔfH of O₂(g) is…", o: ["0", "−286 kJ mol⁻¹", "+498 kJ mol⁻¹", "Depends on temperature only"], a: 0, e: "Element in its standard state." },
-    { q: "Why extrapolate a cooling curve?", o: ["To estimate the maximum temperature change allowing for heat loss", "To find the mass", "To find c", "To make the graph look neat"], a: 0, e: "" }
+    { q: "Why extrapolate a cooling curve?", o: ["To estimate the maximum temperature change allowing for heat loss", "To find the mass", "To find c", "To make the graph look neat"], a: 0, e: R`Heat is lost while mixing; extrapolating back gives the change at the moment of mixing.` }
   ],
   flashcards: [
     ["Exothermic", "ΔH negative; heat released to surroundings"],
@@ -57,7 +57,7 @@ S2Data.add({
 S2Data.add({
   id: "8b", group: 8, y1: true, title: "Hess's law and bond enthalpies",
   summary: "Using cycles with formation and combustion data, and calculating ΔH from mean bond enthalpies.",
-  notes: `
+  notes: R`
 <h3>Hess's law</h3>
 <p>The enthalpy change for a reaction is <b>independent of the route</b> taken, provided the start and end conditions are the same. So you can find enthalpy changes you can't measure directly.</p>
 <h3>Using formation data</h3>
@@ -78,14 +78,14 @@ S2Data.add({
 <p>Values differ from Hess's law (formation) values because mean bond enthalpies are averages, and because bond enthalpy calculations assume everything is gaseous.</p>
 `,
   quiz: [
-    { q: "Hess's law states that…", o: ["ΔH is independent of the route taken", "Energy is always released", "ΔH depends on the catalyst", "Bonds break exothermically"], a: 0, e: "" },
-    { q: "4NH₃ + 5O₂ → 4NO + 6H₂O(g). ΔfH: NH₃ −46, NO +90, H₂O(g) −242 kJ mol⁻¹. ΔrH = ?", o: ["−908 kJ mol⁻¹", "+908 kJ mol⁻¹", "−1268 kJ mol⁻¹", "−286 kJ mol⁻¹"], a: 0, e: "(4×90 + 6×−242) − (4×−46) = 360 − 1452 + 184 = −908." },
-    { q: "Bond breaking is…", o: ["Endothermic", "Exothermic", "Neither", "Depends on the bond"], a: 0, e: "" },
-    { q: "Broken bonds total 2648 kJ, made bonds total 3466 kJ. ΔH = ?", o: ["−818 kJ mol⁻¹", "+818 kJ mol⁻¹", "+6114 kJ mol⁻¹", "−6114 kJ mol⁻¹"], a: 0, e: "" },
-    { q: "Why do bond enthalpy calculations give approximate values?", o: ["Mean bond enthalpies are averages over many compounds", "Bonds don't really break", "Hess's law is wrong", "They use liquids"], a: 0, e: "" },
-    { q: "Using combustion data: ΔrH = ?", o: ["ΣΔcH(reactants) − ΣΔcH(products)", "ΣΔcH(products) − ΣΔcH(reactants)", "ΣΔcH(all)", "Bonds broken − bonds made"], a: 0, e: "" },
-    { q: "H–H 436, Cl–Cl 243, H–Cl 432. ΔH for H₂ + Cl₂ → 2HCl?", o: ["−185 kJ mol⁻¹", "+185 kJ mol⁻¹", "+247 kJ mol⁻¹", "−864 kJ mol⁻¹"], a: 0, e: "" },
-    { q: "Bond enthalpy is defined for bonds in the…", o: ["Gaseous state", "Liquid state", "Solid state", "Aqueous state"], a: 0, e: "" }
+    { q: "Hess's law states that…", o: ["ΔH is independent of the route taken", "Energy is always released", "ΔH depends on the catalyst", "Bonds break exothermically"], a: 0, e: R`Energy is conserved, so the route doesn't matter.` },
+    { q: "4NH₃ + 5O₂ → 4NO + 6H₂O(g). ΔfH: NH₃ −46, NO +90, H₂O(g) −242 kJ mol⁻¹. ΔrH = ?", o: ["−908 kJ mol⁻¹", "+908 kJ mol⁻¹", "−1268 kJ mol⁻¹", "−286 kJ mol⁻¹"], a: 0, e: R`\((4\times90 + 6\times-242) - (4\times-46) = 360 - 1452 + 184 = -908\).` },
+    { q: "Bond breaking is…", o: ["Endothermic", "Exothermic", "Neither", "Depends on the bond"], a: 0, e: R`Energy is needed to separate atoms.` },
+    { q: "Broken bonds total 2648 kJ, made bonds total 3466 kJ. ΔH = ?", o: ["−818 kJ mol⁻¹", "+818 kJ mol⁻¹", "+6114 kJ mol⁻¹", "−6114 kJ mol⁻¹"], a: 0, e: R`\(\Delta H = 2648 - 3466 = -818\ \text{kJ mol}^{-1}\).` },
+    { q: "Why do bond enthalpy calculations give approximate values?", o: ["Mean bond enthalpies are averages over many compounds", "Bonds don't really break", "Hess's law is wrong", "They use liquids"], a: 0, e: R`The actual bond strength varies with the molecule.` },
+    { q: "Using combustion data: ΔrH = ?", o: ["ΣΔcH(reactants) − ΣΔcH(products)", "ΣΔcH(products) − ΣΔcH(reactants)", "ΣΔcH(all)", "Bonds broken − bonds made"], a: 0, e: R`Combustion goes 'down' to CO₂ and H₂O, so it's reactants minus products.` },
+    { q: "H–H 436, Cl–Cl 243, H–Cl 432. ΔH for H₂ + Cl₂ → 2HCl?", o: ["−185 kJ mol⁻¹", "+185 kJ mol⁻¹", "+247 kJ mol⁻¹", "−864 kJ mol⁻¹"], a: 0, e: R`\((436 + 243) - 2(432) = 679 - 864 = -185\ \text{kJ mol}^{-1}\).` },
+    { q: "Bond enthalpy is defined for bonds in the…", o: ["Gaseous state", "Liquid state", "Solid state", "Aqueous state"], a: 0, e: R`Bond enthalpies are defined for gaseous molecules.` }
   ],
   flashcards: [
     ["Hess's law", "ΔH is independent of the route, given the same start and end conditions"],
@@ -101,7 +101,7 @@ S2Data.add({
 S2Data.add({
   id: "9a", group: 9, y1: true, title: "Kinetics I",
   summary: "Collision theory, factors affecting rate, Maxwell–Boltzmann distributions, catalysts and measuring rates.",
-  notes: `
+  notes: R`
 <h3>Collision theory</h3>
 <p>For a reaction, particles must <b>collide</b> with <b>energy ≥ the activation energy</b> (E<sub>a</sub>) and in the correct <b>orientation</b>. The rate depends on the <b>frequency of successful collisions</b>.</p>
 <ul>
@@ -127,14 +127,14 @@ S2Data.add({
 <p>Rate = change in amount (or concentration) ÷ time. Methods: gas volume in a syringe, mass loss on a balance, colour change (colorimeter), or time for a precipitate to hide a cross. On a graph, the rate at a moment is the <b>gradient of the tangent</b>.</p>
 `,
   quiz: [
-    { q: "Why does increasing temperature greatly increase rate?", o: ["A much greater proportion of molecules have energy ≥ Ea", "Ea decreases", "More molecules are made", "Collisions become gentler"], a: 0, e: "" },
-    { q: "On a Maxwell–Boltzmann curve, higher temperature makes the peak…", o: ["Lower and further right", "Higher and further left", "Higher and further right", "Unchanged"], a: 0, e: "" },
-    { q: "How does a catalyst speed up a reaction?", o: ["Provides an alternative route with lower Ea", "Raises the temperature", "Increases collision energy", "Shifts the equilibrium"], a: 0, e: "" },
-    { q: "Why doesn't the M–B curve touch the x-axis at high energy?", o: ["There's no maximum energy a molecule can have", "All molecules have high energy", "It's a mistake", "Ea is infinite"], a: 0, e: "" },
-    { q: "Iron in the Haber process is a…", o: ["Heterogeneous catalyst", "Homogeneous catalyst", "Reactant", "Inhibitor"], a: 0, e: "" },
-    { q: "How do you find the rate at a particular time from a concentration–time graph?", o: ["Gradient of the tangent at that time", "Area under the curve", "y-intercept", "Final value ÷ time"], a: 0, e: "" },
-    { q: "What does the area under an M–B curve represent?", o: ["Total number of molecules", "Activation energy", "Rate", "Enthalpy change"], a: 0, e: "" },
-    { q: "A catalyst changes the M–B distribution by…", o: ["Not changing the curve, but moving Ea to the left", "Moving the peak right", "Adding more molecules", "Flattening the curve"], a: 0, e: "" }
+    { q: "Why does increasing temperature greatly increase rate?", o: ["A much greater proportion of molecules have energy ≥ Ea", "Ea decreases", "More molecules are made", "Collisions become gentler"], a: 0, e: R`Molecules collide more often and a much bigger fraction have enough energy.` },
+    { q: "On a Maxwell–Boltzmann curve, higher temperature makes the peak…", o: ["Lower and further right", "Higher and further left", "Higher and further right", "Unchanged"], a: 0, e: R`The area stays the same: the curve flattens and the peak moves to higher energy.` },
+    { q: "How does a catalyst speed up a reaction?", o: ["Provides an alternative route with lower Ea", "Raises the temperature", "Increases collision energy", "Shifts the equilibrium"], a: 0, e: R`More molecules then have energy above the lower activation energy.` },
+    { q: "Why doesn't the M–B curve touch the x-axis at high energy?", o: ["There's no maximum energy a molecule can have", "All molecules have high energy", "It's a mistake", "Ea is infinite"], a: 0, e: R`The curve approaches the axis but never reaches it.` },
+    { q: "Iron in the Haber process is a…", o: ["Heterogeneous catalyst", "Homogeneous catalyst", "Reactant", "Inhibitor"], a: 0, e: R`Heterogeneous means in a different phase from the reactants (solid iron, gaseous reactants).` },
+    { q: "How do you find the rate at a particular time from a concentration–time graph?", o: ["Gradient of the tangent at that time", "Area under the curve", "y-intercept", "Final value ÷ time"], a: 0, e: R`The gradient of the tangent gives the instantaneous rate.` },
+    { q: "What does the area under an M–B curve represent?", o: ["Total number of molecules", "Activation energy", "Rate", "Enthalpy change"], a: 0, e: R`Changing temperature doesn't change the area, since the number of molecules is fixed.` },
+    { q: "A catalyst changes the M–B distribution by…", o: ["Not changing the curve, but moving Ea to the left", "Moving the peak right", "Adding more molecules", "Flattening the curve"], a: 0, e: R`The energy distribution is unchanged; only the activation energy is lowered.` }
   ],
   flashcards: [
     ["Collision theory", "Collide with E ≥ Ea in the correct orientation"],
@@ -151,7 +151,7 @@ S2Data.add({
 S2Data.add({
   id: "10a", group: 10, y1: true, title: "Equilibrium I",
   summary: "Dynamic equilibrium, writing Kc expressions, Le Chatelier's principle and industrial compromises.",
-  notes: `
+  notes: R`
 <h3>Dynamic equilibrium</h3>
 <p>In a <b>closed system</b>, a reversible reaction reaches equilibrium when the <b>forward and backward rates are equal</b> and the <b>concentrations stay constant</b> (not necessarily equal).</p>
 <h3>The equilibrium constant K<sub>c</sub></h3>
@@ -160,7 +160,7 @@ S2Data.add({
 <ul>
 <li>Square brackets mean concentration in mol dm<sup>−3</sup> at equilibrium.</li>
 <li><b>Homogeneous</b> equilibria: everything in the same phase. <b>Heterogeneous</b>: different phases. Leave <b>solids</b> (and liquids in excess, like water as solvent) <b>out</b> of K<sub>c</sub>.</li>
-<li>Work out units by cancelling, e.g. N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>: K<sub>c</sub> = [NH<sub>3</sub>]<sup>2</sup>/([N<sub>2</sub>][H<sub>2</sub>]<sup>3</sup>), units mol<sup>−2</sup> dm<sup>6</sup>.</li>
+<li>Work out units by cancelling, e.g. N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>: \(K_c = \dfrac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}\), units \(\text{mol}^{-2}\,\text{dm}^6\).</li>
 <li>A large K<sub>c</sub> means the equilibrium lies to the right (mostly products).</li>
 </ul>
 <h3>Le Chatelier's principle</h3>
@@ -178,15 +178,15 @@ S2Data.add({
 <p>The same thinking applies to making ethanol by hydration of ethene and methanol from CO and H<sub>2</sub>.</p>
 `,
   quiz: [
-    { q: "At dynamic equilibrium…", o: ["Forward and backward rates are equal; concentrations are constant", "Concentrations are equal", "The reaction has stopped", "Only products are present"], a: 0, e: "" },
-    { q: "Kc for H₂ + I₂ ⇌ 2HI?", o: ["[HI]² / ([H₂][I₂])", "[H₂][I₂] / [HI]²", "2[HI] / ([H₂][I₂])", "[HI] / ([H₂][I₂])"], a: 0, e: "" },
-    { q: "Which changes the value of Kc?", o: ["Temperature", "Pressure", "Concentration", "Catalyst"], a: 0, e: "" },
-    { q: "Forward reaction exothermic; temperature raised. Kc…", o: ["Decreases", "Increases", "Stays the same", "Becomes zero"], a: 0, e: "" },
+    { q: "At dynamic equilibrium…", o: ["Forward and backward rates are equal; concentrations are constant", "Concentrations are equal", "The reaction has stopped", "Only products are present"], a: 0, e: R`Both reactions continue, but there's no overall change in concentration.` },
+    { q: "Kc for H₂ + I₂ ⇌ 2HI?", o: ["[HI]² / ([H₂][I₂])", "[H₂][I₂] / [HI]²", "2[HI] / ([H₂][I₂])", "[HI] / ([H₂][I₂])"], a: 0, e: R`\(K_c = \dfrac{[\text{HI}]^2}{[\text{H}_2][\text{I}_2]}\): products over reactants, raised to their coefficients.` },
+    { q: "Which changes the value of Kc?", o: ["Temperature", "Pressure", "Concentration", "Catalyst"], a: 0, e: R`Concentration, pressure and catalysts don't change K.` },
+    { q: "Forward reaction exothermic; temperature raised. Kc…", o: ["Decreases", "Increases", "Stays the same", "Becomes zero"], a: 0, e: R`The equilibrium shifts in the endothermic (backward) direction, so K falls.` },
     { q: "Increasing pressure for 2SO₂ + O₂ ⇌ 2SO₃ shifts equilibrium…", o: ["Right", "Left", "No change", "Depends on the catalyst"], a: 0, e: "3 gas moles → 2." },
-    { q: "Units of Kc for N₂ + 3H₂ ⇌ 2NH₃?", o: ["mol⁻² dm⁶", "mol² dm⁻⁶", "No units", "mol dm⁻³"], a: 0, e: "" },
-    { q: "Effect of a catalyst on equilibrium?", o: ["No shift; equilibrium is reached faster", "Shifts right", "Shifts left", "Increases Kc"], a: 0, e: "" },
+    { q: "Units of Kc for N₂ + 3H₂ ⇌ 2NH₃?", o: ["mol⁻² dm⁶", "mol² dm⁻⁶", "No units", "mol dm⁻³"], a: 0, e: R`\(\dfrac{\text{mol}^2\,\text{dm}^{-6}}{\text{mol}\,\text{dm}^{-3} \times \text{mol}^3\,\text{dm}^{-9}} = \text{mol}^{-2}\,\text{dm}^6\).` },
+    { q: "Effect of a catalyst on equilibrium?", o: ["No shift; equilibrium is reached faster", "Shifts right", "Shifts left", "Increases Kc"], a: 0, e: R`A catalyst speeds up the forward and backward reactions equally.` },
     { q: "In CaCO₃(s) ⇌ CaO(s) + CO₂(g), Kc = ?", o: ["[CO₂]", "[CaO][CO₂]/[CaCO₃]", "[CaCO₃]/[CO₂]", "1"], a: 0, e: "Solids are left out." },
-    { q: "Why is 450 °C used in the Haber process?", o: ["Compromise between acceptable rate and yield", "Highest yield", "Iron melts lower", "Cheapest possible temperature"], a: 0, e: "" }
+    { q: "Why is 450 °C used in the Haber process?", o: ["Compromise between acceptable rate and yield", "Highest yield", "Iron melts lower", "Cheapest possible temperature"], a: 0, e: R`A lower temperature gives a higher yield but is too slow.` }
   ],
   flashcards: [
     ["Dynamic equilibrium", "Closed system; rates equal; concentrations constant"],

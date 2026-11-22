@@ -3,7 +3,7 @@
 CHEM.add({
   id: "1a", group: 1, title: "States of matter",
   summary: "Solids, liquids and gases, changes of state, diffusion and solubility.",
-  notes: `
+  notes: R`
 <h3>The three states of matter</h3>
 <table>
 <tr><th></th><th>Solid</th><th>Liquid</th><th>Gas</th></tr>
@@ -63,18 +63,18 @@ CHEM.add({
     { q: "Which change of state takes in energy?", o: ["Melting", "Freezing", "Condensing", "Solidifying"], a: 0, e: "Melting needs energy to overcome the forces between particles." },
     { q: "A white ring forms in a tube with NH<sub>3</sub> at one end and HCl at the other. Where is it?", o: ["Nearer the HCl end", "Nearer the NH<sub>3</sub> end", "Exactly in the middle", "At both ends"], a: 0, e: "NH<sub>3</sub> is lighter, so it diffuses faster and travels further." },
     { q: "What is the name for solid → gas directly?", o: ["Sublimation", "Evaporation", "Condensation", "Deposition"], a: 0, e: "Dry ice (solid CO<sub>2</sub>) sublimes." },
-    { q: "Which describes particles in a liquid?", o: ["Close together, random arrangement, move around each other", "Far apart, random, move quickly", "Regular arrangement, vibrate only", "Far apart, regular arrangement"], a: 0, e: "" },
-    { q: "Solubility is usually measured in…", o: ["g per 100 g of water", "mol per dm<sup>3</sup> of gas", "g per cm<sup>3</sup>", "°C per g"], a: 0, e: "" },
-    { q: "Solubility of X: 60 g/100 g at 60 °C and 20 g/100 g at 20 °C. A saturated solution in 100 g of water is cooled from 60 °C to 20 °C. What mass of crystals forms?", o: ["40 g", "80 g", "20 g", "60 g"], a: 0, e: "60 − 20 = 40 g." },
-    { q: "Why does the temperature stay constant while water boils?", o: ["Energy is used to overcome forces between particles", "The particles stop moving", "No energy is being supplied", "The particles lose kinetic energy"], a: 0, e: "" },
-    { q: "Potassium manganate(VII) still colours water after many dilutions. What does this show?", o: ["There are many very small particles", "The particles are large", "It reacts with water", "Particles don't move"], a: 0, e: "" }
+    { q: "Which describes particles in a liquid?", o: ["Close together, random arrangement, move around each other", "Far apart, random, move quickly", "Regular arrangement, vibrate only", "Far apart, regular arrangement"], a: 0, e: R`Liquid particles touch but aren't fixed, so they can slide past each other.` },
+    { q: "Solubility is usually measured in…", o: ["g per 100 g of water", "mol per dm<sup>3</sup> of gas", "g per cm<sup>3</sup>", "°C per g"], a: 0, e: R`Solubility is the mass that dissolves in 100 g of water at a given temperature.` },
+    { q: "Solubility of X: 60 g/100 g at 60 °C and 20 g/100 g at 20 °C. A saturated solution in 100 g of water is cooled from 60 °C to 20 °C. What mass of crystals forms?", o: ["40 g", "80 g", "20 g", "60 g"], a: 0, e: R`\(60 - 20 = 40\ \text{g}\).` },
+    { q: "Why does the temperature stay constant while water boils?", o: ["Energy is used to overcome forces between particles", "The particles stop moving", "No energy is being supplied", "The particles lose kinetic energy"], a: 0, e: R`The energy breaks the forces between particles instead of raising the temperature.` },
+    { q: "Potassium manganate(VII) still colours water after many dilutions. What does this show?", o: ["There are many very small particles", "The particles are large", "It reacts with water", "Particles don't move"], a: 0, e: R`Even very dilute solutions still contain huge numbers of tiny particles.` }
   ]
 });
 
 CHEM.add({
   id: "1b", group: 1, title: "Elements, compounds and mixtures",
   summary: "Pure substances, separation techniques and paper chromatography.",
-  notes: `
+  notes: R`
 <h3>Definitions</h3>
 <ul>
 <li><b>Element</b>: a substance made of only one type of atom. It can't be broken down chemically.</li>
@@ -111,7 +111,7 @@ CHEM.add({
 <li>A <b>pure</b> substance gives <b>one</b> spot. A mixture gives several.</li>
 <li>Spots that travel the same distance (same R<sub>f</sub> in the same solvent) are likely to be the same substance.</li>
 </ul>
-<div class="eq">R<sub>f</sub> = distance moved by substance ÷ distance moved by solvent</div>
+<div class="eq">\(R_{f} = \dfrac{\text{distance moved by substance}}{\text{distance moved by solvent}}\)</div>
 <p>R<sub>f</sub> is always between 0 and 1. A substance that stays on the start line may be insoluble in that solvent.</p>
 `,
   flashcards: [
@@ -128,20 +128,20 @@ CHEM.add({
   ],
   quiz: [
     { q: "Which technique separates ethanol from water?", o: ["Fractional distillation", "Filtration", "Crystallisation", "Chromatography"], a: 0, e: "They are miscible liquids with different boiling points." },
-    { q: "A spot moves 3.0 cm and the solvent front moves 7.5 cm. What is the R<sub>f</sub>?", o: ["0.40", "2.5", "0.25", "4.5"], a: 0, e: "3.0 ÷ 7.5 = 0.40" },
-    { q: "How does an impure substance behave when melted?", o: ["It melts over a range of temperatures", "It has a sharp melting point", "It doesn't melt", "It melts at exactly 100 °C"], a: 0, e: "" },
+    { q: "A spot moves 3.0 cm and the solvent front moves 7.5 cm. What is the R<sub>f</sub>?", o: ["0.40", "2.5", "0.25", "4.5"], a: 0, e: R`\(\dfrac{3.0}{7.5} = 0.40\)` },
+    { q: "How does an impure substance behave when melted?", o: ["It melts over a range of temperatures", "It has a sharp melting point", "It doesn't melt", "It melts at exactly 100 °C"], a: 0, e: R`Pure substances melt at one sharp temperature; impurities give a range.` },
     { q: "Which of these is a compound?", o: ["Water", "Oxygen", "Air", "Sea water"], a: 0, e: "Air and sea water are mixtures. Oxygen is an element." },
-    { q: "Why is the start line drawn in pencil?", o: ["Pencil doesn't dissolve in the solvent", "Ink is more expensive", "Pencil moves with the solvent", "It makes the R<sub>f</sub> bigger"], a: 0, e: "" },
-    { q: "A food dye gives three spots on a chromatogram. What does this show?", o: ["It is a mixture of at least three substances", "It is pure", "It is insoluble", "It is an element"], a: 0, e: "" },
+    { q: "Why is the start line drawn in pencil?", o: ["Pencil doesn't dissolve in the solvent", "Ink is more expensive", "Pencil moves with the solvent", "It makes the R<sub>f</sub> bigger"], a: 0, e: R`Ink would dissolve and run up the paper with the samples.` },
+    { q: "A food dye gives three spots on a chromatogram. What does this show?", o: ["It is a mixture of at least three substances", "It is pure", "It is insoluble", "It is an element"], a: 0, e: R`Each spot is a different substance, so there are at least three.` },
     { q: "Which method separates sand from salt solution?", o: ["Filtration", "Distillation", "Chromatography", "Crystallisation"], a: 0, e: "Sand is insoluble, so it stays in the filter paper as residue." },
-    { q: "In simple distillation, what does the condenser do?", o: ["Cools the vapour back into a liquid", "Heats the solution", "Filters out solids", "Separates the colours"], a: 0, e: "" }
+    { q: "In simple distillation, what does the condenser do?", o: ["Cools the vapour back into a liquid", "Heats the solution", "Filters out solids", "Separates the colours"], a: 0, e: R`Cold water around the condenser turns the vapour back into liquid.` }
   ]
 });
 
 CHEM.add({
   id: "1c", group: 1, title: "Atomic structure",
   summary: "Protons, neutrons, electrons, isotopes and relative atomic mass.",
-  notes: `
+  notes: R`
 <h3>Atoms and molecules</h3>
 <ul>
 <li><b>Atom</b>: the smallest particle of an element that can take part in a chemical reaction.</li>
@@ -169,7 +169,7 @@ CHEM.add({
 <p><b>Isotopes</b> are atoms of the same element with the same number of protons but different numbers of neutrons. They have the same chemical properties because they have the same electronic configuration.</p>
 <h3>Relative atomic mass (A<sub>r</sub>)</h3>
 <p>A<sub>r</sub> is the average mass of an atom of an element, taking into account the abundance of its isotopes, relative to 1/12 of the mass of a carbon-12 atom.</p>
-<div class="eq">A<sub>r</sub> = Σ(isotope mass × % abundance) ÷ 100</div>
+<div class="eq">\(A_r = \dfrac{\sum(\text{isotope mass} \times \%\ \text{abundance})}{100}\)</div>
 <div class="box box-key"><span class="box-title">Worked example</span>Chlorine is 75% <sup>35</sup>Cl and 25% <sup>37</sup>Cl.<br>A<sub>r</sub> = (35 × 75 + 37 × 25) ÷ 100 = (2625 + 925) ÷ 100 = <b>35.5</b></div>
 `,
   flashcards: [
@@ -184,21 +184,21 @@ CHEM.add({
     ["Molecule", "Two or more atoms joined by covalent bonds"]
   ],
   quiz: [
-    { q: "How many neutrons are in <sup>27</sup><sub>13</sub>Al?", o: ["14", "13", "27", "40"], a: 0, e: "27 − 13 = 14" },
-    { q: "What do isotopes of an element have different numbers of?", o: ["Neutrons", "Protons", "Electrons", "Shells"], a: 0, e: "" },
-    { q: "Copper is 69% <sup>63</sup>Cu and 31% <sup>65</sup>Cu. What is its A<sub>r</sub> (1 d.p.)?", o: ["63.6", "64.0", "63.0", "64.4"], a: 0, e: "(63×69 + 65×31)/100 = 63.62" },
-    { q: "What is the relative charge of an electron?", o: ["−1", "+1", "0", "−2"], a: 0, e: "" },
-    { q: "Where is most of the mass of an atom?", o: ["In the nucleus", "In the electron shells", "Spread evenly", "In the empty space"], a: 0, e: "" },
-    { q: "The atomic number is the number of…", o: ["Protons", "Neutrons", "Protons + neutrons", "Electron shells"], a: 0, e: "" },
-    { q: "An atom has 17 protons and 18 neutrons. What is its mass number?", o: ["35", "17", "18", "1"], a: 0, e: "" },
-    { q: "Why are atoms electrically neutral?", o: ["They have equal numbers of protons and electrons", "Neutrons cancel the charge", "Electrons have no charge", "They have equal protons and neutrons"], a: 0, e: "" }
+    { q: "How many neutrons are in <sup>27</sup><sub>13</sub>Al?", o: ["14", "13", "27", "40"], a: 0, e: R`\(27 - 13 = 14\)` },
+    { q: "What do isotopes of an element have different numbers of?", o: ["Neutrons", "Protons", "Electrons", "Shells"], a: 0, e: R`Same element means same number of protons; isotopes differ in neutrons.` },
+    { q: "Copper is 69% <sup>63</sup>Cu and 31% <sup>65</sup>Cu. What is its A<sub>r</sub> (1 d.p.)?", o: ["63.6", "64.0", "63.0", "64.4"], a: 0, e: R`\((63\times69 + 65\times31)/100 = 63.62\)` },
+    { q: "What is the relative charge of an electron?", o: ["−1", "+1", "0", "−2"], a: 0, e: R`Proton +1, neutron 0, electron −1.` },
+    { q: "Where is most of the mass of an atom?", o: ["In the nucleus", "In the electron shells", "Spread evenly", "In the empty space"], a: 0, e: R`Protons and neutrons (mass 1 each) are in the nucleus; electrons have almost no mass.` },
+    { q: "The atomic number is the number of…", o: ["Protons", "Neutrons", "Protons + neutrons", "Electron shells"], a: 0, e: R`The atomic number defines the element.` },
+    { q: "An atom has 17 protons and 18 neutrons. What is its mass number?", o: ["35", "17", "18", "1"], a: 0, e: R`Mass number = protons + neutrons \(= 17 + 18 = 35\).` },
+    { q: "Why are atoms electrically neutral?", o: ["They have equal numbers of protons and electrons", "Neutrons cancel the charge", "Electrons have no charge", "They have equal protons and neutrons"], a: 0, e: R`The positive and negative charges cancel.` }
   ]
 });
 
 CHEM.add({
   id: "1d", group: 1, title: "The Periodic Table",
   summary: "Groups, periods, electronic configuration, metals and non-metals.",
-  notes: `
+  notes: R`
 <h3>Layout</h3>
 <ul>
 <li>Elements are arranged in order of <b>atomic number</b>.</li>
@@ -239,20 +239,20 @@ CHEM.add({
     ["Electrical test for metal vs non-metal", "Metals conduct electricity; most non-metals don't (graphite is an exception)"]
   ],
   quiz: [
-    { q: "What is the electronic configuration of chlorine (Z = 17)?", o: ["2.8.7", "2.8.8", "2.7.8", "2.8.6"], a: 0, e: "" },
+    { q: "What is the electronic configuration of chlorine (Z = 17)?", o: ["2.8.7", "2.8.8", "2.7.8", "2.8.6"], a: 0, e: R`Fill shells of 2, 8, 8: \(17 = 2 + 8 + 7.\)` },
     { q: "An element is 2.8.3. Which group and period is it in?", o: ["Group 3, period 3", "Group 3, period 2", "Group 2, period 3", "Group 8, period 3"], a: 0, e: "Aluminium: 3 shells, 3 outer electrons." },
     { q: "Sulfur dioxide dissolves in water to give an acidic solution. What does this suggest about sulfur?", o: ["It is a non-metal", "It is a metal", "It is a noble gas", "It is an alkali metal"], a: 0, e: "Non-metal oxides are often acidic." },
-    { q: "Why do elements in the same group react similarly?", o: ["They have the same number of outer electrons", "They have the same mass number", "They have the same number of shells", "They have the same number of neutrons"], a: 0, e: "" },
+    { q: "Why do elements in the same group react similarly?", o: ["They have the same number of outer electrons", "They have the same mass number", "They have the same number of shells", "They have the same number of neutrons"], a: 0, e: R`Reactions involve the outer electrons, so the same number means similar reactions.` },
     { q: "Which property best classifies an element as a metal?", o: ["It conducts electricity", "It is shiny", "It is a solid", "It has a high density"], a: 0, e: "The spec focuses on conductivity and the character of the oxide." },
-    { q: "Elements in the Periodic Table are arranged in order of increasing…", o: ["Atomic number", "Mass number", "Relative atomic mass", "Reactivity"], a: 0, e: "" },
-    { q: "Why is argon unreactive?", o: ["It has a full outer shell", "It has no electrons", "It is a metal", "It has 8 shells"], a: 0, e: "" }
+    { q: "Elements in the Periodic Table are arranged in order of increasing…", o: ["Atomic number", "Mass number", "Relative atomic mass", "Reactivity"], a: 0, e: R`Mendeleev used mass, but the modern table uses atomic (proton) number.` },
+    { q: "Why is argon unreactive?", o: ["It has a full outer shell", "It has no electrons", "It is a metal", "It has 8 shells"], a: 0, e: R`A full outer shell means it doesn't need to gain, lose or share electrons.` }
   ]
 });
 
 CHEM.add({
   id: "1e", group: 1, title: "Chemical formulae, equations and calculations",
   summary: "Balancing equations, moles, reacting masses, empirical formulae, yield and concentrations.",
-  notes: `
+  notes: R`
 <h3>Equations</h3>
 <ul>
 <li>Balance equations by changing the numbers <b>in front of</b> formulae, never the formulae themselves.</li>
@@ -268,7 +268,7 @@ CHEM.add({
 <li>One <b>mole</b> of a substance has a mass equal to its M<sub>r</sub> in grams.</li>
 <li>One mole contains 6 × 10<sup>23</sup> particles (the Avogadro constant).</li>
 </ul>
-<div class="eq">moles = mass (g) ÷ M<sub>r</sub></div>
+<div class="eq">\(\text{moles} = \dfrac{\text{mass (g)}}{M_{r}}\)</div>
 
 <h3>Reacting masses</h3>
 <ol><li>Find the moles of the substance you know.</li><li>Use the equation's ratio to find the moles of the substance you want.</li><li>Convert to mass.</li></ol>
@@ -286,7 +286,7 @@ moles CaCO<sub>3</sub> = 50 ÷ 100 = 0.5. Ratio 1:1, so 0.5 mol CaO. Mass = 0.5 
 Weigh a crucible and lid with magnesium ribbon inside. Heat strongly, lifting the lid occasionally to let oxygen in while keeping the solid in. Heat to constant mass. Mass of oxygen = final mass − initial mass. Then calculate the empirical formula.</div>
 
 <h3>Percentage yield</h3>
-<div class="eq">% yield = actual yield ÷ theoretical yield × 100</div>
+<div class="eq">\(\text{\% yield} = \dfrac{\text{actual yield}}{\text{theoretical yield}} \times 100\)</div>
 <p>Yields are less than 100% because the reaction may not finish, product is lost when separating it, or side reactions happen.</p>
 
 <h3>Water of crystallisation</h3>
@@ -296,11 +296,11 @@ Weigh a crucible and lid with magnesium ribbon inside. Heat strongly, lifting th
 <ul>
 <li>One mole of any gas takes up <b>24 dm<sup>3</sup></b> (24 000 cm<sup>3</sup>) at room temperature and pressure (rtp).</li>
 </ul>
-<div class="eq">moles of gas = volume (dm<sup>3</sup>) ÷ 24</div>
+<div class="eq">\(\text{moles of gas} = \dfrac{\text{volume (dm}^3)}{24}\)</div>
 <ul>
 <li>Concentration can be in <b>mol/dm<sup>3</sup></b> or <b>g/dm<sup>3</sup></b>.</li>
 </ul>
-<div class="eq">moles = concentration (mol/dm<sup>3</sup>) × volume (dm<sup>3</sup>)</div>
+<div class="eq">\(\text{moles} = \text{concentration (mol/dm}^3) \times \text{volume (dm}^3)\)</div>
 <p>Remember: cm<sup>3</sup> ÷ 1000 = dm<sup>3</sup>. To convert mol/dm<sup>3</sup> to g/dm<sup>3</sup>, multiply by M<sub>r</sub>.</p></div>
 `,
   flashcards: [
@@ -308,32 +308,32 @@ Weigh a crucible and lid with magnesium ribbon inside. Heat strongly, lifting th
     ["Empirical formula", "Simplest whole-number ratio of atoms of each element in a compound"],
     ["Molecular formula", "Actual number of atoms of each element in one molecule"],
     ["Percentage yield", "actual yield ÷ theoretical yield × 100"],
-    ["Molar volume of a gas at rtp", "24 dm<sup>3</sup> (24 000 cm<sup>3</sup>)"],
+    ["Molar volume of a gas at rtp", R`24 dm<sup>3</sup> (24 000 cm<sup>3</sup>)`],
     ["Moles in a solution", "moles = concentration (mol/dm<sup>3</sup>) × volume (dm<sup>3</sup>)"],
     ["Convert cm<sup>3</sup> to dm<sup>3</sup>", "Divide by 1000"],
-    ["Avogadro constant", "6 × 10<sup>23</sup> particles per mole"],
+    ["Avogadro constant", R`6 × 10<sup>23</sup> particles per mole`],
     ["State symbol (aq)", "Aqueous: dissolved in water"],
     ["Ionic equation for neutralisation", "H<sup>+</sup>(aq) + OH<sup>−</sup>(aq) → H<sub>2</sub>O(l)"],
     ["Why might % yield be below 100%?", "Incomplete reaction, product lost during separation, side reactions"]
   ],
   quiz: [
-    { q: "What is the M<sub>r</sub> of H<sub>2</sub>SO<sub>4</sub>? (H=1, S=32, O=16)", o: ["98", "96", "50", "49"], a: 0, e: "2 + 32 + 64 = 98" },
-    { q: "How many moles are in 8.8 g of CO<sub>2</sub>? (M<sub>r</sub> = 44)", o: ["0.2", "0.5", "2", "5"], a: 0, e: "8.8 ÷ 44 = 0.2" },
+    { q: "What is the M<sub>r</sub> of H<sub>2</sub>SO<sub>4</sub>? (H=1, S=32, O=16)", o: ["98", "96", "50", "49"], a: 0, e: R`\(2 + 32 + 64 = 98\)` },
+    { q: "How many moles are in 8.8 g of CO<sub>2</sub>? (M<sub>r</sub> = 44)", o: ["0.2", "0.5", "2", "5"], a: 0, e: R`\(\dfrac{8.8}{44} = 0.2\)` },
     { q: "A compound contains 2.4 g C and 0.6 g H. What is its empirical formula?", o: ["CH<sub>3</sub>", "CH<sub>2</sub>", "CH<sub>4</sub>", "C<sub>2</sub>H<sub>6</sub>"], a: 0, e: "C: 2.4/12 = 0.2; H: 0.6/1 = 0.6; ratio 1:3" },
-    { q: "Empirical formula CH<sub>2</sub>, M<sub>r</sub> = 56. What is the molecular formula?", o: ["C<sub>4</sub>H<sub>8</sub>", "C<sub>2</sub>H<sub>4</sub>", "C<sub>3</sub>H<sub>6</sub>", "C<sub>5</sub>H<sub>10</sub>"], a: 0, e: "56 ÷ 14 = 4" },
-    { q: "What volume does 0.25 mol of a gas occupy at rtp?", o: ["6 dm<sup>3</sup>", "24 dm<sup>3</sup>", "96 dm<sup>3</sup>", "0.25 dm<sup>3</sup>"], a: 0, e: "0.25 × 24 = 6 dm<sup>3</sup>" },
-    { q: "How many moles of NaOH are in 25.0 cm<sup>3</sup> of 0.200 mol/dm<sup>3</sup> solution?", o: ["0.00500", "5.00", "0.0500", "0.200"], a: 0, e: "0.200 × 0.0250 = 0.00500 mol" },
-    { q: "Theoretical yield 20 g, actual yield 15 g. What is the percentage yield?", o: ["75%", "133%", "25%", "15%"], a: 0, e: "" },
-    { q: "Which equation is balanced?", o: ["2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O", "H<sub>2</sub> + O<sub>2</sub> → H<sub>2</sub>O", "H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O", "2H<sub>2</sub> + 2O<sub>2</sub> → 2H<sub>2</sub>O"], a: 0, e: "" },
+    { q: "Empirical formula CH<sub>2</sub>, M<sub>r</sub> = 56. What is the molecular formula?", o: ["C<sub>4</sub>H<sub>8</sub>", "C<sub>2</sub>H<sub>4</sub>", "C<sub>3</sub>H<sub>6</sub>", "C<sub>5</sub>H<sub>10</sub>"], a: 0, e: R`\(\dfrac{56}{14} = 4\)` },
+    { q: "What volume does 0.25 mol of a gas occupy at rtp?", o: [R`6 dm<sup>3</sup>`, R`24 dm<sup>3</sup>`, R`96 dm<sup>3</sup>`, R`0.25 dm<sup>3</sup>`], a: 0, e: R`\(0.25 \times 24 = 6\ \text{dm}^{3}\)` },
+    { q: R`How many moles of NaOH are in 25.0 cm<sup>3</sup> of 0.200 mol/dm<sup>3</sup> solution?`, o: ["0.00500", "5.00", "0.0500", "0.200"], a: 0, e: R`\(0.200 \times 0.0250 = 0.00500\ \text{mol}\)` },
+    { q: "Theoretical yield 20 g, actual yield 15 g. What is the percentage yield?", o: ["75%", "133%", "25%", "15%"], a: 0, e: R`\(\dfrac{15}{20} \times 100 = 75\%\).` },
+    { q: "Which equation is balanced?", o: ["2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O", "H<sub>2</sub> + O<sub>2</sub> → H<sub>2</sub>O", "H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O", "2H<sub>2</sub> + 2O<sub>2</sub> → 2H<sub>2</sub>O"], a: 0, e: R`Count atoms each side: 4 H and 2 O on both.` },
     { q: "What mass of MgO forms from 4.8 g Mg? 2Mg + O<sub>2</sub> → 2MgO (Mg=24, O=16)", o: ["8.0 g", "4.0 g", "16 g", "9.6 g"], a: 0, e: "0.2 mol Mg → 0.2 mol MgO × 40 = 8.0 g" },
-    { q: "Why lift the crucible lid occasionally when burning magnesium?", o: ["To let oxygen in while keeping the MgO inside", "To let the magnesium out", "To cool it down", "To measure the temperature"], a: 0, e: "" }
+    { q: "Why lift the crucible lid occasionally when burning magnesium?", o: ["To let oxygen in while keeping the MgO inside", "To let the magnesium out", "To cool it down", "To measure the temperature"], a: 0, e: R`Magnesium needs oxygen to burn, but opening fully would let MgO smoke escape and lose mass.` }
   ]
 });
 
 CHEM.add({
   id: "1f", group: 1, title: "Ionic bonding",
   summary: "Forming ions, ionic formulae, dot-and-cross diagrams and giant ionic lattices.",
-  notes: `
+  notes: R`
 <h3>Forming ions</h3>
 <ul>
 <li>An <b>ion</b> is a charged particle formed when an atom loses or gains electrons.</li>
@@ -379,19 +379,19 @@ CHEM.add({
   quiz: [
     { q: "What is the formula of calcium nitrate?", o: ["Ca(NO<sub>3</sub>)<sub>2</sub>", "CaNO<sub>3</sub>", "Ca<sub>2</sub>NO<sub>3</sub>", "Ca(NO<sub>2</sub>)<sub>2</sub>"], a: 0, e: "Ca<sup>2+</sup> needs two NO<sub>3</sub><sup>−</sup>." },
     { q: "What charge does an ion of a Group 6 element have?", o: ["2−", "6+", "2+", "6−"], a: 0, e: "It gains 2 electrons." },
-    { q: "Why doesn't solid sodium chloride conduct electricity?", o: ["Its ions are fixed in the lattice", "It has no ions", "Its electrons are delocalised", "It is a covalent compound"], a: 0, e: "" },
-    { q: "What is the formula of iron(III) hydroxide?", o: ["Fe(OH)<sub>3</sub>", "FeOH<sub>3</sub>", "Fe<sub>3</sub>OH", "Fe(OH)<sub>2</sub>"], a: 0, e: "" },
-    { q: "What happens when magnesium reacts with oxygen to form MgO?", o: ["Each Mg atom loses 2 electrons to an O atom", "Mg and O share electrons", "O loses 2 electrons to Mg", "Each Mg atom loses 1 electron"], a: 0, e: "" },
-    { q: "What holds an ionic lattice together?", o: ["Electrostatic attraction between oppositely charged ions", "Shared pairs of electrons", "Delocalised electrons", "Weak intermolecular forces"], a: 0, e: "" },
-    { q: "What is the electronic configuration of a sodium ion?", o: ["2.8", "2.8.1", "2.8.8", "2.7"], a: 0, e: "" },
-    { q: "What is the formula of ammonium sulfate?", o: ["(NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub>", "NH<sub>4</sub>SO<sub>4</sub>", "NH<sub>4</sub>(SO<sub>4</sub>)<sub>2</sub>", "(NH<sub>3</sub>)<sub>2</sub>SO<sub>4</sub>"], a: 0, e: "" }
+    { q: "Why doesn't solid sodium chloride conduct electricity?", o: ["Its ions are fixed in the lattice", "It has no ions", "Its electrons are delocalised", "It is a covalent compound"], a: 0, e: R`Ions must be free to move to carry charge; in a solid they're fixed.` },
+    { q: "What is the formula of iron(III) hydroxide?", o: ["Fe(OH)<sub>3</sub>", "FeOH<sub>3</sub>", "Fe<sub>3</sub>OH", "Fe(OH)<sub>2</sub>"], a: 0, e: R`Fe<sup>3+</sup> needs three OH<sup>−</sup> ions to balance the charge.` },
+    { q: "What happens when magnesium reacts with oxygen to form MgO?", o: ["Each Mg atom loses 2 electrons to an O atom", "Mg and O share electrons", "O loses 2 electrons to Mg", "Each Mg atom loses 1 electron"], a: 0, e: R`Mg (2.8.2) loses 2 electrons to become Mg<sup>2+</sup>; O gains them to become O<sup>2−</sup>.` },
+    { q: "What holds an ionic lattice together?", o: ["Electrostatic attraction between oppositely charged ions", "Shared pairs of electrons", "Delocalised electrons", "Weak intermolecular forces"], a: 0, e: R`Strong forces act in all directions between the oppositely charged ions.` },
+    { q: "What is the electronic configuration of a sodium ion?", o: ["2.8", "2.8.1", "2.8.8", "2.7"], a: 0, e: R`Na (2.8.1) loses its outer electron to form Na<sup>+</sup>: 2.8.` },
+    { q: "What is the formula of ammonium sulfate?", o: ["(NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub>", "NH<sub>4</sub>SO<sub>4</sub>", "NH<sub>4</sub>(SO<sub>4</sub>)<sub>2</sub>", "(NH<sub>3</sub>)<sub>2</sub>SO<sub>4</sub>"], a: 0, e: R`Two NH<sub>4</sub><sup>+</sup> ions balance one SO<sub>4</sub><sup>2−</sup>.` }
   ]
 });
 
 CHEM.add({
   id: "1g", group: 1, title: "Covalent bonding",
   summary: "Shared electron pairs, simple molecules, giant covalent structures and fullerenes.",
-  notes: `
+  notes: R`
 <h3>Covalent bonds</h3>
 <p>A <b>covalent bond</b> is the strong electrostatic attraction between a <b>shared pair of electrons</b> and the nuclei of the bonded atoms. It forms between <b>non-metal</b> atoms.</p>
 <h4>Dot-and-cross molecules to know</h4>
@@ -441,21 +441,21 @@ CHEM.add({
     ["Lone pairs on O in H<sub>2</sub>O", "2"]
   ],
   quiz: [
-    { q: "How many shared pairs of electrons are in a CO<sub>2</sub> molecule?", o: ["4", "2", "3", "6"], a: 0, e: "Two C=O double bonds = 4 shared pairs." },
-    { q: "Why does diamond have a very high melting point?", o: ["Many strong covalent bonds must be broken", "Strong intermolecular forces", "Strong ionic bonds", "Delocalised electrons"], a: 0, e: "" },
-    { q: "Why does graphite conduct electricity?", o: ["Delocalised electrons move along the layers", "It contains ions", "Layers slide over each other", "It is a metal"], a: 0, e: "" },
-    { q: "Which molecule contains a triple bond?", o: ["N<sub>2</sub>", "O<sub>2</sub>", "Cl<sub>2</sub>", "CH<sub>4</sub>"], a: 0, e: "" },
+    { q: "How many shared pairs of electrons are in a CO<sub>2</sub> molecule?", o: ["4", "2", "3", "6"], a: 0, e: R`\(Two C = O\) double bonds = 4 shared pairs.` },
+    { q: "Why does diamond have a very high melting point?", o: ["Many strong covalent bonds must be broken", "Strong intermolecular forces", "Strong ionic bonds", "Delocalised electrons"], a: 0, e: R`Every atom is covalently bonded in a giant structure, so a lot of energy is needed.` },
+    { q: "Why does graphite conduct electricity?", o: ["Delocalised electrons move along the layers", "It contains ions", "Layers slide over each other", "It is a metal"], a: 0, e: R`Each carbon bonds to 3 others, leaving one delocalised electron per atom.` },
+    { q: "Which molecule contains a triple bond?", o: ["N<sub>2</sub>", "O<sub>2</sub>", "Cl<sub>2</sub>", "CH<sub>4</sub>"], a: 0, e: R`N≡N: each nitrogen shares three pairs of electrons.` },
     { q: "When water boils, what is overcome?", o: ["Intermolecular forces", "O–H covalent bonds", "Ionic bonds", "Metallic bonds"], a: 0, e: "The covalent bonds don't break." },
-    { q: "How many lone pairs does the N atom in NH<sub>3</sub> have?", o: ["1", "0", "2", "3"], a: 0, e: "" },
+    { q: "How many lone pairs does the N atom in NH<sub>3</sub> have?", o: ["1", "0", "2", "3"], a: 0, e: R`Nitrogen has 5 outer electrons: 3 in bonds with H, 2 as a lone pair.` },
     { q: "Which has the highest boiling point?", o: ["Br<sub>2</sub>", "F<sub>2</sub>", "Cl<sub>2</sub>", "H<sub>2</sub>"], a: 0, e: "It has the largest M<sub>r</sub>, so the strongest intermolecular forces." },
-    { q: "Why is C<sub>60</sub> a poor conductor?", o: ["Electrons can't move between molecules", "It has no electrons", "It contains ions", "It has a giant structure"], a: 0, e: "" }
+    { q: "Why is C<sub>60</sub> a poor conductor?", o: ["Electrons can't move between molecules", "It has no electrons", "It contains ions", "It has a giant structure"], a: 0, e: R`C60 is molecular, so electrons can't flow from one molecule to the next.` }
   ]
 });
 
 CHEM.add({
   id: "1h", group: 1, title: "Metallic bonding", paper2: true,
   summary: "Delocalised electrons and the properties of metals.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This whole subtopic is Paper 2 only</span>It can still come up in synoptic questions, so learn it.</div>
 <h3>The structure of metals</h3>
 <p>Metals form a giant lattice of <b>positive metal ions</b> surrounded by a "sea" of <b>delocalised electrons</b>.</p>
@@ -475,17 +475,17 @@ CHEM.add({
     ["Structure of a metal", "Giant lattice of positive ions in a sea of delocalised electrons"]
   ],
   quiz: [
-    { q: "Metallic bonding is the attraction between…", o: ["Positive ions and delocalised electrons", "Positive and negative ions", "Shared pairs and nuclei", "Neutral atoms"], a: 0, e: "" },
-    { q: "Why are metals malleable?", o: ["Layers of ions can slide over each other", "They have weak bonds", "They contain negative ions", "Their electrons are fixed"], a: 0, e: "" },
-    { q: "Which particles carry the charge when a metal conducts electricity?", o: ["Delocalised electrons", "Positive ions", "Protons", "Negative ions"], a: 0, e: "" },
-    { q: "Why do metals usually have high melting points?", o: ["Strong electrostatic attraction between ions and delocalised electrons", "Weak intermolecular forces", "They are simple molecules", "They contain covalent bonds"], a: 0, e: "" }
+    { q: "Metallic bonding is the attraction between…", o: ["Positive ions and delocalised electrons", "Positive and negative ions", "Shared pairs and nuclei", "Neutral atoms"], a: 0, e: R`The 'sea' of electrons holds the positive ions together.` },
+    { q: "Why are metals malleable?", o: ["Layers of ions can slide over each other", "They have weak bonds", "They contain negative ions", "Their electrons are fixed"], a: 0, e: R`The delocalised electrons keep holding the ions as the layers move.` },
+    { q: "Which particles carry the charge when a metal conducts electricity?", o: ["Delocalised electrons", "Positive ions", "Protons", "Negative ions"], a: 0, e: R`Delocalised electrons are free to move through the structure.` },
+    { q: "Why do metals usually have high melting points?", o: ["Strong electrostatic attraction between ions and delocalised electrons", "Weak intermolecular forces", "They are simple molecules", "They contain covalent bonds"], a: 0, e: R`Lots of energy is needed to overcome these strong attractions.` }
   ]
 });
 
 CHEM.add({
   id: "1i", group: 1, title: "Electrolysis", paper2: true,
   summary: "Electrolysis of molten and aqueous compounds, products and half-equations.",
-  notes: `
+  notes: R`
 <div class="box box-c"><span class="box-title">This subtopic is Paper 2 only</span></div>
 <h3>Key ideas</h3>
 <ul>
@@ -546,7 +546,7 @@ Use inert graphite electrodes and a d.c. supply. Collect the gases in test tubes
     { q: "Electrolysis of CuSO<sub>4</sub>(aq) with graphite electrodes: what forms at the cathode?", o: ["Copper", "Hydrogen", "Oxygen", "Sulfur"], a: 0, e: "Copper is less reactive than hydrogen." },
     { q: "Electrolysis of dilute H<sub>2</sub>SO<sub>4</sub>: what forms at the anode?", o: ["Oxygen", "Hydrogen", "Sulfur dioxide", "Sulfur"], a: 0, e: "There is no halide, so oxygen forms from OH<sup>−</sup>." },
     { q: "Which half-equation shows reduction?", o: ["Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu", "2Cl<sup>−</sup> → Cl<sub>2</sub> + 2e<sup>−</sup>", "4OH<sup>−</sup> → O<sub>2</sub> + 2H<sub>2</sub>O + 4e<sup>−</sup>", "Na → Na<sup>+</sup> + e<sup>−</sup>"], a: 0, e: "Gain of electrons is reduction." },
-    { q: "Why doesn't solid NaCl undergo electrolysis?", o: ["Its ions can't move", "It has no ions", "It is covalent", "Its electrons are fixed"], a: 0, e: "" },
+    { q: "Why doesn't solid NaCl undergo electrolysis?", o: ["Its ions can't move", "It has no ions", "It is covalent", "Its electrons are fixed"], a: 0, e: R`Electrolysis needs moving ions, so the compound must be molten or dissolved.` },
     { q: "Electrolysis of concentrated NaCl(aq): what forms at the cathode?", o: ["Hydrogen", "Sodium", "Chlorine", "Oxygen"], a: 0, e: "Sodium is more reactive than hydrogen." },
     { q: "Which test identifies chlorine?", o: ["Bleaches damp blue litmus paper", "Squeaky pop", "Relights a glowing splint", "Turns limewater milky"], a: 0, e: "Blue litmus turns red, then white." }
   ]

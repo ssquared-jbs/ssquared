@@ -3,10 +3,10 @@
 CHEM.add({
   id: "5a", group: 5, gcse: true, title: "Quantitative and analytical extras",
   summary: "Atom economy, limiting reactants, deducing equations from masses and flame photometry.",
-  notes: `
+  notes: R`
 <div class="box box-key"><span class="box-title">Why this is here</span>Edexcel GCSE (1CH0) includes these skills. IGCSE (4CH1) students can skip them, but they help with harder calculation questions.</div>
 <h3>Atom economy</h3>
-<div class="eq">atom economy = (M<sub>r</sub> of desired product ÷ total M<sub>r</sub> of all products) × 100</div>
+<div class="eq">\(\text{atom economy} = \dfrac{M_r \text{ of desired product}}{\text{total } M_r \text{ of all products}} \times 100\)</div>
 <p>Use the balanced-equation amounts. A high atom economy means less waste, which is better for sustainability and profit. Reactions with only one product have 100% atom economy.</p>
 <div class="box box-key"><span class="box-title">Worked example</span>CaCO<sub>3</sub> → CaO + CO<sub>2</sub>, where CaO is wanted. Atom economy = 56 ÷ (56 + 44) × 100 = <b>56%</b></div>
 <p>Choosing a reaction pathway means weighing atom economy, yield, rate, equilibrium position and how useful the by-products are.</p>
@@ -19,7 +19,7 @@ CHEM.add({
 <h3>Deducing an equation from masses</h3>
 <p>Convert each reacting mass to moles, then divide by the smallest to get the ratio. Those numbers are the balancing numbers.</p>
 <h3>Concentration in g/dm<sup>3</sup></h3>
-<div class="eq">concentration (g/dm<sup>3</sup>) = mass of solute (g) ÷ volume (dm<sup>3</sup>)</div>
+<div class="eq">\(\text{concentration (g/dm}^3) = \dfrac{\text{mass of solute (g)}}{\text{volume (dm}^3)}\)</div>
 <h3>Flame photometry (instrumental analysis)</h3>
 <ul>
 <li>A flame photometer measures the <b>wavelengths</b> and intensity of light emitted by metal ions in a flame.</li>
@@ -36,10 +36,10 @@ CHEM.add({
     ["Atom economy of a reaction with one product", "100%"]
   ],
   quiz: [
-    { q: "What is the atom economy for making H<sub>2</sub> in CH<sub>4</sub> + H<sub>2</sub>O → CO + 3H<sub>2</sub>? (CO = 28, H<sub>2</sub> = 2)", o: ["17.6%", "6.7%", "50%", "82.4%"], a: 0, e: "6 ÷ 34 × 100 = 17.6%" },
+    { q: "What is the atom economy for making H<sub>2</sub> in CH<sub>4</sub> + H<sub>2</sub>O → CO + 3H<sub>2</sub>? (CO = 28, H<sub>2</sub> = 2)", o: ["17.6%", "6.7%", "50%", "82.4%"], a: 0, e: R`\(\dfrac{6}{34} \times 100 = 17.6\%\)` },
     { q: "4 g of H<sub>2</sub> reacts with 64 g of O<sub>2</sub> (2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O). Which is limiting?", o: ["H<sub>2</sub>", "O<sub>2</sub>", "Neither", "Water"], a: 0, e: "2 mol H<sub>2</sub> ÷ 2 = 1; 2 mol O<sub>2</sub> ÷ 1 = 2, so H<sub>2</sub> runs out first." },
-    { q: "5 g of salt dissolved to make 250 cm<sup>3</sup> of solution. What is the concentration?", o: ["20 g/dm<sup>3</sup>", "1.25 g/dm<sup>3</sup>", "50 g/dm<sup>3</sup>", "0.02 g/dm<sup>3</sup>"], a: 0, e: "5 ÷ 0.25" },
-    { q: "Why use flame photometry instead of a flame test?", o: ["It can analyse mixtures and measure concentration", "It is cheaper", "It doesn't need a flame", "It only works for one ion"], a: 0, e: "" },
+    { q: R`5 g of salt dissolved to make 250 cm<sup>3</sup> of solution. What is the concentration?`, o: [R`20 g/dm<sup>3</sup>`, R`1.25 g/dm<sup>3</sup>`, R`50 g/dm<sup>3</sup>`, R`0.02 g/dm<sup>3</sup>`], a: 0, e: R`\(\dfrac{5}{0.25}\)` },
+    { q: "Why use flame photometry instead of a flame test?", o: ["It can analyse mixtures and measure concentration", "It is cheaper", "It doesn't need a flame", "It only works for one ion"], a: 0, e: R`Flame photometry measures emission intensity and can separate the colours from different ions.` },
     { q: "Which reaction has 100% atom economy?", o: ["C<sub>2</sub>H<sub>4</sub> + H<sub>2</sub>O → C<sub>2</sub>H<sub>5</sub>OH", "CaCO<sub>3</sub> → CaO + CO<sub>2</sub>", "Fermentation of glucose", "Mg + 2HCl → MgCl<sub>2</sub> + H<sub>2</sub>"], a: 0, e: "There is only one product." }
   ]
 });
@@ -47,7 +47,7 @@ CHEM.add({
 CHEM.add({
   id: "5b", group: 5, gcse: true, title: "Transition metals, alloys and corrosion",
   summary: "Properties of transition metals, common alloys, electroplating and corrosion.",
-  notes: `
+  notes: R`
 <h3>Transition metals</h3>
 <p>These are the central block of the Periodic Table, e.g. Fe, Cu, Cr, Ni, Mn.</p>
 <p>Compared with Group 1 metals, they have:</p>
@@ -93,19 +93,19 @@ CHEM.add({
     ["Why does aluminium resist corrosion?", "A protective layer of aluminium oxide forms"]
   ],
   quiz: [
-    { q: "Which is a typical property of transition metals?", o: ["They form coloured compounds", "They have low melting points", "They react vigorously with water", "They are soft"], a: 0, e: "" },
+    { q: "Which is a typical property of transition metals?", o: ["They form coloured compounds", "They have low melting points", "They react vigorously with water", "They are soft"], a: 0, e: R`Transition metals form coloured ions, act as catalysts and have variable oxidation states.` },
     { q: "What is the electrolyte for silver-plating a spoon?", o: ["Silver nitrate solution", "Copper sulfate solution", "Sodium chloride solution", "Dilute sulfuric acid"], a: 0, e: "It must contain Ag<sup>+</sup> ions." },
-    { q: "Which alloy is used for aircraft because it is light?", o: ["Magnalium", "Brass", "Bronze", "High-carbon steel"], a: 0, e: "" },
-    { q: "What percentage of gold is in 18-carat gold?", o: ["75%", "18%", "100%", "50%"], a: 0, e: "18 ÷ 24" },
-    { q: "Corrosion of a metal is…", o: ["Oxidation", "Reduction", "Neutralisation", "Decomposition"], a: 0, e: "" },
-    { q: "Nickel is used as a catalyst for…", o: ["Hydrogenation of vegetable oils", "The Haber process", "Fermentation", "Cracking"], a: 0, e: "" }
+    { q: "Which alloy is used for aircraft because it is light?", o: ["Magnalium", "Brass", "Bronze", "High-carbon steel"], a: 0, e: R`Magnalium is an alloy of aluminium and magnesium.` },
+    { q: "What percentage of gold is in 18-carat gold?", o: ["75%", "18%", "100%", "50%"], a: 0, e: R`\(\dfrac{18}{24}\)` },
+    { q: "Corrosion of a metal is…", o: ["Oxidation", "Reduction", "Neutralisation", "Decomposition"], a: 0, e: R`The metal loses electrons when it reacts with oxygen.` },
+    { q: "Nickel is used as a catalyst for…", o: ["Hydrogenation of vegetable oils", "The Haber process", "Fermentation", "Cracking"], a: 0, e: R`Nickel catalyses the addition of hydrogen to \(C = C\) bonds, making margarine.` }
   ]
 });
 
 CHEM.add({
   id: "5c", group: 5, gcse: true, title: "The Haber process and fertilisers",
   summary: "Making ammonia, compromise conditions, NPK fertilisers and ammonium sulfate.",
-  notes: `
+  notes: R`
 <h3>The Haber process</h3>
 <div class="eq">N<sub>2</sub>(g) + 3H<sub>2</sub>(g) ⇌ 2NH<sub>3</sub>(g) &nbsp; ΔH = −92 kJ/mol</div>
 <ul>
@@ -146,19 +146,19 @@ CHEM.add({
     ["Contact process catalyst", "Vanadium(V) oxide, V<sub>2</sub>O<sub>5</sub>"]
   ],
   quiz: [
-    { q: "What is the catalyst in the Haber process?", o: ["Iron", "Nickel", "Platinum", "V<sub>2</sub>O<sub>5</sub>"], a: 0, e: "" },
-    { q: "Why does high pressure increase the yield of ammonia?", o: ["Equilibrium shifts to the side with fewer gas moles", "The reaction is endothermic", "It speeds up the catalyst", "It liquefies nitrogen"], a: 0, e: "" },
-    { q: "Why isn't a low temperature used even though it gives a higher yield?", o: ["The rate would be too slow", "Ammonia would decompose", "The catalyst would melt", "It costs more"], a: 0, e: "" },
-    { q: "Which two substances make ammonium nitrate?", o: ["Ammonia and nitric acid", "Ammonia and sulfuric acid", "Nitrogen and water", "Ammonium chloride and sodium nitrate"], a: 0, e: "" },
-    { q: "What happens to unreacted N<sub>2</sub> and H<sub>2</sub>?", o: ["They are recycled", "They are released into the air", "They are burned", "They form a solid"], a: 0, e: "" },
-    { q: "Which element is NOT one of the main nutrients in NPK fertilisers?", o: ["Sodium", "Nitrogen", "Phosphorus", "Potassium"], a: 0, e: "" }
+    { q: "What is the catalyst in the Haber process?", o: ["Iron", "Nickel", "Platinum", "V<sub>2</sub>O<sub>5</sub>"], a: 0, e: R`An iron catalyst speeds up the reaction.` },
+    { q: "Why does high pressure increase the yield of ammonia?", o: ["Equilibrium shifts to the side with fewer gas moles", "The reaction is endothermic", "It speeds up the catalyst", "It liquefies nitrogen"], a: 0, e: R`N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>: 4 gas moles become 2.` },
+    { q: "Why isn't a low temperature used even though it gives a higher yield?", o: ["The rate would be too slow", "Ammonia would decompose", "The catalyst would melt", "It costs more"], a: 0, e: R`450 °C is a compromise between yield and rate.` },
+    { q: "Which two substances make ammonium nitrate?", o: ["Ammonia and nitric acid", "Ammonia and sulfuric acid", "Nitrogen and water", "Ammonium chloride and sodium nitrate"], a: 0, e: R`Acid + alkali: NH<sub>3</sub> + HNO<sub>3</sub> → NH<sub>4</sub>NO<sub>3</sub>.` },
+    { q: "What happens to unreacted N<sub>2</sub> and H<sub>2</sub>?", o: ["They are recycled", "They are released into the air", "They are burned", "They form a solid"], a: 0, e: R`Recycling raises the overall conversion.` },
+    { q: "Which element is NOT one of the main nutrients in NPK fertilisers?", o: ["Sodium", "Nitrogen", "Phosphorus", "Potassium"], a: 0, e: R`NPK stands for nitrogen, phosphorus and potassium.` }
   ]
 });
 
 CHEM.add({
   id: "5d", group: 5, gcse: true, title: "Chemical cells and fuel cells",
   summary: "Simple cells, the hydrogen–oxygen fuel cell, and its pros and cons.",
-  notes: `
+  notes: R`
 <h3>Chemical cells</h3>
 <ul>
 <li>A chemical cell produces a voltage from a chemical reaction, which happens when two different metals are in an electrolyte.</li>
@@ -188,17 +188,17 @@ CHEM.add({
     ["Why does a non-rechargeable cell stop working?", "The reactants are used up"]
   ],
   quiz: [
-    { q: "What is the only product of a hydrogen–oxygen fuel cell?", o: ["Water", "Carbon dioxide", "Hydrogen peroxide", "Methane"], a: 0, e: "" },
+    { q: "What is the only product of a hydrogen–oxygen fuel cell?", o: ["Water", "Carbon dioxide", "Hydrogen peroxide", "Methane"], a: 0, e: R`2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O.` },
     { q: "Which pair of metals gives the largest voltage in a simple cell?", o: ["Magnesium and copper", "Zinc and iron", "Copper and silver", "Iron and copper"], a: 0, e: "They have the biggest difference in reactivity." },
-    { q: "What is a disadvantage of hydrogen fuel cells?", o: ["Hydrogen is difficult to store safely", "They produce CO<sub>2</sub>", "They make a lot of noise", "They make toxic waste water"], a: 0, e: "" },
-    { q: "Why does an alkaline battery eventually go flat?", o: ["The reactants are used up", "It overheats", "The voltage increases", "Water is produced"], a: 0, e: "" }
+    { q: "What is a disadvantage of hydrogen fuel cells?", o: ["Hydrogen is difficult to store safely", "They produce CO<sub>2</sub>", "They make a lot of noise", "They make toxic waste water"], a: 0, e: R`It's a flammable gas that needs high pressure or very low temperature.` },
+    { q: "Why does an alkaline battery eventually go flat?", o: ["The reactants are used up", "It overheats", "The voltage increases", "Water is produced"], a: 0, e: R`A battery stops working when its chemicals have reacted.` }
   ]
 });
 
 CHEM.add({
   id: "5e", group: 5, gcse: true, title: "Earth's atmosphere, climate and Group 0",
   summary: "How the atmosphere evolved, greenhouse gases, climate change and the noble gases.",
-  notes: `
+  notes: R`
 <h3>Evolution of the atmosphere</h3>
 <ol>
 <li>The <b>early atmosphere</b> came from volcanic activity. It was mainly <b>carbon dioxide</b> and <b>water vapour</b>, with little or no oxygen.</li>
@@ -235,19 +235,19 @@ CHEM.add({
     ["Why is helium used in balloons?", "Low density and non-flammable"]
   ],
   quiz: [
-    { q: "What did the Earth's early atmosphere mainly contain?", o: ["Carbon dioxide and water vapour", "Nitrogen and oxygen", "Oxygen and argon", "Methane and helium"], a: 0, e: "" },
-    { q: "Which process increased oxygen in the atmosphere?", o: ["Photosynthesis", "Respiration", "Combustion", "Volcanic activity"], a: 0, e: "" },
-    { q: "Which is a greenhouse gas?", o: ["Methane", "Nitrogen", "Oxygen", "Argon"], a: 0, e: "" },
-    { q: "Why are noble gases unreactive?", o: ["They have full outer electron shells", "They are diatomic", "They are dense", "They are metals"], a: 0, e: "" },
-    { q: "Why is helium safer than hydrogen in airships?", o: ["It is non-flammable", "It is denser", "It is cheaper", "It is reactive"], a: 0, e: "" },
-    { q: "How does a greenhouse gas warm the Earth?", o: ["It absorbs infrared radiation emitted by the Earth", "It reflects sunlight", "It produces heat by reacting", "It absorbs ultraviolet only"], a: 0, e: "" }
+    { q: "What did the Earth's early atmosphere mainly contain?", o: ["Carbon dioxide and water vapour", "Nitrogen and oxygen", "Oxygen and argon", "Methane and helium"], a: 0, e: R`These came from volcanoes.` },
+    { q: "Which process increased oxygen in the atmosphere?", o: ["Photosynthesis", "Respiration", "Combustion", "Volcanic activity"], a: 0, e: R`Plants and algae took in CO<sub>2</sub> and released O<sub>2</sub>.` },
+    { q: "Which is a greenhouse gas?", o: ["Methane", "Nitrogen", "Oxygen", "Argon"], a: 0, e: R`CO<sub>2</sub>, methane and water vapour absorb infrared.` },
+    { q: "Why are noble gases unreactive?", o: ["They have full outer electron shells", "They are diatomic", "They are dense", "They are metals"], a: 0, e: R`They don't need to gain or lose electrons.` },
+    { q: "Why is helium safer than hydrogen in airships?", o: ["It is non-flammable", "It is denser", "It is cheaper", "It is reactive"], a: 0, e: R`Hydrogen burns explosively in air.` },
+    { q: "How does a greenhouse gas warm the Earth?", o: ["It absorbs infrared radiation emitted by the Earth", "It reflects sunlight", "It produces heat by reacting", "It absorbs ultraviolet only"], a: 0, e: R`It absorbs infrared and re-emits it, some back towards the Earth.` }
   ]
 });
 
 CHEM.add({
   id: "5f", group: 5, gcse: true, title: "Materials and nanoparticles",
   summary: "Ceramics, composites, polymers and metals compared; nanoparticles; natural polymers.",
-  notes: `
+  notes: R`
 <h3>Comparing materials</h3>
 <table>
 <tr><th>Material</th><th>Typical properties</th><th>Examples</th></tr>
@@ -284,19 +284,19 @@ CHEM.add({
     ["SA:V of a cube", "6/L, so it increases as the cube gets smaller"]
   ],
   quiz: [
-    { q: "What is the size range of nanoparticles?", o: ["1–100 nm", "100–1000 nm", "0.1–1 nm", "1–100 μm"], a: 0, e: "" },
-    { q: "Why are nanoparticles good catalysts?", o: ["They have a high surface area to volume ratio", "They are very heavy", "They are inert", "They are large"], a: 0, e: "" },
-    { q: "Which is a composite?", o: ["Fibreglass", "Steel", "Poly(ethene)", "Glass"], a: 0, e: "" },
-    { q: "Which property is typical of ceramics?", o: ["Brittle", "Malleable", "Good conductor", "Flexible"], a: 0, e: "" },
-    { q: "A cube's side goes from 10 nm to 1 nm. How does its SA:V ratio change?", o: ["It increases 10 times", "It decreases 10 times", "It increases 100 times", "It stays the same"], a: 0, e: "" },
-    { q: "What are the monomers in DNA?", o: ["Nucleotides", "Amino acids", "Glucose", "Ethene"], a: 0, e: "" }
+    { q: "What is the size range of nanoparticles?", o: ["1–100 nm", "100–1000 nm", "0.1–1 nm", "1–100 μm"], a: 0, e: R`1 nm \(= 1 \times 10^{-9}\) m.` },
+    { q: "Why are nanoparticles good catalysts?", o: ["They have a high surface area to volume ratio", "They are very heavy", "They are inert", "They are large"], a: 0, e: R`More of their atoms are on the surface, where reactions happen.` },
+    { q: "Which is a composite?", o: ["Fibreglass", "Steel", "Poly(ethene)", "Glass"], a: 0, e: R`Glass fibres are set in a polymer matrix.` },
+    { q: "Which property is typical of ceramics?", o: ["Brittle", "Malleable", "Good conductor", "Flexible"], a: 0, e: R`Ceramics are hard and heat resistant but brittle.` },
+    { q: "A cube's side goes from 10 nm to 1 nm. How does its SA:V ratio change?", o: ["It increases 10 times", "It decreases 10 times", "It increases 100 times", "It stays the same"], a: 0, e: R`SA:V \(\propto \dfrac{1}{\text{side}}\): side divided by 10 means the ratio is multiplied by 10.` },
+    { q: "What are the monomers in DNA?", o: ["Nucleotides", "Amino acids", "Glucose", "Ethene"], a: 0, e: R`DNA is a polymer of nucleotides.` }
   ]
 });
 
 CHEM.add({
   id: "5g", group: 5, gcse: true, title: "Earth's resources and sustainability",
   summary: "Potable water, life-cycle assessments, recycling, phytomining and bioleaching.",
-  notes: `
+  notes: R`
 <h3>Potable (drinking) water</h3>
 <p>Potable water is safe to drink. It is <b>not pure</b>, because it contains dissolved substances, but it has low levels of salts and microbes.</p>
 <ol>
@@ -337,11 +337,11 @@ CHEM.add({
     ["Why use distilled water in analysis?", "Tap water contains dissolved ions that could interfere with results"]
   ],
   quiz: [
-    { q: "Which step kills microbes in water treatment?", o: ["Chlorination", "Filtration", "Sedimentation", "Distillation"], a: 0, e: "" },
-    { q: "Why is distillation of sea water not widely used in the UK?", o: ["It needs lots of energy, so it is expensive", "It doesn't remove salt", "It makes the water toxic", "It's too fast"], a: 0, e: "" },
-    { q: "Which is NOT a stage of a life-cycle assessment?", o: ["Advertising the product", "Extracting raw materials", "Using the product", "Disposal"], a: 0, e: "" },
-    { q: "In phytomining, how is the metal obtained?", o: ["Plants are burned and the metal is extracted from the ash", "Bacteria eat the ore", "Ore is heated with carbon", "Electrolysis of sea water"], a: 0, e: "" },
-    { q: "Potable water is…", o: ["Safe to drink", "Pure H<sub>2</sub>O", "Distilled water", "Sea water"], a: 0, e: "" },
-    { q: "Which is an advantage of bioleaching?", o: ["It can use low-grade ores", "It is very fast", "It produces pure copper directly", "It needs high temperatures"], a: 0, e: "" }
+    { q: "Which step kills microbes in water treatment?", o: ["Chlorination", "Filtration", "Sedimentation", "Distillation"], a: 0, e: R`Chlorine (or UV/ozone) kills bacteria.` },
+    { q: "Why is distillation of sea water not widely used in the UK?", o: ["It needs lots of energy, so it is expensive", "It doesn't remove salt", "It makes the water toxic", "It's too fast"], a: 0, e: R`Boiling water takes lots of energy; the UK has enough fresh water.` },
+    { q: "Which is NOT a stage of a life-cycle assessment?", o: ["Advertising the product", "Extracting raw materials", "Using the product", "Disposal"], a: 0, e: R`An LCA covers raw materials, manufacture, use and disposal.` },
+    { q: "In phytomining, how is the metal obtained?", o: ["Plants are burned and the metal is extracted from the ash", "Bacteria eat the ore", "Ore is heated with carbon", "Electrolysis of sea water"], a: 0, e: R`Plants absorb metal compounds from soil; the ash is rich in the metal.` },
+    { q: "Potable water is…", o: ["Safe to drink", "Pure H<sub>2</sub>O", "Distilled water", "Sea water"], a: 0, e: R`Potable water is not necessarily pure, just safe.` },
+    { q: "Which is an advantage of bioleaching?", o: ["It can use low-grade ores", "It is very fast", "It produces pure copper directly", "It needs high temperatures"], a: 0, e: R`It extracts metal from ores too poor to mine economically.` }
   ]
 });
